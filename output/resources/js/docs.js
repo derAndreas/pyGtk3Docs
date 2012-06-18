@@ -124,7 +124,7 @@ Docs.DocPanel = Ext.extend(Ext.Panel, {
                         if(values && values.hasOwnProperty('methods') && Ext.isArray(values.methods) && values.methods.length > 0) {
                             var meths = values.methods,
                                 ilen   = meths.length,
-                                meth, params, param, rType, desc, i, j, jlen;
+                                meth, params, param, rType, desc, i, j, jlen, k, klen;
                             
                             for(i = 0; i < ilen; i++) {
                                 meth = meths[i];
@@ -134,9 +134,21 @@ Docs.DocPanel = Ext.extend(Ext.Panel, {
                                 
                                 if(meth.parameters) {
                                     params = [];
+                                    paramDoc = [];
                                     for(j = 0, jlen = meth.parameters.length; j < jlen; j++) {
                                         param = meth.parameters[j];
                                         params.push(this.formatRefTypes(param.name, param.type));
+                                        paramDoc.push([param.name, param.description]);
+                                    }
+                                    
+                                    if(paramDoc.length > 0) {
+                                        desc += '<br/><br/>';
+                                        desc += '<h3>Parameter Information</h3>';
+                                        desc += '<ul>';
+                                        for(k = 0, klen = paramDoc.length; k < klen; k++) {
+                                            desc += '<li><b>' + paramDoc[k][0] + '</b> : ' + paramDoc[k][1] + '</li>';
+                                        }
+                                        desc += '</ul>';
                                     }
                                 }
                                 
