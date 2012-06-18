@@ -1,0 +1,21 @@
+{
+    "leaf": true, 
+    "name": "PackType", 
+    "text": "PackType", 
+    "version": null, 
+    "members": {
+        "properties": [
+            {
+                "name": "start", 
+                "value": "0"
+            }, 
+            {
+                "name": "end", 
+                "value": "1"
+            }
+        ]
+    }, 
+    "fullname": "Enumeration Gtk.PackType", 
+    "id": "Docs-PackType", 
+    "description": ""
+}

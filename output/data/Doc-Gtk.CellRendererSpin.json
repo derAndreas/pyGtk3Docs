@@ -1,0 +1,54 @@
+{
+    "isAbstract": false, 
+    "leaf": true, 
+    "name": "CellRendererSpin", 
+    "text": "CellRendererSpin", 
+    "interfaces": [], 
+    "parents": [
+        "CellRendererSpin", 
+        "CellRendererText", 
+        "CellRenderer", 
+        "GObject.InitiallyUnowned"
+    ], 
+    "members": {
+        "signals": [], 
+        "methods": [
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a new #GtkCellRendererSpin", 
+                    "name": "ref:Gtk.CellRenderer"
+                }, 
+                "version": "2.10", 
+                "name": "Gtk.CellRendererSpin()", 
+                "parameters": null
+            }
+        ], 
+        "properties": [
+            {
+                "writable": false, 
+                "type": "Gtk.Adjustment", 
+                "readable": false, 
+                "name": "adjustment", 
+                "description": "The adjustment that holds the value of the spinbutton. \nThis must be non-%NULL for the cell renderer to be editable."
+            }, 
+            {
+                "writable": false, 
+                "type": "Float", 
+                "readable": false, 
+                "name": "climb-rate", 
+                "description": "The acceleration rate when you hold down a button."
+            }, 
+            {
+                "writable": false, 
+                "type": "Integer", 
+                "readable": false, 
+                "name": "digits", 
+                "description": "The number of decimal places to display."
+            }
+        ]
+    }, 
+    "fullname": "Class Gtk.CellRendererSpin", 
+    "id": "Docs-CellRendererSpin", 
+    "description": "#GtkCellRendererSpin renders text in a cell like #GtkCellRendererText from\nwhich it is derived. But while #GtkCellRendererText offers a simple entry to\nedit the text, #GtkCellRendererSpin offers a #GtkSpinButton widget. Of course,\nthat means that the text has to be parseable as a floating point number.\n\nThe range of the spinbutton is taken from the adjustment property of the\ncell renderer, which can be set explicitly or mapped to a column in the\ntree model, like all properties of cell renders. #GtkCellRendererSpin\nalso has properties for the #GtkCellRendererSpin:climb-rate and the number\nof #GtkCellRendererSpin:digits to display. Other #GtkSpinButton properties\ncan be set in a handler for the #GtkCellRenderer::editing-started signal.\n\nThe #GtkCellRendererSpin cell renderer was added in GTK+ 2.10."
+}

@@ -1,0 +1,57 @@
+{
+    "leaf": true, 
+    "name": "UIManagerItemType", 
+    "text": "UIManagerItemType", 
+    "version": null, 
+    "members": {
+        "properties": [
+            {
+                "name": "auto", 
+                "value": "0"
+            }, 
+            {
+                "name": "menubar", 
+                "value": "1"
+            }, 
+            {
+                "name": "menu", 
+                "value": "2"
+            }, 
+            {
+                "name": "toolbar", 
+                "value": "4"
+            }, 
+            {
+                "name": "placeholder", 
+                "value": "8"
+            }, 
+            {
+                "name": "popup", 
+                "value": "16"
+            }, 
+            {
+                "name": "menuitem", 
+                "value": "32"
+            }, 
+            {
+                "name": "toolitem", 
+                "value": "64"
+            }, 
+            {
+                "name": "separator", 
+                "value": "128"
+            }, 
+            {
+                "name": "accelerator", 
+                "value": "256"
+            }, 
+            {
+                "name": "popup_with_accels", 
+                "value": "512"
+            }
+        ]
+    }, 
+    "fullname": "Bitfield Gtk.UIManagerItemType", 
+    "id": "Docs-UIManagerItemType", 
+    "description": ""
+}

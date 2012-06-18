@@ -1,0 +1,45 @@
+{
+    "isAbstract": false, 
+    "leaf": true, 
+    "name": "HPaned", 
+    "text": "HPaned", 
+    "interfaces": [
+        [
+            "Atk.ImplementorIface"
+        ], 
+        [
+            "Buildable"
+        ], 
+        [
+            "Orientable"
+        ]
+    ], 
+    "parents": [
+        "HPaned", 
+        "Paned", 
+        "Container", 
+        "Widget", 
+        "GObject.InitiallyUnowned"
+    ], 
+    "members": {
+        "signals": [], 
+        "methods": [
+            {
+                "returns": {
+                    "doc": "the new #GtkHPaned", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": null, 
+                "name": "Gtk.HPaned()", 
+                "parameters": null, 
+                "deprecated": "Use gtk_paned_new() with %GTK_ORIENTATION_HORIZONTAL instead", 
+                "deprecated_version": "3.2", 
+                "isConstructor": true
+            }
+        ], 
+        "properties": []
+    }, 
+    "fullname": "Class Gtk.HPaned", 
+    "id": "Docs-HPaned", 
+    "description": "The HPaned widget is a container widget with two\nchildren arranged horizontally. The division between\nthe two panes is adjustable by the user by dragging\na handle. See #GtkPaned for details.\n\nGtkHPaned has been deprecated, use #GtkPaned instead."
+}

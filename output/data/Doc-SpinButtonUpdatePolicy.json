@@ -1,0 +1,21 @@
+{
+    "leaf": true, 
+    "name": "SpinButtonUpdatePolicy", 
+    "text": "SpinButtonUpdatePolicy", 
+    "version": null, 
+    "members": {
+        "properties": [
+            {
+                "name": "always", 
+                "value": "0"
+            }, 
+            {
+                "name": "if_valid", 
+                "value": "1"
+            }
+        ]
+    }, 
+    "fullname": "Enumeration Gtk.SpinButtonUpdatePolicy", 
+    "id": "Docs-SpinButtonUpdatePolicy", 
+    "description": ""
+}

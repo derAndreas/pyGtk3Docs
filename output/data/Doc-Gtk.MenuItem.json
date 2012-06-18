@@ -1,0 +1,462 @@
+{
+    "isAbstract": false, 
+    "leaf": true, 
+    "name": "MenuItem", 
+    "text": "MenuItem", 
+    "interfaces": [
+        [
+            "Atk.ImplementorIface"
+        ], 
+        [
+            "Activatable"
+        ], 
+        [
+            "Buildable"
+        ]
+    ], 
+    "parents": [
+        "MenuItem", 
+        "Bin", 
+        "Container", 
+        "Widget", 
+        "GObject.InitiallyUnowned"
+    ], 
+    "members": {
+        "signals": [
+            {
+                "version": "", 
+                "when": "first", 
+                "name": "activate", 
+                "description": "Emitted when the item is activated."
+            }, 
+            {
+                "version": "", 
+                "when": "first", 
+                "name": "activate-item", 
+                "description": "Emitted when the item is activated, but also if the menu item has a\nsubmenu. For normal applications, the relevant signal is\n#GtkMenuItem::activate."
+            }, 
+            {
+                "version": "", 
+                "when": "first", 
+                "name": "deselect", 
+                "description": ""
+            }, 
+            {
+                "version": "", 
+                "when": "first", 
+                "name": "select", 
+                "description": ""
+            }, 
+            {
+                "version": "", 
+                "when": "first", 
+                "name": "toggle-size-allocate", 
+                "description": ""
+            }, 
+            {
+                "version": "", 
+                "when": "first", 
+                "name": "toggle-size-request", 
+                "description": ""
+            }
+        ], 
+        "methods": [
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "the newly created #GtkMenuItem", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": null, 
+                "name": "Gtk.MenuItem()", 
+                "parameters": null
+            }, 
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "the newly created #GtkMenuItem", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": null, 
+                "name": "Gtk.MenuItem(String label)", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "label"
+                    }
+                ]
+            }, 
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a new #GtkMenuItem", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": null, 
+                "name": "Gtk.MenuItem(String label)", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "label"
+                    }
+                ]
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "activate", 
+                "parameters": null, 
+                "description": "Emits the #GtkMenuItem::activate signal on the given item"
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "deselect", 
+                "parameters": null, 
+                "description": "Emits the #GtkMenuItem::deselect signal on the given item. Behaves\nexactly like #gtk_item_deselect."
+            }, 
+            {
+                "returns": {
+                    "type": "String", 
+                    "description": "the accelerator path corresponding to this menu"
+                }, 
+                "version": "2.14", 
+                "name": "get_accel_path", 
+                "parameters": null, 
+                "description": "Retrieve the accelerator path that was previously set on @menu_item.\n\nSee gtk_menu_item_set_accel_path() for details.\n\nitem's functionality, or %NULL if not set"
+            }, 
+            {
+                "returns": {
+                    "type": "String", 
+                    "description": "The text in the @menu_item label. This is the internal"
+                }, 
+                "version": "2.16", 
+                "name": "get_label", 
+                "parameters": null, 
+                "description": "Sets @text on the @menu_item label\n\nstring used by the label, and must not be modified."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE if @menu_item always reserves space for the"
+                }, 
+                "version": "3.0", 
+                "name": "get_reserve_indicator", 
+                "parameters": null, 
+                "description": "Returns whether the @menu_item reserves space for\nthe submenu indicator, regardless if it has a submenu\nor not.\n\nsubmenu indicator"
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE if the menu item will appear at the"
+                }, 
+                "version": "", 
+                "name": "get_right_justified", 
+                "parameters": null, 
+                "description": "Gets whether the menu item appears justified at the right\nside of the menu bar.\n\nfar right if added to a menu bar."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.Widget", 
+                    "description": "submenu for this menu item, or %NULL if none"
+                }, 
+                "version": "", 
+                "name": "get_submenu", 
+                "parameters": null, 
+                "description": "Gets the submenu underneath this menu item, if any.\nSee gtk_menu_item_set_submenu()."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE if an embedded underline in the label"
+                }, 
+                "version": "2.16", 
+                "name": "get_use_underline", 
+                "parameters": null, 
+                "description": "Checks if an underline in the text indicates the next character\nshould be used for the mnemonic accelerator key.\n\nindicates the mnemonic accelerator key."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "select", 
+                "parameters": null, 
+                "description": "Emits the #GtkMenuItem::select signal on the given item. Behaves\nexactly like #gtk_item_select."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_accel_path", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "accel_path", 
+                        "description": "accelerator path, corresponding to this menu item's functionality, or %NULL to unset the current path."
+                    }
+                ], 
+                "description": "Set the accelerator path on @menu_item, through which runtime\nchanges of the menu item's accelerator caused by the user can be\nidentified and saved to persistent storage (see gtk_accel_map_save()\non this). To set up a default accelerator for this menu item, call\ngtk_accel_map_add_entry() with the same @accel_path. See also\ngtk_accel_map_add_entry() on the specifics of accelerator paths,\nand gtk_menu_set_accel_path() for a more convenient variant of\nthis function.\n\nThis function is basically a convenience wrapper that handles\ncalling gtk_widget_set_accel_path() with the appropriate accelerator\ngroup for the menu item.\n\nNote that you do need to set an accelerator on the parent menu with\ngtk_menu_set_accel_group() for this to work.\n\nNote that @accel_path string will be stored in a #GQuark.\nTherefore, if you pass a static string, you can save some memory\nby interning it first with g_intern_static_string()."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.16", 
+                "name": "set_label", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "label", 
+                        "description": "the text you want to set"
+                    }
+                ], 
+                "description": "Sets @text on the @menu_item label"
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "3.0", 
+                "name": "set_reserve_indicator", 
+                "parameters": [
+                    {
+                        "type": "Boolean", 
+                        "name": "reserve", 
+                        "description": "the new value"
+                    }
+                ], 
+                "description": "Sets whether the @menu_item should reserve space for\nthe submenu indicator, regardless if it actually has\na submenu or not.\n\nThere should be little need for applications to call\nthis functions."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_right_justified", 
+                "parameters": [
+                    {
+                        "type": "Boolean", 
+                        "name": "right_justified", 
+                        "description": "if %TRUE the menu item will appear at the far right if added to a menu bar"
+                    }
+                ], 
+                "description": "Sets whether the menu item appears justified at the right\nside of a menu bar. This was traditionally done for \"Help\"\nmenu items, but is now considered a bad idea. (If the widget\nlayout is reversed for a right-to-left language like Hebrew\nor Arabic, right-justified-menu-items appear at the left.)\n\ngtk_widget_set_hexpand() and gtk_widget_set_halign()."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_submenu", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "submenu", 
+                        "description": "the submenu, or %NULL"
+                    }
+                ], 
+                "description": "Sets or replaces the menu item's submenu, or removes it when a %NULL\nsubmenu is passed."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.16", 
+                "name": "set_use_underline", 
+                "parameters": [
+                    {
+                        "type": "Boolean", 
+                        "name": "setting", 
+                        "description": "%TRUE if underlines in the text indicate mnemonics"
+                    }
+                ], 
+                "description": "If true, an underline in the text indicates the next character\nshould be used for the mnemonic accelerator key."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "toggle_size_allocate", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "allocation", 
+                        "description": "the allocation to use as signal data."
+                    }
+                ], 
+                "description": "Emits the #GtkMenuItem::toggle-size-allocate signal on the given item."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "toggle_size_request", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "requisition", 
+                        "description": "the requisition to use as signal data."
+                    }
+                ], 
+                "description": "Emits the #GtkMenuItem::toggle-size-request signal on the given item."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "activate", 
+                "parameters": null, 
+                "description": "Emits the #GtkMenuItem::activate signal on the given item"
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "activate_item", 
+                "parameters": null, 
+                "description": ""
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "deselect", 
+                "parameters": null, 
+                "description": "Emits the #GtkMenuItem::deselect signal on the given item. Behaves\nexactly like #gtk_item_deselect."
+            }, 
+            {
+                "returns": {
+                    "type": "String", 
+                    "description": "The text in the @menu_item label. This is the internal"
+                }, 
+                "version": "2.16", 
+                "name": "get_label", 
+                "parameters": null, 
+                "description": "Sets @text on the @menu_item label\n\nstring used by the label, and must not be modified."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "select", 
+                "parameters": null, 
+                "description": "Emits the #GtkMenuItem::select signal on the given item. Behaves\nexactly like #gtk_item_select."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.16", 
+                "name": "set_label", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "label", 
+                        "description": "the text you want to set"
+                    }
+                ], 
+                "description": "Sets @text on the @menu_item label"
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "toggle_size_allocate", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "allocation", 
+                        "description": "the allocation to use as signal data."
+                    }
+                ], 
+                "description": "Emits the #GtkMenuItem::toggle-size-allocate signal on the given item."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "toggle_size_request", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "requisition", 
+                        "description": "the requisition to use as signal data."
+                    }
+                ], 
+                "description": "Emits the #GtkMenuItem::toggle-size-request signal on the given item."
+            }
+        ], 
+        "properties": [
+            {
+                "writable": false, 
+                "type": "String", 
+                "readable": false, 
+                "name": "accel-path", 
+                "description": "Sets the accelerator path of the menu item, through which runtime\nchanges of the menu item's accelerator caused by the user can be\nidentified and saved to persistant storage."
+            }, 
+            {
+                "writable": false, 
+                "type": "String", 
+                "readable": false, 
+                "name": "label", 
+                "description": "The text for the child label."
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "right-justified", 
+                "description": "Sets whether the menu item appears justified\nat the right side of a menu bar."
+            }, 
+            {
+                "writable": false, 
+                "type": "Gtk.Menu", 
+                "readable": false, 
+                "name": "submenu", 
+                "description": "The submenu attached to the menu item, or %NULL if it has none."
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "use-underline", 
+                "description": "%TRUE if underlines in the text indicate mnemonics."
+            }
+        ]
+    }, 
+    "fullname": "Class Gtk.MenuItem", 
+    "id": "Docs-MenuItem", 
+    "description": "The #GtkMenuItem widget and the derived widgets are the only valid\nchilds for menus. Their function is to correctly handle highlighting,\nalignment, events and submenus.\n\nAs it derives from #GtkBin it can hold any valid child widget, altough\nonly a few are really useful.\n\n<refsect2 id=\"GtkMenuItem-BUILDER-UI\">\n<title>GtkMenuItem as GtkBuildable</title>\nThe GtkMenuItem implementation of the GtkBuildable interface\nsupports adding a submenu by specifying \"submenu\" as the \"type\"\nattribute of a &lt;child&gt; element.\n<example>\n<title>A UI definition fragment with submenus</title>\n<programlisting><![CDATA[\n<object class=\"GtkMenuItem\">\n<child type=\"submenu\">\n<object class=\"GtkMenu\"/>\n</child>\n</object>\n]]></programlisting>\n</example>\n</refsect2>"
+}

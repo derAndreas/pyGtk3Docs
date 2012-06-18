@@ -1,0 +1,569 @@
+{
+    "isAbstract": false, 
+    "leaf": true, 
+    "name": "TextTag", 
+    "text": "TextTag", 
+    "interfaces": [], 
+    "parents": [
+        "TextTag", 
+        "GObject.Object"
+    ], 
+    "members": {
+        "signals": [
+            {
+                "version": "", 
+                "when": "last", 
+                "name": "event", 
+                "description": "The ::event signal is emitted when an event occurs on a region of the\nbuffer marked with this tag.\n\nevent. %FALSE to propagate the event further."
+            }
+        ], 
+        "methods": [
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a new #GtkTextTag", 
+                    "name": "ref:Gtk.TextTag"
+                }, 
+                "version": null, 
+                "name": "Gtk.TextTag(String name)", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "name"
+                    }
+                ]
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "result of signal emission (whether the event was handled)"
+                }, 
+                "version": "", 
+                "name": "event", 
+                "parameters": [
+                    {
+                        "type": "GObject.Object", 
+                        "name": "event_object", 
+                        "description": "object that received the event, such as a widget"
+                    }, 
+                    {
+                        "type": "Gdk.Event", 
+                        "name": "event", 
+                        "description": "the event"
+                    }, 
+                    {
+                        "type": "ref:Gtk.TextIter", 
+                        "name": "iter", 
+                        "description": "location where the event was received"
+                    }
+                ], 
+                "description": "Emits the \"event\" signal on the #GtkTextTag."
+            }, 
+            {
+                "returns": {
+                    "type": "Integer", 
+                    "description": "The tag's priority."
+                }, 
+                "version": "", 
+                "name": "get_priority", 
+                "parameters": null, 
+                "description": "Get the tag priority."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_priority", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "priority", 
+                        "description": "the new priority"
+                    }
+                ], 
+                "description": "Sets the priority of a #GtkTextTag. Valid priorities are\nstart at 0 and go to one less than gtk_text_tag_table_get_size().\nEach tag in a table has a unique priority; setting the priority\nof one tag shifts the priorities of all the other tags in the\ntable to maintain a unique priority for each tag. Higher priority\ntags \"win\" if two tags both set the same text attribute. When adding\na tag to a tag table, it will be assigned the highest priority in\nthe table by default; so normally the precedence of a set of tags\nis the order in which they were added to the table, or created with\ngtk_text_buffer_create_tag(), which adds the tag to the buffer's table\nautomatically."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "result of signal emission (whether the event was handled)"
+                }, 
+                "version": "", 
+                "name": "event", 
+                "parameters": [
+                    {
+                        "type": "GObject.Object", 
+                        "name": "event_object", 
+                        "description": "object that received the event, such as a widget"
+                    }, 
+                    {
+                        "type": "Gdk.Event", 
+                        "name": "event", 
+                        "description": "the event"
+                    }, 
+                    {
+                        "type": "ref:Gtk.TextIter", 
+                        "name": "iter", 
+                        "description": "location where the event was received"
+                    }
+                ], 
+                "description": "Emits the \"event\" signal on the #GtkTextTag."
+            }
+        ], 
+        "properties": [
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "accumulative-margin", 
+                "description": "Whether the margins accumulate or override each other.\n\nWhen set to %TRUE the margins of this tag are added to the margins \nof any other non-accumulative margins present. When set to %FALSE \nthe margins override one another (the default)."
+            }, 
+            {
+                "writable": false, 
+                "type": "String", 
+                "readable": false, 
+                "name": "background", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "background-full-height", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "background-full-height-set", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Gdk.Color", 
+                "readable": false, 
+                "name": "background-gdk", 
+                "description": "Background color as a #GdkColor."
+            }, 
+            {
+                "writable": false, 
+                "type": "Gdk.RGBA", 
+                "readable": false, 
+                "name": "background-rgba", 
+                "description": "Background color as a #GdkRGBA."
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "background-set", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Gtk.TextDirection", 
+                "readable": false, 
+                "name": "direction", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "editable", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "editable-set", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "String", 
+                "readable": false, 
+                "name": "family", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "family-set", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "String", 
+                "readable": false, 
+                "name": "font", 
+                "description": "Font description as string, e.g. \\\"Sans Italic 12\\\". \n\nNote that the initial value of this property depends on\nthe internals of #PangoFontDescription."
+            }, 
+            {
+                "writable": false, 
+                "type": "Pango.FontDescription", 
+                "readable": false, 
+                "name": "font-desc", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "String", 
+                "readable": false, 
+                "name": "foreground", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Gdk.Color", 
+                "readable": false, 
+                "name": "foreground-gdk", 
+                "description": "Foreground color as a #GdkColor."
+            }, 
+            {
+                "writable": false, 
+                "type": "Gdk.RGBA", 
+                "readable": false, 
+                "name": "foreground-rgba", 
+                "description": "Foreground color as a #GdkRGBA."
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "foreground-set", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Integer", 
+                "readable": false, 
+                "name": "indent", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "indent-set", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "invisible", 
+                "description": "Whether this text is hidden.\n\nNote that there may still be problems with the support for invisible \ntext, in particular when navigating programmatically inside a buffer\ncontaining invisible segments."
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "invisible-set", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Gtk.Justification", 
+                "readable": false, 
+                "name": "justification", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "justification-set", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "String", 
+                "readable": false, 
+                "name": "language", 
+                "description": "The language this text is in, as an ISO code. Pango can use this as a \nhint when rendering the text. If not set, an appropriate default will be \nused.\n\nNote that the initial value of this property depends on the current\nlocale, see also gtk_get_default_language()."
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "language-set", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Integer", 
+                "readable": false, 
+                "name": "left-margin", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "left-margin-set", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "String", 
+                "readable": false, 
+                "name": "name", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "String", 
+                "readable": false, 
+                "name": "paragraph-background", 
+                "description": "The paragraph background color as a string."
+            }, 
+            {
+                "writable": false, 
+                "type": "Gdk.Color", 
+                "readable": false, 
+                "name": "paragraph-background-gdk", 
+                "description": "The paragraph background color as a as a #GdkColor."
+            }, 
+            {
+                "writable": false, 
+                "type": "Gdk.RGBA", 
+                "readable": false, 
+                "name": "paragraph-background-rgba", 
+                "description": "The paragraph background color as a as a #GdkRGBA."
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "paragraph-background-set", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Integer", 
+                "readable": false, 
+                "name": "pixels-above-lines", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "pixels-above-lines-set", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Integer", 
+                "readable": false, 
+                "name": "pixels-below-lines", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "pixels-below-lines-set", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Integer", 
+                "readable": false, 
+                "name": "pixels-inside-wrap", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "pixels-inside-wrap-set", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Integer", 
+                "readable": false, 
+                "name": "right-margin", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "right-margin-set", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Integer", 
+                "readable": false, 
+                "name": "rise", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "rise-set", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Float", 
+                "readable": false, 
+                "name": "scale", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "scale-set", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Integer", 
+                "readable": false, 
+                "name": "size", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Float", 
+                "readable": false, 
+                "name": "size-points", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "size-set", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Pango.Stretch", 
+                "readable": false, 
+                "name": "stretch", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "stretch-set", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "strikethrough", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "strikethrough-set", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Pango.Style", 
+                "readable": false, 
+                "name": "style", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "style-set", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Pango.TabArray", 
+                "readable": false, 
+                "name": "tabs", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "tabs-set", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Pango.Underline", 
+                "readable": false, 
+                "name": "underline", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "underline-set", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Pango.Variant", 
+                "readable": false, 
+                "name": "variant", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "variant-set", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Integer", 
+                "readable": false, 
+                "name": "weight", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "weight-set", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Gtk.WrapMode", 
+                "readable": false, 
+                "name": "wrap-mode", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "wrap-mode-set", 
+                "description": ""
+            }
+        ]
+    }, 
+    "fullname": "Class Gtk.TextTag", 
+    "id": "Docs-TextTag", 
+    "description": "You may wish to begin by reading the <link linkend=\"TextWidget\">text widget\nconceptual overview</link> which gives an overview of all the objects and\ndata types related to the text widget and how they work together.\n\nTags should be in the #GtkTextTagTable for a given #GtkTextBuffer\nbefore using them with that buffer.\n\ngtk_text_buffer_create_tag() is the best way to create tags.\nSee <application>gtk3-demo</application> for numerous examples."
+}

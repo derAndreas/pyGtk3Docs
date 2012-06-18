@@ -1,0 +1,41 @@
+{
+    "leaf": true, 
+    "name": "RecentManagerError", 
+    "text": "RecentManagerError", 
+    "version": "2.10", 
+    "members": {
+        "properties": [
+            {
+                "name": "not_found", 
+                "value": "0"
+            }, 
+            {
+                "name": "invalid_uri", 
+                "value": "1"
+            }, 
+            {
+                "name": "invalid_encoding", 
+                "value": "2"
+            }, 
+            {
+                "name": "not_registered", 
+                "value": "3"
+            }, 
+            {
+                "name": "read", 
+                "value": "4"
+            }, 
+            {
+                "name": "write", 
+                "value": "5"
+            }, 
+            {
+                "name": "unknown", 
+                "value": "6"
+            }
+        ]
+    }, 
+    "fullname": "Enumeration Gtk.RecentManagerError", 
+    "id": "Docs-RecentManagerError", 
+    "description": ""
+}

@@ -1,0 +1,190 @@
+{
+    "isAbstract": false, 
+    "leaf": true, 
+    "name": "NumerableIcon", 
+    "text": "NumerableIcon", 
+    "interfaces": [
+        [
+            "Gio.Icon"
+        ]
+    ], 
+    "parents": [
+        "NumerableIcon", 
+        "Gio.EmblemedIcon"
+    ], 
+    "members": {
+        "signals": [], 
+        "methods": [
+            {
+                "returns": {
+                    "type": "Gio.Icon", 
+                    "description": "a #GIcon, or %NULL"
+                }, 
+                "version": "3.0", 
+                "name": "get_background_gicon", 
+                "parameters": null, 
+                "description": "Returns the #GIcon that was set as the base background image, or\n%NULL if there's none. The caller of this function does not own\na reference to the returned #GIcon."
+            }, 
+            {
+                "returns": {
+                    "type": "String", 
+                    "description": "an icon name, or %NULL"
+                }, 
+                "version": "3.0", 
+                "name": "get_background_icon_name", 
+                "parameters": null, 
+                "description": "Returns the icon name used as the base background image,\nor %NULL if there's none."
+            }, 
+            {
+                "returns": {
+                    "type": "Integer", 
+                    "description": "the currently displayed value"
+                }, 
+                "version": "3.0", 
+                "name": "get_count", 
+                "parameters": null, 
+                "description": "Returns the value currently displayed by @self."
+            }, 
+            {
+                "returns": {
+                    "type": "String", 
+                    "description": "the currently displayed label"
+                }, 
+                "version": "3.0", 
+                "name": "get_label", 
+                "parameters": null, 
+                "description": "Returns the currently displayed label of the icon, or %NULL."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.StyleContext", 
+                    "description": "a #GtkStyleContext, or %NULL."
+                }, 
+                "version": "3.0", 
+                "name": "get_style_context", 
+                "parameters": null, 
+                "description": "Returns the #GtkStyleContext used by the icon for theming,\nor %NULL if there's none.\n\nThis object is internal to GTK+ and should not be unreffed.\nUse g_object_ref() if you want to keep it around"
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "3.0", 
+                "name": "set_background_gicon", 
+                "parameters": [
+                    {
+                        "type": "Gio.Icon", 
+                        "name": "icon", 
+                        "description": "a #GIcon, or %NULL"
+                    }
+                ], 
+                "description": "Updates the icon to use @icon as the base background image.\nIf @icon is %NULL, @self will go back using style information\nor default theming for its background image.\n\nIf this method is called and an icon name was already set as\nbackground for the icon, @icon will be used, i.e. the last method\ncalled between gtk_numerable_icon_set_background_gicon() and\ngtk_numerable_icon_set_background_icon_name() has always priority."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "3.0", 
+                "name": "set_background_icon_name", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "icon_name", 
+                        "description": "an icon name, or %NULL"
+                    }
+                ], 
+                "description": "Updates the icon to use the icon named @icon_name from the\ncurrent icon theme as the base background image. If @icon_name\nis %NULL, @self will go back using style information or default\ntheming for its background image.\n\nIf this method is called and a #GIcon was already set as\nbackground for the icon, @icon_name will be used, i.e. the\nlast method called between gtk_numerable_icon_set_background_icon_name()\nand gtk_numerable_icon_set_background_gicon() has always priority."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "3.0", 
+                "name": "set_count", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "count", 
+                        "description": "a number between -99 and 99"
+                    }
+                ], 
+                "description": "Sets the currently displayed value of @self to @count.\n\nThe numeric value is always clamped to make it two digits, i.e.\nbetween -99 and 99. Setting a count of zero removes the emblem.\nIf this method is called, and a label was already set on the icon,\nit will automatically be reset to %NULL before rendering the number,\ni.e. the last method called between gtk_numerable_icon_set_count()\nand gtk_numerable_icon_set_label() has always priority."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "3.0", 
+                "name": "set_label", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "label", 
+                        "description": "a short label, or %NULL"
+                    }
+                ], 
+                "description": "Sets the currently displayed value of @self to the string\nin @label. Setting an empty label removes the emblem.\n\nNote that this is meant for displaying short labels, such as\nroman numbers, or single letters. For roman numbers, consider\nusing the Unicode characters U+2160 - U+217F. Strings longer\nthan two characters will likely not be rendered very well.\n\nIf this method is called, and a number was already set on the\nicon, it will automatically be reset to zero before rendering\nthe label, i.e. the last method called between\ngtk_numerable_icon_set_label() and gtk_numerable_icon_set_count()\nhas always priority."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "3.0", 
+                "name": "set_style_context", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.StyleContext", 
+                        "name": "style", 
+                        "description": "a #GtkStyleContext"
+                    }
+                ], 
+                "description": "Updates the icon to fetch theme information from the\ngiven #GtkStyleContext."
+            }
+        ], 
+        "properties": [
+            {
+                "writable": false, 
+                "type": "Gio.Icon", 
+                "readable": false, 
+                "name": "background-icon", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "String", 
+                "readable": false, 
+                "name": "background-icon-name", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Integer", 
+                "readable": false, 
+                "name": "count", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "String", 
+                "readable": false, 
+                "name": "label", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Gtk.StyleContext", 
+                "readable": false, 
+                "name": "style-context", 
+                "description": ""
+            }
+        ]
+    }, 
+    "fullname": "Class Gtk.NumerableIcon", 
+    "id": "Docs-NumerableIcon", 
+    "description": "GtkNumerableIcon is a subclass of #GEmblemedIcon that can\nshow a number or short string as an emblem. The number can\nbe overlayed on top of another emblem, if desired.\n\nIt supports theming by taking font and color information\nfrom a provided #GtkStyleContext; see\ngtk_numerable_icon_set_style_context().\n\n<example>\n<title>Typical numerable icons</title>\n<inlinegraphic fileref=\"numerableicon.png\" format=\"PNG\"/>\n<inlinegraphic fileref=\"numerableicon2.png\" format=\"PNG\"/>\n</example>"
+}

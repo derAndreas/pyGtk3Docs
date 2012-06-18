@@ -1,0 +1,33 @@
+{
+    "leaf": true, 
+    "name": "ButtonBoxStyle", 
+    "text": "ButtonBoxStyle", 
+    "version": null, 
+    "members": {
+        "properties": [
+            {
+                "name": "spread", 
+                "value": "1"
+            }, 
+            {
+                "name": "edge", 
+                "value": "2"
+            }, 
+            {
+                "name": "start", 
+                "value": "3"
+            }, 
+            {
+                "name": "end", 
+                "value": "4"
+            }, 
+            {
+                "name": "center", 
+                "value": "5"
+            }
+        ]
+    }, 
+    "fullname": "Enumeration Gtk.ButtonBoxStyle", 
+    "id": "Docs-ButtonBoxStyle", 
+    "description": ""
+}

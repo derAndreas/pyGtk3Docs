@@ -1,0 +1,527 @@
+{
+    "isAbstract": false, 
+    "leaf": true, 
+    "name": "Menu", 
+    "text": "Menu", 
+    "interfaces": [
+        [
+            "Atk.ImplementorIface"
+        ], 
+        [
+            "Buildable"
+        ]
+    ], 
+    "parents": [
+        "Menu", 
+        "MenuShell", 
+        "Container", 
+        "Widget", 
+        "GObject.InitiallyUnowned"
+    ], 
+    "members": {
+        "signals": [
+            {
+                "version": "", 
+                "when": "last", 
+                "name": "move-scroll", 
+                "description": ""
+            }
+        ], 
+        "methods": [
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a new #GtkMenu", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": null, 
+                "name": "Gtk.Menu()", 
+                "parameters": null
+            }, 
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a new #GtkMenu", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": "3.4", 
+                "name": "Gtk.Menu(Gio.MenuModel model)", 
+                "parameters": [
+                    {
+                        "type": "Gio.MenuModel", 
+                        "name": "model"
+                    }
+                ]
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.4", 
+                "name": "attach", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "child", 
+                        "description": "a #GtkMenuItem"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "left_attach", 
+                        "description": "The column number to attach the left side of the item to"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "right_attach", 
+                        "description": "The column number to attach the right side of the item to"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "top_attach", 
+                        "description": "The row number to attach the top of the item to"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "bottom_attach", 
+                        "description": "The row number to attach the bottom of the item to"
+                    }
+                ], 
+                "description": "Adds a new #GtkMenuItem to a (table) menu. The number of 'cells' that\nan item will occupy is specified by @left_attach, @right_attach,\n@top_attach and @bottom_attach. These each represent the leftmost,\nrightmost, uppermost and lower column and row numbers of the table.\n(Columns and rows are indexed from zero).\n\nNote that this function is not related to gtk_menu_detach()."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "attach_to_widget", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "attach_widget", 
+                        "description": "the #GtkWidget that the menu will be attached to"
+                    }, 
+                    {
+                        "type": "ref:Gtk.MenuDetachFunc", 
+                        "name": "detacher", 
+                        "description": "the user supplied callback function that will be called when the menu calls gtk_menu_detach()"
+                    }
+                ], 
+                "description": "Attaches the menu to the widget and provides a callback function\nthat will be invoked when the menu calls gtk_menu_detach() during\nits destruction."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "detach", 
+                "parameters": null, 
+                "description": "Detaches the menu from the widget to which it had been attached.\nThis function will call the callback function, @detacher, provided\nwhen the gtk_menu_attach_to_widget() function was called."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.AccelGroup", 
+                    "description": "the #GtkAccelGroup associated with the menu"
+                }, 
+                "version": "", 
+                "name": "get_accel_group", 
+                "parameters": null, 
+                "description": "Gets the #GtkAccelGroup which holds global accelerators for the\nmenu. See gtk_menu_set_accel_group()."
+            }, 
+            {
+                "returns": {
+                    "type": "String", 
+                    "description": "the accelerator path set on the menu."
+                }, 
+                "version": "2.14", 
+                "name": "get_accel_path", 
+                "parameters": null, 
+                "description": "Retrieves the accelerator path set on the menu."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.Widget", 
+                    "description": "the #GtkMenuItem that was last selected"
+                }, 
+                "version": "", 
+                "name": "get_active", 
+                "parameters": null, 
+                "description": "Returns the selected menu item from the menu.  This is used by the\n#GtkOptionMenu.\n\nin the menu.  If a selection has not yet been made, the\nfirst menu item is selected."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.Widget", 
+                    "description": "the #GtkWidget that the menu is attached to"
+                }, 
+                "version": "", 
+                "name": "get_attach_widget", 
+                "parameters": null, 
+                "description": "Returns the #GtkWidget that the menu is attached to."
+            }, 
+            {
+                "returns": {
+                    "type": "Integer", 
+                    "description": "the number of the monitor on which the menu should"
+                }, 
+                "version": "2.14", 
+                "name": "get_monitor", 
+                "parameters": null, 
+                "description": "Retrieves the number of the monitor on which to show the menu.\n\nbe popped up or -1, if no monitor has been set"
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "Whether the menu reserves toggle space"
+                }, 
+                "version": "2.18", 
+                "name": "get_reserve_toggle_size", 
+                "parameters": null, 
+                "description": "Returns whether the menu reserves space for toggles and\nicons, regardless of their actual presence."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE if the menu is currently torn off."
+                }, 
+                "version": "", 
+                "name": "get_tearoff_state", 
+                "parameters": null, 
+                "description": "Returns whether the menu is torn off.\nSee gtk_menu_set_tearoff_state()."
+            }, 
+            {
+                "returns": {
+                    "type": "String", 
+                    "description": "the title of the menu, or %NULL if the menu"
+                }, 
+                "version": "", 
+                "name": "get_title", 
+                "parameters": null, 
+                "description": "Returns the title of the menu. See gtk_menu_set_title().\n\nhas no title set on it. This string is owned by GTK+\nand should not be modified or freed."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "popdown", 
+                "parameters": null, 
+                "description": "Removes the menu from the screen."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "popup", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "parent_menu_shell", 
+                        "description": "the menu shell containing the triggering menu item, or %NULL"
+                    }, 
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "parent_menu_item", 
+                        "description": "the menu item whose activation triggered the popup, or %NULL"
+                    }, 
+                    {
+                        "type": "ref:Gtk.MenuPositionFunc", 
+                        "name": "func", 
+                        "description": "a user supplied function used to position the menu, or %NULL"
+                    }, 
+                    {
+                        "type": "Mixed", 
+                        "name": "data", 
+                        "description": "user supplied data to be passed to @func."
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "button", 
+                        "description": "the mouse button which was pressed to initiate the event."
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "activate_time", 
+                        "description": "the time at which the activation event occurred."
+                    }
+                ], 
+                "description": "Displays a menu and makes it available for selection.\n\nApplications can use this function to display context-sensitive\nmenus, and will typically supply %NULL for the @parent_menu_shell,\n@parent_menu_item, @func and @data parameters. The default menu\npositioning function will position the menu at the current mouse\ncursor position.\n\nThe @button parameter should be the mouse button pressed to initiate\nthe menu popup. If the menu popup was initiated by something other\nthan a mouse button press, such as a mouse button release or a keypress,\n@button should be 0.\n\nThe @activate_time parameter is used to conflict-resolve initiation\nof concurrent requests for mouse/keyboard grab requests. To function\nproperly, this needs to be the timestamp of the user event (such as\na mouse click or key press) that caused the initiation of the popup.\nOnly if no such event is available, gtk_get_current_event_time() can\nbe used instead."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "3.0", 
+                "name": "popup_for_device", 
+                "parameters": [
+                    {
+                        "type": "Gdk.Device", 
+                        "name": "device", 
+                        "description": "a #GdkDevice"
+                    }, 
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "parent_menu_shell", 
+                        "description": "the menu shell containing the triggering menu item, or %NULL"
+                    }, 
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "parent_menu_item", 
+                        "description": "the menu item whose activation triggered the popup, or %NULL"
+                    }, 
+                    {
+                        "type": "ref:Gtk.MenuPositionFunc", 
+                        "name": "func", 
+                        "description": "a user supplied function used to position the menu, or %NULL"
+                    }, 
+                    {
+                        "type": "Mixed", 
+                        "name": "data", 
+                        "description": "user supplied data to be passed to @func"
+                    }, 
+                    {
+                        "type": "GLib.DestroyNotify", 
+                        "name": "destroy", 
+                        "description": "destroy notify for @data"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "button", 
+                        "description": "the mouse button which was pressed to initiate the event"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "activate_time", 
+                        "description": "the time at which the activation event occurred"
+                    }
+                ], 
+                "description": "Displays a menu and makes it available for selection.\n\nApplications can use this function to display context-sensitive menus,\nand will typically supply %NULL for the @parent_menu_shell,\n@parent_menu_item, @func, @data and @destroy parameters. The default\nmenu positioning function will position the menu at the current position\nof @device (or its corresponding pointer).\n\nThe @button parameter should be the mouse button pressed to initiate\nthe menu popup. If the menu popup was initiated by something other than\na mouse button press, such as a mouse button release or a keypress,\n@button should be 0.\n\nThe @activate_time parameter is used to conflict-resolve initiation of\nconcurrent requests for mouse/keyboard grab requests. To function\nproperly, this needs to be the time stamp of the user event (such as\na mouse click or key press) that caused the initiation of the popup.\nOnly if no such event is available, gtk_get_current_event_time() can\nbe used instead."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "reorder_child", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "child", 
+                        "description": "the #GtkMenuItem to move"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "position", 
+                        "description": "the new position to place @child. Positions are numbered from 0 to n - 1"
+                    }
+                ], 
+                "description": "Moves @child to a new @position in the list of @menu\nchildren."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "reposition", 
+                "parameters": null, 
+                "description": "Repositions the menu according to its position function."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_accel_group", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.AccelGroup", 
+                        "name": "accel_group", 
+                        "description": "the #GtkAccelGroup to be associated with the menu."
+                    }
+                ], 
+                "description": "Set the #GtkAccelGroup which holds global accelerators for the\nmenu.  This accelerator group needs to also be added to all windows\nthat this menu is being used in with gtk_window_add_accel_group(),\nin order for those windows to support all the accelerators\ncontained in this group."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_accel_path", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "accel_path", 
+                        "description": "a valid accelerator path"
+                    }
+                ], 
+                "description": "Sets an accelerator path for this menu from which accelerator paths\nfor its immediate children, its menu items, can be constructed.\nThe main purpose of this function is to spare the programmer the\ninconvenience of having to call gtk_menu_item_set_accel_path() on\neach menu item that should support runtime user changable accelerators.\nInstead, by just calling gtk_menu_set_accel_path() on their parent,\neach menu item of this menu, that contains a label describing its\npurpose, automatically gets an accel path assigned.\n\nFor example, a menu containing menu items \"New\" and \"Exit\", will, after\n<literal>gtk_menu_set_accel_path (menu, \"&lt;Gnumeric-Sheet&gt;/File\");</literal>\nhas been called, assign its items the accel paths:\n<literal>\"&lt;Gnumeric-Sheet&gt;/File/New\"</literal> and <literal>\"&lt;Gnumeric-Sheet&gt;/File/Exit\"</literal>.\n\nAssigning accel paths to menu items then enables the user to change\ntheir accelerators at runtime. More details about accelerator paths\nand their default setups can be found at gtk_accel_map_add_entry().\n\nNote that @accel_path string will be stored in a #GQuark. Therefore,\nif you pass a static string, you can save some memory by interning\nit first with g_intern_static_string()."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_active", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "index", 
+                        "description": "the index of the menu item to select.  Iindex values are from 0 to n-1"
+                    }
+                ], 
+                "description": "Selects the specified menu item within the menu.  This is used by\nthe #GtkOptionMenu and should not be used by anyone else."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.4", 
+                "name": "set_monitor", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "monitor_num", 
+                        "description": "the number of the monitor on which the menu should be popped up"
+                    }
+                ], 
+                "description": "Informs GTK+ on which monitor a menu should be popped up.\nSee gdk_screen_get_monitor_geometry().\n\nThis function should be called from a #GtkMenuPositionFunc\nif the menu should not appear on the same monitor as the pointer.\nThis information can't be reliably inferred from the coordinates\nreturned by a #GtkMenuPositionFunc, since, for very long menus,\nthese coordinates may extend beyond the monitor boundaries or even\nthe screen boundaries."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.18", 
+                "name": "set_reserve_toggle_size", 
+                "parameters": [
+                    {
+                        "type": "Boolean", 
+                        "name": "reserve_toggle_size", 
+                        "description": "whether to reserve size for toggles"
+                    }
+                ], 
+                "description": "Sets whether the menu should reserve space for drawing toggles\nor icons, regardless of their actual presence."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.2", 
+                "name": "set_screen", 
+                "parameters": [
+                    {
+                        "type": "Gdk.Screen", 
+                        "name": "screen", 
+                        "description": "a #GdkScreen, or %NULL if the screen should be determined by the widget the menu is attached to"
+                    }
+                ], 
+                "description": "Sets the #GdkScreen on which the menu will be displayed."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_tearoff_state", 
+                "parameters": [
+                    {
+                        "type": "Boolean", 
+                        "name": "torn_off", 
+                        "description": "If %TRUE, menu is displayed as a tearoff menu."
+                    }
+                ], 
+                "description": "Changes the tearoff state of the menu.  A menu is normally\ndisplayed as drop down menu which persists as long as the menu is\nactive.  It can also be displayed as a tearoff menu which persists\nuntil it is closed or reattached."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_title", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "title", 
+                        "description": "a string containing the title for the menu"
+                    }
+                ], 
+                "description": "Sets the title string for the menu.\n\nThe title is displayed when the menu is shown as a tearoff\nmenu. If @title is %NULL, the menu will see if it is attached\nto a parent menu item, and if so it will try to use the same\ntext as that menu item's label."
+            }
+        ], 
+        "properties": [
+            {
+                "writable": false, 
+                "type": "Gtk.AccelGroup", 
+                "readable": false, 
+                "name": "accel-group", 
+                "description": "The accel group holding accelerators for the menu."
+            }, 
+            {
+                "writable": false, 
+                "type": "String", 
+                "readable": false, 
+                "name": "accel-path", 
+                "description": "An accel path used to conveniently construct accel paths of child items."
+            }, 
+            {
+                "writable": false, 
+                "type": "Integer", 
+                "readable": false, 
+                "name": "active", 
+                "description": "The index of the currently selected menu item, or -1 if no\nmenu item is selected."
+            }, 
+            {
+                "writable": false, 
+                "type": "Gtk.Widget", 
+                "readable": false, 
+                "name": "attach-widget", 
+                "description": "The widget the menu is attached to. Setting this property attaches\nthe menu without a #GtkMenuDetachFunc. If you need to use a detacher,\nuse gtk_menu_attach_to_widget() directly."
+            }, 
+            {
+                "writable": false, 
+                "type": "Integer", 
+                "readable": false, 
+                "name": "monitor", 
+                "description": "The monitor the menu will be popped up on."
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "reserve-toggle-size", 
+                "description": "A boolean that indicates whether the menu reserves space for\ntoggles and icons, regardless of their actual presence.\n\nThis property should only be changed from its default value\nfor special-purposes such as tabular menus. Regular menus that\nare connected to a menu bar or context menus should reserve\ntoggle space for consistency."
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "tearoff-state", 
+                "description": "A boolean that indicates whether the menu is torn-off."
+            }, 
+            {
+                "writable": false, 
+                "type": "String", 
+                "readable": false, 
+                "name": "tearoff-title", 
+                "description": ""
+            }
+        ]
+    }, 
+    "fullname": "Class Gtk.Menu", 
+    "id": "Docs-Menu", 
+    "description": "A #GtkMenu is a #GtkMenuShell that implements a drop down menu\nconsisting of a list of #GtkMenuItem objects which can be navigated\nand activated by the user to perform application functions.\n\nA #GtkMenu is most commonly dropped down by activating a\n#GtkMenuItem in a #GtkMenuBar or popped up by activating a\n#GtkMenuItem in another #GtkMenu.\n\nA #GtkMenu can also be popped up by activating a #GtkOptionMenu.\nOther composite widgets such as the #GtkNotebook can pop up a\n#GtkMenu as well.\n\nApplications can display a #GtkMenu as a popup menu by calling the \ngtk_menu_popup() function.  The example below shows how an application\ncan pop up a menu when the 3rd mouse button is pressed.  \n\n<example>\n<title>Connecting the popup signal handler.</title>\n<programlisting>\n/<!---->* connect our handler which will popup the menu *<!---->/\ng_signal_connect_swapped (window, \"button_press_event\",\nG_CALLBACK (my_popup_handler), menu);\n</programlisting>\n</example>\n\n<example>\n<title>Signal handler which displays a popup menu.</title>\n<programlisting>\nstatic gint\nmy_popup_handler (GtkWidget *widget, GdkEvent *event)\n{\nGtkMenu *menu;\nGdkEventButton *event_button;\n\ng_return_val_if_fail (widget != NULL, FALSE);\ng_return_val_if_fail (GTK_IS_MENU (widget), FALSE);\ng_return_val_if_fail (event != NULL, FALSE);\n\n/<!---->* The \"widget\" is the menu that was supplied when \n* g_signal_connect_swapped() was called.\n*<!---->/\nmenu = GTK_MENU (widget);\n\nif (event->type == GDK_BUTTON_PRESS)\n{\nevent_button = (GdkEventButton *) event;\nif (event_button->button == GDK_BUTTON_SECONDARY)\n{\ngtk_menu_popup (menu, NULL, NULL, NULL, NULL, \nevent_button->button, event_button->time);\nreturn TRUE;\n}\n}\n\nreturn FALSE;\n}\n</programlisting>\n</example>"
+}

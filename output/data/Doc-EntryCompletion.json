@@ -1,0 +1,563 @@
+{
+    "isAbstract": false, 
+    "leaf": true, 
+    "name": "EntryCompletion", 
+    "text": "EntryCompletion", 
+    "interfaces": [
+        [
+            "Buildable"
+        ], 
+        [
+            "CellLayout"
+        ]
+    ], 
+    "parents": [
+        "EntryCompletion", 
+        "GObject.Object"
+    ], 
+    "members": {
+        "signals": [
+            {
+                "version": "2.4", 
+                "when": "last", 
+                "name": "action-activated", 
+                "description": "Gets emitted when an action is activated."
+            }, 
+            {
+                "version": "2.12", 
+                "when": "last", 
+                "name": "cursor-on-match", 
+                "description": "Gets emitted when a match from the cursor is on a match\nof the list. The default behaviour is to replace the contents\nof the entry with the contents of the text column in the row\npointed to by @iter.\n\nNote that @model is the model that was passed to\ngtk_entry_completion_set_model()."
+            }, 
+            {
+                "version": "2.6", 
+                "when": "last", 
+                "name": "insert-prefix", 
+                "description": "Gets emitted when the inline autocompletion is triggered.\nThe default behaviour is to make the entry display the\nwhole prefix and select the newly inserted part.\n\nApplications may connect to this signal in order to insert only a\nsmaller part of the @prefix into the entry - e.g. the entry used in\nthe #GtkFileChooser inserts only the part of the prefix up to the\nnext '/'."
+            }, 
+            {
+                "version": "2.4", 
+                "when": "last", 
+                "name": "match-selected", 
+                "description": "Gets emitted when a match from the list is selected.\nThe default behaviour is to replace the contents of the\nentry with the contents of the text column in the row\npointed to by @iter.\n\nNote that @model is the model that was passed to\ngtk_entry_completion_set_model()."
+            }
+        ], 
+        "methods": [
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "A newly created #GtkEntryCompletion object", 
+                    "name": "ref:Gtk.EntryCompletion"
+                }, 
+                "version": "2.4", 
+                "name": "Gtk.EntryCompletion()", 
+                "parameters": null
+            }, 
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "A newly created #GtkEntryCompletion object", 
+                    "name": "ref:Gtk.EntryCompletion"
+                }, 
+                "version": "3.0", 
+                "name": "Gtk.EntryCompletion(Gtk.CellArea area)", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.CellArea", 
+                        "name": "area"
+                    }
+                ]
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.4", 
+                "name": "complete", 
+                "parameters": null, 
+                "description": "Requests a completion operation, or in other words a refiltering of the\ncurrent list with completions, using the current key. The completion list\nview will be updated accordingly."
+            }, 
+            {
+                "returns": {
+                    "type": "String", 
+                    "description": "The common prefix all rows starting with @key"
+                }, 
+                "version": "3.4", 
+                "name": "compute_prefix", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "key", 
+                        "description": "The text to complete for"
+                    }
+                ], 
+                "description": "Computes the common prefix that is shared by all rows in @completion\nthat start with @key. If no row matches @key, %NULL will be returned.\nNote that a text column must have been set for this function to work,\nsee gtk_entry_completion_set_text_column() for details. \n\nor %NULL if no row matches @key."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.4", 
+                "name": "delete_action", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "index_", 
+                        "description": "the index of the item to delete"
+                    }
+                ], 
+                "description": "Deletes the action at @index_ from @completion's action list."
+            }, 
+            {
+                "returns": {
+                    "type": "String", 
+                    "description": "the prefix for the current completion"
+                }, 
+                "version": "2.12", 
+                "name": "get_completion_prefix", 
+                "parameters": null, 
+                "description": "Get the original text entered by the user that triggered\nthe completion or %NULL if there's no completion ongoing."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.Widget", 
+                    "description": "The entry @completion has been attached to"
+                }, 
+                "version": "2.4", 
+                "name": "get_entry", 
+                "parameters": null, 
+                "description": "Gets the entry @completion has been attached to."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE if inline completion is turned on"
+                }, 
+                "version": "2.6", 
+                "name": "get_inline_completion", 
+                "parameters": null, 
+                "description": "Returns whether the common prefix of the possible completions should\nbe automatically inserted in the entry."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE if inline-selection mode is on"
+                }, 
+                "version": "2.12", 
+                "name": "get_inline_selection", 
+                "parameters": null, 
+                "description": "Returns %TRUE if inline-selection mode is turned on."
+            }, 
+            {
+                "returns": {
+                    "type": "Integer", 
+                    "description": "The currently used minimum key length"
+                }, 
+                "version": "2.4", 
+                "name": "get_minimum_key_length", 
+                "parameters": null, 
+                "description": "Returns the minimum key length as set for @completion."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.TreeModel", 
+                    "description": "A #GtkTreeModel, or %NULL if none"
+                }, 
+                "version": "2.4", 
+                "name": "get_model", 
+                "parameters": null, 
+                "description": "Returns the model the #GtkEntryCompletion is using as data source.\nReturns %NULL if the model is unset.\n\nis currently being used"
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE if popup completion is turned on"
+                }, 
+                "version": "2.6", 
+                "name": "get_popup_completion", 
+                "parameters": null, 
+                "description": "Returns whether the completions should be presented in a popup window."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE if the popup window will be resized to the width of"
+                }, 
+                "version": "2.8", 
+                "name": "get_popup_set_width", 
+                "parameters": null, 
+                "description": "Returns whether the  completion popup window will be resized to the\nwidth of the entry.\n\nthe entry"
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE if the popup window will appear regardless of the"
+                }, 
+                "version": "2.8", 
+                "name": "get_popup_single_match", 
+                "parameters": null, 
+                "description": "Returns whether the completion popup window will appear even if there is\nonly a single match.\n\nnumber of matches"
+            }, 
+            {
+                "returns": {
+                    "type": "Integer", 
+                    "description": "the column containing the strings"
+                }, 
+                "version": "2.6", 
+                "name": "get_text_column", 
+                "parameters": null, 
+                "description": "Returns the column in the model of @completion to get strings from."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.4", 
+                "name": "insert_action_markup", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "index_", 
+                        "description": "the index of the item to insert"
+                    }, 
+                    {
+                        "type": "String", 
+                        "name": "markup", 
+                        "description": "markup of the item to insert"
+                    }
+                ], 
+                "description": "Inserts an action in @completion's action item list at position @index_\nwith markup @markup."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.4", 
+                "name": "insert_action_text", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "index_", 
+                        "description": "the index of the item to insert"
+                    }, 
+                    {
+                        "type": "String", 
+                        "name": "text", 
+                        "description": "text of the item to insert"
+                    }
+                ], 
+                "description": "Inserts an action in @completion's action item list at position @index_\nwith text @text. If you want the action item to have markup, use\ngtk_entry_completion_insert_action_markup()."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.6", 
+                "name": "insert_prefix", 
+                "parameters": null, 
+                "description": "Requests a prefix insertion."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.6", 
+                "name": "set_inline_completion", 
+                "parameters": [
+                    {
+                        "type": "Boolean", 
+                        "name": "inline_completion", 
+                        "description": "%TRUE to do inline completion"
+                    }
+                ], 
+                "description": "Sets whether the common prefix of the possible completions should\nbe automatically inserted in the entry."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.12", 
+                "name": "set_inline_selection", 
+                "parameters": [
+                    {
+                        "type": "Boolean", 
+                        "name": "inline_selection", 
+                        "description": "%TRUE to do inline selection"
+                    }
+                ], 
+                "description": "Sets whether it is possible to cycle through the possible completions\ninside the entry."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.4", 
+                "name": "set_match_func", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.EntryCompletionMatchFunc", 
+                        "name": "func", 
+                        "description": "the #GtkEntryCompletionMatchFunc to use"
+                    }, 
+                    {
+                        "type": "Mixed", 
+                        "name": "func_data", 
+                        "description": "user data for @func"
+                    }, 
+                    {
+                        "type": "GLib.DestroyNotify", 
+                        "name": "func_notify", 
+                        "description": "destroy notify for @func_data."
+                    }
+                ], 
+                "description": "Sets the match function for @completion to be @func. The match function\nis used to determine if a row should or should not be in the completion\nlist."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.4", 
+                "name": "set_minimum_key_length", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "length", 
+                        "description": "the minimum length of the key in order to start completing"
+                    }
+                ], 
+                "description": "Requires the length of the search key for @completion to be at least\n@length. This is useful for long lists, where completing using a small\nkey takes a lot of time and will come up with meaningless results anyway\n(ie, a too large dataset)."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.4", 
+                "name": "set_model", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TreeModel", 
+                        "name": "model", 
+                        "description": "the #GtkTreeModel"
+                    }
+                ], 
+                "description": "Sets the model for a #GtkEntryCompletion. If @completion already has\na model set, it will remove it before setting the new model.\nIf model is %NULL, then it will unset the model."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.6", 
+                "name": "set_popup_completion", 
+                "parameters": [
+                    {
+                        "type": "Boolean", 
+                        "name": "popup_completion", 
+                        "description": "%TRUE to do popup completion"
+                    }
+                ], 
+                "description": "Sets whether the completions should be presented in a popup window."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.8", 
+                "name": "set_popup_set_width", 
+                "parameters": [
+                    {
+                        "type": "Boolean", 
+                        "name": "popup_set_width", 
+                        "description": "%TRUE to make the width of the popup the same as the entry"
+                    }
+                ], 
+                "description": "Sets whether the completion popup window will be resized to be the same\nwidth as the entry."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.8", 
+                "name": "set_popup_single_match", 
+                "parameters": [
+                    {
+                        "type": "Boolean", 
+                        "name": "popup_single_match", 
+                        "description": "%TRUE if the popup should appear even for a single match"
+                    }
+                ], 
+                "description": "Sets whether the completion popup window will appear even if there is\nonly a single match. You may want to set this to %FALSE if you\nare using <link linkend=\"GtkEntryCompletion--inline-completion\">inline\ncompletion</link>."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.4", 
+                "name": "set_text_column", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "column", 
+                        "description": "the column in the model of @completion to get strings from"
+                    }
+                ], 
+                "description": "Convenience function for setting up the most used case of this code: a\ncompletion list with just strings. This function will set up @completion\nto have a list displaying all (and just) strings in the completion list,\nand to get those strings from @column in the model of @completion.\n\nThis functions creates and adds a #GtkCellRendererText for the selected\ncolumn. If you need to set the text column, but don't want the cell\nrenderer, use g_object_set() to set the #GtkEntryCompletion:text-column\nproperty directly."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "action_activated", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "index_", 
+                        "description": ""
+                    }
+                ], 
+                "description": ""
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "cursor_on_match", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TreeModel", 
+                        "name": "model", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "ref:Gtk.TreeIter", 
+                        "name": "iter", 
+                        "description": ""
+                    }
+                ], 
+                "description": ""
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "insert_prefix", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "prefix", 
+                        "description": ""
+                    }
+                ], 
+                "description": ""
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "match_selected", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TreeModel", 
+                        "name": "model", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "ref:Gtk.TreeIter", 
+                        "name": "iter", 
+                        "description": ""
+                    }
+                ], 
+                "description": ""
+            }
+        ], 
+        "properties": [
+            {
+                "writable": false, 
+                "type": "Gtk.CellArea", 
+                "readable": false, 
+                "name": "cell-area", 
+                "description": "The #GtkCellArea used to layout cell renderers in the treeview column.\n\nIf no area is specified when creating the entry completion with gtk_entry_completion_new_with_area() \na horizontally oriented #GtkCellAreaBox will be used."
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "inline-completion", 
+                "description": "Determines whether the common prefix of the possible completions\nshould be inserted automatically in the entry. Note that this\nrequires text-column to be set, even if you are using a custom\nmatch function."
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "inline-selection", 
+                "description": "Determines whether the possible completions on the popup\nwill appear in the entry as you navigate through them."
+            }, 
+            {
+                "writable": false, 
+                "type": "Integer", 
+                "readable": false, 
+                "name": "minimum-key-length", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Gtk.TreeModel", 
+                "readable": false, 
+                "name": "model", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "popup-completion", 
+                "description": "Determines whether the possible completions should be\nshown in a popup window."
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "popup-set-width", 
+                "description": "Determines whether the completions popup window will be\nresized to the width of the entry."
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "popup-single-match", 
+                "description": "Determines whether the completions popup window will shown\nfor a single possible completion. You probably want to set\nthis to %FALSE if you are using\n<link linkend=\"GtkEntryCompletion--inline-completion\">inline\ncompletion</link>."
+            }, 
+            {
+                "writable": false, 
+                "type": "Integer", 
+                "readable": false, 
+                "name": "text-column", 
+                "description": "The column of the model containing the strings.\nNote that the strings must be UTF-8."
+            }
+        ]
+    }, 
+    "fullname": "Class Gtk.EntryCompletion", 
+    "id": "Docs-EntryCompletion", 
+    "description": "#GtkEntryCompletion is an auxiliary object to be used in conjunction with\n#GtkEntry to provide the completion functionality. It implements the\n#GtkCellLayout interface, to allow the user to add extra cells to the\n#GtkTreeView with completion matches.\n\n\"Completion functionality\" means that when the user modifies the text\nin the entry, #GtkEntryCompletion checks which rows in the model match\nthe current content of the entry, and displays a list of matches.\nBy default, the matching is done by comparing the entry text\ncase-insensitively against the text column of the model (see\ngtk_entry_completion_set_text_column()), but this can be overridden\nwith a custom match function (see gtk_entry_completion_set_match_func()).\n\nWhen the user selects a completion, the content of the entry is\nupdated. By default, the content of the entry is replaced by the\ntext column of the model, but this can be overridden by connecting\nto the #GtkEntryCompletion::match-selected signal and updating the\nentry in the signal handler. Note that you should return %TRUE from\nthe signal handler to suppress the default behaviour.\n\nTo add completion functionality to an entry, use gtk_entry_set_completion().\n\nIn addition to regular completion matches, which will be inserted into the\nentry when they are selected, #GtkEntryCompletion also allows to display\n\"actions\" in the popup window. Their appearance is similar to menuitems,\nto differentiate them clearly from completion strings. When an action is\nselected, the #GtkEntryCompletion::action-activated signal is emitted.\n\nGtkEntryCompletion uses a #GtkTreeModelFilter model to represent the\nsubset of the entire model that is currently matching. While the\nGtkEntryCompletion signals #GtkEntryCompletion::match-selected and\n#GtkEntryCompletion::cursor-on-match take the original model and an\niter pointing to that model as arguments, other callbacks and signals\n(such as #GtkCellLayoutDataFuncs or #GtkCellArea::apply-attributes)\nwill generally take the filter model as argument. As long as you are\nonly calling gtk_tree_model_get(), this will make no difference to\nyou. If for some reason, you need the original model, use\ngtk_tree_model_filter_get_model(). Don't forget to use\ngtk_tree_model_filter_convert_iter_to_child_iter() to obtain a\nmatching iter."
+}

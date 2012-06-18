@@ -1,0 +1,29 @@
+{
+    "leaf": true, 
+    "name": "TreeViewGridLines", 
+    "text": "TreeViewGridLines", 
+    "version": null, 
+    "members": {
+        "properties": [
+            {
+                "name": "none", 
+                "value": "0"
+            }, 
+            {
+                "name": "horizontal", 
+                "value": "1"
+            }, 
+            {
+                "name": "vertical", 
+                "value": "2"
+            }, 
+            {
+                "name": "both", 
+                "value": "3"
+            }
+        ]
+    }, 
+    "fullname": "Enumeration Gtk.TreeViewGridLines", 
+    "id": "Docs-TreeViewGridLines", 
+    "description": ""
+}

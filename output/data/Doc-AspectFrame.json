@@ -1,0 +1,122 @@
+{
+    "isAbstract": false, 
+    "leaf": true, 
+    "name": "AspectFrame", 
+    "text": "AspectFrame", 
+    "interfaces": [
+        [
+            "Atk.ImplementorIface"
+        ], 
+        [
+            "Buildable"
+        ]
+    ], 
+    "parents": [
+        "AspectFrame", 
+        "Frame", 
+        "Bin", 
+        "Container", 
+        "Widget", 
+        "GObject.InitiallyUnowned"
+    ], 
+    "members": {
+        "signals": [], 
+        "methods": [
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "the new #GtkAspectFrame.", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": null, 
+                "name": "Gtk.AspectFrame(String label, Float xalign, Float yalign, Float ratio, Boolean obey_child)", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "label"
+                    }, 
+                    {
+                        "type": "Float", 
+                        "name": "xalign"
+                    }, 
+                    {
+                        "type": "Float", 
+                        "name": "yalign"
+                    }, 
+                    {
+                        "type": "Float", 
+                        "name": "ratio"
+                    }, 
+                    {
+                        "type": "Boolean", 
+                        "name": "obey_child"
+                    }
+                ]
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set", 
+                "parameters": [
+                    {
+                        "type": "Float", 
+                        "name": "xalign", 
+                        "description": "Horizontal alignment of the child within the allocation of the #GtkAspectFrame. This ranges from 0.0 (left aligned) to 1.0 (right aligned)"
+                    }, 
+                    {
+                        "type": "Float", 
+                        "name": "yalign", 
+                        "description": "Vertical alignment of the child within the allocation of the #GtkAspectFrame. This ranges from 0.0 (left aligned) to 1.0 (right aligned)"
+                    }, 
+                    {
+                        "type": "Float", 
+                        "name": "ratio", 
+                        "description": "The desired aspect ratio."
+                    }, 
+                    {
+                        "type": "Boolean", 
+                        "name": "obey_child", 
+                        "description": "If %TRUE, @ratio is ignored, and the aspect ratio is taken from the requistion of the child."
+                    }
+                ], 
+                "description": "Set parameters for an existing #GtkAspectFrame."
+            }
+        ], 
+        "properties": [
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "obey-child", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Float", 
+                "readable": false, 
+                "name": "ratio", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Float", 
+                "readable": false, 
+                "name": "xalign", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Float", 
+                "readable": false, 
+                "name": "yalign", 
+                "description": ""
+            }
+        ]
+    }, 
+    "fullname": "Class Gtk.AspectFrame", 
+    "id": "Docs-AspectFrame", 
+    "description": "The #GtkAspectFrame is useful when you want\npack a widget so that it can resize but always retains\nthe same aspect ratio. For instance, one might be\ndrawing a small preview of a larger image. #GtkAspectFrame\nderives from #GtkFrame, so it can draw a label and\na frame around the child. The frame will be\n\"shrink-wrapped\" to the size of the child."
+}

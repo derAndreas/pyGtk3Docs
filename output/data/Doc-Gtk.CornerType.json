@@ -1,0 +1,29 @@
+{
+    "leaf": true, 
+    "name": "CornerType", 
+    "text": "CornerType", 
+    "version": null, 
+    "members": {
+        "properties": [
+            {
+                "name": "top_left", 
+                "value": "0"
+            }, 
+            {
+                "name": "bottom_left", 
+                "value": "1"
+            }, 
+            {
+                "name": "top_right", 
+                "value": "2"
+            }, 
+            {
+                "name": "bottom_right", 
+                "value": "3"
+            }
+        ]
+    }, 
+    "fullname": "Enumeration Gtk.CornerType", 
+    "id": "Docs-CornerType", 
+    "description": ""
+}

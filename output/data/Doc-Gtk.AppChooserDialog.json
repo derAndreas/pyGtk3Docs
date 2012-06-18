@@ -1,0 +1,132 @@
+{
+    "isAbstract": false, 
+    "leaf": true, 
+    "name": "AppChooserDialog", 
+    "text": "AppChooserDialog", 
+    "interfaces": [
+        [
+            "Atk.ImplementorIface"
+        ], 
+        [
+            "AppChooser"
+        ], 
+        [
+            "Buildable"
+        ]
+    ], 
+    "parents": [
+        "AppChooserDialog", 
+        "Dialog", 
+        "Window", 
+        "Bin", 
+        "Container", 
+        "Widget", 
+        "GObject.InitiallyUnowned"
+    ], 
+    "members": {
+        "signals": [], 
+        "methods": [
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a newly created #GtkAppChooserDialog", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": "3.0", 
+                "name": "Gtk.AppChooserDialog(Gtk.Window parent, Gtk.DialogFlags flags, Gio.File file)", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Window", 
+                        "name": "parent"
+                    }, 
+                    {
+                        "type": "ref:Gtk.DialogFlags", 
+                        "name": "flags"
+                    }, 
+                    {
+                        "type": "Gio.File", 
+                        "name": "file"
+                    }
+                ]
+            }, 
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a newly created #GtkAppChooserDialog", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": "3.0", 
+                "name": "Gtk.AppChooserDialog(Gtk.Window parent, Gtk.DialogFlags flags, String content_type)", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Window", 
+                        "name": "parent"
+                    }, 
+                    {
+                        "type": "ref:Gtk.DialogFlags", 
+                        "name": "flags"
+                    }, 
+                    {
+                        "type": "String", 
+                        "name": "content_type"
+                    }
+                ]
+            }, 
+            {
+                "returns": {
+                    "type": "String", 
+                    "description": "the text to display at the top of the dialog, or %NULL, in which"
+                }, 
+                "version": "", 
+                "name": "get_heading", 
+                "parameters": null, 
+                "description": "Returns the text to display at the top of the dialog.\n\ncase a default text is displayed"
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.Widget", 
+                    "description": "the #GtkAppChooserWidget of @self"
+                }, 
+                "version": "3.0", 
+                "name": "get_widget", 
+                "parameters": null, 
+                "description": "Returns the #GtkAppChooserWidget of this dialog."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_heading", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "heading", 
+                        "description": "a string containing Pango markup"
+                    }
+                ], 
+                "description": "Sets the text to display at the top of the dialog.\nIf the heading is not set, the dialog displays a default text."
+            }
+        ], 
+        "properties": [
+            {
+                "writable": false, 
+                "type": "Gio.File", 
+                "readable": false, 
+                "name": "gfile", 
+                "description": "The GFile used by the #GtkAppChooserDialog.\nThe dialog's #GtkAppChooserWidget content type will be guessed from the\nfile, if present."
+            }, 
+            {
+                "writable": false, 
+                "type": "String", 
+                "readable": false, 
+                "name": "heading", 
+                "description": "The text to show at the top of the dialog.\nThe string may contain Pango markup."
+            }
+        ]
+    }, 
+    "fullname": "Class Gtk.AppChooserDialog", 
+    "id": "Docs-AppChooserDialog", 
+    "description": "#GtkAppChooserDialog shows a #GtkAppChooserWidget inside a #GtkDialog.\n\nNote that #GtkAppChooserDialog does not have any interesting methods\nof its own. Instead, you should get the embedded #GtkAppChooserWidget\nusing gtk_app_chooser_dialog_get_widget() and call its methods if\nthe generic #GtkAppChooser interface is not sufficient for your needs.\n\nTo set the heading that is shown above the #GtkAppChooserWidget,\nuse gtk_app_chooser_dialog_set_heading()."
+}

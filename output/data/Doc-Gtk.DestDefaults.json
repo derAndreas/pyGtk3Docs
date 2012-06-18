@@ -1,0 +1,29 @@
+{
+    "leaf": true, 
+    "name": "DestDefaults", 
+    "text": "DestDefaults", 
+    "version": null, 
+    "members": {
+        "properties": [
+            {
+                "name": "motion", 
+                "value": "1"
+            }, 
+            {
+                "name": "highlight", 
+                "value": "2"
+            }, 
+            {
+                "name": "drop", 
+                "value": "4"
+            }, 
+            {
+                "name": "all", 
+                "value": "7"
+            }
+        ]
+    }, 
+    "fullname": "Bitfield Gtk.DestDefaults", 
+    "id": "Docs-DestDefaults", 
+    "description": ""
+}

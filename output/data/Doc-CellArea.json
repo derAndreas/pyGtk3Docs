@@ -1,0 +1,1606 @@
+{
+    "isAbstract": true, 
+    "leaf": true, 
+    "name": "CellArea", 
+    "text": "CellArea", 
+    "interfaces": [
+        [
+            "Buildable"
+        ], 
+        [
+            "CellLayout"
+        ]
+    ], 
+    "parents": [
+        "CellArea", 
+        "GObject.InitiallyUnowned"
+    ], 
+    "members": {
+        "signals": [
+            {
+                "version": "3.0", 
+                "when": "first", 
+                "name": "add-editable", 
+                "description": "Indicates that editing has started on @renderer and that @editable\nshould be added to the owning cell-layouting widget at @cell_area."
+            }, 
+            {
+                "version": "3.0", 
+                "when": "first", 
+                "name": "apply-attributes", 
+                "description": "This signal is emitted whenever applying attributes to @area from @model"
+            }, 
+            {
+                "version": "3.0", 
+                "when": "first", 
+                "name": "focus-changed", 
+                "description": "Indicates that focus changed on this @area. This signal\nis emitted either as a result of focus handling or event\nhandling.\n\nIt's possible that the signal is emitted even if the\ncurrently focused renderer did not change, this is\nbecause focus may change to the same renderer in the\nsame cell area for a different row of data."
+            }, 
+            {
+                "version": "3.0", 
+                "when": "first", 
+                "name": "remove-editable", 
+                "description": "Indicates that editing finished on @renderer and that @editable\nshould be removed from the owning cell-layouting widget."
+            }
+        ], 
+        "methods": [
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "Whether @area was successfully activated."
+                }, 
+                "version": "3.0", 
+                "name": "activate", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.CellAreaContext", 
+                        "name": "context", 
+                        "description": "the #GtkCellAreaContext in context with the current row data"
+                    }, 
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "widget", 
+                        "description": "the #GtkWidget that @area is rendering on"
+                    }, 
+                    {
+                        "type": "Gdk.Rectangle", 
+                        "name": "cell_area", 
+                        "description": "the size and location of @area relative to @widget's allocation"
+                    }, 
+                    {
+                        "type": "ref:Gtk.CellRendererState", 
+                        "name": "flags", 
+                        "description": "the #GtkCellRendererState flags for @area for this row of data."
+                    }, 
+                    {
+                        "type": "Boolean", 
+                        "name": "edit_only", 
+                        "description": "if %TRUE then only cell renderers that are %GTK_CELL_RENDERER_MODE_EDITABLE will be activated."
+                    }
+                ], 
+                "description": "Activates @area, usually by activating the currently focused\ncell, however some subclasses which embed widgets in the area\ncan also activate a widget if it currently has the focus."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "whether cell activation was successful"
+                }, 
+                "version": "3.0", 
+                "name": "activate_cell", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "widget", 
+                        "description": "the #GtkWidget that @area is rendering onto"
+                    }, 
+                    {
+                        "type": "ref:Gtk.CellRenderer", 
+                        "name": "renderer", 
+                        "description": "the #GtkCellRenderer in @area to activate"
+                    }, 
+                    {
+                        "type": "Gdk.Event", 
+                        "name": "event", 
+                        "description": "the #GdkEvent for which cell activation should occur"
+                    }, 
+                    {
+                        "type": "Gdk.Rectangle", 
+                        "name": "cell_area", 
+                        "description": "the #GdkRectangle in @widget relative coordinates of @renderer for the current row."
+                    }, 
+                    {
+                        "type": "ref:Gtk.CellRendererState", 
+                        "name": "flags", 
+                        "description": "the #GtkCellRendererState for @renderer"
+                    }
+                ], 
+                "description": "This is used by #GtkCellArea subclasses when handling events\nto activate cells, the base #GtkCellArea class activates cells\nfor keyboard events for free in its own GtkCellArea->activate()\nimplementation."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "3.0", 
+                "name": "add", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.CellRenderer", 
+                        "name": "renderer", 
+                        "description": "the #GtkCellRenderer to add to @area"
+                    }
+                ], 
+                "description": "Adds @renderer to @area with the default child cell properties."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "3.0", 
+                "name": "add_focus_sibling", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.CellRenderer", 
+                        "name": "renderer", 
+                        "description": "the #GtkCellRenderer expected to have focus"
+                    }, 
+                    {
+                        "type": "ref:Gtk.CellRenderer", 
+                        "name": "sibling", 
+                        "description": "the #GtkCellRenderer to add to @renderer's focus area"
+                    }
+                ], 
+                "description": "Adds @sibling to @renderer's focusable area, focus will be drawn\naround @renderer and all of its siblings if @renderer can\nfocus for a given row.\n\nEvents handled by focus siblings can also activate the given\nfocusable @renderer."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "3.0", 
+                "name": "add_with_properties", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.CellRenderer", 
+                        "name": "renderer", 
+                        "description": "a #GtkCellRenderer to be placed inside @area"
+                    }, 
+                    {
+                        "type": "String", 
+                        "name": "first_prop_name", 
+                        "description": "the name of the first cell property to set"
+                    }, 
+                    {
+                        "type": "ref:VarArg", 
+                        "name": null, 
+                        "description": ""
+                    }
+                ], 
+                "description": "Adds @renderer to @area, setting cell properties at the same time.\nSee gtk_cell_area_add() and gtk_cell_area_cell_set() for more details."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "3.0", 
+                "name": "apply_attributes", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TreeModel", 
+                        "name": "tree_model", 
+                        "description": "the #GtkTreeModel to pull values from"
+                    }, 
+                    {
+                        "type": "ref:Gtk.TreeIter", 
+                        "name": "iter", 
+                        "description": "the #GtkTreeIter in @tree_model to apply values for"
+                    }, 
+                    {
+                        "type": "Boolean", 
+                        "name": "is_expander", 
+                        "description": "whether @iter has children"
+                    }, 
+                    {
+                        "type": "Boolean", 
+                        "name": "is_expanded", 
+                        "description": "whether @iter is expanded in the view and children are visible"
+                    }
+                ], 
+                "description": "Applies any connected attributes to the renderers in\n@area by pulling the values from @tree_model."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "3.0", 
+                "name": "attribute_connect", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.CellRenderer", 
+                        "name": "renderer", 
+                        "description": "the #GtkCellRenderer to connect an attribute for"
+                    }, 
+                    {
+                        "type": "String", 
+                        "name": "attribute", 
+                        "description": "the attribute name"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "column", 
+                        "description": "the #GtkTreeModel column to fetch attribute values from"
+                    }
+                ], 
+                "description": "Connects an @attribute to apply values from @column for the\n#GtkTreeModel in use."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "3.0", 
+                "name": "attribute_disconnect", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.CellRenderer", 
+                        "name": "renderer", 
+                        "description": "the #GtkCellRenderer to disconnect an attribute for"
+                    }, 
+                    {
+                        "type": "String", 
+                        "name": "attribute", 
+                        "description": "the attribute name"
+                    }
+                ], 
+                "description": "Disconnects @attribute for the @renderer in @area so that\nattribute will no longer be updated with values from the\nmodel."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "3.0", 
+                "name": "cell_get", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.CellRenderer", 
+                        "name": "renderer", 
+                        "description": "a #GtkCellRenderer which is inside @area"
+                    }, 
+                    {
+                        "type": "String", 
+                        "name": "first_prop_name", 
+                        "description": "the name of the first cell property to get"
+                    }, 
+                    {
+                        "type": "ref:VarArg", 
+                        "name": null, 
+                        "description": ""
+                    }
+                ], 
+                "description": "Gets the values of one or more cell properties for @renderer in @area."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "3.0", 
+                "name": "cell_get_property", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.CellRenderer", 
+                        "name": "renderer", 
+                        "description": "a #GtkCellRenderer inside @area"
+                    }, 
+                    {
+                        "type": "String", 
+                        "name": "property_name", 
+                        "description": "the name of the property to get"
+                    }, 
+                    {
+                        "type": "GObject.Value", 
+                        "name": "value", 
+                        "description": "a location to return the value"
+                    }
+                ], 
+                "description": "Gets the value of a cell property for @renderer in @area."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "3.0", 
+                "name": "cell_get_valist", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.CellRenderer", 
+                        "name": "renderer", 
+                        "description": "a #GtkCellRenderer inside @area"
+                    }, 
+                    {
+                        "type": "String", 
+                        "name": "first_property_name", 
+                        "description": "the name of the first property to get"
+                    }, 
+                    {
+                        "type": "Mixed", 
+                        "name": "var_args", 
+                        "description": "return location for the first property, followed optionally by more name/return location pairs, followed by %NULL"
+                    }
+                ], 
+                "description": "Gets the values of one or more cell properties for @renderer in @area."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "3.0", 
+                "name": "cell_set", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.CellRenderer", 
+                        "name": "renderer", 
+                        "description": "a #GtkCellRenderer which is a cell inside @area"
+                    }, 
+                    {
+                        "type": "String", 
+                        "name": "first_prop_name", 
+                        "description": "the name of the first cell property to set"
+                    }, 
+                    {
+                        "type": "ref:VarArg", 
+                        "name": null, 
+                        "description": ""
+                    }
+                ], 
+                "description": "Sets one or more cell properties for @cell in @area."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "3.0", 
+                "name": "cell_set_property", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.CellRenderer", 
+                        "name": "renderer", 
+                        "description": "a #GtkCellRenderer inside @area"
+                    }, 
+                    {
+                        "type": "String", 
+                        "name": "property_name", 
+                        "description": "the name of the cell property to set"
+                    }, 
+                    {
+                        "type": "GObject.Value", 
+                        "name": "value", 
+                        "description": "the value to set the cell property to"
+                    }
+                ], 
+                "description": "Sets a cell property for @renderer in @area."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "3.0", 
+                "name": "cell_set_valist", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.CellRenderer", 
+                        "name": "renderer", 
+                        "description": "a #GtkCellRenderer which inside @area"
+                    }, 
+                    {
+                        "type": "String", 
+                        "name": "first_property_name", 
+                        "description": "the name of the first cell property to set"
+                    }, 
+                    {
+                        "type": "Mixed", 
+                        "name": "var_args", 
+                        "description": "a %NULL-terminated list of property names and values, starting with @first_prop_name"
+                    }
+                ], 
+                "description": "Sets one or more cell properties for @renderer in @area."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.CellAreaContext", 
+                    "description": "a newly created #GtkCellAreaContext copy of @context."
+                }, 
+                "version": "3.0", 
+                "name": "copy_context", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.CellAreaContext", 
+                        "name": "context", 
+                        "description": "the #GtkCellAreaContext to copy"
+                    }
+                ], 
+                "description": "This is sometimes needed for cases where rows need to share\nalignments in one orientation but may be separately grouped\nin the opposing orientation.\n\nFor instance, #GtkIconView creates all icons (rows) to have\nthe same width and the cells theirin to have the same\nhorizontal alignments. However each row of icons may have\na separate collective height. #GtkIconView uses this to\nrequest the heights of each row based on a context which\nwas already used to request all the row widths that are\nto be displayed."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.CellAreaContext", 
+                    "description": "a newly created #GtkCellAreaContext which can be used with @area."
+                }, 
+                "version": "3.0", 
+                "name": "create_context", 
+                "parameters": null, 
+                "description": "Creates a #GtkCellAreaContext to be used with @area for\nall purposes. #GtkCellAreaContext stores geometry information\nfor rows for which it was operated on, it is important to use\nthe same context for the same row of data at all times (i.e.\none should render and handle events with the same #GtkCellAreaContext\nwhich was used to request the size of those rows of data)."
+            }, 
+            {
+                "returns": {
+                    "type": "Integer", 
+                    "description": "%TRUE if the event was handled by @area."
+                }, 
+                "version": "3.0", 
+                "name": "event", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.CellAreaContext", 
+                        "name": "context", 
+                        "description": "the #GtkCellAreaContext for this row of data."
+                    }, 
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "widget", 
+                        "description": "the #GtkWidget that @area is rendering to"
+                    }, 
+                    {
+                        "type": "Gdk.Event", 
+                        "name": "event", 
+                        "description": "the #GdkEvent to handle"
+                    }, 
+                    {
+                        "type": "Gdk.Rectangle", 
+                        "name": "cell_area", 
+                        "description": "the @widget relative coordinates for @area"
+                    }, 
+                    {
+                        "type": "ref:Gtk.CellRendererState", 
+                        "name": "flags", 
+                        "description": "the #GtkCellRendererState for @area in this row."
+                    }
+                ], 
+                "description": "Delegates event handling to a #GtkCellArea."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE if focus remains inside @area as a result of this call."
+                }, 
+                "version": "3.0", 
+                "name": "focus", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.DirectionType", 
+                        "name": "direction", 
+                        "description": "the #GtkDirectionType"
+                    }
+                ], 
+                "description": "This should be called by the @area's owning layout widget\nwhen focus is to be passed to @area, or moved within @area\nfor a given @direction and row data.\n\nImplementing #GtkCellArea classes should implement this\nmethod to receive and navigate focus in its own way particular\nto how it lays out cells."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "3.0", 
+                "name": "foreach", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.CellCallback", 
+                        "name": "callback", 
+                        "description": "the #GtkCellCallback to call"
+                    }, 
+                    {
+                        "type": "Mixed", 
+                        "name": "callback_data", 
+                        "description": "user provided data pointer"
+                    }
+                ], 
+                "description": "Calls @callback for every #GtkCellRenderer in @area."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "3.0", 
+                "name": "foreach_alloc", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.CellAreaContext", 
+                        "name": "context", 
+                        "description": "the #GtkCellAreaContext for this row of data."
+                    }, 
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "widget", 
+                        "description": "the #GtkWidget that @area is rendering to"
+                    }, 
+                    {
+                        "type": "Gdk.Rectangle", 
+                        "name": "cell_area", 
+                        "description": "the @widget relative coordinates and size for @area"
+                    }, 
+                    {
+                        "type": "Gdk.Rectangle", 
+                        "name": "background_area", 
+                        "description": "the @widget relative coordinates of the background area"
+                    }, 
+                    {
+                        "type": "ref:Gtk.CellAllocCallback", 
+                        "name": "callback", 
+                        "description": "the #GtkCellAllocCallback to call"
+                    }, 
+                    {
+                        "type": "Mixed", 
+                        "name": "callback_data", 
+                        "description": "user provided data pointer"
+                    }
+                ], 
+                "description": "Calls @callback for every #GtkCellRenderer in @area with the\nallocated rectangle inside @cell_area."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "3.0", 
+                "name": "get_cell_allocation", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.CellAreaContext", 
+                        "name": "context", 
+                        "description": "the #GtkCellAreaContext used to hold sizes for @area."
+                    }, 
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "widget", 
+                        "description": "the #GtkWidget that @area is rendering on"
+                    }, 
+                    {
+                        "type": "ref:Gtk.CellRenderer", 
+                        "name": "renderer", 
+                        "description": "the #GtkCellRenderer to get the allocation for"
+                    }, 
+                    {
+                        "type": "Gdk.Rectangle", 
+                        "name": "cell_area", 
+                        "description": "the whole allocated area for @area in @widget for this row"
+                    }, 
+                    {
+                        "type": "Gdk.Rectangle", 
+                        "name": "allocation", 
+                        "description": "where to store the allocation for @renderer"
+                    }
+                ], 
+                "description": "Derives the allocation of @renderer inside @area if @area\nwere to be renderered in @cell_area."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.CellRenderer", 
+                    "description": "the #GtkCellRenderer at @x and @y."
+                }, 
+                "version": "3.0", 
+                "name": "get_cell_at_position", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.CellAreaContext", 
+                        "name": "context", 
+                        "description": "the #GtkCellAreaContext used to hold sizes for @area."
+                    }, 
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "widget", 
+                        "description": "the #GtkWidget that @area is rendering on"
+                    }, 
+                    {
+                        "type": "Gdk.Rectangle", 
+                        "name": "cell_area", 
+                        "description": "the whole allocated area for @area in @widget for this row"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "x", 
+                        "description": "the x position"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "y", 
+                        "description": "the y position"
+                    }, 
+                    {
+                        "type": "Gdk.Rectangle", 
+                        "name": "alloc_area", 
+                        "description": "where to store the inner allocated area of the returned cell renderer, or %NULL."
+                    }
+                ], 
+                "description": "Gets the #GtkCellRenderer at @x and @y coordinates inside @area and optionally\nreturns the full cell allocation for it inside @cell_area."
+            }, 
+            {
+                "returns": {
+                    "type": "String", 
+                    "description": "The current #GtkTreePath string for the current"
+                }, 
+                "version": "3.0", 
+                "name": "get_current_path_string", 
+                "parameters": null, 
+                "description": "Gets the current #GtkTreePath string for the currently\napplied #GtkTreeIter, this is implicitly updated when\ngtk_cell_area_apply_attributes() is called and can be\nused to interact with renderers from #GtkCellArea\nsubclasses.\n\nattributes applied to @area. This string belongs to the area and\nshould not be freed."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.CellEditable", 
+                    "description": "The currently active #GtkCellEditable widget"
+                }, 
+                "version": "3.0", 
+                "name": "get_edit_widget", 
+                "parameters": null, 
+                "description": "Gets the #GtkCellEditable widget currently used\nto edit the currently edited cell."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.CellRenderer", 
+                    "description": "The currently edited #GtkCellRenderer"
+                }, 
+                "version": "3.0", 
+                "name": "get_edited_cell", 
+                "parameters": null, 
+                "description": "Gets the #GtkCellRenderer in @area that is currently\nbeing edited."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.CellRenderer", 
+                    "description": "the currently focused cell in @area."
+                }, 
+                "version": "3.0", 
+                "name": "get_focus_cell", 
+                "parameters": null, 
+                "description": "Retrieves the currently focused cell for @area"
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.CellRenderer", 
+                    "description": "the #GtkCellRenderer for which @renderer"
+                }, 
+                "version": "3.0", 
+                "name": "get_focus_from_sibling", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.CellRenderer", 
+                        "name": "renderer", 
+                        "description": "the #GtkCellRenderer"
+                    }
+                ], 
+                "description": "Gets the #GtkCellRenderer which is expected to be focusable\nfor which @renderer is, or may be a sibling.\n\nThis is handy for #GtkCellArea subclasses when handling events,\nafter determining the renderer at the event location it can\nthen chose to activate the focus cell for which the event\ncell may have been a sibling.\n\nis a sibling, or %NULL."
+            }, 
+            {
+                "returns": {
+                    "type": "GLib.List", 
+                    "description": "A #GList of #GtkCellRenderers."
+                }, 
+                "version": "3.0", 
+                "name": "get_focus_siblings", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.CellRenderer", 
+                        "name": "renderer", 
+                        "description": "the #GtkCellRenderer expected to have focus"
+                    }
+                ], 
+                "description": "Gets the focus sibling cell renderers for @renderer.\n\nThe returned list is internal and should not be freed."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "3.0", 
+                "name": "get_preferred_height", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.CellAreaContext", 
+                        "name": "context", 
+                        "description": "the #GtkCellAreaContext to perform this request with"
+                    }, 
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "widget", 
+                        "description": "the #GtkWidget where @area will be rendering"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "minimum_height", 
+                        "description": "location to store the minimum height, or %NULL"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "natural_height", 
+                        "description": "location to store the natural height, or %NULL"
+                    }
+                ], 
+                "description": "Retrieves a cell area's initial minimum and natural height.\n\n@area will store some geometrical information in @context along the way,\nwhen requesting sizes over an arbitrary number of rows, its not important\nto check the @minimum_height and @natural_height of this call but rather to\nconsult gtk_cell_area_context_get_preferred_height() after a series of\nrequests."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "3.0", 
+                "name": "get_preferred_height_for_width", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.CellAreaContext", 
+                        "name": "context", 
+                        "description": "the #GtkCellAreaContext which has already been requested for widths."
+                    }, 
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "widget", 
+                        "description": "the #GtkWidget where @area will be rendering"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "width", 
+                        "description": "the width for which to check the height of this area"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "minimum_height", 
+                        "description": "location to store the minimum height, or %NULL"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "natural_height", 
+                        "description": "location to store the natural height, or %NULL"
+                    }
+                ], 
+                "description": "Retrieves a cell area's minimum and natural height if it would be given\nthe specified @width.\n\n@area stores some geometrical information in @context along the way\nwhile calling gtk_cell_area_get_preferred_width(). It's important to\nperform a series of gtk_cell_area_get_preferred_width() requests with\n@context first and then call gtk_cell_area_get_preferred_height_for_width()\non each cell area individually to get the height for width of each\nfully requested row.\n\nIf at some point, the width of a single row changes, it should be\nrequested with gtk_cell_area_get_preferred_width() again and then\nthe full width of the requested rows checked again with\ngtk_cell_area_context_get_preferred_width()."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "3.0", 
+                "name": "get_preferred_width", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.CellAreaContext", 
+                        "name": "context", 
+                        "description": "the #GtkCellAreaContext to perform this request with"
+                    }, 
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "widget", 
+                        "description": "the #GtkWidget where @area will be rendering"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "minimum_width", 
+                        "description": "location to store the minimum width, or %NULL"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "natural_width", 
+                        "description": "location to store the natural width, or %NULL"
+                    }
+                ], 
+                "description": "Retrieves a cell area's initial minimum and natural width.\n\n@area will store some geometrical information in @context along the way,\nwhen requesting sizes over an arbitrary number of rows, its not important\nto check the @minimum_width and @natural_width of this call but rather to\nconsult gtk_cell_area_context_get_preferred_width() after a series of\nrequests."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "3.0", 
+                "name": "get_preferred_width_for_height", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.CellAreaContext", 
+                        "name": "context", 
+                        "description": "the #GtkCellAreaContext which has already been requested for widths."
+                    }, 
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "widget", 
+                        "description": "the #GtkWidget where @area will be rendering"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "height", 
+                        "description": "the height for which to check the width of this area"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "minimum_width", 
+                        "description": "location to store the minimum width, or %NULL"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "natural_width", 
+                        "description": "location to store the natural width, or %NULL"
+                    }
+                ], 
+                "description": "Retrieves a cell area's minimum and natural width if it would be given\nthe specified @height.\n\n@area stores some geometrical information in @context along the way\nwhile calling gtk_cell_area_get_preferred_height(). It's important to\nperform a series of gtk_cell_area_get_preferred_height() requests with\n@context first and then call gtk_cell_area_get_preferred_width_for_height()\non each cell area individually to get the height for width of each\nfully requested row.\n\nIf at some point, the height of a single row changes, it should be\nrequested with gtk_cell_area_get_preferred_height() again and then\nthe full height of the requested rows checked again with\ngtk_cell_area_context_get_preferred_height()."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.SizeRequestMode", 
+                    "description": "The #GtkSizeRequestMode preferred by @area."
+                }, 
+                "version": "3.0", 
+                "name": "get_request_mode", 
+                "parameters": null, 
+                "description": "Gets whether the area prefers a height-for-width layout\nor a width-for-height layout."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE if @renderer is in the @area."
+                }, 
+                "version": "3.0", 
+                "name": "has_renderer", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.CellRenderer", 
+                        "name": "renderer", 
+                        "description": "the #GtkCellRenderer to check"
+                    }
+                ], 
+                "description": "Checks if @area contains @renderer."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "3.0", 
+                "name": "inner_cell_area", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "widget", 
+                        "description": "the #GtkWidget that @area is rendering onto"
+                    }, 
+                    {
+                        "type": "Gdk.Rectangle", 
+                        "name": "cell_area", 
+                        "description": "the @widget relative coordinates where one of @area's cells is to be placed"
+                    }, 
+                    {
+                        "type": "Gdk.Rectangle", 
+                        "name": "inner_area", 
+                        "description": "the return location for the inner cell area"
+                    }
+                ], 
+                "description": "This is a convenience function for #GtkCellArea implementations\nto get the inner area where a given #GtkCellRenderer will be\nrendered. It removes any padding previously added by gtk_cell_area_request_renderer()."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "whether @area can do anything when activated."
+                }, 
+                "version": "3.0", 
+                "name": "is_activatable", 
+                "parameters": null, 
+                "description": "Returns whether the area can do anything when activated,\nafter applying new attributes to @area."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE if @sibling is a focus sibling of @renderer"
+                }, 
+                "version": "3.0", 
+                "name": "is_focus_sibling", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.CellRenderer", 
+                        "name": "renderer", 
+                        "description": "the #GtkCellRenderer expected to have focus"
+                    }, 
+                    {
+                        "type": "ref:Gtk.CellRenderer", 
+                        "name": "sibling", 
+                        "description": "the #GtkCellRenderer to check against @renderer's sibling list"
+                    }
+                ], 
+                "description": "Returns whether @sibling is one of @renderer's focus siblings\n(see gtk_cell_area_add_focus_sibling())."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "3.0", 
+                "name": "remove", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.CellRenderer", 
+                        "name": "renderer", 
+                        "description": "the #GtkCellRenderer to remove from @area"
+                    }
+                ], 
+                "description": "Removes @renderer from @area."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "3.0", 
+                "name": "remove_focus_sibling", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.CellRenderer", 
+                        "name": "renderer", 
+                        "description": "the #GtkCellRenderer expected to have focus"
+                    }, 
+                    {
+                        "type": "ref:Gtk.CellRenderer", 
+                        "name": "sibling", 
+                        "description": "the #GtkCellRenderer to remove from @renderer's focus area"
+                    }
+                ], 
+                "description": "Removes @sibling from @renderer's focus sibling list\n(see gtk_cell_area_add_focus_sibling())."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "3.0", 
+                "name": "render", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.CellAreaContext", 
+                        "name": "context", 
+                        "description": "the #GtkCellAreaContext for this row of data."
+                    }, 
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "widget", 
+                        "description": "the #GtkWidget that @area is rendering to"
+                    }, 
+                    {
+                        "type": "cairo.Context", 
+                        "name": "cr", 
+                        "description": "the #cairo_t to render with"
+                    }, 
+                    {
+                        "type": "Gdk.Rectangle", 
+                        "name": "background_area", 
+                        "description": "the @widget relative coordinates for @area's background"
+                    }, 
+                    {
+                        "type": "Gdk.Rectangle", 
+                        "name": "cell_area", 
+                        "description": "the @widget relative coordinates for @area"
+                    }, 
+                    {
+                        "type": "ref:Gtk.CellRendererState", 
+                        "name": "flags", 
+                        "description": "the #GtkCellRendererState for @area in this row."
+                    }, 
+                    {
+                        "type": "Boolean", 
+                        "name": "paint_focus", 
+                        "description": "whether @area should paint focus on focused cells for focused rows or not."
+                    }
+                ], 
+                "description": "Renders @area's cells according to @area's layout onto @widget at\nthe given coordinates."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "3.0", 
+                "name": "request_renderer", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.CellRenderer", 
+                        "name": "renderer", 
+                        "description": "the #GtkCellRenderer to request size for"
+                    }, 
+                    {
+                        "type": "ref:Gtk.Orientation", 
+                        "name": "orientation", 
+                        "description": "the #GtkOrientation in which to request size"
+                    }, 
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "widget", 
+                        "description": "the #GtkWidget that @area is rendering onto"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "for_size", 
+                        "description": "the allocation contextual size to request for, or -1 if the base request for the orientation is to be returned."
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "minimum_size", 
+                        "description": "location to store the minimum size, or %NULL"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "natural_size", 
+                        "description": "location to store the natural size, or %NULL"
+                    }
+                ], 
+                "description": "This is a convenience function for #GtkCellArea implementations\nto request size for cell renderers. It's important to use this\nfunction to request size and then use gtk_cell_area_inner_cell_area()\nat render and event time since this function will add padding\naround the cell for focus painting."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "3.0", 
+                "name": "set_focus_cell", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.CellRenderer", 
+                        "name": "renderer", 
+                        "description": "the #GtkCellRenderer to give focus to"
+                    }
+                ], 
+                "description": "Explicitly sets the currently focused cell to @renderer.\n\nThis is generally called by implementations of\n#GtkCellAreaClass.focus() or #GtkCellAreaClass.event(),\nhowever it can also be used to implement functions such\nas gtk_tree_view_set_cursor_on_cell()."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "3.0", 
+                "name": "stop_editing", 
+                "parameters": [
+                    {
+                        "type": "Boolean", 
+                        "name": "canceled", 
+                        "description": "whether editing was canceled."
+                    }
+                ], 
+                "description": "Explicitly stops the editing of the currently edited cell.\n\nIf @canceled is %TRUE, the currently edited cell renderer\nwill emit the ::editing-canceled signal, otherwise the\nthe ::editing-done signal will be emitted on the current\nedit widget.\n\nSee gtk_cell_area_get_edited_cell() and gtk_cell_area_get_edit_widget()."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "Whether @area was successfully activated."
+                }, 
+                "version": "3.0", 
+                "name": "activate", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.CellAreaContext", 
+                        "name": "context", 
+                        "description": "the #GtkCellAreaContext in context with the current row data"
+                    }, 
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "widget", 
+                        "description": "the #GtkWidget that @area is rendering on"
+                    }, 
+                    {
+                        "type": "Gdk.Rectangle", 
+                        "name": "cell_area", 
+                        "description": "the size and location of @area relative to @widget's allocation"
+                    }, 
+                    {
+                        "type": "ref:Gtk.CellRendererState", 
+                        "name": "flags", 
+                        "description": "the #GtkCellRendererState flags for @area for this row of data."
+                    }, 
+                    {
+                        "type": "Boolean", 
+                        "name": "edit_only", 
+                        "description": "if %TRUE then only cell renderers that are %GTK_CELL_RENDERER_MODE_EDITABLE will be activated."
+                    }
+                ], 
+                "description": "Activates @area, usually by activating the currently focused\ncell, however some subclasses which embed widgets in the area\ncan also activate a widget if it currently has the focus."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "3.0", 
+                "name": "add", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.CellRenderer", 
+                        "name": "renderer", 
+                        "description": "the #GtkCellRenderer to add to @area"
+                    }
+                ], 
+                "description": "Adds @renderer to @area with the default child cell properties."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "3.0", 
+                "name": "apply_attributes", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TreeModel", 
+                        "name": "tree_model", 
+                        "description": "the #GtkTreeModel to pull values from"
+                    }, 
+                    {
+                        "type": "ref:Gtk.TreeIter", 
+                        "name": "iter", 
+                        "description": "the #GtkTreeIter in @tree_model to apply values for"
+                    }, 
+                    {
+                        "type": "Boolean", 
+                        "name": "is_expander", 
+                        "description": "whether @iter has children"
+                    }, 
+                    {
+                        "type": "Boolean", 
+                        "name": "is_expanded", 
+                        "description": "whether @iter is expanded in the view and children are visible"
+                    }
+                ], 
+                "description": "Applies any connected attributes to the renderers in\n@area by pulling the values from @tree_model."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.CellAreaContext", 
+                    "description": "a newly created #GtkCellAreaContext copy of @context."
+                }, 
+                "version": "3.0", 
+                "name": "copy_context", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.CellAreaContext", 
+                        "name": "context", 
+                        "description": "the #GtkCellAreaContext to copy"
+                    }
+                ], 
+                "description": "This is sometimes needed for cases where rows need to share\nalignments in one orientation but may be separately grouped\nin the opposing orientation.\n\nFor instance, #GtkIconView creates all icons (rows) to have\nthe same width and the cells theirin to have the same\nhorizontal alignments. However each row of icons may have\na separate collective height. #GtkIconView uses this to\nrequest the heights of each row based on a context which\nwas already used to request all the row widths that are\nto be displayed."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.CellAreaContext", 
+                    "description": "a newly created #GtkCellAreaContext which can be used with @area."
+                }, 
+                "version": "3.0", 
+                "name": "create_context", 
+                "parameters": null, 
+                "description": "Creates a #GtkCellAreaContext to be used with @area for\nall purposes. #GtkCellAreaContext stores geometry information\nfor rows for which it was operated on, it is important to use\nthe same context for the same row of data at all times (i.e.\none should render and handle events with the same #GtkCellAreaContext\nwhich was used to request the size of those rows of data)."
+            }, 
+            {
+                "returns": {
+                    "type": "Integer", 
+                    "description": "%TRUE if the event was handled by @area."
+                }, 
+                "version": "3.0", 
+                "name": "event", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.CellAreaContext", 
+                        "name": "context", 
+                        "description": "the #GtkCellAreaContext for this row of data."
+                    }, 
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "widget", 
+                        "description": "the #GtkWidget that @area is rendering to"
+                    }, 
+                    {
+                        "type": "Gdk.Event", 
+                        "name": "event", 
+                        "description": "the #GdkEvent to handle"
+                    }, 
+                    {
+                        "type": "Gdk.Rectangle", 
+                        "name": "cell_area", 
+                        "description": "the @widget relative coordinates for @area"
+                    }, 
+                    {
+                        "type": "ref:Gtk.CellRendererState", 
+                        "name": "flags", 
+                        "description": "the #GtkCellRendererState for @area in this row."
+                    }
+                ], 
+                "description": "Delegates event handling to a #GtkCellArea."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE if focus remains inside @area as a result of this call."
+                }, 
+                "version": "3.0", 
+                "name": "focus", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.DirectionType", 
+                        "name": "direction", 
+                        "description": "the #GtkDirectionType"
+                    }
+                ], 
+                "description": "This should be called by the @area's owning layout widget\nwhen focus is to be passed to @area, or moved within @area\nfor a given @direction and row data.\n\nImplementing #GtkCellArea classes should implement this\nmethod to receive and navigate focus in its own way particular\nto how it lays out cells."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "3.0", 
+                "name": "foreach", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.CellCallback", 
+                        "name": "callback", 
+                        "description": "the #GtkCellCallback to call"
+                    }, 
+                    {
+                        "type": "Mixed", 
+                        "name": "callback_data", 
+                        "description": "user provided data pointer"
+                    }
+                ], 
+                "description": "Calls @callback for every #GtkCellRenderer in @area."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "3.0", 
+                "name": "foreach_alloc", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.CellAreaContext", 
+                        "name": "context", 
+                        "description": "the #GtkCellAreaContext for this row of data."
+                    }, 
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "widget", 
+                        "description": "the #GtkWidget that @area is rendering to"
+                    }, 
+                    {
+                        "type": "Gdk.Rectangle", 
+                        "name": "cell_area", 
+                        "description": "the @widget relative coordinates and size for @area"
+                    }, 
+                    {
+                        "type": "Gdk.Rectangle", 
+                        "name": "background_area", 
+                        "description": "the @widget relative coordinates of the background area"
+                    }, 
+                    {
+                        "type": "ref:Gtk.CellAllocCallback", 
+                        "name": "callback", 
+                        "description": "the #GtkCellAllocCallback to call"
+                    }, 
+                    {
+                        "type": "Mixed", 
+                        "name": "callback_data", 
+                        "description": "user provided data pointer"
+                    }
+                ], 
+                "description": "Calls @callback for every #GtkCellRenderer in @area with the\nallocated rectangle inside @cell_area."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "get_cell_property", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.CellRenderer", 
+                        "name": "renderer", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "property_id", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "GObject.Value", 
+                        "name": "value", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "GObject.ParamSpec", 
+                        "name": "pspec", 
+                        "description": ""
+                    }
+                ], 
+                "description": ""
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "3.0", 
+                "name": "get_preferred_height", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.CellAreaContext", 
+                        "name": "context", 
+                        "description": "the #GtkCellAreaContext to perform this request with"
+                    }, 
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "widget", 
+                        "description": "the #GtkWidget where @area will be rendering"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "minimum_height", 
+                        "description": "location to store the minimum height, or %NULL"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "natural_height", 
+                        "description": "location to store the natural height, or %NULL"
+                    }
+                ], 
+                "description": "Retrieves a cell area's initial minimum and natural height.\n\n@area will store some geometrical information in @context along the way,\nwhen requesting sizes over an arbitrary number of rows, its not important\nto check the @minimum_height and @natural_height of this call but rather to\nconsult gtk_cell_area_context_get_preferred_height() after a series of\nrequests."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "3.0", 
+                "name": "get_preferred_height_for_width", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.CellAreaContext", 
+                        "name": "context", 
+                        "description": "the #GtkCellAreaContext which has already been requested for widths."
+                    }, 
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "widget", 
+                        "description": "the #GtkWidget where @area will be rendering"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "width", 
+                        "description": "the width for which to check the height of this area"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "minimum_height", 
+                        "description": "location to store the minimum height, or %NULL"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "natural_height", 
+                        "description": "location to store the natural height, or %NULL"
+                    }
+                ], 
+                "description": "Retrieves a cell area's minimum and natural height if it would be given\nthe specified @width.\n\n@area stores some geometrical information in @context along the way\nwhile calling gtk_cell_area_get_preferred_width(). It's important to\nperform a series of gtk_cell_area_get_preferred_width() requests with\n@context first and then call gtk_cell_area_get_preferred_height_for_width()\non each cell area individually to get the height for width of each\nfully requested row.\n\nIf at some point, the width of a single row changes, it should be\nrequested with gtk_cell_area_get_preferred_width() again and then\nthe full width of the requested rows checked again with\ngtk_cell_area_context_get_preferred_width()."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "3.0", 
+                "name": "get_preferred_width", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.CellAreaContext", 
+                        "name": "context", 
+                        "description": "the #GtkCellAreaContext to perform this request with"
+                    }, 
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "widget", 
+                        "description": "the #GtkWidget where @area will be rendering"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "minimum_width", 
+                        "description": "location to store the minimum width, or %NULL"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "natural_width", 
+                        "description": "location to store the natural width, or %NULL"
+                    }
+                ], 
+                "description": "Retrieves a cell area's initial minimum and natural width.\n\n@area will store some geometrical information in @context along the way,\nwhen requesting sizes over an arbitrary number of rows, its not important\nto check the @minimum_width and @natural_width of this call but rather to\nconsult gtk_cell_area_context_get_preferred_width() after a series of\nrequests."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "3.0", 
+                "name": "get_preferred_width_for_height", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.CellAreaContext", 
+                        "name": "context", 
+                        "description": "the #GtkCellAreaContext which has already been requested for widths."
+                    }, 
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "widget", 
+                        "description": "the #GtkWidget where @area will be rendering"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "height", 
+                        "description": "the height for which to check the width of this area"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "minimum_width", 
+                        "description": "location to store the minimum width, or %NULL"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "natural_width", 
+                        "description": "location to store the natural width, or %NULL"
+                    }
+                ], 
+                "description": "Retrieves a cell area's minimum and natural width if it would be given\nthe specified @height.\n\n@area stores some geometrical information in @context along the way\nwhile calling gtk_cell_area_get_preferred_height(). It's important to\nperform a series of gtk_cell_area_get_preferred_height() requests with\n@context first and then call gtk_cell_area_get_preferred_width_for_height()\non each cell area individually to get the height for width of each\nfully requested row.\n\nIf at some point, the height of a single row changes, it should be\nrequested with gtk_cell_area_get_preferred_height() again and then\nthe full height of the requested rows checked again with\ngtk_cell_area_context_get_preferred_height()."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.SizeRequestMode", 
+                    "description": "The #GtkSizeRequestMode preferred by @area."
+                }, 
+                "version": "3.0", 
+                "name": "get_request_mode", 
+                "parameters": null, 
+                "description": "Gets whether the area prefers a height-for-width layout\nor a width-for-height layout."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "whether @area can do anything when activated."
+                }, 
+                "version": "3.0", 
+                "name": "is_activatable", 
+                "parameters": null, 
+                "description": "Returns whether the area can do anything when activated,\nafter applying new attributes to @area."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "3.0", 
+                "name": "remove", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.CellRenderer", 
+                        "name": "renderer", 
+                        "description": "the #GtkCellRenderer to remove from @area"
+                    }
+                ], 
+                "description": "Removes @renderer from @area."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "3.0", 
+                "name": "render", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.CellAreaContext", 
+                        "name": "context", 
+                        "description": "the #GtkCellAreaContext for this row of data."
+                    }, 
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "widget", 
+                        "description": "the #GtkWidget that @area is rendering to"
+                    }, 
+                    {
+                        "type": "cairo.Context", 
+                        "name": "cr", 
+                        "description": "the #cairo_t to render with"
+                    }, 
+                    {
+                        "type": "Gdk.Rectangle", 
+                        "name": "background_area", 
+                        "description": "the @widget relative coordinates for @area's background"
+                    }, 
+                    {
+                        "type": "Gdk.Rectangle", 
+                        "name": "cell_area", 
+                        "description": "the @widget relative coordinates for @area"
+                    }, 
+                    {
+                        "type": "ref:Gtk.CellRendererState", 
+                        "name": "flags", 
+                        "description": "the #GtkCellRendererState for @area in this row."
+                    }, 
+                    {
+                        "type": "Boolean", 
+                        "name": "paint_focus", 
+                        "description": "whether @area should paint focus on focused cells for focused rows or not."
+                    }
+                ], 
+                "description": "Renders @area's cells according to @area's layout onto @widget at\nthe given coordinates."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_cell_property", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.CellRenderer", 
+                        "name": "renderer", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "property_id", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "GObject.Value", 
+                        "name": "value", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "GObject.ParamSpec", 
+                        "name": "pspec", 
+                        "description": ""
+                    }
+                ], 
+                "description": ""
+            }
+        ], 
+        "properties": [
+            {
+                "writable": false, 
+                "type": "Gtk.CellEditable", 
+                "readable": false, 
+                "name": "edit-widget", 
+                "description": "The widget currently editing the edited cell\n\nThis property is read-only and only changes as\na result of a call gtk_cell_area_activate_cell()."
+            }, 
+            {
+                "writable": false, 
+                "type": "Gtk.CellRenderer", 
+                "readable": false, 
+                "name": "edited-cell", 
+                "description": "The cell in the area that is currently edited\n\nThis property is read-only and only changes as\na result of a call gtk_cell_area_activate_cell()."
+            }, 
+            {
+                "writable": false, 
+                "type": "Gtk.CellRenderer", 
+                "readable": false, 
+                "name": "focus-cell", 
+                "description": "The cell in the area that currently has focus"
+            }
+        ]
+    }, 
+    "fullname": "Class Gtk.CellArea", 
+    "id": "Docs-CellArea", 
+    "description": "The #GtkCellArea is an abstract class for #GtkCellLayout widgets\n(also referred to as \"layouting widgets\") to interface with an\narbitrary number of #GtkCellRenderers and interact with the user\nfor a given #GtkTreeModel row.\n\nThe cell area handles events, focus navigation, drawing and\nsize requests and allocations for a given row of data.\n\nUsually users dont have to interact with the #GtkCellArea directly\nunless they are implementing a cell-layouting widget themselves.\n\n<refsect2 id=\"cell-area-geometry-management\">\n<title>Requesting area sizes</title>\n<para>\nAs outlined in <link linkend=\"geometry-management\">GtkWidget's\ngeometry management section</link>, GTK+ uses a height-for-width\ngeometry management system to compute the sizes of widgets and user\ninterfaces. #GtkCellArea uses the same semantics to calculate the\nsize of an area for an arbitrary number of #GtkTreeModel rows.\n\nWhen requesting the size of a cell area one needs to calculate\nthe size for a handful of rows, and this will be done differently by\ndifferent layouting widgets. For instance a #GtkTreeViewColumn\nalways lines up the areas from top to bottom while a #GtkIconView\non the other hand might enforce that all areas received the same\nwidth and wrap the areas around, requesting height for more cell\nareas when allocated less width.\n\nIt's also important for areas to maintain some cell\nalignments with areas rendered for adjacent rows (cells can\nappear \"columnized\" inside an area even when the size of\ncells are different in each row). For this reason the #GtkCellArea\nuses a #GtkCellAreaContext object to store the alignments\nand sizes along the way (as well as the overall largest minimum\nand natural size for all the rows which have been calculated\nwith the said context).\n\nThe #GtkCellAreaContext is an opaque object specific to the\n#GtkCellArea which created it (see gtk_cell_area_create_context()).\nThe owning cell-layouting widget can create as many contexts as\nit wishes to calculate sizes of rows which should receive the\nsame size in at least one orientation (horizontally or vertically),\nHowever, it's important that the same #GtkCellAreaContext which\nwas used to request the sizes for a given #GtkTreeModel row be\nused when rendering or processing events for that row.\n\nIn order to request the width of all the rows at the root level\nof a #GtkTreeModel one would do the following:\n<example>\n<title>Requesting the width of a handful of GtkTreeModel rows</title>\n<programlisting>\nGtkTreeIter iter;\ngint        minimum_width;\ngint        natural_width;\n\nvalid = gtk_tree_model_get_iter_first (model, &iter);\nwhile (valid)\n{\ngtk_cell_area_apply_attributes (area, model, &iter, FALSE, FALSE);\ngtk_cell_area_get_preferred_width (area, context, widget, NULL, NULL);\n\nvalid = gtk_tree_model_iter_next (model, &iter);\n}\ngtk_cell_area_context_get_preferred_width (context, &minimum_width, &natural_width);\n</programlisting>\n</example>\nNote that in this example it's not important to observe the\nreturned minimum and natural width of the area for each row\nunless the cell-layouting object is actually interested in the\nwidths of individual rows. The overall width is however stored\nin the accompanying #GtkCellAreaContext object and can be consulted\nat any time.\n\nThis can be useful since #GtkCellLayout widgets usually have to\nsupport requesting and rendering rows in treemodels with an\nexceedingly large amount of rows. The #GtkCellLayout widget in\nthat case would calculate the required width of the rows in an\nidle or timeout source (see g_timeout_add()) and when the widget\nis requested its actual width in #GtkWidgetClass.get_preferred_width()\nit can simply consult the width accumulated so far in the\n#GtkCellAreaContext object.\n\nA simple example where rows are rendered from top to bottom and\ntake up the full width of the layouting widget would look like:\n<example>\n<title>A typical get_preferred_width() implementation</title>\n<programlisting>\nstatic void\nfoo_get_preferred_width (GtkWidget       *widget,\ngint            *minimum_size,\ngint            *natural_size)\n{\nFoo        *foo  = FOO (widget);\nFooPrivate *priv = foo->priv;\n\nfoo_ensure_at_least_one_handfull_of_rows_have_been_requested (foo);\n\ngtk_cell_area_context_get_preferred_width (priv->context, minimum_size, natural_size);\n}\n</programlisting>\n</example>\nIn the above example the Foo widget has to make sure that some\nrow sizes have been calculated (the amount of rows that Foo judged\nwas appropriate to request space for in a single timeout iteration)\nbefore simply returning the amount of space required by the area via\nthe #GtkCellAreaContext.\n\nRequesting the height for width (or width for height) of an area is\na similar task except in this case the #GtkCellAreaContext does not\nstore the data (actually, it does not know how much space the layouting\nwidget plans to allocate it for every row. It's up to the layouting\nwidget to render each row of data with the appropriate height and\nwidth which was requested by the #GtkCellArea).\n\nIn order to request the height for width of all the rows at the\nroot level of a #GtkTreeModel one would do the following:\n<example>\n<title>Requesting the height for width of a handful of GtkTreeModel rows</title>\n<programlisting>\nGtkTreeIter iter;\ngint        minimum_height;\ngint        natural_height;\ngint        full_minimum_height = 0;\ngint        full_natural_height = 0;\n\nvalid = gtk_tree_model_get_iter_first (model, &iter);\nwhile (valid)\n{\ngtk_cell_area_apply_attributes (area, model, &iter, FALSE, FALSE);\ngtk_cell_area_get_preferred_height_for_width (area, context, widget,\nwidth, &minimum_height, &natural_height);\n\nif (width_is_for_allocation)\ncache_row_height (&iter, minimum_height, natural_height);\n\nfull_minimum_height += minimum_height;\nfull_natural_height += natural_height;\n\nvalid = gtk_tree_model_iter_next (model, &iter);\n}\n</programlisting>\n</example>\nNote that in the above example we would need to cache the heights\nreturned for each row so that we would know what sizes to render the\nareas for each row. However we would only want to really cache the\nheights if the request is intended for the layouting widgets real\nallocation.\n\nIn some cases the layouting widget is requested the height for an\narbitrary for_width, this is a special case for layouting widgets\nwho need to request size for tens of thousands  of rows. For this\ncase it's only important that the layouting widget calculate\none reasonably sized chunk of rows and return that height\nsynchronously. The reasoning here is that any layouting widget is\nat least capable of synchronously calculating enough height to fill\nthe screen height (or scrolled window height) in response to a single\ncall to #GtkWidgetClass.get_preferred_height_for_width(). Returning\na perfect height for width that is larger than the screen area is\ninconsequential since after the layouting receives an allocation\nfrom a scrolled window it simply continues to drive the the scrollbar\nvalues while more and more height is required for the row heights\nthat are calculated in the background.\n</para>\n</refsect2>\n<refsect2 id=\"cell-area-rendering\">\n<title>Rendering Areas</title>\n<para>\nOnce area sizes have been aquired at least for the rows in the\nvisible area of the layouting widget they can be rendered at\n#GtkWidgetClass.draw() time.\n\nA crude example of how to render all the rows at the root level\nruns as follows:\n<example>\n<title>Requesting the width of a handful of GtkTreeModel rows</title>\n<programlisting>\nGtkAllocation allocation;\nGdkRectangle  cell_area = { 0, };\nGtkTreeIter   iter;\ngint          minimum_width;\ngint          natural_width;\n\ngtk_widget_get_allocation (widget, &allocation);\ncell_area.width = allocation.width;\n\nvalid = gtk_tree_model_get_iter_first (model, &iter);\nwhile (valid)\n{\ncell_area.height = get_cached_height_for_row (&iter);\n\ngtk_cell_area_apply_attributes (area, model, &iter, FALSE, FALSE);\ngtk_cell_area_render (area, context, widget, cr,\n&cell_area, &cell_area, state_flags, FALSE);\n\ncell_area.y += cell_area.height;\n\nvalid = gtk_tree_model_iter_next (model, &iter);\n}\n</programlisting>\n</example>\nNote that the cached height in this example really depends on how\nthe layouting widget works. The layouting widget might decide to\ngive every row its minimum or natural height or, if the model content\nis expected to fit inside the layouting widget without scrolling, it\nwould make sense to calculate the allocation for each row at\n#GtkWidget::size-allocate time using gtk_distribute_natural_allocation().\n</para>\n</refsect2>\n<refsect2 id=\"cell-area-events-and-focus\">\n<title>Handling Events and Driving Keyboard Focus</title>\n<para>\nPassing events to the area is as simple as handling events on any\nnormal widget and then passing them to the gtk_cell_area_event()\nAPI as they come in. Usually #GtkCellArea is only interested in\nbutton events, however some customized derived areas can be implemented\nwho are interested in handling other events. Handling an event can\ntrigger the #GtkCellArea::focus-changed signal to fire; as well as\n#GtkCellArea::add-editable in the case that an editable cell was\nclicked and needs to start editing. You can call\ngtk_cell_area_stop_editing() at any time to cancel any cell editing\nthat is currently in progress.\n\nThe #GtkCellArea drives keyboard focus from cell to cell in a way\nsimilar to #GtkWidget. For layouting widgets that support giving\nfocus to cells it's important to remember to pass %GTK_CELL_RENDERER_FOCUSED\nto the area functions for the row that has focus and to tell the\narea to paint the focus at render time.\n\nLayouting widgets that accept focus on cells should implement the\n#GtkWidgetClass.focus() virtual method. The layouting widget is always\nresponsible for knowing where #GtkTreeModel rows are rendered inside\nthe widget, so at #GtkWidgetClass.focus() time the layouting widget\nshould use the #GtkCellArea methods to navigate focus inside the area\nand then observe the GtkDirectionType to pass the focus to adjacent\nrows and areas.\n\nA basic example of how the #GtkWidgetClass.focus() virtual method\nshould be implemented:\n<example>\n<title>Implementing keyboard focus navigation</title>\n<programlisting>\nstatic gboolean\nfoo_focus (GtkWidget       *widget,\nGtkDirectionType direction)\n{\nFoo        *foo  = FOO (widget);\nFooPrivate *priv = foo->priv;\ngint        focus_row;\ngboolean    have_focus = FALSE;\n\nfocus_row = priv->focus_row;\n\nif (!gtk_widget_has_focus (widget))\ngtk_widget_grab_focus (widget);\n\nvalid = gtk_tree_model_iter_nth_child (priv->model, &iter, NULL, priv->focus_row);\nwhile (valid)\n{\ngtk_cell_area_apply_attributes (priv->area, priv->model, &iter, FALSE, FALSE);\n\nif (gtk_cell_area_focus (priv->area, direction))\n{\npriv->focus_row = focus_row;\nhave_focus = TRUE;\nbreak;\n}\nelse\n{\nif (direction == GTK_DIR_RIGHT ||\ndirection == GTK_DIR_LEFT)\nbreak;\nelse if (direction == GTK_DIR_UP ||\ndirection == GTK_DIR_TAB_BACKWARD)\n{\nif (focus_row == 0)\nbreak;\nelse\n{\nfocus_row--;\nvalid = gtk_tree_model_iter_nth_child (priv->model, &iter, NULL, focus_row);\n}\n}\nelse\n{\nif (focus_row == last_row)\nbreak;\nelse\n{\nfocus_row++;\nvalid = gtk_tree_model_iter_next (priv->model, &iter);\n}\n}\n}\n}\nreturn have_focus;\n}\n</programlisting>\n</example>\nNote that the layouting widget is responsible for matching the\nGtkDirectionType values to the way it lays out its cells.\n</para>\n</refsect2>\n<refsect2 id=\"cell-properties\">\n<title>Cell Properties</title>\n<para>\nThe #GtkCellArea introduces <emphasis>cell properties</emphasis>\nfor #GtkCellRenderers in very much the same way that #GtkContainer\nintroduces <link linkend=\"child-properties\">child properties</link>\nfor #GtkWidgets. This provides some general interfaces for defining\nthe relationship cell areas have with their cells. For instance in a\n#GtkCellAreaBox a cell might \"expand\" and receive extra space when\nthe area is allocated more than its full natural request, or a cell\nmight be configured to \"align\" with adjacent rows which were requested\nand rendered with the same #GtkCellAreaContext.\n\nUse gtk_cell_area_class_install_cell_property() to install cell\nproperties for a cell area class and gtk_cell_area_class_find_cell_property()\nor gtk_cell_area_class_list_cell_properties() to get information about\nexisting cell properties.\n\nTo set the value of a cell property, use gtk_cell_area_cell_set_property(),\ngtk_cell_area_cell_set() or gtk_cell_area_cell_set_valist(). To obtain\nthe value of a cell property, use gtk_cell_area_cell_get_property(),\ngtk_cell_area_cell_get() or gtk_cell_area_cell_get_valist().\n</para>\n</refsect2>"
+}

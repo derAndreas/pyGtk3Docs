@@ -1,0 +1,370 @@
+{
+    "isAbstract": false, 
+    "leaf": true, 
+    "name": "Toolbar", 
+    "text": "Toolbar", 
+    "interfaces": [
+        [
+            "Atk.ImplementorIface"
+        ], 
+        [
+            "Buildable"
+        ], 
+        [
+            "Orientable"
+        ], 
+        [
+            "ToolShell"
+        ]
+    ], 
+    "parents": [
+        "Toolbar", 
+        "Container", 
+        "Widget", 
+        "GObject.InitiallyUnowned"
+    ], 
+    "members": {
+        "signals": [
+            {
+                "version": "", 
+                "when": "last", 
+                "name": "focus-home-or-end", 
+                "description": "A keybinding signal used internally by GTK+. This signal can't\nbe used in application code"
+            }, 
+            {
+                "version": "", 
+                "when": "first", 
+                "name": "orientation-changed", 
+                "description": "Emitted when the orientation of the toolbar changes."
+            }, 
+            {
+                "version": "", 
+                "when": "last", 
+                "name": "popup-context-menu", 
+                "description": "Emitted when the user right-clicks the toolbar or uses the\nkeybinding to display a popup menu.\n\nApplication developers should handle this signal if they want\nto display a context menu on the toolbar. The context-menu should\nappear at the coordinates given by @x and @y. The mouse button\nnumber is given by the @button parameter. If the menu was popped\nup using the keybaord, @button is -1."
+            }, 
+            {
+                "version": "", 
+                "when": "first", 
+                "name": "style-changed", 
+                "description": "Emitted when the style of the toolbar changes."
+            }
+        ], 
+        "methods": [
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "the newly-created toolbar.", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": null, 
+                "name": "Gtk.Toolbar()", 
+                "parameters": null
+            }, 
+            {
+                "returns": {
+                    "type": "Integer", 
+                    "description": "The position corresponding to the point (@x, @y) on the toolbar."
+                }, 
+                "version": "2.4", 
+                "name": "get_drop_index", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "x", 
+                        "description": "x coordinate of a point on the toolbar"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "y", 
+                        "description": "y coordinate of a point on the toolbar"
+                    }
+                ], 
+                "description": "Returns the position corresponding to the indicated point on\n@toolbar. This is useful when dragging items to the toolbar:\nthis function returns the position a new item should be\ninserted.\n\n@x and @y are in @toolbar coordinates."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.IconSize", 
+                    "description": "the current icon size for the icons on"
+                }, 
+                "version": "", 
+                "name": "get_icon_size", 
+                "parameters": null, 
+                "description": "Retrieves the icon size for the toolbar. See gtk_toolbar_set_icon_size().\n\nthe toolbar."
+            }, 
+            {
+                "returns": {
+                    "type": "Integer", 
+                    "description": "the position of item on the toolbar."
+                }, 
+                "version": "2.4", 
+                "name": "get_item_index", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.ToolItem", 
+                        "name": "item", 
+                        "description": "a #GtkToolItem that is a child of @toolbar"
+                    }
+                ], 
+                "description": "Returns the position of @item on the toolbar, starting from 0.\nIt is an error if @item is not a child of the toolbar."
+            }, 
+            {
+                "returns": {
+                    "type": "Integer", 
+                    "description": "the number of items on the toolbar"
+                }, 
+                "version": "2.4", 
+                "name": "get_n_items", 
+                "parameters": null, 
+                "description": "Returns the number of items on the toolbar."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.ToolItem", 
+                    "description": "The @n<!-- -->'th #GtkToolItem on @toolbar,"
+                }, 
+                "version": "2.4", 
+                "name": "get_nth_item", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "n", 
+                        "description": "A position on the toolbar"
+                    }
+                ], 
+                "description": "Returns the @n<!-- -->'th item on @toolbar, or %NULL if the\ntoolbar does not contain an @n<!-- -->'th item.\n\nor %NULL if there isn't an @n<!-- -->'th item."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.ReliefStyle", 
+                    "description": "The relief style of buttons on @toolbar."
+                }, 
+                "version": "2.4", 
+                "name": "get_relief_style", 
+                "parameters": null, 
+                "description": "Returns the relief style of buttons on @toolbar. See\ngtk_button_set_relief()."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE if the toolbar has an overflow menu."
+                }, 
+                "version": "2.4", 
+                "name": "get_show_arrow", 
+                "parameters": null, 
+                "description": "Returns whether the toolbar has an overflow menu.\nSee gtk_toolbar_set_show_arrow()."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.ToolbarStyle", 
+                    "description": "the current style of @toolbar"
+                }, 
+                "version": "", 
+                "name": "get_style", 
+                "parameters": null, 
+                "description": "Retrieves whether the toolbar has text, icons, or both . See\ngtk_toolbar_set_style()."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.4", 
+                "name": "insert", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.ToolItem", 
+                        "name": "item", 
+                        "description": "a #GtkToolItem"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "pos", 
+                        "description": "the position of the new item"
+                    }
+                ], 
+                "description": "Insert a #GtkToolItem into the toolbar at position @pos. If @pos is\n0 the item is prepended to the start of the toolbar. If @pos is\nnegative, the item is appended to the end of the toolbar."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.4", 
+                "name": "set_drop_highlight_item", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.ToolItem", 
+                        "name": "tool_item", 
+                        "description": "a #GtkToolItem, or %NULL to turn of highlighting"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "index_", 
+                        "description": "a position on @toolbar"
+                    }
+                ], 
+                "description": "Highlights @toolbar to give an idea of what it would look like\nif @item was added to @toolbar at the position indicated by @index_.\nIf @item is %NULL, highlighting is turned off. In that case @index_ \nis ignored.\n\nThe @tool_item passed to this function must not be part of any widget\nhierarchy. When an item is set as drop highlight item it can not\nadded to any widget hierarchy or used as highlight item for another\ntoolbar."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_icon_size", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.IconSize", 
+                        "name": "icon_size", 
+                        "description": "The #GtkIconSize that stock icons in the toolbar shall have."
+                    }
+                ], 
+                "description": "This function sets the size of stock icons in the toolbar. You\ncan call it both before you add the icons and after they've been\nadded. The size you set will override user preferences for the default\nicon size.\n\nThis should only be used for special-purpose toolbars, normal\napplication toolbars should respect the user preferences for the\nsize of icons."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.4", 
+                "name": "set_show_arrow", 
+                "parameters": [
+                    {
+                        "type": "Boolean", 
+                        "name": "show_arrow", 
+                        "description": "Whether to show an overflow menu"
+                    }
+                ], 
+                "description": "Sets whether to show an overflow menu when\n@toolbar doesn't have room for all items on it. If %TRUE,\nitems that there are not room are available through an\noverflow menu."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_style", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.ToolbarStyle", 
+                        "name": "style", 
+                        "description": "the new style for @toolbar."
+                    }
+                ], 
+                "description": "Alters the view of @toolbar to display either icons only, text only, or both."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "unset_icon_size", 
+                "parameters": null, 
+                "description": "Unsets toolbar icon size set with gtk_toolbar_set_icon_size(), so that\nuser preferences will be used to determine the icon size."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "unset_style", 
+                "parameters": null, 
+                "description": "Unsets a toolbar style set with gtk_toolbar_set_style(), so that\nuser preferences will be used to determine the toolbar style."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "orientation_changed", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Orientation", 
+                        "name": "orientation", 
+                        "description": ""
+                    }
+                ], 
+                "description": ""
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "popup_context_menu", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "x", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "y", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "button_number", 
+                        "description": ""
+                    }
+                ], 
+                "description": ""
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "style_changed", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.ToolbarStyle", 
+                        "name": "style", 
+                        "description": ""
+                    }
+                ], 
+                "description": ""
+            }
+        ], 
+        "properties": [
+            {
+                "writable": false, 
+                "type": "Integer", 
+                "readable": false, 
+                "name": "icon-size", 
+                "description": "The size of the icons in a toolbar is normally determined by\nthe toolbar-icon-size setting. When this property is set, it \noverrides the setting. \n\nThis should only be used for special-purpose toolbars, normal\napplication toolbars should respect the user preferences for the\nsize of icons."
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "icon-size-set", 
+                "description": "Is %TRUE if the icon-size property has been set."
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "show-arrow", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Gtk.ToolbarStyle", 
+                "readable": false, 
+                "name": "toolbar-style", 
+                "description": ""
+            }
+        ]
+    }, 
+    "fullname": "Class Gtk.Toolbar", 
+    "id": "Docs-Toolbar", 
+    "description": "A toolbar is created with a call to gtk_toolbar_new().\n\nA toolbar can contain instances of a subclass of #GtkToolItem. To add\na #GtkToolItem to the a toolbar, use gtk_toolbar_insert(). To remove\nan item from the toolbar use gtk_container_remove(). To add a button\nto the toolbar, add an instance of #GtkToolButton.\n\nToolbar items can be visually grouped by adding instances of\n#GtkSeparatorToolItem to the toolbar. If the GtkToolbar child property\n\"expand\" is #TRUE and the property #GtkSeparatorToolItem:draw is set to\n#FALSE, the effect is to force all following items to the end of the toolbar.\n\nCreating a context menu for the toolbar can be done by connecting to\nthe #GtkToolbar::popup-context-menu signal."
+}

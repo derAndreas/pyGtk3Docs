@@ -1,0 +1,33 @@
+{
+    "leaf": true, 
+    "name": "IconLookupFlags", 
+    "text": "IconLookupFlags", 
+    "version": null, 
+    "members": {
+        "properties": [
+            {
+                "name": "no_svg", 
+                "value": "1"
+            }, 
+            {
+                "name": "force_svg", 
+                "value": "2"
+            }, 
+            {
+                "name": "use_builtin", 
+                "value": "4"
+            }, 
+            {
+                "name": "generic_fallback", 
+                "value": "8"
+            }, 
+            {
+                "name": "force_size", 
+                "value": "16"
+            }
+        ]
+    }, 
+    "fullname": "Bitfield Gtk.IconLookupFlags", 
+    "id": "Docs-IconLookupFlags", 
+    "description": ""
+}

@@ -1,0 +1,49 @@
+{
+    "leaf": true, 
+    "name": "PrintStatus", 
+    "text": "PrintStatus", 
+    "version": null, 
+    "members": {
+        "properties": [
+            {
+                "name": "initial", 
+                "value": "0"
+            }, 
+            {
+                "name": "preparing", 
+                "value": "1"
+            }, 
+            {
+                "name": "generating_data", 
+                "value": "2"
+            }, 
+            {
+                "name": "sending_data", 
+                "value": "3"
+            }, 
+            {
+                "name": "pending", 
+                "value": "4"
+            }, 
+            {
+                "name": "pending_issue", 
+                "value": "5"
+            }, 
+            {
+                "name": "printing", 
+                "value": "6"
+            }, 
+            {
+                "name": "finished", 
+                "value": "7"
+            }, 
+            {
+                "name": "finished_aborted", 
+                "value": "8"
+            }
+        ]
+    }, 
+    "fullname": "Enumeration Gtk.PrintStatus", 
+    "id": "Docs-PrintStatus", 
+    "description": ""
+}

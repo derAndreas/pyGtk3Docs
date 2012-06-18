@@ -1,0 +1,41 @@
+{
+    "leaf": true, 
+    "name": "SpinType", 
+    "text": "SpinType", 
+    "version": null, 
+    "members": {
+        "properties": [
+            {
+                "name": "step_forward", 
+                "value": "0"
+            }, 
+            {
+                "name": "step_backward", 
+                "value": "1"
+            }, 
+            {
+                "name": "page_forward", 
+                "value": "2"
+            }, 
+            {
+                "name": "page_backward", 
+                "value": "3"
+            }, 
+            {
+                "name": "home", 
+                "value": "4"
+            }, 
+            {
+                "name": "end", 
+                "value": "5"
+            }, 
+            {
+                "name": "user_defined", 
+                "value": "6"
+            }
+        ]
+    }, 
+    "fullname": "Enumeration Gtk.SpinType", 
+    "id": "Docs-SpinType", 
+    "description": ""
+}

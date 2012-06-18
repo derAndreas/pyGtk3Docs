@@ -1,0 +1,168 @@
+{
+    "isAbstract": false, 
+    "leaf": true, 
+    "name": "CellRendererToggle", 
+    "text": "CellRendererToggle", 
+    "interfaces": [], 
+    "parents": [
+        "CellRendererToggle", 
+        "CellRenderer", 
+        "GObject.InitiallyUnowned"
+    ], 
+    "members": {
+        "signals": [
+            {
+                "version": "", 
+                "when": "last", 
+                "name": "toggled", 
+                "description": "The ::toggled signal is emitted when the cell is toggled."
+            }
+        ], 
+        "methods": [
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "the new cell renderer", 
+                    "name": "ref:Gtk.CellRenderer"
+                }, 
+                "version": null, 
+                "name": "Gtk.CellRendererToggle()", 
+                "parameters": null
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE if the cell renderer is activatable."
+                }, 
+                "version": "2.18", 
+                "name": "get_activatable", 
+                "parameters": null, 
+                "description": "Returns whether the cell renderer is activatable. See\ngtk_cell_renderer_toggle_set_activatable()."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE if the cell renderer is active."
+                }, 
+                "version": "", 
+                "name": "get_active", 
+                "parameters": null, 
+                "description": "Returns whether the cell renderer is active. See\ngtk_cell_renderer_toggle_set_active()."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE if we're rendering radio toggles rather than checkboxes"
+                }, 
+                "version": "", 
+                "name": "get_radio", 
+                "parameters": null, 
+                "description": "Returns whether we're rendering radio toggles rather than checkboxes."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.18", 
+                "name": "set_activatable", 
+                "parameters": [
+                    {
+                        "type": "Boolean", 
+                        "name": "setting", 
+                        "description": "the value to set."
+                    }
+                ], 
+                "description": "Makes the cell renderer activatable."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_active", 
+                "parameters": [
+                    {
+                        "type": "Boolean", 
+                        "name": "setting", 
+                        "description": "the value to set."
+                    }
+                ], 
+                "description": "Activates or deactivates a cell renderer."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_radio", 
+                "parameters": [
+                    {
+                        "type": "Boolean", 
+                        "name": "radio", 
+                        "description": "%TRUE to make the toggle look like a radio button"
+                    }
+                ], 
+                "description": "If @radio is %TRUE, the cell renderer renders a radio toggle\n(i.e. a toggle in a group of mutually-exclusive toggles).\nIf %FALSE, it renders a check toggle (a standalone boolean option).\nThis can be set globally for the cell renderer, or changed just\nbefore rendering each cell in the model (for #GtkTreeView, you set\nup a per-row setting using #GtkTreeViewColumn to associate model\ncolumns with cell renderer properties)."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "toggled", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "path", 
+                        "description": ""
+                    }
+                ], 
+                "description": ""
+            }
+        ], 
+        "properties": [
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "activatable", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "active", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "inconsistent", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Integer", 
+                "readable": false, 
+                "name": "indicator-size", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "radio", 
+                "description": ""
+            }
+        ]
+    }, 
+    "fullname": "Class Gtk.CellRendererToggle", 
+    "id": "Docs-CellRendererToggle", 
+    "description": "#GtkCellRendererToggle renders a toggle button in a cell. The\nbutton is drawn as a radio or a checkbutton, depending on the\n#GtkCellRendererToggle:radio property.\nWhen activated, it emits the #GtkCellRendererToggle::toggled signal."
+}

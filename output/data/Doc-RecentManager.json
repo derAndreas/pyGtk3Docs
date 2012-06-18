@@ -1,0 +1,188 @@
+{
+    "isAbstract": false, 
+    "leaf": true, 
+    "name": "RecentManager", 
+    "text": "RecentManager", 
+    "interfaces": [], 
+    "parents": [
+        "RecentManager", 
+        "GObject.Object"
+    ], 
+    "members": {
+        "signals": [
+            {
+                "version": "2.10", 
+                "when": "first", 
+                "name": "changed", 
+                "description": "Emitted when the current recently used resources manager changes its\ncontents, either by calling gtk_recent_manager_add_item() or by another\napplication."
+            }
+        ], 
+        "methods": [
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "A newly created #GtkRecentManager object.", 
+                    "name": "ref:Gtk.RecentManager"
+                }, 
+                "version": "2.10", 
+                "name": "Gtk.RecentManager()", 
+                "parameters": null
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE if the new item was successfully added to the"
+                }, 
+                "version": "2.10", 
+                "name": "add_full", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "uri", 
+                        "description": "a valid URI"
+                    }, 
+                    {
+                        "type": "ref:Gtk.RecentData", 
+                        "name": "recent_data", 
+                        "description": "metadata of the resource"
+                    }
+                ], 
+                "description": "Adds a new resource, pointed by @uri, into the recently used\nresources list, using the metadata specified inside the #GtkRecentData\nstructure passed in @recent_data.\n\nThe passed URI will be used to identify this resource inside the\nlist.\n\nIn order to register the new recently used resource, metadata about\nthe resource must be passed as well as the URI; the metadata is\nstored in a #GtkRecentData structure, which must contain the MIME\ntype of the resource pointed by the URI; the name of the application\nthat is registering the item, and a command line to be used when\nlaunching the item.\n\nOptionally, a #GtkRecentData structure might contain a UTF-8 string\nto be used when viewing the item instead of the last component of the\nURI; a short description of the item; whether the item should be\nconsidered private - that is, should be displayed only by the\napplications that have registered it.\n\nrecently used resources list, %FALSE otherwise."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE if the new item was successfully added"
+                }, 
+                "version": "2.10", 
+                "name": "add_item", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "uri", 
+                        "description": "a valid URI"
+                    }
+                ], 
+                "description": "Adds a new resource, pointed by @uri, into the recently used\nresources list.\n\nThis function automatically retrieves some of the needed\nmetadata and setting other metadata to common default values; it\nthen feeds the data to gtk_recent_manager_add_full().\n\nSee gtk_recent_manager_add_full() if you want to explicitly\ndefine the metadata for the resource pointed by @uri.\n\nto the recently used resources list"
+            }, 
+            {
+                "returns": {
+                    "type": "GLib.List", 
+                    "description": "a list of"
+                }, 
+                "version": "2.10", 
+                "name": "get_items", 
+                "parameters": null, 
+                "description": "Gets the list of recently used resources.\n\nnewly allocated #GtkRecentInfo objects. Use\ngtk_recent_info_unref() on each item inside the list, and then\nfree the list itself using g_list_free()."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE if the resource was found, %FALSE otherwise."
+                }, 
+                "version": "2.10", 
+                "name": "has_item", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "uri", 
+                        "description": "a URI"
+                    }
+                ], 
+                "description": "Checks whether there is a recently used resource registered\nwith @uri inside the recent manager."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.RecentInfo", 
+                    "description": "a #GtkRecentInfo structure containing information"
+                }, 
+                "version": "2.10", 
+                "name": "lookup_item", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "uri", 
+                        "description": "a URI"
+                    }
+                ], 
+                "description": "Searches for a URI inside the recently used resources list, and\nreturns a structure containing informations about the resource\nlike its MIME type, or its display name.\n\nabout the resource pointed by @uri, or %NULL if the URI was\nnot registered in the recently used resources list.  Free with\ngtk_recent_info_unref()."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE on success."
+                }, 
+                "version": "2.10", 
+                "name": "move_item", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "uri", 
+                        "description": "the URI of a recently used resource"
+                    }, 
+                    {
+                        "type": "String", 
+                        "name": "new_uri", 
+                        "description": "the new URI of the recently used resource, or %NULL to remove the item pointed by @uri in the list"
+                    }
+                ], 
+                "description": "Changes the location of a recently used resource from @uri to @new_uri.\n\nPlease note that this function will not affect the resource pointed\nby the URIs, but only the URI used in the recently used resources list."
+            }, 
+            {
+                "returns": {
+                    "type": "Integer", 
+                    "description": "the number of items that have been removed from the"
+                }, 
+                "version": "2.10", 
+                "name": "purge_items", 
+                "parameters": null, 
+                "description": "Purges every item from the recently used resources list.\n\nrecently used resources list."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE if the item pointed by @uri has been successfully"
+                }, 
+                "version": "2.10", 
+                "name": "remove_item", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "uri", 
+                        "description": "the URI of the item you wish to remove"
+                    }
+                ], 
+                "description": "Removes a resource pointed by @uri from the recently used resources\nlist handled by a recent manager.\n\nremoved by the recently used resources list, and %FALSE otherwise."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "changed", 
+                "parameters": null, 
+                "description": ""
+            }
+        ], 
+        "properties": [
+            {
+                "writable": false, 
+                "type": "String", 
+                "readable": false, 
+                "name": "filename", 
+                "description": "The full path to the file to be used to store and read the recently\nused resources list"
+            }, 
+            {
+                "writable": false, 
+                "type": "Integer", 
+                "readable": false, 
+                "name": "size", 
+                "description": "The size of the recently used resources list."
+            }
+        ]
+    }, 
+    "fullname": "Class Gtk.RecentManager", 
+    "id": "Docs-RecentManager", 
+    "description": "#GtkRecentManager provides a facility for adding, removing and\nlooking up recently used files. Each recently used file is\nidentified by its URI, and has meta-data associated to it, like\nthe names and command lines of the applications that have\nregistered it, the number of time each application has registered\nthe same file, the mime type of the file and whether the file\nshould be displayed only by the applications that have\nregistered it.\n\n<note><para>The recently used files list is per user.</para></note>\n\nThe #GtkRecentManager acts like a database of all the recently\nused files. You can create new #GtkRecentManager objects, but\nit is more efficient to use the default manager created by GTK+.\n\nAdding a new recently used file is as simple as:\n\n|[\nGtkRecentManager *manager;\n\nmanager = gtk_recent_manager_get_default ();\ngtk_recent_manager_add_item (manager, file_uri);\n]|\n\nThe #GtkRecentManager will try to gather all the needed information\nfrom the file itself through GIO.\n\nLooking up the meta-data associated with a recently used file\ngiven its URI requires calling gtk_recent_manager_lookup_item():\n\n|[\nGtkRecentManager *manager;\nGtkRecentInfo *info;\nGError *error = NULL;\n\nmanager = gtk_recent_manager_get_default ();\ninfo = gtk_recent_manager_lookup_item (manager, file_uri, &amp;error);\nif (error)\n{\ng_warning (\"Could not find the file: &percnt;s\", error-&gt;message);\ng_error_free (error);\n}\nelse\n{\n/&ast; Use the info object &ast;/\ngtk_recent_info_unref (info);\n}\n]|\n\nIn order to retrieve the list of recently used files, you can use\ngtk_recent_manager_get_items(), which returns a list of #GtkRecentInfo\nstructures.\n\nA #GtkRecentManager is the model used to populate the contents of\none, or more #GtkRecentChooser implementations.\n\n<note><para>The maximum age of the recently used files list is\ncontrollable through the #GtkSettings:gtk-recent-files-max-age\nproperty.</para></note>\n\nRecently used files are supported since GTK+ 2.10."
+}

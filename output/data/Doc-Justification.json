@@ -1,0 +1,29 @@
+{
+    "leaf": true, 
+    "name": "Justification", 
+    "text": "Justification", 
+    "version": null, 
+    "members": {
+        "properties": [
+            {
+                "name": "left", 
+                "value": "0"
+            }, 
+            {
+                "name": "right", 
+                "value": "1"
+            }, 
+            {
+                "name": "center", 
+                "value": "2"
+            }, 
+            {
+                "name": "fill", 
+                "value": "3"
+            }
+        ]
+    }, 
+    "fullname": "Enumeration Gtk.Justification", 
+    "id": "Docs-Justification", 
+    "description": ""
+}

@@ -1,0 +1,230 @@
+{
+    "isAbstract": false, 
+    "leaf": true, 
+    "name": "AppChooserButton", 
+    "text": "AppChooserButton", 
+    "interfaces": [
+        [
+            "Atk.ImplementorIface"
+        ], 
+        [
+            "AppChooser"
+        ], 
+        [
+            "Buildable"
+        ], 
+        [
+            "CellEditable"
+        ], 
+        [
+            "CellLayout"
+        ]
+    ], 
+    "parents": [
+        "AppChooserButton", 
+        "ComboBox", 
+        "Bin", 
+        "Container", 
+        "Widget", 
+        "GObject.InitiallyUnowned"
+    ], 
+    "members": {
+        "signals": [
+            {
+                "version": "", 
+                "when": "first", 
+                "name": "custom-item-activated", 
+                "description": "Emitted when a custom item, previously added with\ngtk_app_chooser_button_append_custom_item(), is activated from the\ndropdown menu."
+            }
+        ], 
+        "methods": [
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a newly created #GtkAppChooserButton", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": "3.0", 
+                "name": "Gtk.AppChooserButton(String content_type)", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "content_type"
+                    }
+                ]
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "3.0", 
+                "name": "append_custom_item", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "name", 
+                        "description": "the name of the custom item"
+                    }, 
+                    {
+                        "type": "String", 
+                        "name": "label", 
+                        "description": "the label for the custom item"
+                    }, 
+                    {
+                        "type": "Gio.Icon", 
+                        "name": "icon", 
+                        "description": "the icon for the custom item"
+                    }
+                ], 
+                "description": "Appends a custom item to the list of applications that is shown\nin the popup; the item name must be unique per-widget.\nClients can use the provided name as a detail for the\n#GtkAppChooserButton::custom-item-activated signal, to add a\ncallback for the activation of a particular custom item in the list.\nSee also gtk_app_chooser_button_append_separator()."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "3.0", 
+                "name": "append_separator", 
+                "parameters": null, 
+                "description": "Appends a separator to the list of applications that is shown\nin the popup."
+            }, 
+            {
+                "returns": {
+                    "type": "String", 
+                    "description": "the text to display at the top of the dialog,"
+                }, 
+                "version": "", 
+                "name": "get_heading", 
+                "parameters": null, 
+                "description": "Returns the text to display at the top of the dialog.\n\nor %NULL, in which case a default text is displayed"
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "the value of #GtkAppChooserButton:show-default-item"
+                }, 
+                "version": "3.2", 
+                "name": "get_show_default_item", 
+                "parameters": null, 
+                "description": "Returns the current value of the #GtkAppChooserButton:show-default-item\nproperty."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "the value of #GtkAppChooserButton:show-dialog-item"
+                }, 
+                "version": "3.0", 
+                "name": "get_show_dialog_item", 
+                "parameters": null, 
+                "description": "Returns the current value of the #GtkAppChooserButton:show-dialog-item\nproperty."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "3.0", 
+                "name": "set_active_custom_item", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "name", 
+                        "description": "the name of the custom item"
+                    }
+                ], 
+                "description": "Selects a custom item previously added with\ngtk_app_chooser_button_append_custom_item().\n\nUse gtk_app_chooser_refresh() to bring the selection\nto its initial state."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_heading", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "heading", 
+                        "description": "a string containing Pango markup"
+                    }
+                ], 
+                "description": "Sets the text to display at the top of the dialog.\nIf the heading is not set, the dialog displays a default text."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "3.2", 
+                "name": "set_show_default_item", 
+                "parameters": [
+                    {
+                        "type": "Boolean", 
+                        "name": "setting", 
+                        "description": "the new value for #GtkAppChooserButton:show-default-item"
+                    }
+                ], 
+                "description": "Sets whether the dropdown menu of this button should show the\ndefault application for the given content type at top."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "3.0", 
+                "name": "set_show_dialog_item", 
+                "parameters": [
+                    {
+                        "type": "Boolean", 
+                        "name": "setting", 
+                        "description": "the new value for #GtkAppChooserButton:show-dialog-item"
+                    }
+                ], 
+                "description": "Sets whether the dropdown menu of this button should show an\nentry to trigger a #GtkAppChooserDialog."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "custom_item_activated", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "item_name", 
+                        "description": ""
+                    }
+                ], 
+                "description": ""
+            }
+        ], 
+        "properties": [
+            {
+                "writable": false, 
+                "type": "String", 
+                "readable": false, 
+                "name": "heading", 
+                "description": "The text to show at the top of the dialog that can be\nopened from the button. The string may contain Pango markup."
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "show-default-item", 
+                "description": "The #GtkAppChooserButton:show-default-item property determines\nwhether the dropdown menu should show the default application\non top for the provided content type."
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "show-dialog-item", 
+                "description": "The #GtkAppChooserButton:show-dialog-item property determines\nwhether the dropdown menu should show an item that triggers\na #GtkAppChooserDialog when clicked."
+            }
+        ]
+    }, 
+    "fullname": "Class Gtk.AppChooserButton", 
+    "id": "Docs-AppChooserButton", 
+    "description": "The #GtkAppChooserButton is a widget that lets the user select\nan application. It implements the #GtkAppChooser interface.\n\nInitially, a #GtkAppChooserButton selects the first application\nin its list, which will either be the most-recently used application\nor, if #GtkAppChooserButton:show-default-item is %TRUE, the\ndefault application.\n\nThe list of applications shown in a #GtkAppChooserButton includes\nthe recommended applications for the given content type. When\n#GtkAppChooserButton:show-default-item is set, the default application\nis also included. To let the user chooser other applications,\nyou can set the #GtkAppChooserButton:show-dialog-item property,\nwhich allows to open a full #GtkAppChooserDialog.\n\nIt is possible to add custom items to the list, using\ngtk_app_chooser_button_append_custom_item(). These items cause\nthe #GtkAppChooserButton::custom-item-activated signal to be\nemitted when they are selected.\n\nTo track changes in the selected application, use the\n#GtkComboBox::changed signal."
+}

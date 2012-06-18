@@ -1,0 +1,192 @@
+{
+    "isAbstract": false, 
+    "leaf": true, 
+    "name": "RadioMenuItem", 
+    "text": "RadioMenuItem", 
+    "interfaces": [
+        [
+            "Atk.ImplementorIface"
+        ], 
+        [
+            "Activatable"
+        ], 
+        [
+            "Buildable"
+        ]
+    ], 
+    "parents": [
+        "RadioMenuItem", 
+        "CheckMenuItem", 
+        "MenuItem", 
+        "Bin", 
+        "Container", 
+        "Widget", 
+        "GObject.InitiallyUnowned"
+    ], 
+    "members": {
+        "signals": [
+            {
+                "version": "", 
+                "when": "first", 
+                "name": "group-changed", 
+                "description": ""
+            }
+        ], 
+        "methods": [
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a new #GtkRadioMenuItem", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": null, 
+                "name": "Gtk.RadioMenuItem(GLib.SList group)", 
+                "parameters": [
+                    {
+                        "type": "GLib.SList", 
+                        "name": "group"
+                    }
+                ]
+            }, 
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "The new #GtkRadioMenuItem", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": "2.4", 
+                "name": "Gtk.RadioMenuItem(Gtk.RadioMenuItem group)", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.RadioMenuItem", 
+                        "name": "group"
+                    }
+                ]
+            }, 
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "A new #GtkRadioMenuItem", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": null, 
+                "name": "Gtk.RadioMenuItem(GLib.SList group, String label)", 
+                "parameters": [
+                    {
+                        "type": "GLib.SList", 
+                        "name": "group"
+                    }, 
+                    {
+                        "type": "String", 
+                        "name": "label"
+                    }
+                ]
+            }, 
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "The new #GtkRadioMenuItem", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": "2.4", 
+                "name": "Gtk.RadioMenuItem(Gtk.RadioMenuItem group, String label)", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.RadioMenuItem", 
+                        "name": "group"
+                    }, 
+                    {
+                        "type": "String", 
+                        "name": "label"
+                    }
+                ]
+            }, 
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a new #GtkRadioMenuItem", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": null, 
+                "name": "Gtk.RadioMenuItem(GLib.SList group, String label)", 
+                "parameters": [
+                    {
+                        "type": "GLib.SList", 
+                        "name": "group"
+                    }, 
+                    {
+                        "type": "String", 
+                        "name": "label"
+                    }
+                ]
+            }, 
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "The new #GtkRadioMenuItem", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": "2.4", 
+                "name": "Gtk.RadioMenuItem(Gtk.RadioMenuItem group, String label)", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.RadioMenuItem", 
+                        "name": "group"
+                    }, 
+                    {
+                        "type": "String", 
+                        "name": "label"
+                    }
+                ]
+            }, 
+            {
+                "returns": {
+                    "type": "GLib.SList", 
+                    "description": "the group"
+                }, 
+                "version": "", 
+                "name": "get_group", 
+                "parameters": null, 
+                "description": "Returns the group to which the radio menu item belongs, as a #GList of\n#GtkRadioMenuItem. The list belongs to GTK+ and should not be freed.\n\nof @radio_menu_item"
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_group", 
+                "parameters": [
+                    {
+                        "type": "GLib.SList", 
+                        "name": "group", 
+                        "description": "the new group."
+                    }
+                ], 
+                "description": "Sets the group of a radio menu item, or changes it."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "group_changed", 
+                "parameters": null, 
+                "description": ""
+            }
+        ], 
+        "properties": [
+            {
+                "writable": false, 
+                "type": "Gtk.RadioMenuItem", 
+                "readable": false, 
+                "name": "group", 
+                "description": "The radio menu item whose group this widget belongs to."
+            }
+        ]
+    }, 
+    "fullname": "Class Gtk.RadioMenuItem", 
+    "id": "Docs-RadioMenuItem", 
+    "description": "A radio menu item is a check menu item that belongs to a group. At each\ninstant exactly one of the radio menu items from a group is selected.\n\nThe group list does not need to be freed, as each #GtkRadioMenuItem will\nremove itself and its list item when it is destroyed.\n\nThe correct way to create a group of radio menu items is approximatively\nthis:\n\n<example>\n<title>How to create a group of radio menu items.</title>\n<programlisting>\nGSList *group = NULL;\nGtkWidget *item;\ngint i;\n\nfor (i = 0; i < 5; i++)\n{\nitem = gtk_radio_menu_item_new_with_label (group, \"This is an example\");\ngroup = gtk_radio_menu_item_get_group (GTK_RADIO_MENU_ITEM (item));\nif (i == 1)\ngtk_check_menu_item_set_active (GTK_CHECK_MENU_ITEM (item), TRUE);\n}\n</programlisting>\n</example>"
+}

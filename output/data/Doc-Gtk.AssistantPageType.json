@@ -1,0 +1,37 @@
+{
+    "leaf": true, 
+    "name": "AssistantPageType", 
+    "text": "AssistantPageType", 
+    "version": null, 
+    "members": {
+        "properties": [
+            {
+                "name": "content", 
+                "value": "0"
+            }, 
+            {
+                "name": "intro", 
+                "value": "1"
+            }, 
+            {
+                "name": "confirm", 
+                "value": "2"
+            }, 
+            {
+                "name": "summary", 
+                "value": "3"
+            }, 
+            {
+                "name": "progress", 
+                "value": "4"
+            }, 
+            {
+                "name": "custom", 
+                "value": "5"
+            }
+        ]
+    }, 
+    "fullname": "Enumeration Gtk.AssistantPageType", 
+    "id": "Docs-AssistantPageType", 
+    "description": ""
+}

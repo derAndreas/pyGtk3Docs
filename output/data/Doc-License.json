@@ -1,0 +1,49 @@
+{
+    "leaf": true, 
+    "name": "License", 
+    "text": "License", 
+    "version": "3.0", 
+    "members": {
+        "properties": [
+            {
+                "name": "unknown", 
+                "value": "0"
+            }, 
+            {
+                "name": "custom", 
+                "value": "1"
+            }, 
+            {
+                "name": "gpl_2_0", 
+                "value": "2"
+            }, 
+            {
+                "name": "gpl_3_0", 
+                "value": "3"
+            }, 
+            {
+                "name": "lgpl_2_1", 
+                "value": "4"
+            }, 
+            {
+                "name": "lgpl_3_0", 
+                "value": "5"
+            }, 
+            {
+                "name": "bsd", 
+                "value": "6"
+            }, 
+            {
+                "name": "mit_x11", 
+                "value": "7"
+            }, 
+            {
+                "name": "artistic", 
+                "value": "8"
+            }
+        ]
+    }, 
+    "fullname": "Enumeration Gtk.License", 
+    "id": "Docs-License", 
+    "description": ""
+}

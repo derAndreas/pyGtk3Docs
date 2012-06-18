@@ -1,0 +1,45 @@
+{
+    "leaf": true, 
+    "name": "CssSectionType", 
+    "text": "CssSectionType", 
+    "version": "3.2", 
+    "members": {
+        "properties": [
+            {
+                "name": "document", 
+                "value": "0"
+            }, 
+            {
+                "name": "import", 
+                "value": "1"
+            }, 
+            {
+                "name": "color_definition", 
+                "value": "2"
+            }, 
+            {
+                "name": "binding_set", 
+                "value": "3"
+            }, 
+            {
+                "name": "ruleset", 
+                "value": "4"
+            }, 
+            {
+                "name": "selector", 
+                "value": "5"
+            }, 
+            {
+                "name": "declaration", 
+                "value": "6"
+            }, 
+            {
+                "name": "value", 
+                "value": "7"
+            }
+        ]
+    }, 
+    "fullname": "Enumeration Gtk.CssSectionType", 
+    "id": "Docs-CssSectionType", 
+    "description": ""
+}

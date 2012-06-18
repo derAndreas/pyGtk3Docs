@@ -1,0 +1,25 @@
+{
+    "leaf": true, 
+    "name": "PrintDuplex", 
+    "text": "PrintDuplex", 
+    "version": null, 
+    "members": {
+        "properties": [
+            {
+                "name": "simplex", 
+                "value": "0"
+            }, 
+            {
+                "name": "horizontal", 
+                "value": "1"
+            }, 
+            {
+                "name": "vertical", 
+                "value": "2"
+            }
+        ]
+    }, 
+    "fullname": "Enumeration Gtk.PrintDuplex", 
+    "id": "Docs-PrintDuplex", 
+    "description": ""
+}

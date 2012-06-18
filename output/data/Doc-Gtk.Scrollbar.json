@@ -1,0 +1,51 @@
+{
+    "isAbstract": false, 
+    "leaf": true, 
+    "name": "Scrollbar", 
+    "text": "Scrollbar", 
+    "interfaces": [
+        [
+            "Atk.ImplementorIface"
+        ], 
+        [
+            "Buildable"
+        ], 
+        [
+            "Orientable"
+        ]
+    ], 
+    "parents": [
+        "Scrollbar", 
+        "Range", 
+        "Widget", 
+        "GObject.InitiallyUnowned"
+    ], 
+    "members": {
+        "signals": [], 
+        "methods": [
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "the new #GtkScrollbar.", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": "3.0", 
+                "name": "Gtk.Scrollbar(Gtk.Orientation orientation, Gtk.Adjustment adjustment)", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Orientation", 
+                        "name": "orientation"
+                    }, 
+                    {
+                        "type": "ref:Gtk.Adjustment", 
+                        "name": "adjustment"
+                    }
+                ]
+            }
+        ], 
+        "properties": []
+    }, 
+    "fullname": "Class Gtk.Scrollbar", 
+    "id": "Docs-Scrollbar", 
+    "description": "The #GtkScrollbar widget is a horizontal or vertical scrollbar,\ndepending on the value of the #GtkOrientable:orientation property.\n\nThe position of the thumb in a scrollbar is controlled by the scroll\nadjustments. See #GtkAdjustment for the fields in an adjustment - for\n#GtkScrollbar, the #GtkAdjustment.value field represents the position\nof the scrollbar, which must be between the #GtkAdjustment.lower field\nand #GtkAdjustment.upper - #GtkAdjustment.page_size. The\n#GtkAdjustment.page_size field represents the size of the visible\nscrollable area. The #GtkAdjustment.step_increment and\n#GtkAdjustment.page_increment fields are used when the user asks to\nstep down (using the small stepper arrows) or page down (using for\nexample the <keycap>PageDown</keycap> key)."
+}

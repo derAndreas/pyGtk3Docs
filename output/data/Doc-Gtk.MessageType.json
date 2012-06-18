@@ -1,0 +1,33 @@
+{
+    "leaf": true, 
+    "name": "MessageType", 
+    "text": "MessageType", 
+    "version": null, 
+    "members": {
+        "properties": [
+            {
+                "name": "info", 
+                "value": "0"
+            }, 
+            {
+                "name": "warning", 
+                "value": "1"
+            }, 
+            {
+                "name": "question", 
+                "value": "2"
+            }, 
+            {
+                "name": "error", 
+                "value": "3"
+            }, 
+            {
+                "name": "other", 
+                "value": "4"
+            }
+        ]
+    }, 
+    "fullname": "Enumeration Gtk.MessageType", 
+    "id": "Docs-MessageType", 
+    "description": ""
+}

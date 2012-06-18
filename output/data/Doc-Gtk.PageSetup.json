@@ -1,0 +1,428 @@
+{
+    "isAbstract": false, 
+    "leaf": true, 
+    "name": "PageSetup", 
+    "text": "PageSetup", 
+    "interfaces": [], 
+    "parents": [
+        "PageSetup", 
+        "GObject.Object"
+    ], 
+    "members": {
+        "signals": [], 
+        "methods": [
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a new #GtkPageSetup.", 
+                    "name": "ref:Gtk.PageSetup"
+                }, 
+                "version": "2.10", 
+                "name": "Gtk.PageSetup()", 
+                "parameters": null
+            }, 
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "the restored #GtkPageSetup", 
+                    "name": "ref:Gtk.PageSetup"
+                }, 
+                "version": "2.12", 
+                "name": "Gtk.PageSetup(String file_name)", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "file_name"
+                    }
+                ]
+            }, 
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "the restored #GtkPageSetup", 
+                    "name": "ref:Gtk.PageSetup"
+                }, 
+                "version": "2.12", 
+                "name": "Gtk.PageSetup(GLib.KeyFile key_file, String group_name)", 
+                "parameters": [
+                    {
+                        "type": "GLib.KeyFile", 
+                        "name": "key_file"
+                    }, 
+                    {
+                        "type": "String", 
+                        "name": "group_name"
+                    }
+                ]
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.PageSetup", 
+                    "description": "a copy of @other"
+                }, 
+                "version": "2.10", 
+                "name": "copy", 
+                "parameters": null, 
+                "description": "Copies a #GtkPageSetup."
+            }, 
+            {
+                "returns": {
+                    "type": "Float", 
+                    "description": "the bottom margin"
+                }, 
+                "version": "2.10", 
+                "name": "get_bottom_margin", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Unit", 
+                        "name": "unit", 
+                        "description": "the unit for the return value"
+                    }
+                ], 
+                "description": "Gets the bottom margin in units of @unit."
+            }, 
+            {
+                "returns": {
+                    "type": "Float", 
+                    "description": "the left margin"
+                }, 
+                "version": "2.10", 
+                "name": "get_left_margin", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Unit", 
+                        "name": "unit", 
+                        "description": "the unit for the return value"
+                    }
+                ], 
+                "description": "Gets the left margin in units of @unit."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.PageOrientation", 
+                    "description": "the page orientation"
+                }, 
+                "version": "2.10", 
+                "name": "get_orientation", 
+                "parameters": null, 
+                "description": "Gets the page orientation of the #GtkPageSetup."
+            }, 
+            {
+                "returns": {
+                    "type": "Float", 
+                    "description": "the page height."
+                }, 
+                "version": "2.10", 
+                "name": "get_page_height", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Unit", 
+                        "name": "unit", 
+                        "description": "the unit for the return value"
+                    }
+                ], 
+                "description": "Returns the page height in units of @unit.\n\nNote that this function takes orientation and\nmargins into consideration. \nSee gtk_page_setup_get_paper_height()."
+            }, 
+            {
+                "returns": {
+                    "type": "Float", 
+                    "description": "the page width."
+                }, 
+                "version": "2.10", 
+                "name": "get_page_width", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Unit", 
+                        "name": "unit", 
+                        "description": "the unit for the return value"
+                    }
+                ], 
+                "description": "Returns the page width in units of @unit.\n\nNote that this function takes orientation and\nmargins into consideration. \nSee gtk_page_setup_get_paper_width()."
+            }, 
+            {
+                "returns": {
+                    "type": "Float", 
+                    "description": "the paper height."
+                }, 
+                "version": "2.10", 
+                "name": "get_paper_height", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Unit", 
+                        "name": "unit", 
+                        "description": "the unit for the return value"
+                    }
+                ], 
+                "description": "Returns the paper height in units of @unit.\n\nNote that this function takes orientation, but \nnot margins into consideration.\nSee gtk_page_setup_get_page_height()."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.PaperSize", 
+                    "description": "the paper size"
+                }, 
+                "version": "2.10", 
+                "name": "get_paper_size", 
+                "parameters": null, 
+                "description": "Gets the paper size of the #GtkPageSetup."
+            }, 
+            {
+                "returns": {
+                    "type": "Float", 
+                    "description": "the paper width."
+                }, 
+                "version": "2.10", 
+                "name": "get_paper_width", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Unit", 
+                        "name": "unit", 
+                        "description": "the unit for the return value"
+                    }
+                ], 
+                "description": "Returns the paper width in units of @unit.\n\nNote that this function takes orientation, but \nnot margins into consideration. \nSee gtk_page_setup_get_page_width()."
+            }, 
+            {
+                "returns": {
+                    "type": "Float", 
+                    "description": "the right margin"
+                }, 
+                "version": "2.10", 
+                "name": "get_right_margin", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Unit", 
+                        "name": "unit", 
+                        "description": "the unit for the return value"
+                    }
+                ], 
+                "description": "Gets the right margin in units of @unit."
+            }, 
+            {
+                "returns": {
+                    "type": "Float", 
+                    "description": "the top margin"
+                }, 
+                "version": "2.10", 
+                "name": "get_top_margin", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Unit", 
+                        "name": "unit", 
+                        "description": "the unit for the return value"
+                    }
+                ], 
+                "description": "Gets the top margin in units of @unit."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE on success"
+                }, 
+                "version": "2.14", 
+                "name": "load_file", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "file_name", 
+                        "description": "the filename to read the page setup from"
+                    }
+                ], 
+                "description": "Reads the page setup from the file @file_name.\nSee gtk_page_setup_to_file()."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE on success"
+                }, 
+                "version": "2.14", 
+                "name": "load_key_file", 
+                "parameters": [
+                    {
+                        "type": "GLib.KeyFile", 
+                        "name": "key_file", 
+                        "description": "the #GKeyFile to retrieve the page_setup from"
+                    }, 
+                    {
+                        "type": "String", 
+                        "name": "group_name", 
+                        "description": "the name of the group in the key_file to read, or %NULL to use the default name \"Page Setup\""
+                    }
+                ], 
+                "description": "Reads the page setup from the group @group_name in the key file\n@key_file."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.10", 
+                "name": "set_bottom_margin", 
+                "parameters": [
+                    {
+                        "type": "Float", 
+                        "name": "margin", 
+                        "description": "the new bottom margin in units of @unit"
+                    }, 
+                    {
+                        "type": "ref:Gtk.Unit", 
+                        "name": "unit", 
+                        "description": "the units for @margin"
+                    }
+                ], 
+                "description": "Sets the bottom margin of the #GtkPageSetup."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.10", 
+                "name": "set_left_margin", 
+                "parameters": [
+                    {
+                        "type": "Float", 
+                        "name": "margin", 
+                        "description": "the new left margin in units of @unit"
+                    }, 
+                    {
+                        "type": "ref:Gtk.Unit", 
+                        "name": "unit", 
+                        "description": "the units for @margin"
+                    }
+                ], 
+                "description": "Sets the left margin of the #GtkPageSetup."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.10", 
+                "name": "set_orientation", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.PageOrientation", 
+                        "name": "orientation", 
+                        "description": "a #GtkPageOrientation value"
+                    }
+                ], 
+                "description": "Sets the page orientation of the #GtkPageSetup."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.10", 
+                "name": "set_paper_size", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.PaperSize", 
+                        "name": "size", 
+                        "description": "a #GtkPaperSize"
+                    }
+                ], 
+                "description": "Sets the paper size of the #GtkPageSetup without\nchanging the margins. See \ngtk_page_setup_set_paper_size_and_default_margins()."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.10", 
+                "name": "set_paper_size_and_default_margins", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.PaperSize", 
+                        "name": "size", 
+                        "description": "a #GtkPaperSize"
+                    }
+                ], 
+                "description": "Sets the paper size of the #GtkPageSetup and modifies\nthe margins according to the new paper size."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.10", 
+                "name": "set_right_margin", 
+                "parameters": [
+                    {
+                        "type": "Float", 
+                        "name": "margin", 
+                        "description": "the new right margin in units of @unit"
+                    }, 
+                    {
+                        "type": "ref:Gtk.Unit", 
+                        "name": "unit", 
+                        "description": "the units for @margin"
+                    }
+                ], 
+                "description": "Sets the right margin of the #GtkPageSetup."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.10", 
+                "name": "set_top_margin", 
+                "parameters": [
+                    {
+                        "type": "Float", 
+                        "name": "margin", 
+                        "description": "the new top margin in units of @unit"
+                    }, 
+                    {
+                        "type": "ref:Gtk.Unit", 
+                        "name": "unit", 
+                        "description": "the units for @margin"
+                    }
+                ], 
+                "description": "Sets the top margin of the #GtkPageSetup."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE on success"
+                }, 
+                "version": "2.12", 
+                "name": "to_file", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "file_name", 
+                        "description": "the file to save to"
+                    }
+                ], 
+                "description": "This function saves the information from @setup to @file_name."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.12", 
+                "name": "to_key_file", 
+                "parameters": [
+                    {
+                        "type": "GLib.KeyFile", 
+                        "name": "key_file", 
+                        "description": "the #GKeyFile to save the page setup to"
+                    }, 
+                    {
+                        "type": "String", 
+                        "name": "group_name", 
+                        "description": "the group to add the settings to in @key_file, or %NULL to use the default name \"Page Setup\""
+                    }
+                ], 
+                "description": "This function adds the page setup from @setup to @key_file."
+            }
+        ], 
+        "properties": []
+    }, 
+    "fullname": "Class Gtk.PageSetup", 
+    "id": "Docs-PageSetup", 
+    "description": "A GtkPageSetup object stores the page size, orientation and margins.\nThe idea is that you can get one of these from the page setup dialog\nand then pass it to the #GtkPrintOperation when printing.\nThe benefit of splitting this out of the #GtkPrintSettings is that\nthese affect the actual layout of the page, and thus need to be set\nlong before user prints.\n\n<para id=\"print-margins\">\nThe margins specified in this object are the \"print margins\", i.e. the\nparts of the page that the printer cannot print on. These are different\nfrom the layout margins that a word processor uses; they are typically\nused to determine the <emphasis>minimal</emphasis> size for the layout\nmargins.\n</para>\n\nTo obtain a #GtkPageSetup use gtk_page_setup_new() to get the defaults,\nor use gtk_print_run_page_setup_dialog() to show the page setup dialog\nand receive the resulting page setup.\n\n<example>\n<title>A page setup dialog</title>\n<programlisting>\nstatic GtkPrintSettings *settings = NULL;\nstatic GtkPageSetup *page_setup = NULL;\n\nstatic void\ndo_page_setup (void)\n{\nGtkPageSetup *new_page_setup;\n\nif (settings == NULL)\nsettings = gtk_print_settings_new (<!-- -->);\n\nnew_page_setup = gtk_print_run_page_setup_dialog (GTK_WINDOW (main_window),\npage_setup, settings);\n\nif (page_setup)\ng_object_unref (page_setup);\n\npage_setup = new_page_setup;\n}\n</programlisting>\n</example>\n\nPrinting support was added in GTK+ 2.10."
+}

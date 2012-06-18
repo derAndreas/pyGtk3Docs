@@ -1,0 +1,29 @@
+{
+    "leaf": true, 
+    "name": "Align", 
+    "text": "Align", 
+    "version": null, 
+    "members": {
+        "properties": [
+            {
+                "name": "fill", 
+                "value": "0"
+            }, 
+            {
+                "name": "start", 
+                "value": "1"
+            }, 
+            {
+                "name": "end", 
+                "value": "2"
+            }, 
+            {
+                "name": "center", 
+                "value": "3"
+            }
+        ]
+    }, 
+    "fullname": "Enumeration Gtk.Align", 
+    "id": "Docs-Align", 
+    "description": ""
+}

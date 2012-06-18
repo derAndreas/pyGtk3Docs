@@ -1,0 +1,53 @@
+{
+    "isAbstract": false, 
+    "leaf": true, 
+    "name": "CellRendererSpinner", 
+    "text": "CellRendererSpinner", 
+    "interfaces": [], 
+    "parents": [
+        "CellRendererSpinner", 
+        "CellRenderer", 
+        "GObject.InitiallyUnowned"
+    ], 
+    "members": {
+        "signals": [], 
+        "methods": [
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a new #GtkCellRenderer", 
+                    "name": "ref:Gtk.CellRenderer"
+                }, 
+                "version": "2.20", 
+                "name": "Gtk.CellRendererSpinner()", 
+                "parameters": null
+            }
+        ], 
+        "properties": [
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "active", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Integer", 
+                "readable": false, 
+                "name": "pulse", 
+                "description": "Pulse of the spinner. Increment this value to draw the next frame of the\nspinner animation. Usually, you would update this value in a timeout.\n\nBy default, the #GtkSpinner widget draws one full cycle of the animation,\nconsisting of 12 frames, in 750 milliseconds."
+            }, 
+            {
+                "writable": false, 
+                "type": "Gtk.IconSize", 
+                "readable": false, 
+                "name": "size", 
+                "description": "The #GtkIconSize value that specifies the size of the rendered spinner."
+            }
+        ]
+    }, 
+    "fullname": "Class Gtk.CellRendererSpinner", 
+    "id": "Docs-CellRendererSpinner", 
+    "description": "GtkCellRendererSpinner renders a spinning animation in a cell, very\nsimilar to #GtkSpinner. It can often be used as an alternative\nto a #GtkCellRendererProgress for displaying indefinite activity,\ninstead of actual progress.\n\nTo start the animation in a cell, set the #GtkCellRendererSpinner:active\nproperty to %TRUE and increment the #GtkCellRendererSpinner:pulse property\nat regular intervals. The usual way to set the cell renderer properties\nfor each cell is to bind them to columns in your tree model using e.g.\ngtk_tree_view_column_add_attribute()."
+}

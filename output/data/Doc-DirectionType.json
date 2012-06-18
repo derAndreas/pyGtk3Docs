@@ -1,0 +1,37 @@
+{
+    "leaf": true, 
+    "name": "DirectionType", 
+    "text": "DirectionType", 
+    "version": null, 
+    "members": {
+        "properties": [
+            {
+                "name": "tab_forward", 
+                "value": "0"
+            }, 
+            {
+                "name": "tab_backward", 
+                "value": "1"
+            }, 
+            {
+                "name": "up", 
+                "value": "2"
+            }, 
+            {
+                "name": "down", 
+                "value": "3"
+            }, 
+            {
+                "name": "left", 
+                "value": "4"
+            }, 
+            {
+                "name": "right", 
+                "value": "5"
+            }
+        ]
+    }, 
+    "fullname": "Enumeration Gtk.DirectionType", 
+    "id": "Docs-DirectionType", 
+    "description": ""
+}

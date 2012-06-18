@@ -1,0 +1,253 @@
+{
+    "isAbstract": false, 
+    "leaf": true, 
+    "name": "MessageDialog", 
+    "text": "MessageDialog", 
+    "interfaces": [
+        [
+            "Atk.ImplementorIface"
+        ], 
+        [
+            "Buildable"
+        ]
+    ], 
+    "parents": [
+        "MessageDialog", 
+        "Dialog", 
+        "Window", 
+        "Bin", 
+        "Container", 
+        "Widget", 
+        "GObject.InitiallyUnowned"
+    ], 
+    "members": {
+        "signals": [], 
+        "methods": [
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a new #GtkMessageDialog", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": null, 
+                "name": "Gtk.MessageDialog(Gtk.Window parent, Gtk.DialogFlags flags, Gtk.MessageType type, Gtk.ButtonsType buttons, String message_format, VarArg None)", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Window", 
+                        "name": "parent"
+                    }, 
+                    {
+                        "type": "ref:Gtk.DialogFlags", 
+                        "name": "flags"
+                    }, 
+                    {
+                        "type": "ref:Gtk.MessageType", 
+                        "name": "type"
+                    }, 
+                    {
+                        "type": "ref:Gtk.ButtonsType", 
+                        "name": "buttons"
+                    }, 
+                    {
+                        "type": "String", 
+                        "name": "message_format"
+                    }, 
+                    {
+                        "type": "ref:VarArg", 
+                        "name": null
+                    }
+                ]
+            }, 
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a new #GtkMessageDialog", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": "2.4", 
+                "name": "Gtk.MessageDialog(Gtk.Window parent, Gtk.DialogFlags flags, Gtk.MessageType type, Gtk.ButtonsType buttons, String message_format, VarArg None)", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Window", 
+                        "name": "parent"
+                    }, 
+                    {
+                        "type": "ref:Gtk.DialogFlags", 
+                        "name": "flags"
+                    }, 
+                    {
+                        "type": "ref:Gtk.MessageType", 
+                        "name": "type"
+                    }, 
+                    {
+                        "type": "ref:Gtk.ButtonsType", 
+                        "name": "buttons"
+                    }, 
+                    {
+                        "type": "String", 
+                        "name": "message_format"
+                    }, 
+                    {
+                        "type": "ref:VarArg", 
+                        "name": null
+                    }
+                ]
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.6", 
+                "name": "format_secondary_markup", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "message_format", 
+                        "description": "printf()-style markup string (see"
+                    }, 
+                    {
+                        "type": "ref:VarArg", 
+                        "name": null, 
+                        "description": ""
+                    }
+                ], 
+                "description": "Sets the secondary text of the message dialog to be @message_format (with\nprintf()-style), which is marked up with the\n<link linkend=\"PangoMarkupFormat\">Pango text markup language</link>.\n\nNote that setting a secondary text makes the primary text become\nbold, unless you have provided explicit markup.\n\nDue to an oversight, this function does not escape special XML characters\nlike gtk_message_dialog_new_with_markup() does. Thus, if the arguments\nmay contain special XML characters, you should use g_markup_printf_escaped()\nto escape it.\n<informalexample><programlisting>\ngchar *msg;\n\nmsg = g_markup_printf_escaped (message_format, ...);\ngtk_message_dialog_format_secondary_markup (message_dialog, \"&percnt;s\", msg);\ng_free (msg);\n</programlisting></informalexample>"
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.6", 
+                "name": "format_secondary_text", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "message_format", 
+                        "description": "printf()-style format string, or %NULL"
+                    }, 
+                    {
+                        "type": "ref:VarArg", 
+                        "name": null, 
+                        "description": ""
+                    }
+                ], 
+                "description": "Sets the secondary text of the message dialog to be @message_format\n(with printf()-style).\n\nNote that setting a secondary text makes the primary text become\nbold, unless you have provided explicit markup."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.Widget", 
+                    "description": "the dialog's image"
+                }, 
+                "version": "2.14", 
+                "name": "get_image", 
+                "parameters": null, 
+                "description": "Gets the dialog's image."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.Widget", 
+                    "description": "A #GtkVBox corresponding to the"
+                }, 
+                "version": "2.22", 
+                "name": "get_message_area", 
+                "parameters": null, 
+                "description": "Returns the message area of the dialog. This is the box where the\ndialog's primary and secondary labels are packed. You can add your\nown extra content to that box and it will appear below those labels,\non the right side of the dialog's image (or on the left for right-to-left\nlanguages).  See gtk_dialog_get_content_area() for the corresponding\nfunction in the parent #GtkDialog.\n\n\"message area\" in the @message_dialog."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.10", 
+                "name": "set_image", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "image", 
+                        "description": "the image"
+                    }
+                ], 
+                "description": "Sets the dialog's image to @image."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.4", 
+                "name": "set_markup", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "str", 
+                        "description": "markup string (see <link linkend=\"PangoMarkupFormat\">Pango markup format</link>)"
+                    }
+                ], 
+                "description": "Sets the text of the message dialog to be @str, which is marked\nup with the <link linkend=\"PangoMarkupFormat\">Pango text markup\nlanguage</link>."
+            }
+        ], 
+        "properties": [
+            {
+                "writable": false, 
+                "type": "Gtk.ButtonsType", 
+                "readable": false, 
+                "name": "buttons", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Gtk.Widget", 
+                "readable": false, 
+                "name": "image", 
+                "description": "The image for this dialog."
+            }, 
+            {
+                "writable": false, 
+                "type": "Gtk.Widget", 
+                "readable": false, 
+                "name": "message-area", 
+                "description": "The #GtkVBox that corresponds to the message area of this dialog.  See\ngtk_message_dialog_get_message_area() for a detailed description of this\narea."
+            }, 
+            {
+                "writable": false, 
+                "type": "Gtk.MessageType", 
+                "readable": false, 
+                "name": "message-type", 
+                "description": "The type of the message. The type is used to determine\nthe image that is shown in the dialog, unless the image is \nexplicitly set by the ::image property."
+            }, 
+            {
+                "writable": false, 
+                "type": "String", 
+                "readable": false, 
+                "name": "secondary-text", 
+                "description": "The secondary text of the message dialog."
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "secondary-use-markup", 
+                "description": "%TRUE if the secondary text of the dialog includes Pango markup. \nSee pango_parse_markup()."
+            }, 
+            {
+                "writable": false, 
+                "type": "String", 
+                "readable": false, 
+                "name": "text", 
+                "description": "The primary text of the message dialog. If the dialog has \na secondary text, this will appear as the title."
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "use-markup", 
+                "description": "%TRUE if the primary text of the dialog includes Pango markup. \nSee pango_parse_markup()."
+            }
+        ]
+    }, 
+    "fullname": "Class Gtk.MessageDialog", 
+    "id": "Docs-MessageDialog", 
+    "description": "#GtkMessageDialog presents a dialog with an image representing the type of\nmessage (Error, Question, etc.) alongside some message text. It's simply a\nconvenience widget; you could construct the equivalent of #GtkMessageDialog\nfrom #GtkDialog without too much effort, but #GtkMessageDialog saves typing.\n\nThe easiest way to do a modal message dialog is to use gtk_dialog_run(), though\nyou can also pass in the %GTK_DIALOG_MODAL flag, gtk_dialog_run() automatically\nmakes the dialog modal and waits for the user to respond to it. gtk_dialog_run()\nreturns when any dialog button is clicked.\n<example>\n<title>A modal dialog.</title>\n<programlisting>\ndialog = gtk_message_dialog_new (main_application_window,\nGTK_DIALOG_DESTROY_WITH_PARENT,\nGTK_MESSAGE_ERROR,\nGTK_BUTTONS_CLOSE,\n\"Error loading file '&percnt;s': &percnt;s\",\nfilename, g_strerror (errno));\ngtk_dialog_run (GTK_DIALOG (dialog));\ngtk_widget_destroy (dialog);\n</programlisting>\n</example>\nYou might do a non-modal #GtkMessageDialog as follows:\n<example>\n<title>A non-modal dialog.</title>\n<programlisting>\ndialog = gtk_message_dialog_new (main_application_window,\nGTK_DIALOG_DESTROY_WITH_PARENT,\nGTK_MESSAGE_ERROR,\nGTK_BUTTONS_CLOSE,\n\"Error loading file '&percnt;s': &percnt;s\",\nfilename, g_strerror (errno));\n\n/&ast; Destroy the dialog when the user responds to it (e.g. clicks a button) &ast;/\ng_signal_connect_swapped (dialog, \"response\",\nG_CALLBACK (gtk_widget_destroy),\ndialog);\n</programlisting>\n</example>\n\n<refsect2 id=\"GtkMessageDialog-BUILDER-UI\">\n<title>GtkMessageDialog as GtkBuildable</title>\n<para>\nThe GtkMessageDialog implementation of the GtkBuildable interface exposes\nthe message area as an internal child with the name \"message_area\".\n</para>\n</refsect2>"
+}

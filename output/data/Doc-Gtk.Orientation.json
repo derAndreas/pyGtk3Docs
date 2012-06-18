@@ -1,0 +1,21 @@
+{
+    "leaf": true, 
+    "name": "Orientation", 
+    "text": "Orientation", 
+    "version": null, 
+    "members": {
+        "properties": [
+            {
+                "name": "horizontal", 
+                "value": "0"
+            }, 
+            {
+                "name": "vertical", 
+                "value": "1"
+            }
+        ]
+    }, 
+    "fullname": "Enumeration Gtk.Orientation", 
+    "id": "Docs-Orientation", 
+    "description": ""
+}

@@ -1,0 +1,37 @@
+{
+    "leaf": true, 
+    "name": "RecentFilterFlags", 
+    "text": "RecentFilterFlags", 
+    "version": null, 
+    "members": {
+        "properties": [
+            {
+                "name": "uri", 
+                "value": "1"
+            }, 
+            {
+                "name": "display_name", 
+                "value": "2"
+            }, 
+            {
+                "name": "mime_type", 
+                "value": "4"
+            }, 
+            {
+                "name": "application", 
+                "value": "8"
+            }, 
+            {
+                "name": "group", 
+                "value": "16"
+            }, 
+            {
+                "name": "age", 
+                "value": "32"
+            }
+        ]
+    }, 
+    "fullname": "Bitfield Gtk.RecentFilterFlags", 
+    "id": "Docs-RecentFilterFlags", 
+    "description": ""
+}

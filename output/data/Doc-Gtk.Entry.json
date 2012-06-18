@@ -1,0 +1,1551 @@
+{
+    "isAbstract": false, 
+    "leaf": true, 
+    "name": "Entry", 
+    "text": "Entry", 
+    "interfaces": [
+        [
+            "Atk.ImplementorIface"
+        ], 
+        [
+            "Buildable"
+        ], 
+        [
+            "CellEditable"
+        ], 
+        [
+            "Editable"
+        ]
+    ], 
+    "parents": [
+        "Entry", 
+        "Widget", 
+        "GObject.InitiallyUnowned"
+    ], 
+    "members": {
+        "signals": [
+            {
+                "version": "", 
+                "when": "last", 
+                "name": "activate", 
+                "description": "A  <link linkend=\"keybinding-signals\">keybinding signal</link>\nwhich gets emitted when the user activates the entry.\n\nApplications should not connect to it, but may emit it with\ng_signal_emit_by_name() if they need to control activation \nprogrammatically.\n\nThe default bindings for this signal are all forms of the Enter key."
+            }, 
+            {
+                "version": "", 
+                "when": "last", 
+                "name": "backspace", 
+                "description": "The ::backspace signal is a\n<link linkend=\"keybinding-signals\">keybinding signal</link>\nwhich gets emitted when the user asks for it.\n\nThe default bindings for this signal are\nBackspace and Shift-Backspace."
+            }, 
+            {
+                "version": "", 
+                "when": "last", 
+                "name": "copy-clipboard", 
+                "description": "The ::copy-clipboard signal is a\n<link linkend=\"keybinding-signals\">keybinding signal</link>\nwhich gets emitted to copy the selection to the clipboard.\n\nThe default bindings for this signal are\nCtrl-c and Ctrl-Insert."
+            }, 
+            {
+                "version": "", 
+                "when": "last", 
+                "name": "cut-clipboard", 
+                "description": "The ::cut-clipboard signal is a\n<link linkend=\"keybinding-signals\">keybinding signal</link>\nwhich gets emitted to cut the selection to the clipboard.\n\nThe default bindings for this signal are\nCtrl-x and Shift-Delete."
+            }, 
+            {
+                "version": "", 
+                "when": "last", 
+                "name": "delete-from-cursor", 
+                "description": "The ::delete-from-cursor signal is a\n<link linkend=\"keybinding-signals\">keybinding signal</link>\nwhich gets emitted when the user initiates a text deletion.\n\nIf the @type is %GTK_DELETE_CHARS, GTK+ deletes the selection\nif there is one, otherwise it deletes the requested number\nof characters.\n\nThe default bindings for this signal are\nDelete for deleting a character and Ctrl-Delete for\ndeleting a word."
+            }, 
+            {
+                "version": "2.16", 
+                "when": "last", 
+                "name": "icon-press", 
+                "description": "The ::icon-press signal is emitted when an activatable icon\nis clicked."
+            }, 
+            {
+                "version": "2.16", 
+                "when": "last", 
+                "name": "icon-release", 
+                "description": "The ::icon-release signal is emitted on the button release from a\nmouse click over an activatable icon."
+            }, 
+            {
+                "version": "", 
+                "when": "last", 
+                "name": "insert-at-cursor", 
+                "description": "The ::insert-at-cursor signal is a\n<link linkend=\"keybinding-signals\">keybinding signal</link>\nwhich gets emitted when the user initiates the insertion of a\nfixed string at the cursor.\n\nThis signal has no default bindings."
+            }, 
+            {
+                "version": "", 
+                "when": "last", 
+                "name": "move-cursor", 
+                "description": "The ::move-cursor signal is a\n<link linkend=\"keybinding-signals\">keybinding signal</link>\nwhich gets emitted when the user initiates a cursor movement.\nIf the cursor is not visible in @entry, this signal causes\nthe viewport to be moved instead.\n\nApplications should not connect to it, but may emit it with\ng_signal_emit_by_name() if they need to control the cursor\nprogrammatically.\n\nThe default bindings for this signal come in two variants,\nthe variant with the Shift modifier extends the selection,\nthe variant without the Shift modifer does not.\nThere are too many key combinations to list them all here.\n<itemizedlist>\n<listitem>Arrow keys move by individual characters/lines</listitem>\n<listitem>Ctrl-arrow key combinations move by words/paragraphs</listitem>\n<listitem>Home/End keys move to the ends of the buffer</listitem>\n</itemizedlist>"
+            }, 
+            {
+                "version": "", 
+                "when": "last", 
+                "name": "paste-clipboard", 
+                "description": "The ::paste-clipboard signal is a\n<link linkend=\"keybinding-signals\">keybinding signal</link>\nwhich gets emitted to paste the contents of the clipboard\ninto the text view.\n\nThe default bindings for this signal are\nCtrl-v and Shift-Insert."
+            }, 
+            {
+                "version": "", 
+                "when": "last", 
+                "name": "populate-popup", 
+                "description": "The ::populate-popup signal gets emitted before showing the \ncontext menu of the entry. \n\nIf you need to add items to the context menu, connect\nto this signal and append your menuitems to the @menu."
+            }, 
+            {
+                "version": "2.20", 
+                "when": "last", 
+                "name": "preedit-changed", 
+                "description": "If an input method is used, the typed text will not immediately\nbe committed to the buffer. So if you are interested in the text,\nconnect to this signal."
+            }, 
+            {
+                "version": "", 
+                "when": "last", 
+                "name": "toggle-overwrite", 
+                "description": "The ::toggle-overwrite signal is a\n<link linkend=\"keybinding-signals\">keybinding signal</link>\nwhich gets emitted to toggle the overwrite mode of the entry.\n\nThe default bindings for this signal is Insert."
+            }
+        ], 
+        "methods": [
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a new #GtkEntry.", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": null, 
+                "name": "Gtk.Entry()", 
+                "parameters": null
+            }, 
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a new #GtkEntry", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": "2.18", 
+                "name": "Gtk.Entry(Gtk.EntryBuffer buffer)", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.EntryBuffer", 
+                        "name": "buffer"
+                    }
+                ]
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE if the entry will activate the default widget"
+                }, 
+                "version": "", 
+                "name": "get_activates_default", 
+                "parameters": null, 
+                "description": "Retrieves the value set by gtk_entry_set_activates_default()."
+            }, 
+            {
+                "returns": {
+                    "type": "Float", 
+                    "description": "the alignment"
+                }, 
+                "version": "2.4", 
+                "name": "get_alignment", 
+                "parameters": null, 
+                "description": "Gets the value set by gtk_entry_set_alignment()."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.EntryBuffer", 
+                    "description": "A #GtkEntryBuffer object."
+                }, 
+                "version": "2.18", 
+                "name": "get_buffer", 
+                "parameters": null, 
+                "description": "Get the #GtkEntryBuffer object which holds the text for\nthis widget."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.EntryCompletion", 
+                    "description": "The auxiliary completion object currently"
+                }, 
+                "version": "2.4", 
+                "name": "get_completion", 
+                "parameters": null, 
+                "description": "Returns the auxiliary completion object currently in use by @entry.\n\nin use by @entry."
+            }, 
+            {
+                "returns": {
+                    "type": "Integer", 
+                    "description": "index of the icon which is the source of the current"
+                }, 
+                "version": "2.16", 
+                "name": "get_current_icon_drag_source", 
+                "parameters": null, 
+                "description": "Returns the index of the icon which is the source of the current\nDND operation, or -1.\n\nThis function is meant to be used in a #GtkWidget::drag-data-get\ncallback.\n\nDND operation, or -1."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.Adjustment", 
+                    "description": "the horizontal cursor adjustment, or %NULL"
+                }, 
+                "version": "2.12", 
+                "name": "get_cursor_hadjustment", 
+                "parameters": null, 
+                "description": "Retrieves the horizontal cursor adjustment for the entry. \nSee gtk_entry_set_cursor_hadjustment().\n\nif none has been set."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "whether the entry has a beveled frame"
+                }, 
+                "version": "", 
+                "name": "get_has_frame", 
+                "parameters": null, 
+                "description": "Gets the value set by gtk_entry_set_has_frame()."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE if the icon is activatable."
+                }, 
+                "version": "2.16", 
+                "name": "get_icon_activatable", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.EntryIconPosition", 
+                        "name": "icon_pos", 
+                        "description": "Icon position"
+                    }
+                ], 
+                "description": "Returns whether the icon is activatable."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "3.0", 
+                "name": "get_icon_area", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.EntryIconPosition", 
+                        "name": "icon_pos", 
+                        "description": "Icon position"
+                    }, 
+                    {
+                        "type": "Gdk.Rectangle", 
+                        "name": "icon_area", 
+                        "description": "Return location for the icon's area"
+                    }
+                ], 
+                "description": "Gets the area where entry's icon at @icon_pos is drawn.\nThis function is useful when drawing something to the\nentry in a draw callback.\n\nIf the entry is not realized or has no icon at the given position,\n@icon_area is filled with zeros.\n\nSee also gtk_entry_get_text_area()"
+            }, 
+            {
+                "returns": {
+                    "type": "Integer", 
+                    "description": "the index of the icon at the given position, or -1"
+                }, 
+                "version": "2.16", 
+                "name": "get_icon_at_pos", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "x", 
+                        "description": "the x coordinate of the position to find"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "y", 
+                        "description": "the y coordinate of the position to find"
+                    }
+                ], 
+                "description": "Finds the icon at the given position and return its index. The\nposition's coordinates are relative to the @entry's top left corner.\nIf @x, @y doesn't lie inside an icon, -1 is returned.\nThis function is intended for use in a #GtkWidget::query-tooltip\nsignal handler."
+            }, 
+            {
+                "returns": {
+                    "type": "Gio.Icon", 
+                    "description": "A #GIcon, or %NULL if no icon is set"
+                }, 
+                "version": "2.16", 
+                "name": "get_icon_gicon", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.EntryIconPosition", 
+                        "name": "icon_pos", 
+                        "description": "Icon position"
+                    }
+                ], 
+                "description": "Retrieves the #GIcon used for the icon, or %NULL if there is\nno icon or if the icon was set by some other method (e.g., by\nstock, pixbuf, or icon name).\n\nor if the icon is not a #GIcon"
+            }, 
+            {
+                "returns": {
+                    "type": "String", 
+                    "description": "An icon name, or %NULL if no icon is set or if the icon"
+                }, 
+                "version": "2.16", 
+                "name": "get_icon_name", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.EntryIconPosition", 
+                        "name": "icon_pos", 
+                        "description": "Icon position"
+                    }
+                ], 
+                "description": "Retrieves the icon name used for the icon, or %NULL if there is\nno icon or if the icon was set by some other method (e.g., by\npixbuf, stock or gicon).\n\nwasn't set from an icon name"
+            }, 
+            {
+                "returns": {
+                    "type": "GdkPixbuf.Pixbuf", 
+                    "description": "A #GdkPixbuf, or %NULL if no icon is"
+                }, 
+                "version": "2.16", 
+                "name": "get_icon_pixbuf", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.EntryIconPosition", 
+                        "name": "icon_pos", 
+                        "description": "Icon position"
+                    }
+                ], 
+                "description": "Retrieves the image used for the icon.\n\nUnlike the other methods of setting and getting icon data, this\nmethod will work regardless of whether the icon was set using a\n#GdkPixbuf, a #GIcon, a stock item, or an icon name.\n\nset for this position."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE if the icon is sensitive."
+                }, 
+                "version": "2.16", 
+                "name": "get_icon_sensitive", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.EntryIconPosition", 
+                        "name": "icon_pos", 
+                        "description": "Icon position"
+                    }
+                ], 
+                "description": "Returns whether the icon appears sensitive or insensitive."
+            }, 
+            {
+                "returns": {
+                    "type": "String", 
+                    "description": "A stock id, or %NULL if no icon is set or if the icon"
+                }, 
+                "version": "2.16", 
+                "name": "get_icon_stock", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.EntryIconPosition", 
+                        "name": "icon_pos", 
+                        "description": "Icon position"
+                    }
+                ], 
+                "description": "Retrieves the stock id used for the icon, or %NULL if there is\nno icon or if the icon was set by some other method (e.g., by\npixbuf, icon name or gicon).\n\nwasn't set from a stock id"
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.ImageType", 
+                    "description": "image representation being used"
+                }, 
+                "version": "2.16", 
+                "name": "get_icon_storage_type", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.EntryIconPosition", 
+                        "name": "icon_pos", 
+                        "description": "Icon position"
+                    }
+                ], 
+                "description": "Gets the type of representation being used by the icon\nto store image data. If the icon has no image data,\nthe return value will be %GTK_IMAGE_EMPTY."
+            }, 
+            {
+                "returns": {
+                    "type": "String", 
+                    "description": "the tooltip text, or %NULL. Free the returned string"
+                }, 
+                "version": "2.16", 
+                "name": "get_icon_tooltip_markup", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.EntryIconPosition", 
+                        "name": "icon_pos", 
+                        "description": "the icon position"
+                    }
+                ], 
+                "description": "Gets the contents of the tooltip on the icon at the specified \nposition in @entry.\n\nwith g_free() when done."
+            }, 
+            {
+                "returns": {
+                    "type": "String", 
+                    "description": "the tooltip text, or %NULL. Free the returned string"
+                }, 
+                "version": "2.16", 
+                "name": "get_icon_tooltip_text", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.EntryIconPosition", 
+                        "name": "icon_pos", 
+                        "description": "the icon position"
+                    }
+                ], 
+                "description": "Gets the contents of the tooltip on the icon at the specified \nposition in @entry.\n\nwith g_free() when done."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.Border", 
+                    "description": "the entry's #GtkBorder, or %NULL if none was set."
+                }, 
+                "version": "2.10", 
+                "name": "get_inner_border", 
+                "parameters": null, 
+                "description": "This function returns the entry's #GtkEntry:inner-border property. See\ngtk_entry_set_inner_border() for more information.\n\n\n\nthe value returned by this function is ignored by #GtkEntry."
+            }, 
+            {
+                "returns": {
+                    "type": "String", 
+                    "description": "the current invisible char, or 0, if the entry does not"
+                }, 
+                "version": "", 
+                "name": "get_invisible_char", 
+                "parameters": null, 
+                "description": "Retrieves the character displayed in place of the real characters\nfor entries with visibility set to false. See gtk_entry_set_invisible_char().\n\nshow invisible text at all."
+            }, 
+            {
+                "returns": {
+                    "type": "Pango.Layout", 
+                    "description": "the #PangoLayout for this entry"
+                }, 
+                "version": "", 
+                "name": "get_layout", 
+                "parameters": null, 
+                "description": "Gets the #PangoLayout used to display the entry.\nThe layout is useful to e.g. convert text positions to\npixel positions, in combination with gtk_entry_get_layout_offsets().\nThe returned layout is owned by the entry and must not be \nmodified or freed by the caller.\n\nKeep in mind that the layout text may contain a preedit string, so\ngtk_entry_layout_index_to_text_index() and\ngtk_entry_text_index_to_layout_index() are needed to convert byte\nindices in the layout to byte indices in the entry contents."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "get_layout_offsets", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "x", 
+                        "description": "location to store X offset of layout, or %NULL"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "y", 
+                        "description": "location to store Y offset of layout, or %NULL"
+                    }
+                ], 
+                "description": "Obtains the position of the #PangoLayout used to render text\nin the entry, in widget coordinates. Useful if you want to line\nup the text in an entry with some other text, e.g. when using the\nentry to implement editable cells in a sheet widget.\n\nAlso useful to convert mouse events into coordinates inside the\n#PangoLayout, e.g. to take some action if some part of the entry text\nis clicked.\n\nNote that as the user scrolls around in the entry the offsets will\nchange; you'll need to connect to the \"notify::scroll-offset\"\nsignal to track this. Remember when using the #PangoLayout\nfunctions you need to convert to and from pixels using\nPANGO_PIXELS() or #PANGO_SCALE.\n\nKeep in mind that the layout text may contain a preedit string, so\ngtk_entry_layout_index_to_text_index() and\ngtk_entry_text_index_to_layout_index() are needed to convert byte\nindices in the layout to byte indices in the entry contents."
+            }, 
+            {
+                "returns": {
+                    "type": "Integer", 
+                    "description": "the maximum allowed number of characters"
+                }, 
+                "version": "", 
+                "name": "get_max_length", 
+                "parameters": null, 
+                "description": "Retrieves the maximum allowed length of the text in\n@entry. See gtk_entry_set_max_length().\n\nThis is equivalent to:\n\n<informalexample><programlisting>\ngtk_entry_buffer_get_max_length (gtk_entry_get_buffer (entry));\n</programlisting></informalexample>\n\nin #GtkEntry, or 0 if there is no maximum."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "whether the text is overwritten when typing."
+                }, 
+                "version": "2.14", 
+                "name": "get_overwrite_mode", 
+                "parameters": null, 
+                "description": "Gets the value set by gtk_entry_set_overwrite_mode()."
+            }, 
+            {
+                "returns": {
+                    "type": "String", 
+                    "description": "a pointer to the placeholder text as a string. This string points to internally allocated"
+                }, 
+                "version": "3.2", 
+                "name": "get_placeholder_text", 
+                "parameters": null, 
+                "description": "Retrieves the text that will be displayed when @entry is empty and unfocused\n\nstorage in the widget and must not be freed, modified or stored."
+            }, 
+            {
+                "returns": {
+                    "type": "Float", 
+                    "description": "a fraction from 0.0 to 1.0"
+                }, 
+                "version": "2.16", 
+                "name": "get_progress_fraction", 
+                "parameters": null, 
+                "description": "Returns the current fraction of the task that's been completed.\nSee gtk_entry_set_progress_fraction()."
+            }, 
+            {
+                "returns": {
+                    "type": "Float", 
+                    "description": "a fraction from 0.0 to 1.0"
+                }, 
+                "version": "2.16", 
+                "name": "get_progress_pulse_step", 
+                "parameters": null, 
+                "description": "Retrieves the pulse step set with gtk_entry_set_progress_pulse_step()."
+            }, 
+            {
+                "returns": {
+                    "type": "String", 
+                    "description": "a pointer to the contents of the widget as a"
+                }, 
+                "version": "", 
+                "name": "get_text", 
+                "parameters": null, 
+                "description": "Retrieves the contents of the entry widget.\nSee also gtk_editable_get_chars().\n\nThis is equivalent to:\n\n<informalexample><programlisting>\ngtk_entry_buffer_get_text (gtk_entry_get_buffer (entry));\n</programlisting></informalexample>\n\nstring. This string points to internally allocated\nstorage in the widget and must not be freed, modified or\nstored."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "3.0", 
+                "name": "get_text_area", 
+                "parameters": [
+                    {
+                        "type": "Gdk.Rectangle", 
+                        "name": "text_area", 
+                        "description": "Return location for the text area."
+                    }
+                ], 
+                "description": "Gets the area where the entry's text is drawn. This function is\nuseful when drawing something to the entry in a draw callback.\n\nIf the entry is not realized, @text_area is filled with zeros.\n\nSee also gtk_entry_get_icon_area()."
+            }, 
+            {
+                "returns": {
+                    "type": "Integer", 
+                    "description": "the current number of characters"
+                }, 
+                "version": "2.14", 
+                "name": "get_text_length", 
+                "parameters": null, 
+                "description": "Retrieves the current length of the text in\n@entry. \n\nThis is equivalent to:\n\n<informalexample><programlisting>\ngtk_entry_buffer_get_length (gtk_entry_get_buffer (entry));\n</programlisting></informalexample>\n\nin #GtkEntry, or 0 if there are none."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE if the text is currently visible"
+                }, 
+                "version": "", 
+                "name": "get_visibility", 
+                "parameters": null, 
+                "description": "Retrieves whether the text in @entry is visible. See\ngtk_entry_set_visibility()."
+            }, 
+            {
+                "returns": {
+                    "type": "Integer", 
+                    "description": "number of chars to request space for, or negative if unset"
+                }, 
+                "version": "", 
+                "name": "get_width_chars", 
+                "parameters": null, 
+                "description": "Gets the value set by gtk_entry_set_width_chars()."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE if the input method handled the key event."
+                }, 
+                "version": "2.22", 
+                "name": "im_context_filter_keypress", 
+                "parameters": [
+                    {
+                        "type": "Gdk.EventKey", 
+                        "name": "event", 
+                        "description": "the key event"
+                    }
+                ], 
+                "description": "Allow the #GtkEntry input method to internally handle key press\nand release events. If this function returns %TRUE, then no further\nprocessing should be done for this key event. See\ngtk_im_context_filter_keypress().\n\nNote that you are expected to call this function from your handler\nwhen overriding key event handling. This is needed in the case when\nyou need to insert your own key handling between the input method\nand the default key event handling of the #GtkEntry.\nSee gtk_text_view_reset_im_context() for an example of use."
+            }, 
+            {
+                "returns": {
+                    "type": "Integer", 
+                    "description": "byte index into the entry contents"
+                }, 
+                "version": "", 
+                "name": "layout_index_to_text_index", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "layout_index", 
+                        "description": "byte index into the entry layout text"
+                    }
+                ], 
+                "description": "Converts from a position in the entry contents (returned\nby gtk_entry_get_text()) to a position in the\nentry's #PangoLayout (returned by gtk_entry_get_layout(),\nwith text retrieved via pango_layout_get_text())."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.16", 
+                "name": "progress_pulse", 
+                "parameters": null, 
+                "description": "Indicates that some progress is made, but you don't know how much.\nCauses the entry's progress indicator to enter \"activity mode,\"\nwhere a block bounces back and forth. Each call to\ngtk_entry_progress_pulse() causes the block to move by a little bit\n(the amount of movement per pulse is determined by\ngtk_entry_set_progress_pulse_step())."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.22", 
+                "name": "reset_im_context", 
+                "parameters": null, 
+                "description": "Reset the input method context of the entry if needed.\n\nThis can be necessary in the case where modifying the buffer\nwould confuse on-going input method behavior."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_activates_default", 
+                "parameters": [
+                    {
+                        "type": "Boolean", 
+                        "name": "setting", 
+                        "description": "%TRUE to activate window's default widget on Enter keypress"
+                    }
+                ], 
+                "description": "If @setting is %TRUE, pressing Enter in the @entry will activate the default\nwidget for the window containing the entry. This usually means that\nthe dialog box containing the entry will be closed, since the default\nwidget is usually one of the dialog buttons.\n\n(For experts: if @setting is %TRUE, the entry calls\ngtk_window_activate_default() on the window containing the entry, in\nthe default handler for the #GtkWidget::activate signal.)"
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.4", 
+                "name": "set_alignment", 
+                "parameters": [
+                    {
+                        "type": "Float", 
+                        "name": "xalign", 
+                        "description": "The horizontal alignment, from 0 (left) to 1 (right). Reversed for RTL layouts"
+                    }
+                ], 
+                "description": "Sets the alignment for the contents of the entry. This controls\nthe horizontal positioning of the contents when the displayed\ntext is shorter than the width of the entry."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.18", 
+                "name": "set_buffer", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.EntryBuffer", 
+                        "name": "buffer", 
+                        "description": "a #GtkEntryBuffer"
+                    }
+                ], 
+                "description": "Set the #GtkEntryBuffer object which holds the text for\nthis widget."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.4", 
+                "name": "set_completion", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.EntryCompletion", 
+                        "name": "completion", 
+                        "description": "The #GtkEntryCompletion or %NULL"
+                    }
+                ], 
+                "description": "Sets @completion to be the auxiliary completion object to use with @entry.\nAll further configuration of the completion mechanism is done on\n@completion using the #GtkEntryCompletion API. Completion is disabled if\n@completion is set to %NULL."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.12", 
+                "name": "set_cursor_hadjustment", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Adjustment", 
+                        "name": "adjustment", 
+                        "description": "an adjustment which should be adjusted when the cursor is moved, or %NULL"
+                    }
+                ], 
+                "description": "Hooks up an adjustment to the cursor position in an entry, so that when \nthe cursor is moved, the adjustment is scrolled to show that position. \nSee gtk_scrolled_window_get_hadjustment() for a typical way of obtaining \nthe adjustment.\n\nThe adjustment has to be in pixel units and in the same coordinate system \nas the entry."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_has_frame", 
+                "parameters": [
+                    {
+                        "type": "Boolean", 
+                        "name": "setting", 
+                        "description": "new value"
+                    }
+                ], 
+                "description": "Sets whether the entry has a beveled frame around it."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.16", 
+                "name": "set_icon_activatable", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.EntryIconPosition", 
+                        "name": "icon_pos", 
+                        "description": "Icon position"
+                    }, 
+                    {
+                        "type": "Boolean", 
+                        "name": "activatable", 
+                        "description": "%TRUE if the icon should be activatable"
+                    }
+                ], 
+                "description": "Sets whether the icon is activatable."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.16", 
+                "name": "set_icon_drag_source", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.EntryIconPosition", 
+                        "name": "icon_pos", 
+                        "description": "icon position"
+                    }, 
+                    {
+                        "type": "ref:Gtk.TargetList", 
+                        "name": "target_list", 
+                        "description": "the targets (data formats) in which the data can be provided"
+                    }, 
+                    {
+                        "type": "Gdk.DragAction", 
+                        "name": "actions", 
+                        "description": "a bitmask of the allowed drag actions"
+                    }
+                ], 
+                "description": "Sets up the icon at the given position so that GTK+ will start a drag\noperation when the user clicks and drags the icon.\n\nTo handle the drag operation, you need to connect to the usual\n#GtkWidget::drag-data-get (or possibly #GtkWidget::drag-data-delete)\nsignal, and use gtk_entry_get_current_icon_drag_source() in\nyour signal handler to find out if the drag was started from\nan icon.\n\nBy default, GTK+ uses the icon as the drag icon. You can use the \n#GtkWidget::drag-begin signal to set a different icon. Note that you \nhave to use g_signal_connect_after() to ensure that your signal handler\ngets executed after the default handler."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.16", 
+                "name": "set_icon_from_gicon", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.EntryIconPosition", 
+                        "name": "icon_pos", 
+                        "description": "The position at which to set the icon"
+                    }, 
+                    {
+                        "type": "Gio.Icon", 
+                        "name": "icon", 
+                        "description": "The icon to set, or %NULL"
+                    }
+                ], 
+                "description": "Sets the icon shown in the entry at the specified position\nfrom the current icon theme.\nIf the icon isn't known, a \"broken image\" icon will be displayed\ninstead.\n\nIf @icon is %NULL, no icon will be shown in the specified position."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.16", 
+                "name": "set_icon_from_icon_name", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.EntryIconPosition", 
+                        "name": "icon_pos", 
+                        "description": "The position at which to set the icon"
+                    }, 
+                    {
+                        "type": "String", 
+                        "name": "icon_name", 
+                        "description": "An icon name, or %NULL"
+                    }
+                ], 
+                "description": "Sets the icon shown in the entry at the specified position\nfrom the current icon theme.\n\nIf the icon name isn't known, a \"broken image\" icon will be displayed\ninstead.\n\nIf @icon_name is %NULL, no icon will be shown in the specified position."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.16", 
+                "name": "set_icon_from_pixbuf", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.EntryIconPosition", 
+                        "name": "icon_pos", 
+                        "description": "Icon position"
+                    }, 
+                    {
+                        "type": "GdkPixbuf.Pixbuf", 
+                        "name": "pixbuf", 
+                        "description": "A #GdkPixbuf, or %NULL"
+                    }
+                ], 
+                "description": "Sets the icon shown in the specified position using a pixbuf.\n\nIf @pixbuf is %NULL, no icon will be shown in the specified position."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.16", 
+                "name": "set_icon_from_stock", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.EntryIconPosition", 
+                        "name": "icon_pos", 
+                        "description": "Icon position"
+                    }, 
+                    {
+                        "type": "String", 
+                        "name": "stock_id", 
+                        "description": "The name of the stock item, or %NULL"
+                    }
+                ], 
+                "description": "Sets the icon shown in the entry at the specified position from\na stock image.\n\nIf @stock_id is %NULL, no icon will be shown in the specified position."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.16", 
+                "name": "set_icon_sensitive", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.EntryIconPosition", 
+                        "name": "icon_pos", 
+                        "description": "Icon position"
+                    }, 
+                    {
+                        "type": "Boolean", 
+                        "name": "sensitive", 
+                        "description": "Specifies whether the icon should appear sensitive or insensitive"
+                    }
+                ], 
+                "description": "Sets the sensitivity for the specified icon."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.16", 
+                "name": "set_icon_tooltip_markup", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.EntryIconPosition", 
+                        "name": "icon_pos", 
+                        "description": "the icon position"
+                    }, 
+                    {
+                        "type": "String", 
+                        "name": "tooltip", 
+                        "description": "the contents of the tooltip for the icon, or %NULL"
+                    }
+                ], 
+                "description": "Sets @tooltip as the contents of the tooltip for the icon at\nthe specified position. @tooltip is assumed to be marked up with\nthe <link linkend=\"PangoMarkupFormat\">Pango text markup language</link>.\n\nUse %NULL for @tooltip to remove an existing tooltip.\n\nSee also gtk_widget_set_tooltip_markup() and \ngtk_enty_set_icon_tooltip_text()."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.16", 
+                "name": "set_icon_tooltip_text", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.EntryIconPosition", 
+                        "name": "icon_pos", 
+                        "description": "the icon position"
+                    }, 
+                    {
+                        "type": "String", 
+                        "name": "tooltip", 
+                        "description": "the contents of the tooltip for the icon, or %NULL"
+                    }
+                ], 
+                "description": "Sets @tooltip as the contents of the tooltip for the icon\nat the specified position.\n\nUse %NULL for @tooltip to remove an existing tooltip.\n\nSee also gtk_widget_set_tooltip_text() and \ngtk_entry_set_icon_tooltip_markup()."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.10", 
+                "name": "set_inner_border", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Border", 
+                        "name": "border", 
+                        "description": "a #GtkBorder, or %NULL"
+                    }
+                ], 
+                "description": "Sets %entry's inner-border property to %border, or clears it if %NULL\nis passed. The inner-border is the area around the entry's text, but\ninside its frame.\n\nIf set, this property overrides the inner-border style property.\nOverriding the style-provided border is useful when you want to do\nin-place editing of some text in a canvas or list widget, where\npixel-exact positioning of the entry is important.\n\n\nthe value set with this function is ignored by #GtkEntry."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_invisible_char", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "ch", 
+                        "description": "a Unicode character"
+                    }
+                ], 
+                "description": "Sets the character to use in place of the actual text when\ngtk_entry_set_visibility() has been called to set text visibility\nto %FALSE. i.e. this is the character used in \"password mode\" to\nshow the user how many characters have been typed. By default, GTK+\npicks the best invisible char available in the current font. If you\nset the invisible char to 0, then the user will get no feedback\nat all; there will be no text on the screen as they type."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_max_length", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "max", 
+                        "description": "the maximum length of the entry, or 0 for no maximum. (other than the maximum length of entries.) The value passed in will be clamped to the range 0-65536."
+                    }
+                ], 
+                "description": "Sets the maximum allowed length of the contents of the widget. If\nthe current contents are longer than the given length, then they\nwill be truncated to fit.\n\nThis is equivalent to:\n\n<informalexample><programlisting>\ngtk_entry_buffer_set_max_length (gtk_entry_get_buffer (entry), max);\n</programlisting></informalexample>"
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.14", 
+                "name": "set_overwrite_mode", 
+                "parameters": [
+                    {
+                        "type": "Boolean", 
+                        "name": "overwrite", 
+                        "description": "new value"
+                    }
+                ], 
+                "description": "Sets whether the text is overwritten when typing in the #GtkEntry."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "3.2", 
+                "name": "set_placeholder_text", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "text", 
+                        "description": "a string to be displayed when @entry is empty an unfocused, or %NULL"
+                    }
+                ], 
+                "description": "Sets text to be displayed in @entry when it is empty and unfocused.\nThis can be used to give a visual hint of the expected contents of\nthe #GtkEntry.\n\nNote that since the placeholder text gets removed when the entry\nreceived focus, using this feature is a bit problematic if the entry\nis given the initial focus in a window. Sometimes this can be\nworked around by delaying the initial focus setting until the\nfirst key event arrives."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.16", 
+                "name": "set_progress_fraction", 
+                "parameters": [
+                    {
+                        "type": "Float", 
+                        "name": "fraction", 
+                        "description": "fraction of the task that's been completed"
+                    }
+                ], 
+                "description": "Causes the entry's progress indicator to \"fill in\" the given\nfraction of the bar. The fraction should be between 0.0 and 1.0,\ninclusive."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.16", 
+                "name": "set_progress_pulse_step", 
+                "parameters": [
+                    {
+                        "type": "Float", 
+                        "name": "fraction", 
+                        "description": "fraction between 0.0 and 1.0"
+                    }
+                ], 
+                "description": "Sets the fraction of total entry width to move the progress\nbouncing block for each call to gtk_entry_progress_pulse()."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_text", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "text", 
+                        "description": "the new text"
+                    }
+                ], 
+                "description": "Sets the text in the widget to the given\nvalue, replacing the current contents.\n\nSee gtk_entry_buffer_set_text()."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_visibility", 
+                "parameters": [
+                    {
+                        "type": "Boolean", 
+                        "name": "visible", 
+                        "description": "%TRUE if the contents of the entry are displayed as plaintext"
+                    }
+                ], 
+                "description": "Sets whether the contents of the entry are visible or not. \nWhen visibility is set to %FALSE, characters are displayed \nas the invisible char, and will also appear that way when \nthe text in the entry widget is copied elsewhere.\n\nBy default, GTK+ picks the best invisible character available\nin the current font, but it can be changed with\ngtk_entry_set_invisible_char()."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_width_chars", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "n_chars", 
+                        "description": "width in chars"
+                    }
+                ], 
+                "description": "Changes the size request of the entry to be about the right size\nfor @n_chars characters. Note that it changes the size\n<emphasis>request</emphasis>, the size can still be affected by\nhow you pack the widget into containers. If @n_chars is -1, the\nsize reverts to the default entry size."
+            }, 
+            {
+                "returns": {
+                    "type": "Integer", 
+                    "description": "byte index into the entry layout text"
+                }, 
+                "version": "", 
+                "name": "text_index_to_layout_index", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "text_index", 
+                        "description": "byte index into the entry contents"
+                    }
+                ], 
+                "description": "Converts from a position in the entry's #PangoLayout (returned by\ngtk_entry_get_layout()) to a position in the entry contents\n(returned by gtk_entry_get_text())."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.16", 
+                "name": "unset_invisible_char", 
+                "parameters": null, 
+                "description": "Unsets the invisible char previously set with\ngtk_entry_set_invisible_char(). So that the\ndefault invisible char is used again."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "activate", 
+                "parameters": null, 
+                "description": ""
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "backspace", 
+                "parameters": null, 
+                "description": ""
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "copy_clipboard", 
+                "parameters": null, 
+                "description": ""
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "cut_clipboard", 
+                "parameters": null, 
+                "description": ""
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "delete_from_cursor", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.DeleteType", 
+                        "name": "type", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "count", 
+                        "description": ""
+                    }
+                ], 
+                "description": ""
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "get_text_area_size", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "x", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "y", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "width", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "height", 
+                        "description": ""
+                    }
+                ], 
+                "description": ""
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "insert_at_cursor", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "str", 
+                        "description": ""
+                    }
+                ], 
+                "description": ""
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "move_cursor", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.MovementStep", 
+                        "name": "step", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "count", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Boolean", 
+                        "name": "extend_selection", 
+                        "description": ""
+                    }
+                ], 
+                "description": ""
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "paste_clipboard", 
+                "parameters": null, 
+                "description": ""
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "populate_popup", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Menu", 
+                        "name": "menu", 
+                        "description": ""
+                    }
+                ], 
+                "description": ""
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "toggle_overwrite", 
+                "parameters": null, 
+                "description": ""
+            }
+        ], 
+        "properties": [
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "activates-default", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Gtk.EntryBuffer", 
+                "readable": false, 
+                "name": "buffer", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "caps-lock-warning", 
+                "description": "Whether password entries will show a warning when Caps Lock is on.\n\nNote that the warning is shown using a secondary icon, and thus\ndoes not work if you are using the secondary icon position for some \nother purpose."
+            }, 
+            {
+                "writable": false, 
+                "type": "Gtk.EntryCompletion", 
+                "readable": false, 
+                "name": "completion", 
+                "description": "The auxiliary completion object to use with the entry."
+            }, 
+            {
+                "writable": false, 
+                "type": "Integer", 
+                "readable": false, 
+                "name": "cursor-position", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "editable", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "has-frame", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "String", 
+                "readable": false, 
+                "name": "im-module", 
+                "description": "Which IM (input method) module should be used for this entry. \nSee #GtkIMContext.\n\nSetting this to a non-%NULL value overrides the\nsystem-wide IM module setting. See the GtkSettings \n#GtkSettings:gtk-im-module property."
+            }, 
+            {
+                "writable": false, 
+                "type": "Gtk.Border", 
+                "readable": false, 
+                "name": "inner-border", 
+                "description": "Sets the text area's border between the text and the frame.\n\n\nthe value of this style property is ignored."
+            }, 
+            {
+                "writable": false, 
+                "type": "Integer", 
+                "readable": false, 
+                "name": "invisible-char", 
+                "description": "The invisible character is used when masking entry contents (in\n\\\"password mode\\\")\"). When it is not explicitly set with the\n#GtkEntry:invisible-char property, GTK+ determines the character\nto use from a list of possible candidates, depending on availability\nin the current font.\n\nThis style property allows the theme to prepend a character\nto the list of candidates."
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "invisible-char-set", 
+                "description": "Whether the invisible char has been set for the #GtkEntry."
+            }, 
+            {
+                "writable": false, 
+                "type": "Integer", 
+                "readable": false, 
+                "name": "max-length", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "overwrite-mode", 
+                "description": "If text is overwritten when typing in the #GtkEntry."
+            }, 
+            {
+                "writable": false, 
+                "type": "String", 
+                "readable": false, 
+                "name": "placeholder-text", 
+                "description": "The text that will be displayed in the #GtkEntry when it is empty\nand unfocused."
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "primary-icon-activatable", 
+                "description": "Whether the primary icon is activatable.\n\nGTK+ emits the #GtkEntry::icon-press and #GtkEntry::icon-release \nsignals only on sensitive, activatable icons. \n\nSensitive, but non-activatable icons can be used for purely \ninformational purposes."
+            }, 
+            {
+                "writable": false, 
+                "type": "Gio.Icon", 
+                "readable": false, 
+                "name": "primary-icon-gicon", 
+                "description": "The #GIcon to use for the primary icon for the entry."
+            }, 
+            {
+                "writable": false, 
+                "type": "String", 
+                "readable": false, 
+                "name": "primary-icon-name", 
+                "description": "The icon name to use for the primary icon for the entry."
+            }, 
+            {
+                "writable": false, 
+                "type": "GdkPixbuf.Pixbuf", 
+                "readable": false, 
+                "name": "primary-icon-pixbuf", 
+                "description": "A pixbuf to use as the primary icon for the entry."
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "primary-icon-sensitive", 
+                "description": "Whether the primary icon is sensitive.\n\nAn insensitive icon appears grayed out. GTK+ does not emit the \n#GtkEntry::icon-press and #GtkEntry::icon-release signals and \ndoes not allow DND from insensitive icons.\n\nAn icon should be set insensitive if the action that would trigger\nwhen clicked is currently not available."
+            }, 
+            {
+                "writable": false, 
+                "type": "String", 
+                "readable": false, 
+                "name": "primary-icon-stock", 
+                "description": "The stock id to use for the primary icon for the entry."
+            }, 
+            {
+                "writable": false, 
+                "type": "Gtk.ImageType", 
+                "readable": false, 
+                "name": "primary-icon-storage-type", 
+                "description": "The representation which is used for the primary icon of the entry."
+            }, 
+            {
+                "writable": false, 
+                "type": "String", 
+                "readable": false, 
+                "name": "primary-icon-tooltip-markup", 
+                "description": "The contents of the tooltip on the primary icon, which is marked up\nwith the <link linkend=\"PangoMarkupFormat\">Pango text markup \nlanguage</link>.\n\nAlso see gtk_entry_set_icon_tooltip_markup()."
+            }, 
+            {
+                "writable": false, 
+                "type": "String", 
+                "readable": false, 
+                "name": "primary-icon-tooltip-text", 
+                "description": "The contents of the tooltip on the primary icon.\n\nAlso see gtk_entry_set_icon_tooltip_text()."
+            }, 
+            {
+                "writable": false, 
+                "type": "Float", 
+                "readable": false, 
+                "name": "progress-fraction", 
+                "description": "The current fraction of the task that's been completed."
+            }, 
+            {
+                "writable": false, 
+                "type": "Float", 
+                "readable": false, 
+                "name": "progress-pulse-step", 
+                "description": "The fraction of total entry width to move the progress\nbouncing block for each call to gtk_entry_progress_pulse()."
+            }, 
+            {
+                "writable": false, 
+                "type": "Integer", 
+                "readable": false, 
+                "name": "scroll-offset", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "secondary-icon-activatable", 
+                "description": "Whether the secondary icon is activatable.\n\nGTK+ emits the #GtkEntry::icon-press and #GtkEntry::icon-release \nsignals only on sensitive, activatable icons.\n\nSensitive, but non-activatable icons can be used for purely \ninformational purposes."
+            }, 
+            {
+                "writable": false, 
+                "type": "Gio.Icon", 
+                "readable": false, 
+                "name": "secondary-icon-gicon", 
+                "description": "The #GIcon to use for the secondary icon for the entry."
+            }, 
+            {
+                "writable": false, 
+                "type": "String", 
+                "readable": false, 
+                "name": "secondary-icon-name", 
+                "description": "The icon name to use for the secondary icon for the entry."
+            }, 
+            {
+                "writable": false, 
+                "type": "GdkPixbuf.Pixbuf", 
+                "readable": false, 
+                "name": "secondary-icon-pixbuf", 
+                "description": "An pixbuf to use as the secondary icon for the entry."
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "secondary-icon-sensitive", 
+                "description": "Whether the secondary icon is sensitive.\n\nAn insensitive icon appears grayed out. GTK+ does not emit the \n#GtkEntry::icon-press and #GtkEntry::icon-release signals and \ndoes not allow DND from insensitive icons.\n\nAn icon should be set insensitive if the action that would trigger\nwhen clicked is currently not available."
+            }, 
+            {
+                "writable": false, 
+                "type": "String", 
+                "readable": false, 
+                "name": "secondary-icon-stock", 
+                "description": "The stock id to use for the secondary icon for the entry."
+            }, 
+            {
+                "writable": false, 
+                "type": "Gtk.ImageType", 
+                "readable": false, 
+                "name": "secondary-icon-storage-type", 
+                "description": "The representation which is used for the secondary icon of the entry."
+            }, 
+            {
+                "writable": false, 
+                "type": "String", 
+                "readable": false, 
+                "name": "secondary-icon-tooltip-markup", 
+                "description": "The contents of the tooltip on the secondary icon, which is marked up\nwith the <link linkend=\"PangoMarkupFormat\">Pango text markup \nlanguage</link>.\n\nAlso see gtk_entry_set_icon_tooltip_markup()."
+            }, 
+            {
+                "writable": false, 
+                "type": "String", 
+                "readable": false, 
+                "name": "secondary-icon-tooltip-text", 
+                "description": "The contents of the tooltip on the secondary icon.\n\nAlso see gtk_entry_set_icon_tooltip_text()."
+            }, 
+            {
+                "writable": false, 
+                "type": "Integer", 
+                "readable": false, 
+                "name": "selection-bound", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Gtk.ShadowType", 
+                "readable": false, 
+                "name": "shadow-type", 
+                "description": "Which kind of shadow to draw around the entry when \n#GtkEntry:has-frame is set to %TRUE."
+            }, 
+            {
+                "writable": false, 
+                "type": "String", 
+                "readable": false, 
+                "name": "text", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Integer", 
+                "readable": false, 
+                "name": "text-length", 
+                "description": "The length of the text in the #GtkEntry."
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "truncate-multiline", 
+                "description": "When %TRUE, pasted multi-line text is truncated to the first line."
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "visibility", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Integer", 
+                "readable": false, 
+                "name": "width-chars", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Float", 
+                "readable": false, 
+                "name": "xalign", 
+                "description": "The horizontal alignment, from 0 (left) to 1 (right). \nReversed for RTL layouts."
+            }
+        ]
+    }, 
+    "fullname": "Class Gtk.Entry", 
+    "id": "Docs-Entry", 
+    "description": "The #GtkEntry widget is a single line text entry\nwidget. A fairly large set of key bindings are supported\nby default. If the entered text is longer than the allocation\nof the widget, the widget will scroll so that the cursor\nposition is visible.\n\nWhen using an entry for passwords and other sensitive information,\nit can be put into \"password mode\" using gtk_entry_set_visibility().\nIn this mode, entered text is displayed using a 'invisible' character.\nBy default, GTK+ picks the best invisible character that is available\nin the current font, but it can be changed with\ngtk_entry_set_invisible_char(). Since 2.16, GTK+ displays a warning\nwhen Caps Lock or input methods might interfere with entering text in\na password entry. The warning can be turned off with the\n#GtkEntry:caps-lock-warning property.\n\nSince 2.16, GtkEntry has the ability to display progress or activity\ninformation behind the text. To make an entry display such information,\nuse gtk_entry_set_progress_fraction() or gtk_entry_set_progress_pulse_step().\n\nAdditionally, GtkEntry can show icons at either side of the entry. These\nicons can be activatable by clicking, can be set up as drag source and\ncan have tooltips. To add an icon, use gtk_entry_set_icon_from_gicon() or\none of the various other functions that set an icon from a stock id, an\nicon name or a pixbuf. To trigger an action when the user clicks an icon,\nconnect to the #GtkEntry::icon-press signal. To allow DND operations\nfrom an icon, use gtk_entry_set_icon_drag_source(). To set a tooltip on\nan icon, use gtk_entry_set_icon_tooltip_text() or the corresponding function\nfor markup.\n\nNote that functionality or information that is only available by clicking\non an icon in an entry may not be accessible at all to users which are not\nable to use a mouse or other pointing device. It is therefore recommended\nthat any such functionality should also be available by other means, e.g.\nvia the context menu of the entry."
+}

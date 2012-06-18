@@ -1,0 +1,29 @@
+{
+    "leaf": true, 
+    "name": "RecentSortType", 
+    "text": "RecentSortType", 
+    "version": "2.10", 
+    "members": {
+        "properties": [
+            {
+                "name": "none", 
+                "value": "0"
+            }, 
+            {
+                "name": "mru", 
+                "value": "1"
+            }, 
+            {
+                "name": "lru", 
+                "value": "2"
+            }, 
+            {
+                "name": "custom", 
+                "value": "3"
+            }
+        ]
+    }, 
+    "fullname": "Enumeration Gtk.RecentSortType", 
+    "id": "Docs-RecentSortType", 
+    "description": ""
+}

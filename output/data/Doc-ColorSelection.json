@@ -1,0 +1,338 @@
+{
+    "isAbstract": false, 
+    "leaf": true, 
+    "name": "ColorSelection", 
+    "text": "ColorSelection", 
+    "interfaces": [
+        [
+            "Atk.ImplementorIface"
+        ], 
+        [
+            "Buildable"
+        ], 
+        [
+            "Orientable"
+        ]
+    ], 
+    "parents": [
+        "ColorSelection", 
+        "Box", 
+        "Container", 
+        "Widget", 
+        "GObject.InitiallyUnowned"
+    ], 
+    "members": {
+        "signals": [
+            {
+                "version": "", 
+                "when": "first", 
+                "name": "color-changed", 
+                "description": "This signal is emitted when the color changes in the #GtkColorSelection\naccording to its update policy."
+            }
+        ], 
+        "methods": [
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a new #GtkColorSelection", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": null, 
+                "name": "Gtk.ColorSelection()", 
+                "parameters": null
+            }, 
+            {
+                "returns": {
+                    "type": "Integer", 
+                    "description": "an integer between 0 and 65535"
+                }, 
+                "version": "", 
+                "name": "get_current_alpha", 
+                "parameters": null, 
+                "description": "Returns the current alpha value."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "get_current_color", 
+                "parameters": [
+                    {
+                        "type": "Gdk.Color", 
+                        "name": "color", 
+                        "description": "a #GdkColor to fill in with the current color"
+                    }
+                ], 
+                "description": "Sets @color to be the current color in the GtkColorSelection widget."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "3.0", 
+                "name": "get_current_rgba", 
+                "parameters": [
+                    {
+                        "type": "Gdk.RGBA", 
+                        "name": "rgba", 
+                        "description": "a #GdkRGBA to fill in with the current color"
+                    }
+                ], 
+                "description": "Sets @rgba to be the current color in the GtkColorSelection widget."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE if the @colorsel has an opacity control,"
+                }, 
+                "version": "", 
+                "name": "get_has_opacity_control", 
+                "parameters": null, 
+                "description": "Determines whether the colorsel has an opacity control.\n\n%FALSE if it does't"
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE if the selector has a palette, %FALSE if it hasn't"
+                }, 
+                "version": "", 
+                "name": "get_has_palette", 
+                "parameters": null, 
+                "description": "Determines whether the color selector has a color palette."
+            }, 
+            {
+                "returns": {
+                    "type": "Integer", 
+                    "description": "an integer between 0 and 65535"
+                }, 
+                "version": "", 
+                "name": "get_previous_alpha", 
+                "parameters": null, 
+                "description": "Returns the previous alpha value."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "get_previous_color", 
+                "parameters": [
+                    {
+                        "type": "Gdk.Color", 
+                        "name": "color", 
+                        "description": "a #GdkColor to fill in with the original color value"
+                    }
+                ], 
+                "description": "Fills @color in with the original color value."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "3.0", 
+                "name": "get_previous_rgba", 
+                "parameters": [
+                    {
+                        "type": "Gdk.RGBA", 
+                        "name": "rgba", 
+                        "description": "a #GdkRGBA to fill in with the original color value"
+                    }
+                ], 
+                "description": "Fills @rgba in with the original color value."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE if the user is currently dragging"
+                }, 
+                "version": "", 
+                "name": "is_adjusting", 
+                "parameters": null, 
+                "description": "Gets the current state of the @colorsel.\n\na color around, and %FALSE if the selection has stopped"
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_current_alpha", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "alpha", 
+                        "description": "an integer between 0 and 65535"
+                    }
+                ], 
+                "description": "Sets the current opacity to be @alpha.\n\nThe first time this is called, it will also set\nthe original opacity to be @alpha too."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_current_color", 
+                "parameters": [
+                    {
+                        "type": "Gdk.Color", 
+                        "name": "color", 
+                        "description": "a #GdkColor to set the current color with"
+                    }
+                ], 
+                "description": "Sets the current color to be @color.\n\nThe first time this is called, it will also set\nthe original color to be @color too."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "3.0", 
+                "name": "set_current_rgba", 
+                "parameters": [
+                    {
+                        "type": "Gdk.RGBA", 
+                        "name": "rgba", 
+                        "description": "A #GdkRGBA to set the current color with"
+                    }
+                ], 
+                "description": "Sets the current color to be @rgba.\n\nThe first time this is called, it will also set\nthe original color to be @rgba too."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_has_opacity_control", 
+                "parameters": [
+                    {
+                        "type": "Boolean", 
+                        "name": "has_opacity", 
+                        "description": "%TRUE if @colorsel can set the opacity, %FALSE otherwise"
+                    }
+                ], 
+                "description": "Sets the @colorsel to use or not use opacity."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_has_palette", 
+                "parameters": [
+                    {
+                        "type": "Boolean", 
+                        "name": "has_palette", 
+                        "description": "%TRUE if palette is to be visible, %FALSE otherwise"
+                    }
+                ], 
+                "description": "Shows and hides the palette based upon the value of @has_palette."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_previous_alpha", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "alpha", 
+                        "description": "an integer between 0 and 65535"
+                    }
+                ], 
+                "description": "Sets the 'previous' alpha to be @alpha.\n\nThis function should be called with some hesitations,\nas it might seem confusing to have that alpha change."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_previous_color", 
+                "parameters": [
+                    {
+                        "type": "Gdk.Color", 
+                        "name": "color", 
+                        "description": "a #GdkColor to set the previous color with"
+                    }
+                ], 
+                "description": "Sets the 'previous' color to be @color.\n\nThis function should be called with some hesitations,\nas it might seem confusing to have that color change.\nCalling gtk_color_selection_set_current_color() will also\nset this color the first time it is called."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "3.0", 
+                "name": "set_previous_rgba", 
+                "parameters": [
+                    {
+                        "type": "Gdk.RGBA", 
+                        "name": "rgba", 
+                        "description": "a #GdkRGBA to set the previous color with"
+                    }
+                ], 
+                "description": "Sets the 'previous' color to be @rgba.\n\nThis function should be called with some hesitations,\nas it might seem confusing to have that color change.\nCalling gtk_color_selection_set_current_rgba() will also\nset this color the first time it is called."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "color_changed", 
+                "parameters": null, 
+                "description": ""
+            }
+        ], 
+        "properties": [
+            {
+                "writable": false, 
+                "type": "Integer", 
+                "readable": false, 
+                "name": "current-alpha", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Gdk.Color", 
+                "readable": false, 
+                "name": "current-color", 
+                "description": "The current GdkColor color."
+            }, 
+            {
+                "writable": false, 
+                "type": "Gdk.RGBA", 
+                "readable": false, 
+                "name": "current-rgba", 
+                "description": "The current RGBA color."
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "has-opacity-control", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "has-palette", 
+                "description": ""
+            }
+        ]
+    }, 
+    "fullname": "Class Gtk.ColorSelection", 
+    "id": "Docs-ColorSelection", 
+    "description": ""
+}

@@ -1,0 +1,37 @@
+{
+    "leaf": true, 
+    "name": "CssProviderError", 
+    "text": "CssProviderError", 
+    "version": null, 
+    "members": {
+        "properties": [
+            {
+                "name": "failed", 
+                "value": "0"
+            }, 
+            {
+                "name": "syntax", 
+                "value": "1"
+            }, 
+            {
+                "name": "import", 
+                "value": "2"
+            }, 
+            {
+                "name": "name", 
+                "value": "3"
+            }, 
+            {
+                "name": "deprecated", 
+                "value": "4"
+            }, 
+            {
+                "name": "unknown_value", 
+                "value": "5"
+            }
+        ]
+    }, 
+    "fullname": "Enumeration Gtk.CssProviderError", 
+    "id": "Docs-CssProviderError", 
+    "description": ""
+}

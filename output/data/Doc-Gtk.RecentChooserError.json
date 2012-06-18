@@ -1,0 +1,21 @@
+{
+    "leaf": true, 
+    "name": "RecentChooserError", 
+    "text": "RecentChooserError", 
+    "version": "2.10", 
+    "members": {
+        "properties": [
+            {
+                "name": "not_found", 
+                "value": "0"
+            }, 
+            {
+                "name": "invalid_uri", 
+                "value": "1"
+            }
+        ]
+    }, 
+    "fullname": "Enumeration Gtk.RecentChooserError", 
+    "id": "Docs-RecentChooserError", 
+    "description": ""
+}

@@ -1,0 +1,53 @@
+{
+    "leaf": true, 
+    "name": "MovementStep", 
+    "text": "MovementStep", 
+    "version": null, 
+    "members": {
+        "properties": [
+            {
+                "name": "logical_positions", 
+                "value": "0"
+            }, 
+            {
+                "name": "visual_positions", 
+                "value": "1"
+            }, 
+            {
+                "name": "words", 
+                "value": "2"
+            }, 
+            {
+                "name": "display_lines", 
+                "value": "3"
+            }, 
+            {
+                "name": "display_line_ends", 
+                "value": "4"
+            }, 
+            {
+                "name": "paragraphs", 
+                "value": "5"
+            }, 
+            {
+                "name": "paragraph_ends", 
+                "value": "6"
+            }, 
+            {
+                "name": "pages", 
+                "value": "7"
+            }, 
+            {
+                "name": "buffer_ends", 
+                "value": "8"
+            }, 
+            {
+                "name": "horizontal_pages", 
+                "value": "9"
+            }
+        ]
+    }, 
+    "fullname": "Enumeration Gtk.MovementStep", 
+    "id": "Docs-MovementStep", 
+    "description": ""
+}

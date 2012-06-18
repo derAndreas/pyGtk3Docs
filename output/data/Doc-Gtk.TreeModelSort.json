@@ -1,0 +1,158 @@
+{
+    "isAbstract": false, 
+    "leaf": true, 
+    "name": "TreeModelSort", 
+    "text": "TreeModelSort", 
+    "interfaces": [
+        [
+            "TreeDragSource"
+        ], 
+        [
+            "TreeModel"
+        ], 
+        [
+            "TreeSortable"
+        ]
+    ], 
+    "parents": [
+        "TreeModelSort", 
+        "GObject.Object"
+    ], 
+    "members": {
+        "signals": [], 
+        "methods": [
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "clear_cache", 
+                "parameters": null, 
+                "description": "This function should almost never be called.  It clears the @tree_model_sort\nof any cached iterators that haven't been reffed with\ngtk_tree_model_ref_node().  This might be useful if the child model being\nsorted is static (and doesn't change often) and there has been a lot of\nunreffed access to nodes.  As a side effect of this function, all unreffed\niters will be invalid."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE, if @sort_iter was set, i.e. if @sort_iter is a"
+                }, 
+                "version": "", 
+                "name": "convert_child_iter_to_iter", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TreeIter", 
+                        "name": "sort_iter", 
+                        "description": "An uninitialized #GtkTreeIter."
+                    }, 
+                    {
+                        "type": "ref:Gtk.TreeIter", 
+                        "name": "child_iter", 
+                        "description": "A valid #GtkTreeIter pointing to a row on the child model"
+                    }
+                ], 
+                "description": "Sets @sort_iter to point to the row in @tree_model_sort that corresponds to\nthe row pointed at by @child_iter.  If @sort_iter was not set, %FALSE\nis returned.  Note: a boolean is only returned since 2.14.\n\nvalid iterator pointer to a visible row in the child model."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.TreePath", 
+                    "description": "A newly allocated #GtkTreePath, or %NULL"
+                }, 
+                "version": "", 
+                "name": "convert_child_path_to_path", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TreePath", 
+                        "name": "child_path", 
+                        "description": "A #GtkTreePath to convert"
+                    }
+                ], 
+                "description": "Converts @child_path to a path relative to @tree_model_sort.  That is,\n@child_path points to a path in the child model.  The returned path will\npoint to the same row in the sorted model.  If @child_path isn't a valid \npath on the child model, then %NULL is returned."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "convert_iter_to_child_iter", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TreeIter", 
+                        "name": "child_iter", 
+                        "description": "An uninitialized #GtkTreeIter"
+                    }, 
+                    {
+                        "type": "ref:Gtk.TreeIter", 
+                        "name": "sorted_iter", 
+                        "description": "A valid #GtkTreeIter pointing to a row on @tree_model_sort."
+                    }
+                ], 
+                "description": "Sets @child_iter to point to the row pointed to by @sorted_iter."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.TreePath", 
+                    "description": "A newly allocated #GtkTreePath, or %NULL"
+                }, 
+                "version": "", 
+                "name": "convert_path_to_child_path", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TreePath", 
+                        "name": "sorted_path", 
+                        "description": "A #GtkTreePath to convert"
+                    }
+                ], 
+                "description": "Converts @sorted_path to a path on the child model of @tree_model_sort.  \nThat is, @sorted_path points to a location in @tree_model_sort.  The \nreturned path will point to the same location in the model not being \nsorted.  If @sorted_path does not point to a location in the child model, \n%NULL is returned."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.TreeModel", 
+                    "description": "the \"child model\" being sorted"
+                }, 
+                "version": "", 
+                "name": "get_model", 
+                "parameters": null, 
+                "description": "Returns the model the #GtkTreeModelSort is sorting."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE if the iter is valid, %FALSE if the iter is invalid."
+                }, 
+                "version": "2.2", 
+                "name": "iter_is_valid", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TreeIter", 
+                        "name": "iter", 
+                        "description": "A #GtkTreeIter."
+                    }
+                ], 
+                "description": "<warning><para>\nThis function is slow. Only use it for debugging and/or testing purposes.\n</para></warning>\n\nChecks if the given iter is a valid iter for this #GtkTreeModelSort."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "reset_default_sort_func", 
+                "parameters": null, 
+                "description": "This resets the default sort function to be in the 'unsorted' state.  That\nis, it is in the same order as the child model. It will re-sort the model\nto be in the same order as the child model only if the #GtkTreeModelSort\nis in 'unsorted' state."
+            }
+        ], 
+        "properties": [
+            {
+                "writable": false, 
+                "type": "Gtk.TreeModel", 
+                "readable": false, 
+                "name": "model", 
+                "description": ""
+            }
+        ]
+    }, 
+    "fullname": "Class Gtk.TreeModelSort", 
+    "id": "Docs-TreeModelSort", 
+    "description": "The #GtkTreeModelSort is a model which implements the #GtkTreeSortable\ninterface.  It does not hold any data itself, but rather is created with\na child model and proxies its data.  It has identical column types to\nthis child model, and the changes in the child are propagated.  The\nprimary purpose of this model is to provide a way to sort a different\nmodel without modifying it. Note that the sort function used by\n#GtkTreeModelSort is not guaranteed to be stable.\n\nThe use of this is best demonstrated through an example.  In the\nfollowing sample code we create two #GtkTreeView widgets each with a\nview of the same data.  As the model is wrapped here by a\n#GtkTreeModelSort, the two #GtkTreeView<!-- -->s can each sort their\nview of the data without affecting the other.  By contrast, if we\nsimply put the same model in each widget, then sorting the first would\nsort the second.\n\n<example>\n<title>Using a <structname>GtkTreeModelSort</structname></title>\n<programlisting>\n{\nGtkTreeView *tree_view1;\nGtkTreeView *tree_view2;\nGtkTreeModel *sort_model1;\nGtkTreeModel *sort_model2;\nGtkTreeModel *child_model;\n\n// get the child model\nchild_model = get_my_model ();\n\n// Create the first tree\nsort_model1 = gtk_tree_model_sort_new_with_model (child_model);\ntree_view1 = gtk_tree_view_new_with_model (sort_model1);\n\n// Create the second tree\nsort_model2 = gtk_tree_model_sort_new_with_model (child_model);\ntree_view2 = gtk_tree_view_new_with_model (sort_model2);\n\n// Now we can sort the two models independently\ngtk_tree_sortable_set_sort_column_id (GTK_TREE_SORTABLE (sort_model1),\nCOLUMN_1, GTK_SORT_ASCENDING);\ngtk_tree_sortable_set_sort_column_id (GTK_TREE_SORTABLE (sort_model2),\nCOLUMN_1, GTK_SORT_DESCENDING);\n}\n</programlisting>\n</example>\n\nTo demonstrate how to access the underlying child model from the sort\nmodel, the next example will be a callback for the #GtkTreeSelection\n#GtkTreeSelection::changed signal.  In this callback, we get a string\nfrom COLUMN_1 of the model.  We then modify the string, find the same\nselected row on the child model, and change the row there.\n\n<example>\n<title>Accessing the child model of in a selection changed callback</title>\n<programlisting>\nvoid\nselection_changed (GtkTreeSelection *selection, gpointer data)\n{\nGtkTreeModel *sort_model = NULL;\nGtkTreeModel *child_model;\nGtkTreeIter sort_iter;\nGtkTreeIter child_iter;\nchar *some_data = NULL;\nchar *modified_data;\n\n// Get the current selected row and the model.\nif (! gtk_tree_selection_get_selected (selection,\n&sort_model,\n&sort_iter))\nreturn;\n\n/<!---->* Look up the current value on the selected row and get a new value\n* to change it to.\n*<!---->/\ngtk_tree_model_get (GTK_TREE_MODEL (sort_model), &sort_iter,\nCOLUMN_1, &some_data,\n-1);\n\nmodified_data = change_the_data (some_data);\ng_free (some_data);\n\n// Get an iterator on the child model, instead of the sort model.\ngtk_tree_model_sort_convert_iter_to_child_iter (GTK_TREE_MODEL_SORT (sort_model),\n&child_iter,\n&sort_iter);\n\n/<!---->* Get the child model and change the value of the row.  In this\n* example, the child model is a GtkListStore.  It could be any other\n* type of model, though.\n*<!---->/\nchild_model = gtk_tree_model_sort_get_model (GTK_TREE_MODEL_SORT (sort_model));\ngtk_list_store_set (GTK_LIST_STORE (child_model), &child_iter,\nCOLUMN_1, &modified_data,\n-1);\ng_free (modified_data);\n}\n</programlisting>\n</example>"
+}

@@ -1,0 +1,78 @@
+{
+    "isAbstract": false, 
+    "leaf": true, 
+    "name": "CellRendererProgress", 
+    "text": "CellRendererProgress", 
+    "interfaces": [
+        [
+            "Orientable"
+        ]
+    ], 
+    "parents": [
+        "CellRendererProgress", 
+        "CellRenderer", 
+        "GObject.InitiallyUnowned"
+    ], 
+    "members": {
+        "signals": [], 
+        "methods": [
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "the new cell renderer", 
+                    "name": "ref:Gtk.CellRenderer"
+                }, 
+                "version": "2.6", 
+                "name": "Gtk.CellRendererProgress()", 
+                "parameters": null
+            }
+        ], 
+        "properties": [
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "inverted", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Integer", 
+                "readable": false, 
+                "name": "pulse", 
+                "description": "Setting this to a non-negative value causes the cell renderer to\nenter \"activity mode\", where a block bounces back and forth to \nindicate that some progress is made, without specifying exactly how\nmuch.\n\nEach increment of the property causes the block to move by a little \nbit.\n\nTo indicate that the activity has not started yet, set the property\nto zero. To indicate completion, set the property to %G_MAXINT."
+            }, 
+            {
+                "writable": false, 
+                "type": "String", 
+                "readable": false, 
+                "name": "text", 
+                "description": "The \"text\" property determines the label which will be drawn\nover the progress bar. Setting this property to %NULL causes the default \nlabel to be displayed. Setting this property to an empty string causes \nno label to be displayed."
+            }, 
+            {
+                "writable": false, 
+                "type": "Float", 
+                "readable": false, 
+                "name": "text-xalign", 
+                "description": "The \"text-xalign\" property controls the horizontal alignment of the\ntext in the progress bar.  Valid values range from 0 (left) to 1\n(right).  Reserved for RTL layouts."
+            }, 
+            {
+                "writable": false, 
+                "type": "Float", 
+                "readable": false, 
+                "name": "text-yalign", 
+                "description": "The \"text-yalign\" property controls the vertical alignment of the\ntext in the progress bar.  Valid values range from 0 (top) to 1\n(bottom)."
+            }, 
+            {
+                "writable": false, 
+                "type": "Integer", 
+                "readable": false, 
+                "name": "value", 
+                "description": "The \"value\" property determines the percentage to which the\nprogress bar will be \"filled in\"."
+            }
+        ]
+    }, 
+    "fullname": "Class Gtk.CellRendererProgress", 
+    "id": "Docs-CellRendererProgress", 
+    "description": "#GtkCellRendererProgress renders a numeric value as a progress par in a cell.\nAdditionally, it can display a text on top of the progress bar.\n\nThe #GtkCellRendererProgress cell renderer was added in GTK+ 2.6."
+}

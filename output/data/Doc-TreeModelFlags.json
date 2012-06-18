@@ -1,0 +1,21 @@
+{
+    "leaf": true, 
+    "name": "TreeModelFlags", 
+    "text": "TreeModelFlags", 
+    "version": null, 
+    "members": {
+        "properties": [
+            {
+                "name": "iters_persist", 
+                "value": "1"
+            }, 
+            {
+                "name": "list_only", 
+                "value": "2"
+            }
+        ]
+    }, 
+    "fullname": "Bitfield Gtk.TreeModelFlags", 
+    "id": "Docs-TreeModelFlags", 
+    "description": ""
+}

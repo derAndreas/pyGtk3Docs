@@ -1,0 +1,21 @@
+{
+    "leaf": true, 
+    "name": "NotebookTab", 
+    "text": "NotebookTab", 
+    "version": null, 
+    "members": {
+        "properties": [
+            {
+                "name": "first", 
+                "value": "0"
+            }, 
+            {
+                "name": "last", 
+                "value": "1"
+            }
+        ]
+    }, 
+    "fullname": "Enumeration Gtk.NotebookTab", 
+    "id": "Docs-NotebookTab", 
+    "description": ""
+}

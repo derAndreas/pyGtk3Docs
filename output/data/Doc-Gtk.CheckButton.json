@@ -1,0 +1,94 @@
+{
+    "isAbstract": false, 
+    "leaf": true, 
+    "name": "CheckButton", 
+    "text": "CheckButton", 
+    "interfaces": [
+        [
+            "Atk.ImplementorIface"
+        ], 
+        [
+            "Actionable"
+        ], 
+        [
+            "Activatable"
+        ], 
+        [
+            "Buildable"
+        ]
+    ], 
+    "parents": [
+        "CheckButton", 
+        "ToggleButton", 
+        "Button", 
+        "Bin", 
+        "Container", 
+        "Widget", 
+        "GObject.InitiallyUnowned"
+    ], 
+    "members": {
+        "signals": [], 
+        "methods": [
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a #GtkWidget.", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": null, 
+                "name": "Gtk.CheckButton()", 
+                "parameters": null
+            }, 
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a #GtkWidget.", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": null, 
+                "name": "Gtk.CheckButton(String label)", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "label"
+                    }
+                ]
+            }, 
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a new #GtkCheckButton", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": null, 
+                "name": "Gtk.CheckButton(String label)", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "label"
+                    }
+                ]
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "draw_indicator", 
+                "parameters": [
+                    {
+                        "type": "cairo.Context", 
+                        "name": "cr", 
+                        "description": ""
+                    }
+                ], 
+                "description": ""
+            }
+        ], 
+        "properties": []
+    }, 
+    "fullname": "Class Gtk.CheckButton", 
+    "id": "Docs-CheckButton", 
+    "description": "A #GtkCheckButton places a discrete #GtkToggleButton next to a widget,\n(usually a #GtkLabel). See the section on #GtkToggleButton widgets for\nmore information about toggle/check buttons.\n\nThe important signal ( #GtkToggleButton::toggled ) is also inherited from\n#GtkToggleButton."
+}

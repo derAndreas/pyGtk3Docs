@@ -1,0 +1,29 @@
+{
+    "leaf": true, 
+    "name": "FileFilterFlags", 
+    "text": "FileFilterFlags", 
+    "version": null, 
+    "members": {
+        "properties": [
+            {
+                "name": "filename", 
+                "value": "1"
+            }, 
+            {
+                "name": "uri", 
+                "value": "2"
+            }, 
+            {
+                "name": "display_name", 
+                "value": "4"
+            }, 
+            {
+                "name": "mime_type", 
+                "value": "8"
+            }
+        ]
+    }, 
+    "fullname": "Bitfield Gtk.FileFilterFlags", 
+    "id": "Docs-FileFilterFlags", 
+    "description": ""
+}

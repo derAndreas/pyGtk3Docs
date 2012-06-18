@@ -1,0 +1,593 @@
+{
+    "isAbstract": true, 
+    "leaf": true, 
+    "name": "Range", 
+    "text": "Range", 
+    "interfaces": [
+        [
+            "Atk.ImplementorIface"
+        ], 
+        [
+            "Buildable"
+        ], 
+        [
+            "Orientable"
+        ]
+    ], 
+    "parents": [
+        "Range", 
+        "Widget", 
+        "GObject.InitiallyUnowned"
+    ], 
+    "members": {
+        "signals": [
+            {
+                "version": "", 
+                "when": "last", 
+                "name": "adjust-bounds", 
+                "description": "Emitted before clamping a value, to give the application a\nchance to adjust the bounds."
+            }, 
+            {
+                "version": "2.6", 
+                "when": "last", 
+                "name": "change-value", 
+                "description": "The #GtkRange::change-value signal is emitted when a scroll action is\nperformed on a range.  It allows an application to determine the\ntype of scroll event that occurred and the resultant new value.\nThe application can handle the event itself and return %TRUE to\nprevent further processing.  Or, by returning %FALSE, it can pass\nthe event to other handlers until the default GTK+ handler is\nreached.\n\nThe value parameter is unrounded.  An application that overrides\nthe GtkRange::change-value signal is responsible for clamping the\nvalue to the desired number of decimal digits; the default GTK+\nhandler clamps the value based on #GtkRange:round-digits.\n\nIt is not possible to use delayed update policies in an overridden\n#GtkRange::change-value handler.\n\nthe signal, %FALSE to propagate the signal further"
+            }, 
+            {
+                "version": "", 
+                "when": "last", 
+                "name": "move-slider", 
+                "description": "Virtual function that moves the slider. Used for keybindings."
+            }, 
+            {
+                "version": "", 
+                "when": "last", 
+                "name": "value-changed", 
+                "description": "Emitted when the range value changes."
+            }
+        ], 
+        "methods": [
+            {
+                "returns": {
+                    "type": "ref:Gtk.Adjustment", 
+                    "description": "a #GtkAdjustment"
+                }, 
+                "version": "", 
+                "name": "get_adjustment", 
+                "parameters": null, 
+                "description": "Get the #GtkAdjustment which is the \"model\" object for #GtkRange.\nSee gtk_range_set_adjustment() for details.\nThe return value does not have a reference added, so should not\nbe unreferenced."
+            }, 
+            {
+                "returns": {
+                    "type": "Gdk.Window", 
+                    "description": "@range's event window."
+                }, 
+                "version": "2.24", 
+                "name": "get_event_window", 
+                "parameters": null, 
+                "description": "Returns the range's event window if it is realized, %NULL otherwise.\nThis function should be rarely needed."
+            }, 
+            {
+                "returns": {
+                    "type": "Float", 
+                    "description": "The current fill level"
+                }, 
+                "version": "2.12", 
+                "name": "get_fill_level", 
+                "parameters": null, 
+                "description": "Gets the current position of the fill level indicator."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE if the range is flippable"
+                }, 
+                "version": "2.18", 
+                "name": "get_flippable", 
+                "parameters": null, 
+                "description": "Gets the value set by gtk_range_set_flippable()."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE if the range is inverted"
+                }, 
+                "version": "", 
+                "name": "get_inverted", 
+                "parameters": null, 
+                "description": "Gets the value set by gtk_range_set_inverted()."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.SensitivityType", 
+                    "description": "The lower stepper's sensitivity policy."
+                }, 
+                "version": "2.10", 
+                "name": "get_lower_stepper_sensitivity", 
+                "parameters": null, 
+                "description": "Gets the sensitivity policy for the stepper that points to the\n'lower' end of the GtkRange's adjustment."
+            }, 
+            {
+                "returns": {
+                    "type": "Integer", 
+                    "description": "The minimum size of the range's slider."
+                }, 
+                "version": "2.20", 
+                "name": "get_min_slider_size", 
+                "parameters": null, 
+                "description": "This function is useful mainly for #GtkRange subclasses.\n\nSee gtk_range_set_min_slider_size()."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.20", 
+                "name": "get_range_rect", 
+                "parameters": [
+                    {
+                        "type": "Gdk.Rectangle", 
+                        "name": "range_rect", 
+                        "description": "return location for the range rectangle"
+                    }
+                ], 
+                "description": "This function returns the area that contains the range's trough\nand its steppers, in widget->window coordinates.\n\nThis function is useful mainly for #GtkRange subclasses."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE if @range is restricted to the fill level."
+                }, 
+                "version": "2.12", 
+                "name": "get_restrict_to_fill_level", 
+                "parameters": null, 
+                "description": "Gets whether the range is restricted to the fill level."
+            }, 
+            {
+                "returns": {
+                    "type": "Integer", 
+                    "description": "the number of digits to round to"
+                }, 
+                "version": "2.24", 
+                "name": "get_round_digits", 
+                "parameters": null, 
+                "description": "Gets the number of digits to round the value to when\nit changes. See #GtkRange::change-value."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE if @range shows the fill level."
+                }, 
+                "version": "2.12", 
+                "name": "get_show_fill_level", 
+                "parameters": null, 
+                "description": "Gets whether the range displays the fill level graphically."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.20", 
+                "name": "get_slider_range", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "slider_start", 
+                        "description": "return location for the slider's start, or %NULL"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "slider_end", 
+                        "description": "return location for the slider's end, or %NULL"
+                    }
+                ], 
+                "description": "This function returns sliders range along the long dimension,\nin widget->window coordinates.\n\nThis function is useful mainly for #GtkRange subclasses."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "whether the range's slider has a fixed size."
+                }, 
+                "version": "2.20", 
+                "name": "get_slider_size_fixed", 
+                "parameters": null, 
+                "description": "This function is useful mainly for #GtkRange subclasses.\n\nSee gtk_range_set_slider_size_fixed()."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.SensitivityType", 
+                    "description": "The upper stepper's sensitivity policy."
+                }, 
+                "version": "2.10", 
+                "name": "get_upper_stepper_sensitivity", 
+                "parameters": null, 
+                "description": "Gets the sensitivity policy for the stepper that points to the\n'upper' end of the GtkRange's adjustment."
+            }, 
+            {
+                "returns": {
+                    "type": "Float", 
+                    "description": "current value of the range."
+                }, 
+                "version": "", 
+                "name": "get_value", 
+                "parameters": null, 
+                "description": "Gets the current value of the range."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_adjustment", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Adjustment", 
+                        "name": "adjustment", 
+                        "description": "a #GtkAdjustment"
+                    }
+                ], 
+                "description": "Sets the adjustment to be used as the \"model\" object for this range\nwidget. The adjustment indicates the current range value, the\nminimum and maximum range values, the step/page increments used\nfor keybindings and scrolling, and the page size. The page size\nis normally 0 for #GtkScale and nonzero for #GtkScrollbar, and\nindicates the size of the visible area of the widget being scrolled.\nThe page size affects the size of the scrollbar slider."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.12", 
+                "name": "set_fill_level", 
+                "parameters": [
+                    {
+                        "type": "Float", 
+                        "name": "fill_level", 
+                        "description": "the new position of the fill level indicator"
+                    }
+                ], 
+                "description": "Set the new position of the fill level indicator.\n\nThe \"fill level\" is probably best described by its most prominent\nuse case, which is an indicator for the amount of pre-buffering in\na streaming media player. In that use case, the value of the range\nwould indicate the current play position, and the fill level would\nbe the position up to which the file/stream has been downloaded.\n\nThis amount of prebuffering can be displayed on the range's trough\nand is themeable separately from the trough. To enable fill level\ndisplay, use gtk_range_set_show_fill_level(). The range defaults\nto not showing the fill level.\n\nAdditionally, it's possible to restrict the range's slider position\nto values which are smaller than the fill level. This is controller\nby gtk_range_set_restrict_to_fill_level() and is by default\nenabled."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.18", 
+                "name": "set_flippable", 
+                "parameters": [
+                    {
+                        "type": "Boolean", 
+                        "name": "flippable", 
+                        "description": "%TRUE to make the range flippable"
+                    }
+                ], 
+                "description": "If a range is flippable, it will switch its direction if it is\nhorizontal and its direction is %GTK_TEXT_DIR_RTL.\n\nSee gtk_widget_get_direction()."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_increments", 
+                "parameters": [
+                    {
+                        "type": "Float", 
+                        "name": "step", 
+                        "description": "step size"
+                    }, 
+                    {
+                        "type": "Float", 
+                        "name": "page", 
+                        "description": "page size"
+                    }
+                ], 
+                "description": "Sets the step and page sizes for the range.\nThe step size is used when the user clicks the #GtkScrollbar\narrows or moves #GtkScale via arrow keys. The page size\nis used for example when moving via Page Up or Page Down keys."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_inverted", 
+                "parameters": [
+                    {
+                        "type": "Boolean", 
+                        "name": "setting", 
+                        "description": "%TRUE to invert the range"
+                    }
+                ], 
+                "description": "Ranges normally move from lower to higher values as the\nslider moves from top to bottom or left to right. Inverted\nranges have higher values at the top or on the right rather than\non the bottom or left."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.10", 
+                "name": "set_lower_stepper_sensitivity", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.SensitivityType", 
+                        "name": "sensitivity", 
+                        "description": "the lower stepper's sensitivity policy."
+                    }
+                ], 
+                "description": "Sets the sensitivity policy for the stepper that points to the\n'lower' end of the GtkRange's adjustment."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.20", 
+                "name": "set_min_slider_size", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "min_size", 
+                        "description": "The slider's minimum size"
+                    }
+                ], 
+                "description": "Sets the minimum size of the range's slider.\n\nThis function is useful mainly for #GtkRange subclasses."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_range", 
+                "parameters": [
+                    {
+                        "type": "Float", 
+                        "name": "min", 
+                        "description": "minimum range value"
+                    }, 
+                    {
+                        "type": "Float", 
+                        "name": "max", 
+                        "description": "maximum range value"
+                    }
+                ], 
+                "description": "Sets the allowable values in the #GtkRange, and clamps the range\nvalue to be between @min and @max. (If the range has a non-zero\npage size, it is clamped between @min and @max - page-size.)"
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.12", 
+                "name": "set_restrict_to_fill_level", 
+                "parameters": [
+                    {
+                        "type": "Boolean", 
+                        "name": "restrict_to_fill_level", 
+                        "description": "Whether the fill level restricts slider movement."
+                    }
+                ], 
+                "description": "Sets whether the slider is restricted to the fill level. See\ngtk_range_set_fill_level() for a general description of the fill\nlevel concept."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.24", 
+                "name": "set_round_digits", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "round_digits", 
+                        "description": "the precision in digits, or -1"
+                    }
+                ], 
+                "description": "Sets the number of digits to round the value to when\nit changes. See #GtkRange::change-value."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.12", 
+                "name": "set_show_fill_level", 
+                "parameters": [
+                    {
+                        "type": "Boolean", 
+                        "name": "show_fill_level", 
+                        "description": "Whether a fill level indicator graphics is shown."
+                    }
+                ], 
+                "description": "Sets whether a graphical fill level is show on the trough. See\ngtk_range_set_fill_level() for a general description of the fill\nlevel concept."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.20", 
+                "name": "set_slider_size_fixed", 
+                "parameters": [
+                    {
+                        "type": "Boolean", 
+                        "name": "size_fixed", 
+                        "description": "%TRUE to make the slider size constant"
+                    }
+                ], 
+                "description": "Sets whether the range's slider has a fixed size, or a size that\ndepends on its adjustment's page size.\n\nThis function is useful mainly for #GtkRange subclasses."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.10", 
+                "name": "set_upper_stepper_sensitivity", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.SensitivityType", 
+                        "name": "sensitivity", 
+                        "description": "the upper stepper's sensitivity policy."
+                    }
+                ], 
+                "description": "Sets the sensitivity policy for the stepper that points to the\n'upper' end of the GtkRange's adjustment."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_value", 
+                "parameters": [
+                    {
+                        "type": "Float", 
+                        "name": "value", 
+                        "description": "new value of the range"
+                    }
+                ], 
+                "description": "Sets the current value of the range; if the value is outside the\nminimum or maximum range values, it will be clamped to fit inside\nthem. The range emits the #GtkRange::value-changed signal if the \nvalue changes."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "adjust_bounds", 
+                "parameters": [
+                    {
+                        "type": "Float", 
+                        "name": "new_value", 
+                        "description": ""
+                    }
+                ], 
+                "description": ""
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "change_value", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.ScrollType", 
+                        "name": "scroll", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Float", 
+                        "name": "new_value", 
+                        "description": ""
+                    }
+                ], 
+                "description": ""
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "get_range_border", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Border", 
+                        "name": "border_", 
+                        "description": ""
+                    }
+                ], 
+                "description": ""
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "move_slider", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.ScrollType", 
+                        "name": "scroll", 
+                        "description": ""
+                    }
+                ], 
+                "description": ""
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "value_changed", 
+                "parameters": null, 
+                "description": ""
+            }
+        ], 
+        "properties": [
+            {
+                "writable": false, 
+                "type": "Gtk.Adjustment", 
+                "readable": false, 
+                "name": "adjustment", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Float", 
+                "readable": false, 
+                "name": "fill-level", 
+                "description": "The fill level (e.g. prebuffering of a network stream).\nSee gtk_range_set_fill_level()."
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "inverted", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Gtk.SensitivityType", 
+                "readable": false, 
+                "name": "lower-stepper-sensitivity", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "restrict-to-fill-level", 
+                "description": "The restrict-to-fill-level property controls whether slider\nmovement is restricted to an upper boundary set by the\nfill level. See gtk_range_set_restrict_to_fill_level()."
+            }, 
+            {
+                "writable": false, 
+                "type": "Integer", 
+                "readable": false, 
+                "name": "round-digits", 
+                "description": "The number of digits to round the value to when\nit changes, or -1. See #GtkRange::change-value."
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "show-fill-level", 
+                "description": "The show-fill-level property controls whether fill level indicator\ngraphics are displayed on the trough. See\ngtk_range_set_show_fill_level()."
+            }, 
+            {
+                "writable": false, 
+                "type": "Gtk.SensitivityType", 
+                "readable": false, 
+                "name": "upper-stepper-sensitivity", 
+                "description": ""
+            }
+        ]
+    }, 
+    "fullname": "Class Gtk.Range", 
+    "id": "Docs-Range", 
+    "description": "#GtkRange is the common base class for widgets which visualize an\nadjustment, e.g #GtkScale or #GtkScrollbar.\n\nApart from signals for monitoring the parameters of the adjustment,\n#GtkRange provides properties and methods for influencing the sensitivity\nof the \"steppers\". It also provides properties and methods for setting a\n\"fill level\" on range widgets. See gtk_range_set_fill_level()."
+}

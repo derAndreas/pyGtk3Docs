@@ -1,0 +1,96 @@
+{
+    "isAbstract": false, 
+    "leaf": true, 
+    "name": "RecentChooserMenu", 
+    "text": "RecentChooserMenu", 
+    "interfaces": [
+        [
+            "Atk.ImplementorIface"
+        ], 
+        [
+            "Activatable"
+        ], 
+        [
+            "Buildable"
+        ], 
+        [
+            "RecentChooser"
+        ]
+    ], 
+    "parents": [
+        "RecentChooserMenu", 
+        "Menu", 
+        "MenuShell", 
+        "Container", 
+        "Widget", 
+        "GObject.InitiallyUnowned"
+    ], 
+    "members": {
+        "signals": [], 
+        "methods": [
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a new #GtkRecentChooserMenu", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": "2.10", 
+                "name": "Gtk.RecentChooserMenu()", 
+                "parameters": null
+            }, 
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a new #GtkRecentChooserMenu, bound to @manager.", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": "2.10", 
+                "name": "Gtk.RecentChooserMenu(Gtk.RecentManager manager)", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.RecentManager", 
+                        "name": "manager"
+                    }
+                ]
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE if numbers should be shown."
+                }, 
+                "version": "2.10", 
+                "name": "get_show_numbers", 
+                "parameters": null, 
+                "description": "Returns the value set by gtk_recent_chooser_menu_set_show_numbers()."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.10", 
+                "name": "set_show_numbers", 
+                "parameters": [
+                    {
+                        "type": "Boolean", 
+                        "name": "show_numbers", 
+                        "description": "whether to show numbers"
+                    }
+                ], 
+                "description": "Sets whether a number should be added to the items of @menu.  The\nnumbers are shown to provide a unique character for a mnemonic to\nbe used inside ten menu item's label.  Only the first the items\nget a number to avoid clashes."
+            }
+        ], 
+        "properties": [
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "show-numbers", 
+                "description": "Whether the first ten items in the menu should be prepended by\na number acting as a unique mnemonic."
+            }
+        ]
+    }, 
+    "fullname": "Class Gtk.RecentChooserMenu", 
+    "id": "Docs-RecentChooserMenu", 
+    "description": "#GtkRecentChooserMenu is a widget suitable for displaying recently used files\ninside a menu.  It can be used to set a sub-menu of a #GtkMenuItem using\ngtk_menu_item_set_submenu(), or as the menu of a #GtkMenuToolButton.\n\nNote that #GtkRecentChooserMenu does not have any methods of its own. Instead,\nyou should use the functions that work on a #GtkRecentChooser.\n\nNote also that #GtkRecentChooserMenu does not support multiple filters, as it\nhas no way to let the user choose between them as the #GtkRecentChooserWidget\nand #GtkRecentChooserDialog widgets do. Thus using gtk_recent_chooser_add_filter()\non a #GtkRecentChooserMenu widget will yield the same effects as using\ngtk_recent_chooser_set_filter(), replacing any currently set filter\nwith the supplied filter; gtk_recent_chooser_remove_filter() will remove\nany currently set #GtkRecentFilter object and will unset the current filter;\ngtk_recent_chooser_list_filters() will return a list containing a single\n#GtkRecentFilter object.\n\nRecently used files are supported since GTK+ 2.10."
+}

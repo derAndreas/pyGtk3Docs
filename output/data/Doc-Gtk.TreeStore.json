@@ -1,0 +1,549 @@
+{
+    "isAbstract": false, 
+    "leaf": true, 
+    "name": "TreeStore", 
+    "text": "TreeStore", 
+    "interfaces": [
+        [
+            "Buildable"
+        ], 
+        [
+            "TreeDragDest"
+        ], 
+        [
+            "TreeDragSource"
+        ], 
+        [
+            "TreeModel"
+        ], 
+        [
+            "TreeSortable"
+        ]
+    ], 
+    "parents": [
+        "TreeStore", 
+        "GObject.Object"
+    ], 
+    "members": {
+        "signals": [], 
+        "methods": [
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a new #GtkTreeStore", 
+                    "name": "ref:Gtk.TreeStore"
+                }, 
+                "version": null, 
+                "name": "Gtk.TreeStore(Integer n_columns, VarArg None)", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "n_columns"
+                    }, 
+                    {
+                        "type": "ref:VarArg", 
+                        "name": null
+                    }
+                ]
+            }, 
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a new #GtkTreeStore", 
+                    "name": "ref:Gtk.TreeStore"
+                }, 
+                "version": null, 
+                "name": "Gtk.TreeStore(Integer n_columns, Integer[] types)", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "n_columns"
+                    }, 
+                    {
+                        "type": "Integer[]", 
+                        "name": "types"
+                    }
+                ]
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "append", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TreeIter", 
+                        "name": "iter", 
+                        "description": "An unset #GtkTreeIter to set to the appended row"
+                    }, 
+                    {
+                        "type": "ref:Gtk.TreeIter", 
+                        "name": "parent", 
+                        "description": "A valid #GtkTreeIter, or %NULL"
+                    }
+                ], 
+                "description": "Appends a new row to @tree_store.  If @parent is non-%NULL, then it will append the\nnew row after the last child of @parent, otherwise it will append a row to\nthe top level.  @iter will be changed to point to this new row.  The row will\nbe empty after this function is called.  To fill in values, you need to call\ngtk_tree_store_set() or gtk_tree_store_set_value()."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "clear", 
+                "parameters": null, 
+                "description": "Removes all rows from @tree_store"
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "insert", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TreeIter", 
+                        "name": "iter", 
+                        "description": "An unset #GtkTreeIter to set to the new row"
+                    }, 
+                    {
+                        "type": "ref:Gtk.TreeIter", 
+                        "name": "parent", 
+                        "description": "A valid #GtkTreeIter, or %NULL"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "position", 
+                        "description": "position to insert the new row"
+                    }
+                ], 
+                "description": "Creates a new row at @position.  If parent is non-%NULL, then the row will be\nmade a child of @parent.  Otherwise, the row will be created at the toplevel.\nIf @position is larger than the number of rows at that level, then the new\nrow will be inserted to the end of the list.  @iter will be changed to point\nto this new row.  The row will be empty after this function is called.  To\nfill in values, you need to call gtk_tree_store_set() or\ngtk_tree_store_set_value()."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "insert_after", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TreeIter", 
+                        "name": "iter", 
+                        "description": "An unset #GtkTreeIter to set to the new row"
+                    }, 
+                    {
+                        "type": "ref:Gtk.TreeIter", 
+                        "name": "parent", 
+                        "description": "A valid #GtkTreeIter, or %NULL"
+                    }, 
+                    {
+                        "type": "ref:Gtk.TreeIter", 
+                        "name": "sibling", 
+                        "description": "A valid #GtkTreeIter, or %NULL"
+                    }
+                ], 
+                "description": "Inserts a new row after @sibling.  If @sibling is %NULL, then the row will be\nprepended to @parent 's children.  If @parent and @sibling are %NULL, then\nthe row will be prepended to the toplevel.  If both @sibling and @parent are\nset, then @parent must be the parent of @sibling.  When @sibling is set,\n@parent is optional.\n\n@iter will be changed to point to this new row.  The row will be empty after\nthis function is called.  To fill in values, you need to call\ngtk_tree_store_set() or gtk_tree_store_set_value()."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "insert_before", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TreeIter", 
+                        "name": "iter", 
+                        "description": "An unset #GtkTreeIter to set to the new row"
+                    }, 
+                    {
+                        "type": "ref:Gtk.TreeIter", 
+                        "name": "parent", 
+                        "description": "A valid #GtkTreeIter, or %NULL"
+                    }, 
+                    {
+                        "type": "ref:Gtk.TreeIter", 
+                        "name": "sibling", 
+                        "description": "A valid #GtkTreeIter, or %NULL"
+                    }
+                ], 
+                "description": "Inserts a new row before @sibling.  If @sibling is %NULL, then the row will\nbe appended to @parent 's children.  If @parent and @sibling are %NULL, then\nthe row will be appended to the toplevel.  If both @sibling and @parent are\nset, then @parent must be the parent of @sibling.  When @sibling is set,\n@parent is optional.\n\n@iter will be changed to point to this new row.  The row will be empty after\nthis function is called.  To fill in values, you need to call\ngtk_tree_store_set() or gtk_tree_store_set_value()."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.10", 
+                "name": "insert_with_values", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TreeIter", 
+                        "name": "iter", 
+                        "description": "An unset #GtkTreeIter to set the new row, or %NULL."
+                    }, 
+                    {
+                        "type": "ref:Gtk.TreeIter", 
+                        "name": "parent", 
+                        "description": "A valid #GtkTreeIter, or %NULL"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "position", 
+                        "description": "position to insert the new row, or -1 to append after existing rows"
+                    }, 
+                    {
+                        "type": "ref:VarArg", 
+                        "name": null, 
+                        "description": ""
+                    }
+                ], 
+                "description": "Creates a new row at @position. @iter will be changed to point to this\nnew row. If @position is -1, or larger than the number of rows on the list, then\nthe new row will be appended to the list. The row will be filled with\nthe values given to this function.\n\nCalling\n<literal>gtk_tree_store_insert_with_values (tree_store, iter, position, ...)</literal>\nhas the same effect as calling\n|[\ngtk_tree_store_insert (tree_store, iter, position);\ngtk_tree_store_set (tree_store, iter, ...);\n]|\nwith the different that the former will only emit a row_inserted signal,\nwhile the latter will emit row_inserted, row_changed and if the tree store\nis sorted, rows_reordered.  Since emitting the rows_reordered signal\nrepeatedly can affect the performance of the program,\ngtk_tree_store_insert_with_values() should generally be preferred when\ninserting rows in a sorted tree store."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.10", 
+                "name": "insert_with_valuesv", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TreeIter", 
+                        "name": "iter", 
+                        "description": "An unset #GtkTreeIter to set the new row, or %NULL."
+                    }, 
+                    {
+                        "type": "ref:Gtk.TreeIter", 
+                        "name": "parent", 
+                        "description": "A valid #GtkTreeIter, or %NULL"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "position", 
+                        "description": "position to insert the new row"
+                    }, 
+                    {
+                        "type": "Integer[]", 
+                        "name": "columns", 
+                        "description": "an array of column numbers"
+                    }, 
+                    {
+                        "type": "GObject.Value[]", 
+                        "name": "values", 
+                        "description": "an array of GValues"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "n_values", 
+                        "description": "the length of the @columns and @values arrays"
+                    }
+                ], 
+                "description": "A variant of gtk_tree_store_insert_with_values() which takes\nthe columns and values as two arrays, instead of varargs.  This\nfunction is mainly intended for language bindings."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE, if @iter is an ancestor of @descendant"
+                }, 
+                "version": "", 
+                "name": "is_ancestor", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TreeIter", 
+                        "name": "iter", 
+                        "description": "A valid #GtkTreeIter"
+                    }, 
+                    {
+                        "type": "ref:Gtk.TreeIter", 
+                        "name": "descendant", 
+                        "description": "A valid #GtkTreeIter"
+                    }
+                ], 
+                "description": "Returns %TRUE if @iter is an ancestor of @descendant.  That is, @iter is the\nparent (or grandparent or great-grandparent) of @descendant."
+            }, 
+            {
+                "returns": {
+                    "type": "Integer", 
+                    "description": "The depth of @iter"
+                }, 
+                "version": "", 
+                "name": "iter_depth", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TreeIter", 
+                        "name": "iter", 
+                        "description": "A valid #GtkTreeIter"
+                    }
+                ], 
+                "description": "Returns the depth of @iter.  This will be 0 for anything on the root level, 1\nfor anything down a level, etc."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE if the iter is valid, %FALSE if the iter is invalid."
+                }, 
+                "version": "2.2", 
+                "name": "iter_is_valid", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TreeIter", 
+                        "name": "iter", 
+                        "description": "A #GtkTreeIter."
+                    }
+                ], 
+                "description": "WARNING: This function is slow. Only use it for debugging and/or testing\npurposes.\n\nChecks if the given iter is a valid iter for this #GtkTreeStore."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.2", 
+                "name": "move_after", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TreeIter", 
+                        "name": "iter", 
+                        "description": "A #GtkTreeIter."
+                    }, 
+                    {
+                        "type": "ref:Gtk.TreeIter", 
+                        "name": "position", 
+                        "description": "A #GtkTreeIter."
+                    }
+                ], 
+                "description": "Moves @iter in @tree_store to the position after @position. @iter and\n@position should be in the same level. Note that this function only\nworks with unsorted stores. If @position is %NULL, @iter will be moved\nto the start of the level."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.2", 
+                "name": "move_before", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TreeIter", 
+                        "name": "iter", 
+                        "description": "A #GtkTreeIter."
+                    }, 
+                    {
+                        "type": "ref:Gtk.TreeIter", 
+                        "name": "position", 
+                        "description": "A #GtkTreeIter or %NULL."
+                    }
+                ], 
+                "description": "Moves @iter in @tree_store to the position before @position. @iter and\n@position should be in the same level. Note that this function only\nworks with unsorted stores. If @position is %NULL, @iter will be\nmoved to the end of the level."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "prepend", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TreeIter", 
+                        "name": "iter", 
+                        "description": "An unset #GtkTreeIter to set to the prepended row"
+                    }, 
+                    {
+                        "type": "ref:Gtk.TreeIter", 
+                        "name": "parent", 
+                        "description": "A valid #GtkTreeIter, or %NULL"
+                    }
+                ], 
+                "description": "Prepends a new row to @tree_store.  If @parent is non-%NULL, then it will prepend\nthe new row before the first child of @parent, otherwise it will prepend a row\nto the top level.  @iter will be changed to point to this new row.  The row\nwill be empty after this function is called.  To fill in values, you need to\ncall gtk_tree_store_set() or gtk_tree_store_set_value()."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE if @iter is still valid, %FALSE if not."
+                }, 
+                "version": "", 
+                "name": "remove", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TreeIter", 
+                        "name": "iter", 
+                        "description": "A valid #GtkTreeIter"
+                    }
+                ], 
+                "description": "Removes @iter from @tree_store.  After being removed, @iter is set to the\nnext valid row at that level, or invalidated if it previously pointed to the\nlast one."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.2", 
+                "name": "reorder", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TreeIter", 
+                        "name": "parent", 
+                        "description": "A #GtkTreeIter."
+                    }, 
+                    {
+                        "type": "Integer[]", 
+                        "name": "new_order", 
+                        "description": "an array of integers mapping the new position of each child to its old position before the re-ordering, i.e. @new_order<literal>[newpos] = oldpos</literal>."
+                    }
+                ], 
+                "description": "Reorders the children of @parent in @tree_store to follow the order\nindicated by @new_order. Note that this function only works with\nunsorted stores."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TreeIter", 
+                        "name": "iter", 
+                        "description": "A valid #GtkTreeIter for the row being modified"
+                    }, 
+                    {
+                        "type": "ref:VarArg", 
+                        "name": null, 
+                        "description": ""
+                    }
+                ], 
+                "description": "Sets the value of one or more cells in the row referenced by @iter.\nThe variable argument list should contain integer column numbers,\neach column number followed by the value to be set.\nThe list is terminated by a -1. For example, to set column 0 with type\n%G_TYPE_STRING to \"Foo\", you would write\n<literal>gtk_tree_store_set (store, iter, 0, \"Foo\", -1)</literal>.\n\nThe value will be referenced by the store if it is a %G_TYPE_OBJECT, and it\nwill be copied if it is a %G_TYPE_STRING or %G_TYPE_BOXED."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_column_types", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "n_columns", 
+                        "description": "Number of columns for the tree store"
+                    }, 
+                    {
+                        "type": "Integer[]", 
+                        "name": "types", 
+                        "description": "An array of #GType types, one for each column"
+                    }
+                ], 
+                "description": "This function is meant primarily for #GObjects that inherit from \n#GtkTreeStore, and should only be used when constructing a new \n#GtkTreeStore.  It will not function after a row has been added, \nor a method on the #GtkTreeModel interface is called."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_valist", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TreeIter", 
+                        "name": "iter", 
+                        "description": "A valid #GtkTreeIter for the row being modified"
+                    }, 
+                    {
+                        "type": "Mixed", 
+                        "name": "var_args", 
+                        "description": "<type>va_list</type> of column/value pairs"
+                    }
+                ], 
+                "description": "See gtk_tree_store_set(); this version takes a <type>va_list</type> for\nuse by language bindings."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_value", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TreeIter", 
+                        "name": "iter", 
+                        "description": "A valid #GtkTreeIter for the row being modified"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "column", 
+                        "description": "column number to modify"
+                    }, 
+                    {
+                        "type": "GObject.Value", 
+                        "name": "value", 
+                        "description": "new value for the cell"
+                    }
+                ], 
+                "description": "Sets the data in the cell specified by @iter and @column.\nThe type of @value must be convertible to the type of the\ncolumn."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.12", 
+                "name": "set_valuesv", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TreeIter", 
+                        "name": "iter", 
+                        "description": "A valid #GtkTreeIter for the row being modified"
+                    }, 
+                    {
+                        "type": "Integer[]", 
+                        "name": "columns", 
+                        "description": "an array of column numbers"
+                    }, 
+                    {
+                        "type": "GObject.Value[]", 
+                        "name": "values", 
+                        "description": "an array of GValues"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "n_values", 
+                        "description": "the length of the @columns and @values arrays"
+                    }
+                ], 
+                "description": "A variant of gtk_tree_store_set_valist() which takes\nthe columns and values as two arrays, instead of varargs.  This\nfunction is mainly intended for language bindings or in case\nthe number of columns to change is not known until run-time."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.2", 
+                "name": "swap", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TreeIter", 
+                        "name": "a", 
+                        "description": "A #GtkTreeIter."
+                    }, 
+                    {
+                        "type": "ref:Gtk.TreeIter", 
+                        "name": "b", 
+                        "description": "Another #GtkTreeIter."
+                    }
+                ], 
+                "description": "Swaps @a and @b in the same level of @tree_store. Note that this function\nonly works with unsorted stores."
+            }
+        ], 
+        "properties": []
+    }, 
+    "fullname": "Class Gtk.TreeStore", 
+    "id": "Docs-TreeStore", 
+    "description": "The #GtkTreeStore object is a list model for use with a #GtkTreeView\nwidget.  It implements the #GtkTreeModel interface, and consequentialy,\ncan use all of the methods available there.  It also implements the\n#GtkTreeSortable interface so it can be sorted by the view.  Finally,\nit also implements the tree <link linkend=\"gtktreednd\">drag and\ndrop</link> interfaces.\n\n<refsect2 id=\"GtkTreeStore-BUILDER-UI\">\n<title>GtkTreeStore as GtkBuildable</title>\nThe GtkTreeStore implementation of the #GtkBuildable interface allows\nto specify the model columns with a &lt;columns&gt; element that may\ncontain multiple &lt;column&gt; elements, each specifying one model\ncolumn. The \"type\" attribute specifies the data type for the column.\n<example>\n<title>A UI Definition fragment for a tree store</title>\n<programlisting><![CDATA[\n<object class=\"GtkTreeStore\">\n<columns>\n<column type=\"gchararray\"/>\n<column type=\"gchararray\"/>\n<column type=\"gint\"/>\n</columns>\n</object>\n]]></programlisting>\n</example>\n</refsect2>"
+}

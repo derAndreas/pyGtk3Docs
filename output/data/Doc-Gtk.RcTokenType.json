@@ -1,0 +1,173 @@
+{
+    "leaf": true, 
+    "name": "RcTokenType", 
+    "text": "RcTokenType", 
+    "version": null, 
+    "members": {
+        "properties": [
+            {
+                "name": "invalid", 
+                "value": "270"
+            }, 
+            {
+                "name": "include", 
+                "value": "271"
+            }, 
+            {
+                "name": "normal", 
+                "value": "272"
+            }, 
+            {
+                "name": "active", 
+                "value": "273"
+            }, 
+            {
+                "name": "prelight", 
+                "value": "274"
+            }, 
+            {
+                "name": "selected", 
+                "value": "275"
+            }, 
+            {
+                "name": "insensitive", 
+                "value": "276"
+            }, 
+            {
+                "name": "fg", 
+                "value": "277"
+            }, 
+            {
+                "name": "bg", 
+                "value": "278"
+            }, 
+            {
+                "name": "text", 
+                "value": "279"
+            }, 
+            {
+                "name": "base", 
+                "value": "280"
+            }, 
+            {
+                "name": "xthickness", 
+                "value": "281"
+            }, 
+            {
+                "name": "ythickness", 
+                "value": "282"
+            }, 
+            {
+                "name": "font", 
+                "value": "283"
+            }, 
+            {
+                "name": "fontset", 
+                "value": "284"
+            }, 
+            {
+                "name": "font_name", 
+                "value": "285"
+            }, 
+            {
+                "name": "bg_pixmap", 
+                "value": "286"
+            }, 
+            {
+                "name": "pixmap_path", 
+                "value": "287"
+            }, 
+            {
+                "name": "style", 
+                "value": "288"
+            }, 
+            {
+                "name": "binding", 
+                "value": "289"
+            }, 
+            {
+                "name": "bind", 
+                "value": "290"
+            }, 
+            {
+                "name": "widget", 
+                "value": "291"
+            }, 
+            {
+                "name": "widget_class", 
+                "value": "292"
+            }, 
+            {
+                "name": "class", 
+                "value": "293"
+            }, 
+            {
+                "name": "lowest", 
+                "value": "294"
+            }, 
+            {
+                "name": "gtk", 
+                "value": "295"
+            }, 
+            {
+                "name": "application", 
+                "value": "296"
+            }, 
+            {
+                "name": "theme", 
+                "value": "297"
+            }, 
+            {
+                "name": "rc", 
+                "value": "298"
+            }, 
+            {
+                "name": "highest", 
+                "value": "299"
+            }, 
+            {
+                "name": "engine", 
+                "value": "300"
+            }, 
+            {
+                "name": "module_path", 
+                "value": "301"
+            }, 
+            {
+                "name": "im_module_path", 
+                "value": "302"
+            }, 
+            {
+                "name": "im_module_file", 
+                "value": "303"
+            }, 
+            {
+                "name": "stock", 
+                "value": "304"
+            }, 
+            {
+                "name": "ltr", 
+                "value": "305"
+            }, 
+            {
+                "name": "rtl", 
+                "value": "306"
+            }, 
+            {
+                "name": "color", 
+                "value": "307"
+            }, 
+            {
+                "name": "unbind", 
+                "value": "308"
+            }, 
+            {
+                "name": "last", 
+                "value": "309"
+            }
+        ]
+    }, 
+    "fullname": "Enumeration Gtk.RcTokenType", 
+    "id": "Docs-RcTokenType", 
+    "description": ""
+}

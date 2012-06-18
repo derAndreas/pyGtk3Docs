@@ -1,0 +1,335 @@
+{
+    "isAbstract": false, 
+    "leaf": true, 
+    "name": "IconTheme", 
+    "text": "IconTheme", 
+    "interfaces": [], 
+    "parents": [
+        "IconTheme", 
+        "GObject.Object"
+    ], 
+    "members": {
+        "signals": [
+            {
+                "version": "", 
+                "when": "last", 
+                "name": "changed", 
+                "description": "Emitted when the current icon theme is switched or GTK+ detects\nthat a change has occurred in the contents of the current\nicon theme."
+            }
+        ], 
+        "methods": [
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "the newly created #GtkIconTheme object.", 
+                    "name": "ref:Gtk.IconTheme"
+                }, 
+                "version": "2.4", 
+                "name": "Gtk.IconTheme()", 
+                "parameters": null
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.4", 
+                "name": "append_search_path", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "path", 
+                        "description": "directory name to append to the icon path"
+                    }
+                ], 
+                "description": "Appends a directory to the search path. \nSee gtk_icon_theme_set_search_path()."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.IconInfo", 
+                    "description": "a #GtkIconInfo structure containing information"
+                }, 
+                "version": "2.12", 
+                "name": "choose_icon", 
+                "parameters": [
+                    {
+                        "type": "String[]", 
+                        "name": "icon_names", 
+                        "description": "%NULL-terminated array of icon names to lookup"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "size", 
+                        "description": "desired icon size"
+                    }, 
+                    {
+                        "type": "ref:Gtk.IconLookupFlags", 
+                        "name": "flags", 
+                        "description": "flags modifying the behavior of the icon lookup"
+                    }
+                ], 
+                "description": "Looks up a named icon and returns a structure containing\ninformation such as the filename of the icon. The icon\ncan then be rendered into a pixbuf using\ngtk_icon_info_load_icon(). (gtk_icon_theme_load_icon()\ncombines these two steps if all you need is the pixbuf.)\n\nIf @icon_names contains more than one name, this function \ntries them all in the given order before falling back to \ninherited icon themes.\n\nabout the icon, or %NULL if the icon wasn't found. Free with\ngtk_icon_info_free()"
+            }, 
+            {
+                "returns": {
+                    "type": "String", 
+                    "description": "the name of an example icon or %NULL."
+                }, 
+                "version": "2.4", 
+                "name": "get_example_icon_name", 
+                "parameters": null, 
+                "description": "Gets the name of an icon that is representative of the\ncurrent theme (for instance, to use when presenting\na list of themes to the user.)\n\nFree with g_free()."
+            }, 
+            {
+                "returns": {
+                    "type": "Integer[]", 
+                    "description": "An newly allocated array"
+                }, 
+                "version": "2.6", 
+                "name": "get_icon_sizes", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "icon_name", 
+                        "description": "the name of an icon"
+                    }
+                ], 
+                "description": "Returns an array of integers describing the sizes at which\nthe icon is available without scaling. A size of -1 means \nthat the icon is available in a scalable format. The array \nis zero-terminated.\n\ndescribing the sizes at which the icon is available. The array\nshould be freed with g_free() when it is no longer needed."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.4", 
+                "name": "get_search_path", 
+                "parameters": [
+                    {
+                        "type": "String[]", 
+                        "name": "path", 
+                        "description": " location to store a list of icon theme path directories or %NULL. The stored value should be freed with g_strfreev()."
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "n_elements", 
+                        "description": "location to store number of elements in @path, or %NULL"
+                    }
+                ], 
+                "description": "Gets the current search path. See gtk_icon_theme_set_search_path()."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE if @icon_theme includes an"
+                }, 
+                "version": "2.4", 
+                "name": "has_icon", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "icon_name", 
+                        "description": "the name of an icon"
+                    }
+                ], 
+                "description": "Checks whether an icon theme includes an icon\nfor a particular name.\n\nicon for @icon_name."
+            }, 
+            {
+                "returns": {
+                    "type": "GLib.List", 
+                    "description": "a #GList list"
+                }, 
+                "version": "2.12", 
+                "name": "list_contexts", 
+                "parameters": null, 
+                "description": "Gets the list of contexts available within the current\nhierarchy of icon themes\n\nholding the names of all the contexts in the theme. You must first\nfree each element in the list with g_free(), then free the list\nitself with g_list_free()."
+            }, 
+            {
+                "returns": {
+                    "type": "GLib.List", 
+                    "description": "a #GList list"
+                }, 
+                "version": "2.4", 
+                "name": "list_icons", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "context", 
+                        "description": "a string identifying a particular type of icon, or %NULL to list all icons."
+                    }
+                ], 
+                "description": "Lists the icons in the current icon theme. Only a subset\nof the icons can be listed by providing a context string.\nThe set of values for the context string is system dependent,\nbut will typically include such values as \"Applications\" and\n\"MimeTypes\".\n\nholding the names of all the icons in the theme. You must first\nfree each element in the list with g_free(), then free the list\nitself with g_list_free()."
+            }, 
+            {
+                "returns": {
+                    "type": "GdkPixbuf.Pixbuf", 
+                    "description": "the rendered icon; this may be a"
+                }, 
+                "version": "2.4", 
+                "name": "load_icon", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "icon_name", 
+                        "description": "the name of the icon to lookup"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "size", 
+                        "description": "the desired icon size. The resulting icon may not be exactly this size; see gtk_icon_info_load_icon()."
+                    }, 
+                    {
+                        "type": "ref:Gtk.IconLookupFlags", 
+                        "name": "flags", 
+                        "description": "flags modifying the behavior of the icon lookup"
+                    }
+                ], 
+                "description": "Looks up an icon in an icon theme, scales it to the given size\nand renders it into a pixbuf. This is a convenience function;\nif more details about the icon are needed, use\ngtk_icon_theme_lookup_icon() followed by gtk_icon_info_load_icon().\n\nNote that you probably want to listen for icon theme changes and\nupdate the icon. This is usually done by connecting to the\nGtkWidget::style-set signal. If for some reason you do not want to\nupdate the icon when the icon theme changes, you should consider\nusing gdk_pixbuf_copy() to make a private copy of the pixbuf\nreturned by this function. Otherwise GTK+ may need to keep the old\nicon theme loaded, which would be a waste of memory.\n\nnewly created icon or a new reference to an internal icon, so\nyou must not modify the icon. Use g_object_unref() to release\nyour reference to the icon. %NULL if the icon isn't found."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.IconInfo", 
+                    "description": "a #GtkIconInfo structure containing"
+                }, 
+                "version": "2.14", 
+                "name": "lookup_by_gicon", 
+                "parameters": [
+                    {
+                        "type": "Gio.Icon", 
+                        "name": "icon", 
+                        "description": "the #GIcon to look up"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "size", 
+                        "description": "desired icon size"
+                    }, 
+                    {
+                        "type": "ref:Gtk.IconLookupFlags", 
+                        "name": "flags", 
+                        "description": "flags modifying the behavior of the icon lookup"
+                    }
+                ], 
+                "description": "Looks up an icon and returns a structure containing\ninformation such as the filename of the icon. \nThe icon can then be rendered into a pixbuf using\ngtk_icon_info_load_icon().\n\ninformation about the icon, or %NULL if the icon \nwasn't found. Free with gtk_icon_info_free()"
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.IconInfo", 
+                    "description": "a #GtkIconInfo structure containing information"
+                }, 
+                "version": "2.4", 
+                "name": "lookup_icon", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "icon_name", 
+                        "description": "the name of the icon to lookup"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "size", 
+                        "description": "desired icon size"
+                    }, 
+                    {
+                        "type": "ref:Gtk.IconLookupFlags", 
+                        "name": "flags", 
+                        "description": "flags modifying the behavior of the icon lookup"
+                    }
+                ], 
+                "description": "Looks up a named icon and returns a structure containing\ninformation such as the filename of the icon. The icon\ncan then be rendered into a pixbuf using\ngtk_icon_info_load_icon(). (gtk_icon_theme_load_icon()\ncombines these two steps if all you need is the pixbuf.)\n\nabout the icon, or %NULL if the icon wasn't found. Free with\ngtk_icon_info_free()"
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.4", 
+                "name": "prepend_search_path", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "path", 
+                        "description": "directory name to prepend to the icon path"
+                    }
+                ], 
+                "description": "Prepends a directory to the search path. \nSee gtk_icon_theme_set_search_path()."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE if the icon theme has changed and needed"
+                }, 
+                "version": "2.4", 
+                "name": "rescan_if_needed", 
+                "parameters": null, 
+                "description": "Checks to see if the icon theme has changed; if it has, any\ncurrently cached information is discarded and will be reloaded\nnext time @icon_theme is accessed.\n\nto be reloaded."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.4", 
+                "name": "set_custom_theme", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "theme_name", 
+                        "description": "name of icon theme to use instead of configured theme, or %NULL to unset a previously set custom theme"
+                    }
+                ], 
+                "description": "Sets the name of the icon theme that the #GtkIconTheme object uses\noverriding system configuration. This function cannot be called\non the icon theme objects returned from gtk_icon_theme_get_default()\nand gtk_icon_theme_get_for_screen()."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.4", 
+                "name": "set_screen", 
+                "parameters": [
+                    {
+                        "type": "Gdk.Screen", 
+                        "name": "screen", 
+                        "description": "a #GdkScreen"
+                    }
+                ], 
+                "description": "Sets the screen for an icon theme; the screen is used\nto track the user's currently configured icon theme,\nwhich might be different for different screens."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.4", 
+                "name": "set_search_path", 
+                "parameters": [
+                    {
+                        "type": "String[]", 
+                        "name": "path", 
+                        "description": "array of directories that are searched for icon themes"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "n_elements", 
+                        "description": "number of elements in @path."
+                    }
+                ], 
+                "description": "Sets the search path for the icon theme object. When looking\nfor an icon theme, GTK+ will search for a subdirectory of\none or more of the directories in @path with the same name\nas the icon theme. (Themes from multiple of the path elements\nare combined to allow themes to be extended by adding icons\nin the user's home directory.)\n\nIn addition if an icon found isn't found either in the current\nicon theme or the default icon theme, and an image file with\nthe right name is found directly in one of the elements of\n@path, then that image will be used for the icon name.\n(This is legacy feature, and new icons should be put\ninto the default icon theme, which is called DEFAULT_THEME_NAME,\nrather than directly on the icon path.)"
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "changed", 
+                "parameters": null, 
+                "description": ""
+            }
+        ], 
+        "properties": []
+    }, 
+    "fullname": "Class Gtk.IconTheme", 
+    "id": "Docs-IconTheme", 
+    "description": "#GtkIconTheme provides a facility for looking up icons by name\nand size. The main reason for using a name rather than simply\nproviding a filename is to allow different icons to be used\ndepending on what <firstterm>icon theme</firstterm> is selected\nby the user. The operation of icon themes on Linux and Unix\nfollows the <ulink\nurl=\"http://www.freedesktop.org/Standards/icon-theme-spec\">Icon\nTheme Specification</ulink>. There is a default icon theme,\nnamed <literal>hicolor</literal> where applications should install\ntheir icons, but more additional application themes can be\ninstalled as operating system vendors and users choose.\n\nNamed icons are similar to the <xref linkend=\"gtk3-Themeable-Stock-Images\"/>\nfacility, and the distinction between the two may be a bit confusing.\nA few things to keep in mind:\n<itemizedlist>\n<listitem>\nStock images usually are used in conjunction with\n<xref linkend=\"gtk3-Stock-Items\"/>, such as %GTK_STOCK_OK or\n%GTK_STOCK_OPEN. Named icons are easier to set up and therefore\nare more useful for new icons that an application wants to\nadd, such as application icons or window icons.\n</listitem>\n<listitem>\nStock images can only be loaded at the symbolic sizes defined\nby the #GtkIconSize enumeration, or by custom sizes defined\nby gtk_icon_size_register(), while named icons are more flexible\nand any pixel size can be specified.\n</listitem>\n<listitem>\nBecause stock images are closely tied to stock items, and thus\nto actions in the user interface, stock images may come in\nmultiple variants for different widget states or writing\ndirections.\n</listitem>\n</itemizedlist>\nA good rule of thumb is that if there is a stock image for what\nyou want to use, use it, otherwise use a named icon. It turns\nout that internally stock images are generally defined in\nterms of one or more named icons. (An example of the\nmore than one case is icons that depend on writing direction;\n%GTK_STOCK_GO_FORWARD uses the two themed icons\n\"gtk-stock-go-forward-ltr\" and \"gtk-stock-go-forward-rtl\".)\n\nIn many cases, named themes are used indirectly, via #GtkImage\nor stock items, rather than directly, but looking up icons\ndirectly is also simple. The #GtkIconTheme object acts\nas a database of all the icons in the current theme. You\ncan create new #GtkIconTheme objects, but its much more\nefficient to use the standard icon theme for the #GdkScreen\nso that the icon information is shared with other people\nlooking up icons. In the case where the default screen is\nbeing used, looking up an icon can be as simple as:\n<informalexample>\n<programlisting>\nGError *error = NULL;\nGtkIconTheme *icon_theme;\nGdkPixbuf *pixbuf;\n\nicon_theme = gtk_icon_theme_get_default ();\npixbuf = gtk_icon_theme_load_icon (icon_theme,\n\"my-icon-name\", // icon name\n48, // size\n0,  // flags\n&error);\nif (!pixbuf)\n{\ng_warning (\"Couldn't load icon: &percnt;s\", error->message);\ng_error_free (error);\n}\nelse\n{\n// Use the pixbuf\ng_object_unref (pixbuf);\n}\n</programlisting>\n</informalexample>"
+}

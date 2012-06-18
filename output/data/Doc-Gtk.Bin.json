@@ -1,0 +1,39 @@
+{
+    "isAbstract": true, 
+    "leaf": true, 
+    "name": "Bin", 
+    "text": "Bin", 
+    "interfaces": [
+        [
+            "Atk.ImplementorIface"
+        ], 
+        [
+            "Buildable"
+        ]
+    ], 
+    "parents": [
+        "Bin", 
+        "Container", 
+        "Widget", 
+        "GObject.InitiallyUnowned"
+    ], 
+    "members": {
+        "signals": [], 
+        "methods": [
+            {
+                "returns": {
+                    "type": "ref:Gtk.Widget", 
+                    "description": "pointer to child of the #GtkBin"
+                }, 
+                "version": "", 
+                "name": "get_child", 
+                "parameters": null, 
+                "description": "Gets the child of the #GtkBin, or %NULL if the bin contains\nno child widget. The returned widget does not have a reference\nadded, so you do not need to unref it."
+            }
+        ], 
+        "properties": []
+    }, 
+    "fullname": "Class Gtk.Bin", 
+    "id": "Docs-Bin", 
+    "description": "The #GtkBin widget is a container with just one child.\nIt is not very useful itself, but it is useful for deriving subclasses,\nsince it provides common code needed for handling a single child widget.\n\nMany GTK+ widgets are subclasses of #GtkBin, including #GtkWindow,\n#GtkButton, #GtkFrame, #GtkHandleBox or #GtkScrolledWindow."
+}

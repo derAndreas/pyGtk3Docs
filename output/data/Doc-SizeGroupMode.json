@@ -1,0 +1,29 @@
+{
+    "leaf": true, 
+    "name": "SizeGroupMode", 
+    "text": "SizeGroupMode", 
+    "version": null, 
+    "members": {
+        "properties": [
+            {
+                "name": "none", 
+                "value": "0"
+            }, 
+            {
+                "name": "horizontal", 
+                "value": "1"
+            }, 
+            {
+                "name": "vertical", 
+                "value": "2"
+            }, 
+            {
+                "name": "both", 
+                "value": "3"
+            }
+        ]
+    }, 
+    "fullname": "Enumeration Gtk.SizeGroupMode", 
+    "id": "Docs-SizeGroupMode", 
+    "description": ""
+}

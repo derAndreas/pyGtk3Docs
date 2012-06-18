@@ -1,0 +1,155 @@
+{
+    "isAbstract": false, 
+    "leaf": true, 
+    "name": "MenuToolButton", 
+    "text": "MenuToolButton", 
+    "interfaces": [
+        [
+            "Atk.ImplementorIface"
+        ], 
+        [
+            "Actionable"
+        ], 
+        [
+            "Activatable"
+        ], 
+        [
+            "Buildable"
+        ]
+    ], 
+    "parents": [
+        "MenuToolButton", 
+        "ToolButton", 
+        "ToolItem", 
+        "Bin", 
+        "Container", 
+        "Widget", 
+        "GObject.InitiallyUnowned"
+    ], 
+    "members": {
+        "signals": [
+            {
+                "version": "", 
+                "when": "first", 
+                "name": "show-menu", 
+                "description": "The ::show-menu signal is emitted before the menu is shown.\n\nIt can be used to populate the menu on demand, using \ngtk_menu_tool_button_get_menu(). \nNote that even if you populate the menu dynamically in this way, \nyou must set an empty menu on the #GtkMenuToolButton beforehand,\nsince the arrow is made insensitive if the menu is not set."
+            }
+        ], 
+        "methods": [
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "the new #GtkMenuToolButton", 
+                    "name": "ref:Gtk.ToolItem"
+                }, 
+                "version": "2.6", 
+                "name": "Gtk.MenuToolButton(Gtk.Widget icon_widget, String label)", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "icon_widget"
+                    }, 
+                    {
+                        "type": "String", 
+                        "name": "label"
+                    }
+                ]
+            }, 
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "the new #GtkMenuToolButton", 
+                    "name": "ref:Gtk.ToolItem"
+                }, 
+                "version": "2.6", 
+                "name": "Gtk.MenuToolButton(String stock_id)", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "stock_id"
+                    }
+                ]
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.Widget", 
+                    "description": "the #GtkMenu associated"
+                }, 
+                "version": "2.6", 
+                "name": "get_menu", 
+                "parameters": null, 
+                "description": "Gets the #GtkMenu associated with #GtkMenuToolButton.\n\nwith #GtkMenuToolButton"
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.12", 
+                "name": "set_arrow_tooltip_markup", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "markup", 
+                        "description": "markup text to be used as tooltip text for button's arrow button"
+                    }
+                ], 
+                "description": "Sets the tooltip markup text to be used as tooltip for the arrow button\nwhich pops up the menu.  See gtk_tool_item_set_tooltip_text() for setting a\ntooltip on the whole #GtkMenuToolButton."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.12", 
+                "name": "set_arrow_tooltip_text", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "text", 
+                        "description": "text to be used as tooltip text for button's arrow button"
+                    }
+                ], 
+                "description": "Sets the tooltip text to be used as tooltip for the arrow button which\npops up the menu.  See gtk_tool_item_set_tooltip_text() for setting a tooltip\non the whole #GtkMenuToolButton."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.6", 
+                "name": "set_menu", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "menu", 
+                        "description": "the #GtkMenu associated with #GtkMenuToolButton"
+                    }
+                ], 
+                "description": "Sets the #GtkMenu that is popped up when the user clicks on the arrow.\nIf @menu is NULL, the arrow button becomes insensitive."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "show_menu", 
+                "parameters": null, 
+                "description": ""
+            }
+        ], 
+        "properties": [
+            {
+                "writable": false, 
+                "type": "Gtk.Menu", 
+                "readable": false, 
+                "name": "menu", 
+                "description": ""
+            }
+        ]
+    }, 
+    "fullname": "Class Gtk.MenuToolButton", 
+    "id": "Docs-MenuToolButton", 
+    "description": "A #GtkMenuToolButton is a #GtkToolItem that contains a button and\na small additional button with an arrow. When clicked, the arrow\nbutton pops up a dropdown menu.\n\nUse gtk_menu_tool_button_new() to create a new\n#GtkMenuToolButton. Use gtk_menu_tool_button_new_from_stock() to\ncreate a new #GtkMenuToolButton containing a stock item.\n\n<refsect2 id=\"GtkMenuToolButton-BUILDER-UI\">\n<title>GtkMenuToolButton as GtkBuildable</title>\n<para>\nThe GtkMenuToolButton implementation of the GtkBuildable interface\nsupports adding a menu by specifying \"menu\" as the \"type\"\nattribute of a &lt;child&gt; element.\n\n<example>\n<title>A UI definition fragment with menus</title>\n<programlisting><![CDATA[\n<object class=\"GtkMenuToolButton\">\n<child type=\"menu\">\n<object class=\"GtkMenu\"/>\n</child>\n</object>\n]]></programlisting>\n</example>\n</para>\n</refsect2>"
+}

@@ -1,0 +1,163 @@
+{
+    "isAbstract": false, 
+    "leaf": true, 
+    "name": "Tooltip", 
+    "text": "Tooltip", 
+    "interfaces": [], 
+    "parents": [
+        "Tooltip", 
+        "GObject.Object"
+    ], 
+    "members": {
+        "signals": [], 
+        "methods": [
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.12", 
+                "name": "set_custom", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "custom_widget", 
+                        "description": "a #GtkWidget, or %NULL to unset the old custom widget."
+                    }
+                ], 
+                "description": "Replaces the widget packed into the tooltip with\n@custom_widget. @custom_widget does not get destroyed when the tooltip goes\naway.\nBy default a box with a #GtkImage and #GtkLabel is embedded in \nthe tooltip, which can be configured using gtk_tooltip_set_markup() \nand gtk_tooltip_set_icon()."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.12", 
+                "name": "set_icon", 
+                "parameters": [
+                    {
+                        "type": "GdkPixbuf.Pixbuf", 
+                        "name": "pixbuf", 
+                        "description": "a #GdkPixbuf, or %NULL"
+                    }
+                ], 
+                "description": "Sets the icon of the tooltip (which is in front of the text) to be\n@pixbuf.  If @pixbuf is %NULL, the image will be hidden."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.20", 
+                "name": "set_icon_from_gicon", 
+                "parameters": [
+                    {
+                        "type": "Gio.Icon", 
+                        "name": "gicon", 
+                        "description": "a #GIcon representing the icon, or %NULL"
+                    }, 
+                    {
+                        "type": "ref:Gtk.IconSize", 
+                        "name": "size", 
+                        "description": "a stock icon size"
+                    }
+                ], 
+                "description": "Sets the icon of the tooltip (which is in front of the text)\nto be the icon indicated by @gicon with the size indicated\nby @size. If @gicon is %NULL, the image will be hidden."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.14", 
+                "name": "set_icon_from_icon_name", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "icon_name", 
+                        "description": "an icon name, or %NULL"
+                    }, 
+                    {
+                        "type": "ref:Gtk.IconSize", 
+                        "name": "size", 
+                        "description": "a stock icon size"
+                    }
+                ], 
+                "description": "Sets the icon of the tooltip (which is in front of the text) to be\nthe icon indicated by @icon_name with the size indicated\nby @size.  If @icon_name is %NULL, the image will be hidden."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.12", 
+                "name": "set_icon_from_stock", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "stock_id", 
+                        "description": "a stock id, or %NULL"
+                    }, 
+                    {
+                        "type": "ref:Gtk.IconSize", 
+                        "name": "size", 
+                        "description": "a stock icon size"
+                    }
+                ], 
+                "description": "Sets the icon of the tooltip (which is in front of the text) to be\nthe stock item indicated by @stock_id with the size indicated\nby @size.  If @stock_id is %NULL, the image will be hidden."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.12", 
+                "name": "set_markup", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "markup", 
+                        "description": "a markup string (see <link linkend=\"PangoMarkupFormat\">Pango markup format</link>) or %NULL"
+                    }
+                ], 
+                "description": "Sets the text of the tooltip to be @markup, which is marked up\nwith the <link\nlinkend=\"PangoMarkupFormat\">Pango text markup language</link>.\nIf @markup is %NULL, the label will be hidden."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.12", 
+                "name": "set_text", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "text", 
+                        "description": "a text string or %NULL"
+                    }
+                ], 
+                "description": "Sets the text of the tooltip to be @text. If @text is %NULL, the label\nwill be hidden. See also gtk_tooltip_set_markup()."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.12", 
+                "name": "set_tip_area", 
+                "parameters": [
+                    {
+                        "type": "Gdk.Rectangle", 
+                        "name": "rect", 
+                        "description": "a #GdkRectangle"
+                    }
+                ], 
+                "description": "Sets the area of the widget, where the contents of this tooltip apply,\nto be @rect (in widget coordinates).  This is especially useful for\nproperly setting tooltips on #GtkTreeView rows and cells, #GtkIconViews,\netc.\n\nFor setting tooltips on #GtkTreeView, please refer to the convenience\nfunctions for this: gtk_tree_view_set_tooltip_row() and\ngtk_tree_view_set_tooltip_cell()."
+            }
+        ], 
+        "properties": []
+    }, 
+    "fullname": "Class Gtk.Tooltip", 
+    "id": "Docs-Tooltip", 
+    "description": "Basic tooltips can be realized simply by using gtk_widget_set_tooltip_text()\nor gtk_widget_set_tooltip_markup() without any explicit tooltip object.\n\nWhen you need a tooltip with a little more fancy contents, like adding an\nimage, or you want the tooltip to have different contents per #GtkTreeView\nrow or cell, you will have to do a little more work:\n<itemizedlist>\n<listitem>\n<para>\nSet the #GtkWidget:has-tooltip property to %TRUE, this will make GTK+\nmonitor the widget for motion and related events which are needed to\ndetermine when and where to show a tooltip.\n</para>\n</listitem>\n<listitem>\n<para>\nConnect to the #GtkWidget::query-tooltip signal.  This signal will be\nemitted when a tooltip is supposed to be shown. One of the arguments passed\nto the signal handler is a GtkTooltip object. This is the object that we\nare about to display as a tooltip, and can be manipulated in your callback\nusing functions like gtk_tooltip_set_icon(). There are functions for setting\nthe tooltip's markup, setting an image from a stock icon, or even putting in\na custom widget.\n</para>\n</listitem>\n<listitem>\n<para>\nReturn %TRUE from your query-tooltip handler. This causes the tooltip to be\nshow. If you return %FALSE, it will not be shown.\n</para>\n</listitem>\n</itemizedlist>\n\nIn the probably rare case where you want to have even more control over the\ntooltip that is about to be shown, you can set your own #GtkWindow which\nwill be used as tooltip window.  This works as follows:\n<itemizedlist>\n<listitem>\n<para>\nSet #GtkWidget:has-tooltip and connect to #GtkWidget::query-tooltip as\nbefore.\n</para>\n</listitem>\n<listitem>\n<para>\nUse gtk_widget_set_tooltip_window() to set a #GtkWindow created by you as\ntooltip window.\n</para>\n</listitem>\n<listitem>\n<para>\nIn the #GtkWidget::query-tooltip callback you can access your window using\ngtk_widget_get_tooltip_window() and manipulate as you wish. The semantics of\nthe return value are exactly as before, return %TRUE to show the window,\n%FALSE to not show it.\n</para>\n</listitem>\n</itemizedlist>"
+}

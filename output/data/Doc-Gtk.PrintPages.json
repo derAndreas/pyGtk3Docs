@@ -1,0 +1,29 @@
+{
+    "leaf": true, 
+    "name": "PrintPages", 
+    "text": "PrintPages", 
+    "version": null, 
+    "members": {
+        "properties": [
+            {
+                "name": "all", 
+                "value": "0"
+            }, 
+            {
+                "name": "current", 
+                "value": "1"
+            }, 
+            {
+                "name": "ranges", 
+                "value": "2"
+            }, 
+            {
+                "name": "selection", 
+                "value": "3"
+            }
+        ]
+    }, 
+    "fullname": "Enumeration Gtk.PrintPages", 
+    "id": "Docs-PrintPages", 
+    "description": ""
+}

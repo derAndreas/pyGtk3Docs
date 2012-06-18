@@ -1,0 +1,489 @@
+{
+    "isAbstract": false, 
+    "leaf": true, 
+    "name": "UIManager", 
+    "text": "UIManager", 
+    "interfaces": [
+        [
+            "Buildable"
+        ]
+    ], 
+    "parents": [
+        "UIManager", 
+        "GObject.Object"
+    ], 
+    "members": {
+        "signals": [
+            {
+                "version": "2.4", 
+                "when": "first", 
+                "name": "actions-changed", 
+                "description": "The ::actions-changed signal is emitted whenever the set of actions\nchanges."
+            }, 
+            {
+                "version": "2.4", 
+                "when": "first", 
+                "name": "add-widget", 
+                "description": "The ::add-widget signal is emitted for each generated menubar and toolbar.\nIt is not emitted for generated popup menus, which can be obtained by \ngtk_ui_manager_get_widget()."
+            }, 
+            {
+                "version": "2.4", 
+                "when": "first", 
+                "name": "connect-proxy", 
+                "description": "The ::connect-proxy signal is emitted after connecting a proxy to\nan action in the group. \n\nThis is intended for simple customizations for which a custom action\nclass would be too clumsy, e.g. showing tooltips for menuitems in the\nstatusbar."
+            }, 
+            {
+                "version": "2.4", 
+                "when": "first", 
+                "name": "disconnect-proxy", 
+                "description": "The ::disconnect-proxy signal is emitted after disconnecting a proxy\nfrom an action in the group."
+            }, 
+            {
+                "version": "2.4", 
+                "when": "first", 
+                "name": "post-activate", 
+                "description": "The ::post-activate signal is emitted just after the @action\nis activated.\n\nThis is intended for applications to get notification\njust after any action is activated."
+            }, 
+            {
+                "version": "2.4", 
+                "when": "first", 
+                "name": "pre-activate", 
+                "description": "The ::pre-activate signal is emitted just before the @action\nis activated.\n\nThis is intended for applications to get notification\njust before any action is activated."
+            }
+        ], 
+        "methods": [
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a new ui manager object.", 
+                    "name": "ref:Gtk.UIManager"
+                }, 
+                "version": "2.4", 
+                "name": "Gtk.UIManager()", 
+                "parameters": null
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.4", 
+                "name": "add_ui", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "merge_id", 
+                        "description": "the merge id for the merged UI, see gtk_ui_manager_new_merge_id()"
+                    }, 
+                    {
+                        "type": "String", 
+                        "name": "path", 
+                        "description": "a path"
+                    }, 
+                    {
+                        "type": "String", 
+                        "name": "name", 
+                        "description": "the name for the added UI element"
+                    }, 
+                    {
+                        "type": "String", 
+                        "name": "action", 
+                        "description": "the name of the action to be proxied, or %NULL to add a separator"
+                    }, 
+                    {
+                        "type": "ref:Gtk.UIManagerItemType", 
+                        "name": "type", 
+                        "description": "the type of UI element to add."
+                    }, 
+                    {
+                        "type": "Boolean", 
+                        "name": "top", 
+                        "description": "if %TRUE, the UI element is added before its siblings, otherwise it is added after its siblings."
+                    }
+                ], 
+                "description": "Adds a UI element to the current contents of @manager. \n\nIf @type is %GTK_UI_MANAGER_AUTO, GTK+ inserts a menuitem, toolitem or \nseparator if such an element can be inserted at the place determined by \n@path. Otherwise @type must indicate an element that can be inserted at \nthe place determined by @path.\n\nIf @path points to a menuitem or toolitem, the new element will be inserted\nbefore or after this item, depending on @top."
+            }, 
+            {
+                "returns": {
+                    "type": "Integer", 
+                    "description": "The merge id for the merged UI. The merge id can be used"
+                }, 
+                "version": "2.4", 
+                "name": "add_ui_from_file", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "filename", 
+                        "description": "the name of the file to parse"
+                    }
+                ], 
+                "description": "Parses a file containing a <link linkend=\"XML-UI\">UI definition</link> and \nmerges it with the current contents of @manager. \n\nto unmerge the UI with gtk_ui_manager_remove_ui(). If an error occurred,\nthe return value is 0."
+            }, 
+            {
+                "returns": {
+                    "type": "Integer", 
+                    "description": "The merge id for the merged UI. The merge id can be used"
+                }, 
+                "version": "3.4", 
+                "name": "add_ui_from_resource", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "resource_path", 
+                        "description": "the resource path of the file to parse"
+                    }
+                ], 
+                "description": "Parses a resource file containing a <link linkend=\"XML-UI\">UI definition</link> and\nmerges it with the current contents of @manager.\n\nto unmerge the UI with gtk_ui_manager_remove_ui(). If an error occurred,\nthe return value is 0."
+            }, 
+            {
+                "returns": {
+                    "type": "Integer", 
+                    "description": "The merge id for the merged UI. The merge id can be used"
+                }, 
+                "version": "2.4", 
+                "name": "add_ui_from_string", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "buffer", 
+                        "description": "the string to parse"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "length", 
+                        "description": "the length of @buffer (may be -1 if @buffer is nul-terminated)"
+                    }
+                ], 
+                "description": "Parses a string containing a <link linkend=\"XML-UI\">UI definition</link> and \nmerges it with the current contents of @manager. An enclosing &lt;ui&gt; \nelement is added if it is missing.\n\nto unmerge the UI with gtk_ui_manager_remove_ui(). If an error occurred,\nthe return value is 0."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.4", 
+                "name": "ensure_update", 
+                "parameters": null, 
+                "description": "Makes sure that all pending updates to the UI have been completed.\n\nThis may occasionally be necessary, since #GtkUIManager updates the \nUI in an idle function. A typical example where this function is\nuseful is to enforce that the menubar and toolbar have been added to \nthe main window before showing it:\n|[\ngtk_container_add (GTK_CONTAINER (window), vbox); \ng_signal_connect (merge, \"add-widget\", \nG_CALLBACK (add_widget), vbox);\ngtk_ui_manager_add_ui_from_file (merge, \"my-menus\");\ngtk_ui_manager_add_ui_from_file (merge, \"my-toolbars\");\ngtk_ui_manager_ensure_update (merge);  \ngtk_widget_show (window);\n]|"
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.AccelGroup", 
+                    "description": "the #GtkAccelGroup."
+                }, 
+                "version": "2.4", 
+                "name": "get_accel_group", 
+                "parameters": null, 
+                "description": "Returns the #GtkAccelGroup associated with @manager."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.Action", 
+                    "description": "the action whose proxy widget is found by following the path,"
+                }, 
+                "version": "2.4", 
+                "name": "get_action", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "path", 
+                        "description": "a path"
+                    }
+                ], 
+                "description": "Looks up an action by following a path. See gtk_ui_manager_get_widget()\nfor more information about paths.\n\nor %NULL if no widget was found."
+            }, 
+            {
+                "returns": {
+                    "type": "GLib.List", 
+                    "description": "a #GList of"
+                }, 
+                "version": "2.4", 
+                "name": "get_action_groups", 
+                "parameters": null, 
+                "description": "Returns the list of action groups associated with @manager.\n\naction groups. The list is owned by GTK+\nand should not be modified."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "whether tearoff menu items are added"
+                }, 
+                "version": "2.4", 
+                "name": "get_add_tearoffs", 
+                "parameters": null, 
+                "description": "Returns whether menus generated by this #GtkUIManager\nwill have tearoff menu items. \n\n\n\nbe used in newly written code."
+            }, 
+            {
+                "returns": {
+                    "type": "GLib.SList", 
+                    "description": "a newly-allocated #GSList of"
+                }, 
+                "version": "2.4", 
+                "name": "get_toplevels", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.UIManagerItemType", 
+                        "name": "types", 
+                        "description": "specifies the types of toplevel widgets to include. Allowed types are #GTK_UI_MANAGER_MENUBAR, #GTK_UI_MANAGER_TOOLBAR and #GTK_UI_MANAGER_POPUP."
+                    }
+                ], 
+                "description": "Obtains a list of all toplevel widgets of the requested types.\n\nall toplevel widgets of the requested types.  Free the returned list with g_slist_free()."
+            }, 
+            {
+                "returns": {
+                    "type": "String", 
+                    "description": "A newly allocated string containing an XML representation of"
+                }, 
+                "version": "2.4", 
+                "name": "get_ui", 
+                "parameters": null, 
+                "description": "Creates a <link linkend=\"XML-UI\">UI definition</link> of the merged UI.\n\nthe merged UI."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.Widget", 
+                    "description": "the widget found by following the path, or %NULL if no widget"
+                }, 
+                "version": "2.4", 
+                "name": "get_widget", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "path", 
+                        "description": "a path"
+                    }
+                ], 
+                "description": "Looks up a widget by following a path. \nThe path consists of the names specified in the XML description of the UI. \nseparated by '/'. Elements which don't have a name or action attribute in \nthe XML (e.g. &lt;popup&gt;) can be addressed by their XML element name \n(e.g. \"popup\"). The root element (\"/ui\") can be omitted in the path.\n\nNote that the widget found by following a path that ends in a &lt;menu&gt;\nelement is the menuitem to which the menu is attached, not the menu itmanager.\n\nAlso note that the widgets constructed by a ui manager are not tied to \nthe lifecycle of the ui manager. If you add the widgets returned by this \nfunction to some container or explicitly ref them, they will survive the\ndestruction of the ui manager.\n\nwas found."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.4", 
+                "name": "insert_action_group", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.ActionGroup", 
+                        "name": "action_group", 
+                        "description": "the action group to be inserted"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "pos", 
+                        "description": "the position at which the group will be inserted."
+                    }
+                ], 
+                "description": "Inserts an action group into the list of action groups associated \nwith @manager. Actions in earlier groups hide actions with the same \nname in later groups. \n\nIf @pos is larger than the number of action groups in @manager, or\nnegative, @action_group will be inserted at the end of the internal\nlist."
+            }, 
+            {
+                "returns": {
+                    "type": "Integer", 
+                    "description": "an unused merge id."
+                }, 
+                "version": "2.4", 
+                "name": "new_merge_id", 
+                "parameters": null, 
+                "description": "Returns an unused merge id, suitable for use with \ngtk_ui_manager_add_ui()."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.4", 
+                "name": "remove_action_group", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.ActionGroup", 
+                        "name": "action_group", 
+                        "description": "the action group to be removed"
+                    }
+                ], 
+                "description": "Removes an action group from the list of action groups associated \nwith @manager."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.4", 
+                "name": "remove_ui", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "merge_id", 
+                        "description": "a merge id as returned by gtk_ui_manager_add_ui_from_string()"
+                    }
+                ], 
+                "description": "Unmerges the part of @manager<!-- -->s content identified by @merge_id."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.4", 
+                "name": "set_add_tearoffs", 
+                "parameters": [
+                    {
+                        "type": "Boolean", 
+                        "name": "add_tearoffs", 
+                        "description": "whether tearoff menu items are added"
+                    }
+                ], 
+                "description": "Sets the \"add_tearoffs\" property, which controls whether menus \ngenerated by this #GtkUIManager will have tearoff menu items. \n\nNote that this only affects regular menus. Generated popup \nmenus never have tearoff menu items.\n\n\nbe used in newly written code."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "actions_changed", 
+                "parameters": null, 
+                "description": ""
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "add_widget", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "widget", 
+                        "description": ""
+                    }
+                ], 
+                "description": ""
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "connect_proxy", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Action", 
+                        "name": "action", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "proxy", 
+                        "description": ""
+                    }
+                ], 
+                "description": ""
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "disconnect_proxy", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Action", 
+                        "name": "action", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "proxy", 
+                        "description": ""
+                    }
+                ], 
+                "description": ""
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.Action", 
+                    "description": "the action whose proxy widget is found by following the path,"
+                }, 
+                "version": "2.4", 
+                "name": "get_action", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "path", 
+                        "description": "a path"
+                    }
+                ], 
+                "description": "Looks up an action by following a path. See gtk_ui_manager_get_widget()\nfor more information about paths.\n\nor %NULL if no widget was found."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.Widget", 
+                    "description": "the widget found by following the path, or %NULL if no widget"
+                }, 
+                "version": "2.4", 
+                "name": "get_widget", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "path", 
+                        "description": "a path"
+                    }
+                ], 
+                "description": "Looks up a widget by following a path. \nThe path consists of the names specified in the XML description of the UI. \nseparated by '/'. Elements which don't have a name or action attribute in \nthe XML (e.g. &lt;popup&gt;) can be addressed by their XML element name \n(e.g. \"popup\"). The root element (\"/ui\") can be omitted in the path.\n\nNote that the widget found by following a path that ends in a &lt;menu&gt;\nelement is the menuitem to which the menu is attached, not the menu itmanager.\n\nAlso note that the widgets constructed by a ui manager are not tied to \nthe lifecycle of the ui manager. If you add the widgets returned by this \nfunction to some container or explicitly ref them, they will survive the\ndestruction of the ui manager.\n\nwas found."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "post_activate", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Action", 
+                        "name": "action", 
+                        "description": ""
+                    }
+                ], 
+                "description": ""
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "pre_activate", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Action", 
+                        "name": "action", 
+                        "description": ""
+                    }
+                ], 
+                "description": ""
+            }
+        ], 
+        "properties": [
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "add-tearoffs", 
+                "description": "The \"add-tearoffs\" property controls whether generated menus \nhave tearoff menu items. \n\nNote that this only affects regular menus. Generated popup \nmenus never have tearoff menu items.   \n\n\nbe used in newly written code."
+            }, 
+            {
+                "writable": false, 
+                "type": "String", 
+                "readable": false, 
+                "name": "ui", 
+                "description": ""
+            }
+        ]
+    }, 
+    "fullname": "Class Gtk.UIManager", 
+    "id": "Docs-UIManager", 
+    "description": "A #GtkUIManager constructs a user interface (menus and toolbars) from\none or more UI definitions, which reference actions from one or more\naction groups.\n\n<refsect2 id=\"XML-UI\">\n<title>UI Definitions</title>\n<para>\nThe UI definitions are specified in an XML format which can be\nroughly described by the following DTD.\n\n<note><para>\nDo not confuse the GtkUIManager UI Definitions described here with\nthe similarly named <link linkend=\"BUILDER-UI\">GtkBuilder UI\nDefinitions</link>.\n</para></note>\n\n<programlisting>\n<![CDATA[\n<!ELEMENT ui          (menubar|toolbar|popup|accelerator)* >\n<!ELEMENT menubar     (menuitem|separator|placeholder|menu)* >\n<!ELEMENT menu        (menuitem|separator|placeholder|menu)* >\n<!ELEMENT popup       (menuitem|separator|placeholder|menu)* >\n<!ELEMENT toolbar     (toolitem|separator|placeholder)* >\n<!ELEMENT placeholder (menuitem|toolitem|separator|placeholder|menu)* >\n<!ELEMENT menuitem     EMPTY >\n<!ELEMENT toolitem     (menu?) >\n<!ELEMENT separator    EMPTY >\n<!ELEMENT accelerator  EMPTY >\n<!ATTLIST menubar      name                      #IMPLIED\naction                    #IMPLIED >\n<!ATTLIST toolbar      name                      #IMPLIED\naction                    #IMPLIED >\n<!ATTLIST popup        name                      #IMPLIED\naction                    #IMPLIED\naccelerators (true|false) #IMPLIED >\n<!ATTLIST placeholder  name                      #IMPLIED\naction                    #IMPLIED >\n<!ATTLIST separator    name                      #IMPLIED\naction                    #IMPLIED\nexpand       (true|false) #IMPLIED >\n<!ATTLIST menu         name                      #IMPLIED\naction                    #REQUIRED\nposition     (top|bot)    #IMPLIED >\n<!ATTLIST menuitem     name                      #IMPLIED\naction                    #REQUIRED\nposition     (top|bot)    #IMPLIED\nalways-show-image (true|false) #IMPLIED >\n<!ATTLIST toolitem     name                      #IMPLIED\naction                    #REQUIRED\nposition     (top|bot)    #IMPLIED >\n<!ATTLIST accelerator  name                      #IMPLIED\naction                    #REQUIRED >\n]]>\n</programlisting>\nThere are some additional restrictions beyond those specified in the\nDTD, e.g. every toolitem must have a toolbar in its anchestry and\nevery menuitem must have a menubar or popup in its anchestry. Since\na #GMarkup parser is used to parse the UI description, it must not only\nbe valid XML, but valid #GMarkup.\n\nIf a name is not specified, it defaults to the action. If an action is\nnot specified either, the element name is used. The name and action\nattributes must not contain '/' characters after parsing (since that\nwould mess up path lookup) and must be usable as XML attributes when\nenclosed in doublequotes, thus they must not '\"' characters or references\nto the &quot; entity.\n\n<example>\n<title>A UI definition</title>\n<programlisting>\n<ui>\n<menubar>\n<menu name=\"FileMenu\" action=\"FileMenuAction\">\n<menuitem name=\"New\" action=\"New2Action\" />\n<placeholder name=\"FileMenuAdditions\" />\n</menu>\n<menu name=\"JustifyMenu\" action=\"JustifyMenuAction\">\n<menuitem name=\"Left\" action=\"justify-left\"/>\n<menuitem name=\"Centre\" action=\"justify-center\"/>\n<menuitem name=\"Right\" action=\"justify-right\"/>\n<menuitem name=\"Fill\" action=\"justify-fill\"/>\n</menu>\n</menubar>\n<toolbar action=\"toolbar1\">\n<placeholder name=\"JustifyToolItems\">\n<separator/>\n<toolitem name=\"Left\" action=\"justify-left\"/>\n<toolitem name=\"Centre\" action=\"justify-center\"/>\n<toolitem name=\"Right\" action=\"justify-right\"/>\n<toolitem name=\"Fill\" action=\"justify-fill\"/>\n<separator/>\n</placeholder>\n</toolbar>\n</ui>\n</programlisting>\n</example>\n\nThe constructed widget hierarchy is very similar to the element tree\nof the XML, with the exception that placeholders are merged into their\nparents. The correspondence of XML elements to widgets should be\nalmost obvious:\n<variablelist>\n<varlistentry>\n<term>menubar</term>\n<listitem><para>a #GtkMenuBar</para></listitem>\n</varlistentry>\n<varlistentry>\n<term>toolbar</term>\n<listitem><para>a #GtkToolbar</para></listitem>\n</varlistentry>\n<varlistentry>\n<term>popup</term>\n<listitem><para>a toplevel #GtkMenu</para></listitem>\n</varlistentry>\n<varlistentry>\n<term>menu</term>\n<listitem><para>a #GtkMenu attached to a menuitem</para></listitem>\n</varlistentry>\n<varlistentry>\n<term>menuitem</term>\n<listitem><para>a #GtkMenuItem subclass, the exact type depends on the\naction</para></listitem>\n</varlistentry>\n<varlistentry>\n<term>toolitem</term>\n<listitem><para>a #GtkToolItem subclass, the exact type depends on the\naction. Note that toolitem elements may contain a menu element, but only\nif their associated action specifies a #GtkMenuToolButton as proxy.</para></listitem>\n</varlistentry>\n<varlistentry>\n<term>separator</term>\n<listitem><para>a #GtkSeparatorMenuItem or\n#GtkSeparatorToolItem</para></listitem>\n</varlistentry>\n<varlistentry>\n<term>accelerator</term>\n<listitem><para>a keyboard accelerator</para></listitem>\n</varlistentry>\n</variablelist>\n\nThe \"position\" attribute determines where a constructed widget is positioned\nwrt. to its siblings in the partially constructed tree. If it is\n\"top\", the widget is prepended, otherwise it is appended.\n</para>\n</refsect2>\n<refsect2 id=\"UI-Merging\">\n<title>UI Merging</title>\n<para>\nThe most remarkable feature of #GtkUIManager is that it can overlay a set\nof menuitems and toolitems over another one, and demerge them later.\n\nMerging is done based on the names of the XML elements. Each element is\nidentified by a path which consists of the names of its anchestors, separated\nby slashes. For example, the menuitem named \"Left\" in the example above\nhas the path <literal>/ui/menubar/JustifyMenu/Left</literal> and the\ntoolitem with the same name has path\n<literal>/ui/toolbar1/JustifyToolItems/Left</literal>.\n</para>\n</refsect2>\n<refsect2>\n<title>Accelerators</title>\n<para>\nEvery action has an accelerator path. Accelerators are installed together with\nmenuitem proxies, but they can also be explicitly added with &lt;accelerator&gt;\nelements in the UI definition. This makes it possible to have accelerators for\nactions even if they have no visible proxies.\n</para>\n</refsect2>\n<refsect2 id=\"Smart-Separators\">\n<title>Smart Separators</title>\n<para>\nThe separators created by #GtkUIManager are \"smart\", i.e. they do not show up\nin the UI unless they end up between two visible menu or tool items. Separators\nwhich are located at the very beginning or end of the menu or toolbar\ncontaining them, or multiple separators next to each other, are hidden. This\nis a useful feature, since the merging of UI elements from multiple sources\ncan make it hard or impossible to determine in advance whether a separator\nwill end up in such an unfortunate position.\n\nFor separators in toolbars, you can set <literal>expand=\"true\"</literal> to\nturn them from a small, visible separator to an expanding, invisible one.\nToolitems following an expanding separator are effectively right-aligned.\n</para>\n</refsect2>\n<refsect2>\n<title>Empty Menus</title>\n<para>\nSubmenus pose similar problems to separators inconnection with merging. It is\nimpossible to know in advance whether they will end up empty after merging.\n#GtkUIManager offers two ways to treat empty submenus:\n<itemizedlist>\n<listitem>\n<para>make them disappear by hiding the menu item they're attached to</para>\n</listitem>\n<listitem>\n<para>add an insensitive \"Empty\" item</para>\n</listitem>\n</itemizedlist>\nThe behaviour is chosen based on the \"hide_if_empty\" property of the action\nto which the submenu is associated.\n</para>\n</refsect2>\n<refsect2 id=\"GtkUIManager-BUILDER-UI\">\n<title>GtkUIManager as GtkBuildable</title>\n<para>\nThe GtkUIManager implementation of the GtkBuildable interface accepts\nGtkActionGroup objects as &lt;child&gt; elements in UI definitions.\n\nA GtkUIManager UI definition as described above can be embedded in\nan GtkUIManager &lt;object&gt; element in a GtkBuilder UI definition.\n\nThe widgets that are constructed by a GtkUIManager can be embedded in\nother parts of the constructed user interface with the help of the\n\"constructor\" attribute. See the example below.\n\n<example>\n<title>An embedded GtkUIManager UI definition</title>\n<programlisting><![CDATA[\n<object class=\"GtkUIManager\" id=\"uiman\">\n<child>\n<object class=\"GtkActionGroup\" id=\"actiongroup\">\n<child>\n<object class=\"GtkAction\" id=\"file\">\n<property name=\"label\">_File</property>\n</object>\n</child>\n</object>\n</child>\n<ui>\n<menubar name=\"menubar1\">\n<menu action=\"file\">\n</menu>\n</menubar>\n</ui>\n</object>\n<object class=\"GtkWindow\" id=\"main-window\">\n<child>\n<object class=\"GtkMenuBar\" id=\"menubar1\" constructor=\"uiman\"/>\n</child>\n</object>\n]]></programlisting>\n</example>\n</para>\n</refsect2>"
+}

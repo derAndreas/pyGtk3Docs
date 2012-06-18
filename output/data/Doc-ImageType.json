@@ -1,0 +1,41 @@
+{
+    "leaf": true, 
+    "name": "ImageType", 
+    "text": "ImageType", 
+    "version": null, 
+    "members": {
+        "properties": [
+            {
+                "name": "empty", 
+                "value": "0"
+            }, 
+            {
+                "name": "pixbuf", 
+                "value": "1"
+            }, 
+            {
+                "name": "stock", 
+                "value": "2"
+            }, 
+            {
+                "name": "icon_set", 
+                "value": "3"
+            }, 
+            {
+                "name": "animation", 
+                "value": "4"
+            }, 
+            {
+                "name": "icon_name", 
+                "value": "5"
+            }, 
+            {
+                "name": "gicon", 
+                "value": "6"
+            }
+        ]
+    }, 
+    "fullname": "Enumeration Gtk.ImageType", 
+    "id": "Docs-ImageType", 
+    "description": ""
+}

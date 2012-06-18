@@ -1,0 +1,159 @@
+{
+    "isAbstract": false, 
+    "leaf": true, 
+    "name": "FileFilter", 
+    "text": "FileFilter", 
+    "interfaces": [
+        [
+            "Buildable"
+        ]
+    ], 
+    "parents": [
+        "FileFilter", 
+        "GObject.InitiallyUnowned"
+    ], 
+    "members": {
+        "signals": [], 
+        "methods": [
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a new #GtkFileFilter", 
+                    "name": "ref:Gtk.FileFilter"
+                }, 
+                "version": "2.4", 
+                "name": "Gtk.FileFilter()", 
+                "parameters": null
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.4", 
+                "name": "add_custom", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.FileFilterFlags", 
+                        "name": "needed", 
+                        "description": "bitfield of flags indicating the information that the custom filter function needs."
+                    }, 
+                    {
+                        "type": "ref:Gtk.FileFilterFunc", 
+                        "name": "func", 
+                        "description": "callback function; if the function returns %TRUE, then the file will be displayed."
+                    }, 
+                    {
+                        "type": "Mixed", 
+                        "name": "data", 
+                        "description": "data to pass to @func"
+                    }, 
+                    {
+                        "type": "GLib.DestroyNotify", 
+                        "name": "notify", 
+                        "description": "function to call to free @data when it is no longer needed."
+                    }
+                ], 
+                "description": "Adds rule to a filter that allows files based on a custom callback\nfunction. The bitfield @needed which is passed in provides information\nabout what sorts of information that the filter function needs;\nthis allows GTK+ to avoid retrieving expensive information when\nit isn't needed by the filter."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.4", 
+                "name": "add_mime_type", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "mime_type", 
+                        "description": "name of a MIME type"
+                    }
+                ], 
+                "description": "Adds a rule allowing a given mime type to @filter."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.4", 
+                "name": "add_pattern", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "pattern", 
+                        "description": "a shell style glob"
+                    }
+                ], 
+                "description": "Adds a rule allowing a shell style glob to a filter."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.6", 
+                "name": "add_pixbuf_formats", 
+                "parameters": null, 
+                "description": "Adds a rule allowing image files in the formats supported\nby GdkPixbuf."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE if the file should be displayed"
+                }, 
+                "version": "2.4", 
+                "name": "filter", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.FileFilterInfo", 
+                        "name": "filter_info", 
+                        "description": "a #GtkFileFilterInfo structure containing information about a file."
+                    }
+                ], 
+                "description": "Tests whether a file should be displayed according to @filter.\nThe #GtkFileFilterInfo structure @filter_info should include\nthe fields returned from gtk_file_filter_get_needed().\n\nThis function will not typically be used by applications; it\nis intended principally for use in the implementation of\n#GtkFileChooser."
+            }, 
+            {
+                "returns": {
+                    "type": "String", 
+                    "description": "The human-readable name of the filter,"
+                }, 
+                "version": "2.4", 
+                "name": "get_name", 
+                "parameters": null, 
+                "description": "Gets the human-readable name for the filter. See gtk_file_filter_set_name().\n\nor %NULL. This value is owned by GTK+ and must not\nbe modified or freed."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.FileFilterFlags", 
+                    "description": "bitfield of flags indicating needed fields when"
+                }, 
+                "version": "2.4", 
+                "name": "get_needed", 
+                "parameters": null, 
+                "description": "Gets the fields that need to be filled in for the structure\npassed to gtk_file_filter_filter()\n\nThis function will not typically be used by applications; it\nis intended principally for use in the implementation of\n#GtkFileChooser.\n\ncalling gtk_file_filter_filter()"
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.4", 
+                "name": "set_name", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "name", 
+                        "description": "the human-readable-name for the filter, or %NULL to remove any existing name."
+                    }
+                ], 
+                "description": "Sets the human-readable name of the filter; this is the string\nthat will be displayed in the file selector user interface if\nthere is a selectable list of filters."
+            }
+        ], 
+        "properties": []
+    }, 
+    "fullname": "Class Gtk.FileFilter", 
+    "id": "Docs-FileFilter", 
+    "description": "A GtkFileFilter can be used to restrict the files being shown in a\n#GtkFileChooser. Files can be filtered based on their name (with\ngtk_file_filter_add_pattern()), on their mime type (with\ngtk_file_filter_add_mime_type()), or by a custom filter function\n(with gtk_file_filter_add_custom()).\n\nFiltering by mime types handles aliasing and subclassing of mime\ntypes; e.g. a filter for text/plain also matches a file with mime\ntype application/rtf, since application/rtf is a subclass of\ntext/plain. Note that #GtkFileFilter allows wildcards for the\nsubtype of a mime type, so you can e.g. filter for image/&ast;.\n\nNormally, filters are used by adding them to a #GtkFileChooser,\nsee gtk_file_chooser_add_filter(), but it is also possible\nto manually use a filter on a file with gtk_file_filter_filter().\n\n<refsect2 id=\"GtkFileFilter-BUILDER-UI\">\n<title>GtkFileFilter as GtkBuildable</title>\n<para>\nThe GtkFileFilter implementation of the GtkBuildable interface\nsupports adding rules using the &lt;mime-types&gt;, &lt;patterns&gt; and\n&lt;applications&gt; elements and listing the rules within. Specifying\na &lt;mime-type&gt; or &lt;pattern&gt; is the same\nas calling gtk_recent_filter_add_mime_type() or gtk_recent_filter_add_pattern()\n\n<example>\n<title>A UI definition fragment specifying GtkFileFilter rules</title>\n<programlisting><![CDATA[\n<object class=\"GtkFileFilter\">\n<mime-types>\n<mime-type>text/plain</mime-type>\n<mime-type>image/&ast;</mime-type>\n</mime-types>\n<patterns>\n<pattern>*.txt</pattern>\n<pattern>*.png</pattern>\n</patterns>\n</object>\n]]></programlisting>\n</example>\n</para>\n</refsect2>"
+}

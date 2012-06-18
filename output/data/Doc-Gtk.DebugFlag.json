@@ -1,0 +1,65 @@
+{
+    "leaf": true, 
+    "name": "DebugFlag", 
+    "text": "DebugFlag", 
+    "version": null, 
+    "members": {
+        "properties": [
+            {
+                "name": "misc", 
+                "value": "1"
+            }, 
+            {
+                "name": "plugsocket", 
+                "value": "2"
+            }, 
+            {
+                "name": "text", 
+                "value": "4"
+            }, 
+            {
+                "name": "tree", 
+                "value": "8"
+            }, 
+            {
+                "name": "updates", 
+                "value": "16"
+            }, 
+            {
+                "name": "keybindings", 
+                "value": "32"
+            }, 
+            {
+                "name": "multihead", 
+                "value": "64"
+            }, 
+            {
+                "name": "modules", 
+                "value": "128"
+            }, 
+            {
+                "name": "geometry", 
+                "value": "256"
+            }, 
+            {
+                "name": "icontheme", 
+                "value": "512"
+            }, 
+            {
+                "name": "printing", 
+                "value": "1024"
+            }, 
+            {
+                "name": "builder", 
+                "value": "2048"
+            }, 
+            {
+                "name": "size_request", 
+                "value": "4096"
+            }
+        ]
+    }, 
+    "fullname": "Bitfield Gtk.DebugFlag", 
+    "id": "Docs-DebugFlag", 
+    "description": ""
+}

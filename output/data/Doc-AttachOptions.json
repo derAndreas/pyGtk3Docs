@@ -1,0 +1,25 @@
+{
+    "leaf": true, 
+    "name": "AttachOptions", 
+    "text": "AttachOptions", 
+    "version": null, 
+    "members": {
+        "properties": [
+            {
+                "name": "expand", 
+                "value": "1"
+            }, 
+            {
+                "name": "shrink", 
+                "value": "2"
+            }, 
+            {
+                "name": "fill", 
+                "value": "4"
+            }
+        ]
+    }, 
+    "fullname": "Bitfield Gtk.AttachOptions", 
+    "id": "Docs-AttachOptions", 
+    "description": ""
+}

@@ -1,0 +1,25 @@
+{
+    "leaf": true, 
+    "name": "FileChooserConfirmation", 
+    "text": "FileChooserConfirmation", 
+    "version": "2.8", 
+    "members": {
+        "properties": [
+            {
+                "name": "confirm", 
+                "value": "0"
+            }, 
+            {
+                "name": "accept_filename", 
+                "value": "1"
+            }, 
+            {
+                "name": "select_again", 
+                "value": "2"
+            }
+        ]
+    }, 
+    "fullname": "Enumeration Gtk.FileChooserConfirmation", 
+    "id": "Docs-FileChooserConfirmation", 
+    "description": ""
+}

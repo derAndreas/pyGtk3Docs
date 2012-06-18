@@ -1,0 +1,26 @@
+{
+    "isAbstract": false, 
+    "leaf": true, 
+    "name": "AccelMap", 
+    "text": "AccelMap", 
+    "interfaces": [], 
+    "parents": [
+        "AccelMap", 
+        "GObject.Object"
+    ], 
+    "members": {
+        "signals": [
+            {
+                "version": "2.4", 
+                "when": "last", 
+                "name": "changed", 
+                "description": "Notifies of a change in the global accelerator map.\nThe path is also used as the detail for the signal,\nso it is possible to connect to\nchanged::<replaceable>accel_path</replaceable>."
+            }
+        ], 
+        "methods": [], 
+        "properties": []
+    }, 
+    "fullname": "Class Gtk.AccelMap", 
+    "id": "Docs-AccelMap", 
+    "description": "Accelerator maps are used to define runtime configurable accelerators.\nFunctions for manipulating them are are usually used by higher level\nconvenience mechanisms like #GtkUIManager and are thus considered\n\"low-level\". You'll want to use them if you're manually creating menus that\nshould have user-configurable accelerators.\n\nAccelerator is uniquely defined by:\n\n<itemizedlist>\n<listitem><para>accelerator path</para></listitem>\n<listitem><para>accelerator key</para></listitem>\n<listitem><para>accelerator modifiers</para></listitem>\n</itemizedlist>\n\nThe accelerator path must consist of\n\"&lt;WINDOWTYPE&gt;/Category1/Category2/.../Action\", where WINDOWTYPE\nshould be a unique application-specific identifier that corresponds to the\nkind of window the accelerator is being used in, e.g. \"Gimp-Image\",\n\"Abiword-Document\" or \"Gnumeric-Settings\".\nThe \"Category1/.../Action\" portion is most appropriately chosen by the action\nthe accelerator triggers, i.e. for accelerators on menu items, choose the\nitem's menu path, e.g. \"File/Save As\", \"Image/View/Zoom\" or\n\"Edit/Select All\". So a full valid accelerator path may look like:\n\"&lt;Gimp-Toolbox&gt;/File/Dialogs/Tool Options...\".\n\nAll accelerators are stored inside one global #GtkAccelMap that can be\nobtained using gtk_accel_map_get(). See <link\nlinkend=\"monitoring-changes\">Monitoring changes</link> for additional\ndetails.\n\n<refsect2 id=\"manipulating-accelerators\">\n<title>Manipulating accelerators</title>\n<para>\nNew accelerators can be added using gtk_accel_map_add_entry(). To search for\nspecific accelerator, use gtk_accel_map_lookup_entry(). Modifications of\nexisting accelerators should be done using gtk_accel_map_change_entry().\n\nIn order to avoid having some accelerators changed, they can be locked using\ngtk_accel_map_lock_path(). Unlocking is done using\ngtk_accel_map_unlock_path().\n</para>\n</refsect2>\n<refsect2 id=\"saving-and-loading\">\n<title>Saving and loading accelerator maps</title>\n<para>\nAccelerator maps can be saved to and loaded from some external resource. For\nsimple saving and loading from file, gtk_accel_map_save() and\ngtk_accel_map_load() are provided. Saving and loading can also be done by\nproviding file descriptor to gtk_accel_map_save_fd() and\ngtk_accel_map_load_fd().\n</para>\n</refsect2>\n<refsect2 id=\"monitoring-changes\">\n<title>Monitoring changes</title>\n<para>\n#GtkAccelMap object is only useful for monitoring changes of accelerators. By\nconnecting to #GtkAccelMap::changed signal, one can monitor changes of all\naccelerators. It is also possible to monitor only single accelerator path by\nusing it as a detail of the #GtkAccelMap::changed signal.\n</para>\n</refsect2>"
+}

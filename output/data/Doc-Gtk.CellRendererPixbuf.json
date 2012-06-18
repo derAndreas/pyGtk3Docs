@@ -1,0 +1,95 @@
+{
+    "isAbstract": false, 
+    "leaf": true, 
+    "name": "CellRendererPixbuf", 
+    "text": "CellRendererPixbuf", 
+    "interfaces": [], 
+    "parents": [
+        "CellRendererPixbuf", 
+        "CellRenderer", 
+        "GObject.InitiallyUnowned"
+    ], 
+    "members": {
+        "signals": [], 
+        "methods": [
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "the new cell renderer", 
+                    "name": "ref:Gtk.CellRenderer"
+                }, 
+                "version": null, 
+                "name": "Gtk.CellRendererPixbuf()", 
+                "parameters": null
+            }
+        ], 
+        "properties": [
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "follow-state", 
+                "description": "Specifies whether the rendered pixbuf should be colorized\naccording to the #GtkCellRendererState."
+            }, 
+            {
+                "writable": false, 
+                "type": "Gio.Icon", 
+                "readable": false, 
+                "name": "gicon", 
+                "description": "The GIcon representing the icon to display.\nIf the icon theme is changed, the image will be updated\nautomatically."
+            }, 
+            {
+                "writable": false, 
+                "type": "String", 
+                "readable": false, 
+                "name": "icon-name", 
+                "description": "The name of the themed icon to display.\nThis property only has an effect if not overridden by \"stock_id\" \nor \"pixbuf\" properties."
+            }, 
+            {
+                "writable": false, 
+                "type": "GdkPixbuf.Pixbuf", 
+                "readable": false, 
+                "name": "pixbuf", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "GdkPixbuf.Pixbuf", 
+                "readable": false, 
+                "name": "pixbuf-expander-closed", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "GdkPixbuf.Pixbuf", 
+                "readable": false, 
+                "name": "pixbuf-expander-open", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "String", 
+                "readable": false, 
+                "name": "stock-detail", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "String", 
+                "readable": false, 
+                "name": "stock-id", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Integer", 
+                "readable": false, 
+                "name": "stock-size", 
+                "description": ""
+            }
+        ]
+    }, 
+    "fullname": "Class Gtk.CellRendererPixbuf", 
+    "id": "Docs-CellRendererPixbuf", 
+    "description": "A #GtkCellRendererPixbuf can be used to render an image in a cell. It allows\nto render either a given #GdkPixbuf (set via the\n#GtkCellRendererPixbuf:pixbuf property) or a stock icon (set via the\n#GtkCellRendererPixbuf:stock-id property).\n\nTo support the tree view, #GtkCellRendererPixbuf also supports rendering two\nalternative pixbufs, when the #GtkCellRenderer:is-expander property is %TRUE.\nIf the #GtkCellRenderer:is-expanded property is %TRUE and the\n#GtkCellRendererPixbuf:pixbuf-expander-open property is set to a pixbuf, it\nrenders that pixbuf, if the #GtkCellRenderer:is-expanded property is %FALSE\nand the #GtkCellRendererPixbuf:pixbuf-expander-closed property is set to a\npixbuf, it renders that one."
+}

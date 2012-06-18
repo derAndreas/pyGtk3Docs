@@ -1,0 +1,25 @@
+{
+    "leaf": true, 
+    "name": "IMStatusStyle", 
+    "text": "IMStatusStyle", 
+    "version": null, 
+    "members": {
+        "properties": [
+            {
+                "name": "nothing", 
+                "value": "0"
+            }, 
+            {
+                "name": "callback", 
+                "value": "1"
+            }, 
+            {
+                "name": "none", 
+                "value": "2"
+            }
+        ]
+    }, 
+    "fullname": "Enumeration Gtk.IMStatusStyle", 
+    "id": "Docs-IMStatusStyle", 
+    "description": ""
+}

@@ -1,0 +1,25 @@
+{
+    "leaf": true, 
+    "name": "ResizeMode", 
+    "text": "ResizeMode", 
+    "version": null, 
+    "members": {
+        "properties": [
+            {
+                "name": "parent", 
+                "value": "0"
+            }, 
+            {
+                "name": "queue", 
+                "value": "1"
+            }, 
+            {
+                "name": "immediate", 
+                "value": "2"
+            }
+        ]
+    }, 
+    "fullname": "Enumeration Gtk.ResizeMode", 
+    "id": "Docs-ResizeMode", 
+    "description": ""
+}

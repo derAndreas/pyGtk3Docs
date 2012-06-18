@@ -1,0 +1,207 @@
+{
+    "isAbstract": false, 
+    "leaf": true, 
+    "name": "Alignment", 
+    "text": "Alignment", 
+    "interfaces": [
+        [
+            "Atk.ImplementorIface"
+        ], 
+        [
+            "Buildable"
+        ]
+    ], 
+    "parents": [
+        "Alignment", 
+        "Bin", 
+        "Container", 
+        "Widget", 
+        "GObject.InitiallyUnowned"
+    ], 
+    "members": {
+        "signals": [], 
+        "methods": [
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "the new #GtkAlignment.", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": null, 
+                "name": "Gtk.Alignment(Float xalign, Float yalign, Float xscale, Float yscale)", 
+                "parameters": [
+                    {
+                        "type": "Float", 
+                        "name": "xalign"
+                    }, 
+                    {
+                        "type": "Float", 
+                        "name": "yalign"
+                    }, 
+                    {
+                        "type": "Float", 
+                        "name": "xscale"
+                    }, 
+                    {
+                        "type": "Float", 
+                        "name": "yscale"
+                    }
+                ]
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.4", 
+                "name": "get_padding", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "padding_top", 
+                        "description": "location to store the padding for the top of the widget, or %NULL"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "padding_bottom", 
+                        "description": "location to store the padding for the bottom of the widget, or %NULL"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "padding_left", 
+                        "description": "location to store the padding for the left of the widget, or %NULL"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "padding_right", 
+                        "description": "location to store the padding for the right of the widget, or %NULL"
+                    }
+                ], 
+                "description": "Gets the padding on the different sides of the widget.\nSee gtk_alignment_set_padding ()."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set", 
+                "parameters": [
+                    {
+                        "type": "Float", 
+                        "name": "xalign", 
+                        "description": "the horizontal alignment of the child widget, from 0 (left) to 1 (right)."
+                    }, 
+                    {
+                        "type": "Float", 
+                        "name": "yalign", 
+                        "description": "the vertical alignment of the child widget, from 0 (top) to 1 (bottom)."
+                    }, 
+                    {
+                        "type": "Float", 
+                        "name": "xscale", 
+                        "description": "the amount that the child widget expands horizontally to fill up unused space, from 0 to 1. A value of 0 indicates that the child widget should never expand. A value of 1 indicates that the child widget will expand to fill all of the space allocated for the #GtkAlignment."
+                    }, 
+                    {
+                        "type": "Float", 
+                        "name": "yscale", 
+                        "description": "the amount that the child widget expands vertically to fill up unused space, from 0 to 1. The values are similar to @xscale."
+                    }
+                ], 
+                "description": "Sets the #GtkAlignment values."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.4", 
+                "name": "set_padding", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "padding_top", 
+                        "description": "the padding at the top of the widget"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "padding_bottom", 
+                        "description": "the padding at the bottom of the widget"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "padding_left", 
+                        "description": "the padding at the left of the widget"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "padding_right", 
+                        "description": "the padding at the right of the widget."
+                    }
+                ], 
+                "description": "Sets the padding on the different sides of the widget.\nThe padding adds blank space to the sides of the widget. For instance,\nthis can be used to indent the child widget towards the right by adding\npadding on the left."
+            }
+        ], 
+        "properties": [
+            {
+                "writable": false, 
+                "type": "Integer", 
+                "readable": false, 
+                "name": "bottom-padding", 
+                "description": "The padding to insert at the bottom of the widget."
+            }, 
+            {
+                "writable": false, 
+                "type": "Integer", 
+                "readable": false, 
+                "name": "left-padding", 
+                "description": "The padding to insert at the left of the widget."
+            }, 
+            {
+                "writable": false, 
+                "type": "Integer", 
+                "readable": false, 
+                "name": "right-padding", 
+                "description": "The padding to insert at the right of the widget."
+            }, 
+            {
+                "writable": false, 
+                "type": "Integer", 
+                "readable": false, 
+                "name": "top-padding", 
+                "description": "The padding to insert at the top of the widget."
+            }, 
+            {
+                "writable": false, 
+                "type": "Float", 
+                "readable": false, 
+                "name": "xalign", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Float", 
+                "readable": false, 
+                "name": "xscale", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Float", 
+                "readable": false, 
+                "name": "yalign", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Float", 
+                "readable": false, 
+                "name": "yscale", 
+                "description": ""
+            }
+        ]
+    }, 
+    "fullname": "Class Gtk.Alignment", 
+    "id": "Docs-Alignment", 
+    "description": "The #GtkAlignment widget controls the alignment and size of its child widget.\nIt has four settings: xscale, yscale, xalign, and yalign.\n\nThe scale settings are used to specify how much the child widget should\nexpand to fill the space allocated to the #GtkAlignment.\nThe values can range from 0 (meaning the child doesn't expand at all) to\n1 (meaning the child expands to fill all of the available space).\n\nThe align settings are used to place the child widget within the available\narea. The values range from 0 (top or left) to 1 (bottom or right).\nOf course, if the scale settings are both set to 1, the alignment settings\nhave no effect.\n\n<note>\n<para>\nNote that the desired effect can in most cases be achieved by using the\n#GtkWidget:halign, #GtkWidget:valign and #GtkWidget:margin properties\non the child widget, so #GtkAlignment should not be used in new code.\n</para>\n</note>"
+}

@@ -1,0 +1,21 @@
+{
+    "leaf": true, 
+    "name": "IconThemeError", 
+    "text": "IconThemeError", 
+    "version": null, 
+    "members": {
+        "properties": [
+            {
+                "name": "not_found", 
+                "value": "0"
+            }, 
+            {
+                "name": "failed", 
+                "value": "1"
+            }
+        ]
+    }, 
+    "fullname": "Enumeration Gtk.IconThemeError", 
+    "id": "Docs-IconThemeError", 
+    "description": ""
+}

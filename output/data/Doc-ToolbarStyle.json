@@ -1,0 +1,29 @@
+{
+    "leaf": true, 
+    "name": "ToolbarStyle", 
+    "text": "ToolbarStyle", 
+    "version": null, 
+    "members": {
+        "properties": [
+            {
+                "name": "icons", 
+                "value": "0"
+            }, 
+            {
+                "name": "text", 
+                "value": "1"
+            }, 
+            {
+                "name": "both", 
+                "value": "2"
+            }, 
+            {
+                "name": "both_horiz", 
+                "value": "3"
+            }
+        ]
+    }, 
+    "fullname": "Enumeration Gtk.ToolbarStyle", 
+    "id": "Docs-ToolbarStyle", 
+    "description": ""
+}

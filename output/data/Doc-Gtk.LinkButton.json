@@ -1,0 +1,155 @@
+{
+    "isAbstract": false, 
+    "leaf": true, 
+    "name": "LinkButton", 
+    "text": "LinkButton", 
+    "interfaces": [
+        [
+            "Atk.ImplementorIface"
+        ], 
+        [
+            "Actionable"
+        ], 
+        [
+            "Activatable"
+        ], 
+        [
+            "Buildable"
+        ]
+    ], 
+    "parents": [
+        "LinkButton", 
+        "Button", 
+        "Bin", 
+        "Container", 
+        "Widget", 
+        "GObject.InitiallyUnowned"
+    ], 
+    "members": {
+        "signals": [
+            {
+                "version": "", 
+                "when": "last", 
+                "name": "activate-link", 
+                "description": "The ::activate-link signal is emitted each time the #GtkLinkButton\nhas been clicked.\n\nThe default handler will call gtk_show_uri() with the URI stored inside\nthe #GtkLinkButton:uri property.\n\nTo override the default behavior, you can connect to the ::activate-link\nsignal and stop the propagation of the signal by returning %TRUE from\nyour handler."
+            }
+        ], 
+        "methods": [
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a new link button widget.", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": "2.10", 
+                "name": "Gtk.LinkButton(String uri)", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "uri"
+                    }
+                ]
+            }, 
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a new link button widget.", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": "2.10", 
+                "name": "Gtk.LinkButton(String uri, String label)", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "uri"
+                    }, 
+                    {
+                        "type": "String", 
+                        "name": "label"
+                    }
+                ]
+            }, 
+            {
+                "returns": {
+                    "type": "String", 
+                    "description": "a valid URI.  The returned string is owned by the link button"
+                }, 
+                "version": "2.10", 
+                "name": "get_uri", 
+                "parameters": null, 
+                "description": "Retrieves the URI set using gtk_link_button_set_uri().\n\nand should not be modified or freed."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE if the link has been visited, %FALSE otherwise"
+                }, 
+                "version": "2.14", 
+                "name": "get_visited", 
+                "parameters": null, 
+                "description": "Retrieves the 'visited' state of the URI where the #GtkLinkButton\npoints. The button becomes visited when it is clicked. If the URI\nis changed on the button, the 'visited' state is unset again.\n\nThe state may also be changed using gtk_link_button_set_visited()."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.10", 
+                "name": "set_uri", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "uri", 
+                        "description": "a valid URI"
+                    }
+                ], 
+                "description": "Sets @uri as the URI where the #GtkLinkButton points. As a side-effect\nthis unsets the 'visited' state of the button."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.14", 
+                "name": "set_visited", 
+                "parameters": [
+                    {
+                        "type": "Boolean", 
+                        "name": "visited", 
+                        "description": "the new 'visited' state"
+                    }
+                ], 
+                "description": "Sets the 'visited' state of the URI where the #GtkLinkButton\npoints.  See gtk_link_button_get_visited() for more details."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "activate_link", 
+                "parameters": null, 
+                "description": ""
+            }
+        ], 
+        "properties": [
+            {
+                "writable": false, 
+                "type": "String", 
+                "readable": false, 
+                "name": "uri", 
+                "description": "The URI bound to this button."
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "visited", 
+                "description": "The 'visited' state of this button. A visited link is drawn in a\ndifferent color."
+            }
+        ]
+    }, 
+    "fullname": "Class Gtk.LinkButton", 
+    "id": "Docs-LinkButton", 
+    "description": "A GtkLinkButton is a #GtkButton with a hyperlink, similar to the one\nused by web browsers, which triggers an action when clicked. It is useful\nto show quick links to resources.\n\nA link button is created by calling either gtk_link_button_new() or\ngtk_link_button_new_with_label(). If using the former, the URI you pass\nto the constructor is used as a label for the widget.\n\nThe URI bound to a GtkLinkButton can be set specifically using\ngtk_link_button_set_uri(), and retrieved using gtk_link_button_get_uri().\n\nBy default, GtkLinkButton calls gtk_show_uri() when the button is\nclicked. This behaviour can be overridden by connecting to the\n#GtkLinkButton::activate-link signal and returning %TRUE from the\nsignal handler."
+}

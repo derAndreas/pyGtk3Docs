@@ -1,0 +1,25 @@
+{
+    "leaf": true, 
+    "name": "TextDirection", 
+    "text": "TextDirection", 
+    "version": null, 
+    "members": {
+        "properties": [
+            {
+                "name": "none", 
+                "value": "0"
+            }, 
+            {
+                "name": "ltr", 
+                "value": "1"
+            }, 
+            {
+                "name": "rtl", 
+                "value": "2"
+            }
+        ]
+    }, 
+    "fullname": "Enumeration Gtk.TextDirection", 
+    "id": "Docs-TextDirection", 
+    "description": ""
+}

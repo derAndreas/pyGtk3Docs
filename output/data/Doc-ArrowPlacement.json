@@ -1,0 +1,25 @@
+{
+    "leaf": true, 
+    "name": "ArrowPlacement", 
+    "text": "ArrowPlacement", 
+    "version": null, 
+    "members": {
+        "properties": [
+            {
+                "name": "both", 
+                "value": "0"
+            }, 
+            {
+                "name": "start", 
+                "value": "1"
+            }, 
+            {
+                "name": "end", 
+                "value": "2"
+            }
+        ]
+    }, 
+    "fullname": "Enumeration Gtk.ArrowPlacement", 
+    "id": "Docs-ArrowPlacement", 
+    "description": ""
+}

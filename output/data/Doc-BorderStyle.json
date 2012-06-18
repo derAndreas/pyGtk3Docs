@@ -1,0 +1,53 @@
+{
+    "leaf": true, 
+    "name": "BorderStyle", 
+    "text": "BorderStyle", 
+    "version": null, 
+    "members": {
+        "properties": [
+            {
+                "name": "none", 
+                "value": "0"
+            }, 
+            {
+                "name": "solid", 
+                "value": "1"
+            }, 
+            {
+                "name": "inset", 
+                "value": "2"
+            }, 
+            {
+                "name": "outset", 
+                "value": "3"
+            }, 
+            {
+                "name": "hidden", 
+                "value": "4"
+            }, 
+            {
+                "name": "dotted", 
+                "value": "5"
+            }, 
+            {
+                "name": "dashed", 
+                "value": "6"
+            }, 
+            {
+                "name": "double", 
+                "value": "7"
+            }, 
+            {
+                "name": "groove", 
+                "value": "8"
+            }, 
+            {
+                "name": "ridge", 
+                "value": "9"
+            }
+        ]
+    }, 
+    "fullname": "Enumeration Gtk.BorderStyle", 
+    "id": "Docs-BorderStyle", 
+    "description": ""
+}

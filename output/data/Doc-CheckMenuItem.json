@@ -1,0 +1,217 @@
+{
+    "isAbstract": false, 
+    "leaf": true, 
+    "name": "CheckMenuItem", 
+    "text": "CheckMenuItem", 
+    "interfaces": [
+        [
+            "Atk.ImplementorIface"
+        ], 
+        [
+            "Activatable"
+        ], 
+        [
+            "Buildable"
+        ]
+    ], 
+    "parents": [
+        "CheckMenuItem", 
+        "MenuItem", 
+        "Bin", 
+        "Container", 
+        "Widget", 
+        "GObject.InitiallyUnowned"
+    ], 
+    "members": {
+        "signals": [
+            {
+                "version": "", 
+                "when": "first", 
+                "name": "toggled", 
+                "description": "This signal is emitted when the state of the check box is changed.\n\nA signal handler can use gtk_check_menu_item_get_active()\nto discover the new state."
+            }
+        ], 
+        "methods": [
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a new #GtkCheckMenuItem.", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": null, 
+                "name": "Gtk.CheckMenuItem()", 
+                "parameters": null
+            }, 
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a new #GtkCheckMenuItem.", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": null, 
+                "name": "Gtk.CheckMenuItem(String label)", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "label"
+                    }
+                ]
+            }, 
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a new #GtkCheckMenuItem", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": null, 
+                "name": "Gtk.CheckMenuItem(String label)", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "label"
+                    }
+                ]
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE if the menu item is checked."
+                }, 
+                "version": "", 
+                "name": "get_active", 
+                "parameters": null, 
+                "description": "Returns whether the check menu item is active. See\ngtk_check_menu_item_set_active ()."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "Whether @check_menu_item looks like a #GtkRadioMenuItem"
+                }, 
+                "version": "2.4", 
+                "name": "get_draw_as_radio", 
+                "parameters": null, 
+                "description": "Returns whether @check_menu_item looks like a #GtkRadioMenuItem"
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE if inconsistent"
+                }, 
+                "version": "", 
+                "name": "get_inconsistent", 
+                "parameters": null, 
+                "description": "Retrieves the value set by gtk_check_menu_item_set_inconsistent()."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_active", 
+                "parameters": [
+                    {
+                        "type": "Boolean", 
+                        "name": "is_active", 
+                        "description": "boolean value indicating whether the check box is active."
+                    }
+                ], 
+                "description": "Sets the active state of the menu item's check box."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.4", 
+                "name": "set_draw_as_radio", 
+                "parameters": [
+                    {
+                        "type": "Boolean", 
+                        "name": "draw_as_radio", 
+                        "description": "whether @check_menu_item is drawn like a #GtkRadioMenuItem"
+                    }
+                ], 
+                "description": "Sets whether @check_menu_item is drawn like a #GtkRadioMenuItem"
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_inconsistent", 
+                "parameters": [
+                    {
+                        "type": "Boolean", 
+                        "name": "setting", 
+                        "description": "%TRUE to display an \"inconsistent\" third state check"
+                    }
+                ], 
+                "description": "If the user has selected a range of elements (such as some text or\nspreadsheet cells) that are affected by a boolean setting, and the\ncurrent values in that range are inconsistent, you may want to\ndisplay the check in an \"in between\" state. This function turns on\n\"in between\" display.  Normally you would turn off the inconsistent\nstate again if the user explicitly selects a setting. This has to be\ndone manually, gtk_check_menu_item_set_inconsistent() only affects\nvisual appearance, it doesn't affect the semantics of the widget."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "toggled", 
+                "parameters": null, 
+                "description": "Emits the #GtkCheckMenuItem::toggled signal."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "draw_indicator", 
+                "parameters": [
+                    {
+                        "type": "cairo.Context", 
+                        "name": "cr", 
+                        "description": ""
+                    }
+                ], 
+                "description": ""
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "toggled", 
+                "parameters": null, 
+                "description": "Emits the #GtkCheckMenuItem::toggled signal."
+            }
+        ], 
+        "properties": [
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "active", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "draw-as-radio", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "inconsistent", 
+                "description": ""
+            }
+        ]
+    }, 
+    "fullname": "Class Gtk.CheckMenuItem", 
+    "id": "Docs-CheckMenuItem", 
+    "description": "A #GtkCheckMenuItem is a menu item that maintains the state of a boolean\nvalue in addition to a #GtkMenuItem usual role in activating application\ncode.\n\nA check box indicating the state of the boolean value is displayed\nat the left side of the #GtkMenuItem.  Activating the #GtkMenuItem\ntoggles the value."
+}

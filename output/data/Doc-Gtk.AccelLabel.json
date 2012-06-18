@@ -1,0 +1,122 @@
+{
+    "isAbstract": false, 
+    "leaf": true, 
+    "name": "AccelLabel", 
+    "text": "AccelLabel", 
+    "interfaces": [
+        [
+            "Atk.ImplementorIface"
+        ], 
+        [
+            "Buildable"
+        ]
+    ], 
+    "parents": [
+        "AccelLabel", 
+        "Label", 
+        "Misc", 
+        "Widget", 
+        "GObject.InitiallyUnowned"
+    ], 
+    "members": {
+        "signals": [], 
+        "methods": [
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a new #GtkAccelLabel.", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": null, 
+                "name": "Gtk.AccelLabel(String string)", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "string"
+                    }
+                ]
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.Widget", 
+                    "description": "the object monitored by the accelerator label, or %NULL."
+                }, 
+                "version": "", 
+                "name": "get_accel_widget", 
+                "parameters": null, 
+                "description": "Fetches the widget monitored by this accelerator label. See\ngtk_accel_label_set_accel_widget()."
+            }, 
+            {
+                "returns": {
+                    "type": "Integer", 
+                    "description": "the width needed to display the accelerator key(s)."
+                }, 
+                "version": "", 
+                "name": "get_accel_width", 
+                "parameters": null, 
+                "description": "Returns the width needed to display the accelerator key(s).\nThis is used by menus to align all of the #GtkMenuItem widgets, and shouldn't\nbe needed by applications."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "always returns %FALSE."
+                }, 
+                "version": "", 
+                "name": "refetch", 
+                "parameters": null, 
+                "description": "Recreates the string representing the accelerator keys.\nThis should not be needed since the string is automatically updated whenever\naccelerators are added or removed from the associated widget."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_accel_closure", 
+                "parameters": [
+                    {
+                        "type": "GObject.Closure", 
+                        "name": "accel_closure", 
+                        "description": "the closure to monitor for accelerator changes."
+                    }
+                ], 
+                "description": "Sets the closure to be monitored by this accelerator label. The closure\nmust be connected to an accelerator group; see gtk_accel_group_connect()."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_accel_widget", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "accel_widget", 
+                        "description": "the widget to be monitored."
+                    }
+                ], 
+                "description": "Sets the widget to be monitored by this accelerator label."
+            }
+        ], 
+        "properties": [
+            {
+                "writable": false, 
+                "type": "GObject.Closure", 
+                "readable": false, 
+                "name": "accel-closure", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Gtk.Widget", 
+                "readable": false, 
+                "name": "accel-widget", 
+                "description": ""
+            }
+        ]
+    }, 
+    "fullname": "Class Gtk.AccelLabel", 
+    "id": "Docs-AccelLabel", 
+    "description": "The #GtkAccelLabel widget is a subclass of #GtkLabel that also displays an\naccelerator key on the right of the label text, e.g. 'Ctl+S'.\nIt is commonly used in menus to show the keyboard short-cuts for commands.\n\nThe accelerator key to display is not set explicitly.\nInstead, the #GtkAccelLabel displays the accelerators which have been added to\na particular widget. This widget is set by calling\ngtk_accel_label_set_accel_widget().\n\nFor example, a #GtkMenuItem widget may have an accelerator added to emit the\n\"activate\" signal when the 'Ctl+S' key combination is pressed.\nA #GtkAccelLabel is created and added to the #GtkMenuItem, and\ngtk_accel_label_set_accel_widget() is called with the #GtkMenuItem as the\nsecond argument. The #GtkAccelLabel will now display 'Ctl+S' after its label.\n\nNote that creating a #GtkMenuItem with gtk_menu_item_new_with_label() (or\none of the similar functions for #GtkCheckMenuItem and #GtkRadioMenuItem)\nautomatically adds a #GtkAccelLabel to the #GtkMenuItem and calls\ngtk_accel_label_set_accel_widget() to set it up for you.\n\nA #GtkAccelLabel will only display accelerators which have %GTK_ACCEL_VISIBLE\nset (see #GtkAccelFlags).\nA #GtkAccelLabel can display multiple accelerators and even signal names,\nthough it is almost always used to display just one accelerator key.\n<example>\n<title>Creating a simple menu item with an accelerator key.</title>\n<programlisting>\nGtkWidget *save_item;\nGtkAccelGroup *accel_group;\n\n/<!---->* Create a GtkAccelGroup and add it to the window. *<!---->/\naccel_group = gtk_accel_group_new (<!-- -->);\ngtk_window_add_accel_group (GTK_WINDOW (window), accel_group);\n\n/<!---->* Create the menu item using the convenience function. *<!---->/\nsave_item = gtk_menu_item_new_with_label (\"Save\");\ngtk_widget_show (save_item);\ngtk_container_add (GTK_CONTAINER (menu), save_item);\n\n/<!---->* Now add the accelerator to the GtkMenuItem. Note that since we called\ngtk_menu_item_new_with_label(<!-- -->) to create the GtkMenuItem the\nGtkAccelLabel is automatically set up to display the GtkMenuItem\naccelerators. We just need to make sure we use GTK_ACCEL_VISIBLE here. *<!---->/\ngtk_widget_add_accelerator (save_item, \"activate\", accel_group,\nGDK_KEY_s, GDK_CONTROL_MASK, GTK_ACCEL_VISIBLE);\n</programlisting>\n</example>"
+}

@@ -1,0 +1,87 @@
+{
+    "isAbstract": false, 
+    "leaf": true, 
+    "name": "Invisible", 
+    "text": "Invisible", 
+    "interfaces": [
+        [
+            "Atk.ImplementorIface"
+        ], 
+        [
+            "Buildable"
+        ]
+    ], 
+    "parents": [
+        "Invisible", 
+        "Widget", 
+        "GObject.InitiallyUnowned"
+    ], 
+    "members": {
+        "signals": [], 
+        "methods": [
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a new #GtkInvisible.", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": null, 
+                "name": "Gtk.Invisible()", 
+                "parameters": null
+            }, 
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a newly created #GtkInvisible object", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": "2.2", 
+                "name": "Gtk.Invisible(Gdk.Screen screen)", 
+                "parameters": [
+                    {
+                        "type": "Gdk.Screen", 
+                        "name": "screen"
+                    }
+                ]
+            }, 
+            {
+                "returns": {
+                    "type": "Gdk.Screen", 
+                    "description": "the associated #GdkScreen."
+                }, 
+                "version": "2.2", 
+                "name": "get_screen", 
+                "parameters": null, 
+                "description": "Returns the #GdkScreen object associated with @invisible"
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.2", 
+                "name": "set_screen", 
+                "parameters": [
+                    {
+                        "type": "Gdk.Screen", 
+                        "name": "screen", 
+                        "description": "a #GdkScreen."
+                    }
+                ], 
+                "description": "Sets the #GdkScreen where the #GtkInvisible object will be displayed."
+            }
+        ], 
+        "properties": [
+            {
+                "writable": false, 
+                "type": "Gdk.Screen", 
+                "readable": false, 
+                "name": "screen", 
+                "description": ""
+            }
+        ]
+    }, 
+    "fullname": "Class Gtk.Invisible", 
+    "id": "Docs-Invisible", 
+    "description": "The #GtkInvisible widget is used internally in GTK+, and is probably not\nvery useful for application developers.\n\nIt is used for reliable pointer grabs and selection handling in the code\nfor drag-and-drop."
+}

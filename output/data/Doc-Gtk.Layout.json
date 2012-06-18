@@ -1,0 +1,222 @@
+{
+    "isAbstract": false, 
+    "leaf": true, 
+    "name": "Layout", 
+    "text": "Layout", 
+    "interfaces": [
+        [
+            "Atk.ImplementorIface"
+        ], 
+        [
+            "Buildable"
+        ], 
+        [
+            "Scrollable"
+        ]
+    ], 
+    "parents": [
+        "Layout", 
+        "Container", 
+        "Widget", 
+        "GObject.InitiallyUnowned"
+    ], 
+    "members": {
+        "signals": [], 
+        "methods": [
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a new #GtkLayout", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": null, 
+                "name": "Gtk.Layout(Gtk.Adjustment hadjustment, Gtk.Adjustment vadjustment)", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Adjustment", 
+                        "name": "hadjustment"
+                    }, 
+                    {
+                        "type": "ref:Gtk.Adjustment", 
+                        "name": "vadjustment"
+                    }
+                ]
+            }, 
+            {
+                "returns": {
+                    "type": "Gdk.Window", 
+                    "description": "a #GdkWindow"
+                }, 
+                "version": "2.14", 
+                "name": "get_bin_window", 
+                "parameters": null, 
+                "description": "Retrieve the bin window of the layout used for drawing operations."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.Adjustment", 
+                    "description": "horizontal scroll adjustment"
+                }, 
+                "version": "", 
+                "name": "get_hadjustment", 
+                "parameters": null, 
+                "description": "This function should only be called after the layout has been\nplaced in a #GtkScrolledWindow or otherwise configured for\nscrolling. It returns the #GtkAdjustment used for communication\nbetween the horizontal scrollbar and @layout.\n\nSee #GtkScrolledWindow, #GtkScrollbar, #GtkAdjustment for details."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "get_size", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "width", 
+                        "description": "location to store the width set on @layout, or %NULL"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "height", 
+                        "description": "location to store the height set on @layout, or %NULL"
+                    }
+                ], 
+                "description": "Gets the size that has been set on the layout, and that determines\nthe total extents of the layout's scrollbar area. See\ngtk_layout_set_size ()."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.Adjustment", 
+                    "description": "vertical scroll adjustment"
+                }, 
+                "version": "", 
+                "name": "get_vadjustment", 
+                "parameters": null, 
+                "description": "This function should only be called after the layout has been\nplaced in a #GtkScrolledWindow or otherwise configured for\nscrolling. It returns the #GtkAdjustment used for communication\nbetween the vertical scrollbar and @layout.\n\nSee #GtkScrolledWindow, #GtkScrollbar, #GtkAdjustment for details."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "move", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "child_widget", 
+                        "description": "a current child of @layout"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "x", 
+                        "description": "X position to move to"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "y", 
+                        "description": "Y position to move to"
+                    }
+                ], 
+                "description": "Moves a current child of @layout to a new position."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "put", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "child_widget", 
+                        "description": "child widget"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "x", 
+                        "description": "X position of child widget"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "y", 
+                        "description": "Y position of child widget"
+                    }
+                ], 
+                "description": "Adds @child_widget to @layout, at position (@x,@y).\n@layout becomes the new parent container of @child_widget."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_hadjustment", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Adjustment", 
+                        "name": "adjustment", 
+                        "description": "new scroll adjustment"
+                    }
+                ], 
+                "description": "Sets the horizontal scroll adjustment for the layout.\n\nSee #GtkScrolledWindow, #GtkScrollbar, #GtkAdjustment for details."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_size", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "width", 
+                        "description": "width of entire scrollable area"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "height", 
+                        "description": "height of entire scrollable area"
+                    }
+                ], 
+                "description": "Sets the size of the scrollable area of the layout."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_vadjustment", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Adjustment", 
+                        "name": "adjustment", 
+                        "description": "new scroll adjustment"
+                    }
+                ], 
+                "description": "Sets the vertical scroll adjustment for the layout.\n\nSee #GtkScrolledWindow, #GtkScrollbar, #GtkAdjustment for details."
+            }
+        ], 
+        "properties": [
+            {
+                "writable": false, 
+                "type": "Integer", 
+                "readable": false, 
+                "name": "height", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Integer", 
+                "readable": false, 
+                "name": "width", 
+                "description": ""
+            }
+        ]
+    }, 
+    "fullname": "Class Gtk.Layout", 
+    "id": "Docs-Layout", 
+    "description": "#GtkLayout is similar to #GtkDrawingArea in that it's a \"blank slate\"\nand doesn't do anything but paint a blank background by default. It's\ndifferent in that it supports scrolling natively (you can add it to a\n#GtkScrolledWindow), and it can contain child widgets, since it's a\n#GtkContainer. However if you're just going to draw, a #GtkDrawingArea\nis a better choice since it has lower overhead.\n\nWhen handling expose events on a #GtkLayout, you must draw to\nGTK_LAYOUT (layout)->bin_window, rather than to\nGTK_WIDGET (layout)->window, as you would for a drawing\narea."
+}

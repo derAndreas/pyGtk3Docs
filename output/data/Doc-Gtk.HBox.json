@@ -1,0 +1,54 @@
+{
+    "isAbstract": false, 
+    "leaf": true, 
+    "name": "HBox", 
+    "text": "HBox", 
+    "interfaces": [
+        [
+            "Atk.ImplementorIface"
+        ], 
+        [
+            "Buildable"
+        ], 
+        [
+            "Orientable"
+        ]
+    ], 
+    "parents": [
+        "HBox", 
+        "Box", 
+        "Container", 
+        "Widget", 
+        "GObject.InitiallyUnowned"
+    ], 
+    "members": {
+        "signals": [], 
+        "methods": [
+            {
+                "returns": {
+                    "doc": "a new #GtkHBox.", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": null, 
+                "name": "Gtk.HBox(Boolean homogeneous, Integer spacing)", 
+                "parameters": [
+                    {
+                        "type": "Boolean", 
+                        "name": "homogeneous"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "spacing"
+                    }
+                ], 
+                "deprecated": "You can use gtk_box_new() with %GTK_ORIENTATION_HORIZONTAL instead,", 
+                "deprecated_version": "3.2", 
+                "isConstructor": true
+            }
+        ], 
+        "properties": []
+    }, 
+    "fullname": "Class Gtk.HBox", 
+    "id": "Docs-HBox", 
+    "description": "#GtkHBox is a container that organizes child widgets into a single row.\n\nUse the #GtkBox packing interface to determine the arrangement,\nspacing, width, and alignment of #GtkHBox children.\n\nAll children are allocated the same height.\n\nGtkHBox has been deprecated. You can use #GtkBox instead, which is a\nvery quick and easy\u00a0change. If you have derived your own classes from\nGtkHBox, you can simply change the inheritance to derive directly\nfrom #GtkBox. No further changes are needed, since the default\nvalue of the #GtkOrientable:orientation property is\n%GTK_ORIENTATION_HORIZONTAL.\nIf you want your code to be future-proof, the recommendation is to\nswitch to #GtkGrid, since #GtkBox is going to be deprecated in favor\nof the more flexible grid widget eventually. For more information\nabout migrating to #GtkGrid, see <xref linkend=\"gtk-migrating-GtkGrid\"/>"
+}

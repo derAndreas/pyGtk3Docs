@@ -1,0 +1,25 @@
+{
+    "leaf": true, 
+    "name": "ReliefStyle", 
+    "text": "ReliefStyle", 
+    "version": null, 
+    "members": {
+        "properties": [
+            {
+                "name": "normal", 
+                "value": "0"
+            }, 
+            {
+                "name": "half", 
+                "value": "1"
+            }, 
+            {
+                "name": "none", 
+                "value": "2"
+            }
+        ]
+    }, 
+    "fullname": "Enumeration Gtk.ReliefStyle", 
+    "id": "Docs-ReliefStyle", 
+    "description": ""
+}

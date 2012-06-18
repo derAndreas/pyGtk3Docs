@@ -1,0 +1,25 @@
+{
+    "leaf": true, 
+    "name": "IMPreeditStyle", 
+    "text": "IMPreeditStyle", 
+    "version": null, 
+    "members": {
+        "properties": [
+            {
+                "name": "nothing", 
+                "value": "0"
+            }, 
+            {
+                "name": "callback", 
+                "value": "1"
+            }, 
+            {
+                "name": "none", 
+                "value": "2"
+            }
+        ]
+    }, 
+    "fullname": "Enumeration Gtk.IMPreeditStyle", 
+    "id": "Docs-IMPreeditStyle", 
+    "description": ""
+}

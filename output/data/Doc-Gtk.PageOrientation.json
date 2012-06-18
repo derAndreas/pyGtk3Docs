@@ -1,0 +1,29 @@
+{
+    "leaf": true, 
+    "name": "PageOrientation", 
+    "text": "PageOrientation", 
+    "version": null, 
+    "members": {
+        "properties": [
+            {
+                "name": "portrait", 
+                "value": "0"
+            }, 
+            {
+                "name": "landscape", 
+                "value": "1"
+            }, 
+            {
+                "name": "reverse_portrait", 
+                "value": "2"
+            }, 
+            {
+                "name": "reverse_landscape", 
+                "value": "3"
+            }
+        ]
+    }, 
+    "fullname": "Enumeration Gtk.PageOrientation", 
+    "id": "Docs-PageOrientation", 
+    "description": ""
+}

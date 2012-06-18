@@ -1,0 +1,29 @@
+{
+    "leaf": true, 
+    "name": "TargetFlags", 
+    "text": "TargetFlags", 
+    "version": null, 
+    "members": {
+        "properties": [
+            {
+                "name": "same_app", 
+                "value": "1"
+            }, 
+            {
+                "name": "same_widget", 
+                "value": "2"
+            }, 
+            {
+                "name": "other_app", 
+                "value": "4"
+            }, 
+            {
+                "name": "other_widget", 
+                "value": "8"
+            }
+        ]
+    }, 
+    "fullname": "Bitfield Gtk.TargetFlags", 
+    "id": "Docs-TargetFlags", 
+    "description": ""
+}

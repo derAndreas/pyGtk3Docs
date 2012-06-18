@@ -1,0 +1,287 @@
+{
+    "isAbstract": false, 
+    "leaf": true, 
+    "name": "ToolButton", 
+    "text": "ToolButton", 
+    "interfaces": [
+        [
+            "Atk.ImplementorIface"
+        ], 
+        [
+            "Actionable"
+        ], 
+        [
+            "Activatable"
+        ], 
+        [
+            "Buildable"
+        ]
+    ], 
+    "parents": [
+        "ToolButton", 
+        "ToolItem", 
+        "Bin", 
+        "Container", 
+        "Widget", 
+        "GObject.InitiallyUnowned"
+    ], 
+    "members": {
+        "signals": [
+            {
+                "version": "", 
+                "when": "first", 
+                "name": "clicked", 
+                "description": "This signal is emitted when the tool button is clicked with the mouse\nor activated with the keyboard."
+            }
+        ], 
+        "methods": [
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "A new #GtkToolButton", 
+                    "name": "ref:Gtk.ToolItem"
+                }, 
+                "version": "2.4", 
+                "name": "Gtk.ToolButton(Gtk.Widget icon_widget, String label)", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "icon_widget"
+                    }, 
+                    {
+                        "type": "String", 
+                        "name": "label"
+                    }
+                ]
+            }, 
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "A new #GtkToolButton", 
+                    "name": "ref:Gtk.ToolItem"
+                }, 
+                "version": "2.4", 
+                "name": "Gtk.ToolButton(String stock_id)", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "stock_id"
+                    }
+                ]
+            }, 
+            {
+                "returns": {
+                    "type": "String", 
+                    "description": "the icon name or %NULL if the tool button has"
+                }, 
+                "version": "2.8", 
+                "name": "get_icon_name", 
+                "parameters": null, 
+                "description": "Returns the name of the themed icon for the tool button,\nsee gtk_tool_button_set_icon_name().\n\nno themed icon"
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.Widget", 
+                    "description": "The widget used as icon"
+                }, 
+                "version": "2.4", 
+                "name": "get_icon_widget", 
+                "parameters": null, 
+                "description": "Return the widget used as icon widget on @button.\nSee gtk_tool_button_set_icon_widget().\n\non @button, or %NULL."
+            }, 
+            {
+                "returns": {
+                    "type": "String", 
+                    "description": "The label, or %NULL"
+                }, 
+                "version": "2.4", 
+                "name": "get_label", 
+                "parameters": null, 
+                "description": "Returns the label used by the tool button, or %NULL if the tool button\ndoesn't have a label. or uses a the label from a stock item. The returned\nstring is owned by GTK+, and must not be modified or freed."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.Widget", 
+                    "description": "The widget used as label"
+                }, 
+                "version": "2.4", 
+                "name": "get_label_widget", 
+                "parameters": null, 
+                "description": "Returns the widget used as label on @button.\nSee gtk_tool_button_set_label_widget().\n\non @button, or %NULL."
+            }, 
+            {
+                "returns": {
+                    "type": "String", 
+                    "description": "the name of the stock item for @button."
+                }, 
+                "version": "2.4", 
+                "name": "get_stock_id", 
+                "parameters": null, 
+                "description": "Returns the name of the stock item. See gtk_tool_button_set_stock_id().\nThe returned string is owned by GTK+ and must not be freed or modifed."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE if underscores in the label property are used as"
+                }, 
+                "version": "2.4", 
+                "name": "get_use_underline", 
+                "parameters": null, 
+                "description": "Returns whether underscores in the label property are used as mnemonics\non menu items on the overflow menu. See gtk_tool_button_set_use_underline().\n\nmnemonics on menu items on the overflow menu."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.8", 
+                "name": "set_icon_name", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "icon_name", 
+                        "description": "the name of the themed icon"
+                    }
+                ], 
+                "description": "Sets the icon for the tool button from a named themed icon.\nSee the docs for #GtkIconTheme for more details.\nThe \"icon_name\" property only has an effect if not\noverridden by non-%NULL \"label\", \"icon_widget\" and \"stock_id\"\nproperties."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.4", 
+                "name": "set_icon_widget", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "icon_widget", 
+                        "description": "the widget used as icon, or %NULL"
+                    }
+                ], 
+                "description": "Sets @icon as the widget used as icon on @button. If @icon_widget is\n%NULL the icon is determined by the \"stock_id\" property. If the\n\"stock_id\" property is also %NULL, @button will not have an icon."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.4", 
+                "name": "set_label", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "label", 
+                        "description": "a string that will be used as label, or %NULL."
+                    }
+                ], 
+                "description": "Sets @label as the label used for the tool button. The \"label\" property\nonly has an effect if not overridden by a non-%NULL \"label_widget\" property.\nIf both the \"label_widget\" and \"label\" properties are %NULL, the label\nis determined by the \"stock_id\" property. If the \"stock_id\" property is also\n%NULL, @button will not have a label."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.4", 
+                "name": "set_label_widget", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "label_widget", 
+                        "description": "the widget used as label, or %NULL"
+                    }
+                ], 
+                "description": "Sets @label_widget as the widget that will be used as the label\nfor @button. If @label_widget is %NULL the \"label\" property is used\nas label. If \"label\" is also %NULL, the label in the stock item\ndetermined by the \"stock_id\" property is used as label. If\n\"stock_id\" is also %NULL, @button does not have a label."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.4", 
+                "name": "set_stock_id", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "stock_id", 
+                        "description": "a name of a stock item, or %NULL"
+                    }
+                ], 
+                "description": "Sets the name of the stock item. See gtk_tool_button_new_from_stock().\nThe stock_id property only has an effect if not\noverridden by non-%NULL \"label\" and \"icon_widget\" properties."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.4", 
+                "name": "set_use_underline", 
+                "parameters": [
+                    {
+                        "type": "Boolean", 
+                        "name": "use_underline", 
+                        "description": "whether the button label has the form \"_Open\""
+                    }
+                ], 
+                "description": "If set, an underline in the label property indicates that the next character\nshould be used for the mnemonic accelerator key in the overflow menu. For\nexample, if the label property is \"_Open\" and @use_underline is %TRUE,\nthe label on the tool button will be \"Open\" and the item on the overflow\nmenu will have an underlined 'O'.\n\nLabels shown on tool buttons never have mnemonics on them; this property\nonly affects the menu item on the overflow menu."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "clicked", 
+                "parameters": null, 
+                "description": ""
+            }
+        ], 
+        "properties": [
+            {
+                "writable": false, 
+                "type": "String", 
+                "readable": false, 
+                "name": "icon-name", 
+                "description": "The name of the themed icon displayed on the item.\nThis property only has an effect if not overridden by \"label\", \n\"icon_widget\" or \"stock_id\" properties."
+            }, 
+            {
+                "writable": false, 
+                "type": "Gtk.Widget", 
+                "readable": false, 
+                "name": "icon-widget", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "String", 
+                "readable": false, 
+                "name": "label", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Gtk.Widget", 
+                "readable": false, 
+                "name": "label-widget", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "String", 
+                "readable": false, 
+                "name": "stock-id", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "use-underline", 
+                "description": ""
+            }
+        ]
+    }, 
+    "fullname": "Class Gtk.ToolButton", 
+    "id": "Docs-ToolButton", 
+    "description": "#GtkToolButton<!-- -->s are #GtkToolItems containing buttons.\n\nUse gtk_tool_button_new() to create a new #GtkToolButton. Use\ngtk_tool_button_new_with_stock() to create a #GtkToolButton\ncontaining a stock item.\n\nThe label of a #GtkToolButton is determined by the properties\n#GtkToolButton:label-widget, #GtkToolButton:label, and\n#GtkToolButton:stock-id. If #GtkToolButton:label-widget is\nnon-%NULL, then that widget is used as the label. Otherwise, if\n#GtkToolButton:label is non-%NULL, that string is used as the label.\nOtherwise, if #GtkToolButton:stock-id is non-%NULL, the label is\ndetermined by the stock item. Otherwise, the button does not have a label.\n\nThe icon of a #GtkToolButton is determined by the properties\n#GtkToolButton:icon-widget and #GtkToolButton:stock-id. If\n#GtkToolButton:icon-widget is non-%NULL, then\nthat widget is used as the icon. Otherwise, if #GtkToolButton:stock-id is\nnon-%NULL, the icon is determined by the stock item. Otherwise,\nthe button does not have a icon."
+}

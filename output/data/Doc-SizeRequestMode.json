@@ -1,0 +1,25 @@
+{
+    "leaf": true, 
+    "name": "SizeRequestMode", 
+    "text": "SizeRequestMode", 
+    "version": null, 
+    "members": {
+        "properties": [
+            {
+                "name": "height_for_width", 
+                "value": "0"
+            }, 
+            {
+                "name": "width_for_height", 
+                "value": "1"
+            }, 
+            {
+                "name": "constant_size", 
+                "value": "2"
+            }
+        ]
+    }, 
+    "fullname": "Enumeration Gtk.SizeRequestMode", 
+    "id": "Docs-SizeRequestMode", 
+    "description": ""
+}

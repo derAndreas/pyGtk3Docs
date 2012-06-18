@@ -1,0 +1,41 @@
+{
+    "leaf": true, 
+    "name": "IconSize", 
+    "text": "IconSize", 
+    "version": null, 
+    "members": {
+        "properties": [
+            {
+                "name": "invalid", 
+                "value": "0"
+            }, 
+            {
+                "name": "menu", 
+                "value": "1"
+            }, 
+            {
+                "name": "small_toolbar", 
+                "value": "2"
+            }, 
+            {
+                "name": "large_toolbar", 
+                "value": "3"
+            }, 
+            {
+                "name": "button", 
+                "value": "4"
+            }, 
+            {
+                "name": "dnd", 
+                "value": "5"
+            }, 
+            {
+                "name": "dialog", 
+                "value": "6"
+            }
+        ]
+    }, 
+    "fullname": "Enumeration Gtk.IconSize", 
+    "id": "Docs-IconSize", 
+    "description": ""
+}

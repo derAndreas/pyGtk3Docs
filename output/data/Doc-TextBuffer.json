@@ -1,0 +1,1872 @@
+{
+    "isAbstract": false, 
+    "leaf": true, 
+    "name": "TextBuffer", 
+    "text": "TextBuffer", 
+    "interfaces": [], 
+    "parents": [
+        "TextBuffer", 
+        "GObject.Object"
+    ], 
+    "members": {
+        "signals": [
+            {
+                "version": "", 
+                "when": "last", 
+                "name": "apply-tag", 
+                "description": "The ::apply-tag signal is emitted to apply a tag to a\nrange of text in a #GtkTextBuffer. \nApplying actually occurs in the default handler.\n\nNote that if your handler runs before the default handler it must not \ninvalidate the @start and @end iters (or has to revalidate them). \n\nSee also: \ngtk_text_buffer_apply_tag(),\ngtk_text_buffer_insert_with_tags(),\ngtk_text_buffer_insert_range()."
+            }, 
+            {
+                "version": "", 
+                "when": "last", 
+                "name": "begin-user-action", 
+                "description": "The ::begin-user-action signal is emitted at the beginning of a single\nuser-visible operation on a #GtkTextBuffer.\n\nSee also: \ngtk_text_buffer_begin_user_action(),\ngtk_text_buffer_insert_interactive(),\ngtk_text_buffer_insert_range_interactive(),\ngtk_text_buffer_delete_interactive(),\ngtk_text_buffer_backspace(),\ngtk_text_buffer_delete_selection()."
+            }, 
+            {
+                "version": "", 
+                "when": "last", 
+                "name": "changed", 
+                "description": "The ::changed signal is emitted when the content of a #GtkTextBuffer \nhas changed."
+            }, 
+            {
+                "version": "", 
+                "when": "last", 
+                "name": "delete-range", 
+                "description": "The ::delete-range signal is emitted to delete a range \nfrom a #GtkTextBuffer. \n\nNote that if your handler runs before the default handler it must not \ninvalidate the @start and @end iters (or has to revalidate them). \nThe default signal handler revalidates the @start and @end iters to \nboth point point to the location where text was deleted. Handlers\nwhich run after the default handler (see g_signal_connect_after())\ndo not have access to the deleted text.\n\nSee also: gtk_text_buffer_delete()."
+            }, 
+            {
+                "version": "", 
+                "when": "last", 
+                "name": "end-user-action", 
+                "description": "The ::end-user-action signal is emitted at the end of a single\nuser-visible operation on the #GtkTextBuffer.\n\nSee also: \ngtk_text_buffer_end_user_action(),\ngtk_text_buffer_insert_interactive(),\ngtk_text_buffer_insert_range_interactive(),\ngtk_text_buffer_delete_interactive(),\ngtk_text_buffer_backspace(),\ngtk_text_buffer_delete_selection(),\ngtk_text_buffer_backspace()."
+            }, 
+            {
+                "version": "", 
+                "when": "last", 
+                "name": "insert-child-anchor", 
+                "description": "The ::insert-child-anchor signal is emitted to insert a\n#GtkTextChildAnchor in a #GtkTextBuffer.\nInsertion actually occurs in the default handler.\n\nNote that if your handler runs before the default handler it must\nnot invalidate the @location iter (or has to revalidate it). \nThe default signal handler revalidates it to be placed after the \ninserted @anchor.\n\nSee also: gtk_text_buffer_insert_child_anchor()."
+            }, 
+            {
+                "version": "", 
+                "when": "last", 
+                "name": "insert-pixbuf", 
+                "description": "The ::insert-pixbuf signal is emitted to insert a #GdkPixbuf \nin a #GtkTextBuffer. Insertion actually occurs in the default handler.\n\nNote that if your handler runs before the default handler it must not \ninvalidate the @location iter (or has to revalidate it). \nThe default signal handler revalidates it to be placed after the \ninserted @pixbuf.\n\nSee also: gtk_text_buffer_insert_pixbuf()."
+            }, 
+            {
+                "version": "", 
+                "when": "last", 
+                "name": "insert-text", 
+                "description": "The ::insert-text signal is emitted to insert text in a #GtkTextBuffer.\nInsertion actually occurs in the default handler.  \n\nNote that if your handler runs before the default handler it must not \ninvalidate the @location iter (or has to revalidate it). \nThe default signal handler revalidates it to point to the end of the \ninserted text.\n\nSee also: \ngtk_text_buffer_insert(), \ngtk_text_buffer_insert_range()."
+            }, 
+            {
+                "version": "", 
+                "when": "last", 
+                "name": "mark-deleted", 
+                "description": "The ::mark-deleted signal is emitted as notification\nafter a #GtkTextMark is deleted. \n\nSee also:\ngtk_text_buffer_delete_mark()."
+            }, 
+            {
+                "version": "", 
+                "when": "last", 
+                "name": "mark-set", 
+                "description": "The ::mark-set signal is emitted as notification\nafter a #GtkTextMark is set.\n\nSee also: \ngtk_text_buffer_create_mark(),\ngtk_text_buffer_move_mark()."
+            }, 
+            {
+                "version": "", 
+                "when": "last", 
+                "name": "modified-changed", 
+                "description": "The ::modified-changed signal is emitted when the modified bit of a \n#GtkTextBuffer flips.\n\nSee also:\ngtk_text_buffer_set_modified()."
+            }, 
+            {
+                "version": "2.16", 
+                "when": "last", 
+                "name": "paste-done", 
+                "description": "The paste-done signal is emitted after paste operation has been completed.\nThis is useful to properly scroll the view to the end of the pasted text.\nSee gtk_text_buffer_paste_clipboard() for more details."
+            }, 
+            {
+                "version": "", 
+                "when": "last", 
+                "name": "remove-tag", 
+                "description": "The ::remove-tag signal is emitted to remove all occurrences of @tag from\na range of text in a #GtkTextBuffer. \nRemoval actually occurs in the default handler.\n\nNote that if your handler runs before the default handler it must not \ninvalidate the @start and @end iters (or has to revalidate them). \n\nSee also: \ngtk_text_buffer_remove_tag()."
+            }
+        ], 
+        "methods": [
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a new text buffer", 
+                    "name": "ref:Gtk.TextBuffer"
+                }, 
+                "version": null, 
+                "name": "Gtk.TextBuffer(Gtk.TextTagTable table)", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TextTagTable", 
+                        "name": "table"
+                    }
+                ]
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.12", 
+                "name": "add_mark", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TextMark", 
+                        "name": "mark", 
+                        "description": "the mark to add"
+                    }, 
+                    {
+                        "type": "ref:Gtk.TextIter", 
+                        "name": "where", 
+                        "description": "location to place mark"
+                    }
+                ], 
+                "description": "Adds the mark at position @where. The mark must not be added to\nanother buffer, and if its name is not %NULL then there must not\nbe another mark in the buffer with the same name.\n\nEmits the \"mark-set\" signal as notification of the mark's initial\nplacement."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "add_selection_clipboard", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Clipboard", 
+                        "name": "clipboard", 
+                        "description": "a #GtkClipboard"
+                    }
+                ], 
+                "description": "Adds @clipboard to the list of clipboards in which the selection \ncontents of @buffer are available. In most cases, @clipboard will be \nthe #GtkClipboard of type %GDK_SELECTION_PRIMARY for a view of @buffer."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "apply_tag", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TextTag", 
+                        "name": "tag", 
+                        "description": "a #GtkTextTag"
+                    }, 
+                    {
+                        "type": "ref:Gtk.TextIter", 
+                        "name": "start", 
+                        "description": "one bound of range to be tagged"
+                    }, 
+                    {
+                        "type": "ref:Gtk.TextIter", 
+                        "name": "end", 
+                        "description": "other bound of range to be tagged"
+                    }
+                ], 
+                "description": "Emits the \"apply-tag\" signal on @buffer. The default\nhandler for the signal applies @tag to the given range.\n@start and @end do not have to be in order."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "apply_tag_by_name", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "name", 
+                        "description": "name of a named #GtkTextTag"
+                    }, 
+                    {
+                        "type": "ref:Gtk.TextIter", 
+                        "name": "start", 
+                        "description": "one bound of range to be tagged"
+                    }, 
+                    {
+                        "type": "ref:Gtk.TextIter", 
+                        "name": "end", 
+                        "description": "other bound of range to be tagged"
+                    }
+                ], 
+                "description": "Calls gtk_text_tag_table_lookup() on the buffer's tag table to\nget a #GtkTextTag, then calls gtk_text_buffer_apply_tag()."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE if the buffer was modified"
+                }, 
+                "version": "2.6", 
+                "name": "backspace", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TextIter", 
+                        "name": "iter", 
+                        "description": "a position in @buffer"
+                    }, 
+                    {
+                        "type": "Boolean", 
+                        "name": "interactive", 
+                        "description": "whether the deletion is caused by user interaction"
+                    }, 
+                    {
+                        "type": "Boolean", 
+                        "name": "default_editable", 
+                        "description": "whether the buffer is editable by default"
+                    }
+                ], 
+                "description": "Performs the appropriate action as if the user hit the delete\nkey with the cursor at the position specified by @iter. In the\nnormal case a single character will be deleted, but when\ncombining accents are involved, more than one character can\nbe deleted, and when precomposed character and accent combinations\nare involved, less than one character will be deleted.\n\nBecause the buffer is modified, all outstanding iterators become \ninvalid after calling this function; however, the @iter will be\nre-initialized to point to the location where text was deleted."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "begin_user_action", 
+                "parameters": null, 
+                "description": "Called to indicate that the buffer operations between here and a\ncall to gtk_text_buffer_end_user_action() are part of a single\nuser-visible operation. The operations between\ngtk_text_buffer_begin_user_action() and\ngtk_text_buffer_end_user_action() can then be grouped when creating\nan undo stack. #GtkTextBuffer maintains a count of calls to\ngtk_text_buffer_begin_user_action() that have not been closed with\na call to gtk_text_buffer_end_user_action(), and emits the \n\"begin-user-action\" and \"end-user-action\" signals only for the \noutermost pair of calls. This allows you to build user actions \nfrom other user actions.\n\nThe \"interactive\" buffer mutation functions, such as\ngtk_text_buffer_insert_interactive(), automatically call begin/end\nuser action around the buffer operations they perform, so there's\nno need to add extra calls if you user action consists solely of a\nsingle call to one of those functions."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "copy_clipboard", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Clipboard", 
+                        "name": "clipboard", 
+                        "description": "the #GtkClipboard object to copy to"
+                    }
+                ], 
+                "description": "Copies the currently-selected text to a clipboard."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.TextChildAnchor", 
+                    "description": "the created child anchor"
+                }, 
+                "version": "", 
+                "name": "create_child_anchor", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TextIter", 
+                        "name": "iter", 
+                        "description": "location in the buffer"
+                    }
+                ], 
+                "description": "This is a convenience function which simply creates a child anchor\nwith gtk_text_child_anchor_new() and inserts it into the buffer\nwith gtk_text_buffer_insert_child_anchor(). The new anchor is\nowned by the buffer; no reference count is returned to\nthe caller of gtk_text_buffer_create_child_anchor()."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.TextMark", 
+                    "description": "the new #GtkTextMark object"
+                }, 
+                "version": "", 
+                "name": "create_mark", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "mark_name", 
+                        "description": "name for mark, or %NULL"
+                    }, 
+                    {
+                        "type": "ref:Gtk.TextIter", 
+                        "name": "where", 
+                        "description": "location to place mark"
+                    }, 
+                    {
+                        "type": "Boolean", 
+                        "name": "left_gravity", 
+                        "description": "whether the mark has left gravity"
+                    }
+                ], 
+                "description": "Creates a mark at position @where. If @mark_name is %NULL, the mark\nis anonymous; otherwise, the mark can be retrieved by name using\ngtk_text_buffer_get_mark(). If a mark has left gravity, and text is\ninserted at the mark's current location, the mark will be moved to\nthe left of the newly-inserted text. If the mark has right gravity\n(@left_gravity = %FALSE), the mark will end up on the right of\nnewly-inserted text. The standard left-to-right cursor is a mark\nwith right gravity (when you type, the cursor stays on the right\nside of the text you're typing).\n\nThe caller of this function does <emphasis>not</emphasis> own a \nreference to the returned #GtkTextMark, so you can ignore the \nreturn value if you like. Marks are owned by the buffer and go \naway when the buffer does.\n\nEmits the \"mark-set\" signal as notification of the mark's initial\nplacement."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.TextTag", 
+                    "description": "a new tag"
+                }, 
+                "version": "", 
+                "name": "create_tag", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "tag_name", 
+                        "description": "name of the new tag, or %NULL"
+                    }, 
+                    {
+                        "type": "String", 
+                        "name": "first_property_name", 
+                        "description": "name of first property to set, or %NULL"
+                    }, 
+                    {
+                        "type": "ref:VarArg", 
+                        "name": null, 
+                        "description": ""
+                    }
+                ], 
+                "description": "Creates a tag and adds it to the tag table for @buffer.\nEquivalent to calling gtk_text_tag_new() and then adding the\ntag to the buffer's tag table. The returned tag is owned by\nthe buffer's tag table, so the ref count will be equal to one.\n\nIf @tag_name is %NULL, the tag is anonymous.\n\nIf @tag_name is non-%NULL, a tag called @tag_name must not already\nexist in the tag table for this buffer.\n\nThe @first_property_name argument and subsequent arguments are a list\nof properties to set on the tag, as with g_object_set()."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "cut_clipboard", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Clipboard", 
+                        "name": "clipboard", 
+                        "description": "the #GtkClipboard object to cut to"
+                    }, 
+                    {
+                        "type": "Boolean", 
+                        "name": "default_editable", 
+                        "description": "default editability of the buffer"
+                    }
+                ], 
+                "description": "Copies the currently-selected text to a clipboard, then deletes\nsaid text if it's editable."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "delete", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TextIter", 
+                        "name": "start", 
+                        "description": "a position in @buffer"
+                    }, 
+                    {
+                        "type": "ref:Gtk.TextIter", 
+                        "name": "end", 
+                        "description": "another position in @buffer"
+                    }
+                ], 
+                "description": "Deletes text between @start and @end. The order of @start and @end\nis not actually relevant; gtk_text_buffer_delete() will reorder\nthem. This function actually emits the \"delete-range\" signal, and\nthe default handler of that signal deletes the text. Because the\nbuffer is modified, all outstanding iterators become invalid after\ncalling this function; however, the @start and @end will be\nre-initialized to point to the location where text was deleted."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "whether some text was actually deleted"
+                }, 
+                "version": "", 
+                "name": "delete_interactive", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TextIter", 
+                        "name": "start_iter", 
+                        "description": "start of range to delete"
+                    }, 
+                    {
+                        "type": "ref:Gtk.TextIter", 
+                        "name": "end_iter", 
+                        "description": "end of range"
+                    }, 
+                    {
+                        "type": "Boolean", 
+                        "name": "default_editable", 
+                        "description": "whether the buffer is editable by default"
+                    }
+                ], 
+                "description": "Deletes all <emphasis>editable</emphasis> text in the given range.\nCalls gtk_text_buffer_delete() for each editable sub-range of\n[@start,@end). @start and @end are revalidated to point to\nthe location of the last deleted range, or left untouched if\nno text was deleted."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "delete_mark", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TextMark", 
+                        "name": "mark", 
+                        "description": "a #GtkTextMark in @buffer"
+                    }
+                ], 
+                "description": "Deletes @mark, so that it's no longer located anywhere in the\nbuffer. Removes the reference the buffer holds to the mark, so if\nyou haven't called g_object_ref() on the mark, it will be freed. Even\nif the mark isn't freed, most operations on @mark become\ninvalid, until it gets added to a buffer again with \ngtk_text_buffer_add_mark(). Use gtk_text_mark_get_deleted() to  \nfind out if a mark has been removed from its buffer.\nThe \"mark-deleted\" signal will be emitted as notification after \nthe mark is deleted."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "delete_mark_by_name", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "name", 
+                        "description": "name of a mark in @buffer"
+                    }
+                ], 
+                "description": "Deletes the mark named @name; the mark must exist. See\ngtk_text_buffer_delete_mark() for details."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "whether there was a non-empty selection to delete"
+                }, 
+                "version": "", 
+                "name": "delete_selection", 
+                "parameters": [
+                    {
+                        "type": "Boolean", 
+                        "name": "interactive", 
+                        "description": "whether the deletion is caused by user interaction"
+                    }, 
+                    {
+                        "type": "Boolean", 
+                        "name": "default_editable", 
+                        "description": "whether the buffer is editable by default"
+                    }
+                ], 
+                "description": "Deletes the range between the \"insert\" and \"selection_bound\" marks,\nthat is, the currently-selected text. If @interactive is %TRUE,\nthe editability of the selection will be considered (users can't delete\nuneditable text)."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE on success, %FALSE otherwise."
+                }, 
+                "version": "2.10", 
+                "name": "deserialize", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TextBuffer", 
+                        "name": "content_buffer", 
+                        "description": "the #GtkTextBuffer to deserialize into"
+                    }, 
+                    {
+                        "type": "Gdk.Atom", 
+                        "name": "format", 
+                        "description": "the rich text format to use for deserializing"
+                    }, 
+                    {
+                        "type": "ref:Gtk.TextIter", 
+                        "name": "iter", 
+                        "description": "insertion point for the deserialized text"
+                    }, 
+                    {
+                        "type": "Integer[]", 
+                        "name": "data", 
+                        "description": "data to deserialize"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "length", 
+                        "description": "length of @data"
+                    }
+                ], 
+                "description": "This function deserializes rich text in format @format and inserts\nit at @iter.\n\n@format<!-- -->s to be used must be registered using\ngtk_text_buffer_register_deserialize_format() or\ngtk_text_buffer_register_deserialize_tagset() beforehand."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "whether deserializing this format may create tags"
+                }, 
+                "version": "2.10", 
+                "name": "deserialize_get_can_create_tags", 
+                "parameters": [
+                    {
+                        "type": "Gdk.Atom", 
+                        "name": "format", 
+                        "description": "a #GdkAtom representing a registered rich text format"
+                    }
+                ], 
+                "description": "This functions returns the value set with\ngtk_text_buffer_deserialize_set_can_create_tags()"
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.10", 
+                "name": "deserialize_set_can_create_tags", 
+                "parameters": [
+                    {
+                        "type": "Gdk.Atom", 
+                        "name": "format", 
+                        "description": "a #GdkAtom representing a registered rich text format"
+                    }, 
+                    {
+                        "type": "Boolean", 
+                        "name": "can_create_tags", 
+                        "description": "whether deserializing this format may create tags"
+                    }
+                ], 
+                "description": "Use this function to allow a rich text deserialization function to\ncreate new tags in the receiving buffer. Note that using this\nfunction is almost always a bad idea, because the rich text\nfunctions you register should know how to map the rich text format\nthey handler to your text buffers set of tags.\n\nThe ability of creating new (arbitrary!) tags in the receiving buffer\nis meant for special rich text formats like the internal one that\nis registered using gtk_text_buffer_register_deserialize_tagset(),\nbecause that format is essentially a dump of the internal structure\nof the source buffer, including its tag names.\n\nYou should allow creation of tags only if you know what you are\ndoing, e.g. if you defined a tagset name for your application\nsuite's text buffers and you know that it's fine to receive new\ntags from these buffers, because you know that your application can\nhandle the newly created tags."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "end_user_action", 
+                "parameters": null, 
+                "description": "Should be paired with a call to gtk_text_buffer_begin_user_action().\nSee that function for a full explanation."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "get_bounds", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TextIter", 
+                        "name": "start", 
+                        "description": "iterator to initialize with first position in the buffer"
+                    }, 
+                    {
+                        "type": "ref:Gtk.TextIter", 
+                        "name": "end", 
+                        "description": "iterator to initialize with the end iterator"
+                    }
+                ], 
+                "description": "Retrieves the first and last iterators in the buffer, i.e. the\nentire buffer lies within the range [@start,@end)."
+            }, 
+            {
+                "returns": {
+                    "type": "Integer", 
+                    "description": "number of characters in the buffer"
+                }, 
+                "version": "", 
+                "name": "get_char_count", 
+                "parameters": null, 
+                "description": "Gets the number of characters in the buffer; note that characters\nand bytes are not the same, you can't e.g. expect the contents of\nthe buffer in string form to be this many bytes long. The character\ncount is cached, so this function is very fast."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.TargetList", 
+                    "description": "the #GtkTargetList"
+                }, 
+                "version": "2.10", 
+                "name": "get_copy_target_list", 
+                "parameters": null, 
+                "description": "This function returns the list of targets this text buffer can\nprovide for copying and as DND source. The targets in the list are\nadded with %info values from the #GtkTextBufferTargetInfo enum,\nusing gtk_target_list_add_rich_text_targets() and\ngtk_target_list_add_text_targets()."
+            }, 
+            {
+                "returns": {
+                    "type": "Gdk.Atom[]", 
+                    "description": "an array of"
+                }, 
+                "version": "2.10", 
+                "name": "get_deserialize_formats", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "n_formats", 
+                        "description": "return location for the number of formats"
+                    }
+                ], 
+                "description": "This function returns the rich text deserialize formats registered\nwith @buffer using gtk_text_buffer_register_deserialize_format() or\ngtk_text_buffer_register_deserialize_tagset()\n\n#GdkAtom<!-- -->s representing the registered formats."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "get_end_iter", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TextIter", 
+                        "name": "iter", 
+                        "description": "iterator to initialize"
+                    }
+                ], 
+                "description": "Initializes @iter with the \"end iterator,\" one past the last valid\ncharacter in the text buffer. If dereferenced with\ngtk_text_iter_get_char(), the end iterator has a character value of\n0. The entire buffer lies in the range from the first position in\nthe buffer (call gtk_text_buffer_get_start_iter() to get\ncharacter position 0) to the end iterator."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE if the there is text selected"
+                }, 
+                "version": "2.10", 
+                "name": "get_has_selection", 
+                "parameters": null, 
+                "description": "Indicates whether the buffer has some text currently selected."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.TextMark", 
+                    "description": "insertion point mark"
+                }, 
+                "version": "", 
+                "name": "get_insert", 
+                "parameters": null, 
+                "description": "Returns the mark that represents the cursor (insertion point).\nEquivalent to calling gtk_text_buffer_get_mark() to get the mark\nnamed \"insert\", but very slightly more efficient, and involves less\ntyping."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "get_iter_at_child_anchor", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TextIter", 
+                        "name": "iter", 
+                        "description": "an iterator to be initialized"
+                    }, 
+                    {
+                        "type": "ref:Gtk.TextChildAnchor", 
+                        "name": "anchor", 
+                        "description": "a child anchor that appears in @buffer"
+                    }
+                ], 
+                "description": "Obtains the location of @anchor within @buffer."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "get_iter_at_line", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TextIter", 
+                        "name": "iter", 
+                        "description": "iterator to initialize"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "line_number", 
+                        "description": "line number counting from 0"
+                    }
+                ], 
+                "description": "Initializes @iter to the start of the given line."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "get_iter_at_line_index", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TextIter", 
+                        "name": "iter", 
+                        "description": "iterator to initialize"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "line_number", 
+                        "description": "line number counting from 0"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "byte_index", 
+                        "description": "byte index from start of line"
+                    }
+                ], 
+                "description": "Obtains an iterator pointing to @byte_index within the given line.\n@byte_index must be the start of a UTF-8 character, and must not be\nbeyond the end of the line.  Note <emphasis>bytes</emphasis>, not\ncharacters; UTF-8 may encode one character as multiple bytes."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "get_iter_at_line_offset", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TextIter", 
+                        "name": "iter", 
+                        "description": "iterator to initialize"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "line_number", 
+                        "description": "line number counting from 0"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "char_offset", 
+                        "description": "char offset from start of line"
+                    }
+                ], 
+                "description": "Obtains an iterator pointing to @char_offset within the given\nline. The @char_offset must exist, offsets off the end of the line\nare not allowed. Note <emphasis>characters</emphasis>, not bytes;\nUTF-8 may encode one character as multiple bytes."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "get_iter_at_mark", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TextIter", 
+                        "name": "iter", 
+                        "description": "iterator to initialize"
+                    }, 
+                    {
+                        "type": "ref:Gtk.TextMark", 
+                        "name": "mark", 
+                        "description": "a #GtkTextMark in @buffer"
+                    }
+                ], 
+                "description": "Initializes @iter with the current position of @mark."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "get_iter_at_offset", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TextIter", 
+                        "name": "iter", 
+                        "description": "iterator to initialize"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "char_offset", 
+                        "description": "char offset from start of buffer, counting from 0, or -1"
+                    }
+                ], 
+                "description": "Initializes @iter to a position @char_offset chars from the start\nof the entire buffer. If @char_offset is -1 or greater than the number\nof characters in the buffer, @iter is initialized to the end iterator,\nthe iterator one past the last valid character in the buffer."
+            }, 
+            {
+                "returns": {
+                    "type": "Integer", 
+                    "description": "number of lines in the buffer"
+                }, 
+                "version": "", 
+                "name": "get_line_count", 
+                "parameters": null, 
+                "description": "Obtains the number of lines in the buffer. This value is cached, so\nthe function is very fast."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.TextMark", 
+                    "description": "a #GtkTextMark, or %NULL"
+                }, 
+                "version": "", 
+                "name": "get_mark", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "name", 
+                        "description": "a mark name"
+                    }
+                ], 
+                "description": "Returns the mark named @name in buffer @buffer, or %NULL if no such\nmark exists in the buffer."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE if the buffer has been modified"
+                }, 
+                "version": "", 
+                "name": "get_modified", 
+                "parameters": null, 
+                "description": "Indicates whether the buffer has been modified since the last call\nto gtk_text_buffer_set_modified() set the modification flag to\n%FALSE. Used for example to enable a \"save\" function in a text\neditor."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.TargetList", 
+                    "description": "the #GtkTargetList"
+                }, 
+                "version": "2.10", 
+                "name": "get_paste_target_list", 
+                "parameters": null, 
+                "description": "This function returns the list of targets this text buffer supports\nfor pasting and as DND destination. The targets in the list are\nadded with %info values from the #GtkTextBufferTargetInfo enum,\nusing gtk_target_list_add_rich_text_targets() and\ngtk_target_list_add_text_targets()."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.TextMark", 
+                    "description": "selection bound mark"
+                }, 
+                "version": "", 
+                "name": "get_selection_bound", 
+                "parameters": null, 
+                "description": "Returns the mark that represents the selection bound.  Equivalent\nto calling gtk_text_buffer_get_mark() to get the mark named\n\"selection_bound\", but very slightly more efficient, and involves\nless typing.\n\nThe currently-selected text in @buffer is the region between the\n\"selection_bound\" and \"insert\" marks. If \"selection_bound\" and\n\"insert\" are in the same place, then there is no current selection.\ngtk_text_buffer_get_selection_bounds() is another convenient function\nfor handling the selection, if you just want to know whether there's a\nselection and what its bounds are."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "whether the selection has nonzero length"
+                }, 
+                "version": "", 
+                "name": "get_selection_bounds", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TextIter", 
+                        "name": "start", 
+                        "description": "iterator to initialize with selection start"
+                    }, 
+                    {
+                        "type": "ref:Gtk.TextIter", 
+                        "name": "end", 
+                        "description": "iterator to initialize with selection end"
+                    }
+                ], 
+                "description": "Returns %TRUE if some text is selected; places the bounds\nof the selection in @start and @end (if the selection has length 0,\nthen @start and @end are filled in with the same value).\n@start and @end will be in ascending order. If @start and @end are\nNULL, then they are not filled in, but the return value still indicates\nwhether text is selected."
+            }, 
+            {
+                "returns": {
+                    "type": "Gdk.Atom[]", 
+                    "description": "an array of"
+                }, 
+                "version": "2.10", 
+                "name": "get_serialize_formats", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "n_formats", 
+                        "description": "return location for the number of formats"
+                    }
+                ], 
+                "description": "This function returns the rich text serialize formats registered\nwith @buffer using gtk_text_buffer_register_serialize_format() or\ngtk_text_buffer_register_serialize_tagset()\n\n#GdkAtom<!-- -->s representing the registered formats."
+            }, 
+            {
+                "returns": {
+                    "type": "String", 
+                    "description": "an allocated UTF-8 string"
+                }, 
+                "version": "", 
+                "name": "get_slice", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TextIter", 
+                        "name": "start", 
+                        "description": "start of a range"
+                    }, 
+                    {
+                        "type": "ref:Gtk.TextIter", 
+                        "name": "end", 
+                        "description": "end of a range"
+                    }, 
+                    {
+                        "type": "Boolean", 
+                        "name": "include_hidden_chars", 
+                        "description": "whether to include invisible text"
+                    }
+                ], 
+                "description": "Returns the text in the range [@start,@end). Excludes undisplayed\ntext (text marked with tags that set the invisibility attribute) if\n@include_hidden_chars is %FALSE. The returned string includes a\n0xFFFC character whenever the buffer contains\nembedded images, so byte and character indexes into\nthe returned string <emphasis>do</emphasis> correspond to byte\nand character indexes into the buffer. Contrast with\ngtk_text_buffer_get_text(). Note that 0xFFFC can occur in normal\ntext as well, so it is not a reliable indicator that a pixbuf or\nwidget is in the buffer."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "get_start_iter", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TextIter", 
+                        "name": "iter", 
+                        "description": "iterator to initialize"
+                    }
+                ], 
+                "description": "Initialized @iter with the first position in the text buffer. This\nis the same as using gtk_text_buffer_get_iter_at_offset() to get\nthe iter at character offset 0."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.TextTagTable", 
+                    "description": "the buffer's tag table"
+                }, 
+                "version": "", 
+                "name": "get_tag_table", 
+                "parameters": null, 
+                "description": "Get the #GtkTextTagTable associated with this buffer."
+            }, 
+            {
+                "returns": {
+                    "type": "String", 
+                    "description": "an allocated UTF-8 string"
+                }, 
+                "version": "", 
+                "name": "get_text", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TextIter", 
+                        "name": "start", 
+                        "description": "start of a range"
+                    }, 
+                    {
+                        "type": "ref:Gtk.TextIter", 
+                        "name": "end", 
+                        "description": "end of a range"
+                    }, 
+                    {
+                        "type": "Boolean", 
+                        "name": "include_hidden_chars", 
+                        "description": "whether to include invisible text"
+                    }
+                ], 
+                "description": "Returns the text in the range [@start,@end). Excludes undisplayed\ntext (text marked with tags that set the invisibility attribute) if\n@include_hidden_chars is %FALSE. Does not include characters\nrepresenting embedded images, so byte and character indexes into\nthe returned string do <emphasis>not</emphasis> correspond to byte\nand character indexes into the buffer. Contrast with\ngtk_text_buffer_get_slice()."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "insert", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TextIter", 
+                        "name": "iter", 
+                        "description": "a position in the buffer"
+                    }, 
+                    {
+                        "type": "String", 
+                        "name": "text", 
+                        "description": "text in UTF-8 format"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "len", 
+                        "description": "length of text in bytes, or -1"
+                    }
+                ], 
+                "description": "Inserts @len bytes of @text at position @iter.  If @len is -1,\n@text must be nul-terminated and will be inserted in its\nentirety. Emits the \"insert-text\" signal; insertion actually occurs\nin the default handler for the signal. @iter is invalidated when\ninsertion occurs (because the buffer contents change), but the\ndefault signal handler revalidates it to point to the end of the\ninserted text."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "insert_at_cursor", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "text", 
+                        "description": "text in UTF-8 format"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "len", 
+                        "description": "length of text, in bytes"
+                    }
+                ], 
+                "description": "Simply calls gtk_text_buffer_insert(), using the current\ncursor position as the insertion point."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "insert_child_anchor", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TextIter", 
+                        "name": "iter", 
+                        "description": "location to insert the anchor"
+                    }, 
+                    {
+                        "type": "ref:Gtk.TextChildAnchor", 
+                        "name": "anchor", 
+                        "description": "a #GtkTextChildAnchor"
+                    }
+                ], 
+                "description": "Inserts a child widget anchor into the text buffer at @iter. The\nanchor will be counted as one character in character counts, and\nwhen obtaining the buffer contents as a string, will be represented\nby the Unicode \"object replacement character\" 0xFFFC. Note that the\n\"slice\" variants for obtaining portions of the buffer as a string\ninclude this character for child anchors, but the \"text\" variants do\nnot. E.g. see gtk_text_buffer_get_slice() and\ngtk_text_buffer_get_text(). Consider\ngtk_text_buffer_create_child_anchor() as a more convenient\nalternative to this function. The buffer will add a reference to\nthe anchor, so you can unref it after insertion."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "whether text was actually inserted"
+                }, 
+                "version": "", 
+                "name": "insert_interactive", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TextIter", 
+                        "name": "iter", 
+                        "description": "a position in @buffer"
+                    }, 
+                    {
+                        "type": "String", 
+                        "name": "text", 
+                        "description": "some UTF-8 text"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "len", 
+                        "description": "length of text in bytes, or -1"
+                    }, 
+                    {
+                        "type": "Boolean", 
+                        "name": "default_editable", 
+                        "description": "default editability of buffer"
+                    }
+                ], 
+                "description": "Like gtk_text_buffer_insert(), but the insertion will not occur if\n@iter is at a non-editable location in the buffer. Usually you\nwant to prevent insertions at ineditable locations if the insertion\nresults from a user action (is interactive).\n\n@default_editable indicates the editability of text that doesn't\nhave a tag affecting editability applied to it. Typically the\nresult of gtk_text_view_get_editable() is appropriate here."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "whether text was actually inserted"
+                }, 
+                "version": "", 
+                "name": "insert_interactive_at_cursor", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "text", 
+                        "description": "text in UTF-8 format"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "len", 
+                        "description": "length of text in bytes, or -1"
+                    }, 
+                    {
+                        "type": "Boolean", 
+                        "name": "default_editable", 
+                        "description": "default editability of buffer"
+                    }
+                ], 
+                "description": "Calls gtk_text_buffer_insert_interactive() at the cursor\nposition.\n\n@default_editable indicates the editability of text that doesn't\nhave a tag affecting editability applied to it. Typically the\nresult of gtk_text_view_get_editable() is appropriate here."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "insert_pixbuf", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TextIter", 
+                        "name": "iter", 
+                        "description": "location to insert the pixbuf"
+                    }, 
+                    {
+                        "type": "GdkPixbuf.Pixbuf", 
+                        "name": "pixbuf", 
+                        "description": "a #GdkPixbuf"
+                    }
+                ], 
+                "description": "Inserts an image into the text buffer at @iter. The image will be\ncounted as one character in character counts, and when obtaining\nthe buffer contents as a string, will be represented by the Unicode\n\"object replacement character\" 0xFFFC. Note that the \"slice\"\nvariants for obtaining portions of the buffer as a string include\nthis character for pixbufs, but the \"text\" variants do\nnot. e.g. see gtk_text_buffer_get_slice() and\ngtk_text_buffer_get_text()."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "insert_range", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TextIter", 
+                        "name": "iter", 
+                        "description": "a position in @buffer"
+                    }, 
+                    {
+                        "type": "ref:Gtk.TextIter", 
+                        "name": "start", 
+                        "description": "a position in a #GtkTextBuffer"
+                    }, 
+                    {
+                        "type": "ref:Gtk.TextIter", 
+                        "name": "end", 
+                        "description": "another position in the same buffer as @start"
+                    }
+                ], 
+                "description": "Copies text, tags, and pixbufs between @start and @end (the order\nof @start and @end doesn't matter) and inserts the copy at @iter.\nUsed instead of simply getting/inserting text because it preserves\nimages and tags. If @start and @end are in a different buffer from\n@buffer, the two buffers must share the same tag table.\n\nImplemented via emissions of the insert_text and apply_tag signals,\nso expect those."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "whether an insertion was possible at @iter"
+                }, 
+                "version": "", 
+                "name": "insert_range_interactive", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TextIter", 
+                        "name": "iter", 
+                        "description": "a position in @buffer"
+                    }, 
+                    {
+                        "type": "ref:Gtk.TextIter", 
+                        "name": "start", 
+                        "description": "a position in a #GtkTextBuffer"
+                    }, 
+                    {
+                        "type": "ref:Gtk.TextIter", 
+                        "name": "end", 
+                        "description": "another position in the same buffer as @start"
+                    }, 
+                    {
+                        "type": "Boolean", 
+                        "name": "default_editable", 
+                        "description": "default editability of the buffer"
+                    }
+                ], 
+                "description": "Same as gtk_text_buffer_insert_range(), but does nothing if the\ninsertion point isn't editable. The @default_editable parameter\nindicates whether the text is editable at @iter if no tags\nenclosing @iter affect editability. Typically the result of\ngtk_text_view_get_editable() is appropriate here."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "insert_with_tags", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TextIter", 
+                        "name": "iter", 
+                        "description": "an iterator in @buffer"
+                    }, 
+                    {
+                        "type": "String", 
+                        "name": "text", 
+                        "description": "UTF-8 text"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "len", 
+                        "description": "length of @text, or -1"
+                    }, 
+                    {
+                        "type": "ref:Gtk.TextTag", 
+                        "name": "first_tag", 
+                        "description": "first tag to apply to @text"
+                    }, 
+                    {
+                        "type": "ref:VarArg", 
+                        "name": null, 
+                        "description": ""
+                    }
+                ], 
+                "description": "Inserts @text into @buffer at @iter, applying the list of tags to\nthe newly-inserted text. The last tag specified must be %NULL to\nterminate the list. Equivalent to calling gtk_text_buffer_insert(),\nthen gtk_text_buffer_apply_tag() on the inserted text;\ngtk_text_buffer_insert_with_tags() is just a convenience function."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "insert_with_tags_by_name", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TextIter", 
+                        "name": "iter", 
+                        "description": "position in @buffer"
+                    }, 
+                    {
+                        "type": "String", 
+                        "name": "text", 
+                        "description": "UTF-8 text"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "len", 
+                        "description": "length of @text, or -1"
+                    }, 
+                    {
+                        "type": "String", 
+                        "name": "first_tag_name", 
+                        "description": "name of a tag to apply to @text"
+                    }, 
+                    {
+                        "type": "ref:VarArg", 
+                        "name": null, 
+                        "description": ""
+                    }
+                ], 
+                "description": "Same as gtk_text_buffer_insert_with_tags(), but allows you\nto pass in tag names instead of tag objects."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "move_mark", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TextMark", 
+                        "name": "mark", 
+                        "description": "a #GtkTextMark"
+                    }, 
+                    {
+                        "type": "ref:Gtk.TextIter", 
+                        "name": "where", 
+                        "description": "new location for @mark in @buffer"
+                    }
+                ], 
+                "description": "Moves @mark to the new location @where. Emits the \"mark-set\" signal\nas notification of the move."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "move_mark_by_name", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "name", 
+                        "description": "name of a mark"
+                    }, 
+                    {
+                        "type": "ref:Gtk.TextIter", 
+                        "name": "where", 
+                        "description": "new location for mark"
+                    }
+                ], 
+                "description": "Moves the mark named @name (which must exist) to location @where.\nSee gtk_text_buffer_move_mark() for details."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "paste_clipboard", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Clipboard", 
+                        "name": "clipboard", 
+                        "description": "the #GtkClipboard to paste from"
+                    }, 
+                    {
+                        "type": "ref:Gtk.TextIter", 
+                        "name": "override_location", 
+                        "description": "location to insert pasted text, or %NULL for at the cursor"
+                    }, 
+                    {
+                        "type": "Boolean", 
+                        "name": "default_editable", 
+                        "description": "whether the buffer is editable by default"
+                    }
+                ], 
+                "description": "Pastes the contents of a clipboard at the insertion point, or\nat @override_location. (Note: pasting is asynchronous, that is,\nwe'll ask for the paste data and return, and at some point later\nafter the main loop runs, the paste data will be inserted.)"
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "place_cursor", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TextIter", 
+                        "name": "where", 
+                        "description": "where to put the cursor"
+                    }
+                ], 
+                "description": "This function moves the \"insert\" and \"selection_bound\" marks\nsimultaneously.  If you move them to the same place in two steps\nwith gtk_text_buffer_move_mark(), you will temporarily select a\nregion in between their old and new locations, which can be pretty\ninefficient since the temporarily-selected region will force stuff\nto be recalculated. This function moves them as a unit, which can\nbe optimized."
+            }, 
+            {
+                "returns": {
+                    "type": "Gdk.Atom", 
+                    "description": "the #GdkAtom that corresponds to the"
+                }, 
+                "version": "2.10", 
+                "name": "register_deserialize_format", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "mime_type", 
+                        "description": "the format's mime-type"
+                    }, 
+                    {
+                        "type": "ref:Gtk.TextBufferDeserializeFunc", 
+                        "name": "function", 
+                        "description": "the deserialize function to register"
+                    }, 
+                    {
+                        "type": "Mixed", 
+                        "name": "user_data", 
+                        "description": "@function's user_data"
+                    }, 
+                    {
+                        "type": "GLib.DestroyNotify", 
+                        "name": "user_data_destroy", 
+                        "description": "a function to call when @user_data is no longer needed"
+                    }
+                ], 
+                "description": "This function registers a rich text deserialization @function along with\nits @mime_type with the passed @buffer.\n\nnewly registered format's mime-type."
+            }, 
+            {
+                "returns": {
+                    "type": "Gdk.Atom", 
+                    "description": "the #GdkAtom that corresponds to the"
+                }, 
+                "version": "2.10", 
+                "name": "register_deserialize_tagset", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "tagset_name", 
+                        "description": "an optional tagset name, on %NULL"
+                    }
+                ], 
+                "description": "This function registers GTK+'s internal rich text serialization\nformat with the passed @buffer. See\ngtk_text_buffer_register_serialize_tagset() for details.\n\nnewly registered format's mime-type."
+            }, 
+            {
+                "returns": {
+                    "type": "Gdk.Atom", 
+                    "description": "the #GdkAtom that corresponds to the"
+                }, 
+                "version": "2.10", 
+                "name": "register_serialize_format", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "mime_type", 
+                        "description": "the format's mime-type"
+                    }, 
+                    {
+                        "type": "ref:Gtk.TextBufferSerializeFunc", 
+                        "name": "function", 
+                        "description": "the serialize function to register"
+                    }, 
+                    {
+                        "type": "Mixed", 
+                        "name": "user_data", 
+                        "description": "%function's user_data"
+                    }, 
+                    {
+                        "type": "GLib.DestroyNotify", 
+                        "name": "user_data_destroy", 
+                        "description": "a function to call when @user_data is no longer needed"
+                    }
+                ], 
+                "description": "This function registers a rich text serialization @function along with\nits @mime_type with the passed @buffer.\n\nnewly registered format's mime-type."
+            }, 
+            {
+                "returns": {
+                    "type": "Gdk.Atom", 
+                    "description": "the #GdkAtom that corresponds to the"
+                }, 
+                "version": "2.10", 
+                "name": "register_serialize_tagset", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "tagset_name", 
+                        "description": "an optional tagset name, on %NULL"
+                    }
+                ], 
+                "description": "This function registers GTK+'s internal rich text serialization\nformat with the passed @buffer. The internal format does not comply\nto any standard rich text format and only works between #GtkTextBuffer\ninstances. It is capable of serializing all of a text buffer's tags\nand embedded pixbufs.\n\nThis function is just a wrapper around\ngtk_text_buffer_register_serialize_format(). The mime type used\nfor registering is \"application/x-gtk-text-buffer-rich-text\", or\n\"application/x-gtk-text-buffer-rich-text;format=@tagset_name\" if a\n@tagset_name was passed.\n\nThe @tagset_name can be used to restrict the transfer of rich text\nto buffers with compatible sets of tags, in order to avoid unknown\ntags from being pasted. It is probably the common case to pass an\nidentifier != %NULL here, since the %NULL tagset requires the\nreceiving buffer to deal with with pasting of arbitrary tags.\n\nnewly registered format's mime-type."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "remove_all_tags", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TextIter", 
+                        "name": "start", 
+                        "description": "one bound of range to be untagged"
+                    }, 
+                    {
+                        "type": "ref:Gtk.TextIter", 
+                        "name": "end", 
+                        "description": "other bound of range to be untagged"
+                    }
+                ], 
+                "description": "Removes all tags in the range between @start and @end.  Be careful\nwith this function; it could remove tags added in code unrelated to\nthe code you're currently writing. That is, using this function is\nprobably a bad idea if you have two or more unrelated code sections\nthat add tags."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "remove_selection_clipboard", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Clipboard", 
+                        "name": "clipboard", 
+                        "description": "a #GtkClipboard added to @buffer by gtk_text_buffer_add_selection_clipboard()"
+                    }
+                ], 
+                "description": "Removes a #GtkClipboard added with \ngtk_text_buffer_add_selection_clipboard()."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "remove_tag", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TextTag", 
+                        "name": "tag", 
+                        "description": "a #GtkTextTag"
+                    }, 
+                    {
+                        "type": "ref:Gtk.TextIter", 
+                        "name": "start", 
+                        "description": "one bound of range to be untagged"
+                    }, 
+                    {
+                        "type": "ref:Gtk.TextIter", 
+                        "name": "end", 
+                        "description": "other bound of range to be untagged"
+                    }
+                ], 
+                "description": "Emits the \"remove-tag\" signal. The default handler for the signal\nremoves all occurrences of @tag from the given range. @start and\n@end don't have to be in order."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "remove_tag_by_name", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "name", 
+                        "description": "name of a #GtkTextTag"
+                    }, 
+                    {
+                        "type": "ref:Gtk.TextIter", 
+                        "name": "start", 
+                        "description": "one bound of range to be untagged"
+                    }, 
+                    {
+                        "type": "ref:Gtk.TextIter", 
+                        "name": "end", 
+                        "description": "other bound of range to be untagged"
+                    }
+                ], 
+                "description": "Calls gtk_text_tag_table_lookup() on the buffer's tag table to\nget a #GtkTextTag, then calls gtk_text_buffer_remove_tag()."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.4", 
+                "name": "select_range", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TextIter", 
+                        "name": "ins", 
+                        "description": "where to put the \"insert\" mark"
+                    }, 
+                    {
+                        "type": "ref:Gtk.TextIter", 
+                        "name": "bound", 
+                        "description": "where to put the \"selection_bound\" mark"
+                    }
+                ], 
+                "description": "This function moves the \"insert\" and \"selection_bound\" marks\nsimultaneously.  If you move them in two steps\nwith gtk_text_buffer_move_mark(), you will temporarily select a\nregion in between their old and new locations, which can be pretty\ninefficient since the temporarily-selected region will force stuff\nto be recalculated. This function moves them as a unit, which can\nbe optimized."
+            }, 
+            {
+                "returns": {
+                    "type": "Integer[]", 
+                    "description": "the serialized"
+                }, 
+                "version": "2.10", 
+                "name": "serialize", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TextBuffer", 
+                        "name": "content_buffer", 
+                        "description": "the #GtkTextBuffer to serialize"
+                    }, 
+                    {
+                        "type": "Gdk.Atom", 
+                        "name": "format", 
+                        "description": "the rich text format to use for serializing"
+                    }, 
+                    {
+                        "type": "ref:Gtk.TextIter", 
+                        "name": "start", 
+                        "description": "start of block of text to serialize"
+                    }, 
+                    {
+                        "type": "ref:Gtk.TextIter", 
+                        "name": "end", 
+                        "description": "end of block of test to serialize"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "length", 
+                        "description": "return location for the length of the serialized data"
+                    }
+                ], 
+                "description": "This function serializes the portion of text between @start\nand @end in the rich text format represented by @format.\n\n@format<!-- -->s to be used must be registered using\ngtk_text_buffer_register_serialize_format() or\ngtk_text_buffer_register_serialize_tagset() beforehand.\n\ndata, encoded as @format"
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_modified", 
+                "parameters": [
+                    {
+                        "type": "Boolean", 
+                        "name": "setting", 
+                        "description": "modification flag setting"
+                    }
+                ], 
+                "description": "Used to keep track of whether the buffer has been modified since the\nlast time it was saved. Whenever the buffer is saved to disk, call\ngtk_text_buffer_set_modified (@buffer, FALSE). When the buffer is modified,\nit will automatically toggled on the modified bit again. When the modified\nbit flips, the buffer emits a \"modified-changed\" signal."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_text", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "text", 
+                        "description": "UTF-8 text to insert"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "len", 
+                        "description": "length of @text in bytes"
+                    }
+                ], 
+                "description": "Deletes current contents of @buffer, and inserts @text instead. If\n@len is -1, @text must be nul-terminated. @text must be valid UTF-8."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.10", 
+                "name": "unregister_deserialize_format", 
+                "parameters": [
+                    {
+                        "type": "Gdk.Atom", 
+                        "name": "format", 
+                        "description": "a #GdkAtom representing a registered rich text format."
+                    }
+                ], 
+                "description": "This function unregisters a rich text format that was previously\nregistered using gtk_text_buffer_register_deserialize_format() or\ngtk_text_buffer_register_deserialize_tagset()."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.10", 
+                "name": "unregister_serialize_format", 
+                "parameters": [
+                    {
+                        "type": "Gdk.Atom", 
+                        "name": "format", 
+                        "description": "a #GdkAtom representing a registered rich text format."
+                    }
+                ], 
+                "description": "This function unregisters a rich text format that was previously\nregistered using gtk_text_buffer_register_serialize_format() or\ngtk_text_buffer_register_serialize_tagset()"
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "apply_tag", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TextTag", 
+                        "name": "tag", 
+                        "description": "a #GtkTextTag"
+                    }, 
+                    {
+                        "type": "ref:Gtk.TextIter", 
+                        "name": "start", 
+                        "description": "one bound of range to be tagged"
+                    }, 
+                    {
+                        "type": "ref:Gtk.TextIter", 
+                        "name": "end", 
+                        "description": "other bound of range to be tagged"
+                    }
+                ], 
+                "description": "Emits the \"apply-tag\" signal on @buffer. The default\nhandler for the signal applies @tag to the given range.\n@start and @end do not have to be in order."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "begin_user_action", 
+                "parameters": null, 
+                "description": "Called to indicate that the buffer operations between here and a\ncall to gtk_text_buffer_end_user_action() are part of a single\nuser-visible operation. The operations between\ngtk_text_buffer_begin_user_action() and\ngtk_text_buffer_end_user_action() can then be grouped when creating\nan undo stack. #GtkTextBuffer maintains a count of calls to\ngtk_text_buffer_begin_user_action() that have not been closed with\na call to gtk_text_buffer_end_user_action(), and emits the \n\"begin-user-action\" and \"end-user-action\" signals only for the \noutermost pair of calls. This allows you to build user actions \nfrom other user actions.\n\nThe \"interactive\" buffer mutation functions, such as\ngtk_text_buffer_insert_interactive(), automatically call begin/end\nuser action around the buffer operations they perform, so there's\nno need to add extra calls if you user action consists solely of a\nsingle call to one of those functions."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "changed", 
+                "parameters": null, 
+                "description": ""
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "delete_range", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TextIter", 
+                        "name": "start", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "ref:Gtk.TextIter", 
+                        "name": "end", 
+                        "description": ""
+                    }
+                ], 
+                "description": ""
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "end_user_action", 
+                "parameters": null, 
+                "description": "Should be paired with a call to gtk_text_buffer_begin_user_action().\nSee that function for a full explanation."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "insert_child_anchor", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TextIter", 
+                        "name": "iter", 
+                        "description": "location to insert the anchor"
+                    }, 
+                    {
+                        "type": "ref:Gtk.TextChildAnchor", 
+                        "name": "anchor", 
+                        "description": "a #GtkTextChildAnchor"
+                    }
+                ], 
+                "description": "Inserts a child widget anchor into the text buffer at @iter. The\nanchor will be counted as one character in character counts, and\nwhen obtaining the buffer contents as a string, will be represented\nby the Unicode \"object replacement character\" 0xFFFC. Note that the\n\"slice\" variants for obtaining portions of the buffer as a string\ninclude this character for child anchors, but the \"text\" variants do\nnot. E.g. see gtk_text_buffer_get_slice() and\ngtk_text_buffer_get_text(). Consider\ngtk_text_buffer_create_child_anchor() as a more convenient\nalternative to this function. The buffer will add a reference to\nthe anchor, so you can unref it after insertion."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "insert_pixbuf", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TextIter", 
+                        "name": "iter", 
+                        "description": "location to insert the pixbuf"
+                    }, 
+                    {
+                        "type": "GdkPixbuf.Pixbuf", 
+                        "name": "pixbuf", 
+                        "description": "a #GdkPixbuf"
+                    }
+                ], 
+                "description": "Inserts an image into the text buffer at @iter. The image will be\ncounted as one character in character counts, and when obtaining\nthe buffer contents as a string, will be represented by the Unicode\n\"object replacement character\" 0xFFFC. Note that the \"slice\"\nvariants for obtaining portions of the buffer as a string include\nthis character for pixbufs, but the \"text\" variants do\nnot. e.g. see gtk_text_buffer_get_slice() and\ngtk_text_buffer_get_text()."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "insert_text", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TextIter", 
+                        "name": "pos", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "String", 
+                        "name": "new_text", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "new_text_length", 
+                        "description": ""
+                    }
+                ], 
+                "description": ""
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "mark_deleted", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TextMark", 
+                        "name": "mark", 
+                        "description": ""
+                    }
+                ], 
+                "description": ""
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "mark_set", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TextIter", 
+                        "name": "location", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "ref:Gtk.TextMark", 
+                        "name": "mark", 
+                        "description": ""
+                    }
+                ], 
+                "description": ""
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "modified_changed", 
+                "parameters": null, 
+                "description": ""
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "paste_done", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Clipboard", 
+                        "name": "clipboard", 
+                        "description": ""
+                    }
+                ], 
+                "description": ""
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "remove_tag", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TextTag", 
+                        "name": "tag", 
+                        "description": "a #GtkTextTag"
+                    }, 
+                    {
+                        "type": "ref:Gtk.TextIter", 
+                        "name": "start", 
+                        "description": "one bound of range to be untagged"
+                    }, 
+                    {
+                        "type": "ref:Gtk.TextIter", 
+                        "name": "end", 
+                        "description": "other bound of range to be untagged"
+                    }
+                ], 
+                "description": "Emits the \"remove-tag\" signal. The default handler for the signal\nremoves all occurrences of @tag from the given range. @start and\n@end don't have to be in order."
+            }
+        ], 
+        "properties": [
+            {
+                "writable": false, 
+                "type": "Gtk.TargetList", 
+                "readable": false, 
+                "name": "copy-target-list", 
+                "description": "The list of targets this buffer supports for clipboard copying\nand as DND source."
+            }, 
+            {
+                "writable": false, 
+                "type": "Integer", 
+                "readable": false, 
+                "name": "cursor-position", 
+                "description": "The position of the insert mark (as offset from the beginning \nof the buffer). It is useful for getting notified when the \ncursor moves."
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "has-selection", 
+                "description": "Whether the buffer has some text currently selected."
+            }, 
+            {
+                "writable": false, 
+                "type": "Gtk.TargetList", 
+                "readable": false, 
+                "name": "paste-target-list", 
+                "description": "The list of targets this buffer supports for clipboard pasting\nand as DND destination."
+            }, 
+            {
+                "writable": false, 
+                "type": "Gtk.TextTagTable", 
+                "readable": false, 
+                "name": "tag-table", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "String", 
+                "readable": false, 
+                "name": "text", 
+                "description": "The text content of the buffer. Without child widgets and images,\nsee gtk_text_buffer_get_text() for more information."
+            }
+        ]
+    }, 
+    "fullname": "Class Gtk.TextBuffer", 
+    "id": "Docs-TextBuffer", 
+    "description": "You may wish to begin by reading the <link linkend=\"TextWidget\">text widget\nconceptual overview</link> which gives an overview of all the objects and data\ntypes related to the text widget and how they work together."
+}

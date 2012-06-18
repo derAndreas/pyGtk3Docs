@@ -1,0 +1,29 @@
+{
+    "leaf": true, 
+    "name": "PrintError", 
+    "text": "PrintError", 
+    "version": null, 
+    "members": {
+        "properties": [
+            {
+                "name": "general", 
+                "value": "0"
+            }, 
+            {
+                "name": "internal_error", 
+                "value": "1"
+            }, 
+            {
+                "name": "nomem", 
+                "value": "2"
+            }, 
+            {
+                "name": "invalid_file", 
+                "value": "3"
+            }
+        ]
+    }, 
+    "fullname": "Enumeration Gtk.PrintError", 
+    "id": "Docs-PrintError", 
+    "description": ""
+}

@@ -1,0 +1,204 @@
+{
+    "isAbstract": false, 
+    "leaf": true, 
+    "name": "ToggleButton", 
+    "text": "ToggleButton", 
+    "interfaces": [
+        [
+            "Atk.ImplementorIface"
+        ], 
+        [
+            "Actionable"
+        ], 
+        [
+            "Activatable"
+        ], 
+        [
+            "Buildable"
+        ]
+    ], 
+    "parents": [
+        "ToggleButton", 
+        "Button", 
+        "Bin", 
+        "Container", 
+        "Widget", 
+        "GObject.InitiallyUnowned"
+    ], 
+    "members": {
+        "signals": [
+            {
+                "version": "", 
+                "when": "first", 
+                "name": "toggled", 
+                "description": "Should be connected if you wish to perform an action whenever the\n#GtkToggleButton's state is changed."
+            }
+        ], 
+        "methods": [
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a new toggle button.", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": null, 
+                "name": "Gtk.ToggleButton()", 
+                "parameters": null
+            }, 
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a new toggle button.", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": null, 
+                "name": "Gtk.ToggleButton(String label)", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "label"
+                    }
+                ]
+            }, 
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a new #GtkToggleButton", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": null, 
+                "name": "Gtk.ToggleButton(String label)", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "label"
+                    }
+                ]
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "a #gboolean value."
+                }, 
+                "version": "", 
+                "name": "get_active", 
+                "parameters": null, 
+                "description": "Queries a #GtkToggleButton and returns its current state. Returns %TRUE if\nthe toggle button is pressed in and %FALSE if it is raised."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE if the button is displayed as inconsistent, %FALSE otherwise"
+                }, 
+                "version": "", 
+                "name": "get_inconsistent", 
+                "parameters": null, 
+                "description": "Gets the value set by gtk_toggle_button_set_inconsistent()."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE if the togglebutton is drawn as a separate indicator"
+                }, 
+                "version": "", 
+                "name": "get_mode", 
+                "parameters": null, 
+                "description": "Retrieves whether the button is displayed as a separate indicator\nand label. See gtk_toggle_button_set_mode().\n\nand label."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_active", 
+                "parameters": [
+                    {
+                        "type": "Boolean", 
+                        "name": "is_active", 
+                        "description": "%TRUE or %FALSE."
+                    }
+                ], 
+                "description": "Sets the status of the toggle button. Set to %TRUE if you want the\nGtkToggleButton to be 'pressed in', and %FALSE to raise it.\nThis action causes the toggled signal to be emitted."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_inconsistent", 
+                "parameters": [
+                    {
+                        "type": "Boolean", 
+                        "name": "setting", 
+                        "description": "%TRUE if state is inconsistent"
+                    }
+                ], 
+                "description": "If the user has selected a range of elements (such as some text or\nspreadsheet cells) that are affected by a toggle button, and the\ncurrent values in that range are inconsistent, you may want to\ndisplay the toggle in an \"in between\" state. This function turns on\n\"in between\" display.  Normally you would turn off the inconsistent\nstate again if the user toggles the toggle button. This has to be\ndone manually, gtk_toggle_button_set_inconsistent() only affects\nvisual appearance, it doesn't affect the semantics of the button."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_mode", 
+                "parameters": [
+                    {
+                        "type": "Boolean", 
+                        "name": "draw_indicator", 
+                        "description": "if %TRUE, draw the button as a separate indicator and label; if %FALSE, draw the button like a normal button"
+                    }
+                ], 
+                "description": "Sets whether the button is displayed as a separate indicator and label.\nYou can call this function on a checkbutton or a radiobutton with\n@draw_indicator = %FALSE to make the button look like a normal button\n\nThis function only affects instances of classes like #GtkCheckButton\nand #GtkRadioButton that derive from #GtkToggleButton,\nnot instances of #GtkToggleButton itself."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "toggled", 
+                "parameters": null, 
+                "description": "Emits the #GtkToggleButton::toggled signal on the\n#GtkToggleButton. There is no good reason for an\napplication ever to call this function."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "toggled", 
+                "parameters": null, 
+                "description": "Emits the #GtkToggleButton::toggled signal on the\n#GtkToggleButton. There is no good reason for an\napplication ever to call this function."
+            }
+        ], 
+        "properties": [
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "active", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "draw-indicator", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "inconsistent", 
+                "description": ""
+            }
+        ]
+    }, 
+    "fullname": "Class Gtk.ToggleButton", 
+    "id": "Docs-ToggleButton", 
+    "description": "A #GtkToggleButton is a #GtkButton which will remain 'pressed-in' when\nclicked. Clicking again will cause the toggle button to return to its\nnormal state.\n\nA toggle button is created by calling either gtk_toggle_button_new() or\ngtk_toggle_button_new_with_label(). If using the former, it is advisable to\npack a widget, (such as a #GtkLabel and/or a #GtkPixmap), into the toggle\nbutton's container. (See #GtkButton for more information).\n\nThe state of a #GtkToggleButton can be set specifically using\ngtk_toggle_button_set_active(), and retrieved using\ngtk_toggle_button_get_active().\n\nTo simply switch the state of a toggle button, use gtk_toggle_button_toggled().\n\n<example>\n<title>Creating two #GtkToggleButton widgets.</title>\n<programlisting>\nvoid make_toggles (void) {\nGtkWidget *dialog, *toggle1, *toggle2;\n\ndialog = gtk_dialog_new (<!-- -->);\ntoggle1 = gtk_toggle_button_new_with_label (\"Hi, i'm a toggle button.\");\n\n// Makes this toggle button invisible\ngtk_toggle_button_set_mode (GTK_TOGGLE_BUTTON (toggle1), TRUE);\n\ng_signal_connect (toggle1, \"toggled\",\nG_CALLBACK (output_state), NULL);\ngtk_box_pack_start (GTK_BOX (GTK_DIALOG (dialog)->action_area),\ntoggle1, FALSE, FALSE, 2);\n\ntoggle2 = gtk_toggle_button_new_with_label (\"Hi, i'm another toggle button.\");\ngtk_toggle_button_set_mode (GTK_TOGGLE_BUTTON (toggle2), FALSE);\ng_signal_connect (toggle2, \"toggled\",\nG_CALLBACK (output_state), NULL);\ngtk_box_pack_start (GTK_BOX (GTK_DIALOG (dialog)->action_area),\ntoggle2, FALSE, FALSE, 2);\n\ngtk_widget_show_all (dialog);\n}\n</programlisting>\n</example>"
+}

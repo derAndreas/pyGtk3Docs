@@ -1,0 +1,331 @@
+{
+    "isAbstract": false, 
+    "leaf": true, 
+    "name": "Dialog", 
+    "text": "Dialog", 
+    "interfaces": [
+        [
+            "Atk.ImplementorIface"
+        ], 
+        [
+            "Buildable"
+        ]
+    ], 
+    "parents": [
+        "Dialog", 
+        "Window", 
+        "Bin", 
+        "Container", 
+        "Widget", 
+        "GObject.InitiallyUnowned"
+    ], 
+    "members": {
+        "signals": [
+            {
+                "version": "", 
+                "when": "last", 
+                "name": "close", 
+                "description": "The ::close signal is a\n<link linkend=\"keybinding-signals\">keybinding signal</link>\nwhich gets emitted when the user uses a keybinding to close\nthe dialog.\n\nThe default binding for this signal is the Escape key."
+            }, 
+            {
+                "version": "", 
+                "when": "last", 
+                "name": "response", 
+                "description": "Emitted when an action widget is clicked, the dialog receives a\ndelete event, or the application programmer calls gtk_dialog_response().\nOn a delete event, the response ID is #GTK_RESPONSE_DELETE_EVENT.\nOtherwise, it depends on which action widget was clicked."
+            }
+        ], 
+        "methods": [
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "the new dialog as a #GtkWidget", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": null, 
+                "name": "Gtk.Dialog()", 
+                "parameters": null
+            }, 
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a new #GtkDialog", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": null, 
+                "name": "Gtk.Dialog(String title, Gtk.Window parent, Gtk.DialogFlags flags, String first_button_text, VarArg None)", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "title"
+                    }, 
+                    {
+                        "type": "ref:Gtk.Window", 
+                        "name": "parent"
+                    }, 
+                    {
+                        "type": "ref:Gtk.DialogFlags", 
+                        "name": "flags"
+                    }, 
+                    {
+                        "type": "String", 
+                        "name": "first_button_text"
+                    }, 
+                    {
+                        "type": "ref:VarArg", 
+                        "name": null
+                    }
+                ]
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "add_action_widget", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "child", 
+                        "description": "an activatable widget"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "response_id", 
+                        "description": "response ID for @child"
+                    }
+                ], 
+                "description": "Adds an activatable widget to the action area of a #GtkDialog,\nconnecting a signal handler that will emit the #GtkDialog::response\nsignal on the dialog when the widget is activated. The widget is\nappended to the end of the dialog's action area. If you want to add a\nnon-activatable widget, simply pack it into the @action_area field\nof the #GtkDialog struct."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.Widget", 
+                    "description": "the #GtkButton widget that was added"
+                }, 
+                "version": "", 
+                "name": "add_button", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "button_text", 
+                        "description": "text of button, or stock ID"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "response_id", 
+                        "description": "response ID for the button"
+                    }
+                ], 
+                "description": "Adds a button with the given text (or a stock button, if @button_text is a\nstock ID) and sets things up so that clicking the button will emit the\n#GtkDialog::response signal with the given @response_id. The button is\nappended to the end of the dialog's action area. The button widget is\nreturned, but usually you don't need it."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "add_buttons", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "first_button_text", 
+                        "description": "button text or stock ID"
+                    }, 
+                    {
+                        "type": "ref:VarArg", 
+                        "name": null, 
+                        "description": ""
+                    }
+                ], 
+                "description": "Adds more buttons, same as calling gtk_dialog_add_button()\nrepeatedly.  The variable argument list should be %NULL-terminated\nas with gtk_dialog_new_with_buttons(). Each button must have both\ntext and response ID."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.Widget", 
+                    "description": "the action area."
+                }, 
+                "version": "2.14", 
+                "name": "get_action_area", 
+                "parameters": null, 
+                "description": "Returns the action area of @dialog."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.Widget", 
+                    "description": "the content area #GtkBox."
+                }, 
+                "version": "2.14", 
+                "name": "get_content_area", 
+                "parameters": null, 
+                "description": "Returns the content area of @dialog."
+            }, 
+            {
+                "returns": {
+                    "type": "Integer", 
+                    "description": "the response id of @widget, or %GTK_RESPONSE_NONE"
+                }, 
+                "version": "2.8", 
+                "name": "get_response_for_widget", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "widget", 
+                        "description": "a widget in the action area of @dialog"
+                    }
+                ], 
+                "description": "Gets the response id of a widget in the action area\nof a dialog.\n\nif @widget doesn't have a response id set."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.Widget", 
+                    "description": "the @widget button that uses the given"
+                }, 
+                "version": "2.20", 
+                "name": "get_widget_for_response", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "response_id", 
+                        "description": "the response ID used by the @dialog widget"
+                    }
+                ], 
+                "description": "Gets the widget button that uses the given response ID in the action area\nof a dialog.\n\n@response_id, or %NULL."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "response", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "response_id", 
+                        "description": "response ID"
+                    }
+                ], 
+                "description": "Emits the #GtkDialog::response signal with the given response ID.\nUsed to indicate that the user has responded to the dialog in some way;\ntypically either you or gtk_dialog_run() will be monitoring the\n::response signal and take appropriate action."
+            }, 
+            {
+                "returns": {
+                    "type": "Integer", 
+                    "description": "response ID"
+                }, 
+                "version": "", 
+                "name": "run", 
+                "parameters": null, 
+                "description": "Blocks in a recursive main loop until the @dialog either emits the\n#GtkDialog::response signal, or is destroyed. If the dialog is\ndestroyed during the call to gtk_dialog_run(), gtk_dialog_run() returns\n#GTK_RESPONSE_NONE. Otherwise, it returns the response ID from the\n::response signal emission.\n\nBefore entering the recursive main loop, gtk_dialog_run() calls\ngtk_widget_show() on the dialog for you. Note that you still\nneed to show any children of the dialog yourself.\n\nDuring gtk_dialog_run(), the default behavior of #GtkWidget::delete-event\nis disabled; if the dialog receives ::delete_event, it will not be\ndestroyed as windows usually are, and gtk_dialog_run() will return\n#GTK_RESPONSE_DELETE_EVENT. Also, during gtk_dialog_run() the dialog\nwill be modal. You can force gtk_dialog_run() to return at any time by\ncalling gtk_dialog_response() to emit the ::response signal. Destroying\nthe dialog during gtk_dialog_run() is a very bad idea, because your\npost-run code won't know whether the dialog was destroyed or not.\n\nAfter gtk_dialog_run() returns, you are responsible for hiding or\ndestroying the dialog if you wish to do so.\n\nTypical usage of this function might be:\n|[\ngint result = gtk_dialog_run (GTK_DIALOG (dialog));\nswitch (result)\n{\ncase GTK_RESPONSE_ACCEPT:\ndo_application_specific_something ();\nbreak;\ndefault:\ndo_nothing_since_dialog_was_cancelled ();\nbreak;\n}\ngtk_widget_destroy (dialog);\n]|\n\nNote that even though the recursive main loop gives the effect of a\nmodal dialog (it prevents the user from interacting with other\nwindows in the same window group while the dialog is run), callbacks\nsuch as timeouts, IO channel watches, DND drops, etc, <emphasis>will</emphasis>\nbe triggered during a gtk_dialog_run() call."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.6", 
+                "name": "set_alternative_button_order", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "first_response_id", 
+                        "description": "a response id used by one @dialog's buttons"
+                    }, 
+                    {
+                        "type": "ref:VarArg", 
+                        "name": null, 
+                        "description": ""
+                    }
+                ], 
+                "description": "Sets an alternative button order. If the\n#GtkSettings:gtk-alternative-button-order setting is set to %TRUE,\nthe dialog buttons are reordered according to the order of the\nresponse ids passed to this function.\n\nBy default, GTK+ dialogs use the button order advocated by the Gnome\n<ulink url=\"http://library.gnome.org/devel/hig-book/stable/\">Human\nInterface Guidelines</ulink> with the affirmative button at the far\nright, and the cancel button left of it. But the builtin GTK+ dialogs\nand #GtkMessageDialog<!-- -->s do provide an alternative button order,\nwhich is more suitable on some platforms, e.g. Windows.\n\nUse this function after adding all the buttons to your dialog, as the\nfollowing example shows:\n|[\ncancel_button = gtk_dialog_add_button (GTK_DIALOG (dialog),\nGTK_STOCK_CANCEL,\nGTK_RESPONSE_CANCEL);\n\nok_button = gtk_dialog_add_button (GTK_DIALOG (dialog),\nGTK_STOCK_OK,\nGTK_RESPONSE_OK);\n\ngtk_widget_grab_default (ok_button);\n\nhelp_button = gtk_dialog_add_button (GTK_DIALOG (dialog),\nGTK_STOCK_HELP,\nGTK_RESPONSE_HELP);\n\ngtk_dialog_set_alternative_button_order (GTK_DIALOG (dialog),\nGTK_RESPONSE_OK,\nGTK_RESPONSE_CANCEL,\nGTK_RESPONSE_HELP,\n-1);\n]|"
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.6", 
+                "name": "set_alternative_button_order_from_array", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "n_params", 
+                        "description": "the number of response ids in @new_order"
+                    }, 
+                    {
+                        "type": "Integer[]", 
+                        "name": "new_order", 
+                        "description": "an array of response ids of @dialog's buttons"
+                    }
+                ], 
+                "description": "Sets an alternative button order. If the\n#GtkSettings:gtk-alternative-button-order setting is set to %TRUE,\nthe dialog buttons are reordered according to the order of the\nresponse ids in @new_order.\n\nSee gtk_dialog_set_alternative_button_order() for more information.\n\nThis function is for use by language bindings."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_default_response", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "response_id", 
+                        "description": "a response ID"
+                    }
+                ], 
+                "description": "Sets the last widget in the dialog's action area with the given @response_id\nas the default widget for the dialog. Pressing \"Enter\" normally activates\nthe default widget."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_response_sensitive", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "response_id", 
+                        "description": "a response ID"
+                    }, 
+                    {
+                        "type": "Boolean", 
+                        "name": "setting", 
+                        "description": "%TRUE for sensitive"
+                    }
+                ], 
+                "description": "Calls <literal>gtk_widget_set_sensitive (widget, @setting)</literal>\nfor each widget in the dialog's action area with the given @response_id.\nA convenient way to sensitize/desensitize dialog buttons."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "close", 
+                "parameters": null, 
+                "description": ""
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "response", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "response_id", 
+                        "description": "response ID"
+                    }
+                ], 
+                "description": "Emits the #GtkDialog::response signal with the given response ID.\nUsed to indicate that the user has responded to the dialog in some way;\ntypically either you or gtk_dialog_run() will be monitoring the\n::response signal and take appropriate action."
+            }
+        ], 
+        "properties": []
+    }, 
+    "fullname": "Class Gtk.Dialog", 
+    "id": "Docs-Dialog", 
+    "description": "Dialog boxes are a convenient way to prompt the user for a small amount\nof input, e.g. to display a message, ask a question, or anything else\nthat does not require extensive effort on the user's part.\n\nGTK+ treats a dialog as a window split vertically. The top section is a\n#GtkVBox, and is where widgets such as a #GtkLabel or a #GtkEntry should\nbe packed. The bottom area is known as the\n<structfield>action_area</structfield>. This is generally used for\npacking buttons into the dialog which may perform functions such as\ncancel, ok, or apply.\n\n#GtkDialog boxes are created with a call to gtk_dialog_new() or\ngtk_dialog_new_with_buttons(). gtk_dialog_new_with_buttons() is\nrecommended; it allows you to set the dialog title, some convenient flags,\nand add simple buttons.\n\nIf 'dialog' is a newly created dialog, the two primary areas of the\nwindow can be accessed through gtk_dialog_get_content_area() and\ngtk_dialog_get_action_area(), as can be seen from the example below.\n\nA 'modal' dialog (that is, one which freezes the rest of the application\nfrom user input), can be created by calling gtk_window_set_modal() on the\ndialog. Use the GTK_WINDOW() macro to cast the widget returned from\ngtk_dialog_new() into a #GtkWindow. When using gtk_dialog_new_with_buttons()\nyou can also pass the #GTK_DIALOG_MODAL flag to make a dialog modal.\n\nIf you add buttons to #GtkDialog using gtk_dialog_new_with_buttons(),\ngtk_dialog_add_button(), gtk_dialog_add_buttons(), or\ngtk_dialog_add_action_widget(), clicking the button will emit a signal\ncalled #GtkDialog::response with a response ID that you specified. GTK+\nwill never assign a meaning to positive response IDs; these are entirely\nuser-defined. But for convenience, you can use the response IDs in the\n#GtkResponseType enumeration (these all have values less than zero). If\na dialog receives a delete event, the #GtkDialog::response signal will\nbe emitted with a response ID of #GTK_RESPONSE_DELETE_EVENT.\n\nIf you want to block waiting for a dialog to return before returning\ncontrol flow to your code, you can call gtk_dialog_run(). This function\nenters a recursive main loop and waits for the user to respond to the\ndialog, returning the response ID corresponding to the button the user\nclicked.\n\nFor the simple dialog in the following example, in reality you'd probably\nuse #GtkMessageDialog to save yourself some effort. But you'd need to\ncreate the dialog contents manually if you had more than a simple message\nin the dialog.\n<example>\n<title>Simple GtkDialog usage</title>\n<programlisting>\n/&ast; Function to open a dialog box displaying the message provided. &ast;/\nvoid\nquick_message (gchar *message)\n{\nGtkWidget *dialog, *label, *content_area;\n\n/&ast; Create the widgets &ast;/\ndialog = gtk_dialog_new_with_buttons (\"Message\",\nmain_application_window,\nGTK_DIALOG_DESTROY_WITH_PARENT,\nGTK_STOCK_OK,\nGTK_RESPONSE_NONE,\nNULL);\ncontent_area = gtk_dialog_get_content_area (GTK_DIALOG (dialog));\nlabel = gtk_label_new (message);\n\n/&ast; Ensure that the dialog box is destroyed when the user responds &ast;/\ng_signal_connect_swapped (dialog,\n\"response\",\nG_CALLBACK (gtk_widget_destroy),\ndialog);\n\n/&ast; Add the label, and show everything we've added to the dialog &ast;/\n\ngtk_container_add (GTK_CONTAINER (content_area), label);\ngtk_widget_show_all (dialog);\n}\n</programlisting>\n</example>\n\n<refsect2 id=\"GtkDialog-BUILDER-UI\"><title>GtkDialog as GtkBuildable</title>\n<para>\nThe GtkDialog implementation of the #GtkBuildable interface exposes the\n@vbox and @action_area as internal children with the names \"vbox\" and\n\"action_area\".\n</para>\n<para>\nGtkDialog supports a custom &lt;action-widgets&gt; element, which\ncan contain multiple &lt;action-widget&gt; elements. The \"response\"\nattribute specifies a numeric response, and the content of the element\nis the id of widget (which should be a child of the dialogs @action_area).\n</para>\n<example>\n<title>A <structname>GtkDialog</structname> UI definition fragment.</title>\n<programlisting><![CDATA[\n<object class=\"GtkDialog\" id=\"dialog1\">\n<child internal-child=\"vbox\">\"\n<object class=\"GtkVBox\" id=\"vbox\">\n<child internal-child=\"action_area\">\n<object class=\"GtkHButtonBox\" id=\"button_box\">\n<child>\n<object class=\"GtkButton\" id=\"button_cancel\"/>\n</child>\n<child>\n<object class=\"GtkButton\" id=\"button_ok\"/>\n</child>\n</object>\n</child>\n</object>\n</child>\n<action-widgets>\n<action-widget response=\"3\">button_ok</action-widget>\n<action-widget response=\"-5\">button_cancel</action-widget>\n</action-widgets>\n</object>\n]]></programlisting>\n</example>\n</refsect2>"
+}

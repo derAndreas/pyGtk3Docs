@@ -1,0 +1,29 @@
+{
+    "leaf": true, 
+    "name": "PrintOperationAction", 
+    "text": "PrintOperationAction", 
+    "version": null, 
+    "members": {
+        "properties": [
+            {
+                "name": "print_dialog", 
+                "value": "0"
+            }, 
+            {
+                "name": "print", 
+                "value": "1"
+            }, 
+            {
+                "name": "preview", 
+                "value": "2"
+            }, 
+            {
+                "name": "export", 
+                "value": "3"
+            }
+        ]
+    }, 
+    "fullname": "Enumeration Gtk.PrintOperationAction", 
+    "id": "Docs-PrintOperationAction", 
+    "description": ""
+}

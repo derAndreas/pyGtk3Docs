@@ -1,0 +1,119 @@
+{
+    "isAbstract": false, 
+    "leaf": true, 
+    "name": "MountOperation", 
+    "text": "MountOperation", 
+    "interfaces": [], 
+    "parents": [
+        "MountOperation", 
+        "Gio.MountOperation"
+    ], 
+    "members": {
+        "signals": [], 
+        "methods": [
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a new #GtkMountOperation", 
+                    "name": "Gio.MountOperation"
+                }, 
+                "version": "2.14", 
+                "name": "Gtk.MountOperation(Gtk.Window parent)", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Window", 
+                        "name": "parent"
+                    }
+                ]
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.Window", 
+                    "description": "the transient parent for windows shown by @op"
+                }, 
+                "version": "2.14", 
+                "name": "get_parent", 
+                "parameters": null, 
+                "description": "Gets the transient parent used by the #GtkMountOperation"
+            }, 
+            {
+                "returns": {
+                    "type": "Gdk.Screen", 
+                    "description": "the screen on which windows of @op are shown"
+                }, 
+                "version": "2.14", 
+                "name": "get_screen", 
+                "parameters": null, 
+                "description": "Gets the screen on which windows of the #GtkMountOperation\nwill be shown."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE if @op is currently displaying a window"
+                }, 
+                "version": "2.14", 
+                "name": "is_showing", 
+                "parameters": null, 
+                "description": "Returns whether the #GtkMountOperation is currently displaying\na window."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.14", 
+                "name": "set_parent", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Window", 
+                        "name": "parent", 
+                        "description": "transient parent of the window, or %NULL"
+                    }
+                ], 
+                "description": "Sets the transient parent for windows shown by the\n#GtkMountOperation."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.14", 
+                "name": "set_screen", 
+                "parameters": [
+                    {
+                        "type": "Gdk.Screen", 
+                        "name": "screen", 
+                        "description": "a #GdkScreen"
+                    }
+                ], 
+                "description": "Sets the screen to show windows of the #GtkMountOperation on."
+            }
+        ], 
+        "properties": [
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "is-showing", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Gtk.Window", 
+                "readable": false, 
+                "name": "parent", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Gdk.Screen", 
+                "readable": false, 
+                "name": "screen", 
+                "description": ""
+            }
+        ]
+    }, 
+    "fullname": "Class Gtk.MountOperation", 
+    "id": "Docs-MountOperation", 
+    "description": "This should not be accessed directly. Use the accessor functions below."
+}

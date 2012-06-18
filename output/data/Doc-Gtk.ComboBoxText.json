@@ -1,0 +1,214 @@
+{
+    "isAbstract": false, 
+    "leaf": true, 
+    "name": "ComboBoxText", 
+    "text": "ComboBoxText", 
+    "interfaces": [
+        [
+            "Atk.ImplementorIface"
+        ], 
+        [
+            "Buildable"
+        ], 
+        [
+            "CellEditable"
+        ], 
+        [
+            "CellLayout"
+        ]
+    ], 
+    "parents": [
+        "ComboBoxText", 
+        "ComboBox", 
+        "Bin", 
+        "Container", 
+        "Widget", 
+        "GObject.InitiallyUnowned"
+    ], 
+    "members": {
+        "signals": [], 
+        "methods": [
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "A new #GtkComboBoxText", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": "2.24", 
+                "name": "Gtk.ComboBoxText()", 
+                "parameters": null
+            }, 
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a new #GtkComboBoxText", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": "2.24", 
+                "name": "Gtk.ComboBoxText()", 
+                "parameters": null
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.24", 
+                "name": "append", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "id", 
+                        "description": "a string ID for this value, or %NULL"
+                    }, 
+                    {
+                        "type": "String", 
+                        "name": "text", 
+                        "description": "A string"
+                    }
+                ], 
+                "description": "Appends @text to the list of strings stored in @combo_box.\nIf @id is non-%NULL then it is used as the ID of the row.\n\nThis is the same as calling gtk_combo_box_text_insert() with a\nposition of -1."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.24", 
+                "name": "append_text", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "text", 
+                        "description": "A string"
+                    }
+                ], 
+                "description": "Appends @text to the list of strings stored in @combo_box.\n\nThis is the same as calling gtk_combo_box_text_insert_text() with a\nposition of -1."
+            }, 
+            {
+                "returns": {
+                    "type": "String", 
+                    "description": "a newly allocated string containing the currently"
+                }, 
+                "version": "2.24", 
+                "name": "get_active_text", 
+                "parameters": null, 
+                "description": "Returns the currently active string in @combo_box, or %NULL\nif none is selected. If @combo_box contains an entry, this\nfunction will return its contents (which will not necessarily\nbe an item from the list).\n\nactive text. Must be freed with g_free()."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "3.0", 
+                "name": "insert", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "position", 
+                        "description": "An index to insert @text"
+                    }, 
+                    {
+                        "type": "String", 
+                        "name": "id", 
+                        "description": "a string ID for this value, or %NULL"
+                    }, 
+                    {
+                        "type": "String", 
+                        "name": "text", 
+                        "description": "A string to display"
+                    }
+                ], 
+                "description": "Inserts @text at @position in the list of strings stored in @combo_box.\nIf @id is non-%NULL then it is used as the ID of the row.  See\n#GtkComboBox:id-column.\n\nIf @position is negative then @text is appended."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.24", 
+                "name": "insert_text", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "position", 
+                        "description": "An index to insert @text"
+                    }, 
+                    {
+                        "type": "String", 
+                        "name": "text", 
+                        "description": "A string"
+                    }
+                ], 
+                "description": "Inserts @text at @position in the list of strings stored in @combo_box.\n\nIf @position is negative then @text is appended.\n\nThis is the same as calling gtk_combo_box_text_insert() with a %NULL\nID string."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.24", 
+                "name": "prepend", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "id", 
+                        "description": "a string ID for this value, or %NULL"
+                    }, 
+                    {
+                        "type": "String", 
+                        "name": "text", 
+                        "description": "a string"
+                    }
+                ], 
+                "description": "Prepends @text to the list of strings stored in @combo_box.\nIf @id is non-%NULL then it is used as the ID of the row.\n\nThis is the same as calling gtk_combo_box_text_insert() with a\nposition of 0."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.24", 
+                "name": "prepend_text", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "text", 
+                        "description": "A string"
+                    }
+                ], 
+                "description": "Prepends @text to the list of strings stored in @combo_box.\n\nThis is the same as calling gtk_combo_box_text_insert_text() with a\nposition of 0."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.24", 
+                "name": "remove", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "position", 
+                        "description": "Index of the item to remove"
+                    }
+                ], 
+                "description": "Removes the string at @position from @combo_box."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "3.0", 
+                "name": "remove_all", 
+                "parameters": null, 
+                "description": "Removes all the text entries from the combo box."
+            }
+        ], 
+        "properties": []
+    }, 
+    "fullname": "Class Gtk.ComboBoxText", 
+    "id": "Docs-ComboBoxText", 
+    "description": "A GtkComboBoxText is a simple variant of #GtkComboBox that hides\nthe model-view complexity for simple text-only use cases.\n\nTo create a GtkComboBoxText, use gtk_combo_box_text_new() or\ngtk_combo_box_text_new_with_entry().\n\nYou can add items to a GtkComboBoxText with\ngtk_combo_box_text_append_text(), gtk_combo_box_text_insert_text()\nor gtk_combo_box_text_prepend_text() and remove options with\ngtk_combo_box_text_remove().\n\nIf the GtkComboBoxText contains an entry (via the 'has-entry' property),\nits contents can be retrieved using gtk_combo_box_text_get_active_text().\nThe entry itself can be accessed by calling gtk_bin_get_child() on the\ncombo box.\n\nYou should not call gtk_combo_box_set_model() or attempt to pack more cells\ninto this combo box via its GtkCellLayout interface.\n\n<refsect2 id=\"GtkComboBoxText-BUILDER-UI\">\n<title>GtkComboBoxText as GtkBuildable</title>\n<para>\nThe GtkComboBoxText implementation of the GtkBuildable interface\nsupports adding items directly using the &lt;items&gt; element\nand specifying &lt;item&gt; elements for each item. Each &lt;item&gt;\nelement supports the regular translation attributes \"translatable\",\n\"context\" and \"comments\".\n\n<example>\n<title>A UI definition fragment specifying GtkComboBoxText items</title>\n<programlisting><![CDATA[\n<object class=\"GtkComboBoxText\">\n<items>\n<item translatable=\"yes\">Factory</item>\n<item translatable=\"yes\">Home</item>\n<item translatable=\"yes\">Subway</item>\n</items>\n</object>\n]]></programlisting>\n</example>\n</para>\n</refsect2>"
+}

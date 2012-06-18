@@ -1,0 +1,181 @@
+{
+    "isAbstract": false, 
+    "leaf": true, 
+    "name": "HSV", 
+    "text": "HSV", 
+    "interfaces": [
+        [
+            "Atk.ImplementorIface"
+        ], 
+        [
+            "Buildable"
+        ]
+    ], 
+    "parents": [
+        "HSV", 
+        "Widget", 
+        "GObject.InitiallyUnowned"
+    ], 
+    "members": {
+        "signals": [
+            {
+                "version": "", 
+                "when": "first", 
+                "name": "changed", 
+                "description": ""
+            }, 
+            {
+                "version": "", 
+                "when": "last", 
+                "name": "move", 
+                "description": ""
+            }
+        ], 
+        "methods": [
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "A newly-created HSV color selector.", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": "2.14", 
+                "name": "Gtk.HSV()", 
+                "parameters": null
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.14", 
+                "name": "get_color", 
+                "parameters": [
+                    {
+                        "type": "Float", 
+                        "name": "h", 
+                        "description": "Return value for the hue"
+                    }, 
+                    {
+                        "type": "Float", 
+                        "name": "s", 
+                        "description": "Return value for the saturation"
+                    }, 
+                    {
+                        "type": "Float", 
+                        "name": "v", 
+                        "description": "Return value for the value"
+                    }
+                ], 
+                "description": "Queries the current color in an HSV color selector.\nReturned values will be in the [0.0, 1.0] range."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.14", 
+                "name": "get_metrics", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "size", 
+                        "description": "Return value for the diameter of the hue ring"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "ring_width", 
+                        "description": "Return value for the width of the hue ring"
+                    }
+                ], 
+                "description": "Queries the size and ring width of an HSV color selector."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE if clients can ignore changes to the color value,"
+                }, 
+                "version": "2.14", 
+                "name": "is_adjusting", 
+                "parameters": null, 
+                "description": "An HSV color selector can be said to be adjusting if multiple rapid\nchanges are being made to its value, for example, when the user is \nadjusting the value with the mouse. This function queries whether \nthe HSV color selector is being adjusted or not.\n\nsince they may be transitory, or %FALSE if they should consider\nthe color value status to be final."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.14", 
+                "name": "set_color", 
+                "parameters": [
+                    {
+                        "type": "Float", 
+                        "name": "h", 
+                        "description": "Hue"
+                    }, 
+                    {
+                        "type": "Float", 
+                        "name": "s", 
+                        "description": "Saturation"
+                    }, 
+                    {
+                        "type": "Float", 
+                        "name": "v", 
+                        "description": "Value"
+                    }
+                ], 
+                "description": "Sets the current color in an HSV color selector.\nColor component values must be in the [0.0, 1.0] range."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.14", 
+                "name": "set_metrics", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "size", 
+                        "description": "Diameter for the hue ring"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "ring_width", 
+                        "description": "Width of the hue ring"
+                    }
+                ], 
+                "description": "Sets the size and ring width of an HSV color selector."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "changed", 
+                "parameters": null, 
+                "description": ""
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "move", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.DirectionType", 
+                        "name": "type", 
+                        "description": ""
+                    }
+                ], 
+                "description": ""
+            }
+        ], 
+        "properties": []
+    }, 
+    "fullname": "Class Gtk.HSV", 
+    "id": "Docs-HSV", 
+    "description": "#GtkHSV is the 'color wheel' part of a complete color selector widget.\nIt allows to select a color by determining its HSV components in an\nintuitive way. Moving the selection around the outer ring changes the hue,\nand moving the selection point inside the inner triangle changes value and\nsaturation.\n\n#GtkHSV has been deprecated together with #GtkColorSelection, where\nit was used."
+}

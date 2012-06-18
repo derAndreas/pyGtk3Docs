@@ -1,0 +1,37 @@
+{
+    "leaf": true, 
+    "name": "ScrollStep", 
+    "text": "ScrollStep", 
+    "version": null, 
+    "members": {
+        "properties": [
+            {
+                "name": "steps", 
+                "value": "0"
+            }, 
+            {
+                "name": "pages", 
+                "value": "1"
+            }, 
+            {
+                "name": "ends", 
+                "value": "2"
+            }, 
+            {
+                "name": "horizontal_steps", 
+                "value": "3"
+            }, 
+            {
+                "name": "horizontal_pages", 
+                "value": "4"
+            }, 
+            {
+                "name": "horizontal_ends", 
+                "value": "5"
+            }
+        ]
+    }, 
+    "fullname": "Enumeration Gtk.ScrollStep", 
+    "id": "Docs-ScrollStep", 
+    "description": ""
+}

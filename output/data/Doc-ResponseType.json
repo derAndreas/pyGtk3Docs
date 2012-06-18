@@ -1,0 +1,57 @@
+{
+    "leaf": true, 
+    "name": "ResponseType", 
+    "text": "ResponseType", 
+    "version": null, 
+    "members": {
+        "properties": [
+            {
+                "name": "none", 
+                "value": "-1"
+            }, 
+            {
+                "name": "reject", 
+                "value": "-2"
+            }, 
+            {
+                "name": "accept", 
+                "value": "-3"
+            }, 
+            {
+                "name": "delete_event", 
+                "value": "-4"
+            }, 
+            {
+                "name": "ok", 
+                "value": "-5"
+            }, 
+            {
+                "name": "cancel", 
+                "value": "-6"
+            }, 
+            {
+                "name": "close", 
+                "value": "-7"
+            }, 
+            {
+                "name": "yes", 
+                "value": "-8"
+            }, 
+            {
+                "name": "no", 
+                "value": "-9"
+            }, 
+            {
+                "name": "apply", 
+                "value": "-10"
+            }, 
+            {
+                "name": "help", 
+                "value": "-11"
+            }
+        ]
+    }, 
+    "fullname": "Enumeration Gtk.ResponseType", 
+    "id": "Docs-ResponseType", 
+    "description": ""
+}

@@ -1,0 +1,536 @@
+{
+    "isAbstract": false, 
+    "leaf": true, 
+    "name": "Button", 
+    "text": "Button", 
+    "interfaces": [
+        [
+            "Atk.ImplementorIface"
+        ], 
+        [
+            "Actionable"
+        ], 
+        [
+            "Activatable"
+        ], 
+        [
+            "Buildable"
+        ]
+    ], 
+    "parents": [
+        "Button", 
+        "Bin", 
+        "Container", 
+        "Widget", 
+        "GObject.InitiallyUnowned"
+    ], 
+    "members": {
+        "signals": [
+            {
+                "version": "", 
+                "when": "first", 
+                "name": "activate", 
+                "description": "The ::activate signal on GtkButton is an action signal and\nemitting it causes the button to animate press then release. \nApplications should never connect to this signal, but use the\n#GtkButton::clicked signal."
+            }, 
+            {
+                "version": "", 
+                "when": "first", 
+                "name": "clicked", 
+                "description": "Emitted when the button has been activated (pressed and released)."
+            }, 
+            {
+                "version": "", 
+                "when": "first", 
+                "name": "enter", 
+                "description": "Emitted when the pointer enters the button."
+            }, 
+            {
+                "version": "", 
+                "when": "first", 
+                "name": "leave", 
+                "description": "Emitted when the pointer leaves the button."
+            }, 
+            {
+                "version": "", 
+                "when": "first", 
+                "name": "pressed", 
+                "description": "Emitted when the button is pressed."
+            }, 
+            {
+                "version": "", 
+                "when": "first", 
+                "name": "released", 
+                "description": "Emitted when the button is released."
+            }
+        ], 
+        "methods": [
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "The newly created #GtkButton widget.", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": null, 
+                "name": "Gtk.Button()", 
+                "parameters": null
+            }, 
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a new #GtkButton", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": null, 
+                "name": "Gtk.Button(String stock_id)", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "stock_id"
+                    }
+                ]
+            }, 
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "The newly created #GtkButton widget.", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": null, 
+                "name": "Gtk.Button(String label)", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "label"
+                    }
+                ]
+            }, 
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a new #GtkButton", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": null, 
+                "name": "Gtk.Button(String label)", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "label"
+                    }
+                ]
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "clicked", 
+                "parameters": null, 
+                "description": "Emits a #GtkButton::clicked signal to the given #GtkButton."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "enter", 
+                "parameters": null, 
+                "description": "Emits a #GtkButton::enter signal to the given #GtkButton."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.4", 
+                "name": "get_alignment", 
+                "parameters": [
+                    {
+                        "type": "Float", 
+                        "name": "xalign", 
+                        "description": "return location for horizontal alignment"
+                    }, 
+                    {
+                        "type": "Float", 
+                        "name": "yalign", 
+                        "description": "return location for vertical alignment"
+                    }
+                ], 
+                "description": "Gets the alignment of the child in the button."
+            }, 
+            {
+                "returns": {
+                    "type": "Gdk.Window", 
+                    "description": "@button's event window."
+                }, 
+                "version": "2.22", 
+                "name": "get_event_window", 
+                "parameters": null, 
+                "description": "Returns the button's event window if it is realized, %NULL otherwise.\nThis function should be rarely needed."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE if the button grabs focus when it is clicked with"
+                }, 
+                "version": "2.4", 
+                "name": "get_focus_on_click", 
+                "parameters": null, 
+                "description": "Returns whether the button grabs focus when it is clicked with the mouse.\nSee gtk_button_set_focus_on_click().\n\nthe mouse."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.Widget", 
+                    "description": "a #GtkWidget or %NULL in case there is no image"
+                }, 
+                "version": "2.6", 
+                "name": "get_image", 
+                "parameters": null, 
+                "description": "Gets the widget that is currenty set as the image of @button.\nThis may have been explicitly set by gtk_button_set_image()\nor constructed by gtk_button_new_from_stock()."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.PositionType", 
+                    "description": "the position"
+                }, 
+                "version": "2.10", 
+                "name": "get_image_position", 
+                "parameters": null, 
+                "description": "Gets the position of the image relative to the text \ninside the button."
+            }, 
+            {
+                "returns": {
+                    "type": "String", 
+                    "description": "The text of the label widget. This string is owned"
+                }, 
+                "version": "", 
+                "name": "get_label", 
+                "parameters": null, 
+                "description": "Fetches the text from the label of the button, as set by\ngtk_button_set_label(). If the label text has not \nbeen set the return value will be %NULL. This will be the \ncase if you create an empty button with gtk_button_new() to \nuse as a container.\n\nby the widget and must not be modified or freed."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.ReliefStyle", 
+                    "description": "The current #GtkReliefStyle"
+                }, 
+                "version": "", 
+                "name": "get_relief", 
+                "parameters": null, 
+                "description": "Returns the current relief style of the given #GtkButton."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE if the button label is used to"
+                }, 
+                "version": "", 
+                "name": "get_use_stock", 
+                "parameters": null, 
+                "description": "Returns whether the button label is a stock item.\n\nselect a stock item instead of being\nused directly as the label text."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE if an embedded underline in the button label"
+                }, 
+                "version": "", 
+                "name": "get_use_underline", 
+                "parameters": null, 
+                "description": "Returns whether an embedded underline in the button label indicates a\nmnemonic. See gtk_button_set_use_underline ().\n\nindicates the mnemonic accelerator keys."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "leave", 
+                "parameters": null, 
+                "description": "Emits a #GtkButton::leave signal to the given #GtkButton."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "pressed", 
+                "parameters": null, 
+                "description": "Emits a #GtkButton::pressed signal to the given #GtkButton."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "released", 
+                "parameters": null, 
+                "description": "Emits a #GtkButton::released signal to the given #GtkButton."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.4", 
+                "name": "set_alignment", 
+                "parameters": [
+                    {
+                        "type": "Float", 
+                        "name": "xalign", 
+                        "description": "the horizontal position of the child, 0.0 is left aligned, 1.0 is right aligned"
+                    }, 
+                    {
+                        "type": "Float", 
+                        "name": "yalign", 
+                        "description": "the vertical position of the child, 0.0 is top aligned, 1.0 is bottom aligned"
+                    }
+                ], 
+                "description": "Sets the alignment of the child. This property has no effect unless \nthe child is a #GtkMisc or a #GtkAlignment."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.4", 
+                "name": "set_focus_on_click", 
+                "parameters": [
+                    {
+                        "type": "Boolean", 
+                        "name": "focus_on_click", 
+                        "description": "whether the button grabs focus when clicked with the mouse"
+                    }
+                ], 
+                "description": "Sets whether the button will grab focus when it is clicked with the mouse.\nMaking mouse clicks not grab focus is useful in places like toolbars where\nyou don't want the keyboard focus removed from the main area of the\napplication."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.6", 
+                "name": "set_image", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "image", 
+                        "description": "a widget to set as the image for the button"
+                    }
+                ], 
+                "description": "Set the image of @button to the given widget. Note that\nit depends on the #GtkSettings:gtk-button-images setting whether the\nimage will be displayed or not, you don't have to call\ngtk_widget_show() on @image yourself."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.10", 
+                "name": "set_image_position", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.PositionType", 
+                        "name": "position", 
+                        "description": "the position"
+                    }
+                ], 
+                "description": "Sets the position of the image relative to the text \ninside the button."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_label", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "label", 
+                        "description": "a string"
+                    }
+                ], 
+                "description": "Sets the text of the label of the button to @str. This text is\nalso used to select the stock item if gtk_button_set_use_stock()\nis used.\n\nThis will also clear any previously set labels."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_relief", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.ReliefStyle", 
+                        "name": "newstyle", 
+                        "description": "The GtkReliefStyle as described above."
+                    }
+                ], 
+                "description": "Sets the relief style of the edges of the given #GtkButton widget.\nThree styles exist, GTK_RELIEF_NORMAL, GTK_RELIEF_HALF, GTK_RELIEF_NONE.\nThe default style is, as one can guess, GTK_RELIEF_NORMAL.\n\n<!-- FIXME: put pictures of each style -->"
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_use_stock", 
+                "parameters": [
+                    {
+                        "type": "Boolean", 
+                        "name": "use_stock", 
+                        "description": "%TRUE if the button should use a stock item"
+                    }
+                ], 
+                "description": "If %TRUE, the label set on the button is used as a\nstock id to select the stock item for the button."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_use_underline", 
+                "parameters": [
+                    {
+                        "type": "Boolean", 
+                        "name": "use_underline", 
+                        "description": "%TRUE if underlines in the text indicate mnemonics"
+                    }
+                ], 
+                "description": "If true, an underline in the text of the button label indicates\nthe next character should be used for the mnemonic accelerator key."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "activate", 
+                "parameters": null, 
+                "description": ""
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "clicked", 
+                "parameters": null, 
+                "description": "Emits a #GtkButton::clicked signal to the given #GtkButton."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "enter", 
+                "parameters": null, 
+                "description": "Emits a #GtkButton::enter signal to the given #GtkButton."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "leave", 
+                "parameters": null, 
+                "description": "Emits a #GtkButton::leave signal to the given #GtkButton."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "pressed", 
+                "parameters": null, 
+                "description": "Emits a #GtkButton::pressed signal to the given #GtkButton."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "released", 
+                "parameters": null, 
+                "description": "Emits a #GtkButton::released signal to the given #GtkButton."
+            }
+        ], 
+        "properties": [
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "focus-on-click", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Gtk.Widget", 
+                "readable": false, 
+                "name": "image", 
+                "description": "The child widget to appear next to the button text."
+            }, 
+            {
+                "writable": false, 
+                "type": "Gtk.PositionType", 
+                "readable": false, 
+                "name": "image-position", 
+                "description": "The position of the image relative to the text inside the button."
+            }, 
+            {
+                "writable": false, 
+                "type": "String", 
+                "readable": false, 
+                "name": "label", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Gtk.ReliefStyle", 
+                "readable": false, 
+                "name": "relief", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "use-stock", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "use-underline", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Float", 
+                "readable": false, 
+                "name": "xalign", 
+                "description": "If the child of the button is a #GtkMisc or #GtkAlignment, this property \ncan be used to control its horizontal alignment. 0.0 is left aligned, \n1.0 is right aligned."
+            }, 
+            {
+                "writable": false, 
+                "type": "Float", 
+                "readable": false, 
+                "name": "yalign", 
+                "description": "If the child of the button is a #GtkMisc or #GtkAlignment, this property \ncan be used to control its vertical alignment. 0.0 is top aligned, \n1.0 is bottom aligned."
+            }
+        ]
+    }, 
+    "fullname": "Class Gtk.Button", 
+    "id": "Docs-Button", 
+    "description": "The #GtkButton widget is generally used to trigger a callback function that is\ncalled when the button is pressed.  The various signals and how to use them\nare outlined below.\n\nThe #GtkButton widget can hold any valid child widget.  That is, it can hold\nalmost any other standard #GtkWidget.  The most commonly used child is the\n#GtkLabel."
+}

@@ -1,0 +1,45 @@
+{
+    "leaf": true, 
+    "name": "NumberUpLayout", 
+    "text": "NumberUpLayout", 
+    "version": null, 
+    "members": {
+        "properties": [
+            {
+                "name": "lrtb", 
+                "value": "0"
+            }, 
+            {
+                "name": "lrbt", 
+                "value": "1"
+            }, 
+            {
+                "name": "rltb", 
+                "value": "2"
+            }, 
+            {
+                "name": "rlbt", 
+                "value": "3"
+            }, 
+            {
+                "name": "tblr", 
+                "value": "4"
+            }, 
+            {
+                "name": "tbrl", 
+                "value": "5"
+            }, 
+            {
+                "name": "btlr", 
+                "value": "6"
+            }, 
+            {
+                "name": "btrl", 
+                "value": "7"
+            }
+        ]
+    }, 
+    "fullname": "Enumeration Gtk.NumberUpLayout", 
+    "id": "Docs-NumberUpLayout", 
+    "description": ""
+}

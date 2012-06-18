@@ -1,0 +1,250 @@
+{
+    "isAbstract": false, 
+    "leaf": true, 
+    "name": "ProgressBar", 
+    "text": "ProgressBar", 
+    "interfaces": [
+        [
+            "Atk.ImplementorIface"
+        ], 
+        [
+            "Buildable"
+        ], 
+        [
+            "Orientable"
+        ]
+    ], 
+    "parents": [
+        "ProgressBar", 
+        "Widget", 
+        "GObject.InitiallyUnowned"
+    ], 
+    "members": {
+        "signals": [], 
+        "methods": [
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a #GtkProgressBar.", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": null, 
+                "name": "Gtk.ProgressBar()", 
+                "parameters": null
+            }, 
+            {
+                "returns": {
+                    "type": "Pango.EllipsizeMode", 
+                    "description": "#PangoEllipsizeMode"
+                }, 
+                "version": "2.6", 
+                "name": "get_ellipsize", 
+                "parameters": null, 
+                "description": "Returns the ellipsizing position of the progress bar.\nSee gtk_progress_bar_set_ellipsize()."
+            }, 
+            {
+                "returns": {
+                    "type": "Float", 
+                    "description": "a fraction from 0.0 to 1.0"
+                }, 
+                "version": "", 
+                "name": "get_fraction", 
+                "parameters": null, 
+                "description": "Returns the current fraction of the task that's been completed."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE if the progress bar is inverted"
+                }, 
+                "version": "", 
+                "name": "get_inverted", 
+                "parameters": null, 
+                "description": "Gets the value set by gtk_progress_bar_set_inverted()."
+            }, 
+            {
+                "returns": {
+                    "type": "Float", 
+                    "description": "a fraction from 0.0 to 1.0"
+                }, 
+                "version": "", 
+                "name": "get_pulse_step", 
+                "parameters": null, 
+                "description": "Retrieves the pulse step set with gtk_progress_bar_set_pulse_step()."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE if text is shown in the progress bar"
+                }, 
+                "version": "3.0", 
+                "name": "get_show_text", 
+                "parameters": null, 
+                "description": "Gets the value of the #GtkProgressBar:show-text property.\nSee gtk_progress_bar_set_show_text()."
+            }, 
+            {
+                "returns": {
+                    "type": "String", 
+                    "description": "text, or %NULL; this string is owned by the widget"
+                }, 
+                "version": "", 
+                "name": "get_text", 
+                "parameters": null, 
+                "description": "Retrieves the text displayed superimposed on the progress bar,\nif any, otherwise %NULL. The return value is a reference\nto the text, not a copy of it, so will become invalid\nif you change the text in the progress bar.\n\nand should not be modified or freed."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "pulse", 
+                "parameters": null, 
+                "description": "Indicates that some progress has been made, but you don't know how much.\nCauses the progress bar to enter \"activity mode,\" where a block\nbounces back and forth. Each call to gtk_progress_bar_pulse()\ncauses the block to move by a little bit (the amount of movement\nper pulse is determined by gtk_progress_bar_set_pulse_step())."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.6", 
+                "name": "set_ellipsize", 
+                "parameters": [
+                    {
+                        "type": "Pango.EllipsizeMode", 
+                        "name": "mode", 
+                        "description": "a #PangoEllipsizeMode"
+                    }
+                ], 
+                "description": "Sets the mode used to ellipsize (add an ellipsis: \"...\") the text\nif there is not enough space to render the entire string."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_fraction", 
+                "parameters": [
+                    {
+                        "type": "Float", 
+                        "name": "fraction", 
+                        "description": "fraction of the task that's been completed"
+                    }
+                ], 
+                "description": "Causes the progress bar to \"fill in\" the given fraction\nof the bar. The fraction should be between 0.0 and 1.0,\ninclusive."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_inverted", 
+                "parameters": [
+                    {
+                        "type": "Boolean", 
+                        "name": "inverted", 
+                        "description": "%TRUE to invert the progress bar"
+                    }
+                ], 
+                "description": "Progress bars normally grow from top to bottom or left to right.\nInverted progress bars grow in the opposite direction."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_pulse_step", 
+                "parameters": [
+                    {
+                        "type": "Float", 
+                        "name": "fraction", 
+                        "description": "fraction between 0.0 and 1.0"
+                    }
+                ], 
+                "description": "Sets the fraction of total progress bar length to move the\nbouncing block for each call to gtk_progress_bar_pulse()."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "3.0", 
+                "name": "set_show_text", 
+                "parameters": [
+                    {
+                        "type": "Boolean", 
+                        "name": "show_text", 
+                        "description": "whether to show superimposed text"
+                    }
+                ], 
+                "description": "Sets whether the progress bar will show text superimposed\nover the bar. The shown text is either the value of\nthe #GtkProgressBar:text property or, if that is %NULL,\nthe #GtkProgressBar:fraction value, as a percentage.\n\nTo make a progress bar that is styled and sized suitably for containing\ntext (even if the actual text is blank), set #GtkProgressBar:show-text to\n%TRUE and #GtkProgressBar:text to the empty string (not %NULL)."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_text", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "text", 
+                        "description": "a UTF-8 string, or %NULL"
+                    }
+                ], 
+                "description": "Causes the given @text to appear superimposed on the progress bar.\n\nIf @text is %NULL and #GtkProgressBar:show-text is %TRUE, the current\nvalue of #GtkProgressBar:fraction will be displayed as a percentage.\n\nIf @text is non-%NULL and #GtkProgressBar:show-text is %TRUE, the text will\nbe displayed. In this case, it will not display the progress percentage.\nIf @text is the empty string, the progress bar will still be styled and sized\nsuitably for containing text, as long as #GtkProgressBar:show-text is %TRUE."
+            }
+        ], 
+        "properties": [
+            {
+                "writable": false, 
+                "type": "Pango.EllipsizeMode", 
+                "readable": false, 
+                "name": "ellipsize", 
+                "description": "The preferred place to ellipsize the string, if the progress bar does\nnot have enough room to display the entire string, specified as a\n#PangoEllisizeMode.\n\nNote that setting this property to a value other than\n%PANGO_ELLIPSIZE_NONE has the side-effect that the progress bar requests\nonly enough space to display the ellipsis (\"...\"). Another means to set a\nprogress bar's width is gtk_widget_set_size_request()."
+            }, 
+            {
+                "writable": false, 
+                "type": "Float", 
+                "readable": false, 
+                "name": "fraction", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "inverted", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Float", 
+                "readable": false, 
+                "name": "pulse-step", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "show-text", 
+                "description": "Sets whether the progress bar will show text superimposed\nover the bar. The shown text is either the value of\nthe #GtkProgressBar:text property or, if that is %NULL,\nthe #GtkProgressBar:fraction value, as a percentage.\n\nTo make a progress bar that is styled and sized suitably for containing\ntext (even if the actual text is blank), set #GtkProgressBar:show-text to\n%TRUE and #GtkProgressBar:text to the empty string (not %NULL)."
+            }, 
+            {
+                "writable": false, 
+                "type": "String", 
+                "readable": false, 
+                "name": "text", 
+                "description": ""
+            }
+        ]
+    }, 
+    "fullname": "Class Gtk.ProgressBar", 
+    "id": "Docs-ProgressBar", 
+    "description": "The #GtkProgressBar is typically used to display the progress of a long\nrunning operation.  It provides a visual clue that processing\nis underway.  The #GtkProgressBar can be used in two different\nmodes: percentage mode and activity mode.\n\nWhen an application can determine how much work needs to take place\n(e.g. read a fixed number of bytes from a file) and can monitor its\nprogress, it can use the #GtkProgressBar in percentage mode and the user\nsees a growing bar indicating the percentage of the work that has\nbeen completed.  In this mode, the application is required to call\ngtk_progress_bar_set_fraction() periodically to update the progress bar.\n\nWhen an application has no accurate way of knowing the amount of work\nto do, it can use the #GtkProgressBar in activity mode, which shows\nactivity by a block moving back and forth within the progress area. In\nthis mode, the application is required to call gtk_progress_bar_pulse()\nperiodically to update the progress bar.\n\nThere is quite a bit of flexibility provided to control the appearance\nof the #GtkProgressBar.  Functions are provided to control the\norientation of the bar, optional text can be displayed along with\nthe bar, and the step size used in activity mode can be set."
+}

@@ -1,0 +1,78 @@
+{
+    "isAbstract": false, 
+    "leaf": true, 
+    "name": "SeparatorToolItem", 
+    "text": "SeparatorToolItem", 
+    "interfaces": [
+        [
+            "Atk.ImplementorIface"
+        ], 
+        [
+            "Activatable"
+        ], 
+        [
+            "Buildable"
+        ]
+    ], 
+    "parents": [
+        "SeparatorToolItem", 
+        "ToolItem", 
+        "Bin", 
+        "Container", 
+        "Widget", 
+        "GObject.InitiallyUnowned"
+    ], 
+    "members": {
+        "signals": [], 
+        "methods": [
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "the new #GtkSeparatorToolItem", 
+                    "name": "ref:Gtk.ToolItem"
+                }, 
+                "version": "2.4", 
+                "name": "Gtk.SeparatorToolItem()", 
+                "parameters": null
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE if @item is drawn as a line, or just blank."
+                }, 
+                "version": "2.4", 
+                "name": "get_draw", 
+                "parameters": null, 
+                "description": "Returns whether @item is drawn as a line, or just blank. \nSee gtk_separator_tool_item_set_draw()."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.4", 
+                "name": "set_draw", 
+                "parameters": [
+                    {
+                        "type": "Boolean", 
+                        "name": "draw", 
+                        "description": "whether @item is drawn as a vertical line"
+                    }
+                ], 
+                "description": "Whether @item is drawn as a vertical line, or just blank.\nSetting this to %FALSE along with gtk_tool_item_set_expand() is useful\nto create an item that forces following items to the end of the toolbar."
+            }
+        ], 
+        "properties": [
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "draw", 
+                "description": ""
+            }
+        ]
+    }, 
+    "fullname": "Class Gtk.SeparatorToolItem", 
+    "id": "Docs-SeparatorToolItem", 
+    "description": "A #GtkSeparatorItem is a #GtkToolItem that separates groups of other\n#GtkToolItems. Depending on the theme, a #GtkSeparatorToolItem will\noften look like a vertical line on horizontally docked toolbars.\n\nIf the #GtkToolbar child property \"expand\" is %TRUE and the property\n#GtkSeparatorToolItem:draw is %FALSE, a #GtkSeparatorToolItem will act as\na \"spring\" that forces other items to the ends of the toolbar.\n\nUse gtk_separator_tool_item_new() to create a new #GtkSeparatorToolItem."
+}

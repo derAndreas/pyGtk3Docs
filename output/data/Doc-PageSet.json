@@ -1,0 +1,25 @@
+{
+    "leaf": true, 
+    "name": "PageSet", 
+    "text": "PageSet", 
+    "version": null, 
+    "members": {
+        "properties": [
+            {
+                "name": "all", 
+                "value": "0"
+            }, 
+            {
+                "name": "even", 
+                "value": "1"
+            }, 
+            {
+                "name": "odd", 
+                "value": "2"
+            }
+        ]
+    }, 
+    "fullname": "Enumeration Gtk.PageSet", 
+    "id": "Docs-PageSet", 
+    "description": ""
+}

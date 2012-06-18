@@ -1,0 +1,61 @@
+{
+    "isAbstract": false, 
+    "leaf": true, 
+    "name": "OffscreenWindow", 
+    "text": "OffscreenWindow", 
+    "interfaces": [
+        [
+            "Atk.ImplementorIface"
+        ], 
+        [
+            "Buildable"
+        ]
+    ], 
+    "parents": [
+        "OffscreenWindow", 
+        "Window", 
+        "Bin", 
+        "Container", 
+        "Widget", 
+        "GObject.InitiallyUnowned"
+    ], 
+    "members": {
+        "signals": [], 
+        "methods": [
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "A pointer to a #GtkWidget", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": "2.20", 
+                "name": "Gtk.OffscreenWindow()", 
+                "parameters": null
+            }, 
+            {
+                "returns": {
+                    "type": "GdkPixbuf.Pixbuf", 
+                    "description": "A #GdkPixbuf pointer, or %NULL."
+                }, 
+                "version": "2.20", 
+                "name": "get_pixbuf", 
+                "parameters": null, 
+                "description": "Retrieves a snapshot of the contained widget in the form of\na #GdkPixbuf.  This is a new pixbuf with a reference count of 1,\nand the application should unreference it once it is no longer\nneeded."
+            }, 
+            {
+                "returns": {
+                    "type": "cairo.Surface", 
+                    "description": "A #cairo_surface_t pointer to the offscreen"
+                }, 
+                "version": "2.20", 
+                "name": "get_surface", 
+                "parameters": null, 
+                "description": "Retrieves a snapshot of the contained widget in the form of\na #cairo_surface_t.  If you need to keep this around over window\nresizes then you should add a reference to it.\n\nsurface, or %NULL."
+            }
+        ], 
+        "properties": []
+    }, 
+    "fullname": "Class Gtk.OffscreenWindow", 
+    "id": "Docs-OffscreenWindow", 
+    "description": "GtkOffscreenWindow is strictly intended to be used for obtaining\nsnapshots of widgets that are not part of a normal widget hierarchy.\nSince #GtkOffscreenWindow is a toplevel widget you cannot obtain\nsnapshots of a full window with it since you cannot pack a toplevel\nwidget in another toplevel.\n\nThe idea is to take a widget and manually set the state of it,\nadd it to a GtkOffscreenWindow and then retrieve the snapshot\nas a #cairo_surface_t or #GdkPixbuf.\n\nGtkOffscreenWindow derives from #GtkWindow only as an implementation\ndetail.  Applications should not use any API specific to #GtkWindow\nto operate on this object.  It should be treated as a #GtkBin that\nhas no parent widget.\n\nWhen contained offscreen widgets are redrawn, GtkOffscreenWindow\nwill emit a #GtkWidget::damage-event signal."
+}

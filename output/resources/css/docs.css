@@ -1,0 +1,174 @@
+pre code{
+	font-size:12px !important;
+    color:#000;
+    line-height:16px !important;
+}
+pre code b{
+    font-weight: normal;
+	color: #800080;
+}
+pre code em{
+    font-weight: normal;
+	color: #008080;
+    background-color:#eee;
+}
+pre code i,pre code i b,pre code i em{
+	font-weight: normal;
+	font-style: normal;
+	color: #999;
+}
+
+
+.docpanel {
+	font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif;
+	color: #222;
+	background-color:#FFFFFF;
+	margin: 0px;
+    position:relative;
+}
+.docpanel {
+	width:95%;
+}
+
+.docpanel .x-panel-body {
+    padding: 10px;
+}
+
+.docpanel pre {
+	font-family: "Lucida Console", "Courier New", Courier, monospace; 
+	font-size: 12px;
+}
+
+.docpanel .res-block {
+    padding-top:5px;
+    background:transparent url('../images/block-top.gif') no-repeat;
+    width:210px;
+    margin-bottom:15px;
+}
+.docpanel .res-block-inner {
+    padding:6px 11px;
+    background:transparent url('../images/block-bottom.gif') no-repeat left bottom;
+}
+
+
+.docpanel .inheritance {
+    margin-top:20px;
+    float:right;
+    width:210px;
+}
+.docpanel .inheritance pre {
+    text-align:left;
+    border: 0 none;
+	margin: 0;
+	font-size: 11px;
+	line-height:18px !important;
+    background:transparent url('../images/block-bottom.gif') no-repeat left bottom;
+    padding:0 8px 5px!important;
+}
+
+.docpanel .inheritance pre img {
+    vertical-align:middle;
+    margin-right:3px;
+}
+
+.docpanel .main-information {
+    font-size: 0.9em;
+    width: 90%;
+    padding: 10px;
+}
+
+
+/** Member Table **/
+
+.docpanel .member-table{
+	width:100%;
+	margin-bottom:10px;
+	border-spacing: 0;
+}
+.docpanel .member-table td {
+	padding:4px;
+	vertical-align:top;
+	padding-right:15px;
+}
+
+.docpanel .member-table td, .docpanel .member-table th {
+	font-size: 0.8em;
+}
+.docpanel .member-table code {
+	font-family: "Lucida Console", "Courier New", Courier, monospace; 
+	font-size: 12px;
+}
+.docpanel .member-table pre {
+	font-family: "Lucida Console", "Courier New", Courier, monospace; 
+	font-size: 12px;
+}
+.docpanel .member-table th	{
+	text-align: left;
+	vertical-align:middle;
+    border-right:1px solid #d0d0d0;
+	border-top:1px solid #eee;
+	border-left:1px solid #eee;
+    background: #f9f9f9 url(../images/default/grid/grid3-hrow.gif) repeat-x 0 top;
+	padding:3px;
+}
+
+.docpanel .member-table td.content {
+    padding-left:7px;
+}
+.docpanel .member-table .alt{
+	background: #fcfcfc;
+}
+
+.docpanel .member-table .description, .docpanel .member-table .description-expanded{
+	padding:5px 0;
+    color:#444;
+}
+
+.docpanel .member-table .description-expanded {
+	display: none;
+}
+
+.docpanel .member-table td.micon {
+	width:16px;
+	padding:0px;
+    background: #f9f9f9 url(../images/expand-bg.gif) repeat-y top right;
+    border-right:1px solid #d0d0d0;
+}
+.docpanel .member-table td.micon a {
+    display:block;
+    height:1px;
+    width:1px;
+    overflow:hidden;
+    cursor:default;
+}
+.docpanel .member-table .expandable td.micon a {
+    display:block;
+    width:98%;
+    height:30px;
+    text-decoration:none !important;
+    -moz-outline:none;
+    outline:none;
+    background: transparent url(../images/member-collapsed.gif) no-repeat 5px 6px;
+    cursor:pointer;
+}
+
+.docpanel .member-table .expandable td.micon:hover a {
+    background: transparent url(../images/member-hover.gif) no-repeat 5px 6px;
+    cursor:pointer;
+}
+
+.docpanel .member-table td.msource{
+	width:100px;
+}
+.docpanel .member-table {
+    border:1px solid #d0d0d0;
+}
+.docpanel .member-table td.micon, .docpanel .member-table td.content {
+	border-top:1px solid #d0d0d0;
+}
+
+.docpanel .member-table span.linkRef {
+    color: Blue;
+    text-decoration: underline;
+    cursor: pointer;
+}

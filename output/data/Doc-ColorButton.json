@@ -1,0 +1,277 @@
+{
+    "isAbstract": false, 
+    "leaf": true, 
+    "name": "ColorButton", 
+    "text": "ColorButton", 
+    "interfaces": [
+        [
+            "Atk.ImplementorIface"
+        ], 
+        [
+            "Actionable"
+        ], 
+        [
+            "Activatable"
+        ], 
+        [
+            "Buildable"
+        ], 
+        [
+            "ColorChooser"
+        ]
+    ], 
+    "parents": [
+        "ColorButton", 
+        "Button", 
+        "Bin", 
+        "Container", 
+        "Widget", 
+        "GObject.InitiallyUnowned"
+    ], 
+    "members": {
+        "signals": [
+            {
+                "version": "2.4", 
+                "when": "first", 
+                "name": "color-set", 
+                "description": "The ::color-set signal is emitted when the user selects a color.\nWhen handling this signal, use gtk_color_button_get_color() and\ngtk_color_button_get_alpha() (or gtk_color_button_get_rgba()) to\nfind out which color was just selected.\n\nNote that this signal is only emitted when the <emphasis>user</emphasis>\nchanges the color. If you need to react to programmatic color changes\nas well, use the notify::color signal."
+            }
+        ], 
+        "methods": [
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a new color button", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": "2.4", 
+                "name": "Gtk.ColorButton()", 
+                "parameters": null
+            }, 
+            {
+                "returns": {
+                    "doc": "a new color button", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": "2.4", 
+                "name": "Gtk.ColorButton(Gdk.Color color)", 
+                "parameters": [
+                    {
+                        "type": "Gdk.Color", 
+                        "name": "color"
+                    }
+                ], 
+                "deprecated": "Use gtk_color_button_new_with_rgba() instead.", 
+                "deprecated_version": "3.4", 
+                "isConstructor": true
+            }, 
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a new color button", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": "3.0", 
+                "name": "Gtk.ColorButton(Gdk.RGBA rgba)", 
+                "parameters": [
+                    {
+                        "type": "Gdk.RGBA", 
+                        "name": "rgba"
+                    }
+                ]
+            }, 
+            {
+                "returns": {
+                    "type": "Integer", 
+                    "description": "an integer between 0 and 65535"
+                }, 
+                "version": "2.4", 
+                "name": "get_alpha", 
+                "parameters": null, 
+                "description": "Returns the current alpha value."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.4", 
+                "name": "get_color", 
+                "parameters": [
+                    {
+                        "type": "Gdk.Color", 
+                        "name": "color", 
+                        "description": "a #GdkColor to fill in with the current color"
+                    }
+                ], 
+                "description": "Sets @color to be the current color in the #GtkColorButton widget."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "3.0", 
+                "name": "get_rgba", 
+                "parameters": [
+                    {
+                        "type": "Gdk.RGBA", 
+                        "name": "rgba", 
+                        "description": "a #GdkRGBA to fill in with the current color"
+                    }
+                ], 
+                "description": "Sets @rgba to be the current color in the #GtkColorButton widget."
+            }, 
+            {
+                "returns": {
+                    "type": "String", 
+                    "description": "An internal string, do not free the return value"
+                }, 
+                "version": "2.4", 
+                "name": "get_title", 
+                "parameters": null, 
+                "description": "Gets the title of the color selection dialog."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE if the color sample uses alpha channel, %FALSE if not"
+                }, 
+                "version": "2.4", 
+                "name": "get_use_alpha", 
+                "parameters": null, 
+                "description": "Does the color selection dialog use the alpha channel ?"
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.4", 
+                "name": "set_alpha", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "alpha", 
+                        "description": "an integer between 0 and 65535"
+                    }
+                ], 
+                "description": "Sets the current opacity to be @alpha."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.4", 
+                "name": "set_color", 
+                "parameters": [
+                    {
+                        "type": "Gdk.Color", 
+                        "name": "color", 
+                        "description": "A #GdkColor to set the current color with"
+                    }
+                ], 
+                "description": "Sets the current color to be @color."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "3.0", 
+                "name": "set_rgba", 
+                "parameters": [
+                    {
+                        "type": "Gdk.RGBA", 
+                        "name": "rgba", 
+                        "description": "a #GdkRGBA to set the current color with"
+                    }
+                ], 
+                "description": "Sets the current color to be @rgba."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.4", 
+                "name": "set_title", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "title", 
+                        "description": "String containing new window title"
+                    }
+                ], 
+                "description": "Sets the title for the color selection dialog."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.4", 
+                "name": "set_use_alpha", 
+                "parameters": [
+                    {
+                        "type": "Boolean", 
+                        "name": "use_alpha", 
+                        "description": "%TRUE if color button should use alpha channel, %FALSE if not"
+                    }
+                ], 
+                "description": "Sets whether or not the color button should use the alpha channel."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "color_set", 
+                "parameters": null, 
+                "description": ""
+            }
+        ], 
+        "properties": [
+            {
+                "writable": false, 
+                "type": "Integer", 
+                "readable": false, 
+                "name": "alpha", 
+                "description": "The selected opacity value (0 fully transparent, 65535 fully opaque)."
+            }, 
+            {
+                "writable": false, 
+                "type": "Gdk.Color", 
+                "readable": false, 
+                "name": "color", 
+                "description": "The selected color."
+            }, 
+            {
+                "writable": false, 
+                "type": "Gdk.RGBA", 
+                "readable": false, 
+                "name": "rgba", 
+                "description": "The RGBA color."
+            }, 
+            {
+                "writable": false, 
+                "type": "String", 
+                "readable": false, 
+                "name": "title", 
+                "description": "The title of the color selection dialog"
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "use-alpha", 
+                "description": "If this property is set to %TRUE, the color swatch on the button is\nrendered against a checkerboard background to show its opacity and\nthe opacity slider is displayed in the color selection dialog."
+            }
+        ]
+    }, 
+    "fullname": "Class Gtk.ColorButton", 
+    "id": "Docs-ColorButton", 
+    "description": "The #GtkColorButton is a button which displays the currently selected\ncolor an allows to open a color selection dialog to change the color.\nIt is suitable widget for selecting a color in a preference dialog."
+}

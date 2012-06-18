@@ -1,0 +1,281 @@
+{
+    "isAbstract": false, 
+    "leaf": true, 
+    "name": "FontButton", 
+    "text": "FontButton", 
+    "interfaces": [
+        [
+            "Atk.ImplementorIface"
+        ], 
+        [
+            "Actionable"
+        ], 
+        [
+            "Activatable"
+        ], 
+        [
+            "Buildable"
+        ], 
+        [
+            "FontChooser"
+        ]
+    ], 
+    "parents": [
+        "FontButton", 
+        "Button", 
+        "Bin", 
+        "Container", 
+        "Widget", 
+        "GObject.InitiallyUnowned"
+    ], 
+    "members": {
+        "signals": [
+            {
+                "version": "2.4", 
+                "when": "first", 
+                "name": "font-set", 
+                "description": "The ::font-set signal is emitted when the user selects a font. \nWhen handling this signal, use gtk_font_button_get_font_name() \nto find out which font was just selected.\n\nNote that this signal is only emitted when the <emphasis>user</emphasis>\nchanges the font. If you need to react to programmatic font changes\nas well, use the notify::font-name signal."
+            }
+        ], 
+        "methods": [
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a new font picker widget.", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": "2.4", 
+                "name": "Gtk.FontButton()", 
+                "parameters": null
+            }, 
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a new font picker widget.", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": "2.4", 
+                "name": "Gtk.FontButton(String fontname)", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "fontname"
+                    }
+                ]
+            }, 
+            {
+                "returns": {
+                    "type": "String", 
+                    "description": "an internal copy of the font name which must not be freed."
+                }, 
+                "version": "2.4", 
+                "name": "get_font_name", 
+                "parameters": null, 
+                "description": "Retrieves the name of the currently selected font. This name includes\nstyle and size information as well. If you want to render something\nwith the font, use this string with pango_font_description_from_string() .\nIf you're interested in peeking certain values (family name,\nstyle, size, weight) just query these properties from the\n#PangoFontDescription object."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "whether the font size will be shown in the label."
+                }, 
+                "version": "2.4", 
+                "name": "get_show_size", 
+                "parameters": null, 
+                "description": "Returns whether the font size will be shown in the label."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "whether the font style will be shown in the label."
+                }, 
+                "version": "2.4", 
+                "name": "get_show_style", 
+                "parameters": null, 
+                "description": "Returns whether the name of the font style will be shown in the label."
+            }, 
+            {
+                "returns": {
+                    "type": "String", 
+                    "description": "an internal copy of the title string which must not be freed."
+                }, 
+                "version": "2.4", 
+                "name": "get_title", 
+                "parameters": null, 
+                "description": "Retrieves the title of the font chooser dialog."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "whether the selected font is used in the label."
+                }, 
+                "version": "2.4", 
+                "name": "get_use_font", 
+                "parameters": null, 
+                "description": "Returns whether the selected font is used in the label."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "whether the selected size is used in the label."
+                }, 
+                "version": "2.4", 
+                "name": "get_use_size", 
+                "parameters": null, 
+                "description": "Returns whether the selected size is used in the label."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE"
+                }, 
+                "version": "2.4", 
+                "name": "set_font_name", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "fontname", 
+                        "description": "Name of font to display in font chooser dialog"
+                    }
+                ], 
+                "description": "Sets or updates the currently-displayed font in font picker dialog."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.4", 
+                "name": "set_show_size", 
+                "parameters": [
+                    {
+                        "type": "Boolean", 
+                        "name": "show_size", 
+                        "description": "%TRUE if font size should be displayed in dialog."
+                    }
+                ], 
+                "description": "If @show_size is %TRUE, the font size will be displayed along with the name of the selected font."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.4", 
+                "name": "set_show_style", 
+                "parameters": [
+                    {
+                        "type": "Boolean", 
+                        "name": "show_style", 
+                        "description": "%TRUE if font style should be displayed in label."
+                    }
+                ], 
+                "description": "If @show_style is %TRUE, the font style will be displayed along with name of the selected font."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.4", 
+                "name": "set_title", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "title", 
+                        "description": "a string containing the font chooser dialog title"
+                    }
+                ], 
+                "description": "Sets the title for the font chooser dialog."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.4", 
+                "name": "set_use_font", 
+                "parameters": [
+                    {
+                        "type": "Boolean", 
+                        "name": "use_font", 
+                        "description": "If %TRUE, font name will be written using font chosen."
+                    }
+                ], 
+                "description": "If @use_font is %TRUE, the font name will be written using the selected font."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.4", 
+                "name": "set_use_size", 
+                "parameters": [
+                    {
+                        "type": "Boolean", 
+                        "name": "use_size", 
+                        "description": "If %TRUE, font name will be written using the selected size."
+                    }
+                ], 
+                "description": "If @use_size is %TRUE, the font name will be written using the selected size."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "font_set", 
+                "parameters": null, 
+                "description": ""
+            }
+        ], 
+        "properties": [
+            {
+                "writable": false, 
+                "type": "String", 
+                "readable": false, 
+                "name": "font-name", 
+                "description": "The name of the currently selected font."
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "show-size", 
+                "description": "If this property is set to %TRUE, the selected font size will be shown \nin the label. For a more WYSIWYG way to show the selected size, see the \n::use-size property."
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "show-style", 
+                "description": "If this property is set to %TRUE, the name of the selected font style \nwill be shown in the label. For a more WYSIWYG way to show the selected \nstyle, see the ::use-font property."
+            }, 
+            {
+                "writable": false, 
+                "type": "String", 
+                "readable": false, 
+                "name": "title", 
+                "description": "The title of the font chooser dialog."
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "use-font", 
+                "description": "If this property is set to %TRUE, the label will be drawn \nin the selected font."
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "use-size", 
+                "description": "If this property is set to %TRUE, the label will be drawn \nwith the selected font size."
+            }
+        ]
+    }, 
+    "fullname": "Class Gtk.FontButton", 
+    "id": "Docs-FontButton", 
+    "description": "The #GtkFontButton is a button which displays the currently selected\nfont an allows to open a font chooser dialog to change the font.\nIt is suitable widget for selecting a font in a preference dialog."
+}

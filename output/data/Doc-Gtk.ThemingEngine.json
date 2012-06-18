@@ -1,0 +1,996 @@
+{
+    "isAbstract": false, 
+    "leaf": true, 
+    "name": "ThemingEngine", 
+    "text": "ThemingEngine", 
+    "interfaces": [], 
+    "parents": [
+        "ThemingEngine", 
+        "GObject.Object"
+    ], 
+    "members": {
+        "signals": [], 
+        "methods": [
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "3.0", 
+                "name": "get", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.StateFlags", 
+                        "name": "state", 
+                        "description": "state to retrieve values for"
+                    }, 
+                    {
+                        "type": "ref:VarArg", 
+                        "name": null, 
+                        "description": ""
+                    }
+                ], 
+                "description": "Retrieves several style property values that apply to the currently\nrendered element."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "3.0", 
+                "name": "get_background_color", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.StateFlags", 
+                        "name": "state", 
+                        "description": "state to retrieve the color for"
+                    }, 
+                    {
+                        "type": "Gdk.RGBA", 
+                        "name": "color", 
+                        "description": "return value for the background color"
+                    }
+                ], 
+                "description": "Gets the background color for a given state."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "3.0", 
+                "name": "get_border", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.StateFlags", 
+                        "name": "state", 
+                        "description": "state to retrieve the border for"
+                    }, 
+                    {
+                        "type": "ref:Gtk.Border", 
+                        "name": "border", 
+                        "description": "return value for the border settings"
+                    }
+                ], 
+                "description": "Gets the border for a given state as a #GtkBorder."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "3.0", 
+                "name": "get_border_color", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.StateFlags", 
+                        "name": "state", 
+                        "description": "state to retrieve the color for"
+                    }, 
+                    {
+                        "type": "Gdk.RGBA", 
+                        "name": "color", 
+                        "description": "return value for the border color"
+                    }
+                ], 
+                "description": "Gets the border color for a given state."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "3.0", 
+                "name": "get_color", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.StateFlags", 
+                        "name": "state", 
+                        "description": "state to retrieve the color for"
+                    }, 
+                    {
+                        "type": "Gdk.RGBA", 
+                        "name": "color", 
+                        "description": "return value for the foreground color"
+                    }
+                ], 
+                "description": "Gets the foreground color for a given state."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.TextDirection", 
+                    "description": "the widget direction"
+                }, 
+                "version": "3.0", 
+                "name": "get_direction", 
+                "parameters": null, 
+                "description": "Returns the widget direction used for rendering."
+            }, 
+            {
+                "returns": {
+                    "type": "Pango.FontDescription", 
+                    "description": "the #PangoFontDescription for the given"
+                }, 
+                "version": "3.0", 
+                "name": "get_font", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.StateFlags", 
+                        "name": "state", 
+                        "description": "state to retrieve the font for"
+                    }
+                ], 
+                "description": "Returns the font description for a given state.\n\nstate. This object is owned by GTK+ and should not be\nfreed."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.JunctionSides", 
+                    "description": "the widget direction"
+                }, 
+                "version": "3.0", 
+                "name": "get_junction_sides", 
+                "parameters": null, 
+                "description": "Returns the widget direction used for rendering."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "3.0", 
+                "name": "get_margin", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.StateFlags", 
+                        "name": "state", 
+                        "description": "state to retrieve the border for"
+                    }, 
+                    {
+                        "type": "ref:Gtk.Border", 
+                        "name": "margin", 
+                        "description": "return value for the margin settings"
+                    }
+                ], 
+                "description": "Gets the margin for a given state as a #GtkBorder."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "3.0", 
+                "name": "get_padding", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.StateFlags", 
+                        "name": "state", 
+                        "description": "state to retrieve the padding for"
+                    }, 
+                    {
+                        "type": "ref:Gtk.Border", 
+                        "name": "padding", 
+                        "description": "return value for the padding settings"
+                    }
+                ], 
+                "description": "Gets the padding for a given state as a #GtkBorder."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.WidgetPath", 
+                    "description": "A #GtkWidgetPath"
+                }, 
+                "version": "3.0", 
+                "name": "get_path", 
+                "parameters": null, 
+                "description": "Returns the widget path used for style matching."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "3.0", 
+                "name": "get_property", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "property", 
+                        "description": "the property name"
+                    }, 
+                    {
+                        "type": "ref:Gtk.StateFlags", 
+                        "name": "state", 
+                        "description": "state to retrieve the value for"
+                    }, 
+                    {
+                        "type": "GObject.Value", 
+                        "name": "value", 
+                        "description": "return location for the property value, you must free this memory using g_value_unset() once you are done with it."
+                    }
+                ], 
+                "description": "Gets a property value as retrieved from the style settings that apply\nto the currently rendered element."
+            }, 
+            {
+                "returns": {
+                    "type": "Gdk.Screen", 
+                    "description": "a #GdkScreen, or %NULL."
+                }, 
+                "version": "", 
+                "name": "get_screen", 
+                "parameters": null, 
+                "description": "Returns the #GdkScreen to which @engine currently rendering to."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.StateFlags", 
+                    "description": "the state flags"
+                }, 
+                "version": "3.0", 
+                "name": "get_state", 
+                "parameters": null, 
+                "description": "returns the state used when rendering."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "3.0", 
+                "name": "get_style", 
+                "parameters": [
+                    {
+                        "type": "ref:VarArg", 
+                        "name": null, 
+                        "description": ""
+                    }
+                ], 
+                "description": "Retrieves several widget style properties from @engine according\nto the currently rendered content's style."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "3.0", 
+                "name": "get_style_property", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "property_name", 
+                        "description": "the name of the widget style property"
+                    }, 
+                    {
+                        "type": "GObject.Value", 
+                        "name": "value", 
+                        "description": "Return location for the property value, free with g_value_unset() after use."
+                    }
+                ], 
+                "description": "Gets the value for a widget style property."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "3.0", 
+                "name": "get_style_valist", 
+                "parameters": [
+                    {
+                        "type": "Mixed", 
+                        "name": "args", 
+                        "description": "va_list of property name/return location pairs, followed by %NULL"
+                    }
+                ], 
+                "description": "Retrieves several widget style properties from @engine according to the\ncurrently rendered content's style."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "3.0", 
+                "name": "get_valist", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.StateFlags", 
+                        "name": "state", 
+                        "description": "state to retrieve values for"
+                    }, 
+                    {
+                        "type": "Mixed", 
+                        "name": "args", 
+                        "description": "va_list of property name/return location pairs, followed by %NULL"
+                    }
+                ], 
+                "description": "Retrieves several style property values that apply to the currently\nrendered element."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE if @engine has @class_name defined"
+                }, 
+                "version": "3.0", 
+                "name": "has_class", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "style_class", 
+                        "description": "class name to look up"
+                    }
+                ], 
+                "description": "Returns %TRUE if the currently rendered contents have\ndefined the given class name."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE if region is defined"
+                }, 
+                "version": "3.0", 
+                "name": "has_region", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "style_region", 
+                        "description": "a region name"
+                    }, 
+                    {
+                        "type": "ref:Gtk.RegionFlags", 
+                        "name": "flags", 
+                        "description": "return location for region flags"
+                    }
+                ], 
+                "description": "Returns %TRUE if the currently rendered contents have the\nregion defined. If @flags_return is not %NULL, it is set\nto the flags affecting the region."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE if @color_name was found and resolved, %FALSE otherwise"
+                }, 
+                "version": "", 
+                "name": "lookup_color", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "color_name", 
+                        "description": "color name to lookup"
+                    }, 
+                    {
+                        "type": "Gdk.RGBA", 
+                        "name": "color", 
+                        "description": "Return location for the looked up color"
+                    }
+                ], 
+                "description": "Looks up and resolves a color name in the current style's color map."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE if there is a running transition animation for @state."
+                }, 
+                "version": "3.0", 
+                "name": "state_is_running", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.StateType", 
+                        "name": "state", 
+                        "description": "a widget state"
+                    }, 
+                    {
+                        "type": "Float", 
+                        "name": "progress", 
+                        "description": "return location for the transition progress"
+                    }
+                ], 
+                "description": "Returns %TRUE if there is a transition animation running for the\ncurrent region (see gtk_style_context_push_animatable_region()).\n\nIf @progress is not %NULL, the animation progress will be returned\nthere, 0.0 means the state is closest to being %FALSE, while 1.0 means\nit's closest to being %TRUE. This means transition animations will\nrun from 0 to 1 when @state is being set to %TRUE and from 1 to 0 when\nit's being set to %FALSE."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "render_activity", 
+                "parameters": [
+                    {
+                        "type": "cairo.Context", 
+                        "name": "cr", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Float", 
+                        "name": "x", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Float", 
+                        "name": "y", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Float", 
+                        "name": "width", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Float", 
+                        "name": "height", 
+                        "description": ""
+                    }
+                ], 
+                "description": ""
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "render_arrow", 
+                "parameters": [
+                    {
+                        "type": "cairo.Context", 
+                        "name": "cr", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Float", 
+                        "name": "angle", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Float", 
+                        "name": "x", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Float", 
+                        "name": "y", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Float", 
+                        "name": "size", 
+                        "description": ""
+                    }
+                ], 
+                "description": ""
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "render_background", 
+                "parameters": [
+                    {
+                        "type": "cairo.Context", 
+                        "name": "cr", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Float", 
+                        "name": "x", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Float", 
+                        "name": "y", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Float", 
+                        "name": "width", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Float", 
+                        "name": "height", 
+                        "description": ""
+                    }
+                ], 
+                "description": ""
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "render_check", 
+                "parameters": [
+                    {
+                        "type": "cairo.Context", 
+                        "name": "cr", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Float", 
+                        "name": "x", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Float", 
+                        "name": "y", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Float", 
+                        "name": "width", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Float", 
+                        "name": "height", 
+                        "description": ""
+                    }
+                ], 
+                "description": ""
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "render_expander", 
+                "parameters": [
+                    {
+                        "type": "cairo.Context", 
+                        "name": "cr", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Float", 
+                        "name": "x", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Float", 
+                        "name": "y", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Float", 
+                        "name": "width", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Float", 
+                        "name": "height", 
+                        "description": ""
+                    }
+                ], 
+                "description": ""
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "render_extension", 
+                "parameters": [
+                    {
+                        "type": "cairo.Context", 
+                        "name": "cr", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Float", 
+                        "name": "x", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Float", 
+                        "name": "y", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Float", 
+                        "name": "width", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Float", 
+                        "name": "height", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "ref:Gtk.PositionType", 
+                        "name": "gap_side", 
+                        "description": ""
+                    }
+                ], 
+                "description": ""
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "render_focus", 
+                "parameters": [
+                    {
+                        "type": "cairo.Context", 
+                        "name": "cr", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Float", 
+                        "name": "x", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Float", 
+                        "name": "y", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Float", 
+                        "name": "width", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Float", 
+                        "name": "height", 
+                        "description": ""
+                    }
+                ], 
+                "description": ""
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "render_frame", 
+                "parameters": [
+                    {
+                        "type": "cairo.Context", 
+                        "name": "cr", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Float", 
+                        "name": "x", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Float", 
+                        "name": "y", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Float", 
+                        "name": "width", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Float", 
+                        "name": "height", 
+                        "description": ""
+                    }
+                ], 
+                "description": ""
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "render_frame_gap", 
+                "parameters": [
+                    {
+                        "type": "cairo.Context", 
+                        "name": "cr", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Float", 
+                        "name": "x", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Float", 
+                        "name": "y", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Float", 
+                        "name": "width", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Float", 
+                        "name": "height", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "ref:Gtk.PositionType", 
+                        "name": "gap_side", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Float", 
+                        "name": "xy0_gap", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Float", 
+                        "name": "xy1_gap", 
+                        "description": ""
+                    }
+                ], 
+                "description": ""
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "render_handle", 
+                "parameters": [
+                    {
+                        "type": "cairo.Context", 
+                        "name": "cr", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Float", 
+                        "name": "x", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Float", 
+                        "name": "y", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Float", 
+                        "name": "width", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Float", 
+                        "name": "height", 
+                        "description": ""
+                    }
+                ], 
+                "description": ""
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "render_icon", 
+                "parameters": [
+                    {
+                        "type": "cairo.Context", 
+                        "name": "cr", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "GdkPixbuf.Pixbuf", 
+                        "name": "pixbuf", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Float", 
+                        "name": "x", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Float", 
+                        "name": "y", 
+                        "description": ""
+                    }
+                ], 
+                "description": ""
+            }, 
+            {
+                "returns": {
+                    "type": "GdkPixbuf.Pixbuf", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "render_icon_pixbuf", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.IconSource", 
+                        "name": "source", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "ref:Gtk.IconSize", 
+                        "name": "size", 
+                        "description": ""
+                    }
+                ], 
+                "description": ""
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "render_layout", 
+                "parameters": [
+                    {
+                        "type": "cairo.Context", 
+                        "name": "cr", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Float", 
+                        "name": "x", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Float", 
+                        "name": "y", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Pango.Layout", 
+                        "name": "layout", 
+                        "description": ""
+                    }
+                ], 
+                "description": ""
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "render_line", 
+                "parameters": [
+                    {
+                        "type": "cairo.Context", 
+                        "name": "cr", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Float", 
+                        "name": "x0", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Float", 
+                        "name": "y0", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Float", 
+                        "name": "x1", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Float", 
+                        "name": "y1", 
+                        "description": ""
+                    }
+                ], 
+                "description": ""
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "render_option", 
+                "parameters": [
+                    {
+                        "type": "cairo.Context", 
+                        "name": "cr", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Float", 
+                        "name": "x", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Float", 
+                        "name": "y", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Float", 
+                        "name": "width", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Float", 
+                        "name": "height", 
+                        "description": ""
+                    }
+                ], 
+                "description": ""
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "render_slider", 
+                "parameters": [
+                    {
+                        "type": "cairo.Context", 
+                        "name": "cr", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Float", 
+                        "name": "x", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Float", 
+                        "name": "y", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Float", 
+                        "name": "width", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Float", 
+                        "name": "height", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "ref:Gtk.Orientation", 
+                        "name": "orientation", 
+                        "description": ""
+                    }
+                ], 
+                "description": ""
+            }
+        ], 
+        "properties": [
+            {
+                "writable": false, 
+                "type": "String", 
+                "readable": false, 
+                "name": "name", 
+                "description": "The theming engine name, this name will be used when registering\ncustom properties, for a theming engine named \"Clearlooks\" registering\na \"glossy\" custom property, it could be referenced in the CSS file as\n\n<programlisting>\n-Clearlooks-glossy: true;\n</programlisting>"
+            }
+        ]
+    }, 
+    "fullname": "Class Gtk.ThemingEngine", 
+    "id": "Docs-ThemingEngine", 
+    "description": "#GtkThemingEngine is the object used for rendering themed content\nin GTK+ widgets. Even though GTK+ has a default implementation,\nit can be overridden in CSS files by enforcing a #GtkThemingEngine\nobject to be loaded as a module.\n\nIn order to implement a theming engine, a #GtkThemingEngine subclass\nmust be created, alongside the CSS file that will reference it, the\ntheming engine would be created as an .so library, and installed in\n$(gtk-modules-dir)/theming-engines/.\n\n#GtkThemingEngine<!-- -->s have limited access to the object they are\nrendering, the #GtkThemingEngine API has read-only accessors to the\nstyle information contained in the rendered object's #GtkStyleContext."
+}

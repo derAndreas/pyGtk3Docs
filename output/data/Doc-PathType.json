@@ -1,0 +1,25 @@
+{
+    "leaf": true, 
+    "name": "PathType", 
+    "text": "PathType", 
+    "version": null, 
+    "members": {
+        "properties": [
+            {
+                "name": "widget", 
+                "value": "0"
+            }, 
+            {
+                "name": "widget_class", 
+                "value": "1"
+            }, 
+            {
+                "name": "class", 
+                "value": "2"
+            }
+        ]
+    }, 
+    "fullname": "Enumeration Gtk.PathType", 
+    "id": "Docs-PathType", 
+    "description": ""
+}

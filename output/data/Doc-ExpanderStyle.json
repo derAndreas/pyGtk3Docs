@@ -1,0 +1,29 @@
+{
+    "leaf": true, 
+    "name": "ExpanderStyle", 
+    "text": "ExpanderStyle", 
+    "version": null, 
+    "members": {
+        "properties": [
+            {
+                "name": "collapsed", 
+                "value": "0"
+            }, 
+            {
+                "name": "semi_collapsed", 
+                "value": "1"
+            }, 
+            {
+                "name": "semi_expanded", 
+                "value": "2"
+            }, 
+            {
+                "name": "expanded", 
+                "value": "3"
+            }
+        ]
+    }, 
+    "fullname": "Enumeration Gtk.ExpanderStyle", 
+    "id": "Docs-ExpanderStyle", 
+    "description": ""
+}

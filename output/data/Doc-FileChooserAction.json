@@ -1,0 +1,29 @@
+{
+    "leaf": true, 
+    "name": "FileChooserAction", 
+    "text": "FileChooserAction", 
+    "version": null, 
+    "members": {
+        "properties": [
+            {
+                "name": "open", 
+                "value": "0"
+            }, 
+            {
+                "name": "save", 
+                "value": "1"
+            }, 
+            {
+                "name": "select_folder", 
+                "value": "2"
+            }, 
+            {
+                "name": "create_folder", 
+                "value": "3"
+            }
+        ]
+    }, 
+    "fullname": "Enumeration Gtk.FileChooserAction", 
+    "id": "Docs-FileChooserAction", 
+    "description": ""
+}

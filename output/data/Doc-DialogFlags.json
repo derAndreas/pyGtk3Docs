@@ -1,0 +1,21 @@
+{
+    "leaf": true, 
+    "name": "DialogFlags", 
+    "text": "DialogFlags", 
+    "version": null, 
+    "members": {
+        "properties": [
+            {
+                "name": "modal", 
+                "value": "1"
+            }, 
+            {
+                "name": "destroy_with_parent", 
+                "value": "2"
+            }
+        ]
+    }, 
+    "fullname": "Bitfield Gtk.DialogFlags", 
+    "id": "Docs-DialogFlags", 
+    "description": ""
+}

@@ -1,0 +1,46 @@
+{
+    "isAbstract": false, 
+    "leaf": true, 
+    "name": "Separator", 
+    "text": "Separator", 
+    "interfaces": [
+        [
+            "Atk.ImplementorIface"
+        ], 
+        [
+            "Buildable"
+        ], 
+        [
+            "Orientable"
+        ]
+    ], 
+    "parents": [
+        "Separator", 
+        "Widget", 
+        "GObject.InitiallyUnowned"
+    ], 
+    "members": {
+        "signals": [], 
+        "methods": [
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a new #GtkSeparator.", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": "3.0", 
+                "name": "Gtk.Separator(Gtk.Orientation orientation)", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Orientation", 
+                        "name": "orientation"
+                    }
+                ]
+            }
+        ], 
+        "properties": []
+    }, 
+    "fullname": "Class Gtk.Separator", 
+    "id": "Docs-Separator", 
+    "description": "GtkSeparator is a horizontal or vertical separator widget, depending on the \nvalue of the #GtkOrientable:orientation property, used to group the widgets within a\nwindow. It displays a line with a shadow to make it appear sunken into the \ninterface."
+}

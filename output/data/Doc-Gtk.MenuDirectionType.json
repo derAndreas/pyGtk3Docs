@@ -1,0 +1,29 @@
+{
+    "leaf": true, 
+    "name": "MenuDirectionType", 
+    "text": "MenuDirectionType", 
+    "version": null, 
+    "members": {
+        "properties": [
+            {
+                "name": "parent", 
+                "value": "0"
+            }, 
+            {
+                "name": "child", 
+                "value": "1"
+            }, 
+            {
+                "name": "next", 
+                "value": "2"
+            }, 
+            {
+                "name": "prev", 
+                "value": "3"
+            }
+        ]
+    }, 
+    "fullname": "Enumeration Gtk.MenuDirectionType", 
+    "id": "Docs-MenuDirectionType", 
+    "description": ""
+}

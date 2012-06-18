@@ -1,0 +1,167 @@
+{
+    "isAbstract": false, 
+    "leaf": true, 
+    "name": "PrintContext", 
+    "text": "PrintContext", 
+    "interfaces": [], 
+    "parents": [
+        "PrintContext", 
+        "GObject.Object"
+    ], 
+    "members": {
+        "signals": [], 
+        "methods": [
+            {
+                "returns": {
+                    "type": "Pango.Context", 
+                    "description": "a new Pango context for @context"
+                }, 
+                "version": "2.10", 
+                "name": "create_pango_context", 
+                "parameters": null, 
+                "description": "Creates a new #PangoContext that can be used with the\n#GtkPrintContext."
+            }, 
+            {
+                "returns": {
+                    "type": "Pango.Layout", 
+                    "description": "a new Pango layout for @context"
+                }, 
+                "version": "2.10", 
+                "name": "create_pango_layout", 
+                "parameters": null, 
+                "description": "Creates a new #PangoLayout that is suitable for use\nwith the #GtkPrintContext."
+            }, 
+            {
+                "returns": {
+                    "type": "cairo.Context", 
+                    "description": "the cairo context of @context"
+                }, 
+                "version": "2.10", 
+                "name": "get_cairo_context", 
+                "parameters": null, 
+                "description": "Obtains the cairo context that is associated with the\n#GtkPrintContext."
+            }, 
+            {
+                "returns": {
+                    "type": "Float", 
+                    "description": "the horizontal resolution of @context"
+                }, 
+                "version": "2.10", 
+                "name": "get_dpi_x", 
+                "parameters": null, 
+                "description": "Obtains the horizontal resolution of the #GtkPrintContext,\nin dots per inch."
+            }, 
+            {
+                "returns": {
+                    "type": "Float", 
+                    "description": "the vertical resolution of @context"
+                }, 
+                "version": "2.10", 
+                "name": "get_dpi_y", 
+                "parameters": null, 
+                "description": "Obtains the vertical resolution of the #GtkPrintContext,\nin dots per inch."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE if the hard margins were retrieved"
+                }, 
+                "version": "2.20", 
+                "name": "get_hard_margins", 
+                "parameters": [
+                    {
+                        "type": "Float", 
+                        "name": "top", 
+                        "description": "top hardware printer margin"
+                    }, 
+                    {
+                        "type": "Float", 
+                        "name": "bottom", 
+                        "description": "bottom hardware printer margin"
+                    }, 
+                    {
+                        "type": "Float", 
+                        "name": "left", 
+                        "description": "left hardware printer margin"
+                    }, 
+                    {
+                        "type": "Float", 
+                        "name": "right", 
+                        "description": "right hardware printer margin"
+                    }
+                ], 
+                "description": "Obtains the hardware printer margins of the #GtkPrintContext, in units."
+            }, 
+            {
+                "returns": {
+                    "type": "Float", 
+                    "description": "the height of @context"
+                }, 
+                "version": "2.10", 
+                "name": "get_height", 
+                "parameters": null, 
+                "description": "Obtains the height of the #GtkPrintContext, in pixels."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.PageSetup", 
+                    "description": "the page setup of @context"
+                }, 
+                "version": "2.10", 
+                "name": "get_page_setup", 
+                "parameters": null, 
+                "description": "Obtains the #GtkPageSetup that determines the page\ndimensions of the #GtkPrintContext."
+            }, 
+            {
+                "returns": {
+                    "type": "Pango.FontMap", 
+                    "description": "the font map of @context"
+                }, 
+                "version": "2.10", 
+                "name": "get_pango_fontmap", 
+                "parameters": null, 
+                "description": "Returns a #PangoFontMap that is suitable for use\nwith the #GtkPrintContext."
+            }, 
+            {
+                "returns": {
+                    "type": "Float", 
+                    "description": "the width of @context"
+                }, 
+                "version": "2.10", 
+                "name": "get_width", 
+                "parameters": null, 
+                "description": "Obtains the width of the #GtkPrintContext, in pixels."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.10", 
+                "name": "set_cairo_context", 
+                "parameters": [
+                    {
+                        "type": "cairo.Context", 
+                        "name": "cr", 
+                        "description": "the cairo context"
+                    }, 
+                    {
+                        "type": "Float", 
+                        "name": "dpi_x", 
+                        "description": "the horizontal resolution to use with @cr"
+                    }, 
+                    {
+                        "type": "Float", 
+                        "name": "dpi_y", 
+                        "description": "the vertical resolution to use with @cr"
+                    }
+                ], 
+                "description": "Sets a new cairo context on a print context. \n\nThis function is intended to be used when implementing\nan internal print preview, it is not needed for printing,\nsince GTK+ itself creates a suitable cairo context in that\ncase."
+            }
+        ], 
+        "properties": []
+    }, 
+    "fullname": "Class Gtk.PrintContext", 
+    "id": "Docs-PrintContext", 
+    "description": "A GtkPrintContext encapsulates context information that is required when\ndrawing pages for printing, such as the cairo context and important\nparameters like page size and resolution. It also lets you easily\ncreate #PangoLayout and #PangoContext objects that match the font metrics\nof the cairo surface.\n\nGtkPrintContext objects gets passed to the #GtkPrintOperation::begin-print,\n#GtkPrintOperation::end-print, #GtkPrintOperation::request-page-setup and\n#GtkPrintOperation::draw-page signals on the #GtkPrintOperation.\n\n<example>\n<title>Using GtkPrintContext in a #GtkPrintOperation::draw-page callback</title>\n<programlisting>\nstatic void\ndraw_page (GtkPrintOperation *operation,\nGtkPrintContext   *context,\nint                page_nr)\n{\ncairo_t *cr;\nPangoLayout *layout;\nPangoFontDescription *desc;\n\ncr = gtk_print_context_get_cairo_context (context);\n\n// Draw a red rectangle, as wide as the paper (inside the margins)\ncairo_set_source_rgb (cr, 1.0, 0, 0);\ncairo_rectangle (cr, 0, 0, gtk_print_context_get_width (context), 50);\n\ncairo_fill (cr);\n\n// Draw some lines\ncairo_move_to (cr, 20, 10);\ncairo_line_to (cr, 40, 20);\ncairo_arc (cr, 60, 60, 20, 0, M_PI);\ncairo_line_to (cr, 80, 20);\n\ncairo_set_source_rgb (cr, 0, 0, 0);\ncairo_set_line_width (cr, 5);\ncairo_set_line_cap (cr, CAIRO_LINE_CAP_ROUND);\ncairo_set_line_join (cr, CAIRO_LINE_JOIN_ROUND);\n\ncairo_stroke (cr);\n\n// Draw some text\nlayout = gtk_print_context_create_layout (context);\npango_layout_set_text (layout, \"Hello World! Printing is easy\", -1);\ndesc = pango_font_description_from_string (\"sans 28\");\npango_layout_set_font_description (layout, desc);\npango_font_description_free (desc);\n\ncairo_move_to (cr, 30, 20);\npango_cairo_layout_path (cr, layout);\n\n// Font Outline\ncairo_set_source_rgb (cr, 0.93, 1.0, 0.47);\ncairo_set_line_width (cr, 0.5);\ncairo_stroke_preserve (cr);\n\n// Font Fill\ncairo_set_source_rgb (cr, 0, 0.0, 1.0);\ncairo_fill (cr);\n\ng_object_unref (layout);\n}\n</programlisting>\n</example>\n\nPrinting support was added in GTK+ 2.10."
+}

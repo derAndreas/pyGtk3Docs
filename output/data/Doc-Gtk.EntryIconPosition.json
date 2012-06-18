@@ -1,0 +1,21 @@
+{
+    "leaf": true, 
+    "name": "EntryIconPosition", 
+    "text": "EntryIconPosition", 
+    "version": "2.16", 
+    "members": {
+        "properties": [
+            {
+                "name": "primary", 
+                "value": "0"
+            }, 
+            {
+                "name": "secondary", 
+                "value": "1"
+            }
+        ]
+    }, 
+    "fullname": "Enumeration Gtk.EntryIconPosition", 
+    "id": "Docs-EntryIconPosition", 
+    "description": ""
+}

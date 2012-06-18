@@ -1,0 +1,29 @@
+{
+    "leaf": true, 
+    "name": "ApplicationInhibitFlags", 
+    "text": "ApplicationInhibitFlags", 
+    "version": "3.4", 
+    "members": {
+        "properties": [
+            {
+                "name": "logout", 
+                "value": "1"
+            }, 
+            {
+                "name": "switch", 
+                "value": "2"
+            }, 
+            {
+                "name": "suspend", 
+                "value": "4"
+            }, 
+            {
+                "name": "idle", 
+                "value": "8"
+            }
+        ]
+    }, 
+    "fullname": "Bitfield Gtk.ApplicationInhibitFlags", 
+    "id": "Docs-ApplicationInhibitFlags", 
+    "description": ""
+}

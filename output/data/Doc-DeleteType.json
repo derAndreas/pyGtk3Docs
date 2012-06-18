@@ -1,0 +1,45 @@
+{
+    "leaf": true, 
+    "name": "DeleteType", 
+    "text": "DeleteType", 
+    "version": null, 
+    "members": {
+        "properties": [
+            {
+                "name": "chars", 
+                "value": "0"
+            }, 
+            {
+                "name": "word_ends", 
+                "value": "1"
+            }, 
+            {
+                "name": "words", 
+                "value": "2"
+            }, 
+            {
+                "name": "display_lines", 
+                "value": "3"
+            }, 
+            {
+                "name": "display_line_ends", 
+                "value": "4"
+            }, 
+            {
+                "name": "paragraph_ends", 
+                "value": "5"
+            }, 
+            {
+                "name": "paragraphs", 
+                "value": "6"
+            }, 
+            {
+                "name": "whitespace", 
+                "value": "7"
+            }
+        ]
+    }, 
+    "fullname": "Enumeration Gtk.DeleteType", 
+    "id": "Docs-DeleteType", 
+    "description": ""
+}

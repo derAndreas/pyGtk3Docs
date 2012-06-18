@@ -1,0 +1,37 @@
+{
+    "leaf": true, 
+    "name": "PathPriorityType", 
+    "text": "PathPriorityType", 
+    "version": null, 
+    "members": {
+        "properties": [
+            {
+                "name": "lowest", 
+                "value": "0"
+            }, 
+            {
+                "name": "gtk", 
+                "value": "4"
+            }, 
+            {
+                "name": "application", 
+                "value": "8"
+            }, 
+            {
+                "name": "theme", 
+                "value": "10"
+            }, 
+            {
+                "name": "rc", 
+                "value": "12"
+            }, 
+            {
+                "name": "highest", 
+                "value": "15"
+            }
+        ]
+    }, 
+    "fullname": "Enumeration Gtk.PathPriorityType", 
+    "id": "Docs-PathPriorityType", 
+    "description": ""
+}

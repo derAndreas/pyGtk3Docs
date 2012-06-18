@@ -1,0 +1,66 @@
+{
+    "isAbstract": false, 
+    "leaf": true, 
+    "name": "Spinner", 
+    "text": "Spinner", 
+    "interfaces": [
+        [
+            "Atk.ImplementorIface"
+        ], 
+        [
+            "Buildable"
+        ]
+    ], 
+    "parents": [
+        "Spinner", 
+        "Widget", 
+        "GObject.InitiallyUnowned"
+    ], 
+    "members": {
+        "signals": [], 
+        "methods": [
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a new #GtkSpinner", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": "2.20", 
+                "name": "Gtk.Spinner()", 
+                "parameters": null
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.20", 
+                "name": "start", 
+                "parameters": null, 
+                "description": "Starts the animation of the spinner."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.20", 
+                "name": "stop", 
+                "parameters": null, 
+                "description": "Stops the animation of the spinner."
+            }
+        ], 
+        "properties": [
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "active", 
+                "description": ""
+            }
+        ]
+    }, 
+    "fullname": "Class Gtk.Spinner", 
+    "id": "Docs-Spinner", 
+    "description": "A GtkSpinner widget displays an icon-size spinning animation.\nIt is often used as an alternative to a #GtkProgressBar for\ndisplaying indefinite activity, instead of actual progress.\n\nTo start the animation, use gtk_spinner_start(), to stop it\nuse gtk_spinner_stop()."
+}

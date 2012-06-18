@@ -1,0 +1,37 @@
+{
+    "leaf": true, 
+    "name": "DragResult", 
+    "text": "DragResult", 
+    "version": null, 
+    "members": {
+        "properties": [
+            {
+                "name": "success", 
+                "value": "0"
+            }, 
+            {
+                "name": "no_target", 
+                "value": "1"
+            }, 
+            {
+                "name": "user_cancelled", 
+                "value": "2"
+            }, 
+            {
+                "name": "timeout_expired", 
+                "value": "3"
+            }, 
+            {
+                "name": "grab_broken", 
+                "value": "4"
+            }, 
+            {
+                "name": "error", 
+                "value": "5"
+            }
+        ]
+    }, 
+    "fullname": "Enumeration Gtk.DragResult", 
+    "id": "Docs-DragResult", 
+    "description": ""
+}

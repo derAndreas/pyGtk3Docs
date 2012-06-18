@@ -1,0 +1,21 @@
+{
+    "leaf": true, 
+    "name": "ScrollablePolicy", 
+    "text": "ScrollablePolicy", 
+    "version": null, 
+    "members": {
+        "properties": [
+            {
+                "name": "minimum", 
+                "value": "0"
+            }, 
+            {
+                "name": "natural", 
+                "value": "1"
+            }
+        ]
+    }, 
+    "fullname": "Enumeration Gtk.ScrollablePolicy", 
+    "id": "Docs-ScrollablePolicy", 
+    "description": ""
+}

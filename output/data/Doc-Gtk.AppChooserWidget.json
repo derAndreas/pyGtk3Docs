@@ -1,0 +1,322 @@
+{
+    "isAbstract": false, 
+    "leaf": true, 
+    "name": "AppChooserWidget", 
+    "text": "AppChooserWidget", 
+    "interfaces": [
+        [
+            "Atk.ImplementorIface"
+        ], 
+        [
+            "AppChooser"
+        ], 
+        [
+            "Buildable"
+        ], 
+        [
+            "Orientable"
+        ]
+    ], 
+    "parents": [
+        "AppChooserWidget", 
+        "Box", 
+        "Container", 
+        "Widget", 
+        "GObject.InitiallyUnowned"
+    ], 
+    "members": {
+        "signals": [
+            {
+                "version": "", 
+                "when": "first", 
+                "name": "application-activated", 
+                "description": "Emitted when an application item is activated from the widget's list.\n\nThis usually happens when the user double clicks an item, or an item\nis selected and the user presses one of the keys Space, Shift+Space,\nReturn or Enter."
+            }, 
+            {
+                "version": "", 
+                "when": "first", 
+                "name": "application-selected", 
+                "description": "Emitted when an application item is selected from the widget's list."
+            }, 
+            {
+                "version": "", 
+                "when": "first", 
+                "name": "populate-popup", 
+                "description": "Emitted when a context menu is about to popup over an application item.\nClients can insert menu items into the provided #GtkMenu object in the\ncallback of this signal; the context menu will be shown over the item\nif at least one item has been added to the menu."
+            }
+        ], 
+        "methods": [
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a newly created #GtkAppChooserWidget", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": "3.0", 
+                "name": "Gtk.AppChooserWidget(String content_type)", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "content_type"
+                    }
+                ]
+            }, 
+            {
+                "returns": {
+                    "type": "String", 
+                    "description": "the value of #GtkAppChooserWidget:default-text"
+                }, 
+                "version": "3.0", 
+                "name": "get_default_text", 
+                "parameters": null, 
+                "description": "Returns the text that is shown if there are not applications\nthat can handle the content type."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "the value of #GtkAppChooserWidget:show-all"
+                }, 
+                "version": "3.0", 
+                "name": "get_show_all", 
+                "parameters": null, 
+                "description": "Returns the current value of the #GtkAppChooserWidget:show-all\nproperty."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "the value of #GtkAppChooserWidget:show-default"
+                }, 
+                "version": "3.0", 
+                "name": "get_show_default", 
+                "parameters": null, 
+                "description": "Returns the current value of the #GtkAppChooserWidget:show-default\nproperty."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "the value of #GtkAppChooserWidget:show-fallback"
+                }, 
+                "version": "3.0", 
+                "name": "get_show_fallback", 
+                "parameters": null, 
+                "description": "Returns the current value of the #GtkAppChooserWidget:show-fallback\nproperty."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "the value of #GtkAppChooserWidget:show-other"
+                }, 
+                "version": "3.0", 
+                "name": "get_show_other", 
+                "parameters": null, 
+                "description": "Returns the current value of the #GtkAppChooserWidget:show-other\nproperty."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "the value of #GtkAppChooserWidget:show-recommended"
+                }, 
+                "version": "3.0", 
+                "name": "get_show_recommended", 
+                "parameters": null, 
+                "description": "Returns the current value of the #GtkAppChooserWidget:show-recommended\nproperty."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_default_text", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "text", 
+                        "description": "the new value for #GtkAppChooserWidget:default-text"
+                    }
+                ], 
+                "description": "Sets the text that is shown if there are not applications\nthat can handle the content type."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "3.0", 
+                "name": "set_show_all", 
+                "parameters": [
+                    {
+                        "type": "Boolean", 
+                        "name": "setting", 
+                        "description": "the new value for #GtkAppChooserWidget:show-all"
+                    }
+                ], 
+                "description": "Sets whether the app chooser should show all applications\nin a flat list."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "3.0", 
+                "name": "set_show_default", 
+                "parameters": [
+                    {
+                        "type": "Boolean", 
+                        "name": "setting", 
+                        "description": "the new value for #GtkAppChooserWidget:show-default"
+                    }
+                ], 
+                "description": "Sets whether the app chooser should show the default handler\nfor the content type in a separate section."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "3.0", 
+                "name": "set_show_fallback", 
+                "parameters": [
+                    {
+                        "type": "Boolean", 
+                        "name": "setting", 
+                        "description": "the new value for #GtkAppChooserWidget:show-fallback"
+                    }
+                ], 
+                "description": "Sets whether the app chooser should show related applications\nfor the content type in a separate section."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "3.0", 
+                "name": "set_show_other", 
+                "parameters": [
+                    {
+                        "type": "Boolean", 
+                        "name": "setting", 
+                        "description": "the new value for #GtkAppChooserWidget:show-other"
+                    }
+                ], 
+                "description": "Sets whether the app chooser should show applications\nwhich are unrelated to the content type."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "3.0", 
+                "name": "set_show_recommended", 
+                "parameters": [
+                    {
+                        "type": "Boolean", 
+                        "name": "setting", 
+                        "description": "the new value for #GtkAppChooserWidget:show-recommended"
+                    }
+                ], 
+                "description": "Sets whether the app chooser should show recommended applications\nfor the content type in a separate section."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "application_activated", 
+                "parameters": [
+                    {
+                        "type": "Gio.AppInfo", 
+                        "name": "app_info", 
+                        "description": ""
+                    }
+                ], 
+                "description": ""
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "application_selected", 
+                "parameters": [
+                    {
+                        "type": "Gio.AppInfo", 
+                        "name": "app_info", 
+                        "description": ""
+                    }
+                ], 
+                "description": ""
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "populate_popup", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Menu", 
+                        "name": "menu", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Gio.AppInfo", 
+                        "name": "app_info", 
+                        "description": ""
+                    }
+                ], 
+                "description": ""
+            }
+        ], 
+        "properties": [
+            {
+                "writable": false, 
+                "type": "String", 
+                "readable": false, 
+                "name": "default-text", 
+                "description": "The #GtkAppChooserWidget:default-text property determines the text\nthat appears in the widget when there are no applications for the\ngiven content type.\nSee also gtk_app_chooser_widget_set_default_text()."
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "show-all", 
+                "description": "If the #GtkAppChooserWidget:show-all property is %TRUE, the app\nchooser presents all applications in a single list, without\nsubsections for default, recommended or related applications."
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "show-default", 
+                "description": "The ::show-default property determines whether the app chooser\nshould show the default handler for the content type in a\nseparate section. If %FALSE, the default handler is listed\namong the recommended applications."
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "show-fallback", 
+                "description": "The #GtkAppChooserWidget:show-fallback property determines whether\nthe app chooser should show a section for fallback applications.\nIf %FALSE, the fallback applications are listed among the other\napplications."
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "show-other", 
+                "description": "The #GtkAppChooserWidget:show-other property determines whether\nthe app chooser should show a section for other applications."
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "show-recommended", 
+                "description": "The #GtkAppChooserWidget:show-recommended property determines\nwhether the app chooser should show a section for recommended\napplications. If %FALSE, the recommended applications are listed\namong the other applications."
+            }
+        ]
+    }, 
+    "fullname": "Class Gtk.AppChooserWidget", 
+    "id": "Docs-AppChooserWidget", 
+    "description": "#GtkAppChooserWidget is a widget for selecting applications.\nIt is the main building block for #GtkAppChooserDialog. Most\napplications only need to use the latter; but you can use\nthis widget as part of a larger widget if you have special needs.\n\n#GtkAppChooserWidget offers detailed control over what applications\nare shown, using the\n#GtkAppChooserWidget:show-default,\n#GtkAppChooserWidget:show-recommended,\n#GtkAppChooserWidget:show-fallback,\n#GtkAppChooserWidget:show-other and\n#GtkAppChooserWidget:show-all\nproperties. See the #GtkAppChooser documentation for more information\nabout these groups of applications.\n\nTo keep track of the selected application, use the\n#GtkAppChooserWidget::application-selected and #GtkAppChooserWidget::application-activated signals."
+}

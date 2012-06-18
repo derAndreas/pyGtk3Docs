@@ -1,0 +1,332 @@
+{
+    "isAbstract": false, 
+    "leaf": true, 
+    "name": "Scale", 
+    "text": "Scale", 
+    "interfaces": [
+        [
+            "Atk.ImplementorIface"
+        ], 
+        [
+            "Buildable"
+        ], 
+        [
+            "Orientable"
+        ]
+    ], 
+    "parents": [
+        "Scale", 
+        "Range", 
+        "Widget", 
+        "GObject.InitiallyUnowned"
+    ], 
+    "members": {
+        "signals": [
+            {
+                "version": "", 
+                "when": "last", 
+                "name": "format-value", 
+                "description": "Signal which allows you to change how the scale value is displayed.\nConnect a signal handler which returns an allocated string representing \n@value. That string will then be used to display the scale's value.\n\nHere's an example signal handler which displays a value 1.0 as\nwith \"--&gt;1.0&lt;--\".\n|[\nstatic gchar*\nformat_value_callback (GtkScale *scale,\ngdouble   value)\n{\nreturn g_strdup_printf (\"--&gt;&percnt;0.*g&lt;--\",\ngtk_scale_get_digits (scale), value);\n}\n]|"
+            }
+        ], 
+        "methods": [
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a new #GtkScale", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": "3.0", 
+                "name": "Gtk.Scale(Gtk.Orientation orientation, Gtk.Adjustment adjustment)", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Orientation", 
+                        "name": "orientation"
+                    }, 
+                    {
+                        "type": "ref:Gtk.Adjustment", 
+                        "name": "adjustment"
+                    }
+                ]
+            }, 
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a new #GtkScale", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": "3.0", 
+                "name": "Gtk.Scale(Gtk.Orientation orientation, Float min, Float max, Float step)", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Orientation", 
+                        "name": "orientation"
+                    }, 
+                    {
+                        "type": "Float", 
+                        "name": "min"
+                    }, 
+                    {
+                        "type": "Float", 
+                        "name": "max"
+                    }, 
+                    {
+                        "type": "Float", 
+                        "name": "step"
+                    }
+                ]
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.16", 
+                "name": "add_mark", 
+                "parameters": [
+                    {
+                        "type": "Float", 
+                        "name": "value", 
+                        "description": "the value at which the mark is placed, must be between the lower and upper limits of the scales' adjustment"
+                    }, 
+                    {
+                        "type": "ref:Gtk.PositionType", 
+                        "name": "position", 
+                        "description": "where to draw the mark. For a horizontal scale, #GTK_POS_TOP and %GTK_POS_LEFT are drawn above the scale, anything else below. For a vertical scale, #GTK_POS_LEFT and %GTK_POS_TOP are drawn to the left of the scale, anything else to the right."
+                    }, 
+                    {
+                        "type": "String", 
+                        "name": "markup", 
+                        "description": "Text to be shown at the mark, using <link linkend=\"PangoMarkupFormat\">Pango markup</link>, or %NULL"
+                    }
+                ], 
+                "description": "Adds a mark at @value.\n\nA mark is indicated visually by drawing a tick mark next to the scale,\nand GTK+ makes it easy for the user to position the scale exactly at the\nmarks value.\n\nIf @markup is not %NULL, text is shown next to the tick mark.\n\nTo remove marks from a scale, use gtk_scale_clear_marks()."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.16", 
+                "name": "clear_marks", 
+                "parameters": null, 
+                "description": "Removes any marks that have been added with gtk_scale_add_mark()."
+            }, 
+            {
+                "returns": {
+                    "type": "Integer", 
+                    "description": "the number of decimal places that are displayed"
+                }, 
+                "version": "", 
+                "name": "get_digits", 
+                "parameters": null, 
+                "description": "Gets the number of decimal places that are displayed in the value."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "whether the current value is displayed as a string"
+                }, 
+                "version": "", 
+                "name": "get_draw_value", 
+                "parameters": null, 
+                "description": "Returns whether the current value is displayed as a string \nnext to the slider."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE if the scale has an origin."
+                }, 
+                "version": "3.4", 
+                "name": "get_has_origin", 
+                "parameters": null, 
+                "description": "Returns whether the scale has an origin."
+            }, 
+            {
+                "returns": {
+                    "type": "Pango.Layout", 
+                    "description": "the #PangoLayout for this scale,"
+                }, 
+                "version": "2.4", 
+                "name": "get_layout", 
+                "parameters": null, 
+                "description": "Gets the #PangoLayout used to display the scale. The returned\nobject is owned by the scale so does not need to be freed by\nthe caller.\n\nor %NULL if the #GtkScale:draw-value property is %FALSE."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.4", 
+                "name": "get_layout_offsets", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "x", 
+                        "description": "location to store X offset of layout, or %NULL"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "y", 
+                        "description": "location to store Y offset of layout, or %NULL"
+                    }
+                ], 
+                "description": "Obtains the coordinates where the scale will draw the \n#PangoLayout representing the text in the scale. Remember\nwhen using the #PangoLayout function you need to convert to\nand from pixels using PANGO_PIXELS() or #PANGO_SCALE. \n\nIf the #GtkScale:draw-value property is %FALSE, the return \nvalues are undefined."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.PositionType", 
+                    "description": "the position in which the current value is displayed"
+                }, 
+                "version": "", 
+                "name": "get_value_pos", 
+                "parameters": null, 
+                "description": "Gets the position in which the current value is displayed."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_digits", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "digits", 
+                        "description": "the number of decimal places to display, e.g. use 1 to display 1.0, 2 to display 1.00, etc"
+                    }
+                ], 
+                "description": "Sets the number of decimal places that are displayed in the value.\nAlso causes the value of the adjustment to be rounded off to this\nnumber of digits, so the retrieved value matches the value the user saw."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_draw_value", 
+                "parameters": [
+                    {
+                        "type": "Boolean", 
+                        "name": "draw_value", 
+                        "description": "%TRUE to draw the value"
+                    }
+                ], 
+                "description": "Specifies whether the current value is displayed as a string next \nto the slider."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "3.4", 
+                "name": "set_has_origin", 
+                "parameters": [
+                    {
+                        "type": "Boolean", 
+                        "name": "has_origin", 
+                        "description": "%TRUE if the scale has an origin"
+                    }
+                ], 
+                "description": "If @has_origin is set to %TRUE (the default),\nthe scale will highlight the part of the scale\nbetween the origin (bottom or left side) of the scale\nand the current value."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_value_pos", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.PositionType", 
+                        "name": "pos", 
+                        "description": "the position in which the current value is displayed"
+                    }
+                ], 
+                "description": "Sets the position in which the current value is displayed."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "draw_value", 
+                "parameters": null, 
+                "description": ""
+            }, 
+            {
+                "returns": {
+                    "type": "String", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "format_value", 
+                "parameters": [
+                    {
+                        "type": "Float", 
+                        "name": "value", 
+                        "description": ""
+                    }
+                ], 
+                "description": ""
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.4", 
+                "name": "get_layout_offsets", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "x", 
+                        "description": "location to store X offset of layout, or %NULL"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "y", 
+                        "description": "location to store Y offset of layout, or %NULL"
+                    }
+                ], 
+                "description": "Obtains the coordinates where the scale will draw the \n#PangoLayout representing the text in the scale. Remember\nwhen using the #PangoLayout function you need to convert to\nand from pixels using PANGO_PIXELS() or #PANGO_SCALE. \n\nIf the #GtkScale:draw-value property is %FALSE, the return \nvalues are undefined."
+            }
+        ], 
+        "properties": [
+            {
+                "writable": false, 
+                "type": "Integer", 
+                "readable": false, 
+                "name": "digits", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "draw-value", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "has-origin", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Gtk.PositionType", 
+                "readable": false, 
+                "name": "value-pos", 
+                "description": ""
+            }
+        ]
+    }, 
+    "fullname": "Class Gtk.Scale", 
+    "id": "Docs-Scale", 
+    "description": "A GtkScale is a slider control used to select a numeric value. \nTo use it, you'll probably want to investigate the methods on\nits base class, #GtkRange, in addition to the methods for GtkScale itself.\nTo set the value of a scale, you would normally use gtk_range_set_value().\nTo detect changes to the value, you would normally use the\n#GtkRange::value-changed signal.\n\nNote that using the same upper and lower bounds for the #GtkScale (through\nthe #GtkRange methods) will hide the slider itself. This is useful for\napplications that want to show an undeterminate value on the scale, without\nchanging the layout of the application (such as movie or music players).\n\n<refsect2 id=\"GtkScale-BUILDER-UI\"><title>GtkScale as GtkBuildable</title>\nGtkScale supports a custom &lt;marks&gt; element, which\ncan contain multiple &lt;mark&gt; elements. The \"value\" and \"position\"\nattributes have the same meaning as gtk_scale_add_mark() parameters of the\nsame name. If the element is not empty, its content is taken as the markup\nto show at the mark. It can be translated with the usual \"translatable and\n\"context\" attributes.\n</refsect2>"
+}

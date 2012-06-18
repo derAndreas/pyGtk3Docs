@@ -1,0 +1,141 @@
+{
+    "isAbstract": false, 
+    "leaf": true, 
+    "name": "RadioToolButton", 
+    "text": "RadioToolButton", 
+    "interfaces": [
+        [
+            "Atk.ImplementorIface"
+        ], 
+        [
+            "Actionable"
+        ], 
+        [
+            "Activatable"
+        ], 
+        [
+            "Buildable"
+        ]
+    ], 
+    "parents": [
+        "RadioToolButton", 
+        "ToggleToolButton", 
+        "ToolButton", 
+        "ToolItem", 
+        "Bin", 
+        "Container", 
+        "Widget", 
+        "GObject.InitiallyUnowned"
+    ], 
+    "members": {
+        "signals": [], 
+        "methods": [
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "The new #GtkRadioToolButton", 
+                    "name": "ref:Gtk.ToolItem"
+                }, 
+                "version": "2.4", 
+                "name": "Gtk.RadioToolButton(GLib.SList group)", 
+                "parameters": [
+                    {
+                        "type": "GLib.SList", 
+                        "name": "group"
+                    }
+                ]
+            }, 
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "The new #GtkRadioToolItem", 
+                    "name": "ref:Gtk.ToolItem"
+                }, 
+                "version": "2.4", 
+                "name": "Gtk.RadioToolButton(GLib.SList group, String stock_id)", 
+                "parameters": [
+                    {
+                        "type": "GLib.SList", 
+                        "name": "group"
+                    }, 
+                    {
+                        "type": "String", 
+                        "name": "stock_id"
+                    }
+                ]
+            }, 
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "The new #GtkRadioToolButton", 
+                    "name": "ref:Gtk.ToolItem"
+                }, 
+                "version": "2.4", 
+                "name": "Gtk.RadioToolButton(Gtk.RadioToolButton group)", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.RadioToolButton", 
+                        "name": "group"
+                    }
+                ]
+            }, 
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "A new #GtkRadioToolButton", 
+                    "name": "ref:Gtk.ToolItem"
+                }, 
+                "version": "2.4", 
+                "name": "Gtk.RadioToolButton(Gtk.RadioToolButton group, String stock_id)", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.RadioToolButton", 
+                        "name": "group"
+                    }, 
+                    {
+                        "type": "String", 
+                        "name": "stock_id"
+                    }
+                ]
+            }, 
+            {
+                "returns": {
+                    "type": "GLib.SList", 
+                    "description": "The group @button belongs to."
+                }, 
+                "version": "2.4", 
+                "name": "get_group", 
+                "parameters": null, 
+                "description": "Returns the radio button group @button belongs to."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.4", 
+                "name": "set_group", 
+                "parameters": [
+                    {
+                        "type": "GLib.SList", 
+                        "name": "group", 
+                        "description": "an existing radio button group"
+                    }
+                ], 
+                "description": "Adds @button to @group, removing it from the group it belonged to before."
+            }
+        ], 
+        "properties": [
+            {
+                "writable": false, 
+                "type": "Gtk.RadioToolButton", 
+                "readable": false, 
+                "name": "group", 
+                "description": "Sets a new group for a radio tool button."
+            }
+        ]
+    }, 
+    "fullname": "Class Gtk.RadioToolButton", 
+    "id": "Docs-RadioToolButton", 
+    "description": "A #GtkRadioToolButton is a #GtkToolItem that contains a radio button,\nthat is, a button that is part of a group of toggle buttons where only\none button can be active at a time.\n\nUse gtk_radio_tool_button_new() to create a new\n#GtkRadioToolButton. Use gtk_radio_tool_button_new_from_widget() to\ncreate a new #GtkRadioToolButton that is part of the same group as an\nexisting #GtkRadioToolButton. Use\ngtk_radio_tool_button_new_from_stock() or\ngtk_radio_tool_button_new_with_stock_from_widget() create a new\n#GtkRadioToolButton containing a stock item."
+}

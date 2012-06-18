@@ -1,0 +1,337 @@
+{
+    "isAbstract": false, 
+    "leaf": true, 
+    "name": "CellAreaContext", 
+    "text": "CellAreaContext", 
+    "interfaces": [], 
+    "parents": [
+        "CellAreaContext", 
+        "GObject.Object"
+    ], 
+    "members": {
+        "signals": [], 
+        "methods": [
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "allocate", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "width", 
+                        "description": "the allocated width for all #GtkTreeModel rows rendered with @context, or -1."
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "height", 
+                        "description": "the allocated height for all #GtkTreeModel rows rendered with @context, or -1."
+                    }
+                ], 
+                "description": "Allocates a width and/or a height for all rows which are to be\nrendered with @context.\n\nUsually allocation is performed only horizontally or sometimes\nvertically since a group of rows are usually rendered side by\nside vertically or horizontally and share either the same width\nor the same height. Sometimes they are allocated in both horizontal\nand vertical orientations producing a homogeneous effect of the\nrows. This is generally the case for #GtkTreeView when\n#GtkTreeView:fixed-height-mode is enabled.\n\nSince 3.0"
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "3.0", 
+                "name": "get_allocation", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "width", 
+                        "description": "location to store the allocated width, or %NULL"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "height", 
+                        "description": "location to store the allocated height, or %NULL"
+                    }
+                ], 
+                "description": "Fetches the current allocation size for @context.\n\nIf the context was not allocated in width or height, or if the\ncontext was recently reset with gtk_cell_area_context_reset(),\nthe returned value will be -1."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.CellArea", 
+                    "description": "the #GtkCellArea this context was created by."
+                }, 
+                "version": "3.0", 
+                "name": "get_area", 
+                "parameters": null, 
+                "description": "Fetches the #GtkCellArea this @context was created by.\n\nThis is generally unneeded by layouting widgets; however\nit is important for the context implementation itself to\nfetch information about the area it is being used for.\n\nFor instance at #GtkCellAreaContextClass.allocate() time\nits important to know details about any cell spacing\nthat the #GtkCellArea is configured with in order to\ncompute a proper allocation."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "3.0", 
+                "name": "get_preferred_height", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "minimum_height", 
+                        "description": "location to store the minimum height, or %NULL"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "natural_height", 
+                        "description": "location to store the natural height, or %NULL"
+                    }
+                ], 
+                "description": "Gets the accumulative preferred height for all rows which have been\nrequested with this context.\n\nAfter gtk_cell_area_context_reset() is called and/or before ever\nrequesting the size of a #GtkCellArea, the returned values are 0."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "3.0", 
+                "name": "get_preferred_height_for_width", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "width", 
+                        "description": "a proposed width for allocation"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "minimum_height", 
+                        "description": "location to store the minimum height, or %NULL"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "natural_height", 
+                        "description": "location to store the natural height, or %NULL"
+                    }
+                ], 
+                "description": "Gets the accumulative preferred height for @width for all rows\nwhich have been requested for the same said @width with this context.\n\nAfter gtk_cell_area_context_reset() is called and/or before ever\nrequesting the size of a #GtkCellArea, the returned values are -1."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "3.0", 
+                "name": "get_preferred_width", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "minimum_width", 
+                        "description": "location to store the minimum width, or %NULL"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "natural_width", 
+                        "description": "location to store the natural width, or %NULL"
+                    }
+                ], 
+                "description": "Gets the accumulative preferred width for all rows which have been\nrequested with this context.\n\nAfter gtk_cell_area_context_reset() is called and/or before ever\nrequesting the size of a #GtkCellArea, the returned values are 0."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "3.0", 
+                "name": "get_preferred_width_for_height", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "height", 
+                        "description": "a proposed height for allocation"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "minimum_width", 
+                        "description": "location to store the minimum width, or %NULL"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "natural_width", 
+                        "description": "location to store the natural width, or %NULL"
+                    }
+                ], 
+                "description": "Gets the accumulative preferred width for @height for all rows which\nhave been requested for the same said @height with this context.\n\nAfter gtk_cell_area_context_reset() is called and/or before ever\nrequesting the size of a #GtkCellArea, the returned values are -1."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "3.0", 
+                "name": "push_preferred_height", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "minimum_height", 
+                        "description": "the proposed new minimum height for @context"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "natural_height", 
+                        "description": "the proposed new natural height for @context"
+                    }
+                ], 
+                "description": "Causes the minimum and/or natural height to grow if the new\nproposed sizes exceed the current minimum and natural height.\n\nThis is used by #GtkCellAreaContext implementations during\nthe request process over a series of #GtkTreeModel rows to\nprogressively push the requested height over a series of\ngtk_cell_area_get_preferred_height() requests."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "3.0", 
+                "name": "push_preferred_width", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "minimum_width", 
+                        "description": "the proposed new minimum width for @context"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "natural_width", 
+                        "description": "the proposed new natural width for @context"
+                    }
+                ], 
+                "description": "Causes the minimum and/or natural width to grow if the new\nproposed sizes exceed the current minimum and natural width.\n\nThis is used by #GtkCellAreaContext implementations during\nthe request process over a series of #GtkTreeModel rows to\nprogressively push the requested width over a series of\ngtk_cell_area_get_preferred_width() requests."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "reset", 
+                "parameters": null, 
+                "description": "Resets any previously cached request and allocation\ndata.\n\nWhen underlying #GtkTreeModel data changes its\nimportant to reset the context if the content\nsize is allowed to shrink. If the content size\nis only allowed to grow (this is usually an option\nfor views rendering large data stores as a measure\nof optimization), then only the row that changed\nor was inserted needs to be (re)requested with\ngtk_cell_area_get_preferred_width().\n\nWhen the new overall size of the context requires\nthat the allocated size changes (or whenever this\nallocation changes at all), the variable row\nsizes need to be re-requested for every row.\n\nFor instance, if the rows are displayed all with\nthe same width from top to bottom then a change\nin the allocated width necessitates a recalculation\nof all the displayed row heights using\ngtk_cell_area_get_preferred_height_for_width().\n\nSince 3.0"
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "allocate", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "width", 
+                        "description": "the allocated width for all #GtkTreeModel rows rendered with @context, or -1."
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "height", 
+                        "description": "the allocated height for all #GtkTreeModel rows rendered with @context, or -1."
+                    }
+                ], 
+                "description": "Allocates a width and/or a height for all rows which are to be\nrendered with @context.\n\nUsually allocation is performed only horizontally or sometimes\nvertically since a group of rows are usually rendered side by\nside vertically or horizontally and share either the same width\nor the same height. Sometimes they are allocated in both horizontal\nand vertical orientations producing a homogeneous effect of the\nrows. This is generally the case for #GtkTreeView when\n#GtkTreeView:fixed-height-mode is enabled.\n\nSince 3.0"
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "3.0", 
+                "name": "get_preferred_height_for_width", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "width", 
+                        "description": "a proposed width for allocation"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "minimum_height", 
+                        "description": "location to store the minimum height, or %NULL"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "natural_height", 
+                        "description": "location to store the natural height, or %NULL"
+                    }
+                ], 
+                "description": "Gets the accumulative preferred height for @width for all rows\nwhich have been requested for the same said @width with this context.\n\nAfter gtk_cell_area_context_reset() is called and/or before ever\nrequesting the size of a #GtkCellArea, the returned values are -1."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "3.0", 
+                "name": "get_preferred_width_for_height", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "height", 
+                        "description": "a proposed height for allocation"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "minimum_width", 
+                        "description": "location to store the minimum width, or %NULL"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "natural_width", 
+                        "description": "location to store the natural width, or %NULL"
+                    }
+                ], 
+                "description": "Gets the accumulative preferred width for @height for all rows which\nhave been requested for the same said @height with this context.\n\nAfter gtk_cell_area_context_reset() is called and/or before ever\nrequesting the size of a #GtkCellArea, the returned values are -1."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "reset", 
+                "parameters": null, 
+                "description": "Resets any previously cached request and allocation\ndata.\n\nWhen underlying #GtkTreeModel data changes its\nimportant to reset the context if the content\nsize is allowed to shrink. If the content size\nis only allowed to grow (this is usually an option\nfor views rendering large data stores as a measure\nof optimization), then only the row that changed\nor was inserted needs to be (re)requested with\ngtk_cell_area_get_preferred_width().\n\nWhen the new overall size of the context requires\nthat the allocated size changes (or whenever this\nallocation changes at all), the variable row\nsizes need to be re-requested for every row.\n\nFor instance, if the rows are displayed all with\nthe same width from top to bottom then a change\nin the allocated width necessitates a recalculation\nof all the displayed row heights using\ngtk_cell_area_get_preferred_height_for_width().\n\nSince 3.0"
+            }
+        ], 
+        "properties": [
+            {
+                "writable": false, 
+                "type": "Gtk.CellArea", 
+                "readable": false, 
+                "name": "area", 
+                "description": "The #GtkCellArea this context was created by"
+            }, 
+            {
+                "writable": false, 
+                "type": "Integer", 
+                "readable": false, 
+                "name": "minimum-height", 
+                "description": "The minimum height for the #GtkCellArea in this context\nfor all #GtkTreeModel rows that this context was requested\nfor using gtk_cell_area_get_preferred_height()."
+            }, 
+            {
+                "writable": false, 
+                "type": "Integer", 
+                "readable": false, 
+                "name": "minimum-width", 
+                "description": "The minimum width for the #GtkCellArea in this context\nfor all #GtkTreeModel rows that this context was requested\nfor using gtk_cell_area_get_preferred_width()."
+            }, 
+            {
+                "writable": false, 
+                "type": "Integer", 
+                "readable": false, 
+                "name": "natural-height", 
+                "description": "The natural height for the #GtkCellArea in this context\nfor all #GtkTreeModel rows that this context was requested\nfor using gtk_cell_area_get_preferred_height()."
+            }, 
+            {
+                "writable": false, 
+                "type": "Integer", 
+                "readable": false, 
+                "name": "natural-width", 
+                "description": "The natural width for the #GtkCellArea in this context\nfor all #GtkTreeModel rows that this context was requested\nfor using gtk_cell_area_get_preferred_width()."
+            }
+        ]
+    }, 
+    "fullname": "Class Gtk.CellAreaContext", 
+    "id": "Docs-CellAreaContext", 
+    "description": "The #GtkCellAreaContext object is created by a given #GtkCellArea\nimplementation via its #GtkCellAreaClass.create_context() virtual\nmethod and is used to store cell sizes and alignments for a series of\n#GtkTreeModel rows that are requested and rendered in the same context.\n\n#GtkCellLayout widgets can create any number of contexts in which to\nrequest and render groups of data rows. However its important that the\nsame context which was used to request sizes for a given #GtkTreeModel\nrow also be used for the same row when calling other #GtkCellArea APIs\nsuch as gtk_cell_area_render() and gtk_cell_area_event()."
+}

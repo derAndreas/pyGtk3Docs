@@ -1,0 +1,312 @@
+{
+    "isAbstract": false, 
+    "leaf": true, 
+    "name": "Application", 
+    "text": "Application", 
+    "interfaces": [
+        [
+            "Gio.ActionGroup"
+        ], 
+        [
+            "Gio.ActionMap"
+        ]
+    ], 
+    "parents": [
+        "Application", 
+        "Gio.Application"
+    ], 
+    "members": {
+        "signals": [
+            {
+                "version": "3.2", 
+                "when": "first", 
+                "name": "window-added", 
+                "description": "Emitted when a #GtkWindow is added to @application through\ngtk_application_add_window()."
+            }, 
+            {
+                "version": "3.2", 
+                "when": "first", 
+                "name": "window-removed", 
+                "description": "Emitted when a #GtkWindow is removed from @application,\neither as a side-effect of being destroyed or explicitly\nthrough gtk_application_remove_window()."
+            }
+        ], 
+        "methods": [
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a new #GtkApplication instance", 
+                    "name": "ref:Gtk.Application"
+                }, 
+                "version": "3.0", 
+                "name": "Gtk.Application(String application_id, Gio.ApplicationFlags flags)", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "application_id"
+                    }, 
+                    {
+                        "type": "Gio.ApplicationFlags", 
+                        "name": "flags"
+                    }
+                ]
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "3.4", 
+                "name": "add_accelerator", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "accelerator", 
+                        "description": "accelerator string"
+                    }, 
+                    {
+                        "type": "String", 
+                        "name": "action_name", 
+                        "description": "the name of the action to activate"
+                    }, 
+                    {
+                        "type": "GLib.Variant", 
+                        "name": "parameter", 
+                        "description": "parameter to pass when activating the action, or %NULL if the action does not accept an activation parameter"
+                    }
+                ], 
+                "description": "Installs an accelerator that will cause the named action\nto be activated when the key combination specificed by @accelerator\nis pressed.\n\n@accelerator must be a string that can be parsed by\ngtk_accelerator_parse(), e.g. \"<Primary>q\" or \"<Control><Alt>p\".\n\n@action_name must be the name of an action as it would be used\nin the app menu, i.e. actions that have been added to the application\nare referred to with an \"app.\" prefix, and window-specific actions\nwith a \"win.\" prefix.\n\nGtkApplication also extracts accelerators out of 'accel' attributes\nin the #GMenuModels passed to gtk_application_set_app_menu() and\ngtk_application_set_menubar(), which is usually more convenient\nthan calling this function for each accelerator."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "3.0", 
+                "name": "add_window", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Window", 
+                        "name": "window", 
+                        "description": "a #GtkWindow"
+                    }
+                ], 
+                "description": "Adds a window from @application.\n\nThis call is equivalent to setting the #GtkWindow:application\nproperty of @window to @application.\n\nNormally, the connection between the application and the window\nwill remain until the window is destroyed, but you can explicitly\nremove it with gtk_application_remove_window().\n\nGTK+ will keep the application running as long as it has\nany windows."
+            }, 
+            {
+                "returns": {
+                    "type": "Gio.MenuModel", 
+                    "description": "the application menu of @application"
+                }, 
+                "version": "3.4", 
+                "name": "get_app_menu", 
+                "parameters": null, 
+                "description": "Returns the menu model that has been set with\ngtk_application_set_app_menu()."
+            }, 
+            {
+                "returns": {
+                    "type": "Gio.MenuModel", 
+                    "description": "the menubar for windows of @application"
+                }, 
+                "version": "3.4", 
+                "name": "get_menubar", 
+                "parameters": null, 
+                "description": "Returns the menu model that has been set with\ngtk_application_set_menubar()."
+            }, 
+            {
+                "returns": {
+                    "type": "GLib.List", 
+                    "description": "a #GList of #GtkWindow"
+                }, 
+                "version": "3.0", 
+                "name": "get_windows", 
+                "parameters": null, 
+                "description": "Gets a list of the #GtkWindows associated with @application.\n\nThe list is sorted by most recently focused window, such that the first\nelement is the currently focused window. (Useful for choosing a parent\nfor a transient window.)\n\nThe list that is returned should not be modified in any way. It will\nonly remain valid until the next focus change or window creation or\ndeletion."
+            }, 
+            {
+                "returns": {
+                    "type": "Integer", 
+                    "description": "A non-zero cookie that is used to uniquely identify this"
+                }, 
+                "version": "3.4", 
+                "name": "inhibit", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Window", 
+                        "name": "window", 
+                        "description": "a #GtkWindow, or %NULL"
+                    }, 
+                    {
+                        "type": "ref:Gtk.ApplicationInhibitFlags", 
+                        "name": "flags", 
+                        "description": "what types of actions should be inhibited"
+                    }, 
+                    {
+                        "type": "String", 
+                        "name": "reason", 
+                        "description": "a short, human-readable string that explains why these operations are inhibited"
+                    }
+                ], 
+                "description": "Inform the session manager that certain types of actions should be\ninhibited. This is not guaranteed to work on all platforms and for\nall types of actions.\n\nApplications should invoke this method when they begin an operation\nthat should not be interrupted, such as creating a CD or DVD. The\ntypes of actions that may be blocked are specified by the @flags\nparameter. When the application completes the operation it should\ncall g_application_uninhibit() to remove the inhibitor. Note that\nan application can have multiple inhibitors, and all of the must\nbe individually removed. Inhibitors are also cleared when the\napplication exits.\n\nApplications should not expect that they will always be able to block\nthe action. In most cases, users will be given the option to force\nthe action to take place.\n\nReasons should be short and to the point.\n\nIf @window is given, the session manager may point the user to\nthis window to find out more about why the action is inhibited.\n\nrequest. It should be used as an argument to g_application_uninhibit()\nin order to remove the request. If the platform does not support\ninhibiting or the request failed for some reason, 0 is returned."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE if any of the actions specified in @flags are inhibited"
+                }, 
+                "version": "3.4", 
+                "name": "is_inhibited", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.ApplicationInhibitFlags", 
+                        "name": "flags", 
+                        "description": "what types of actions should be queried"
+                    }
+                ], 
+                "description": "Determines if any of the actions specified in @flags are\ncurrently inhibited (possibly by another application)."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "3.4", 
+                "name": "remove_accelerator", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "action_name", 
+                        "description": "the name of the action to activate"
+                    }, 
+                    {
+                        "type": "GLib.Variant", 
+                        "name": "parameter", 
+                        "description": "parameter to pass when activating the action, or %NULL if the action does not accept an activation parameter"
+                    }
+                ], 
+                "description": "Removes an accelerator that has been previously added\nwith gtk_application_add_accelerator()."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "3.0", 
+                "name": "remove_window", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Window", 
+                        "name": "window", 
+                        "description": "a #GtkWindow"
+                    }
+                ], 
+                "description": "Remove a window from @application.\n\nIf @window belongs to @application then this call is equivalent to\nsetting the #GtkWindow:application property of @window to\n%NULL.\n\nThe application may stop running as a result of a call to this\nfunction."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "3.4", 
+                "name": "set_app_menu", 
+                "parameters": [
+                    {
+                        "type": "Gio.MenuModel", 
+                        "name": "app_menu", 
+                        "description": "a #GMenuModel, or %NULL"
+                    }
+                ], 
+                "description": "Sets or unsets the application menu for @application.\n\nThe application menu is a single menu containing items that typically\nimpact the application as a whole, rather than acting on a specific\nwindow or document.  For example, you would expect to see\n\"Preferences\" or \"Quit\" in an application menu, but not \"Save\" or\n\"Print\".\n\nIf supported, the application menu will be rendered by the desktop\nenvironment.\n\nYou might call this method in your #GApplication:startup signal handler.\n\nUse the base #GActionMap interface to add actions, to respond to the user\nselecting these menu items."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "3.4", 
+                "name": "set_menubar", 
+                "parameters": [
+                    {
+                        "type": "Gio.MenuModel", 
+                        "name": "menubar", 
+                        "description": "a #GMenuModel, or %NULL"
+                    }
+                ], 
+                "description": "Sets or unsets the menubar for windows of @application.\n\nThis is a menubar in the traditional sense.\n\nDepending on the desktop environment, this may appear at the top of\neach window, or at the top of the screen.  In some environments, if\nboth the application menu and the menubar are set, the application\nmenu will be presented as if it were the first item of the menubar.\nOther environments treat the two as completely separate -- for\nexample, the application menu may be rendered by the desktop shell\nwhile the menubar (if set) remains in each individual window.\n\nYou might call this method in your #GApplication:startup signal handler.\n\nUse the base #GActionMap interface to add actions, to respond to the user\nselecting these menu items."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "3.4", 
+                "name": "uninhibit", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "cookie", 
+                        "description": "a cookie that was returned by g_application_inhibit()"
+                    }
+                ], 
+                "description": "Removes an inhibitor that has been established with g_application_inhibit().\nInhibitors are also cleared when the application exits."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "window_added", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Window", 
+                        "name": "window", 
+                        "description": ""
+                    }
+                ], 
+                "description": ""
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "window_removed", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Window", 
+                        "name": "window", 
+                        "description": ""
+                    }
+                ], 
+                "description": ""
+            }
+        ], 
+        "properties": [
+            {
+                "writable": false, 
+                "type": "Gio.MenuModel", 
+                "readable": false, 
+                "name": "app-menu", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Gio.MenuModel", 
+                "readable": false, 
+                "name": "menubar", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "register-session", 
+                "description": "Set this property to %TRUE to register with the session manager."
+            }
+        ]
+    }, 
+    "fullname": "Class Gtk.Application", 
+    "id": "Docs-Application", 
+    "description": "#GtkApplication is a class that handles many important aspects\nof a GTK+ application in a convenient fashion, without enforcing\na one-size-fits-all application model.\n\nCurrently, GtkApplication handles GTK+ initialization, application\nuniqueness, session management, provides some basic scriptability and\ndesktop shell integration by exporting actions and menus and manages a\nlist of toplevel windows whose life-cycle is automatically tied to the\nlife-cycle of your application.\n\nWhile GtkApplication works fine with plain #GtkWindows, it is recommended\nto use it together with #GtkApplicationWindow.\n\nWhen GDK threads are enabled, GtkApplication will acquire the GDK\nlock when invoking actions that arrive from other processes.  The GDK\nlock is not touched for local action invocations.  In order to have\nactions invoked in a predictable context it is therefore recommended\nthat the GDK lock be held while invoking actions locally with\ng_action_group_activate_action().  The same applies to actions\nassociated with #GtkApplicationWindow and to the 'activate' and\n'open' #GApplication methods.\n\nTo set an application menu for a GtkApplication, use\ngtk_application_set_app_menu(). The #GMenuModel that this function\nexpects is usually constructed using #GtkBuilder, as seen in the\nfollowing example. To specify a menubar that will be shown by\n#GApplicationWindows, use gtk_application_set_menubar(). Use the base\n#GActionMap interface to add actions, to respond to the user\nselecting these menu items.\n\nGTK+ displays these menus as expected, depending on the platform\nthe application is running on.\n\n<figure label=\"Menu integration in OS X\">\n<graphic fileref=\"bloatpad-osx.png\" format=\"PNG\"/>\n</figure>\n\n<figure label=\"Menu integration in GNOME\">\n<graphic fileref=\"bloatpad-gnome.png\" format=\"PNG\"/>\n</figure>\n\n<figure label=\"Menu integration in Xfce\">\n<graphic fileref=\"bloatpad-xfce.png\" format=\"PNG\"/>\n</figure>\n\n<example id=\"gtkapplication\"><title>A simple application</title>\n<programlisting>\n<xi:include xmlns:xi=\"http://www.w3.org/2001/XInclude\" parse=\"text\" href=\"../../../../examples/bloatpad.c\">\n<xi:fallback>FIXME: MISSING XINCLUDE CONTENT</xi:fallback>\n</xi:include>\n</programlisting>\n</example>\n\nGtkApplication optionally registers with a session manager\nof the users session (if you set the #GtkApplication:register-session\nproperty) and offers various functionality related to the session\nlife-cycle.\n\nAn application can block various ways to end the session with\nthe gtk_application_inhibit() function. Typical use cases for\nthis kind of inhibiting are long-running, uninterruptible operations,\nsuch as burning a CD or performing a disk backup. The session\nmanager may not honor the inhibitor, but it can be expected to\ninform the user about the negative consequences of ending the\nsession while inhibitors are present."
+}

@@ -1,0 +1,865 @@
+{
+    "isAbstract": false, 
+    "leaf": true, 
+    "name": "Label", 
+    "text": "Label", 
+    "interfaces": [
+        [
+            "Atk.ImplementorIface"
+        ], 
+        [
+            "Buildable"
+        ]
+    ], 
+    "parents": [
+        "Label", 
+        "Misc", 
+        "Widget", 
+        "GObject.InitiallyUnowned"
+    ], 
+    "members": {
+        "signals": [
+            {
+                "version": "2.18", 
+                "when": "last", 
+                "name": "activate-current-link", 
+                "description": "A <link linkend=\"keybinding-signals\">keybinding signal</link>\nwhich gets emitted when the user activates a link in the label.\n\nApplications may also emit the signal with g_signal_emit_by_name()\nif they need to control activation of URIs programmatically.\n\nThe default bindings for this signal are all forms of the Enter key."
+            }, 
+            {
+                "version": "2.18", 
+                "when": "last", 
+                "name": "activate-link", 
+                "description": "The signal which gets emitted to activate a URI.\nApplications may connect to it to override the default behaviour,\nwhich is to call gtk_show_uri()."
+            }, 
+            {
+                "version": "", 
+                "when": "last", 
+                "name": "copy-clipboard", 
+                "description": "The ::copy-clipboard signal is a\n<link linkend=\"keybinding-signals\">keybinding signal</link>\nwhich gets emitted to copy the selection to the clipboard.\n\nThe default binding for this signal is Ctrl-c."
+            }, 
+            {
+                "version": "", 
+                "when": "last", 
+                "name": "move-cursor", 
+                "description": "The ::move-cursor signal is a\n<link linkend=\"keybinding-signals\">keybinding signal</link>\nwhich gets emitted when the user initiates a cursor movement.\nIf the cursor is not visible in @entry, this signal causes\nthe viewport to be moved instead.\n\nApplications should not connect to it, but may emit it with\ng_signal_emit_by_name() if they need to control the cursor\nprogrammatically.\n\nThe default bindings for this signal come in two variants,\nthe variant with the Shift modifier extends the selection,\nthe variant without the Shift modifer does not.\nThere are too many key combinations to list them all here.\n<itemizedlist>\n<listitem>Arrow keys move by individual characters/lines</listitem>\n<listitem>Ctrl-arrow key combinations move by words/paragraphs</listitem>\n<listitem>Home/End keys move to the ends of the buffer</listitem>\n</itemizedlist>"
+            }, 
+            {
+                "version": "", 
+                "when": "last", 
+                "name": "populate-popup", 
+                "description": "The ::populate-popup signal gets emitted before showing the\ncontext menu of the label. Note that only selectable labels\nhave context menus.\n\nIf you need to add items to the context menu, connect\nto this signal and append your menuitems to the @menu."
+            }
+        ], 
+        "methods": [
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "the new #GtkLabel", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": null, 
+                "name": "Gtk.Label(String str)", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "str"
+                    }
+                ]
+            }, 
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "the new #GtkLabel", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": null, 
+                "name": "Gtk.Label(String str)", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "str"
+                    }
+                ]
+            }, 
+            {
+                "returns": {
+                    "type": "Float", 
+                    "description": "the angle of rotation for the label"
+                }, 
+                "version": "2.6", 
+                "name": "get_angle", 
+                "parameters": null, 
+                "description": "Gets the angle of rotation for the label. See\ngtk_label_set_angle()."
+            }, 
+            {
+                "returns": {
+                    "type": "Pango.AttrList", 
+                    "description": "the attribute list, or %NULL"
+                }, 
+                "version": "", 
+                "name": "get_attributes", 
+                "parameters": null, 
+                "description": "Gets the attribute list that was set on the label using\ngtk_label_set_attributes(), if any. This function does\nnot reflect attributes that come from the labels markup\n(see gtk_label_set_markup()). If you want to get the\neffective attributes for the label, use\npango_layout_get_attribute (gtk_label_get_layout (label)).\n\nif none was set."
+            }, 
+            {
+                "returns": {
+                    "type": "String", 
+                    "description": "the currently active URI. The string is owned by GTK+ and must"
+                }, 
+                "version": "2.18", 
+                "name": "get_current_uri", 
+                "parameters": null, 
+                "description": "Returns the URI for the currently active link in the label.\nThe active link is the one under the mouse pointer or, in a\nselectable label, the link in which the text cursor is currently\npositioned.\n\nThis function is intended for use in a #GtkLabel::activate-link handler\nor for use in a #GtkWidget::query-tooltip handler.\n\nnot be freed or modified."
+            }, 
+            {
+                "returns": {
+                    "type": "Pango.EllipsizeMode", 
+                    "description": "#PangoEllipsizeMode"
+                }, 
+                "version": "2.6", 
+                "name": "get_ellipsize", 
+                "parameters": null, 
+                "description": "Returns the ellipsizing position of the label. See gtk_label_set_ellipsize()."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.Justification", 
+                    "description": "#GtkJustification"
+                }, 
+                "version": "", 
+                "name": "get_justify", 
+                "parameters": null, 
+                "description": "Returns the justification of the label. See gtk_label_set_justify()."
+            }, 
+            {
+                "returns": {
+                    "type": "String", 
+                    "description": "the text of the label widget. This string is"
+                }, 
+                "version": "", 
+                "name": "get_label", 
+                "parameters": null, 
+                "description": "Fetches the text from a label widget including any embedded\nunderlines indicating mnemonics and Pango markup. (See\ngtk_label_get_text()).\n\nowned by the widget and must not be modified or freed."
+            }, 
+            {
+                "returns": {
+                    "type": "Pango.Layout", 
+                    "description": "the #PangoLayout for this label"
+                }, 
+                "version": "", 
+                "name": "get_layout", 
+                "parameters": null, 
+                "description": "Gets the #PangoLayout used to display the label.\nThe layout is useful to e.g. convert text positions to\npixel positions, in combination with gtk_label_get_layout_offsets().\nThe returned layout is owned by the @label so need not be\nfreed by the caller. The @label is free to recreate its layout at\nany time, so it should be considered read-only."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "get_layout_offsets", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "x", 
+                        "description": "location to store X offset of layout, or %NULL"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "y", 
+                        "description": "location to store Y offset of layout, or %NULL"
+                    }
+                ], 
+                "description": "Obtains the coordinates where the label will draw the #PangoLayout\nrepresenting the text in the label; useful to convert mouse events\ninto coordinates inside the #PangoLayout, e.g. to take some action\nif some part of the label is clicked. Of course you will need to\ncreate a #GtkEventBox to receive the events, and pack the label\ninside it, since labels are a #GTK_NO_WINDOW widget. Remember\nwhen using the #PangoLayout functions you need to convert to\nand from pixels using PANGO_PIXELS() or #PANGO_SCALE."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE if the lines of the label are automatically wrapped."
+                }, 
+                "version": "", 
+                "name": "get_line_wrap", 
+                "parameters": null, 
+                "description": "Returns whether lines in the label are automatically wrapped. \nSee gtk_label_set_line_wrap()."
+            }, 
+            {
+                "returns": {
+                    "type": "Pango.WrapMode", 
+                    "description": "%TRUE if the lines of the label are automatically wrapped."
+                }, 
+                "version": "2.10", 
+                "name": "get_line_wrap_mode", 
+                "parameters": null, 
+                "description": "Returns line wrap mode used by the label. See gtk_label_set_line_wrap_mode()."
+            }, 
+            {
+                "returns": {
+                    "type": "Integer", 
+                    "description": "the maximum width of the label in characters."
+                }, 
+                "version": "2.6", 
+                "name": "get_max_width_chars", 
+                "parameters": null, 
+                "description": "Retrieves the desired maximum width of @label, in characters. See\ngtk_label_set_width_chars()."
+            }, 
+            {
+                "returns": {
+                    "type": "Integer", 
+                    "description": "GDK keyval usable for accelerators, or #GDK_VoidSymbol"
+                }, 
+                "version": "", 
+                "name": "get_mnemonic_keyval", 
+                "parameters": null, 
+                "description": "If the label has been set so that it has an mnemonic key this function\nreturns the keyval used for the mnemonic accelerator. If there is no\nmnemonic set up it returns #GDK_VoidSymbol."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.Widget", 
+                    "description": "the target of the label's mnemonic,"
+                }, 
+                "version": "", 
+                "name": "get_mnemonic_widget", 
+                "parameters": null, 
+                "description": "Retrieves the target of the mnemonic (keyboard shortcut) of this\nlabel. See gtk_label_set_mnemonic_widget().\n\nor %NULL if none has been set and the default algorithm will be used."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE if the user can copy text from the label"
+                }, 
+                "version": "", 
+                "name": "get_selectable", 
+                "parameters": null, 
+                "description": "Gets the value set by gtk_label_set_selectable()."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE if selection is non-empty"
+                }, 
+                "version": "", 
+                "name": "get_selection_bounds", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "start", 
+                        "description": "return location for start of selection, as a character offset"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "end", 
+                        "description": "return location for end of selection, as a character offset"
+                    }
+                ], 
+                "description": "Gets the selected range of characters in the label, returning %TRUE\nif there's a selection."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE when the label is in single line mode."
+                }, 
+                "version": "2.6", 
+                "name": "get_single_line_mode", 
+                "parameters": null, 
+                "description": "Returns whether the label is in single line mode."
+            }, 
+            {
+                "returns": {
+                    "type": "String", 
+                    "description": "the text in the label widget. This is the internal"
+                }, 
+                "version": "", 
+                "name": "get_text", 
+                "parameters": null, 
+                "description": "Fetches the text from a label widget, as displayed on the\nscreen. This does not include any embedded underlines\nindicating mnemonics or Pango markup. (See gtk_label_get_label())\n\nstring used by the label, and must not be modified."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE if clicked links are remembered"
+                }, 
+                "version": "2.18", 
+                "name": "get_track_visited_links", 
+                "parameters": null, 
+                "description": "Returns whether the label is currently keeping track\nof clicked links."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE if the label's text will be parsed for markup."
+                }, 
+                "version": "", 
+                "name": "get_use_markup", 
+                "parameters": null, 
+                "description": "Returns whether the label's text is interpreted as marked up with\nthe <link linkend=\"PangoMarkupFormat\">Pango text markup\nlanguage</link>. See gtk_label_set_use_markup ()."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE whether an embedded underline in the label indicates"
+                }, 
+                "version": "", 
+                "name": "get_use_underline", 
+                "parameters": null, 
+                "description": "Returns whether an embedded underline in the label indicates a\nmnemonic. See gtk_label_set_use_underline().\n\nthe mnemonic accelerator keys."
+            }, 
+            {
+                "returns": {
+                    "type": "Integer", 
+                    "description": "the width of the label in characters."
+                }, 
+                "version": "2.6", 
+                "name": "get_width_chars", 
+                "parameters": null, 
+                "description": "Retrieves the desired width of @label, in characters. See\ngtk_label_set_width_chars()."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "select_region", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "start_offset", 
+                        "description": "start offset (in characters not bytes)"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "end_offset", 
+                        "description": "end offset (in characters not bytes)"
+                    }
+                ], 
+                "description": "Selects a range of characters in the label, if the label is selectable.\nSee gtk_label_set_selectable(). If the label is not selectable,\nthis function has no effect. If @start_offset or\n@end_offset are -1, then the end of the label will be substituted."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.6", 
+                "name": "set_angle", 
+                "parameters": [
+                    {
+                        "type": "Float", 
+                        "name": "angle", 
+                        "description": "the angle that the baseline of the label makes with the horizontal, in degrees, measured counterclockwise"
+                    }
+                ], 
+                "description": "Sets the angle of rotation for the label. An angle of 90 reads from\nfrom bottom to top, an angle of 270, from top to bottom. The angle\nsetting for the label is ignored if the label is selectable,\nwrapped, or ellipsized."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_attributes", 
+                "parameters": [
+                    {
+                        "type": "Pango.AttrList", 
+                        "name": "attrs", 
+                        "description": "a #PangoAttrList"
+                    }
+                ], 
+                "description": "Sets a #PangoAttrList; the attributes in the list are applied to the\nlabel text. \n\n<note><para>The attributes set with this function will be applied\nand merged with any other attributes previously effected by way\nof the #GtkLabel:use-underline or #GtkLabel:use-markup properties.\nWhile it is not recommended to mix markup strings with manually set\nattributes, if you must; know that the attributes will be applied\nto the label after the markup string is parsed.</para></note>"
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.6", 
+                "name": "set_ellipsize", 
+                "parameters": [
+                    {
+                        "type": "Pango.EllipsizeMode", 
+                        "name": "mode", 
+                        "description": "a #PangoEllipsizeMode"
+                    }
+                ], 
+                "description": "Sets the mode used to ellipsize (add an ellipsis: \"...\") to the text \nif there is not enough space to render the entire string."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_justify", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Justification", 
+                        "name": "jtype", 
+                        "description": "a #GtkJustification"
+                    }
+                ], 
+                "description": "Sets the alignment of the lines in the text of the label relative to\neach other. %GTK_JUSTIFY_LEFT is the default value when the\nwidget is first created with gtk_label_new(). If you instead want\nto set the alignment of the label as a whole, use\ngtk_misc_set_alignment() instead. gtk_label_set_justify() has no\neffect on labels containing only a single line."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_label", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "str", 
+                        "description": "the new text to set for the label"
+                    }
+                ], 
+                "description": "Sets the text of the label. The label is interpreted as\nincluding embedded underlines and/or Pango markup depending\non the values of the #GtkLabel:use-underline\" and\n#GtkLabel:use-markup properties."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_line_wrap", 
+                "parameters": [
+                    {
+                        "type": "Boolean", 
+                        "name": "wrap", 
+                        "description": "the setting"
+                    }
+                ], 
+                "description": "Toggles line wrapping within the #GtkLabel widget. %TRUE makes it break\nlines if text exceeds the widget's size. %FALSE lets the text get cut off\nby the edge of the widget if it exceeds the widget size.\n\nNote that setting line wrapping to %TRUE does not make the label\nwrap at its parent container's width, because GTK+ widgets\nconceptually can't make their requisition depend on the parent\ncontainer's size. For a label that wraps at a specific position,\nset the label's width using gtk_widget_set_size_request()."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.10", 
+                "name": "set_line_wrap_mode", 
+                "parameters": [
+                    {
+                        "type": "Pango.WrapMode", 
+                        "name": "wrap_mode", 
+                        "description": "the line wrapping mode"
+                    }
+                ], 
+                "description": "If line wrapping is on (see gtk_label_set_line_wrap()) this controls how\nthe line wrapping is done. The default is %PANGO_WRAP_WORD which means\nwrap on word boundaries."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_markup", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "str", 
+                        "description": "a markup string (see <link linkend=\"PangoMarkupFormat\">Pango markup format</link>)"
+                    }
+                ], 
+                "description": "Parses @str which is marked up with the <link\nlinkend=\"PangoMarkupFormat\">Pango text markup language</link>, setting the\nlabel's text and attribute list based on the parse results. If the @str is\nexternal data, you may need to escape it with g_markup_escape_text() or\ng_markup_printf_escaped()<!-- -->:\n|[\nchar *markup;\n\nmarkup = g_markup_printf_escaped (\"&lt;span style=\\\"italic\\\"&gt;&percnt;s&lt;/span&gt;\", str);\ngtk_label_set_markup (GTK_LABEL (label), markup);\ng_free (markup);\n]|"
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_markup_with_mnemonic", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "str", 
+                        "description": "a markup string (see <link linkend=\"PangoMarkupFormat\">Pango markup format</link>)"
+                    }
+                ], 
+                "description": "Parses @str which is marked up with the\n<link linkend=\"PangoMarkupFormat\">Pango text markup language</link>,\nsetting the label's text and attribute list based on the parse results.\nIf characters in @str are preceded by an underscore, they are underlined\nindicating that they represent a keyboard accelerator called a mnemonic.\n\nThe mnemonic key can be used to activate another widget, chosen\nautomatically, or explicitly using gtk_label_set_mnemonic_widget()."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.6", 
+                "name": "set_max_width_chars", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "n_chars", 
+                        "description": "the new desired maximum width, in characters."
+                    }
+                ], 
+                "description": "Sets the desired maximum width in characters of @label to @n_chars."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_mnemonic_widget", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "widget", 
+                        "description": "the target #GtkWidget"
+                    }
+                ], 
+                "description": "If the label has been set so that it has an mnemonic key (using\ni.e. gtk_label_set_markup_with_mnemonic(),\ngtk_label_set_text_with_mnemonic(), gtk_label_new_with_mnemonic()\nor the \"use_underline\" property) the label can be associated with a\nwidget that is the target of the mnemonic. When the label is inside\na widget (like a #GtkButton or a #GtkNotebook tab) it is\nautomatically associated with the correct widget, but sometimes\n(i.e. when the target is a #GtkEntry next to the label) you need to\nset it explicitly using this function.\n\nThe target widget will be accelerated by emitting the \nGtkWidget::mnemonic-activate signal on it. The default handler for \nthis signal will activate the widget if there are no mnemonic collisions \nand toggle focus between the colliding widgets otherwise."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_pattern", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "pattern", 
+                        "description": "The pattern as described above."
+                    }
+                ], 
+                "description": "The pattern of underlines you want under the existing text within the\n#GtkLabel widget.  For example if the current text of the label says\n\"FooBarBaz\" passing a pattern of \"___   ___\" will underline\n\"Foo\" and \"Baz\" but not \"Bar\"."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_selectable", 
+                "parameters": [
+                    {
+                        "type": "Boolean", 
+                        "name": "setting", 
+                        "description": "%TRUE to allow selecting text in the label"
+                    }
+                ], 
+                "description": "Selectable labels allow the user to select text from the label, for\ncopy-and-paste."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.6", 
+                "name": "set_single_line_mode", 
+                "parameters": [
+                    {
+                        "type": "Boolean", 
+                        "name": "single_line_mode", 
+                        "description": "%TRUE if the label should be in single line mode"
+                    }
+                ], 
+                "description": "Sets whether the label is in single line mode."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_text", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "str", 
+                        "description": "The text you want to set"
+                    }
+                ], 
+                "description": "Sets the text within the #GtkLabel widget. It overwrites any text that\nwas there before.  \n\nThis will also clear any previously set mnemonic accelerators."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_text_with_mnemonic", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "str", 
+                        "description": "a string"
+                    }
+                ], 
+                "description": "Sets the label's text from the string @str.\nIf characters in @str are preceded by an underscore, they are underlined\nindicating that they represent a keyboard accelerator called a mnemonic.\nThe mnemonic key can be used to activate another widget, chosen \nautomatically, or explicitly using gtk_label_set_mnemonic_widget()."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.18", 
+                "name": "set_track_visited_links", 
+                "parameters": [
+                    {
+                        "type": "Boolean", 
+                        "name": "track_links", 
+                        "description": "%TRUE to track visited links"
+                    }
+                ], 
+                "description": "Sets whether the label should keep track of clicked\nlinks (and use a different color for them)."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_use_markup", 
+                "parameters": [
+                    {
+                        "type": "Boolean", 
+                        "name": "setting", 
+                        "description": "%TRUE if the label's text should be parsed for markup."
+                    }
+                ], 
+                "description": "Sets whether the text of the label contains markup in <link\nlinkend=\"PangoMarkupFormat\">Pango's text markup\nlanguage</link>. See gtk_label_set_markup()."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_use_underline", 
+                "parameters": [
+                    {
+                        "type": "Boolean", 
+                        "name": "setting", 
+                        "description": "%TRUE if underlines in the text indicate mnemonics"
+                    }
+                ], 
+                "description": "If true, an underline in the text indicates the next character should be\nused for the mnemonic accelerator key."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.6", 
+                "name": "set_width_chars", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "n_chars", 
+                        "description": "the new desired width, in characters."
+                    }
+                ], 
+                "description": "Sets the desired width in characters of @label to @n_chars."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "activate_link", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "uri", 
+                        "description": ""
+                    }
+                ], 
+                "description": ""
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "copy_clipboard", 
+                "parameters": null, 
+                "description": ""
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "move_cursor", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.MovementStep", 
+                        "name": "step", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "count", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Boolean", 
+                        "name": "extend_selection", 
+                        "description": ""
+                    }
+                ], 
+                "description": ""
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "populate_popup", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Menu", 
+                        "name": "menu", 
+                        "description": ""
+                    }
+                ], 
+                "description": ""
+            }
+        ], 
+        "properties": [
+            {
+                "writable": false, 
+                "type": "Float", 
+                "readable": false, 
+                "name": "angle", 
+                "description": "The angle that the baseline of the label makes with the horizontal,\nin degrees, measured counterclockwise. An angle of 90 reads from\nfrom bottom to top, an angle of 270, from top to bottom. Ignored\nif the label is selectable, wrapped, or ellipsized."
+            }, 
+            {
+                "writable": false, 
+                "type": "Pango.AttrList", 
+                "readable": false, 
+                "name": "attributes", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Integer", 
+                "readable": false, 
+                "name": "cursor-position", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Pango.EllipsizeMode", 
+                "readable": false, 
+                "name": "ellipsize", 
+                "description": "The preferred place to ellipsize the string, if the label does \nnot have enough room to display the entire string, specified as a \n#PangoEllisizeMode. \n\nNote that setting this property to a value other than \n%PANGO_ELLIPSIZE_NONE has the side-effect that the label requests \nonly enough space to display the ellipsis \"...\". In particular, this \nmeans that ellipsizing labels do not work well in notebook tabs, unless \nthe tab's #GtkNotebook:tab-expand property is set to %TRUE. Other ways\nto set a label's width are gtk_widget_set_size_request() and\ngtk_label_set_width_chars()."
+            }, 
+            {
+                "writable": false, 
+                "type": "Gtk.Justification", 
+                "readable": false, 
+                "name": "justify", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "String", 
+                "readable": false, 
+                "name": "label", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Integer", 
+                "readable": false, 
+                "name": "max-width-chars", 
+                "description": "The desired maximum width of the label, in characters. If this property \nis set to -1, the width will be calculated automatically.\n\nSee the section on <link linkend=\"label-text-layout\">text layout</link>\nfor details of how #GtkLabel:width-chars and #GtkLabel:max-width-chars\ndetermine the width of ellipsized and wrapped labels."
+            }, 
+            {
+                "writable": false, 
+                "type": "Integer", 
+                "readable": false, 
+                "name": "mnemonic-keyval", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Gtk.Widget", 
+                "readable": false, 
+                "name": "mnemonic-widget", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "String", 
+                "readable": false, 
+                "name": "pattern", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "selectable", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Integer", 
+                "readable": false, 
+                "name": "selection-bound", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "single-line-mode", 
+                "description": "Whether the label is in single line mode. In single line mode,\nthe height of the label does not depend on the actual text, it\nis always set to ascent + descent of the font. This can be an\nadvantage in situations where resizing the label because of text \nchanges would be distracting, e.g. in a statusbar."
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "track-visited-links", 
+                "description": "Set this property to %TRUE to make the label track which links\nhave been clicked. It will then apply the ::visited-link-color\ncolor, instead of ::link-color."
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "use-markup", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "use-underline", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Integer", 
+                "readable": false, 
+                "name": "width-chars", 
+                "description": "The desired width of the label, in characters. If this property is set to\n-1, the width will be calculated automatically.\n\nSee the section on <link linkend=\"label-text-layout\">text layout</link>\nfor details of how #GtkLabel:width-chars and #GtkLabel:max-width-chars\ndetermine the width of ellipsized and wrapped labels."
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "wrap", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Pango.WrapMode", 
+                "readable": false, 
+                "name": "wrap-mode", 
+                "description": "If line wrapping is on (see the #GtkLabel:wrap property) this controls \nhow the line wrapping is done. The default is %PANGO_WRAP_WORD, which \nmeans wrap on word boundaries."
+            }
+        ]
+    }, 
+    "fullname": "Class Gtk.Label", 
+    "id": "Docs-Label", 
+    "description": "The #GtkLabel widget displays a small amount of text. As the name\nimplies, most labels are used to label another widget such as a\n#GtkButton, a #GtkMenuItem, or a #GtkOptionMenu.\n\n<refsect2 id=\"GtkLabel-BUILDER-UI\">\n<title>GtkLabel as GtkBuildable</title>\n<para>\nThe GtkLabel implementation of the GtkBuildable interface supports a\ncustom &lt;attributes&gt; element, which supports any number of &lt;attribute&gt;\nelements. the &lt;attribute&gt; element has attributes named name, value,\nstart and end and allows you to specify #PangoAttribute values for this label.\n\n<example>\n<title>A UI definition fragment specifying Pango attributes</title>\n<programlisting><![CDATA[\n<object class=\"GtkLabel\">\n<attributes>\n<attribute name=\"weight\" value=\"PANGO_WEIGHT_BOLD\"/>\n<attribute name=\"background\" value=\"red\" start=\"5\" end=\"10\"/>\"\n</attributes>\n</object>\n]]></programlisting>\n</example>\nThe start and end attributes specify the range of characters to which the\nPango attribute applies. If start and end are not specified, the attribute is\napplied to the whole text. Note that specifying ranges does not make much\nsense with translatable attributes. Use markup embedded in the translatable\ncontent instead.\n</para>\n</refsect2>\n<refsect2>\n<title>Mnemonics</title>\n<para>\nLabels may contain <firstterm>mnemonics</firstterm>. Mnemonics are\nunderlined characters in the label, used for keyboard navigation.\nMnemonics are created by providing a string with an underscore before\nthe mnemonic character, such as <literal>\"_File\"</literal>, to the\nfunctions gtk_label_new_with_mnemonic() or\ngtk_label_set_text_with_mnemonic().\n\nMnemonics automatically activate any activatable widget the label is\ninside, such as a #GtkButton; if the label is not inside the\nmnemonic's target widget, you have to tell the label about the target\nusing gtk_label_set_mnemonic_widget(). Here's a simple example where\nthe label is inside a button:\n\n<informalexample>\n<programlisting>\n// Pressing Alt+H will activate this button\nbutton = gtk_button_new (<!-- -->);\nlabel = gtk_label_new_with_mnemonic (\"_Hello\");\ngtk_container_add (GTK_CONTAINER (button), label);\n</programlisting>\n</informalexample>\n\nThere's a convenience function to create buttons with a mnemonic label\nalready inside:\n\n<informalexample>\n<programlisting>\n// Pressing Alt+H will activate this button\nbutton = gtk_button_new_with_mnemonic (\"_Hello\");\n</programlisting>\n</informalexample>\n\nTo create a mnemonic for a widget alongside the label, such as a\n#GtkEntry, you have to point the label at the entry with\ngtk_label_set_mnemonic_widget():\n\n<informalexample>\n<programlisting>\n// Pressing Alt+H will focus the entry\nentry = gtk_entry_new (<!-- -->);\nlabel = gtk_label_new_with_mnemonic (\"_Hello\");\ngtk_label_set_mnemonic_widget (GTK_LABEL (label), entry);\n</programlisting>\n</informalexample>\n</para>\n</refsect2>\n<refsect2>\n<title>Markup (styled text)</title>\n<para>\nTo make it easy to format text in a label (changing colors, fonts,\netc.), label text can be provided in a simple <link\nlinkend=\"PangoMarkupFormat\">markup format</link>.\nHere's how to create a label with a small font:\n\n<informalexample>\n<programlisting>\nlabel = gtk_label_new (NULL);\ngtk_label_set_markup (GTK_LABEL (label), \"<small>Small text</small>\");\n</programlisting>\n</informalexample>\n\n(See <link\nlinkend=\"PangoMarkupFormat\">complete documentation</link> of available\ntags in the Pango manual.)\n\nThe markup passed to gtk_label_set_markup() must be valid; for example,\nliteral &lt;, &gt; and &amp; characters must be escaped as \\&lt;,\n\\gt;, and \\&amp;. If you pass text obtained from the user, file,\nor a network to gtk_label_set_markup(), you'll want to escape it with\ng_markup_escape_text() or g_markup_printf_escaped().\n\nMarkup strings are just a convenient way to set the #PangoAttrList on\na label; gtk_label_set_attributes() may be a simpler way to set\nattributes in some cases. Be careful though; #PangoAttrList tends to\ncause internationalization problems, unless you're applying attributes\nto the entire string (i.e. unless you set the range of each attribute\nto [0, %G_MAXINT)). The reason is that specifying the start_index and\nend_index for a #PangoAttribute requires knowledge of the exact string\nbeing displayed, so translations will cause problems.\n</para>\n</refsect2>\n<refsect2>\n<title>Selectable labels</title>\nLabels can be made selectable with gtk_label_set_selectable().\nSelectable labels allow the user to copy the label contents to\nthe clipboard. Only labels that contain useful-to-copy information\n&mdash; such as error messages &mdash; should be made selectable.\n</refsect2>\n<refsect2 id=\"label-text-layout\">\n<title>Text layout</title>\n<para>\nA label can contain any number of paragraphs, but will have\nperformance problems if it contains more than a small number.\nParagraphs are separated by newlines or other paragraph separators\nunderstood by Pango.\n\nLabels can automatically wrap text if you call\ngtk_label_set_line_wrap().\n\ngtk_label_set_justify() sets how the lines in a label align\nwith one another. If you want to set how the label as a whole\naligns in its available space, see gtk_misc_set_alignment().\n\nThe #GtkLabel:width-chars and #GtkLabel:max-width-chars properties\ncan be used to control the size allocation of ellipsized or wrapped\nlabels. For ellipsizing labels, if either is specified (and less\nthan the actual text size), it is used as the minimum width, and the actual\ntext size is used as the natural width of the label. For wrapping labels,\nwidth-chars is used as the minimum width, if specified, and max-width-chars\nis used as the natural width. Even if max-width-chars specified, wrapping\nlabels will be rewrapped to use all of the available width.\n\n<note><para>\nNote that the interpretation of #GtkLabel:width-chars and\n#GtkLabel:max-width-chars has changed a bit with the introduction of\n<link linkend=\"geometry-management\">width-for-height geometry management.</link>\n</para></note>\n</para>\n</refsect2>\n<refsect2>\n<title>Links</title>\n<para>\nSince 2.18, GTK+ supports markup for clickable hyperlinks in addition\nto regular Pango markup. The markup for links is borrowed from HTML, using the\n<tag>a</tag> with href and title attributes. GTK+ renders links similar to the\nway they appear in web browsers, with colored, underlined text. The title\nattribute is displayed as a tooltip on the link. An example looks like this:\n\n<informalexample><programlisting>\ngtk_label_set_markup (label, \"Go to the <a href=\"http://www.gtk.org\" title=\"&lt;i&gt;Our&lt;/i&gt; website\">GTK+ website</a> for more...\");\n</programlisting></informalexample>\n\nIt is possible to implement custom handling for links and their tooltips with\nthe #GtkLabel::activate-link signal and the gtk_label_get_current_uri() function.\n</para>\n</refsect2>"
+}

@@ -1,0 +1,94 @@
+{
+    "isAbstract": false, 
+    "leaf": true, 
+    "name": "Accessible", 
+    "text": "Accessible", 
+    "interfaces": [], 
+    "parents": [
+        "Accessible", 
+        "Atk.Object"
+    ], 
+    "members": {
+        "signals": [], 
+        "methods": [
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "connect_widget_destroyed", 
+                "parameters": null, 
+                "description": "This function specifies the callback function to be called\nwhen the widget corresponding to a GtkAccessible is destroyed."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.Widget", 
+                    "description": "pointer to the #GtkWidget"
+                }, 
+                "version": "2.22", 
+                "name": "get_widget", 
+                "parameters": null, 
+                "description": "Gets the #GtkWidget corresponding to the #GtkAccessible.\nThe returned widget does not have a reference added, so\nyou do not need to unref it.\n\ncorresponding to the #GtkAccessible, or %NULL."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.22", 
+                "name": "set_widget", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "widget", 
+                        "description": "a #GtkWidget or %NULL to unset"
+                    }
+                ], 
+                "description": "Sets the #GtkWidget corresponding to the #GtkAccessible.\n\n<note><para>@accessible will not hold a reference to @widget.\nIt is the caller's responsibility to ensure that when @widget\nis destroyed, the widget is unset by calling this function\nagain with @widget set to %NULL.</para></note>"
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "connect_widget_destroyed", 
+                "parameters": null, 
+                "description": "This function specifies the callback function to be called\nwhen the widget corresponding to a GtkAccessible is destroyed."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "widget_set", 
+                "parameters": null, 
+                "description": ""
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "widget_unset", 
+                "parameters": null, 
+                "description": ""
+            }
+        ], 
+        "properties": [
+            {
+                "writable": false, 
+                "type": "Gtk.Widget", 
+                "readable": false, 
+                "name": "widget", 
+                "description": ""
+            }
+        ]
+    }, 
+    "fullname": "Class Gtk.Accessible", 
+    "id": "Docs-Accessible", 
+    "description": "The #GtkAccessible class is the base class for accessible\nimplementations for #GtkWidget subclasses. It is a thin\nwrapper around #AtkObject, which adds facilities for associating\na widget with its accessible object.\n\nAn accessible implementation for a third-party widget should\nderive from #GtkAccessible and implement the suitable interfaces\nfrom ATK, such as #AtkText or #AtkSelection. To establish\nthe connection between the widget class and its corresponding\nacccessible implementation, override the get_accessible vfunc\nin #GtkWidgetClass."
+}

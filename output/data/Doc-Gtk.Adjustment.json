@@ -1,0 +1,379 @@
+{
+    "isAbstract": false, 
+    "leaf": true, 
+    "name": "Adjustment", 
+    "text": "Adjustment", 
+    "interfaces": [], 
+    "parents": [
+        "Adjustment", 
+        "GObject.InitiallyUnowned"
+    ], 
+    "members": {
+        "signals": [
+            {
+                "version": "", 
+                "when": "first", 
+                "name": "changed", 
+                "description": "Emitted when one or more of the #GtkAdjustment fields have been changed,\nother than the value field."
+            }, 
+            {
+                "version": "", 
+                "when": "first", 
+                "name": "value-changed", 
+                "description": "Emitted when the #GtkAdjustment value field has been changed."
+            }
+        ], 
+        "methods": [
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a new #GtkAdjustment.", 
+                    "name": "ref:Gtk.Adjustment"
+                }, 
+                "version": null, 
+                "name": "Gtk.Adjustment(Float value, Float lower, Float upper, Float step_increment, Float page_increment, Float page_size)", 
+                "parameters": [
+                    {
+                        "type": "Float", 
+                        "name": "value"
+                    }, 
+                    {
+                        "type": "Float", 
+                        "name": "lower"
+                    }, 
+                    {
+                        "type": "Float", 
+                        "name": "upper"
+                    }, 
+                    {
+                        "type": "Float", 
+                        "name": "step_increment"
+                    }, 
+                    {
+                        "type": "Float", 
+                        "name": "page_increment"
+                    }, 
+                    {
+                        "type": "Float", 
+                        "name": "page_size"
+                    }
+                ]
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "changed", 
+                "parameters": null, 
+                "description": "Emits a #GtkAdjustment::changed signal from the #GtkAdjustment.\nThis is typically called by the owner of the #GtkAdjustment after it has\nchanged any of the #GtkAdjustment fields other than the value."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "clamp_page", 
+                "parameters": [
+                    {
+                        "type": "Float", 
+                        "name": "lower", 
+                        "description": "the lower value."
+                    }, 
+                    {
+                        "type": "Float", 
+                        "name": "upper", 
+                        "description": "the upper value."
+                    }
+                ], 
+                "description": "Updates the #GtkAdjustment #GtkAdjustment.value to ensure that the range\nbetween @lower and @upper is in the current page (i.e. between\n#GtkAdjustment.value and #GtkAdjustment.value + #GtkAdjustment.page_size).\nIf the range is larger than the page size, then only the start of it will\nbe in the current page.\nA #GtkAdjustment::changed signal will be emitted if the value is changed."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.14", 
+                "name": "configure", 
+                "parameters": [
+                    {
+                        "type": "Float", 
+                        "name": "value", 
+                        "description": "the new value"
+                    }, 
+                    {
+                        "type": "Float", 
+                        "name": "lower", 
+                        "description": "the new minimum value"
+                    }, 
+                    {
+                        "type": "Float", 
+                        "name": "upper", 
+                        "description": "the new maximum value"
+                    }, 
+                    {
+                        "type": "Float", 
+                        "name": "step_increment", 
+                        "description": "the new step increment"
+                    }, 
+                    {
+                        "type": "Float", 
+                        "name": "page_increment", 
+                        "description": "the new page increment"
+                    }, 
+                    {
+                        "type": "Float", 
+                        "name": "page_size", 
+                        "description": "the new page size"
+                    }
+                ], 
+                "description": "Sets all properties of the adjustment at once.\n\nUse this function to avoid multiple emissions of the \"changed\"\nsignal. See gtk_adjustment_set_lower() for an alternative way\nof compressing multiple emissions of \"changed\" into one."
+            }, 
+            {
+                "returns": {
+                    "type": "Float", 
+                    "description": "The current minimum value of the adjustment."
+                }, 
+                "version": "2.14", 
+                "name": "get_lower", 
+                "parameters": null, 
+                "description": "Retrieves the minimum value of the adjustment."
+            }, 
+            {
+                "returns": {
+                    "type": "Float", 
+                    "description": "the minimum increment of @adjustment"
+                }, 
+                "version": "3.2", 
+                "name": "get_minimum_increment", 
+                "parameters": null, 
+                "description": "Gets the smaller of step increment and page increment."
+            }, 
+            {
+                "returns": {
+                    "type": "Float", 
+                    "description": "The current page increment of the adjustment."
+                }, 
+                "version": "2.14", 
+                "name": "get_page_increment", 
+                "parameters": null, 
+                "description": "Retrieves the page increment of the adjustment."
+            }, 
+            {
+                "returns": {
+                    "type": "Float", 
+                    "description": "The current page size of the adjustment."
+                }, 
+                "version": "2.14", 
+                "name": "get_page_size", 
+                "parameters": null, 
+                "description": "Retrieves the page size of the adjustment."
+            }, 
+            {
+                "returns": {
+                    "type": "Float", 
+                    "description": "The current step increment of the adjustment."
+                }, 
+                "version": "2.14", 
+                "name": "get_step_increment", 
+                "parameters": null, 
+                "description": "Retrieves the step increment of the adjustment."
+            }, 
+            {
+                "returns": {
+                    "type": "Float", 
+                    "description": "The current maximum value of the adjustment."
+                }, 
+                "version": "2.14", 
+                "name": "get_upper", 
+                "parameters": null, 
+                "description": "Retrieves the maximum value of the adjustment."
+            }, 
+            {
+                "returns": {
+                    "type": "Float", 
+                    "description": "The current value of the adjustment."
+                }, 
+                "version": "", 
+                "name": "get_value", 
+                "parameters": null, 
+                "description": "Gets the current value of the adjustment. See\ngtk_adjustment_set_value ()."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.14", 
+                "name": "set_lower", 
+                "parameters": [
+                    {
+                        "type": "Float", 
+                        "name": "lower", 
+                        "description": "the new minimum value"
+                    }
+                ], 
+                "description": "Sets the minimum value of the adjustment.\n\nWhen setting multiple adjustment properties via their individual\nsetters, multiple \"changed\" signals will be emitted. However, since\nthe emission of the \"changed\" signal is tied to the emission of the\n\"GObject::notify\" signals of the changed properties, it's possible\nto compress the \"changed\" signals into one by calling\ng_object_freeze_notify() and g_object_thaw_notify() around the\ncalls to the individual setters.\n\nAlternatively, using a single g_object_set() for all the properties\nto change, or using gtk_adjustment_configure() has the same effect\nof compressing \"changed\" emissions."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.14", 
+                "name": "set_page_increment", 
+                "parameters": [
+                    {
+                        "type": "Float", 
+                        "name": "page_increment", 
+                        "description": "the new page increment"
+                    }
+                ], 
+                "description": "Sets the page increment of the adjustment.\n\nSee gtk_adjustment_set_lower() about how to compress multiple\nemissions of the \"changed\" signal when setting multiple adjustment\nproperties."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.14", 
+                "name": "set_page_size", 
+                "parameters": [
+                    {
+                        "type": "Float", 
+                        "name": "page_size", 
+                        "description": "the new page size"
+                    }
+                ], 
+                "description": "Sets the page size of the adjustment.\n\nSee gtk_adjustment_set_lower() about how to compress multiple\nemissions of the \"changed\" signal when setting multiple adjustment\nproperties."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.14", 
+                "name": "set_step_increment", 
+                "parameters": [
+                    {
+                        "type": "Float", 
+                        "name": "step_increment", 
+                        "description": "the new step increment"
+                    }
+                ], 
+                "description": "Sets the step increment of the adjustment.\n\nSee gtk_adjustment_set_lower() about how to compress multiple\nemissions of the \"changed\" signal when setting multiple adjustment\nproperties."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.14", 
+                "name": "set_upper", 
+                "parameters": [
+                    {
+                        "type": "Float", 
+                        "name": "upper", 
+                        "description": "the new maximum value"
+                    }
+                ], 
+                "description": "Sets the maximum value of the adjustment.\n\nNote that values will be restricted by\n<literal>upper - page-size</literal> if the page-size\nproperty is nonzero.\n\nSee gtk_adjustment_set_lower() about how to compress multiple\nemissions of the \"changed\" signal when setting multiple adjustment\nproperties."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_value", 
+                "parameters": [
+                    {
+                        "type": "Float", 
+                        "name": "value", 
+                        "description": "the new value."
+                    }
+                ], 
+                "description": "Sets the #GtkAdjustment value. The value is clamped to lie between\n#GtkAdjustment.lower and #GtkAdjustment.upper.\n\nNote that for adjustments which are used in a #GtkScrollbar, the effective\nrange of allowed values goes from #GtkAdjustment.lower to\n#GtkAdjustment.upper - #GtkAdjustment.page_size."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "value_changed", 
+                "parameters": null, 
+                "description": "Emits a #GtkAdjustment::value_changed signal from the #GtkAdjustment.\nThis is typically called by the owner of the #GtkAdjustment after it has\nchanged the #GtkAdjustment value field."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "changed", 
+                "parameters": null, 
+                "description": "Emits a #GtkAdjustment::changed signal from the #GtkAdjustment.\nThis is typically called by the owner of the #GtkAdjustment after it has\nchanged any of the #GtkAdjustment fields other than the value."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "value_changed", 
+                "parameters": null, 
+                "description": "Emits a #GtkAdjustment::value_changed signal from the #GtkAdjustment.\nThis is typically called by the owner of the #GtkAdjustment after it has\nchanged the #GtkAdjustment value field."
+            }
+        ], 
+        "properties": [
+            {
+                "writable": false, 
+                "type": "Float", 
+                "readable": false, 
+                "name": "lower", 
+                "description": "The minimum value of the adjustment."
+            }, 
+            {
+                "writable": false, 
+                "type": "Float", 
+                "readable": false, 
+                "name": "page-increment", 
+                "description": "The page increment of the adjustment."
+            }, 
+            {
+                "writable": false, 
+                "type": "Float", 
+                "readable": false, 
+                "name": "page-size", 
+                "description": "The page size of the adjustment. \nNote that the page-size is irrelevant and should be set to zero\nif the adjustment is used for a simple scalar value, e.g. in a \n#GtkSpinButton."
+            }, 
+            {
+                "writable": false, 
+                "type": "Float", 
+                "readable": false, 
+                "name": "step-increment", 
+                "description": "The step increment of the adjustment."
+            }, 
+            {
+                "writable": false, 
+                "type": "Float", 
+                "readable": false, 
+                "name": "upper", 
+                "description": "The maximum value of the adjustment. \nNote that values will be restricted by \n<literal>upper - page-size</literal> if the page-size \nproperty is nonzero."
+            }, 
+            {
+                "writable": false, 
+                "type": "Float", 
+                "readable": false, 
+                "name": "value", 
+                "description": "The value of the adjustment."
+            }
+        ]
+    }, 
+    "fullname": "Class Gtk.Adjustment", 
+    "id": "Docs-Adjustment", 
+    "description": "The #GtkAdjustment object represents a value which has an associated lower\nand upper bound, together with step and page increments, and a page size.\nIt is used within several GTK+ widgets, including\n#GtkSpinButton, #GtkViewport, and #GtkRange (which is a base class for\n#GtkHScrollbar, #GtkVScrollbar, #GtkHScale, and #GtkVScale).\n\nThe #GtkAdjustment object does not update the value itself. Instead\nit is left up to the owner of the #GtkAdjustment to control the value.\n\nThe owner of the #GtkAdjustment typically calls the\ngtk_adjustment_value_changed() and gtk_adjustment_changed() functions\nafter changing the value and its bounds. This results in the emission of the\n#GtkAdjustment::value_changed or #GtkAdjustment::changed signal respectively."
+}
