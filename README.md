@@ -3,6 +3,8 @@ pyGtk3Docs
 
 Custom documentation project for PyGTK3+
 
+Online version available at: http://derandreas.github.com/pyGtk3Docs/output/index.html
+
 Background Information
 ----------------------
 Project was created to start learning PyGTK and have a simple documentation
