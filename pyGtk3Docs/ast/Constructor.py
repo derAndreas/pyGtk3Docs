@@ -44,6 +44,7 @@ class Constructor(Function):
             'isConstructor' : True,
             'name' : name,
             'version' : self.version,
+            'description' : self.getDoc(True),
             'returns' : {
                 'name' : self.returnValue.getType().translate(True),
                 'doc' : self.returnValue.doc.toObjectRepr()

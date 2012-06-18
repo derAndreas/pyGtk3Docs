@@ -20,14 +20,15 @@
         ], 
         "methods": [
             {
+                "name": "Gtk.CellRendererText()", 
+                "parameters": null, 
                 "isConstructor": true, 
                 "returns": {
                     "doc": "the new cell renderer", 
                     "name": "ref:Gtk.CellRenderer"
                 }, 
                 "version": null, 
-                "name": "Gtk.CellRendererText()", 
-                "parameters": null
+                "description": "Creates a new #GtkCellRendererText. Adjust how text is drawn using\nobject properties. Object properties can be\nset globally (with g_object_set()). Also, with #GtkTreeViewColumn,\nyou can bind a property to a value in a #GtkTreeModel. For example,\nyou can bind the \"text\" property on the cell renderer to a string\nvalue in the model, thus rendering a different string in each row\nof the #GtkTreeView"
             }, 
             {
                 "returns": {

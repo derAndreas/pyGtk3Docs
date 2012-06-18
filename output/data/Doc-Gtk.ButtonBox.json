@@ -25,19 +25,20 @@
         "signals": [], 
         "methods": [
             {
-                "isConstructor": true, 
-                "returns": {
-                    "doc": "a new #GtkButtonBox.", 
-                    "name": "ref:Gtk.Widget"
-                }, 
-                "version": "3.0", 
                 "name": "Gtk.ButtonBox(Gtk.Orientation orientation)", 
                 "parameters": [
                     {
                         "type": "ref:Gtk.Orientation", 
                         "name": "orientation"
                     }
-                ]
+                ], 
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a new #GtkButtonBox.", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": "3.0", 
+                "description": "Creates a new #GtkButtonBox."
             }, 
             {
                 "returns": {

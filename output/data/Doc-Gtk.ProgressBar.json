@@ -23,14 +23,15 @@
         "signals": [], 
         "methods": [
             {
+                "name": "Gtk.ProgressBar()", 
+                "parameters": null, 
                 "isConstructor": true, 
                 "returns": {
                     "doc": "a #GtkProgressBar.", 
                     "name": "ref:Gtk.Widget"
                 }, 
                 "version": null, 
-                "name": "Gtk.ProgressBar()", 
-                "parameters": null
+                "description": "Creates a new #GtkProgressBar."
             }, 
             {
                 "returns": {

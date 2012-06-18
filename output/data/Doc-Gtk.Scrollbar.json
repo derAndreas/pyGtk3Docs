@@ -24,12 +24,6 @@
         "signals": [], 
         "methods": [
             {
-                "isConstructor": true, 
-                "returns": {
-                    "doc": "the new #GtkScrollbar.", 
-                    "name": "ref:Gtk.Widget"
-                }, 
-                "version": "3.0", 
                 "name": "Gtk.Scrollbar(Gtk.Orientation orientation, Gtk.Adjustment adjustment)", 
                 "parameters": [
                     {
@@ -40,7 +34,14 @@
                         "type": "ref:Gtk.Adjustment", 
                         "name": "adjustment"
                     }
-                ]
+                ], 
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "the new #GtkScrollbar.", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": "3.0", 
+                "description": "Creates a new scrollbar with the given orientation."
             }
         ], 
         "properties": []

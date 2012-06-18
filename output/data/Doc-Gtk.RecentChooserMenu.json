@@ -29,29 +29,31 @@
         "signals": [], 
         "methods": [
             {
+                "name": "Gtk.RecentChooserMenu()", 
+                "parameters": null, 
                 "isConstructor": true, 
                 "returns": {
                     "doc": "a new #GtkRecentChooserMenu", 
                     "name": "ref:Gtk.Widget"
                 }, 
                 "version": "2.10", 
-                "name": "Gtk.RecentChooserMenu()", 
-                "parameters": null
+                "description": "Creates a new #GtkRecentChooserMenu widget.\n\nThis kind of widget shows the list of recently used resources as\na menu, each item as a menu item.  Each item inside the menu might\nhave an icon, representing its MIME type, and a number, for mnemonic\naccess.\n\nThis widget implements the #GtkRecentChooser interface.\n\nThis widget creates its own #GtkRecentManager object.  See the\ngtk_recent_chooser_menu_new_for_manager() function to know how to create\na #GtkRecentChooserMenu widget bound to another #GtkRecentManager object."
             }, 
             {
-                "isConstructor": true, 
-                "returns": {
-                    "doc": "a new #GtkRecentChooserMenu, bound to @manager.", 
-                    "name": "ref:Gtk.Widget"
-                }, 
-                "version": "2.10", 
                 "name": "Gtk.RecentChooserMenu(Gtk.RecentManager manager)", 
                 "parameters": [
                     {
                         "type": "ref:Gtk.RecentManager", 
                         "name": "manager"
                     }
-                ]
+                ], 
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a new #GtkRecentChooserMenu, bound to @manager.", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": "2.10", 
+                "description": "Creates a new #GtkRecentChooserMenu widget using @manager as\nthe underlying recently used resources manager.\n\nThis is useful if you have implemented your own recent manager,\nor if you have a customized instance of a #GtkRecentManager\nobject or if you wish to share a common #GtkRecentManager object\namong multiple #GtkRecentChooser widgets."
             }, 
             {
                 "returns": {

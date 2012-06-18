@@ -24,19 +24,20 @@
         "signals": [], 
         "methods": [
             {
-                "isConstructor": true, 
-                "returns": {
-                    "doc": "a #GtkColorSelectionDialog.", 
-                    "name": "ref:Gtk.Widget"
-                }, 
-                "version": null, 
                 "name": "Gtk.ColorSelectionDialog(String title)", 
                 "parameters": [
                     {
                         "type": "String", 
                         "name": "title"
                     }
-                ]
+                ], 
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a #GtkColorSelectionDialog.", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": null, 
+                "description": "Creates a new #GtkColorSelectionDialog."
             }, 
             {
                 "returns": {

@@ -53,14 +53,15 @@
         ], 
         "methods": [
             {
+                "name": "Gtk.UIManager()", 
+                "parameters": null, 
                 "isConstructor": true, 
                 "returns": {
                     "doc": "a new ui manager object.", 
                     "name": "ref:Gtk.UIManager"
                 }, 
                 "version": "2.4", 
-                "name": "Gtk.UIManager()", 
-                "parameters": null
+                "description": "Creates a new ui manager object."
             }, 
             {
                 "returns": {

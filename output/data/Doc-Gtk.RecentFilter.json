@@ -16,14 +16,15 @@
         "signals": [], 
         "methods": [
             {
+                "name": "Gtk.RecentFilter()", 
+                "parameters": null, 
                 "isConstructor": true, 
                 "returns": {
                     "doc": "a new #GtkRecentFilter", 
                     "name": "ref:Gtk.RecentFilter"
                 }, 
                 "version": "2.10", 
-                "name": "Gtk.RecentFilter()", 
-                "parameters": null
+                "description": "Creates a new #GtkRecentFilter with no rules added to it.\nSuch filter does not accept any recently used resources, so is not\nparticularly useful until you add rules with\ngtk_recent_filter_add_pattern(), gtk_recent_filter_add_mime_type(),\ngtk_recent_filter_add_application(), gtk_recent_filter_add_age().\nTo create a filter that accepts any recently used resource, use:\n|[\nGtkRecentFilter *filter = gtk_recent_filter_new ();\ngtk_recent_filter_add_pattern (filter, \"*\");\n]|"
             }, 
             {
                 "returns": {

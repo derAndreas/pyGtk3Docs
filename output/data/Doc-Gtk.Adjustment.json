@@ -25,12 +25,6 @@
         ], 
         "methods": [
             {
-                "isConstructor": true, 
-                "returns": {
-                    "doc": "a new #GtkAdjustment.", 
-                    "name": "ref:Gtk.Adjustment"
-                }, 
-                "version": null, 
                 "name": "Gtk.Adjustment(Float value, Float lower, Float upper, Float step_increment, Float page_increment, Float page_size)", 
                 "parameters": [
                     {
@@ -57,7 +51,14 @@
                         "type": "Float", 
                         "name": "page_size"
                     }
-                ]
+                ], 
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a new #GtkAdjustment.", 
+                    "name": "ref:Gtk.Adjustment"
+                }, 
+                "version": null, 
+                "description": "Creates a new #GtkAdjustment."
             }, 
             {
                 "returns": {

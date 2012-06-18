@@ -24,12 +24,42 @@
         "signals": [], 
         "methods": [
             {
+                "name": "Gtk.MessageDialog(Gtk.Window parent, Gtk.DialogFlags flags, Gtk.MessageType type, Gtk.ButtonsType buttons, String message_format, VarArg None)", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Window", 
+                        "name": "parent"
+                    }, 
+                    {
+                        "type": "ref:Gtk.DialogFlags", 
+                        "name": "flags"
+                    }, 
+                    {
+                        "type": "ref:Gtk.MessageType", 
+                        "name": "type"
+                    }, 
+                    {
+                        "type": "ref:Gtk.ButtonsType", 
+                        "name": "buttons"
+                    }, 
+                    {
+                        "type": "String", 
+                        "name": "message_format"
+                    }, 
+                    {
+                        "type": "ref:VarArg", 
+                        "name": null
+                    }
+                ], 
                 "isConstructor": true, 
                 "returns": {
                     "doc": "a new #GtkMessageDialog", 
                     "name": "ref:Gtk.Widget"
                 }, 
                 "version": null, 
+                "description": "Creates a new message dialog, which is a simple dialog with an icon\nindicating the dialog type (error, warning, etc.) and some text the\nuser may want to see. When the user clicks a button a \"response\"\nsignal is emitted with response IDs from #GtkResponseType. See\n#GtkDialog for more details."
+            }, 
+            {
                 "name": "Gtk.MessageDialog(Gtk.Window parent, Gtk.DialogFlags flags, Gtk.MessageType type, Gtk.ButtonsType buttons, String message_format, VarArg None)", 
                 "parameters": [
                     {
@@ -56,42 +86,14 @@
                         "type": "ref:VarArg", 
                         "name": null
                     }
-                ]
-            }, 
-            {
+                ], 
                 "isConstructor": true, 
                 "returns": {
                     "doc": "a new #GtkMessageDialog", 
                     "name": "ref:Gtk.Widget"
                 }, 
                 "version": "2.4", 
-                "name": "Gtk.MessageDialog(Gtk.Window parent, Gtk.DialogFlags flags, Gtk.MessageType type, Gtk.ButtonsType buttons, String message_format, VarArg None)", 
-                "parameters": [
-                    {
-                        "type": "ref:Gtk.Window", 
-                        "name": "parent"
-                    }, 
-                    {
-                        "type": "ref:Gtk.DialogFlags", 
-                        "name": "flags"
-                    }, 
-                    {
-                        "type": "ref:Gtk.MessageType", 
-                        "name": "type"
-                    }, 
-                    {
-                        "type": "ref:Gtk.ButtonsType", 
-                        "name": "buttons"
-                    }, 
-                    {
-                        "type": "String", 
-                        "name": "message_format"
-                    }, 
-                    {
-                        "type": "ref:VarArg", 
-                        "name": null
-                    }
-                ]
+                "description": "Creates a new message dialog, which is a simple dialog with an icon\nindicating the dialog type (error, warning, etc.) and some text which\nis marked up with the <link linkend=\"PangoMarkupFormat\">Pango text markup language</link>.\nWhen the user clicks a button a \"response\" signal is emitted with\nresponse IDs from #GtkResponseType. See #GtkDialog for more details.\n\nSpecial XML characters in the printf() arguments passed to this\nfunction will automatically be escaped as necessary.\n(See g_markup_printf_escaped() for how this is implemented.)\nUsually this is what you want, but if you have an existing\nPango markup string that you want to use literally as the\nlabel, then you need to use gtk_message_dialog_set_markup()\ninstead, since you can't pass the markup string either\nas the format (it might contain '%' characters) or as a string\nargument.\n|[\nGtkWidget *dialog;\ndialog = gtk_message_dialog_new (main_application_window,\nGTK_DIALOG_DESTROY_WITH_PARENT,\nGTK_MESSAGE_ERROR,\nGTK_BUTTONS_CLOSE,\nNULL);\ngtk_message_dialog_set_markup (GTK_MESSAGE_DIALOG (dialog),\nmarkup);\n]|"
             }, 
             {
                 "returns": {

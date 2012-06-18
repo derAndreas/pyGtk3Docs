@@ -65,59 +65,63 @@
         ], 
         "methods": [
             {
+                "name": "Gtk.Button()", 
+                "parameters": null, 
                 "isConstructor": true, 
                 "returns": {
                     "doc": "The newly created #GtkButton widget.", 
                     "name": "ref:Gtk.Widget"
                 }, 
                 "version": null, 
-                "name": "Gtk.Button()", 
-                "parameters": null
+                "description": "Creates a new #GtkButton widget. To add a child widget to the button,\nuse gtk_container_add()."
             }, 
             {
-                "isConstructor": true, 
-                "returns": {
-                    "doc": "a new #GtkButton", 
-                    "name": "ref:Gtk.Widget"
-                }, 
-                "version": null, 
                 "name": "Gtk.Button(String stock_id)", 
                 "parameters": [
                     {
                         "type": "String", 
                         "name": "stock_id"
                     }
-                ]
-            }, 
-            {
-                "isConstructor": true, 
-                "returns": {
-                    "doc": "The newly created #GtkButton widget.", 
-                    "name": "ref:Gtk.Widget"
-                }, 
-                "version": null, 
-                "name": "Gtk.Button(String label)", 
-                "parameters": [
-                    {
-                        "type": "String", 
-                        "name": "label"
-                    }
-                ]
-            }, 
-            {
+                ], 
                 "isConstructor": true, 
                 "returns": {
                     "doc": "a new #GtkButton", 
                     "name": "ref:Gtk.Widget"
                 }, 
                 "version": null, 
+                "description": "Creates a new #GtkButton containing the image and text from a stock item.\nSome stock ids have preprocessor macros like #GTK_STOCK_OK and\n#GTK_STOCK_APPLY.\n\nIf @stock_id is unknown, then it will be treated as a mnemonic\nlabel (as for gtk_button_new_with_mnemonic())."
+            }, 
+            {
                 "name": "Gtk.Button(String label)", 
                 "parameters": [
                     {
                         "type": "String", 
                         "name": "label"
                     }
-                ]
+                ], 
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "The newly created #GtkButton widget.", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": null, 
+                "description": "Creates a #GtkButton widget with a #GtkLabel child containing the given\ntext."
+            }, 
+            {
+                "name": "Gtk.Button(String label)", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "label"
+                    }
+                ], 
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a new #GtkButton", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": null, 
+                "description": "Creates a new #GtkButton containing a label.\nIf characters in @label are preceded by an underscore, they are underlined.\nIf you need a literal underscore character in a label, use '__' (two\nunderscores). The first underlined character represents a keyboard\naccelerator called a mnemonic.\nPressing Alt and that key activates the button."
             }, 
             {
                 "returns": {

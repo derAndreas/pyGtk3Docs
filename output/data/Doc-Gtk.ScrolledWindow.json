@@ -35,12 +35,6 @@
         ], 
         "methods": [
             {
-                "isConstructor": true, 
-                "returns": {
-                    "doc": "a new scrolled window", 
-                    "name": "ref:Gtk.Widget"
-                }, 
-                "version": null, 
                 "name": "Gtk.ScrolledWindow(Gtk.Adjustment hadjustment, Gtk.Adjustment vadjustment)", 
                 "parameters": [
                     {
@@ -51,7 +45,14 @@
                         "type": "ref:Gtk.Adjustment", 
                         "name": "vadjustment"
                     }
-                ]
+                ], 
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a new scrolled window", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": null, 
+                "description": "Creates a new scrolled window.\n\nThe two arguments are the scrolled window's adjustments; these will be\nshared with the scrollbars and the child widget to keep the bars in sync \nwith the child. Usually you want to pass %NULL for the adjustments, which \nwill cause the scrolled window to create them for you."
             }, 
             {
                 "returns": {

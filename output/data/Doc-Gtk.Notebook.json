@@ -82,14 +82,15 @@
         ], 
         "methods": [
             {
+                "name": "Gtk.Notebook()", 
+                "parameters": null, 
                 "isConstructor": true, 
                 "returns": {
                     "doc": "the newly created #GtkNotebook", 
                     "name": "ref:Gtk.Widget"
                 }, 
                 "version": null, 
-                "name": "Gtk.Notebook()", 
-                "parameters": null
+                "description": "Creates a new #GtkNotebook widget with no pages."
             }, 
             {
                 "returns": {

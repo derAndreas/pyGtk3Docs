@@ -20,14 +20,15 @@
         "signals": [], 
         "methods": [
             {
+                "name": "Gtk.Spinner()", 
+                "parameters": null, 
                 "isConstructor": true, 
                 "returns": {
                     "doc": "a new #GtkSpinner", 
                     "name": "ref:Gtk.Widget"
                 }, 
                 "version": "2.20", 
-                "name": "Gtk.Spinner()", 
-                "parameters": null
+                "description": "Returns a new spinner widget. Not yet started."
             }, 
             {
                 "returns": {

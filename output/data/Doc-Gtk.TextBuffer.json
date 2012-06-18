@@ -91,19 +91,20 @@
         ], 
         "methods": [
             {
-                "isConstructor": true, 
-                "returns": {
-                    "doc": "a new text buffer", 
-                    "name": "ref:Gtk.TextBuffer"
-                }, 
-                "version": null, 
                 "name": "Gtk.TextBuffer(Gtk.TextTagTable table)", 
                 "parameters": [
                     {
                         "type": "ref:Gtk.TextTagTable", 
                         "name": "table"
                     }
-                ]
+                ], 
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a new text buffer", 
+                    "name": "ref:Gtk.TextBuffer"
+                }, 
+                "version": null, 
+                "description": "Creates a new text buffer."
             }, 
             {
                 "returns": {

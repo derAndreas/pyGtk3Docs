@@ -58,12 +58,6 @@
         ], 
         "methods": [
             {
-                "isConstructor": true, 
-                "returns": {
-                    "doc": "The new spin button as a #GtkWidget", 
-                    "name": "ref:Gtk.Widget"
-                }, 
-                "version": null, 
                 "name": "Gtk.SpinButton(Gtk.Adjustment adjustment, Float climb_rate, Integer digits)", 
                 "parameters": [
                     {
@@ -78,15 +72,16 @@
                         "type": "Integer", 
                         "name": "digits"
                     }
-                ]
-            }, 
-            {
+                ], 
                 "isConstructor": true, 
                 "returns": {
                     "doc": "The new spin button as a #GtkWidget", 
                     "name": "ref:Gtk.Widget"
                 }, 
                 "version": null, 
+                "description": "Creates a new #GtkSpinButton."
+            }, 
+            {
                 "name": "Gtk.SpinButton(Float min, Float max, Float step)", 
                 "parameters": [
                     {
@@ -101,7 +96,14 @@
                         "type": "Float", 
                         "name": "step"
                     }
-                ]
+                ], 
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "The new spin button as a #GtkWidget", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": null, 
+                "description": "This is a convenience constructor that allows creation of a numeric\n#GtkSpinButton without manually creating an adjustment. The value is\ninitially set to the minimum value and a page increment of 10 * @step\nis the default. The precision of the spin button is equivalent to the\nprecision of @step.\n\nNote that the way in which the precision is derived works best if @step\nis a power of ten. If the resulting precision is not suitable for your\nneeds, use gtk_spin_button_set_digits() to correct it."
             }, 
             {
                 "returns": {

@@ -12,37 +12,33 @@
         "signals": [], 
         "methods": [
             {
+                "name": "Gtk.PageSetup()", 
+                "parameters": null, 
                 "isConstructor": true, 
                 "returns": {
                     "doc": "a new #GtkPageSetup.", 
                     "name": "ref:Gtk.PageSetup"
                 }, 
                 "version": "2.10", 
-                "name": "Gtk.PageSetup()", 
-                "parameters": null
+                "description": "Creates a new #GtkPageSetup."
             }, 
             {
-                "isConstructor": true, 
-                "returns": {
-                    "doc": "the restored #GtkPageSetup", 
-                    "name": "ref:Gtk.PageSetup"
-                }, 
-                "version": "2.12", 
                 "name": "Gtk.PageSetup(String file_name)", 
                 "parameters": [
                     {
                         "type": "String", 
                         "name": "file_name"
                     }
-                ]
-            }, 
-            {
+                ], 
                 "isConstructor": true, 
                 "returns": {
                     "doc": "the restored #GtkPageSetup", 
                     "name": "ref:Gtk.PageSetup"
                 }, 
                 "version": "2.12", 
+                "description": "Reads the page setup from the file @file_name. Returns a \nnew #GtkPageSetup object with the restored page setup, \nor %NULL if an error occurred. See gtk_page_setup_to_file()."
+            }, 
+            {
                 "name": "Gtk.PageSetup(GLib.KeyFile key_file, String group_name)", 
                 "parameters": [
                     {
@@ -53,7 +49,14 @@
                         "type": "String", 
                         "name": "group_name"
                     }
-                ]
+                ], 
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "the restored #GtkPageSetup", 
+                    "name": "ref:Gtk.PageSetup"
+                }, 
+                "version": "2.12", 
+                "description": "Reads the page setup from the group @group_name in the key file\n@key_file. Returns a new #GtkPageSetup object with the restored\npage setup, or %NULL if an error occurred."
             }, 
             {
                 "returns": {

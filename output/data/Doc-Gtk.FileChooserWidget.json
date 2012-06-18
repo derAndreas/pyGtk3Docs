@@ -28,19 +28,20 @@
         "signals": [], 
         "methods": [
             {
-                "isConstructor": true, 
-                "returns": {
-                    "doc": "a new #GtkFileChooserWidget", 
-                    "name": "ref:Gtk.Widget"
-                }, 
-                "version": "2.4", 
                 "name": "Gtk.FileChooserWidget(Gtk.FileChooserAction action)", 
                 "parameters": [
                     {
                         "type": "ref:Gtk.FileChooserAction", 
                         "name": "action"
                     }
-                ]
+                ], 
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a new #GtkFileChooserWidget", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": "2.4", 
+                "description": "Creates a new #GtkFileChooserWidget.  This is a file chooser widget that can\nbe embedded in custom windows, and it is the same widget that is used by\n#GtkFileChooserDialog."
             }
         ], 
         "properties": []

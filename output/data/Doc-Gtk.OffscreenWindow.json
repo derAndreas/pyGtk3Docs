@@ -23,14 +23,15 @@
         "signals": [], 
         "methods": [
             {
+                "name": "Gtk.OffscreenWindow()", 
+                "parameters": null, 
                 "isConstructor": true, 
                 "returns": {
                     "doc": "A pointer to a #GtkWidget", 
                     "name": "ref:Gtk.Widget"
                 }, 
                 "version": "2.20", 
-                "name": "Gtk.OffscreenWindow()", 
-                "parameters": null
+                "description": "Creates a toplevel container widget that is used to retrieve\nsnapshots of widgets without showing them on the screen."
             }, 
             {
                 "returns": {

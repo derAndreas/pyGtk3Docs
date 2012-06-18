@@ -12,12 +12,6 @@
         "signals": [], 
         "methods": [
             {
-                "isConstructor": true, 
-                "returns": {
-                    "doc": "new #GtkTextMark", 
-                    "name": "ref:Gtk.TextMark"
-                }, 
-                "version": "2.12", 
                 "name": "Gtk.TextMark(String name, Boolean left_gravity)", 
                 "parameters": [
                     {
@@ -28,7 +22,14 @@
                         "type": "Boolean", 
                         "name": "left_gravity"
                     }
-                ]
+                ], 
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "new #GtkTextMark", 
+                    "name": "ref:Gtk.TextMark"
+                }, 
+                "version": "2.12", 
+                "description": "Creates a text mark. Add it to a buffer using gtk_text_buffer_add_mark().\nIf @name is %NULL, the mark is anonymous; otherwise, the mark can be \nretrieved by name using gtk_text_buffer_get_mark(). If a mark has left \ngravity, and text is inserted at the mark's current location, the mark \nwill be moved to the left of the newly-inserted text. If the mark has \nright gravity (@left_gravity = %FALSE), the mark will end up on the \nright of newly-inserted text. The standard left-to-right cursor is a \nmark with right gravity (when you type, the cursor stays on the right\nside of the text you're typing)."
             }, 
             {
                 "returns": {

@@ -24,11 +24,6 @@
         "signals": [], 
         "methods": [
             {
-                "returns": {
-                    "doc": "a new #GtkFontSelectionDialog", 
-                    "name": "ref:Gtk.Widget"
-                }, 
-                "version": null, 
                 "name": "Gtk.FontSelectionDialog(String title)", 
                 "parameters": [
                     {
@@ -36,9 +31,15 @@
                         "name": "title"
                     }
                 ], 
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a new #GtkFontSelectionDialog", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": null, 
                 "deprecated": "Use #GtkFontChooserDialog", 
                 "deprecated_version": "3.2", 
-                "isConstructor": true
+                "description": "Creates a new #GtkFontSelectionDialog."
             }, 
             {
                 "returns": {

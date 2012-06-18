@@ -44,29 +44,31 @@
         ], 
         "methods": [
             {
+                "name": "Gtk.EntryCompletion()", 
+                "parameters": null, 
                 "isConstructor": true, 
                 "returns": {
                     "doc": "A newly created #GtkEntryCompletion object", 
                     "name": "ref:Gtk.EntryCompletion"
                 }, 
                 "version": "2.4", 
-                "name": "Gtk.EntryCompletion()", 
-                "parameters": null
+                "description": "Creates a new #GtkEntryCompletion object."
             }, 
             {
-                "isConstructor": true, 
-                "returns": {
-                    "doc": "A newly created #GtkEntryCompletion object", 
-                    "name": "ref:Gtk.EntryCompletion"
-                }, 
-                "version": "3.0", 
                 "name": "Gtk.EntryCompletion(Gtk.CellArea area)", 
                 "parameters": [
                     {
                         "type": "ref:Gtk.CellArea", 
                         "name": "area"
                     }
-                ]
+                ], 
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "A newly created #GtkEntryCompletion object", 
+                    "name": "ref:Gtk.EntryCompletion"
+                }, 
+                "version": "3.0", 
+                "description": "Creates a new #GtkEntryCompletion object using the\nspecified @area to layout cells in the underlying\n#GtkTreeViewColumn for the drop-down menu."
             }, 
             {
                 "returns": {

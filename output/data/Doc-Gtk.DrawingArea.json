@@ -20,14 +20,15 @@
         "signals": [], 
         "methods": [
             {
+                "name": "Gtk.DrawingArea()", 
+                "parameters": null, 
                 "isConstructor": true, 
                 "returns": {
                     "doc": "a new #GtkDrawingArea", 
                     "name": "ref:Gtk.Widget"
                 }, 
                 "version": null, 
-                "name": "Gtk.DrawingArea()", 
-                "parameters": null
+                "description": "Creates a new drawing area."
             }
         ], 
         "properties": []

@@ -25,16 +25,17 @@
         "signals": [], 
         "methods": [
             {
+                "name": "Gtk.VPaned()", 
+                "parameters": null, 
+                "isConstructor": true, 
                 "returns": {
                     "doc": "the new #GtkVPaned", 
                     "name": "ref:Gtk.Widget"
                 }, 
                 "version": null, 
-                "name": "Gtk.VPaned()", 
-                "parameters": null, 
                 "deprecated": "Use gtk_paned_new() with %GTK_ORIENTATION_VERTICAL instead", 
                 "deprecated_version": "3.2", 
-                "isConstructor": true
+                "description": "Create a new #GtkVPaned"
             }
         ], 
         "properties": []

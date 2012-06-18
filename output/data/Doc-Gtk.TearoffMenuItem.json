@@ -26,16 +26,17 @@
         "signals": [], 
         "methods": [
             {
+                "name": "Gtk.TearoffMenuItem()", 
+                "parameters": null, 
+                "isConstructor": true, 
                 "returns": {
                     "doc": "a new #GtkTearoffMenuItem.", 
                     "name": "ref:Gtk.Widget"
                 }, 
                 "version": null, 
-                "name": "Gtk.TearoffMenuItem()", 
-                "parameters": null, 
                 "deprecated": "#GtkTearoffMenuItem is deprecated and should not be", 
                 "deprecated_version": "3.4", 
-                "isConstructor": true
+                "description": "Creates a new #GtkTearoffMenuItem.\n\n\nused in newly written code."
             }
         ], 
         "properties": []

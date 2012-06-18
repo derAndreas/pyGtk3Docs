@@ -24,12 +24,6 @@
         "signals": [], 
         "methods": [
             {
-                "isConstructor": true, 
-                "returns": {
-                    "doc": "a new #GtkBox.", 
-                    "name": "ref:Gtk.Widget"
-                }, 
-                "version": "3.0", 
                 "name": "Gtk.Box(Gtk.Orientation orientation, Integer spacing)", 
                 "parameters": [
                     {
@@ -40,7 +34,14 @@
                         "type": "Integer", 
                         "name": "spacing"
                     }
-                ]
+                ], 
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a new #GtkBox.", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": "3.0", 
+                "description": "Creates a new #GtkBox."
             }, 
             {
                 "returns": {

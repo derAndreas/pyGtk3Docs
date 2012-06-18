@@ -52,14 +52,15 @@
         ], 
         "methods": [
             {
+                "name": "Gtk.Toolbar()", 
+                "parameters": null, 
                 "isConstructor": true, 
                 "returns": {
                     "doc": "the newly-created toolbar.", 
                     "name": "ref:Gtk.Widget"
                 }, 
                 "version": null, 
-                "name": "Gtk.Toolbar()", 
-                "parameters": null
+                "description": "Creates a new toolbar."
             }, 
             {
                 "returns": {

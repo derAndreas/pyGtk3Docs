@@ -36,22 +36,17 @@
         ], 
         "methods": [
             {
+                "name": "Gtk.Dialog()", 
+                "parameters": null, 
                 "isConstructor": true, 
                 "returns": {
                     "doc": "the new dialog as a #GtkWidget", 
                     "name": "ref:Gtk.Widget"
                 }, 
                 "version": null, 
-                "name": "Gtk.Dialog()", 
-                "parameters": null
+                "description": "Creates a new dialog box.\n\nWidgets should not be packed into this #GtkWindow\ndirectly, but into the @vbox and @action_area, as described above."
             }, 
             {
-                "isConstructor": true, 
-                "returns": {
-                    "doc": "a new #GtkDialog", 
-                    "name": "ref:Gtk.Widget"
-                }, 
-                "version": null, 
                 "name": "Gtk.Dialog(String title, Gtk.Window parent, Gtk.DialogFlags flags, String first_button_text, VarArg None)", 
                 "parameters": [
                     {
@@ -74,7 +69,14 @@
                         "type": "ref:VarArg", 
                         "name": null
                     }
-                ]
+                ], 
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a new #GtkDialog", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": null, 
+                "description": "Creates a new #GtkDialog with title @title (or %NULL for the default\ntitle; see gtk_window_set_title()) and transient parent @parent (or\n%NULL for none; see gtk_window_set_transient_for()). The @flags\nargument can be used to make the dialog modal (#GTK_DIALOG_MODAL)\nand/or to have it destroyed along with its transient parent\n(#GTK_DIALOG_DESTROY_WITH_PARENT). After @flags, button\ntext/response ID pairs should be listed, with a %NULL pointer ending\nthe list. Button text can be either a stock ID such as\n#GTK_STOCK_OK, or some arbitrary text. A response ID can be\nany positive number, or one of the values in the #GtkResponseType\nenumeration. If the user clicks one of these dialog buttons,\n#GtkDialog will emit the #GtkDialog::response signal with the corresponding\nresponse ID. If a #GtkDialog receives the #GtkWidget::delete-event signal,\nit will emit ::response with a response ID of #GTK_RESPONSE_DELETE_EVENT.\nHowever, destroying a dialog does not emit the ::response signal;\nso be careful relying on ::response when using the\n#GTK_DIALOG_DESTROY_WITH_PARENT flag. Buttons are from left to right,\nso the first button in the list will be the leftmost button in the dialog.\n\nHere's a simple example:\n|[\nGtkWidget *dialog = gtk_dialog_new_with_buttons (\"My dialog\",\nmain_app_window,\nGTK_DIALOG_MODAL | GTK_DIALOG_DESTROY_WITH_PARENT,\nGTK_STOCK_OK,\nGTK_RESPONSE_ACCEPT,\nGTK_STOCK_CANCEL,\nGTK_RESPONSE_REJECT,\nNULL);\n]|"
             }, 
             {
                 "returns": {

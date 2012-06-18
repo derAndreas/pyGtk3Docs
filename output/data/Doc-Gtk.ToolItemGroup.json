@@ -24,19 +24,20 @@
         "signals": [], 
         "methods": [
             {
-                "isConstructor": true, 
-                "returns": {
-                    "doc": "a new #GtkToolItemGroup.", 
-                    "name": "ref:Gtk.Widget"
-                }, 
-                "version": "2.20", 
                 "name": "Gtk.ToolItemGroup(String label)", 
                 "parameters": [
                     {
                         "type": "String", 
                         "name": "label"
                     }
-                ]
+                ], 
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a new #GtkToolItemGroup.", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": "2.20", 
+                "description": "Creates a new tool item group with label @label."
             }, 
             {
                 "returns": {

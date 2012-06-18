@@ -48,14 +48,15 @@
         ], 
         "methods": [
             {
+                "name": "Gtk.Assistant()", 
+                "parameters": null, 
                 "isConstructor": true, 
                 "returns": {
                     "doc": "a newly created #GtkAssistant", 
                     "name": "ref:Gtk.Widget"
                 }, 
                 "version": "2.10", 
-                "name": "Gtk.Assistant()", 
-                "parameters": null
+                "description": "Creates a new #GtkAssistant."
             }, 
             {
                 "returns": {

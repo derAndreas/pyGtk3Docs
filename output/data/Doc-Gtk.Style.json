@@ -25,16 +25,17 @@
         ], 
         "methods": [
             {
+                "name": "Gtk.Style()", 
+                "parameters": null, 
+                "isConstructor": true, 
                 "returns": {
                     "doc": "a new #GtkStyle.", 
                     "name": "ref:Gtk.Style"
                 }, 
                 "version": null, 
-                "name": "Gtk.Style()", 
-                "parameters": null, 
                 "deprecated": "Use #GtkStyleContext", 
                 "deprecated_version": "3.0", 
-                "isConstructor": true
+                "description": "Creates a new #GtkStyle."
             }, 
             {
                 "returns": {

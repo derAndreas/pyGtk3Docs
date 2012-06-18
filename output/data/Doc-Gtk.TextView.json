@@ -109,29 +109,31 @@
         ], 
         "methods": [
             {
+                "name": "Gtk.TextView()", 
+                "parameters": null, 
                 "isConstructor": true, 
                 "returns": {
                     "doc": "a new #GtkTextView", 
                     "name": "ref:Gtk.Widget"
                 }, 
                 "version": null, 
-                "name": "Gtk.TextView()", 
-                "parameters": null
+                "description": "Creates a new #GtkTextView. If you don't call gtk_text_view_set_buffer()\nbefore using the text view, an empty default buffer will be created\nfor you. Get the buffer with gtk_text_view_get_buffer(). If you want\nto specify your own buffer, consider gtk_text_view_new_with_buffer()."
             }, 
             {
-                "isConstructor": true, 
-                "returns": {
-                    "doc": "a new #GtkTextView.", 
-                    "name": "ref:Gtk.Widget"
-                }, 
-                "version": null, 
                 "name": "Gtk.TextView(Gtk.TextBuffer buffer)", 
                 "parameters": [
                     {
                         "type": "ref:Gtk.TextBuffer", 
                         "name": "buffer"
                     }
-                ]
+                ], 
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a new #GtkTextView.", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": null, 
+                "description": "Creates a new #GtkTextView widget displaying the buffer\n@buffer. One buffer can be shared among many widgets.\n@buffer may be %NULL to create a default buffer, in which case\nthis function is equivalent to gtk_text_view_new(). The\ntext view adds its own reference count to the buffer; it does not\ntake over an existing reference."
             }, 
             {
                 "returns": {

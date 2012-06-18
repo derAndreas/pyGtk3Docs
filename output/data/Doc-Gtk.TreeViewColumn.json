@@ -26,37 +26,33 @@
         ], 
         "methods": [
             {
+                "name": "Gtk.TreeViewColumn()", 
+                "parameters": null, 
                 "isConstructor": true, 
                 "returns": {
                     "doc": "A newly created #GtkTreeViewColumn.", 
                     "name": "ref:Gtk.TreeViewColumn"
                 }, 
                 "version": null, 
-                "name": "Gtk.TreeViewColumn()", 
-                "parameters": null
+                "description": "Creates a new #GtkTreeViewColumn."
             }, 
             {
-                "isConstructor": true, 
-                "returns": {
-                    "doc": "A newly created #GtkTreeViewColumn.", 
-                    "name": "ref:Gtk.TreeViewColumn"
-                }, 
-                "version": "3.0", 
                 "name": "Gtk.TreeViewColumn(Gtk.CellArea area)", 
                 "parameters": [
                     {
                         "type": "ref:Gtk.CellArea", 
                         "name": "area"
                     }
-                ]
-            }, 
-            {
+                ], 
                 "isConstructor": true, 
                 "returns": {
                     "doc": "A newly created #GtkTreeViewColumn.", 
                     "name": "ref:Gtk.TreeViewColumn"
                 }, 
-                "version": null, 
+                "version": "3.0", 
+                "description": "Creates a new #GtkTreeViewColumn using @area to render its cells."
+            }, 
+            {
                 "name": "Gtk.TreeViewColumn(String title, Gtk.CellRenderer cell, VarArg None)", 
                 "parameters": [
                     {
@@ -71,7 +67,14 @@
                         "type": "ref:VarArg", 
                         "name": null
                     }
-                ]
+                ], 
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "A newly created #GtkTreeViewColumn.", 
+                    "name": "ref:Gtk.TreeViewColumn"
+                }, 
+                "version": null, 
+                "description": "Creates a new #GtkTreeViewColumn with a number of default values.\nThis is equivalent to calling gtk_tree_view_column_set_title(),\ngtk_tree_view_column_pack_start(), and\ngtk_tree_view_column_set_attributes() on the newly created #GtkTreeViewColumn.\n\nHere's a simple example:\n|[\nenum { TEXT_COLUMN, COLOR_COLUMN, N_COLUMNS };\n...\n{\nGtkTreeViewColumn *column;\nGtkCellRenderer   *renderer = gtk_cell_renderer_text_new ();\n\ncolumn = gtk_tree_view_column_new_with_attributes (\"Title\",\nrenderer,\n\"text\", TEXT_COLUMN,\n\"foreground\", COLOR_COLUMN,\nNULL);\n}\n]|"
             }, 
             {
                 "returns": {

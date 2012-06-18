@@ -26,22 +26,17 @@
         "signals": [], 
         "methods": [
             {
+                "name": "Gtk.ImageMenuItem()", 
+                "parameters": null, 
                 "isConstructor": true, 
                 "returns": {
                     "doc": "a new #GtkImageMenuItem", 
                     "name": "ref:Gtk.Widget"
                 }, 
                 "version": null, 
-                "name": "Gtk.ImageMenuItem()", 
-                "parameters": null
+                "description": "Creates a new #GtkImageMenuItem with an empty label."
             }, 
             {
-                "isConstructor": true, 
-                "returns": {
-                    "doc": "a new #GtkImageMenuItem.", 
-                    "name": "ref:Gtk.Widget"
-                }, 
-                "version": null, 
                 "name": "Gtk.ImageMenuItem(String stock_id, Gtk.AccelGroup accel_group)", 
                 "parameters": [
                     {
@@ -52,37 +47,46 @@
                         "type": "ref:Gtk.AccelGroup", 
                         "name": "accel_group"
                     }
-                ]
-            }, 
-            {
+                ], 
                 "isConstructor": true, 
                 "returns": {
                     "doc": "a new #GtkImageMenuItem.", 
                     "name": "ref:Gtk.Widget"
                 }, 
                 "version": null, 
+                "description": "Creates a new #GtkImageMenuItem containing the image and text from a\nstock item. Some stock ids have preprocessor macros like #GTK_STOCK_OK\nand #GTK_STOCK_APPLY.\n\nIf you want this menu item to have changeable accelerators, then pass in\n%NULL for accel_group. Next call gtk_menu_item_set_accel_path() with an\nappropriate path for the menu item, use gtk_stock_lookup() to look up the\nstandard accelerator for the stock item, and if one is found, call\ngtk_accel_map_add_entry() to register it."
+            }, 
+            {
                 "name": "Gtk.ImageMenuItem(String label)", 
                 "parameters": [
                     {
                         "type": "String", 
                         "name": "label"
                     }
-                ]
+                ], 
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a new #GtkImageMenuItem.", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": null, 
+                "description": "Creates a new #GtkImageMenuItem containing a label."
             }, 
             {
+                "name": "Gtk.ImageMenuItem(String label)", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "label"
+                    }
+                ], 
                 "isConstructor": true, 
                 "returns": {
                     "doc": "a new #GtkImageMenuItem", 
                     "name": "ref:Gtk.Widget"
                 }, 
                 "version": null, 
-                "name": "Gtk.ImageMenuItem(String label)", 
-                "parameters": [
-                    {
-                        "type": "String", 
-                        "name": "label"
-                    }
-                ]
+                "description": "Creates a new #GtkImageMenuItem containing a label. The label\nwill be created using gtk_label_new_with_mnemonic(), so underscores\nin @label indicate the mnemonic for the menu item."
             }, 
             {
                 "returns": {

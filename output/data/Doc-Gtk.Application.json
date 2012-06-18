@@ -32,12 +32,6 @@
         ], 
         "methods": [
             {
-                "isConstructor": true, 
-                "returns": {
-                    "doc": "a new #GtkApplication instance", 
-                    "name": "ref:Gtk.Application"
-                }, 
-                "version": "3.0", 
                 "name": "Gtk.Application(String application_id, Gio.ApplicationFlags flags)", 
                 "parameters": [
                     {
@@ -48,7 +42,14 @@
                         "type": "Gio.ApplicationFlags", 
                         "name": "flags"
                     }
-                ]
+                ], 
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a new #GtkApplication instance", 
+                    "name": "ref:Gtk.Application"
+                }, 
+                "version": "3.0", 
+                "description": "Creates a new #GtkApplication instance.\n\nThis function calls g_type_init() for you. gtk_init() is called\nas soon as the application gets registered as the primary instance.\n\nConcretely, gtk_init() is called in the default handler for the\n#GApplication:startup signal. Therefore, #GtkApplication subclasses should\nchain up in their #GApplication:startup handler before using any GTK+ API.\n\nNote that commandline arguments are not passed to gtk_init().\nAll GTK+ functionality that is available via commandline arguments\ncan also be achieved by setting suitable environment variables\nsuch as <envar>G_DEBUG</envar>, so this should not be a big\nproblem. If you absolutely must support GTK+ commandline arguments,\nyou can explicitly call gtk_init() before creating the application\ninstance.\n\nThe application id must be valid. See g_application_id_is_valid()."
             }, 
             {
                 "returns": {

@@ -20,12 +20,6 @@
         "signals": [], 
         "methods": [
             {
-                "isConstructor": true, 
-                "returns": {
-                    "doc": "the newly created #GtkRecentAction.", 
-                    "name": "ref:Gtk.Action"
-                }, 
-                "version": "2.12", 
                 "name": "Gtk.RecentAction(String name, String label, String tooltip, String stock_id)", 
                 "parameters": [
                     {
@@ -44,15 +38,16 @@
                         "type": "String", 
                         "name": "stock_id"
                     }
-                ]
-            }, 
-            {
+                ], 
                 "isConstructor": true, 
                 "returns": {
-                    "doc": "the newly created #GtkRecentAction", 
+                    "doc": "the newly created #GtkRecentAction.", 
                     "name": "ref:Gtk.Action"
                 }, 
                 "version": "2.12", 
+                "description": "Creates a new #GtkRecentAction object. To add the action to\na #GtkActionGroup and set the accelerator for the action,\ncall gtk_action_group_add_action_with_accel()."
+            }, 
+            {
                 "name": "Gtk.RecentAction(String name, String label, String tooltip, String stock_id, Gtk.RecentManager manager)", 
                 "parameters": [
                     {
@@ -75,7 +70,14 @@
                         "type": "ref:Gtk.RecentManager", 
                         "name": "manager"
                     }
-                ]
+                ], 
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "the newly created #GtkRecentAction", 
+                    "name": "ref:Gtk.Action"
+                }, 
+                "version": "2.12", 
+                "description": "Creates a new #GtkRecentAction object. To add the action to\na #GtkActionGroup and set the accelerator for the action,\ncall gtk_action_group_add_action_with_accel()."
             }, 
             {
                 "returns": {

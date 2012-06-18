@@ -27,14 +27,15 @@
         ], 
         "methods": [
             {
+                "name": "Gtk.CellRendererAccel()", 
+                "parameters": null, 
                 "isConstructor": true, 
                 "returns": {
                     "doc": "the new cell renderer", 
                     "name": "ref:Gtk.CellRenderer"
                 }, 
                 "version": "2.10", 
-                "name": "Gtk.CellRendererAccel()", 
-                "parameters": null
+                "description": "Creates a new #GtkCellRendererAccel."
             }, 
             {
                 "returns": {

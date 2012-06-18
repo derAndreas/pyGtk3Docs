@@ -25,11 +25,6 @@
         "signals": [], 
         "methods": [
             {
-                "returns": {
-                    "doc": "the new #GtkHScrollbar", 
-                    "name": "ref:Gtk.Widget"
-                }, 
-                "version": null, 
                 "name": "Gtk.HScrollbar(Gtk.Adjustment adjustment)", 
                 "parameters": [
                     {
@@ -37,9 +32,15 @@
                         "name": "adjustment"
                     }
                 ], 
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "the new #GtkHScrollbar", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": null, 
                 "deprecated": "Use gtk_scrollbar_new() with %GTK_ORIENTATION_HORIZONTAL instead", 
                 "deprecated_version": "3.2", 
-                "isConstructor": true
+                "description": "Creates a new horizontal scrollbar."
             }
         ], 
         "properties": []

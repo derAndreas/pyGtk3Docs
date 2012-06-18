@@ -33,14 +33,15 @@
         ], 
         "methods": [
             {
+                "name": "Gtk.Switch()", 
+                "parameters": null, 
                 "isConstructor": true, 
                 "returns": {
                     "doc": "the newly created #GtkSwitch instance", 
                     "name": "ref:Gtk.Widget"
                 }, 
                 "version": "3.0", 
-                "name": "Gtk.Switch()", 
-                "parameters": null
+                "description": "Creates a new #GtkSwitch widget."
             }, 
             {
                 "returns": {

@@ -25,14 +25,15 @@
         "signals": [], 
         "methods": [
             {
+                "name": "Gtk.FontSelection()", 
+                "parameters": null, 
                 "isConstructor": true, 
                 "returns": {
                     "doc": "a n ew #GtkFontSelection", 
                     "name": "ref:Gtk.Widget"
                 }, 
                 "version": null, 
-                "name": "Gtk.FontSelection()", 
-                "parameters": null
+                "description": "Creates a new #GtkFontSelection."
             }, 
             {
                 "returns": {

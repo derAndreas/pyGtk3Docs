@@ -20,29 +20,31 @@
         "signals": [], 
         "methods": [
             {
+                "name": "Gtk.Invisible()", 
+                "parameters": null, 
                 "isConstructor": true, 
                 "returns": {
                     "doc": "a new #GtkInvisible.", 
                     "name": "ref:Gtk.Widget"
                 }, 
                 "version": null, 
-                "name": "Gtk.Invisible()", 
-                "parameters": null
+                "description": "Creates a new #GtkInvisible."
             }, 
             {
-                "isConstructor": true, 
-                "returns": {
-                    "doc": "a newly created #GtkInvisible object", 
-                    "name": "ref:Gtk.Widget"
-                }, 
-                "version": "2.2", 
                 "name": "Gtk.Invisible(Gdk.Screen screen)", 
                 "parameters": [
                     {
                         "type": "Gdk.Screen", 
                         "name": "screen"
                     }
-                ]
+                ], 
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a newly created #GtkInvisible object", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": "2.2", 
+                "description": "Creates a new #GtkInvisible object for a specified screen"
             }, 
             {
                 "returns": {

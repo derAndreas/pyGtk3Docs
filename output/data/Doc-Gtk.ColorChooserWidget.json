@@ -28,14 +28,15 @@
         "signals": [], 
         "methods": [
             {
+                "name": "Gtk.ColorChooserWidget()", 
+                "parameters": null, 
                 "isConstructor": true, 
                 "returns": {
                     "doc": "a new #GtkColorChooserWidget", 
                     "name": "ref:Gtk.Widget"
                 }, 
                 "version": "3.4", 
-                "name": "Gtk.ColorChooserWidget()", 
-                "parameters": null
+                "description": "Creates a new #GtkColorChooserWidget."
             }
         ], 
         "properties": [

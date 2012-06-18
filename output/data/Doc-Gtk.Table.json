@@ -21,11 +21,6 @@
         "signals": [], 
         "methods": [
             {
-                "returns": {
-                    "doc": "A pointer to the the newly created table widget.", 
-                    "name": "ref:Gtk.Widget"
-                }, 
-                "version": null, 
                 "name": "Gtk.Table(Integer rows, Integer columns, Boolean homogeneous)", 
                 "parameters": [
                     {
@@ -41,9 +36,15 @@
                         "name": "homogeneous"
                     }
                 ], 
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "A pointer to the the newly created table widget.", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": null, 
                 "deprecated": "Use gtk_grid_new().", 
                 "deprecated_version": "3.4", 
-                "isConstructor": true
+                "description": "Used to create a new table widget. An initial size must be given by\nspecifying how many rows and columns the table should have, although\nthis can be changed later with gtk_table_resize().  @rows and @columns\nmust both be in the range 1 .. 65535. For historical reasons, 0 is accepted\nas well and is silently interpreted as 1."
             }, 
             {
                 "returns": {

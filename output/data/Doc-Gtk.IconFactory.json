@@ -16,14 +16,15 @@
         "signals": [], 
         "methods": [
             {
+                "name": "Gtk.IconFactory()", 
+                "parameters": null, 
                 "isConstructor": true, 
                 "returns": {
                     "doc": "a new #GtkIconFactory", 
                     "name": "ref:Gtk.IconFactory"
                 }, 
                 "version": null, 
-                "name": "Gtk.IconFactory()", 
-                "parameters": null
+                "description": "Creates a new #GtkIconFactory. An icon factory manages a collection\nof #GtkIconSet<!-- -->s; a #GtkIconSet manages a set of variants of a\nparticular icon (i.e. a #GtkIconSet contains variants for different\nsizes and widget states). Icons in an icon factory are named by a\nstock ID, which is a simple string identifying the icon. Each\n#GtkStyle has a list of #GtkIconFactory<!-- -->s derived from the current\ntheme; those icon factories are consulted first when searching for\nan icon. If the theme doesn't set a particular icon, GTK+ looks for\nthe icon in a list of default icon factories, maintained by\ngtk_icon_factory_add_default() and\ngtk_icon_factory_remove_default(). Applications with icons should\nadd a default icon factory with their icons, which will allow\nthemes to override the icons for the application."
             }, 
             {
                 "returns": {

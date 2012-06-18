@@ -25,12 +25,6 @@
         ], 
         "methods": [
             {
-                "isConstructor": true, 
-                "returns": {
-                    "doc": "a new #GtkRadioAction", 
-                    "name": "ref:Gtk.RadioAction"
-                }, 
-                "version": "2.4", 
                 "name": "Gtk.RadioAction(String name, String label, String tooltip, String stock_id, Integer value)", 
                 "parameters": [
                     {
@@ -53,7 +47,14 @@
                         "type": "Integer", 
                         "name": "value"
                     }
-                ]
+                ], 
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a new #GtkRadioAction", 
+                    "name": "ref:Gtk.RadioAction"
+                }, 
+                "version": "2.4", 
+                "description": "Creates a new #GtkRadioAction object. To add the action to\na #GtkActionGroup and set the accelerator for the action,\ncall gtk_action_group_add_action_with_accel()."
             }, 
             {
                 "returns": {

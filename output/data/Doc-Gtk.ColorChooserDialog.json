@@ -27,12 +27,6 @@
         "signals": [], 
         "methods": [
             {
-                "isConstructor": true, 
-                "returns": {
-                    "doc": "a new #GtkColorChooserDialog", 
-                    "name": "ref:Gtk.Widget"
-                }, 
-                "version": "3.4", 
                 "name": "Gtk.ColorChooserDialog(String title, Gtk.Window parent)", 
                 "parameters": [
                     {
@@ -43,7 +37,14 @@
                         "type": "ref:Gtk.Window", 
                         "name": "parent"
                     }
-                ]
+                ], 
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a new #GtkColorChooserDialog", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": "3.4", 
+                "description": "Creates a new #GtkColorChooserDialog."
             }
         ], 
         "properties": [

@@ -12,16 +12,17 @@
         "signals": [], 
         "methods": [
             {
+                "name": "Gtk.RcStyle()", 
+                "parameters": null, 
+                "isConstructor": true, 
                 "returns": {
                     "doc": "the newly-created #GtkRcStyle", 
                     "name": "ref:Gtk.RcStyle"
                 }, 
                 "version": null, 
-                "name": "Gtk.RcStyle()", 
-                "parameters": null, 
                 "deprecated": "Use #GtkCssProvider instead.", 
                 "deprecated_version": "3.0", 
-                "isConstructor": true
+                "description": "Creates a new #GtkRcStyle with no fields set and\na reference count of 1."
             }, 
             {
                 "returns": {

@@ -38,22 +38,17 @@
         ], 
         "methods": [
             {
+                "name": "Gtk.InfoBar()", 
+                "parameters": null, 
                 "isConstructor": true, 
                 "returns": {
                     "doc": "a new #GtkInfoBar object", 
                     "name": "ref:Gtk.Widget"
                 }, 
                 "version": "2.18", 
-                "name": "Gtk.InfoBar()", 
-                "parameters": null
+                "description": "Creates a new #GtkInfoBar object."
             }, 
             {
-                "isConstructor": true, 
-                "returns": {
-                    "doc": "a new #GtkInfoBar", 
-                    "name": "ref:Gtk.Widget"
-                }, 
-                "version": null, 
                 "name": "Gtk.InfoBar(String first_button_text, VarArg None)", 
                 "parameters": [
                     {
@@ -64,7 +59,14 @@
                         "type": "ref:VarArg", 
                         "name": null
                     }
-                ]
+                ], 
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a new #GtkInfoBar", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": null, 
+                "description": "Creates a new #GtkInfoBar with buttons. Button text/response ID\npairs should be listed, with a %NULL pointer ending the list.\nButton text can be either a stock ID such as %GTK_STOCK_OK, or\nsome arbitrary text. A response ID can be any positive number,\nor one of the values in the #GtkResponseType enumeration. If the\nuser clicks one of these dialog buttons, GtkInfoBar will emit\nthe \"response\" signal with the corresponding response ID."
             }, 
             {
                 "returns": {

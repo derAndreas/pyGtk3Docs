@@ -28,12 +28,6 @@
         "signals": [], 
         "methods": [
             {
-                "isConstructor": true, 
-                "returns": {
-                    "doc": "a new #GtkTreeStore", 
-                    "name": "ref:Gtk.TreeStore"
-                }, 
-                "version": null, 
                 "name": "Gtk.TreeStore(Integer n_columns, VarArg None)", 
                 "parameters": [
                     {
@@ -44,15 +38,16 @@
                         "type": "ref:VarArg", 
                         "name": null
                     }
-                ]
-            }, 
-            {
+                ], 
                 "isConstructor": true, 
                 "returns": {
                     "doc": "a new #GtkTreeStore", 
                     "name": "ref:Gtk.TreeStore"
                 }, 
                 "version": null, 
+                "description": "Creates a new tree store as with @n_columns columns each of the types passed\nin.  Note that only types derived from standard GObject fundamental types\nare supported.\n\nAs an example, <literal>gtk_tree_store_new (3, G_TYPE_INT, G_TYPE_STRING,\nGDK_TYPE_PIXBUF);</literal> will create a new #GtkTreeStore with three columns, of type\n<type>int</type>, <type>string</type> and #GdkPixbuf respectively."
+            }, 
+            {
                 "name": "Gtk.TreeStore(Integer n_columns, Integer[] types)", 
                 "parameters": [
                     {
@@ -63,7 +58,14 @@
                         "type": "Integer[]", 
                         "name": "types"
                     }
-                ]
+                ], 
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a new #GtkTreeStore", 
+                    "name": "ref:Gtk.TreeStore"
+                }, 
+                "version": null, 
+                "description": "Non vararg creation function.  Used primarily by language bindings."
             }, 
             {
                 "returns": {

@@ -24,14 +24,15 @@
         "signals": [], 
         "methods": [
             {
+                "name": "Gtk.Grid()", 
+                "parameters": null, 
                 "isConstructor": true, 
                 "returns": {
                     "doc": "the new #GtkGrid", 
                     "name": "ref:Gtk.Widget"
                 }, 
                 "version": null, 
-                "name": "Gtk.Grid()", 
-                "parameters": null
+                "description": "Creates a new grid widget."
             }, 
             {
                 "returns": {

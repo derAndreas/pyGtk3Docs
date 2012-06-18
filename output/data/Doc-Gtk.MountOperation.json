@@ -12,19 +12,20 @@
         "signals": [], 
         "methods": [
             {
-                "isConstructor": true, 
-                "returns": {
-                    "doc": "a new #GtkMountOperation", 
-                    "name": "Gio.MountOperation"
-                }, 
-                "version": "2.14", 
                 "name": "Gtk.MountOperation(Gtk.Window parent)", 
                 "parameters": [
                     {
                         "type": "ref:Gtk.Window", 
                         "name": "parent"
                     }
-                ]
+                ], 
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a new #GtkMountOperation", 
+                    "name": "Gio.MountOperation"
+                }, 
+                "version": "2.14", 
+                "description": "Creates a new #GtkMountOperation"
             }, 
             {
                 "returns": {

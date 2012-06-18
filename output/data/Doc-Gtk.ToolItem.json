@@ -38,14 +38,15 @@
         ], 
         "methods": [
             {
+                "name": "Gtk.ToolItem()", 
+                "parameters": null, 
                 "isConstructor": true, 
                 "returns": {
                     "doc": "the new #GtkToolItem", 
                     "name": "ref:Gtk.ToolItem"
                 }, 
                 "version": "2.4", 
-                "name": "Gtk.ToolItem()", 
-                "parameters": null
+                "description": "Creates a new #GtkToolItem"
             }, 
             {
                 "returns": {

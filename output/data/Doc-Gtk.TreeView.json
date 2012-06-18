@@ -115,29 +115,31 @@
         ], 
         "methods": [
             {
+                "name": "Gtk.TreeView()", 
+                "parameters": null, 
                 "isConstructor": true, 
                 "returns": {
                     "doc": "A newly created #GtkTreeView widget.", 
                     "name": "ref:Gtk.Widget"
                 }, 
                 "version": null, 
-                "name": "Gtk.TreeView()", 
-                "parameters": null
+                "description": "Creates a new #GtkTreeView widget."
             }, 
             {
-                "isConstructor": true, 
-                "returns": {
-                    "doc": "A newly created #GtkTreeView widget.", 
-                    "name": "ref:Gtk.Widget"
-                }, 
-                "version": null, 
                 "name": "Gtk.TreeView(Gtk.TreeModel model)", 
                 "parameters": [
                     {
                         "type": "ref:Gtk.TreeModel", 
                         "name": "model"
                     }
-                ]
+                ], 
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "A newly created #GtkTreeView widget.", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": null, 
+                "description": "Creates a new #GtkTreeView widget with the model initialized to @model."
             }, 
             {
                 "returns": {

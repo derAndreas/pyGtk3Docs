@@ -63,14 +63,15 @@
         ], 
         "methods": [
             {
+                "name": "Gtk.Calendar()", 
+                "parameters": null, 
                 "isConstructor": true, 
                 "returns": {
                     "doc": "a newly #GtkCalendar widget", 
                     "name": "ref:Gtk.Widget"
                 }, 
                 "version": null, 
-                "name": "Gtk.Calendar()", 
-                "parameters": null
+                "description": "Creates a new calendar, with the current date being selected."
             }, 
             {
                 "returns": {
