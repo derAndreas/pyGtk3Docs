@@ -1,0 +1,51 @@
+{
+    "isAbstract": false, 
+    "leaf": true, 
+    "name": "FileChooserWidget", 
+    "text": "FileChooserWidget", 
+    "interfaces": [
+        [
+            "Atk.ImplementorIface"
+        ], 
+        [
+            "Buildable"
+        ], 
+        [
+            "FileChooser"
+        ], 
+        [
+            "Orientable"
+        ]
+    ], 
+    "parents": [
+        "FileChooserWidget", 
+        "Box", 
+        "Container", 
+        "Widget", 
+        "GObject.InitiallyUnowned"
+    ], 
+    "members": {
+        "signals": [], 
+        "methods": [
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a new #GtkFileChooserWidget", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": "2.4", 
+                "name": "Gtk.FileChooserWidget(Gtk.FileChooserAction action)", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.FileChooserAction", 
+                        "name": "action"
+                    }
+                ]
+            }
+        ], 
+        "properties": []
+    }, 
+    "fullname": "Class Gtk.FileChooserWidget", 
+    "id": "Docs-FileChooserWidget", 
+    "description": "#GtkFileChooserWidget is a widget suitable for selecting files.\nIt is the main building block of a #GtkFileChooserDialog.  Most\napplications will only need to use the latter; you can use\n#GtkFileChooserWidget as part of a larger window if you have\nspecial needs.\n\nNote that #GtkFileChooserWidget does not have any methods of its\nown.  Instead, you should use the functions that work on a\n#GtkFileChooser."
+}

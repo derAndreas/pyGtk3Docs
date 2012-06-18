@@ -1,0 +1,38 @@
+{
+    "isAbstract": false, 
+    "leaf": true, 
+    "name": "DrawingArea", 
+    "text": "DrawingArea", 
+    "interfaces": [
+        [
+            "Atk.ImplementorIface"
+        ], 
+        [
+            "Buildable"
+        ]
+    ], 
+    "parents": [
+        "DrawingArea", 
+        "Widget", 
+        "GObject.InitiallyUnowned"
+    ], 
+    "members": {
+        "signals": [], 
+        "methods": [
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a new #GtkDrawingArea", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": null, 
+                "name": "Gtk.DrawingArea()", 
+                "parameters": null
+            }
+        ], 
+        "properties": []
+    }, 
+    "fullname": "Class Gtk.DrawingArea", 
+    "id": "Docs-DrawingArea", 
+    "description": "The #GtkDrawingArea widget is used for creating custom user interface\nelements. It's essentially a blank widget; you can draw on it. After\ncreating a drawing area, the application may want to connect to:\n\n<itemizedlist>\n<listitem>\n<para>\nMouse and button press signals to respond to input from\nthe user. (Use gtk_widget_add_events() to enable events\nyou wish to receive.)\n</para>\n</listitem>\n<listitem>\n<para>\nThe #GtkWidget::realize signal to take any necessary actions\nwhen the widget is instantiated on a particular display.\n(Create GDK resources in response to this signal.)\n</para>\n</listitem>\n<listitem>\n<para>\nThe #GtkWidget::configure-event signal to take any necessary\nactions when the widget changes size.\n</para>\n</listitem>\n<listitem>\n<para>\nThe #GtkWidget::draw signal to handle redrawing the\ncontents of the widget.\n</para>\n</listitem>\n</itemizedlist>\n\nThe following code portion demonstrates using a drawing\narea to display a circle in the normal widget foreground\ncolor.\n\nNote that GDK automatically clears the exposed area to the\nbackground color before sending the expose event, and that\ndrawing is implicitly clipped to the exposed area.\n\n<example>\n<title>Simple GtkDrawingArea usage</title>\n<programlisting>\ngboolean\ndraw_callback (GtkWidget *widget, cairo_t *cr, gpointer data)\n{\nguint width, height;\nGdkRGBA color;\n\nwidth = gtk_widget_get_allocated_width (widget);\nheight = gtk_widget_get_allocated_height (widget);\ncairo_arc (cr,\nwidth / 2.0, height / 2.0,\nMIN (width, height) / 2.0,\n0, 2 * G_PI);\n\ngtk_style_context_get_color (gtk_widget_get_style_context (widget),\n0,\n&amp;color);\ngdk_cairo_set_source_rgba (cr, &amp;color);\n\ncairo_fill (cr);\n\nreturn FALSE;\n}\n[...]\nGtkWidget &ast;drawing_area = gtk_drawing_area_new (<!-- -->);\ngtk_widget_set_size_request (drawing_area, 100, 100);\ng_signal_connect (G_OBJECT (drawing_area), \"draw\",\nG_CALLBACK (draw_callback), NULL);\n</programlisting>\n</example>\n\nDraw signals are normally delivered when a drawing area first comes\nonscreen, or when it's covered by another window and then uncovered.\nYou can also force an expose event by adding to the \"damage region\"\nof the drawing area's window; gtk_widget_queue_draw_area() and\ngdk_window_invalidate_rect() are equally good ways to do this.\nYou'll then get a draw signal for the invalid region.\n\nThe available routines for drawing are documented on the <link\nlinkend=\"gdk3-Cairo-Interaction\">GDK Drawing Primitives</link> page\nand the cairo documentation.\n\nTo receive mouse events on a drawing area, you will need to enable\nthem with gtk_widget_add_events(). To receive keyboard events, you\nwill need to set the \"can-focus\" property on the drawing area, and you\nshould probably draw some user-visible indication that the drawing\narea is focused. Use gtk_widget_has_focus() in your expose event\nhandler to decide whether to draw the focus indicator. See\ngtk_render_focus() for one way to draw focus."
+}

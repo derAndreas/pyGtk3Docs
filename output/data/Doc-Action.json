@@ -1,0 +1,743 @@
+{
+    "isAbstract": false, 
+    "leaf": true, 
+    "name": "Action", 
+    "text": "Action", 
+    "interfaces": [
+        [
+            "Buildable"
+        ]
+    ], 
+    "parents": [
+        "Action", 
+        "GObject.Object"
+    ], 
+    "members": {
+        "signals": [
+            {
+                "version": "2.4", 
+                "when": "first", 
+                "name": "activate", 
+                "description": "The \"activate\" signal is emitted when the action is activated."
+            }
+        ], 
+        "methods": [
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a new #GtkAction", 
+                    "name": "ref:Gtk.Action"
+                }, 
+                "version": "2.4", 
+                "name": "Gtk.Action(String name, String label, String tooltip, String stock_id)", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "name"
+                    }, 
+                    {
+                        "type": "String", 
+                        "name": "label"
+                    }, 
+                    {
+                        "type": "String", 
+                        "name": "tooltip"
+                    }, 
+                    {
+                        "type": "String", 
+                        "name": "stock_id"
+                    }
+                ]
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.4", 
+                "name": "activate", 
+                "parameters": null, 
+                "description": "Emits the \"activate\" signal on the specified action, if it isn't \ninsensitive. This gets called by the proxy widgets when they get \nactivated.\n\nIt can also be used to manually activate an action."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.16", 
+                "name": "block_activate", 
+                "parameters": null, 
+                "description": "Disable activation signals from the action \n\nThis is needed when updating the state of your proxy\n#GtkActivatable widget could result in calling gtk_action_activate(),\nthis is a convenience function to avoid recursing in those\ncases (updating toggle state for instance)."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.4", 
+                "name": "connect_accelerator", 
+                "parameters": null, 
+                "description": "Installs the accelerator for @action if @action has an\naccel path and group. See gtk_action_set_accel_path() and \ngtk_action_set_accel_group()\n\nSince multiple proxies may independently trigger the installation\nof the accelerator, the @action counts the number of times this\nfunction has been called and doesn't remove the accelerator until\ngtk_action_disconnect_accelerator() has been called as many times."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.Widget", 
+                    "description": "a widget that displays the icon for this action."
+                }, 
+                "version": "2.4", 
+                "name": "create_icon", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.IconSize", 
+                        "name": "icon_size", 
+                        "description": "the size of the icon that should be created."
+                    }
+                ], 
+                "description": "This function is intended for use by action implementations to\ncreate icons displayed in the proxy widgets."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.Widget", 
+                    "description": "the menu item provided by the"
+                }, 
+                "version": "2.12", 
+                "name": "create_menu", 
+                "parameters": null, 
+                "description": "If @action provides a #GtkMenu widget as a submenu for the menu\nitem or the toolbar item it creates, this function returns an\ninstance of that menu.\n\naction, or %NULL."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.Widget", 
+                    "description": "a menu item connected to the action."
+                }, 
+                "version": "2.4", 
+                "name": "create_menu_item", 
+                "parameters": null, 
+                "description": "Creates a menu item widget that proxies for the given action."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.Widget", 
+                    "description": "a toolbar item connected to the action."
+                }, 
+                "version": "2.4", 
+                "name": "create_tool_item", 
+                "parameters": null, 
+                "description": "Creates a toolbar item widget that proxies for the given action."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.4", 
+                "name": "disconnect_accelerator", 
+                "parameters": null, 
+                "description": "Undoes the effect of one call to gtk_action_connect_accelerator()."
+            }, 
+            {
+                "returns": {
+                    "type": "GObject.Closure", 
+                    "description": "the accel closure for this action. The"
+                }, 
+                "version": "2.8", 
+                "name": "get_accel_closure", 
+                "parameters": null, 
+                "description": "Returns the accel closure for this action.\n\n\nreturned closure is owned by GTK+ and must not be unreffed\nor modified."
+            }, 
+            {
+                "returns": {
+                    "type": "String", 
+                    "description": "the accel path for this action, or %NULL"
+                }, 
+                "version": "2.6", 
+                "name": "get_accel_path", 
+                "parameters": null, 
+                "description": "Returns the accel path for this action.  \n\n\nif none is set. The returned string is owned by GTK+ \nand must not be freed or modified."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE if the menu item proxies will always show their image"
+                }, 
+                "version": "2.20", 
+                "name": "get_always_show_image", 
+                "parameters": null, 
+                "description": "Returns whether @action<!-- -->'s menu item proxies will ignore the\n#GtkSettings:gtk-menu-images setting and always show their image,\nif available."
+            }, 
+            {
+                "returns": {
+                    "type": "Gio.Icon", 
+                    "description": "The action's #GIcon if one is set."
+                }, 
+                "version": "2.16", 
+                "name": "get_gicon", 
+                "parameters": null, 
+                "description": "Gets the gicon of @action."
+            }, 
+            {
+                "returns": {
+                    "type": "String", 
+                    "description": "the icon name"
+                }, 
+                "version": "2.16", 
+                "name": "get_icon_name", 
+                "parameters": null, 
+                "description": "Gets the icon name of @action."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "whether @action is important"
+                }, 
+                "version": "2.16", 
+                "name": "get_is_important", 
+                "parameters": null, 
+                "description": "Checks whether @action is important or not"
+            }, 
+            {
+                "returns": {
+                    "type": "String", 
+                    "description": "the label text"
+                }, 
+                "version": "2.16", 
+                "name": "get_label", 
+                "parameters": null, 
+                "description": "Gets the label text of @action."
+            }, 
+            {
+                "returns": {
+                    "type": "String", 
+                    "description": "the name of the action. The string belongs to GTK+ and should not"
+                }, 
+                "version": "2.4", 
+                "name": "get_name", 
+                "parameters": null, 
+                "description": "Returns the name of the action.\n\nbe freed."
+            }, 
+            {
+                "returns": {
+                    "type": "GLib.SList", 
+                    "description": "a #GSList of proxy widgets. The list is owned by GTK+"
+                }, 
+                "version": "2.4", 
+                "name": "get_proxies", 
+                "parameters": null, 
+                "description": "Returns the proxy widgets for an action.\nSee also gtk_activatable_get_related_action().\n\nand must not be modified."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE if the action itself is sensitive."
+                }, 
+                "version": "2.4", 
+                "name": "get_sensitive", 
+                "parameters": null, 
+                "description": "Returns whether the action itself is sensitive. Note that this doesn't \nnecessarily mean effective sensitivity. See gtk_action_is_sensitive() \nfor that."
+            }, 
+            {
+                "returns": {
+                    "type": "String", 
+                    "description": "the short label text."
+                }, 
+                "version": "2.16", 
+                "name": "get_short_label", 
+                "parameters": null, 
+                "description": "Gets the short label text of @action."
+            }, 
+            {
+                "returns": {
+                    "type": "String", 
+                    "description": "the stock id"
+                }, 
+                "version": "2.16", 
+                "name": "get_stock_id", 
+                "parameters": null, 
+                "description": "Gets the stock id of @action."
+            }, 
+            {
+                "returns": {
+                    "type": "String", 
+                    "description": "the tooltip text"
+                }, 
+                "version": "2.16", 
+                "name": "get_tooltip", 
+                "parameters": null, 
+                "description": "Gets the tooltip text of @action."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE if the action itself is visible."
+                }, 
+                "version": "2.4", 
+                "name": "get_visible", 
+                "parameters": null, 
+                "description": "Returns whether the action itself is visible. Note that this doesn't \nnecessarily mean effective visibility. See gtk_action_is_sensitive() \nfor that."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "whether @action is visible when horizontal"
+                }, 
+                "version": "2.16", 
+                "name": "get_visible_horizontal", 
+                "parameters": null, 
+                "description": "Checks whether @action is visible when horizontal"
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "whether @action is visible when horizontal"
+                }, 
+                "version": "2.16", 
+                "name": "get_visible_vertical", 
+                "parameters": null, 
+                "description": "Checks whether @action is visible when horizontal"
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE if the action and its associated action group"
+                }, 
+                "version": "2.4", 
+                "name": "is_sensitive", 
+                "parameters": null, 
+                "description": "Returns whether the action is effectively sensitive.\n\nare both sensitive."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE if the action and its associated action group"
+                }, 
+                "version": "2.4", 
+                "name": "is_visible", 
+                "parameters": null, 
+                "description": "Returns whether the action is effectively visible.\n\nare both visible."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.4", 
+                "name": "set_accel_group", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.AccelGroup", 
+                        "name": "accel_group", 
+                        "description": "a #GtkAccelGroup or %NULL"
+                    }
+                ], 
+                "description": "Sets the #GtkAccelGroup in which the accelerator for this action\nwill be installed."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.4", 
+                "name": "set_accel_path", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "accel_path", 
+                        "description": "the accelerator path"
+                    }
+                ], 
+                "description": "Sets the accel path for this action.  All proxy widgets associated\nwith the action will have this accel path, so that their\naccelerators are consistent.\n\nNote that @accel_path string will be stored in a #GQuark. Therefore, if you\npass a static string, you can save some memory by interning it first with \ng_intern_static_string()."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.20", 
+                "name": "set_always_show_image", 
+                "parameters": [
+                    {
+                        "type": "Boolean", 
+                        "name": "always_show", 
+                        "description": "%TRUE if menuitem proxies should always show their image"
+                    }
+                ], 
+                "description": "Sets whether @action<!-- -->'s menu item proxies will ignore the\n#GtkSettings:gtk-menu-images setting and always show their image, if available.\n\nUse this if the menu item would be useless or hard to use\nwithout their image."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.16", 
+                "name": "set_gicon", 
+                "parameters": [
+                    {
+                        "type": "Gio.Icon", 
+                        "name": "icon", 
+                        "description": "the #GIcon to set"
+                    }
+                ], 
+                "description": "Sets the icon of @action."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.16", 
+                "name": "set_icon_name", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "icon_name", 
+                        "description": "the icon name to set"
+                    }
+                ], 
+                "description": "Sets the icon name on @action"
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.16", 
+                "name": "set_is_important", 
+                "parameters": [
+                    {
+                        "type": "Boolean", 
+                        "name": "is_important", 
+                        "description": "%TRUE to make the action important"
+                    }
+                ], 
+                "description": "Sets whether the action is important, this attribute is used\nprimarily by toolbar items to decide whether to show a label\nor not."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.16", 
+                "name": "set_label", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "label", 
+                        "description": "the label text to set"
+                    }
+                ], 
+                "description": "Sets the label of @action."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.6", 
+                "name": "set_sensitive", 
+                "parameters": [
+                    {
+                        "type": "Boolean", 
+                        "name": "sensitive", 
+                        "description": "%TRUE to make the action sensitive"
+                    }
+                ], 
+                "description": "Sets the ::sensitive property of the action to @sensitive. Note that \nthis doesn't necessarily mean effective sensitivity. See \ngtk_action_is_sensitive() \nfor that."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.16", 
+                "name": "set_short_label", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "short_label", 
+                        "description": "the label text to set"
+                    }
+                ], 
+                "description": "Sets a shorter label text on @action."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.16", 
+                "name": "set_stock_id", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "stock_id", 
+                        "description": "the stock id"
+                    }
+                ], 
+                "description": "Sets the stock id on @action"
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.16", 
+                "name": "set_tooltip", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "tooltip", 
+                        "description": "the tooltip text"
+                    }
+                ], 
+                "description": "Sets the tooltip text on @action"
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.6", 
+                "name": "set_visible", 
+                "parameters": [
+                    {
+                        "type": "Boolean", 
+                        "name": "visible", 
+                        "description": "%TRUE to make the action visible"
+                    }
+                ], 
+                "description": "Sets the ::visible property of the action to @visible. Note that \nthis doesn't necessarily mean effective visibility. See \ngtk_action_is_visible() \nfor that."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.16", 
+                "name": "set_visible_horizontal", 
+                "parameters": [
+                    {
+                        "type": "Boolean", 
+                        "name": "visible_horizontal", 
+                        "description": "whether the action is visible horizontally"
+                    }
+                ], 
+                "description": "Sets whether @action is visible when horizontal"
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.16", 
+                "name": "set_visible_vertical", 
+                "parameters": [
+                    {
+                        "type": "Boolean", 
+                        "name": "visible_vertical", 
+                        "description": "whether the action is visible vertically"
+                    }
+                ], 
+                "description": "Sets whether @action is visible when vertical"
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.16", 
+                "name": "unblock_activate", 
+                "parameters": null, 
+                "description": "Reenable activation signals from the action"
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.4", 
+                "name": "activate", 
+                "parameters": null, 
+                "description": "Emits the \"activate\" signal on the specified action, if it isn't \ninsensitive. This gets called by the proxy widgets when they get \nactivated.\n\nIt can also be used to manually activate an action."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "connect_proxy", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "proxy", 
+                        "description": ""
+                    }
+                ], 
+                "description": ""
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.Widget", 
+                    "description": "the menu item provided by the"
+                }, 
+                "version": "2.12", 
+                "name": "create_menu", 
+                "parameters": null, 
+                "description": "If @action provides a #GtkMenu widget as a submenu for the menu\nitem or the toolbar item it creates, this function returns an\ninstance of that menu.\n\naction, or %NULL."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.Widget", 
+                    "description": "a menu item connected to the action."
+                }, 
+                "version": "2.4", 
+                "name": "create_menu_item", 
+                "parameters": null, 
+                "description": "Creates a menu item widget that proxies for the given action."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.Widget", 
+                    "description": "a toolbar item connected to the action."
+                }, 
+                "version": "2.4", 
+                "name": "create_tool_item", 
+                "parameters": null, 
+                "description": "Creates a toolbar item widget that proxies for the given action."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "disconnect_proxy", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "proxy", 
+                        "description": ""
+                    }
+                ], 
+                "description": ""
+            }
+        ], 
+        "properties": [
+            {
+                "writable": false, 
+                "type": "Gtk.ActionGroup", 
+                "readable": false, 
+                "name": "action-group", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "always-show-image", 
+                "description": "If %TRUE, the action's menu item proxies will ignore the #GtkSettings:gtk-menu-images \nsetting and always show their image, if available.\n\nUse this property if the menu item would be useless or hard to use\nwithout their image."
+            }, 
+            {
+                "writable": false, 
+                "type": "Gio.Icon", 
+                "readable": false, 
+                "name": "gicon", 
+                "description": "The #GIcon displayed in the #GtkAction.\n\nNote that the stock icon is preferred, if the #GtkAction:stock-id \nproperty holds the id of an existing stock icon.\n\nThis is an appearance property and thus only applies if \n#GtkActivatable:use-action-appearance is %TRUE."
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "hide-if-empty", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "String", 
+                "readable": false, 
+                "name": "icon-name", 
+                "description": "The name of the icon from the icon theme. \n\nNote that the stock icon is preferred, if the #GtkAction:stock-id \nproperty holds the id of an existing stock icon, and the #GIcon is\npreferred if the #GtkAction:gicon property is set. \n\nThis is an appearance property and thus only applies if \n#GtkActivatable:use-action-appearance is %TRUE."
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "is-important", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "String", 
+                "readable": false, 
+                "name": "label", 
+                "description": "The label used for menu items and buttons that activate\nthis action. If the label is %NULL, GTK+ uses the stock \nlabel specified via the stock-id property.\n\nThis is an appearance property and thus only applies if \n#GtkActivatable:use-action-appearance is %TRUE."
+            }, 
+            {
+                "writable": false, 
+                "type": "String", 
+                "readable": false, 
+                "name": "name", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "sensitive", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "String", 
+                "readable": false, 
+                "name": "short-label", 
+                "description": "A shorter label that may be used on toolbar buttons.\n\nThis is an appearance property and thus only applies if \n#GtkActivatable:use-action-appearance is %TRUE."
+            }, 
+            {
+                "writable": false, 
+                "type": "String", 
+                "readable": false, 
+                "name": "stock-id", 
+                "description": "The stock icon displayed in widgets representing this action.\n\nThis is an appearance property and thus only applies if \n#GtkActivatable:use-action-appearance is %TRUE."
+            }, 
+            {
+                "writable": false, 
+                "type": "String", 
+                "readable": false, 
+                "name": "tooltip", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "visible", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "visible-horizontal", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "visible-overflown", 
+                "description": "When %TRUE, toolitem proxies for this action are represented in the \ntoolbar overflow menu."
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "visible-vertical", 
+                "description": ""
+            }
+        ]
+    }, 
+    "fullname": "Class Gtk.Action", 
+    "id": "Docs-Action", 
+    "description": "Actions represent operations that the user can be perform, along with\nsome information how it should be presented in the interface. Each action\nprovides methods to create icons, menu items and toolbar items\nrepresenting itself.\n\nAs well as the callback that is called when the action gets activated,\nthe following also gets associated with the action:\n<itemizedlist>\n<listitem><para>a name (not translated, for path lookup)</para></listitem>\n<listitem><para>a label (translated, for display)</para></listitem>\n<listitem><para>an accelerator</para></listitem>\n<listitem><para>whether label indicates a stock id</para></listitem>\n<listitem><para>a tooltip (optional, translated)</para></listitem>\n<listitem><para>a toolbar label (optional, shorter than label)</para></listitem>\n</itemizedlist>\nThe action will also have some state information:\n<itemizedlist>\n<listitem><para>visible (shown/hidden)</para></listitem>\n<listitem><para>sensitive (enabled/disabled)</para></listitem>\n</itemizedlist>\nApart from regular actions, there are <link linkend=\"GtkToggleAction\">toggle\nactions</link>, which can be toggled between two states and <link\nlinkend=\"GtkRadioAction\">radio actions</link>, of which only one in a group\ncan be in the \"active\" state. Other actions can be implemented as #GtkAction\nsubclasses.\n\nEach action can have one or more proxy widgets. To act as an action proxy,\nwidget needs to implement #GtkActivatable interface. Proxies mirror the state\nof the action and should change when the action's state changes. Properties\nthat are always mirrored by proxies are #GtkAction:sensitive and\n#GtkAction:visible. #GtkAction:gicon, #GtkAction:icon-name, #GtkAction:label,\n#GtkAction:short-label and #GtkAction:stock-id properties are only mirorred\nif proxy widget has #GtkActivatable:use-action-appearance property set to\n%TRUE.\n\nWhen the proxy is activated, it should activate its action."
+}

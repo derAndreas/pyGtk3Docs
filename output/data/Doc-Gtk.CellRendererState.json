@@ -1,0 +1,41 @@
+{
+    "leaf": true, 
+    "name": "CellRendererState", 
+    "text": "CellRendererState", 
+    "version": null, 
+    "members": {
+        "properties": [
+            {
+                "name": "selected", 
+                "value": "1"
+            }, 
+            {
+                "name": "prelit", 
+                "value": "2"
+            }, 
+            {
+                "name": "insensitive", 
+                "value": "4"
+            }, 
+            {
+                "name": "sorted", 
+                "value": "8"
+            }, 
+            {
+                "name": "focused", 
+                "value": "16"
+            }, 
+            {
+                "name": "expandable", 
+                "value": "32"
+            }, 
+            {
+                "name": "expanded", 
+                "value": "64"
+            }
+        ]
+    }, 
+    "fullname": "Bitfield Gtk.CellRendererState", 
+    "id": "Docs-CellRendererState", 
+    "description": ""
+}

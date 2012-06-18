@@ -1,0 +1,185 @@
+{
+    "isAbstract": false, 
+    "leaf": true, 
+    "name": "TextTagTable", 
+    "text": "TextTagTable", 
+    "interfaces": [
+        [
+            "Buildable"
+        ]
+    ], 
+    "parents": [
+        "TextTagTable", 
+        "GObject.Object"
+    ], 
+    "members": {
+        "signals": [
+            {
+                "version": "", 
+                "when": "last", 
+                "name": "tag-added", 
+                "description": ""
+            }, 
+            {
+                "version": "", 
+                "when": "last", 
+                "name": "tag-changed", 
+                "description": ""
+            }, 
+            {
+                "version": "", 
+                "when": "last", 
+                "name": "tag-removed", 
+                "description": ""
+            }
+        ], 
+        "methods": [
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a new #GtkTextTagTable", 
+                    "name": "ref:Gtk.TextTagTable"
+                }, 
+                "version": null, 
+                "name": "Gtk.TextTagTable()", 
+                "parameters": null
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "add", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TextTag", 
+                        "name": "tag", 
+                        "description": "a #GtkTextTag"
+                    }
+                ], 
+                "description": "Add a tag to the table. The tag is assigned the highest priority\nin the table.\n\n@tag must not be in a tag table already, and may not have\nthe same name as an already-added tag."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "foreach", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TextTagTableForeach", 
+                        "name": "func", 
+                        "description": "a function to call on each tag"
+                    }, 
+                    {
+                        "type": "Mixed", 
+                        "name": "data", 
+                        "description": "user data"
+                    }
+                ], 
+                "description": "Calls @func on each tag in @table, with user data @data.\nNote that the table may not be modified while iterating \nover it (you can't add/remove tags)."
+            }, 
+            {
+                "returns": {
+                    "type": "Integer", 
+                    "description": "number of tags in @table"
+                }, 
+                "version": "", 
+                "name": "get_size", 
+                "parameters": null, 
+                "description": "Returns the size of the table (number of tags)"
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.TextTag", 
+                    "description": "The tag, or %NULL if none by that name is in the table."
+                }, 
+                "version": "", 
+                "name": "lookup", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "name", 
+                        "description": "name of a tag"
+                    }
+                ], 
+                "description": "Look up a named tag."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "remove", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TextTag", 
+                        "name": "tag", 
+                        "description": "a #GtkTextTag"
+                    }
+                ], 
+                "description": "Remove a tag from the table. This will remove the table's\nreference to the tag, so be careful - the tag will end\nup destroyed if you don't have a reference to it."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "tag_added", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TextTag", 
+                        "name": "tag", 
+                        "description": ""
+                    }
+                ], 
+                "description": ""
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "tag_changed", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TextTag", 
+                        "name": "tag", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Boolean", 
+                        "name": "size_changed", 
+                        "description": ""
+                    }
+                ], 
+                "description": ""
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "tag_removed", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TextTag", 
+                        "name": "tag", 
+                        "description": ""
+                    }
+                ], 
+                "description": ""
+            }
+        ], 
+        "properties": []
+    }, 
+    "fullname": "Class Gtk.TextTagTable", 
+    "id": "Docs-TextTagTable", 
+    "description": "You may wish to begin by reading the <link linkend=\"TextWidget\">text widget\nconceptual overview</link> which gives an overview of all the objects and\ndata types related to the text widget and how they work together.\n\n<refsect2 id=\"GtkTextTagTable-BUILDER-UI\">\n<title>GtkTextTagTables as GtkBuildable</title>\n<para>\nThe GtkTextTagTable implementation of the GtkBuildable interface\nsupports adding tags by specifying \"tag\" as the \"type\"\nattribute of a &lt;child&gt; element.\n\n<example>\n<title>A UI definition fragment specifying tags</title>\n<programlisting><![CDATA[\n<object class=\"GtkTextTagTable\">\n<child type=\"tag\">\n<object class=\"GtkTextTag\"/>\n</child>\n</object>\n]]></programlisting>\n</example>\n</para>\n</refsect2>"
+}

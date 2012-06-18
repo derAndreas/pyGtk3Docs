@@ -1,0 +1,25 @@
+{
+    "leaf": true, 
+    "name": "CellRendererMode", 
+    "text": "CellRendererMode", 
+    "version": null, 
+    "members": {
+        "properties": [
+            {
+                "name": "inert", 
+                "value": "0"
+            }, 
+            {
+                "name": "activatable", 
+                "value": "1"
+            }, 
+            {
+                "name": "editable", 
+                "value": "2"
+            }
+        ]
+    }, 
+    "fullname": "Enumeration Gtk.CellRendererMode", 
+    "id": "Docs-CellRendererMode", 
+    "description": ""
+}

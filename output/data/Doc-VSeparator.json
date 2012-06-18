@@ -1,0 +1,44 @@
+{
+    "isAbstract": false, 
+    "leaf": true, 
+    "name": "VSeparator", 
+    "text": "VSeparator", 
+    "interfaces": [
+        [
+            "Atk.ImplementorIface"
+        ], 
+        [
+            "Buildable"
+        ], 
+        [
+            "Orientable"
+        ]
+    ], 
+    "parents": [
+        "VSeparator", 
+        "Separator", 
+        "Widget", 
+        "GObject.InitiallyUnowned"
+    ], 
+    "members": {
+        "signals": [], 
+        "methods": [
+            {
+                "returns": {
+                    "doc": "a new #GtkVSeparator.", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": null, 
+                "name": "Gtk.VSeparator()", 
+                "parameters": null, 
+                "deprecated": "Use gtk_separator_new() with %GTK_ORIENTATION_VERTICAL instead", 
+                "deprecated_version": "3.2", 
+                "isConstructor": true
+            }
+        ], 
+        "properties": []
+    }, 
+    "fullname": "Class Gtk.VSeparator", 
+    "id": "Docs-VSeparator", 
+    "description": "The #GtkVSeparator widget is a vertical separator, used to group the\nwidgets within a window. It displays a vertical line with a shadow to\nmake it appear sunken into the interface.\n\nGtkVSeparator has been deprecated, use #GtkSeparator instead."
+}

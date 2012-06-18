@@ -1,0 +1,365 @@
+{
+    "isAbstract": false, 
+    "leaf": true, 
+    "name": "EntryBuffer", 
+    "text": "EntryBuffer", 
+    "interfaces": [], 
+    "parents": [
+        "EntryBuffer", 
+        "GObject.Object"
+    ], 
+    "members": {
+        "signals": [
+            {
+                "version": "2.18", 
+                "when": "first", 
+                "name": "deleted-text", 
+                "description": "This signal is emitted after text is deleted from the buffer."
+            }, 
+            {
+                "version": "2.18", 
+                "when": "first", 
+                "name": "inserted-text", 
+                "description": "This signal is emitted after text is inserted into the buffer."
+            }
+        ], 
+        "methods": [
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "A new GtkEntryBuffer object.", 
+                    "name": "ref:Gtk.EntryBuffer"
+                }, 
+                "version": "2.18", 
+                "name": "Gtk.EntryBuffer(String initial_chars, Integer n_initial_chars)", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "initial_chars"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "n_initial_chars"
+                    }
+                ]
+            }, 
+            {
+                "returns": {
+                    "type": "Integer", 
+                    "description": "The number of characters deleted."
+                }, 
+                "version": "2.18", 
+                "name": "delete_text", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "position", 
+                        "description": "position at which to delete text"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "n_chars", 
+                        "description": "number of characters to delete"
+                    }
+                ], 
+                "description": "Deletes a sequence of characters from the buffer. @n_chars characters are\ndeleted starting at @position. If @n_chars is negative, then all characters\nuntil the end of the text are deleted.\n\nIf @position or @n_chars are out of bounds, then they are coerced to sane\nvalues.\n\nNote that the positions are specified in characters, not bytes."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.18", 
+                "name": "emit_deleted_text", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "position", 
+                        "description": "position at which text was deleted"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "n_chars", 
+                        "description": "number of characters deleted"
+                    }
+                ], 
+                "description": "Used when subclassing #GtkEntryBuffer"
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.18", 
+                "name": "emit_inserted_text", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "position", 
+                        "description": "position at which text was inserted"
+                    }, 
+                    {
+                        "type": "String", 
+                        "name": "chars", 
+                        "description": "text that was inserted"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "n_chars", 
+                        "description": "number of characters inserted"
+                    }
+                ], 
+                "description": "Used when subclassing #GtkEntryBuffer"
+            }, 
+            {
+                "returns": {
+                    "type": "Integer", 
+                    "description": "The byte length of the buffer."
+                }, 
+                "version": "2.18", 
+                "name": "get_bytes", 
+                "parameters": null, 
+                "description": "Retrieves the length in bytes of the buffer.\nSee gtk_entry_buffer_get_length()."
+            }, 
+            {
+                "returns": {
+                    "type": "Integer", 
+                    "description": "The number of characters in the buffer."
+                }, 
+                "version": "2.18", 
+                "name": "get_length", 
+                "parameters": null, 
+                "description": "Retrieves the length in characters of the buffer."
+            }, 
+            {
+                "returns": {
+                    "type": "Integer", 
+                    "description": "the maximum allowed number of characters"
+                }, 
+                "version": "2.18", 
+                "name": "get_max_length", 
+                "parameters": null, 
+                "description": "Retrieves the maximum allowed length of the text in\n@buffer. See gtk_entry_buffer_set_max_length().\n\nin #GtkEntryBuffer, or 0 if there is no maximum."
+            }, 
+            {
+                "returns": {
+                    "type": "String", 
+                    "description": "a pointer to the contents of the widget as a"
+                }, 
+                "version": "2.18", 
+                "name": "get_text", 
+                "parameters": null, 
+                "description": "Retrieves the contents of the buffer.\n\nThe memory pointer returned by this call will not change\nunless this object emits a signal, or is finalized.\n\nstring. This string points to internally allocated\nstorage in the buffer and must not be freed, modified or\nstored."
+            }, 
+            {
+                "returns": {
+                    "type": "Integer", 
+                    "description": "The number of characters actually inserted."
+                }, 
+                "version": "2.18", 
+                "name": "insert_text", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "position", 
+                        "description": "the position at which to insert text."
+                    }, 
+                    {
+                        "type": "String", 
+                        "name": "chars", 
+                        "description": "the text to insert into the buffer."
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "n_chars", 
+                        "description": "the length of the text in characters, or -1"
+                    }
+                ], 
+                "description": "Inserts @n_chars characters of @chars into the contents of the\nbuffer, at position @position.\n\nIf @n_chars is negative, then characters from chars will be inserted\nuntil a null-terminator is found. If @position or @n_chars are out of\nbounds, or the maximum buffer text length is exceeded, then they are\ncoerced to sane values.\n\nNote that the position and length are in characters, not in bytes."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.18", 
+                "name": "set_max_length", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "max_length", 
+                        "description": "the maximum length of the entry buffer, or 0 for no maximum. (other than the maximum length of entries.) The value passed in will be clamped to the range 0-65536."
+                    }
+                ], 
+                "description": "Sets the maximum allowed length of the contents of the buffer. If\nthe current contents are longer than the given length, then they\nwill be truncated to fit."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.18", 
+                "name": "set_text", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "chars", 
+                        "description": "the new text"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "n_chars", 
+                        "description": "the number of characters in @text, or -1"
+                    }
+                ], 
+                "description": "Sets the text in the buffer.\n\nThis is roughly equivalent to calling gtk_entry_buffer_delete_text()\nand gtk_entry_buffer_insert_text().\n\nNote that @n_chars is in characters, not in bytes."
+            }, 
+            {
+                "returns": {
+                    "type": "Integer", 
+                    "description": "The number of characters deleted."
+                }, 
+                "version": "2.18", 
+                "name": "delete_text", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "position", 
+                        "description": "position at which to delete text"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "n_chars", 
+                        "description": "number of characters to delete"
+                    }
+                ], 
+                "description": "Deletes a sequence of characters from the buffer. @n_chars characters are\ndeleted starting at @position. If @n_chars is negative, then all characters\nuntil the end of the text are deleted.\n\nIf @position or @n_chars are out of bounds, then they are coerced to sane\nvalues.\n\nNote that the positions are specified in characters, not bytes."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "deleted_text", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "position", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "n_chars", 
+                        "description": ""
+                    }
+                ], 
+                "description": ""
+            }, 
+            {
+                "returns": {
+                    "type": "Integer", 
+                    "description": "The number of characters in the buffer."
+                }, 
+                "version": "2.18", 
+                "name": "get_length", 
+                "parameters": null, 
+                "description": "Retrieves the length in characters of the buffer."
+            }, 
+            {
+                "returns": {
+                    "type": "String", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "get_text", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "n_bytes", 
+                        "description": ""
+                    }
+                ], 
+                "description": ""
+            }, 
+            {
+                "returns": {
+                    "type": "Integer", 
+                    "description": "The number of characters actually inserted."
+                }, 
+                "version": "2.18", 
+                "name": "insert_text", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "position", 
+                        "description": "the position at which to insert text."
+                    }, 
+                    {
+                        "type": "String", 
+                        "name": "chars", 
+                        "description": "the text to insert into the buffer."
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "n_chars", 
+                        "description": "the length of the text in characters, or -1"
+                    }
+                ], 
+                "description": "Inserts @n_chars characters of @chars into the contents of the\nbuffer, at position @position.\n\nIf @n_chars is negative, then characters from chars will be inserted\nuntil a null-terminator is found. If @position or @n_chars are out of\nbounds, or the maximum buffer text length is exceeded, then they are\ncoerced to sane values.\n\nNote that the position and length are in characters, not in bytes."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "inserted_text", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "position", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "String", 
+                        "name": "chars", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "n_chars", 
+                        "description": ""
+                    }
+                ], 
+                "description": ""
+            }
+        ], 
+        "properties": [
+            {
+                "writable": false, 
+                "type": "Integer", 
+                "readable": false, 
+                "name": "length", 
+                "description": "The length (in characters) of the text in buffer."
+            }, 
+            {
+                "writable": false, 
+                "type": "Integer", 
+                "readable": false, 
+                "name": "max-length", 
+                "description": "The maximum length (in characters) of the text in the buffer."
+            }, 
+            {
+                "writable": false, 
+                "type": "String", 
+                "readable": false, 
+                "name": "text", 
+                "description": "The contents of the buffer."
+            }
+        ]
+    }, 
+    "fullname": "Class Gtk.EntryBuffer", 
+    "id": "Docs-EntryBuffer", 
+    "description": "The #GtkEntryBuffer class contains the actual text displayed in a\n#GtkEntry widget.\n\nA single #GtkEntryBuffer object can be shared by multiple #GtkEntry\nwidgets which will then share the same text content, but not the cursor\nposition, visibility attributes, icon etc.\n\n#GtkEntryBuffer may be derived from. Such a derived class might allow\ntext to be stored in an alternate location, such as non-pageable memory,\nuseful in the case of important passwords. Or a derived class could \nintegrate with an application's concept of undo/redo."
+}

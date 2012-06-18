@@ -1,0 +1,321 @@
+{
+    "isAbstract": false, 
+    "leaf": true, 
+    "name": "Grid", 
+    "text": "Grid", 
+    "interfaces": [
+        [
+            "Atk.ImplementorIface"
+        ], 
+        [
+            "Buildable"
+        ], 
+        [
+            "Orientable"
+        ]
+    ], 
+    "parents": [
+        "Grid", 
+        "Container", 
+        "Widget", 
+        "GObject.InitiallyUnowned"
+    ], 
+    "members": {
+        "signals": [], 
+        "methods": [
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "the new #GtkGrid", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": null, 
+                "name": "Gtk.Grid()", 
+                "parameters": null
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "attach", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "child", 
+                        "description": "the widget to add"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "left", 
+                        "description": "the column number to attach the left side of @child to"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "top", 
+                        "description": "the row number to attach the top side of @child to"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "width", 
+                        "description": "the number of columns that @child will span"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "height", 
+                        "description": "the number of rows that @child will span"
+                    }
+                ], 
+                "description": "Adds a widget to the grid.\n\nThe position of @child is determined by @left and @top. The\nnumber of 'cells' that @child will occupy is determined by\n@width and @height."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "attach_next_to", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "child", 
+                        "description": "the widget to add"
+                    }, 
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "sibling", 
+                        "description": "the child of @grid that @child will be placed next to, or %NULL to place @child at the beginning or end"
+                    }, 
+                    {
+                        "type": "ref:Gtk.PositionType", 
+                        "name": "side", 
+                        "description": "the side of @sibling that @child is positioned next to"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "width", 
+                        "description": "the number of columns that @child will span"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "height", 
+                        "description": "the number of rows that @child will span"
+                    }
+                ], 
+                "description": "Adds a widget to the grid.\n\nThe widget is placed next to @sibling, on the side determined by\n@side. When @sibling is %NULL, the widget is placed in row (for\nleft or right placement) or column 0 (for top or bottom placement),\nat the end indicated by @side.\n\nAttaching widgets labeled [1], [2], [3] with @sibling == %NULL and\n@side == %GTK_POS_LEFT yields a layout of [3][2][1]."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.Widget", 
+                    "description": "the child at the given position, or %NULL"
+                }, 
+                "version": "3.2", 
+                "name": "get_child_at", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "left", 
+                        "description": "the left edge of the cell"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "top", 
+                        "description": "the top edge of the cell"
+                    }
+                ], 
+                "description": "Gets the child of @grid whose area covers the grid\ncell whose upper left corner is at @left, @top."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "whether all columns of @grid have the same width."
+                }, 
+                "version": "", 
+                "name": "get_column_homogeneous", 
+                "parameters": null, 
+                "description": "Returns whether all columns of @grid have the same width."
+            }, 
+            {
+                "returns": {
+                    "type": "Integer", 
+                    "description": "the column spacing of @grid"
+                }, 
+                "version": "", 
+                "name": "get_column_spacing", 
+                "parameters": null, 
+                "description": "Returns the amount of space between the columns of @grid."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "whether all rows of @grid have the same height."
+                }, 
+                "version": "", 
+                "name": "get_row_homogeneous", 
+                "parameters": null, 
+                "description": "Returns whether all rows of @grid have the same height."
+            }, 
+            {
+                "returns": {
+                    "type": "Integer", 
+                    "description": "the row spacing of @grid"
+                }, 
+                "version": "", 
+                "name": "get_row_spacing", 
+                "parameters": null, 
+                "description": "Returns the amount of space between the rows of @grid."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "3.2", 
+                "name": "insert_column", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "position", 
+                        "description": "the position to insert the column at"
+                    }
+                ], 
+                "description": "Inserts a column at the specified position.\n\nChildren which are attached at or to the right of this position\nare moved one column to the right. Children which span across this\nposition are grown to span the new column."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "3.2", 
+                "name": "insert_next_to", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "sibling", 
+                        "description": "the child of @grid that the new row or column will be placed next to"
+                    }, 
+                    {
+                        "type": "ref:Gtk.PositionType", 
+                        "name": "side", 
+                        "description": "the side of @sibling that @child is positioned next to"
+                    }
+                ], 
+                "description": "Inserts a row or column at the specified position.\n\nThe new row or column is placed next to @sibling, on the side\ndetermined by @side. If @side is %GTK_POS_TOP or %GTK_POS_BOTTOM,\na row is inserted. If @side is %GTK_POS_LEFT of %GTK_POS_RIGHT,\na column is inserted."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "3.2", 
+                "name": "insert_row", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "position", 
+                        "description": "the position to insert the row at"
+                    }
+                ], 
+                "description": "Inserts a row at the specified position.\n\nChildren which are attached at or below this position\nare moved one row down. Children which span across this\nposition are grown to span the new row."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_column_homogeneous", 
+                "parameters": [
+                    {
+                        "type": "Boolean", 
+                        "name": "homogeneous", 
+                        "description": "%TRUE to make columns homogeneous"
+                    }
+                ], 
+                "description": "Sets whether all columns of @grid will have the same width."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_column_spacing", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "spacing", 
+                        "description": "the amount of space to insert between columns"
+                    }
+                ], 
+                "description": "Sets the amount of space between columns of @grid."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_row_homogeneous", 
+                "parameters": [
+                    {
+                        "type": "Boolean", 
+                        "name": "homogeneous", 
+                        "description": "%TRUE to make rows homogeneous"
+                    }
+                ], 
+                "description": "Sets whether all rows of @grid will have the same height."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_row_spacing", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "spacing", 
+                        "description": "the amount of space to insert between rows"
+                    }
+                ], 
+                "description": "Sets the amount of space between rows of @grid."
+            }
+        ], 
+        "properties": [
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "column-homogeneous", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Integer", 
+                "readable": false, 
+                "name": "column-spacing", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "row-homogeneous", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Integer", 
+                "readable": false, 
+                "name": "row-spacing", 
+                "description": ""
+            }
+        ]
+    }, 
+    "fullname": "Class Gtk.Grid", 
+    "id": "Docs-Grid", 
+    "description": "GtkGrid is a container which arranges its child widgets in\nrows and columns. It is a very similar to #GtkTable and #GtkBox,\nbut it consistently uses #GtkWidget's #GtkWidget:margin and #GtkWidget:expand\nproperties instead of custom child properties, and it fully supports\n<link linkend=\"geometry-management\">height-for-width geometry management</link>.\n\nChildren are added using gtk_grid_attach(). They can span multiple\nrows or columns. It is also possible to add a child next to an\nexisting child, using gtk_grid_attach_next_to().\n\nGtkGrid can be used like a #GtkBox by just using gtk_container_add(),\nwhich will place children next to each other in the direction determined\nby the #GtkOrientable:orientation property."
+}

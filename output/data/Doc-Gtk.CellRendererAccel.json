@@ -1,0 +1,121 @@
+{
+    "isAbstract": false, 
+    "leaf": true, 
+    "name": "CellRendererAccel", 
+    "text": "CellRendererAccel", 
+    "interfaces": [], 
+    "parents": [
+        "CellRendererAccel", 
+        "CellRendererText", 
+        "CellRenderer", 
+        "GObject.InitiallyUnowned"
+    ], 
+    "members": {
+        "signals": [
+            {
+                "version": "2.10", 
+                "when": "last", 
+                "name": "accel-cleared", 
+                "description": "Gets emitted when the user has removed the accelerator."
+            }, 
+            {
+                "version": "2.10", 
+                "when": "last", 
+                "name": "accel-edited", 
+                "description": "Gets emitted when the user has selected a new accelerator."
+            }
+        ], 
+        "methods": [
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "the new cell renderer", 
+                    "name": "ref:Gtk.CellRenderer"
+                }, 
+                "version": "2.10", 
+                "name": "Gtk.CellRendererAccel()", 
+                "parameters": null
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "accel_cleared", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "path_string", 
+                        "description": ""
+                    }
+                ], 
+                "description": ""
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "accel_edited", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "path_string", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "accel_key", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Gdk.ModifierType", 
+                        "name": "accel_mods", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "hardware_keycode", 
+                        "description": ""
+                    }
+                ], 
+                "description": ""
+            }
+        ], 
+        "properties": [
+            {
+                "writable": false, 
+                "type": "Integer", 
+                "readable": false, 
+                "name": "accel-key", 
+                "description": "The keyval of the accelerator."
+            }, 
+            {
+                "writable": false, 
+                "type": "Gtk.CellRendererAccelMode", 
+                "readable": false, 
+                "name": "accel-mode", 
+                "description": "Determines if the edited accelerators are GTK+ accelerators. If\nthey are, consumed modifiers are suppressed, only accelerators\naccepted by GTK+ are allowed, and the accelerators are rendered\nin the same way as they are in menus.\n\nIf the mode is set to %GTK_CELL_RENDERER_ACCEL_MODE_MODIFIER_TAP\nthen bare modifiers can be set as accelerators by tapping (ie:\npressing and immediately releasing) them."
+            }, 
+            {
+                "writable": false, 
+                "type": "Gdk.ModifierType", 
+                "readable": false, 
+                "name": "accel-mods", 
+                "description": "The modifier mask of the accelerator."
+            }, 
+            {
+                "writable": false, 
+                "type": "Integer", 
+                "readable": false, 
+                "name": "keycode", 
+                "description": "The hardware keycode of the accelerator. Note that the hardware keycode is\nonly relevant if the key does not have a keyval. Normally, the keyboard\nconfiguration should assign keyvals to all keys."
+            }
+        ]
+    }, 
+    "fullname": "Class Gtk.CellRendererAccel", 
+    "id": "Docs-CellRendererAccel", 
+    "description": "#GtkCellRendererAccel displays a keyboard accelerator (i.e. a\nkey combination like <keycombo><keycap>Control</keycap><keycap>a</keycap></keycombo>.\nIf the cell renderer is editable, the accelerator can be changed by\nsimply typing the new combination.\n\nThe #GtkCellRendererAccel cell renderer was added in GTK+ 2.10."
+}

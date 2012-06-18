@@ -1,0 +1,870 @@
+{
+    "isAbstract": false, 
+    "leaf": true, 
+    "name": "StyleContext", 
+    "text": "StyleContext", 
+    "interfaces": [], 
+    "parents": [
+        "StyleContext", 
+        "GObject.Object"
+    ], 
+    "members": {
+        "signals": [
+            {
+                "version": "", 
+                "when": "first", 
+                "name": "changed", 
+                "description": ""
+            }
+        ], 
+        "methods": [
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "A newly created #GtkStyleContext.", 
+                    "name": "ref:Gtk.StyleContext"
+                }, 
+                "version": null, 
+                "name": "Gtk.StyleContext()", 
+                "parameters": null
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "3.0", 
+                "name": "add_class", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "class_name", 
+                        "description": "class name to use in styling"
+                    }
+                ], 
+                "description": "Adds a style class to @context, so posterior calls to\ngtk_style_context_get() or any of the gtk_render_*()\nfunctions will make use of this new class for styling.\n\nIn the CSS file format, a #GtkEntry defining an \"entry\"\nclass, would be matched by:\n\n<programlisting>\nGtkEntry.entry { ... }\n</programlisting>\n\nWhile any widget defining an \"entry\" class would be\nmatched by:\n<programlisting>\n.entry { ... }\n</programlisting>"
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "3.0", 
+                "name": "add_provider", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.StyleProvider", 
+                        "name": "provider", 
+                        "description": "a #GtkStyleProvider"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "priority", 
+                        "description": "the priority of the style provider. The lower it is, the earlier it will be used in the style construction. Typically this will be in the range between %GTK_STYLE_PROVIDER_PRIORITY_FALLBACK and %GTK_STYLE_PROVIDER_PRIORITY_USER"
+                    }
+                ], 
+                "description": "Adds a style provider to @context, to be used in style construction.\n\n<note><para>If both priorities are the same, A #GtkStyleProvider\nadded through this function takes precedence over another added\nthrough gtk_style_context_add_provider_for_screen().</para></note>"
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "3.0", 
+                "name": "add_region", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "region_name", 
+                        "description": "region name to use in styling"
+                    }, 
+                    {
+                        "type": "ref:Gtk.RegionFlags", 
+                        "name": "flags", 
+                        "description": "flags that apply to the region"
+                    }
+                ], 
+                "description": "Adds a region to @context, so posterior calls to\ngtk_style_context_get() or any of the gtk_render_*()\nfunctions will make use of this new region for styling.\n\nIn the CSS file format, a #GtkTreeView defining a \"row\"\nregion, would be matched by:\n\n<programlisting>\nGtkTreeView row { ... }\n</programlisting>\n\nPseudo-classes are used for matching @flags, so the two\nfollowing rules:\n<programlisting>\nGtkTreeView row:nth-child(even) { ... }\nGtkTreeView row:nth-child(odd) { ... }\n</programlisting>\n\nwould apply to even and odd rows, respectively.\n\n<note><para>Region names must only contain lowercase letters\nand '-', starting always with a lowercase letter.</para></note>"
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "3.0", 
+                "name": "cancel_animations", 
+                "parameters": [
+                    {
+                        "type": "Mixed", 
+                        "name": "region_id", 
+                        "description": "animatable region to stop, or %NULL. See gtk_style_context_push_animatable_region()"
+                    }
+                ], 
+                "description": "Stops all running animations for @region_id and all animatable\nregions underneath.\n\nA %NULL @region_id will stop all ongoing animations in @context,\nwhen dealing with a #GtkStyleContext obtained through\ngtk_widget_get_style_context(), this is normally done for you\nin all circumstances you would expect all widget to be stopped,\nso this should be only used in complex widgets with different\nanimatable regions."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "3.0", 
+                "name": "get", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.StateFlags", 
+                        "name": "state", 
+                        "description": "state to retrieve the property values for"
+                    }, 
+                    {
+                        "type": "ref:VarArg", 
+                        "name": null, 
+                        "description": ""
+                    }
+                ], 
+                "description": "Retrieves several style property values from @context for a\ngiven state."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "3.0", 
+                "name": "get_background_color", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.StateFlags", 
+                        "name": "state", 
+                        "description": "state to retrieve the color for"
+                    }, 
+                    {
+                        "type": "Gdk.RGBA", 
+                        "name": "color", 
+                        "description": "return value for the background color"
+                    }
+                ], 
+                "description": "Gets the background color for a given state."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "3.0", 
+                "name": "get_border", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.StateFlags", 
+                        "name": "state", 
+                        "description": "state to retrieve the border for"
+                    }, 
+                    {
+                        "type": "ref:Gtk.Border", 
+                        "name": "border", 
+                        "description": "return value for the border settings"
+                    }
+                ], 
+                "description": "Gets the border for a given state as a #GtkBorder.\nSee %GTK_STYLE_PROPERTY_BORDER_WIDTH."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "3.0", 
+                "name": "get_border_color", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.StateFlags", 
+                        "name": "state", 
+                        "description": "state to retrieve the color for"
+                    }, 
+                    {
+                        "type": "Gdk.RGBA", 
+                        "name": "color", 
+                        "description": "return value for the border color"
+                    }
+                ], 
+                "description": "Gets the border color for a given state."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "3.0", 
+                "name": "get_color", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.StateFlags", 
+                        "name": "state", 
+                        "description": "state to retrieve the color for"
+                    }, 
+                    {
+                        "type": "Gdk.RGBA", 
+                        "name": "color", 
+                        "description": "return value for the foreground color"
+                    }
+                ], 
+                "description": "Gets the foreground color for a given state."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.TextDirection", 
+                    "description": "the widget direction"
+                }, 
+                "version": "3.0", 
+                "name": "get_direction", 
+                "parameters": null, 
+                "description": "Returns the widget direction used for rendering."
+            }, 
+            {
+                "returns": {
+                    "type": "Pango.FontDescription", 
+                    "description": "the #PangoFontDescription for the given"
+                }, 
+                "version": "3.0", 
+                "name": "get_font", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.StateFlags", 
+                        "name": "state", 
+                        "description": "state to retrieve the font for"
+                    }
+                ], 
+                "description": "Returns the font description for a given state. The returned\nobject is const and will remain valid until the\n#GtkStyleContext::changed signal happens.\n\nstate.  This object is owned by GTK+ and should not be\nfreed."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.JunctionSides", 
+                    "description": "the junction sides"
+                }, 
+                "version": "3.0", 
+                "name": "get_junction_sides", 
+                "parameters": null, 
+                "description": "Returns the sides where rendered elements connect visually with others."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "3.0", 
+                "name": "get_margin", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.StateFlags", 
+                        "name": "state", 
+                        "description": "state to retrieve the border for"
+                    }, 
+                    {
+                        "type": "ref:Gtk.Border", 
+                        "name": "margin", 
+                        "description": "return value for the margin settings"
+                    }
+                ], 
+                "description": "Gets the margin for a given state as a #GtkBorder.\nSee %GTK_STYLE_PROPERTY_MARGIN."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "3.0", 
+                "name": "get_padding", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.StateFlags", 
+                        "name": "state", 
+                        "description": "state to retrieve the padding for"
+                    }, 
+                    {
+                        "type": "ref:Gtk.Border", 
+                        "name": "padding", 
+                        "description": "return value for the padding settings"
+                    }
+                ], 
+                "description": "Gets the padding for a given state as a #GtkBorder.\nSee %GTK_STYLE_PROPERTY_PADDING."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.StyleContext", 
+                    "description": "the parent context or %NULL"
+                }, 
+                "version": "3.4", 
+                "name": "get_parent", 
+                "parameters": null, 
+                "description": "Gets the parent context set via gtk_style_context_set_parent().\nSee that function for details."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.WidgetPath", 
+                    "description": "A #GtkWidgetPath"
+                }, 
+                "version": "3.0", 
+                "name": "get_path", 
+                "parameters": null, 
+                "description": "Returns the widget path used for style matching."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "3.0", 
+                "name": "get_property", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "property", 
+                        "description": "style property name"
+                    }, 
+                    {
+                        "type": "ref:Gtk.StateFlags", 
+                        "name": "state", 
+                        "description": "state to retrieve the property value for"
+                    }, 
+                    {
+                        "type": "GObject.Value", 
+                        "name": "value", 
+                        "description": "return location for the style property value"
+                    }
+                ], 
+                "description": "Gets a style property from @context for the given state.\n\nWhen @value is no longer needed, g_value_unset() must be called\nto free any allocated memory."
+            }, 
+            {
+                "returns": {
+                    "type": "Gdk.Screen", 
+                    "description": "a #GdkScreen."
+                }, 
+                "version": "", 
+                "name": "get_screen", 
+                "parameters": null, 
+                "description": "Returns the #GdkScreen to which @context is attached."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.CssSection", 
+                    "description": "%NULL or the section where value was defined"
+                }, 
+                "version": "", 
+                "name": "get_section", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "property", 
+                        "description": "style property name"
+                    }
+                ], 
+                "description": "Queries the location in the CSS where @property was defined for the\ncurrent @context. Note that the state to be queried is taken from\ngtk_style_context_get_state().\n\nIf the location is not available, %NULL will be returned. The\nlocation might not be available for various reasons, such as the\nproperty being overridden, @property not naming a supported CSS\nproperty or tracking of definitions being disabled for performance\nreasons.\n\nShorthand CSS properties cannot be queried for a location and will\nalways return %NULL."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.StateFlags", 
+                    "description": "the state flags"
+                }, 
+                "version": "3.0", 
+                "name": "get_state", 
+                "parameters": null, 
+                "description": "Returns the state used when rendering."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "3.0", 
+                "name": "get_style", 
+                "parameters": [
+                    {
+                        "type": "ref:VarArg", 
+                        "name": null, 
+                        "description": ""
+                    }
+                ], 
+                "description": "Retrieves several widget style properties from @context according to the\ncurrent style."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "get_style_property", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "property_name", 
+                        "description": "the name of the widget style property"
+                    }, 
+                    {
+                        "type": "GObject.Value", 
+                        "name": "value", 
+                        "description": "Return location for the property value"
+                    }
+                ], 
+                "description": "Gets the value for a widget style property.\n\nWhen @value is no longer needed, g_value_unset() must be called\nto free any allocated memory."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "3.0", 
+                "name": "get_style_valist", 
+                "parameters": [
+                    {
+                        "type": "Mixed", 
+                        "name": "args", 
+                        "description": "va_list of property name/return location pairs, followed by %NULL"
+                    }
+                ], 
+                "description": "Retrieves several widget style properties from @context according to the\ncurrent style."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "3.0", 
+                "name": "get_valist", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.StateFlags", 
+                        "name": "state", 
+                        "description": "state to retrieve the property values for"
+                    }, 
+                    {
+                        "type": "Mixed", 
+                        "name": "args", 
+                        "description": "va_list of property name/return location pairs, followed by %NULL"
+                    }
+                ], 
+                "description": "Retrieves several style property values from @context for a given state."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE if @context has @class_name defined"
+                }, 
+                "version": "3.0", 
+                "name": "has_class", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "class_name", 
+                        "description": "a class name"
+                    }
+                ], 
+                "description": "Returns %TRUE if @context currently has defined the\ngiven class name"
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE if region is defined"
+                }, 
+                "version": "3.0", 
+                "name": "has_region", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "region_name", 
+                        "description": "a region name"
+                    }, 
+                    {
+                        "type": "ref:Gtk.RegionFlags", 
+                        "name": "flags_return", 
+                        "description": "return location for region flags"
+                    }
+                ], 
+                "description": "Returns %TRUE if @context has the region defined.\nIf @flags_return is not %NULL, it is set to the flags\naffecting the region."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "3.0", 
+                "name": "invalidate", 
+                "parameters": null, 
+                "description": "Invalidates @context style information, so it will be reconstructed\nagain.\n\nIf you're using a #GtkStyleContext returned from\ngtk_widget_get_style_context(), you do not need to\ncall this yourself."
+            }, 
+            {
+                "returns": {
+                    "type": "GLib.List", 
+                    "description": "a #GList of"
+                }, 
+                "version": "3.0", 
+                "name": "list_classes", 
+                "parameters": null, 
+                "description": "Returns the list of classes currently defined in @context.\n\nstrings with the currently defined classes. The contents\nof the list are owned by GTK+, but you must free the list\nitself with g_list_free() when you are done with it."
+            }, 
+            {
+                "returns": {
+                    "type": "GLib.List", 
+                    "description": "a #GList of"
+                }, 
+                "version": "3.0", 
+                "name": "list_regions", 
+                "parameters": null, 
+                "description": "Returns the list of regions currently defined in @context.\n\nstrings with the currently defined regions. The contents\nof the list are owned by GTK+, but you must free the list\nitself with g_list_free() when you are done with it."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE if @color_name was found and resolved, %FALSE otherwise"
+                }, 
+                "version": "", 
+                "name": "lookup_color", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "color_name", 
+                        "description": "color name to lookup"
+                    }, 
+                    {
+                        "type": "Gdk.RGBA", 
+                        "name": "color", 
+                        "description": "Return location for the looked up color"
+                    }
+                ], 
+                "description": "Looks up and resolves a color name in the @context color map."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.IconSet", 
+                    "description": "The looked  up %GtkIconSet, or %NULL"
+                }, 
+                "version": "", 
+                "name": "lookup_icon_set", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "stock_id", 
+                        "description": "an icon name"
+                    }
+                ], 
+                "description": "Looks up @stock_id in the icon factories associated to @context and\nthe default icon factory, returning an icon set if found, otherwise\n%NULL."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "3.0", 
+                "name": "notify_state_change", 
+                "parameters": [
+                    {
+                        "type": "Gdk.Window", 
+                        "name": "window", 
+                        "description": "a #GdkWindow"
+                    }, 
+                    {
+                        "type": "Mixed", 
+                        "name": "region_id", 
+                        "description": "animatable region to notify on, or %NULL. See gtk_style_context_push_animatable_region()"
+                    }, 
+                    {
+                        "type": "ref:Gtk.StateType", 
+                        "name": "state", 
+                        "description": "state to trigger transition for"
+                    }, 
+                    {
+                        "type": "Boolean", 
+                        "name": "state_value", 
+                        "description": "%TRUE if @state is the state we are changing to, %FALSE if we are changing away from it"
+                    }
+                ], 
+                "description": "Notifies a state change on @context, so if the current style makes use\nof transition animations, one will be started so all rendered elements\nunder @region_id are animated for state @state being set to value\n@state_value.\n\nThe @window parameter is used in order to invalidate the rendered area\nas the animation runs, so make sure it is the same window that is being\nrendered on by the gtk_render_*() functions.\n\nIf @region_id is %NULL, all rendered elements using @context will be\naffected by this state transition.\n\nAs a practical example, a #GtkButton notifying a state transition on\nthe prelight state:\n<programlisting>\ngtk_style_context_notify_state_change (context,\ngtk_widget_get_window (widget),\nNULL,\nGTK_STATE_PRELIGHT,\nbutton->in_button);\n</programlisting>\n\nCan be handled in the CSS file like this:\n<programlisting>\nGtkButton {\nbackground-color: &num;f00\n}\n\nGtkButton:hover {\nbackground-color: &num;fff;\ntransition: 200ms linear\n}\n</programlisting>\n\nThis combination will animate the button background from red to white\nif a pointer enters the button, and back to red if the pointer leaves\nthe button.\n\nNote that @state is used when finding the transition parameters, which\nis why the style places the transition under the :hover pseudo-class."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "3.0", 
+                "name": "pop_animatable_region", 
+                "parameters": null, 
+                "description": "Pops an animatable region from @context.\nSee gtk_style_context_push_animatable_region()."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "3.0", 
+                "name": "push_animatable_region", 
+                "parameters": [
+                    {
+                        "type": "Mixed", 
+                        "name": "region_id", 
+                        "description": "unique identifier for the animatable region"
+                    }
+                ], 
+                "description": "Pushes an animatable region, so all further gtk_render_*() calls between\nthis call and the following gtk_style_context_pop_animatable_region()\nwill potentially show transition animations for this region if\ngtk_style_context_notify_state_change() is called for a given state,\nand the current theme/style defines transition animations for state\nchanges.\n\nThe @region_id used must be unique in @context so the theming engine\ncan uniquely identify rendered elements subject to a state transition."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "3.0", 
+                "name": "remove_class", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "class_name", 
+                        "description": "class name to remove"
+                    }
+                ], 
+                "description": "Removes @class_name from @context."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "3.0", 
+                "name": "remove_provider", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.StyleProvider", 
+                        "name": "provider", 
+                        "description": "a #GtkStyleProvider"
+                    }
+                ], 
+                "description": "Removes @provider from the style providers list in @context."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "3.0", 
+                "name": "remove_region", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "region_name", 
+                        "description": "region name to unset"
+                    }
+                ], 
+                "description": "Removes a region from @context."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "3.0", 
+                "name": "restore", 
+                "parameters": null, 
+                "description": "Restores @context state to a previous stage.\nSee gtk_style_context_save()."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "3.0", 
+                "name": "save", 
+                "parameters": null, 
+                "description": "Saves the @context state, so all modifications done through\ngtk_style_context_add_class(), gtk_style_context_remove_class(),\ngtk_style_context_add_region(), gtk_style_context_remove_region()\nor gtk_style_context_set_junction_sides() can be reverted in one\ngo through gtk_style_context_restore()."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "3.0", 
+                "name": "scroll_animations", 
+                "parameters": [
+                    {
+                        "type": "Gdk.Window", 
+                        "name": "window", 
+                        "description": "a #GdkWindow used previously in gtk_style_context_notify_state_change()"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "dx", 
+                        "description": "Amount to scroll in the X axis"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "dy", 
+                        "description": "Amount to scroll in the Y axis"
+                    }
+                ], 
+                "description": "This function is analogous to gdk_window_scroll(), and\nshould be called together with it so the invalidation\nareas for any ongoing animation are scrolled together\nwith it."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "3.0", 
+                "name": "set_background", 
+                "parameters": [
+                    {
+                        "type": "Gdk.Window", 
+                        "name": "window", 
+                        "description": "a #GdkWindow"
+                    }
+                ], 
+                "description": "Sets the background of @window to the background pattern or\ncolor specified in @context for its current state."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "3.0", 
+                "name": "set_direction", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TextDirection", 
+                        "name": "direction", 
+                        "description": "the new direction."
+                    }
+                ], 
+                "description": "Sets the reading direction for rendering purposes.\n\nIf you are using a #GtkStyleContext returned from\ngtk_widget_get_style_context(), you do not need to\ncall this yourself."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "3.0", 
+                "name": "set_junction_sides", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.JunctionSides", 
+                        "name": "sides", 
+                        "description": "sides where rendered elements are visually connected to other elements"
+                    }
+                ], 
+                "description": "Sets the sides where rendered elements (mostly through\ngtk_render_frame()) will visually connect with other visual elements.\n\nThis is merely a hint that may or may not be honored\nby theming engines.\n\nContainer widgets are expected to set junction hints as appropriate\nfor their children, so it should not normally be necessary to call\nthis function manually."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "3.4", 
+                "name": "set_parent", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.StyleContext", 
+                        "name": "parent", 
+                        "description": "the new parent or %NULL"
+                    }
+                ], 
+                "description": "Sets the parent style context for @context. The parent style\ncontext is used to implement\n<ulink url=\"http://www.w3.org/TR/css3-cascade/#inheritance\">inheritance</ulink>\nof properties.\n\nIf you are using a #GtkStyleContext returned from\ngtk_widget_get_style_context(), the parent will be set for you."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "3.0", 
+                "name": "set_path", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.WidgetPath", 
+                        "name": "path", 
+                        "description": "a #GtkWidgetPath"
+                    }
+                ], 
+                "description": "Sets the #GtkWidgetPath used for style matching. As a\nconsequence, the style will be regenerated to match\nthe new given path.\n\nIf you are using a #GtkStyleContext returned from\ngtk_widget_get_style_context(), you do not need to call\nthis yourself."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "3.0", 
+                "name": "set_screen", 
+                "parameters": [
+                    {
+                        "type": "Gdk.Screen", 
+                        "name": "screen", 
+                        "description": "a #GdkScreen"
+                    }
+                ], 
+                "description": "Attaches @context to the given screen.\n\nThe screen is used to add style information from 'global' style\nproviders, such as the screens #GtkSettings instance.\n\nIf you are using a #GtkStyleContext returned from\ngtk_widget_get_style_context(), you do not need to\ncall this yourself."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "3.0", 
+                "name": "set_state", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.StateFlags", 
+                        "name": "flags", 
+                        "description": "state to represent"
+                    }
+                ], 
+                "description": "Sets the state to be used when rendering with any\nof the gtk_render_*() functions."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE if there is a running transition animation for @state."
+                }, 
+                "version": "3.0", 
+                "name": "state_is_running", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.StateType", 
+                        "name": "state", 
+                        "description": "a widget state"
+                    }, 
+                    {
+                        "type": "Float", 
+                        "name": "progress", 
+                        "description": "return location for the transition progress"
+                    }
+                ], 
+                "description": "Returns %TRUE if there is a transition animation running for the\ncurrent region (see gtk_style_context_push_animatable_region()).\n\nIf @progress is not %NULL, the animation progress will be returned\nthere, 0.0 means the state is closest to being unset, while 1.0 means\nit's closest to being set. This means transition animation will\nrun from 0 to 1 when @state is being set and from 1 to 0 when\nit's being unset."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "changed", 
+                "parameters": null, 
+                "description": ""
+            }
+        ], 
+        "properties": [
+            {
+                "writable": false, 
+                "type": "Gtk.TextDirection", 
+                "readable": false, 
+                "name": "direction", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Gtk.StyleContext", 
+                "readable": false, 
+                "name": "parent", 
+                "description": "Sets or gets the style context's parent. See gtk_style_context_set_parent()\nfor details."
+            }, 
+            {
+                "writable": false, 
+                "type": "Gdk.Screen", 
+                "readable": false, 
+                "name": "screen", 
+                "description": ""
+            }
+        ]
+    }, 
+    "fullname": "Class Gtk.StyleContext", 
+    "id": "Docs-StyleContext", 
+    "description": "#GtkStyleContext is an object that stores styling information affecting\na widget defined by #GtkWidgetPath.\n\nIn order to construct the final style information, #GtkStyleContext\nqueries information from all attached #GtkStyleProviders. Style providers\ncan be either attached explicitly to the context through\ngtk_style_context_add_provider(), or to the screen through\ngtk_style_context_add_provider_for_screen(). The resulting style is a\ncombination of all providers' information in priority order.\n\nFor GTK+ widgets, any #GtkStyleContext returned by\ngtk_widget_get_style_context() will already have a #GtkWidgetPath, a\n#GdkScreen and RTL/LTR information set. The style context will be also\nupdated automatically if any of these settings change on the widget.\n\nIf you are using the theming layer standalone, you will need to set a\nwidget path and a screen yourself to the created style context through\ngtk_style_context_set_path() and gtk_style_context_set_screen(), as well\nas updating the context yourself using gtk_style_context_invalidate()\nwhenever any of the conditions change, such as a change in the\n#GtkSettings:gtk-theme-name setting or a hierarchy change in the rendered\nwidget.\n\n<refsect2 id=\"gtkstylecontext-animations\">\n<title>Transition animations</title>\n<para>\n#GtkStyleContext has built-in support for state change transitions.\nNote that these animations respect the #GtkSettings:gtk-enable-animations\nsetting.\n</para>\n<para>\nFor simple widgets where state changes affect the whole widget area,\ncalling gtk_style_context_notify_state_change() with a %NULL region\nis sufficient to trigger the transition animation. And GTK+ already\ndoes that when gtk_widget_set_state() or gtk_widget_set_state_flags()\nare called.\n</para>\n<para>\nIf a widget needs to declare several animatable regions (i.e. not\naffecting the whole widget area), its #GtkWidget::draw signal handler\nneeds to wrap the render operations for the different regions with\ncalls to gtk_style_context_push_animatable_region() and\ngtk_style_context_pop_animatable_region(). These functions take an\nidentifier for the region which must be unique within the style context.\nFor simple widgets with a fixed set of animatable regions, using an\nenumeration works well:\n</para>\n<example>\n<title>Using an enumeration to identify  animatable regions</title>\n<programlisting>\nenum {\nREGION_ENTRY,\nREGION_BUTTON_UP,\nREGION_BUTTON_DOWN\n};\n\n...\n\ngboolean\nspin_button_draw (GtkWidget *widget,\ncairo_t   *cr)\n{\nGtkStyleContext *context;\n\ncontext = gtk_widget_get_style_context (widget);\n\ngtk_style_context_push_animatable_region (context,\nGUINT_TO_POINTER (REGION_ENTRY));\n\ngtk_render_background (cr, 0, 0, 100, 30);\ngtk_render_frame (cr, 0, 0, 100, 30);\n\ngtk_style_context_pop_animatable_region (context);\n\n...\n}\n</programlisting>\n</example>\n<para>\nFor complex widgets with an arbitrary number of animatable regions, it\nis up to the implementation to come up with a way to uniquely identify\neach animatable region. Using pointers to internal structs is one way\nto achieve this:\n</para>\n<example>\n<title>Using struct pointers to identify animatable regions</title>\n<programlisting>\nvoid\nnotebook_draw_tab (GtkWidget    *widget,\nNotebookPage *page,\ncairo_t      *cr)\n{\ngtk_style_context_push_animatable_region (context, page);\ngtk_render_extension (cr, page->x, page->y, page->width, page->height);\ngtk_style_context_pop_animatable_region (context);\n}\n</programlisting>\n</example>\n<para>\nThe widget also needs to notify the style context about a state change\nfor a given animatable region so the animation is triggered.\n</para>\n<example>\n<title>Triggering a state change animation on a region</title>\n<programlisting>\ngboolean\nnotebook_motion_notify (GtkWidget      *widget,\nGdkEventMotion *event)\n{\nGtkStyleContext *context;\nNotebookPage *page;\n\ncontext = gtk_widget_get_style_context (widget);\npage = find_page_under_pointer (widget, event);\ngtk_style_context_notify_state_change (context,\ngtk_widget_get_window (widget),\npage,\nGTK_STATE_PRELIGHT,\nTRUE);\n...\n}\n</programlisting>\n</example>\n<para>\ngtk_style_context_notify_state_change() accepts %NULL region IDs as a\nspecial value, in this case, the whole widget area will be updated\nby the animation.\n</para>\n</refsect2>\n<refsect2 id=\"gtkstylecontext-classes\">\n<title>Style classes and regions</title>\n<para>\nWidgets can add style classes to their context, which can be used\nto associate different styles by class (see <xref linkend=\"gtkcssprovider-selectors\"/>). Theme engines can also use style classes to vary their\nrendering. GTK+ has a number of predefined style classes:\n#GTK_STYLE_CLASS_CELL,\n#GTK_STYLE_CLASS_ENTRY,\n#GTK_STYLE_CLASS_BUTTON,\n#GTK_STYLE_CLASS_COMBOBOX_ENTRY,\n#GTK_STYLE_CLASS_CALENDAR,\n#GTK_STYLE_CLASS_SLIDER,\n#GTK_STYLE_CLASS_BACKGROUND,\n#GTK_STYLE_CLASS_RUBBERBAND,\n#GTK_STYLE_CLASS_TOOLTIP,\n#GTK_STYLE_CLASS_MENU,\n#GTK_STYLE_CLASS_MENUBAR,\n#GTK_STYLE_CLASS_MENUITEM,\n#GTK_STYLE_CLASS_TOOLBAR,\n#GTK_STYLE_CLASS_PRIMARY_TOOLBAR,\n#GTK_STYLE_CLASS_INLINE_TOOLBAR,\n#GTK_STYLE_CLASS_RADIO,\n#GTK_STYLE_CLASS_CHECK,\n#GTK_STYLE_CLASS_TROUGH,\n#GTK_STYLE_CLASS_SCROLLBAR,\n#GTK_STYLE_CLASS_SCALE,\n#GTK_STYLE_CLASS_SCALE_HAS_MARKS_ABOVE,\n#GTK_STYLE_CLASS_SCALE_HAS_MARKS_BELOW,\n#GTK_STYLE_CLASS_HEADER,\n#GTK_STYLE_CLASS_ACCELERATOR,\n#GTK_STYLE_CLASS_GRIP,\n#GTK_STYLE_CLASS_DOCK,\n#GTK_STYLE_CLASS_PROGRESSBAR,\n#GTK_STYLE_CLASS_SPINNER,\n#GTK_STYLE_CLASS_EXPANDER,\n#GTK_STYLE_CLASS_SPINBUTTON,\n#GTK_STYLE_CLASS_NOTEBOOK,\n#GTK_STYLE_CLASS_VIEW,\n#GTK_STYLE_CLASS_SIDEBAR,\n#GTK_STYLE_CLASS_IMAGE,\n#GTK_STYLE_CLASS_HIGHLIGHT,\n#GTK_STYLE_CLASS_FRAME,\n#GTK_STYLE_CLASS_DND,\n#GTK_STYLE_CLASS_PANE_SEPARATOR,\n#GTK_STYLE_CLASS_SEPARATOR,\n#GTK_STYLE_CLASS_INFO,\n#GTK_STYLE_CLASS_WARNING,\n#GTK_STYLE_CLASS_QUESTION,\n#GTK_STYLE_CLASS_ERROR,\n#GTK_STYLE_CLASS_HORIZONTAL,\n#GTK_STYLE_CLASS_VERTICAL,\n#GTK_STYLE_CLASS_TOP,\n#GTK_STYLE_CLASS_BOTTOM,\n#GTK_STYLE_CLASS_LEFT,\n#GTK_STYLE_CLASS_RIGHT,\n</para>\n<para>\nWidgets can also add regions with flags to their context.\nThe regions used by GTK+ widgets are:\n<informaltable>\n<tgroup cols=\"4\">\n<thead>\n<row>\n<entry>Region</entry>\n<entry>Flags</entry>\n<entry>Macro</entry>\n<entry>Used by</entry>\n</row>\n</thead>\n<tbody>\n<row>\n<entry>row</entry>\n<entry>even, odd</entry>\n<entry>GTK_STYLE_REGION_ROW</entry>\n<entry>#GtkTreeView</entry>\n</row>\n<row>\n<entry>column</entry>\n<entry>first, last, sorted</entry>\n<entry>GTK_STYLE_REGION_COLUMN</entry>\n<entry>#GtkTreeView</entry>\n</row>\n<row>\n<entry>column-header</entry>\n<entry></entry>\n<entry>GTK_STYLE_REGION_COLUMN_HEADER</entry>\n<entry></entry>\n</row>\n<row>\n<entry>tab</entry>\n<entry>even, odd, first, last</entry>\n<entry>GTK_STYLE_REGION_TAB</entry>\n<entry>#GtkNotebook</entry>\n</row>\n</tbody>\n</tgroup>\n</informaltable>\n</para>\n</refsect2>\n<refsect2 id=\"gtkstylecontext-custom-styling\">\n<title>Custom styling in UI libraries and applications</title>\n<para>\nIf you are developing a library with custom #GtkWidget<!-- -->s that\nrender differently than standard components, you may need to add a\n#GtkStyleProvider yourself with the %GTK_STYLE_PROVIDER_PRIORITY_FALLBACK\npriority, either a #GtkCssProvider or a custom object implementing the\n#GtkStyleProvider interface. This way theming engines may still attempt\nto style your UI elements in a different way if needed so.\n</para>\n<para>\nIf you are using custom styling on an applications, you probably want then\nto make your style information prevail to the theme's, so you must use\na #GtkStyleProvider with the %GTK_STYLE_PROVIDER_PRIORITY_APPLICATION\npriority, keep in mind that the user settings in\n<filename><replaceable>XDG_CONFIG_HOME</replaceable>/gtk-3.0/gtk.css</filename> will\nstill take precedence over your changes, as it uses the\n%GTK_STYLE_PROVIDER_PRIORITY_USER priority.\n</para>\n<para>\nIf a custom theming engine is needed, you probably want to implement a\n#GtkStyleProvider yourself so it points to your #GtkThemingEngine\nimplementation, as #GtkCssProvider uses gtk_theming_engine_load()\nwhich loads the theming engine module from the standard paths.\n</para>\n</refsect2>"
+}

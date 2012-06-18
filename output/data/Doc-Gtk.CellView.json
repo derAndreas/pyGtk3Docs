@@ -1,0 +1,329 @@
+{
+    "isAbstract": false, 
+    "leaf": true, 
+    "name": "CellView", 
+    "text": "CellView", 
+    "interfaces": [
+        [
+            "Atk.ImplementorIface"
+        ], 
+        [
+            "Buildable"
+        ], 
+        [
+            "CellLayout"
+        ], 
+        [
+            "Orientable"
+        ]
+    ], 
+    "parents": [
+        "CellView", 
+        "Widget", 
+        "GObject.InitiallyUnowned"
+    ], 
+    "members": {
+        "signals": [], 
+        "methods": [
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "A newly created #GtkCellView widget.", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": "2.6", 
+                "name": "Gtk.CellView()", 
+                "parameters": null
+            }, 
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "A newly created #GtkCellView widget.", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": "2.6", 
+                "name": "Gtk.CellView(Gtk.CellArea area, Gtk.CellAreaContext context)", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.CellArea", 
+                        "name": "area"
+                    }, 
+                    {
+                        "type": "ref:Gtk.CellAreaContext", 
+                        "name": "context"
+                    }
+                ]
+            }, 
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "A newly created #GtkCellView widget.", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": "2.6", 
+                "name": "Gtk.CellView(String markup)", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "markup"
+                    }
+                ]
+            }, 
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "A newly created #GtkCellView widget.", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": "2.6", 
+                "name": "Gtk.CellView(GdkPixbuf.Pixbuf pixbuf)", 
+                "parameters": [
+                    {
+                        "type": "GdkPixbuf.Pixbuf", 
+                        "name": "pixbuf"
+                    }
+                ]
+            }, 
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "A newly created #GtkCellView widget.", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": "2.6", 
+                "name": "Gtk.CellView(String text)", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "text"
+                    }
+                ]
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.TreePath", 
+                    "description": "the currently displayed row or %NULL"
+                }, 
+                "version": "2.6", 
+                "name": "get_displayed_row", 
+                "parameters": null, 
+                "description": "Returns a #GtkTreePath referring to the currently \ndisplayed row. If no row is currently displayed, \n%NULL is returned."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "whether @cell_view draws all of its"
+                }, 
+                "version": "3.0", 
+                "name": "get_draw_sensitive", 
+                "parameters": null, 
+                "description": "Gets whether @cell_view is configured to draw all of its\ncells in a sensitive state.\n\ncells in a sensitive state"
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "whether @cell_view requests space to fit"
+                }, 
+                "version": "3.0", 
+                "name": "get_fit_model", 
+                "parameters": null, 
+                "description": "Gets whether @cell_view is configured to request space\nto fit the entire #GtkTreeModel.\n\nthe entire #GtkTreeModel."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.TreeModel", 
+                    "description": "a #GtkTreeModel used or %NULL"
+                }, 
+                "version": "2.16", 
+                "name": "get_model", 
+                "parameters": null, 
+                "description": "Returns the model for @cell_view. If no model is used %NULL is\nreturned."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE"
+                }, 
+                "version": "2.6", 
+                "name": "get_size_of_row", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TreePath", 
+                        "name": "path", 
+                        "description": "a #GtkTreePath"
+                    }, 
+                    {
+                        "type": "ref:Gtk.Requisition", 
+                        "name": "requisition", 
+                        "description": "return location for the size"
+                    }
+                ], 
+                "description": "Sets @requisition to the size needed by @cell_view to display \nthe model row pointed to by @path.\n\n\n\nsizes for cellviews, now you can achieve this by either using\nthe #GtkCellView:fit-model property or by setting the currently\ndisplayed row of the #GtkCellView and using gtk_widget_get_preferred_size()."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.6", 
+                "name": "set_background_color", 
+                "parameters": [
+                    {
+                        "type": "Gdk.Color", 
+                        "name": "color", 
+                        "description": "the new background color"
+                    }
+                ], 
+                "description": "Sets the background color of @view."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "3.0", 
+                "name": "set_background_rgba", 
+                "parameters": [
+                    {
+                        "type": "Gdk.RGBA", 
+                        "name": "rgba", 
+                        "description": "the new background color"
+                    }
+                ], 
+                "description": "Sets the background color of @cell_view."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.6", 
+                "name": "set_displayed_row", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TreePath", 
+                        "name": "path", 
+                        "description": "a #GtkTreePath or %NULL to unset."
+                    }
+                ], 
+                "description": "Sets the row of the model that is currently displayed\nby the #GtkCellView. If the path is unset, then the\ncontents of the cellview \"stick\" at their last value;\nthis is not normally a desired result, but may be\na needed intermediate state if say, the model for\nthe #GtkCellView becomes temporarily empty."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "3.0", 
+                "name": "set_draw_sensitive", 
+                "parameters": [
+                    {
+                        "type": "Boolean", 
+                        "name": "draw_sensitive", 
+                        "description": "whether to draw all cells in a sensitive state."
+                    }
+                ], 
+                "description": "Sets whether @cell_view should draw all of its\ncells in a sensitive state, this is used by #GtkComboBox menus\nto ensure that rows with insensitive cells that contain\nchildren appear sensitive in the parent menu item."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "3.0", 
+                "name": "set_fit_model", 
+                "parameters": [
+                    {
+                        "type": "Boolean", 
+                        "name": "fit_model", 
+                        "description": "whether @cell_view should request space for the whole model."
+                    }
+                ], 
+                "description": "Sets whether @cell_view should request space to fit the entire #GtkTreeModel.\n\nThis is used by #GtkComboBox to ensure that the cell view displayed on\nthe combo box's button always gets enough space and does not resize\nwhen selection changes."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.6", 
+                "name": "set_model", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TreeModel", 
+                        "name": "model", 
+                        "description": "a #GtkTreeModel"
+                    }
+                ], 
+                "description": "Sets the model for @cell_view.  If @cell_view already has a model\nset, it will remove it before setting the new model.  If @model is\n%NULL, then it will unset the old model."
+            }
+        ], 
+        "properties": [
+            {
+                "writable": false, 
+                "type": "String", 
+                "readable": false, 
+                "name": "background", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Gdk.Color", 
+                "readable": false, 
+                "name": "background-gdk", 
+                "description": "The background color as a #GdkColor"
+            }, 
+            {
+                "writable": false, 
+                "type": "Gdk.RGBA", 
+                "readable": false, 
+                "name": "background-rgba", 
+                "description": "The background color as a #GdkRGBA"
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "background-set", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Gtk.CellArea", 
+                "readable": false, 
+                "name": "cell-area", 
+                "description": "The #GtkCellArea rendering cells\n\nIf no area is specified when creating the cell view with gtk_cell_view_new_with_context() \na horizontally oriented #GtkCellAreaBox will be used.\n\nsince 3.0"
+            }, 
+            {
+                "writable": false, 
+                "type": "Gtk.CellAreaContext", 
+                "readable": false, 
+                "name": "cell-area-context", 
+                "description": "The #GtkCellAreaContext used to compute the geometry of the cell view.\n\nA group of cell views can be assigned the same context in order to\nensure the sizes and cell alignments match across all the views with\nthe same context.\n\n#GtkComboBox menus uses this to assign the same context to all cell views\nin the menu items for a single menu (each submenu creates its own\ncontext since the size of each submenu does not depend on parent\nor sibling menus).\n\nsince 3.0"
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "draw-sensitive", 
+                "description": "Whether all cells should be draw as sensitive for this view regardless\nof the actual cell properties (used to make menus with submenus appear\nsensitive when the items in submenus might be insensitive).\n\nsince 3.0"
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "fit-model", 
+                "description": "Whether the view should request enough space to always fit\nthe size of every row in the model (used by the combo box to\nensure the combo box size doesnt change when different items\nare selected).\n\nsince 3.0"
+            }, 
+            {
+                "writable": false, 
+                "type": "Gtk.TreeModel", 
+                "readable": false, 
+                "name": "model", 
+                "description": "The model for cell view\n\nsince 2.10"
+            }
+        ]
+    }, 
+    "fullname": "Class Gtk.CellView", 
+    "id": "Docs-CellView", 
+    "description": "A #GtkCellView displays a single row of a #GtkTreeModel using a #GtkCellArea\nand #GtkCellAreaContext. A #GtkCellAreaContext can be provided to the \n#GtkCellView at construction time in order to keep the cellview in context\nof a group of cell views, this ensures that the renderers displayed will\nbe properly aligned with eachother (like the aligned cells in the menus\nof #GtkComboBox).\n\n#GtkCellView is #GtkOrientable in order to decide in which orientation\nthe underlying #GtkCellAreaContext should be allocated. Taking the #GtkComboBox\nmenu as an example, cellviews should be oriented horizontally if the menus are\nlisted top-to-bottom and thus all share the same width but may have separate\nindividual heights (left-to-right menus should be allocated vertically since\nthey all share the same height but may have variable widths)."
+}

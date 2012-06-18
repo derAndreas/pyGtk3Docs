@@ -1,0 +1,211 @@
+{
+    "isAbstract": false, 
+    "leaf": true, 
+    "name": "HandleBox", 
+    "text": "HandleBox", 
+    "interfaces": [
+        [
+            "Atk.ImplementorIface"
+        ], 
+        [
+            "Buildable"
+        ]
+    ], 
+    "parents": [
+        "HandleBox", 
+        "Bin", 
+        "Container", 
+        "Widget", 
+        "GObject.InitiallyUnowned"
+    ], 
+    "members": {
+        "signals": [
+            {
+                "version": "", 
+                "when": "first", 
+                "name": "child-attached", 
+                "description": "This signal is emitted when the contents of the\nhandlebox are reattached to the main window."
+            }, 
+            {
+                "version": "", 
+                "when": "first", 
+                "name": "child-detached", 
+                "description": "This signal is emitted when the contents of the\nhandlebox are detached from the main window."
+            }
+        ], 
+        "methods": [
+            {
+                "returns": {
+                    "doc": "a new #GtkHandleBox.", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": null, 
+                "name": "Gtk.HandleBox()", 
+                "parameters": null, 
+                "deprecated": "#GtkHandleBox has been deprecated.", 
+                "deprecated_version": "3.4", 
+                "isConstructor": true
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE if the child is currently detached, otherwise %FALSE"
+                }, 
+                "version": "2.14", 
+                "name": "get_child_detached", 
+                "parameters": null, 
+                "description": "Whether the handlebox's child is currently detached."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.PositionType", 
+                    "description": "the current handle position."
+                }, 
+                "version": "", 
+                "name": "get_handle_position", 
+                "parameters": null, 
+                "description": "Gets the handle position of the handle box. See\ngtk_handle_box_set_handle_position()."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.ShadowType", 
+                    "description": "the type of shadow currently drawn around the handle box."
+                }, 
+                "version": "", 
+                "name": "get_shadow_type", 
+                "parameters": null, 
+                "description": "Gets the type of shadow drawn around the handle box. See\ngtk_handle_box_set_shadow_type()."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.PositionType", 
+                    "description": "the edge used for determining reattachment, or"
+                }, 
+                "version": "", 
+                "name": "get_snap_edge", 
+                "parameters": null, 
+                "description": "Gets the edge used for determining reattachment of the handle box.\nSee gtk_handle_box_set_snap_edge().\n\n(GtkPositionType)-1 if this is determined (as per default)\nfrom the handle position."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_handle_position", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.PositionType", 
+                        "name": "position", 
+                        "description": "the side of the handlebox where the handle should be drawn."
+                    }
+                ], 
+                "description": "Sets the side of the handlebox where the handle is drawn."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_shadow_type", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.ShadowType", 
+                        "name": "type", 
+                        "description": "the shadow type."
+                    }
+                ], 
+                "description": "Sets the type of shadow to be drawn around the border\nof the handle box."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_snap_edge", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.PositionType", 
+                        "name": "edge", 
+                        "description": "the snap edge, or -1 to unset the value; in which case GTK+ will try to guess an appropriate value in the future."
+                    }
+                ], 
+                "description": "Sets the snap edge of a handlebox. The snap edge is\nthe edge of the detached child that must be aligned\nwith the corresponding edge of the \"ghost\" left\nbehind when the child was detached to reattach\nthe torn-off window. Usually, the snap edge should\nbe chosen so that it stays in the same place on\nthe screen when the handlebox is torn off.\n\nIf the snap edge is not set, then an appropriate value\nwill be guessed from the handle position. If the\nhandle position is %GTK_POS_RIGHT or %GTK_POS_LEFT,\nthen the snap edge will be %GTK_POS_TOP, otherwise\nit will be %GTK_POS_LEFT."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "child_attached", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "child", 
+                        "description": ""
+                    }
+                ], 
+                "description": ""
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "child_detached", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "child", 
+                        "description": ""
+                    }
+                ], 
+                "description": ""
+            }
+        ], 
+        "properties": [
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "child-detached", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Gtk.PositionType", 
+                "readable": false, 
+                "name": "handle-position", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Gtk.ShadowType", 
+                "readable": false, 
+                "name": "shadow-type", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Gtk.PositionType", 
+                "readable": false, 
+                "name": "snap-edge", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "snap-edge-set", 
+                "description": ""
+            }
+        ]
+    }, 
+    "fullname": "Class Gtk.HandleBox", 
+    "id": "Docs-HandleBox", 
+    "description": "The #GtkHandleBox widget allows a portion of a window to be \"torn\noff\". It is a bin widget which displays its child and a handle that\nthe user can drag to tear off a separate window (the <firstterm>float\nwindow</firstterm>) containing the child widget. A thin\n<firstterm>ghost</firstterm> is drawn in the original location of the\nhandlebox. By dragging the separate window back to its original\nlocation, it can be reattached.\n\nWhen reattaching, the ghost and float window, must be aligned\nalong one of the edges, the <firstterm>snap edge</firstterm>.\nThis either can be specified by the application programmer\nexplicitely, or GTK+ will pick a reasonable default based\non the handle position.\n\nTo make detaching and reattaching the handlebox as minimally confusing\nas possible to the user, it is important to set the snap edge so that\nthe snap edge does not move when the handlebox is deattached. For\ninstance, if the handlebox is packed at the bottom of a VBox, then\nwhen the handlebox is detached, the bottom edge of the handlebox's\nallocation will remain fixed as the height of the handlebox shrinks,\nso the snap edge should be set to %GTK_POS_BOTTOM.\n\n<note>\n#GtkHandleBox has been deprecated. It is very specialized, lacks features\nto make it useful and most importantly does not fit well into modern\napplication design. Do not use it. There is no replacement.\n</note>"
+}

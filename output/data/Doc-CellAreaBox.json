@@ -1,0 +1,137 @@
+{
+    "isAbstract": false, 
+    "leaf": true, 
+    "name": "CellAreaBox", 
+    "text": "CellAreaBox", 
+    "interfaces": [
+        [
+            "Buildable"
+        ], 
+        [
+            "CellLayout"
+        ], 
+        [
+            "Orientable"
+        ]
+    ], 
+    "parents": [
+        "CellAreaBox", 
+        "CellArea", 
+        "GObject.InitiallyUnowned"
+    ], 
+    "members": {
+        "signals": [], 
+        "methods": [
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a newly created #GtkCellAreaBox", 
+                    "name": "ref:Gtk.CellArea"
+                }, 
+                "version": "3.0", 
+                "name": "Gtk.CellAreaBox()", 
+                "parameters": null
+            }, 
+            {
+                "returns": {
+                    "type": "Integer", 
+                    "description": "the space added between cell renderers in @box."
+                }, 
+                "version": "3.0", 
+                "name": "get_spacing", 
+                "parameters": null, 
+                "description": "Gets the spacing added between cell renderers."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "3.0", 
+                "name": "pack_end", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.CellRenderer", 
+                        "name": "renderer", 
+                        "description": "the #GtkCellRenderer to add"
+                    }, 
+                    {
+                        "type": "Boolean", 
+                        "name": "expand", 
+                        "description": "whether @renderer should receive extra space when the area receives more than its natural size"
+                    }, 
+                    {
+                        "type": "Boolean", 
+                        "name": "align", 
+                        "description": "whether @renderer should be aligned in adjacent rows"
+                    }, 
+                    {
+                        "type": "Boolean", 
+                        "name": "fixed", 
+                        "description": "whether @renderer should have the same size in all rows"
+                    }
+                ], 
+                "description": "Adds @renderer to @box, packed with reference to the end of @box.\n\nThe @renderer is packed after (away from end of) any other\n#GtkCellRenderer packed with reference to the end of @box."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "3.0", 
+                "name": "pack_start", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.CellRenderer", 
+                        "name": "renderer", 
+                        "description": "the #GtkCellRenderer to add"
+                    }, 
+                    {
+                        "type": "Boolean", 
+                        "name": "expand", 
+                        "description": "whether @renderer should receive extra space when the area receives more than its natural size"
+                    }, 
+                    {
+                        "type": "Boolean", 
+                        "name": "align", 
+                        "description": "whether @renderer should be aligned in adjacent rows"
+                    }, 
+                    {
+                        "type": "Boolean", 
+                        "name": "fixed", 
+                        "description": "whether @renderer should have the same size in all rows"
+                    }
+                ], 
+                "description": "Adds @renderer to @box, packed with reference to the start of @box.\n\nThe @renderer is packed after any other #GtkCellRenderer packed\nwith reference to the start of @box."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "3.0", 
+                "name": "set_spacing", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "spacing", 
+                        "description": "the space to add between #GtkCellRenderers"
+                    }
+                ], 
+                "description": "Sets the spacing to add between cell renderers in @box."
+            }
+        ], 
+        "properties": [
+            {
+                "writable": false, 
+                "type": "Integer", 
+                "readable": false, 
+                "name": "spacing", 
+                "description": "The amount of space to reserve between cells."
+            }
+        ]
+    }, 
+    "fullname": "Class Gtk.CellAreaBox", 
+    "id": "Docs-CellAreaBox", 
+    "description": "The #GtkCellAreaBox renders cell renderers into a row or a column\ndepending on its #GtkOrientation.\n\nGtkCellAreaBox uses a notion of <emphasis>packing</emphasis>. Packing\nrefers to adding cell renderers with reference to a particular position\nin a #GtkCellAreaBox. There are two reference positions: the\n<emphasis>start</emphasis> and the <emphasis>end</emphasis> of the box.\nWhen the #GtkCellAreaBox is oriented in the %GTK_ORIENTATION_VERTICAL\norientation, the start is defined as the top of the box and the end is\ndefined as the bottom. In the %GTK_ORIENTATION_HORIZONTAL orientation\nstart is defined as the left side and the end is defined as the right\nside.\n\nAlignments of #GtkCellRenderers rendered in adjacent rows can be\nconfigured by configuring the #GtkCellAreaBox:align child cell property\nwith gtk_cell_area_cell_set_property() or by specifying the \"align\"\nargument to gtk_cell_area_box_pack_start() and gtk_cell_area_box_pack_end()."
+}

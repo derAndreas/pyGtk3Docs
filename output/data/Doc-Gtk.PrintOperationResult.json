@@ -1,0 +1,29 @@
+{
+    "leaf": true, 
+    "name": "PrintOperationResult", 
+    "text": "PrintOperationResult", 
+    "version": null, 
+    "members": {
+        "properties": [
+            {
+                "name": "error", 
+                "value": "0"
+            }, 
+            {
+                "name": "apply", 
+                "value": "1"
+            }, 
+            {
+                "name": "cancel", 
+                "value": "2"
+            }, 
+            {
+                "name": "in_progress", 
+                "value": "3"
+            }
+        ]
+    }, 
+    "fullname": "Enumeration Gtk.PrintOperationResult", 
+    "id": "Docs-PrintOperationResult", 
+    "description": ""
+}

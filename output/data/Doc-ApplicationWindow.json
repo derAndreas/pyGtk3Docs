@@ -1,0 +1,86 @@
+{
+    "isAbstract": false, 
+    "leaf": true, 
+    "name": "ApplicationWindow", 
+    "text": "ApplicationWindow", 
+    "interfaces": [
+        [
+            "Atk.ImplementorIface"
+        ], 
+        [
+            "Gio.ActionGroup"
+        ], 
+        [
+            "Gio.ActionMap"
+        ], 
+        [
+            "Buildable"
+        ]
+    ], 
+    "parents": [
+        "ApplicationWindow", 
+        "Window", 
+        "Bin", 
+        "Container", 
+        "Widget", 
+        "GObject.InitiallyUnowned"
+    ], 
+    "members": {
+        "signals": [], 
+        "methods": [
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a newly created #GtkApplicationWindow", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": "3.4", 
+                "name": "Gtk.ApplicationWindow(Gtk.Application application)", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Application", 
+                        "name": "application"
+                    }
+                ]
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE if @window will display a menubar when needed"
+                }, 
+                "version": "3.4", 
+                "name": "get_show_menubar", 
+                "parameters": null, 
+                "description": "Returns whether the window will display a menubar for the app menu\nand menubar as needed."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "3.4", 
+                "name": "set_show_menubar", 
+                "parameters": [
+                    {
+                        "type": "Boolean", 
+                        "name": "show_menubar", 
+                        "description": "whether to show a menubar when needed"
+                    }
+                ], 
+                "description": "Sets whether the window will display a menubar for the app menu\nand menubar as needed."
+            }
+        ], 
+        "properties": [
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "show-menubar", 
+                "description": "If this property is %TRUE, the window will display a menubar\nthat includes the app menu and menubar, unless these are\nshown by the desktop shell. See gtk_application_set_app_menu()\nand gtk_application_set_menubar().\n\nIf %FALSE, the window will not display a menubar, regardless\nof whether the desktop shell is showing the menus or not."
+            }
+        ]
+    }, 
+    "fullname": "Class Gtk.ApplicationWindow", 
+    "id": "Docs-ApplicationWindow", 
+    "description": "GtkApplicationWindow is a #GtkWindow subclass that offers some\nextra functionality for better integration with #GtkApplication\nfeatures.  Notably, it can handle both the application menu as well\nas the menubar. See gtk_application_set_app_menu() and\ngtk_application_set_menubar().\n\nThis class implements the #GActionGroup and #GActionMap interfaces,\nto let you add window-specific actions that will be exported by the\nassociated #GtkApplication, together with its application-wide\nactions.  Window-specific actions are prefixed with the \"win.\"\nprefix and application-wide actions are prefixed with the \"app.\"\nprefix.  Actions must be addressed with the prefixed name when\nreferring to them from a #GMenuModel.\n\nNote that widgets that are placed inside a GtkApplicationWindow\ncan also activate these actions, if they implement the\nGtkActionable interface.\n\nAs with #GtkApplication, the GDK lock will be acquired when\nprocessing actions arriving from other processes and should therefore\nbe held when activating actions locally (if GDK threads are enabled).\n\nThe settings #GtkSettings:gtk-shell-shows-app-menu and\n#GtkSettings:gtk-shell-shows-menubar tell GTK+ whether the\ndesktop environment is showing the application menu and menubar\nmodels outside the application as part of the desktop shell.\nFor instance, on OS X, both menus will be displayed remotely;\non Windows neither will be. gnome-shell (starting with version 3.4)\nwill display the application menu, but not the menubar.\n\nIf the desktop environment does not display the menubar, then\n#GApplicationWindow will automatically show a #GtkMenubar for it.\n(see the #GtkApplication docs for some screenshots of how this\nlooks on different platforms).\nThis behaviour can be overridden with the #GtkApplicationWindow:show-menubar\nproperty. If the desktop environment does not display the application\nmenu, then it will automatically be included in the menubar.\n\n<example><title>A GtkApplicationWindow with a menubar</title>\n<programlisting><![CDATA[\napp = gtk_application_new ();\n\nbuilder = gtk_builder_new ();\ngtk_builder_add_from_string (builder,\n\"<interface>\"\n\"  <menu id='menubar'>\"\n\"    <submenu label='_Edit'>\"\n\"      <item label='_Copy' action='win.copy'/>\"\n\"      <item label='_Paste' action='win.paste'/>\"\n\"    </submenu>\"\n\"  </menu>\"\n\"</interface>\");\ngtk_application_set_menubar (G_APPLICATION (app),\nG_MENU_MODEL (gtk_builder_get_object (builder, \"menubar\")));\ng_object_unref (builder);\n\n...\n\nwindow = gtk_application_window_new (app);\n]]>\n</programlisting>\n</example>\n\nThe XML format understood by #GtkBuilder for #GMenuModel consists\nof a toplevel <tag class=\"starttag\">menu</tag> element, which contains\none or more <tag class=\"starttag\">item</tag> elements. Each\n<tag class=\"starttag\">item</tag> element contains\n<tag class=\"starttag\">attribute</tag> and <tag class=\"starttag\">link</tag>\nelements with a mandatory name attribute.\n<tag class=\"starttag\">link</tag> elements have the same content\nmodel as <tag class=\"starttag\">menu</tag>.\n\nAttribute values can be translated using gettext, like other #GtkBuilder\ncontent. <tag class=\"starttag\">attribute</tag> elements can be marked for\ntranslation with a <literal>translatable=\"yes\"</literal> attribute.\nIt is also possible to specify message context and translator comments,\nusing the context and comments attributes. To make use of this, the\n#GtkBuilder must have been given the gettext domain to use."
+}

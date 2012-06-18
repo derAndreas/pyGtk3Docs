@@ -1,0 +1,755 @@
+{
+    "isAbstract": false, 
+    "leaf": true, 
+    "name": "ComboBox", 
+    "text": "ComboBox", 
+    "interfaces": [
+        [
+            "Atk.ImplementorIface"
+        ], 
+        [
+            "Buildable"
+        ], 
+        [
+            "CellEditable"
+        ], 
+        [
+            "CellLayout"
+        ]
+    ], 
+    "parents": [
+        "ComboBox", 
+        "Bin", 
+        "Container", 
+        "Widget", 
+        "GObject.InitiallyUnowned"
+    ], 
+    "members": {
+        "signals": [
+            {
+                "version": "2.4", 
+                "when": "last", 
+                "name": "changed", 
+                "description": "The changed signal is emitted when the active\nitem is changed. The can be due to the user selecting\na different item from the list, or due to a\ncall to gtk_combo_box_set_active_iter().\nIt will also be emitted while typing into the entry of a combo box\nwith an entry."
+            }, 
+            {
+                "version": "3.4", 
+                "when": "last", 
+                "name": "format-entry-text", 
+                "description": "For combo boxes that are created with an entry (See GtkComboBox:has-entry).\n\nA signal which allows you to change how the text displayed in a combo box's\nentry is displayed.\n\nConnect a signal handler which returns an allocated string representing\n@path. That string will then be used to set the text in the combo box's entry.\nThe default signal handler uses the text from the GtkComboBox::entry-text-column \nmodel column.\n\nHere's an example signal handler which fetches data from the model and\ndisplays it in the entry.\n|[\nstatic gchar*\nformat_entry_text_callback (GtkComboBox *combo,\nconst gchar *path,\ngpointer     user_data)\n{\nGtkTreeIter iter;\nGtkTreeModel model;\ngdouble      value;\n\nmodel = gtk_combo_box_get_model (combo);\n\ngtk_tree_model_get_iter_from_string (model, &iter, path);\ngtk_tree_model_get (model, &iter, \nTHE_DOUBLE_VALUE_COLUMN, &value,\n-1);\n\nreturn g_strdup_printf (\"&percnt;g\", value);\n}\n]|\n\nfor the current GtkComboBox model."
+            }, 
+            {
+                "version": "2.12", 
+                "when": "last", 
+                "name": "move-active", 
+                "description": "The ::move-active signal is a\n<link linkend=\"keybinding-signals\">keybinding signal</link>\nwhich gets emitted to move the active selection."
+            }, 
+            {
+                "version": "2.12", 
+                "when": "last", 
+                "name": "popdown", 
+                "description": "The ::popdown signal is a\n<link linkend=\"keybinding-signals\">keybinding signal</link>\nwhich gets emitted to popdown the combo box list.\n\nThe default bindings for this signal are Alt+Up and Escape."
+            }, 
+            {
+                "version": "2.12", 
+                "when": "last", 
+                "name": "popup", 
+                "description": "The ::popup signal is a\n<link linkend=\"keybinding-signals\">keybinding signal</link>\nwhich gets emitted to popup the combo box list.\n\nThe default binding for this signal is Alt+Down."
+            }
+        ], 
+        "methods": [
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "A new #GtkComboBox.", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": "2.4", 
+                "name": "Gtk.ComboBox()", 
+                "parameters": null
+            }, 
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "A new #GtkComboBox.", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": null, 
+                "name": "Gtk.ComboBox(Gtk.CellArea area)", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.CellArea", 
+                        "name": "area"
+                    }
+                ]
+            }, 
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "A new #GtkComboBox.", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": null, 
+                "name": "Gtk.ComboBox(Gtk.CellArea area)", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.CellArea", 
+                        "name": "area"
+                    }
+                ]
+            }, 
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "A new #GtkComboBox.", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": null, 
+                "name": "Gtk.ComboBox()", 
+                "parameters": null
+            }, 
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "A new #GtkComboBox.", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": "2.4", 
+                "name": "Gtk.ComboBox(Gtk.TreeModel model)", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TreeModel", 
+                        "name": "model"
+                    }
+                ]
+            }, 
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "A new #GtkComboBox", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": null, 
+                "name": "Gtk.ComboBox(Gtk.TreeModel model)", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TreeModel", 
+                        "name": "model"
+                    }
+                ]
+            }, 
+            {
+                "returns": {
+                    "type": "Integer", 
+                    "description": "An integer which is the index of the currently active item,"
+                }, 
+                "version": "2.4", 
+                "name": "get_active", 
+                "parameters": null, 
+                "description": "Returns the index of the currently active item, or -1 if there's no\nactive item. If the model is a non-flat treemodel, and the active item\nis not an immediate child of the root of the tree, this function returns\n<literal>gtk_tree_path_get_indices (path)[0]</literal>, where\n<literal>path</literal> is the #GtkTreePath of the active item.\n\nor -1 if there's no active item."
+            }, 
+            {
+                "returns": {
+                    "type": "String", 
+                    "description": "the ID of the active row, or %NULL"
+                }, 
+                "version": "3.0", 
+                "name": "get_active_id", 
+                "parameters": null, 
+                "description": "Returns the ID of the active row of @combo_box.  This value is taken\nfrom the active row and the column specified by the #GtkComboBox:id-column\nproperty of @combo_box (see gtk_combo_box_set_id_column()).\n\nThe returned value is an interned string which means that you can\ncompare the pointer by value to other interned strings and that you\nmust not free it.\n\nIf the #GtkComboBox:id-column property of @combo_box is not set, or if\nno row is active, or if the active row has a %NULL ID value, then %NULL\nis returned."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE, if @iter was set"
+                }, 
+                "version": "2.4", 
+                "name": "get_active_iter", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TreeIter", 
+                        "name": "iter", 
+                        "description": "The uninitialized #GtkTreeIter"
+                    }
+                ], 
+                "description": "Sets @iter to point to the current active item, if it exists."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "the current value of the :add-tearoffs property."
+                }, 
+                "version": "", 
+                "name": "get_add_tearoffs", 
+                "parameters": null, 
+                "description": "Gets the current value of the :add-tearoffs property."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.SensitivityType", 
+                    "description": "%GTK_SENSITIVITY_ON if the dropdown button"
+                }, 
+                "version": "2.14", 
+                "name": "get_button_sensitivity", 
+                "parameters": null, 
+                "description": "Returns whether the combo box sets the dropdown button\nsensitive or not when there are no items in the model.\n\nis sensitive when the model is empty, %GTK_SENSITIVITY_OFF\nif the button is always insensitive or\n%GTK_SENSITIVITY_AUTO if it is only sensitive as long as\nthe model has one item to be selected."
+            }, 
+            {
+                "returns": {
+                    "type": "Integer", 
+                    "description": "the column span column."
+                }, 
+                "version": "2.6", 
+                "name": "get_column_span_column", 
+                "parameters": null, 
+                "description": "Returns the column with column span information for @combo_box."
+            }, 
+            {
+                "returns": {
+                    "type": "Integer", 
+                    "description": "A column in the data source model of @combo_box."
+                }, 
+                "version": "2.24", 
+                "name": "get_entry_text_column", 
+                "parameters": null, 
+                "description": "Returns the column which @combo_box is using to get the strings\nfrom to display in the internal entry."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE if the combo box grabs focus when it is"
+                }, 
+                "version": "2.6", 
+                "name": "get_focus_on_click", 
+                "parameters": null, 
+                "description": "Returns whether the combo box grabs focus when it is clicked\nwith the mouse. See gtk_combo_box_set_focus_on_click().\n\nclicked with the mouse."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "whether there is an entry in @combo_box."
+                }, 
+                "version": "2.24", 
+                "name": "get_has_entry", 
+                "parameters": null, 
+                "description": "Returns whether the combo box has an entry."
+            }, 
+            {
+                "returns": {
+                    "type": "Integer", 
+                    "description": "A column in the data source model of @combo_box."
+                }, 
+                "version": "3.0", 
+                "name": "get_id_column", 
+                "parameters": null, 
+                "description": "Returns the column which @combo_box is using to get string IDs\nfor values from."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.TreeModel", 
+                    "description": "A #GtkTreeModel which was passed"
+                }, 
+                "version": "2.4", 
+                "name": "get_model", 
+                "parameters": null, 
+                "description": "Returns the #GtkTreeModel which is acting as data source for @combo_box.\n\nduring construction."
+            }, 
+            {
+                "returns": {
+                    "type": "Atk.Object", 
+                    "description": "the accessible object corresponding"
+                }, 
+                "version": "2.6", 
+                "name": "get_popup_accessible", 
+                "parameters": null, 
+                "description": "Gets the accessible object corresponding to the combo box's popup.\n\nThis function is mostly intended for use by accessibility technologies;\napplications should have little use for it.\n\nto the combo box's popup."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE if the popup uses a fixed width"
+                }, 
+                "version": "3.0", 
+                "name": "get_popup_fixed_width", 
+                "parameters": null, 
+                "description": "Gets whether the popup uses a fixed width matching\nthe allocated width of the combo box."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.TreeViewRowSeparatorFunc", 
+                    "description": "the current row separator function."
+                }, 
+                "version": "2.6", 
+                "name": "get_row_separator_func", 
+                "parameters": null, 
+                "description": "Returns the current row separator function."
+            }, 
+            {
+                "returns": {
+                    "type": "Integer", 
+                    "description": "the row span column."
+                }, 
+                "version": "2.6", 
+                "name": "get_row_span_column", 
+                "parameters": null, 
+                "description": "Returns the column with row span information for @combo_box."
+            }, 
+            {
+                "returns": {
+                    "type": "String", 
+                    "description": "the menu's title in tearoff mode. This is an internal copy of the"
+                }, 
+                "version": "2.10", 
+                "name": "get_title", 
+                "parameters": null, 
+                "description": "Gets the current title of the menu in tearoff mode. See\ngtk_combo_box_set_add_tearoffs().\n\nstring which must not be freed."
+            }, 
+            {
+                "returns": {
+                    "type": "Integer", 
+                    "description": "the wrap width."
+                }, 
+                "version": "2.6", 
+                "name": "get_wrap_width", 
+                "parameters": null, 
+                "description": "Returns the wrap width which is used to determine the number of columns\nfor the popup menu. If the wrap width is larger than 1, the combo box\nis in table mode."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.4", 
+                "name": "popdown", 
+                "parameters": null, 
+                "description": "Hides the menu or dropdown list of @combo_box.\n\nThis function is mostly intended for use by accessibility technologies;\napplications should have little use for it."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.4", 
+                "name": "popup", 
+                "parameters": null, 
+                "description": "Pops up the menu or dropdown list of @combo_box.\n\nThis function is mostly intended for use by accessibility technologies;\napplications should have little use for it."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "3.0", 
+                "name": "popup_for_device", 
+                "parameters": [
+                    {
+                        "type": "Gdk.Device", 
+                        "name": "device", 
+                        "description": "a #GdkDevice"
+                    }
+                ], 
+                "description": "Pops up the menu or dropdown list of @combo_box, the popup window\nwill be grabbed so only @device and its associated pointer/keyboard\nare the only #GdkDevice<!-- -->s able to send events to it."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.4", 
+                "name": "set_active", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "index_", 
+                        "description": "An index in the model passed during construction, or -1 to have no active item"
+                    }
+                ], 
+                "description": "Sets the active item of @combo_box to be the item at @index."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE if a row with a matching ID was found.  If a %NULL"
+                }, 
+                "version": "3.0", 
+                "name": "set_active_id", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "active_id", 
+                        "description": "the ID of the row to select, or %NULL"
+                    }
+                ], 
+                "description": "Changes the active row of @combo_box to the one that has an ID equal to\n@active_id, or unsets the active row if @active_id is %NULL.  Rows having\na %NULL ID string cannot be made active by this function.\n\nIf the #GtkComboBox:id-column property of @combo_box is unset or if no\nrow has the given ID then the function does nothing and returns %FALSE.\n\n@active_id was given to unset the active row, the function\nalways returns %TRUE."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.4", 
+                "name": "set_active_iter", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TreeIter", 
+                        "name": "iter", 
+                        "description": "The #GtkTreeIter, or %NULL"
+                    }
+                ], 
+                "description": "Sets the current active item to be the one referenced by @iter, or\nunsets the active item if @iter is %NULL."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.6", 
+                "name": "set_add_tearoffs", 
+                "parameters": [
+                    {
+                        "type": "Boolean", 
+                        "name": "add_tearoffs", 
+                        "description": "%TRUE to add tearoff menu items"
+                    }
+                ], 
+                "description": "Sets whether the popup menu should have a tearoff\nmenu item."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.14", 
+                "name": "set_button_sensitivity", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.SensitivityType", 
+                        "name": "sensitivity", 
+                        "description": "specify the sensitivity of the dropdown button"
+                    }
+                ], 
+                "description": "Sets whether the dropdown button of the combo box should be\nalways sensitive (%GTK_SENSITIVITY_ON), never sensitive (%GTK_SENSITIVITY_OFF)\nor only if there is at least one item to display (%GTK_SENSITIVITY_AUTO)."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.4", 
+                "name": "set_column_span_column", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "column_span", 
+                        "description": "A column in the model passed during construction"
+                    }
+                ], 
+                "description": "Sets the column with column span information for @combo_box to be\n@column_span. The column span column contains integers which indicate\nhow many columns an item should span."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.24", 
+                "name": "set_entry_text_column", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "text_column", 
+                        "description": "A column in @model to get the strings from for the internal entry"
+                    }
+                ], 
+                "description": "Sets the model column which @combo_box should use to get strings from\nto be @text_column. The column @text_column in the model of @combo_box\nmust be of type %G_TYPE_STRING.\n\nThis is only relevant if @combo_box has been created with\n#GtkComboBox:has-entry as %TRUE."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.6", 
+                "name": "set_focus_on_click", 
+                "parameters": [
+                    {
+                        "type": "Boolean", 
+                        "name": "focus_on_click", 
+                        "description": "whether the combo box grabs focus when clicked with the mouse"
+                    }
+                ], 
+                "description": "Sets whether the combo box will grab focus when it is clicked with\nthe mouse. Making mouse clicks not grab focus is useful in places\nlike toolbars where you don't want the keyboard focus removed from\nthe main area of the application."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "3.0", 
+                "name": "set_id_column", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "id_column", 
+                        "description": "A column in @model to get string IDs for values from"
+                    }
+                ], 
+                "description": "Sets the model column which @combo_box should use to get string IDs\nfor values from. The column @id_column in the model of @combo_box\nmust be of type %G_TYPE_STRING."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.4", 
+                "name": "set_model", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TreeModel", 
+                        "name": "model", 
+                        "description": "A #GtkTreeModel"
+                    }
+                ], 
+                "description": "Sets the model used by @combo_box to be @model. Will unset a previously set\nmodel (if applicable). If model is %NULL, then it will unset the model.\n\nNote that this function does not clear the cell renderers, you have to\ncall gtk_cell_layout_clear() yourself if you need to set up different\ncell renderers for the new model."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "3.0", 
+                "name": "set_popup_fixed_width", 
+                "parameters": [
+                    {
+                        "type": "Boolean", 
+                        "name": "fixed", 
+                        "description": "whether to use a fixed popup width"
+                    }
+                ], 
+                "description": "Specifies whether the popup's width should be a fixed width\nmatching the allocated width of the combo box."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.6", 
+                "name": "set_row_separator_func", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TreeViewRowSeparatorFunc", 
+                        "name": "func", 
+                        "description": "a #GtkTreeViewRowSeparatorFunc"
+                    }, 
+                    {
+                        "type": "Mixed", 
+                        "name": "data", 
+                        "description": "user data to pass to @func, or %NULL"
+                    }, 
+                    {
+                        "type": "GLib.DestroyNotify", 
+                        "name": "destroy", 
+                        "description": "destroy notifier for @data, or %NULL"
+                    }
+                ], 
+                "description": "Sets the row separator function, which is used to determine\nwhether a row should be drawn as a separator. If the row separator\nfunction is %NULL, no separators are drawn. This is the default value."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.4", 
+                "name": "set_row_span_column", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "row_span", 
+                        "description": "A column in the model passed during construction."
+                    }
+                ], 
+                "description": "Sets the column with row span information for @combo_box to be @row_span.\nThe row span column contains integers which indicate how many rows\nan item should span."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.10", 
+                "name": "set_title", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "title", 
+                        "description": "a title for the menu in tearoff mode"
+                    }
+                ], 
+                "description": "Sets the menu's title in tearoff mode."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.4", 
+                "name": "set_wrap_width", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "width", 
+                        "description": "Preferred number of columns"
+                    }
+                ], 
+                "description": "Sets the wrap width of @combo_box to be @width. The wrap width is basically\nthe preferred number of columns when you want the popup to be layed out\nin a table."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "changed", 
+                "parameters": null, 
+                "description": ""
+            }, 
+            {
+                "returns": {
+                    "type": "String", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "format_entry_text", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "path", 
+                        "description": ""
+                    }
+                ], 
+                "description": ""
+            }
+        ], 
+        "properties": [
+            {
+                "writable": false, 
+                "type": "Integer", 
+                "readable": false, 
+                "name": "active", 
+                "description": "The item which is currently active. If the model is a non-flat treemodel,\nand the active item is not an immediate child of the root of the tree,\nthis property has the value\n<literal>gtk_tree_path_get_indices (path)[0]</literal>,\nwhere <literal>path</literal> is the #GtkTreePath of the active item."
+            }, 
+            {
+                "writable": false, 
+                "type": "String", 
+                "readable": false, 
+                "name": "active-id", 
+                "description": "The value of the ID column of the active row."
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "add-tearoffs", 
+                "description": "The add-tearoffs property controls whether generated menus\nhave tearoff menu items.\n\nNote that this only affects menu style combo boxes."
+            }, 
+            {
+                "writable": false, 
+                "type": "Gtk.SensitivityType", 
+                "readable": false, 
+                "name": "button-sensitivity", 
+                "description": "Whether the dropdown button is sensitive when\nthe model is empty."
+            }, 
+            {
+                "writable": false, 
+                "type": "Gtk.CellArea", 
+                "readable": false, 
+                "name": "cell-area", 
+                "description": "The #GtkCellArea used to layout cell renderers for this combo box.\n\nIf no area is specified when creating the combo box with gtk_combo_box_new_with_area() \na horizontally oriented #GtkCellAreaBox will be used."
+            }, 
+            {
+                "writable": false, 
+                "type": "Integer", 
+                "readable": false, 
+                "name": "column-span-column", 
+                "description": "If this is set to a non-negative value, it must be the index of a column\nof type %G_TYPE_INT in the model.\n\nThe values of that column are used to determine how many columns a value\nin the list will span."
+            }, 
+            {
+                "writable": false, 
+                "type": "Integer", 
+                "readable": false, 
+                "name": "entry-text-column", 
+                "description": "The column in the combo box's model to associate with strings from the entry\nif the combo was created with #GtkComboBox:has-entry = %TRUE."
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "focus-on-click", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "has-entry", 
+                "description": "Whether the combo box has an entry."
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "has-frame", 
+                "description": "The has-frame property controls whether a frame\nis drawn around the entry."
+            }, 
+            {
+                "writable": false, 
+                "type": "Integer", 
+                "readable": false, 
+                "name": "id-column", 
+                "description": "The column in the combo box's model that provides string\nIDs for the values in the model, if != -1."
+            }, 
+            {
+                "writable": false, 
+                "type": "Gtk.TreeModel", 
+                "readable": false, 
+                "name": "model", 
+                "description": "The model from which the combo box takes the values shown\nin the list."
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "popup-fixed-width", 
+                "description": "Whether the popup's width should be a fixed width matching the\nallocated width of the combo box."
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "popup-shown", 
+                "description": "Whether the combo boxes dropdown is popped up.\nNote that this property is mainly useful, because\nit allows you to connect to notify::popup-shown."
+            }, 
+            {
+                "writable": false, 
+                "type": "Integer", 
+                "readable": false, 
+                "name": "row-span-column", 
+                "description": "If this is set to a non-negative value, it must be the index of a column\nof type %G_TYPE_INT in the model.\n\nThe values of that column are used to determine how many rows a value in\nthe list will span. Therefore, the values in the model column pointed to\nby this property must be greater than zero and not larger than wrap-width."
+            }, 
+            {
+                "writable": false, 
+                "type": "String", 
+                "readable": false, 
+                "name": "tearoff-title", 
+                "description": "A title that may be displayed by the window manager\nwhen the popup is torn-off."
+            }, 
+            {
+                "writable": false, 
+                "type": "Integer", 
+                "readable": false, 
+                "name": "wrap-width", 
+                "description": "If wrap-width is set to a positive value, the list will be\ndisplayed in multiple columns, the number of columns is\ndetermined by wrap-width."
+            }
+        ]
+    }, 
+    "fullname": "Class Gtk.ComboBox", 
+    "id": "Docs-ComboBox", 
+    "description": "A GtkComboBox is a widget that allows the user to choose from a list of\nvalid choices. The GtkComboBox displays the selected choice. When\nactivated, the GtkComboBox displays a popup which allows the user to\nmake a new choice. The style in which the selected value is displayed,\nand the style of the popup is determined by the current theme. It may\nbe similar to a Windows-style combo box.\n\nThe GtkComboBox uses the model-view pattern; the list of valid choices\nis specified in the form of a tree model, and the display of the choices\ncan be adapted to the data in the model by using cell renderers, as you\nwould in a tree view. This is possible since GtkComboBox implements the\n#GtkCellLayout interface. The tree model holding the valid choices is\nnot restricted to a flat list, it can be a real tree, and the popup will\nreflect the tree structure.\n\nTo allow the user to enter values not in the model, the 'has-entry'\nproperty allows the GtkComboBox to contain a #GtkEntry. This entry\ncan be accessed by calling gtk_bin_get_child() on the combo box.\n\nFor a simple list of textual choices, the model-view API of GtkComboBox\ncan be a bit overwhelming. In this case, #GtkComboBoxText offers a\nsimple alternative. Both GtkComboBox and #GtkComboBoxText can contain\nan entry."
+}

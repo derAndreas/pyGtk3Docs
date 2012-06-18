@@ -1,0 +1,25 @@
+{
+    "leaf": true, 
+    "name": "SensitivityType", 
+    "text": "SensitivityType", 
+    "version": null, 
+    "members": {
+        "properties": [
+            {
+                "name": "auto", 
+                "value": "0"
+            }, 
+            {
+                "name": "on", 
+                "value": "1"
+            }, 
+            {
+                "name": "off", 
+                "value": "2"
+            }
+        ]
+    }, 
+    "fullname": "Enumeration Gtk.SensitivityType", 
+    "id": "Docs-SensitivityType", 
+    "description": ""
+}

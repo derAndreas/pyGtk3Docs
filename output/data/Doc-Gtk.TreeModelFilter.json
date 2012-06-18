@@ -1,0 +1,276 @@
+{
+    "isAbstract": false, 
+    "leaf": true, 
+    "name": "TreeModelFilter", 
+    "text": "TreeModelFilter", 
+    "interfaces": [
+        [
+            "TreeDragSource"
+        ], 
+        [
+            "TreeModel"
+        ]
+    ], 
+    "parents": [
+        "TreeModelFilter", 
+        "GObject.Object"
+    ], 
+    "members": {
+        "signals": [], 
+        "methods": [
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.4", 
+                "name": "clear_cache", 
+                "parameters": null, 
+                "description": "This function should almost never be called. It clears the @filter\nof any cached iterators that haven't been reffed with\ngtk_tree_model_ref_node(). This might be useful if the child model\nbeing filtered is static (and doesn't change often) and there has been\na lot of unreffed access to nodes. As a side effect of this function,\nall unreffed iters will be invalid."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE, if @filter_iter was set, i.e. if @child_iter is a"
+                }, 
+                "version": "2.4", 
+                "name": "convert_child_iter_to_iter", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TreeIter", 
+                        "name": "filter_iter", 
+                        "description": "An uninitialized #GtkTreeIter."
+                    }, 
+                    {
+                        "type": "ref:Gtk.TreeIter", 
+                        "name": "child_iter", 
+                        "description": "A valid #GtkTreeIter pointing to a row on the child model."
+                    }
+                ], 
+                "description": "Sets @filter_iter to point to the row in @filter that corresponds to the\nrow pointed at by @child_iter.  If @filter_iter was not set, %FALSE is\nreturned.\n\nvalid iterator pointing to a visible row in child model."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.TreePath", 
+                    "description": "A newly allocated #GtkTreePath, or %NULL."
+                }, 
+                "version": "2.4", 
+                "name": "convert_child_path_to_path", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TreePath", 
+                        "name": "child_path", 
+                        "description": "A #GtkTreePath to convert."
+                    }
+                ], 
+                "description": "Converts @child_path to a path relative to @filter. That is, @child_path\npoints to a path in the child model. The rerturned path will point to the\nsame row in the filtered model. If @child_path isn't a valid path on the\nchild model or points to a row which is not visible in @filter, then %NULL\nis returned."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.4", 
+                "name": "convert_iter_to_child_iter", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TreeIter", 
+                        "name": "child_iter", 
+                        "description": "An uninitialized #GtkTreeIter."
+                    }, 
+                    {
+                        "type": "ref:Gtk.TreeIter", 
+                        "name": "filter_iter", 
+                        "description": "A valid #GtkTreeIter pointing to a row on @filter."
+                    }
+                ], 
+                "description": "Sets @child_iter to point to the row pointed to by @filter_iter."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.TreePath", 
+                    "description": "A newly allocated #GtkTreePath, or %NULL."
+                }, 
+                "version": "2.4", 
+                "name": "convert_path_to_child_path", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TreePath", 
+                        "name": "filter_path", 
+                        "description": "A #GtkTreePath to convert."
+                    }
+                ], 
+                "description": "Converts @filter_path to a path on the child model of @filter. That is,\n@filter_path points to a location in @filter. The returned path will\npoint to the same location in the model not being filtered. If @filter_path\ndoes not point to a location in the child model, %NULL is returned."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.TreeModel", 
+                    "description": "A pointer to a #GtkTreeModel."
+                }, 
+                "version": "2.4", 
+                "name": "get_model", 
+                "parameters": null, 
+                "description": "Returns a pointer to the child model of @filter."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.4", 
+                "name": "refilter", 
+                "parameters": null, 
+                "description": "Emits ::row_changed for each row in the child model, which causes\nthe filter to re-evaluate whether a row is visible or not."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.4", 
+                "name": "set_modify_func", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "n_columns", 
+                        "description": "The number of columns in the filter model."
+                    }, 
+                    {
+                        "type": "Integer[]", 
+                        "name": "types", 
+                        "description": "The #GType<!-- -->s of the columns."
+                    }, 
+                    {
+                        "type": "ref:Gtk.TreeModelFilterModifyFunc", 
+                        "name": "func", 
+                        "description": "A #GtkTreeModelFilterModifyFunc"
+                    }, 
+                    {
+                        "type": "Mixed", 
+                        "name": "data", 
+                        "description": "User data to pass to the modify function, or %NULL."
+                    }, 
+                    {
+                        "type": "GLib.DestroyNotify", 
+                        "name": "destroy", 
+                        "description": "Destroy notifier of @data, or %NULL."
+                    }
+                ], 
+                "description": "With the @n_columns and @types parameters, you give an array of column\ntypes for this model (which will be exposed to the parent model/view).\nThe @func, @data and @destroy parameters are for specifying the modify\nfunction. The modify function will get called for <emphasis>each</emphasis>\ndata access, the goal of the modify function is to return the data which \nshould be displayed at the location specified using the parameters of the \nmodify function."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.4", 
+                "name": "set_visible_column", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "column", 
+                        "description": "A #gint which is the column containing the visible information."
+                    }
+                ], 
+                "description": "Sets @column of the child_model to be the column where @filter should\nlook for visibility information. @columns should be a column of type\n%G_TYPE_BOOLEAN, where %TRUE means that a row is visible, and %FALSE\nif not."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.4", 
+                "name": "set_visible_func", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TreeModelFilterVisibleFunc", 
+                        "name": "func", 
+                        "description": "A #GtkTreeModelFilterVisibleFunc, the visible function."
+                    }, 
+                    {
+                        "type": "Mixed", 
+                        "name": "data", 
+                        "description": "User data to pass to the visible function, or %NULL."
+                    }, 
+                    {
+                        "type": "GLib.DestroyNotify", 
+                        "name": "destroy", 
+                        "description": "Destroy notifier of @data, or %NULL."
+                    }
+                ], 
+                "description": "Sets the visible function used when filtering the @filter to be @func. The\nfunction should return %TRUE if the given row should be visible and\n%FALSE otherwise.\n\nIf the condition calculated by the function changes over time (e.g. because\nit depends on some global parameters), you must call \ngtk_tree_model_filter_refilter() to keep the visibility information of \nthe model uptodate.\n\nNote that @func is called whenever a row is inserted, when it may still be\nempty. The visible function should therefore take special care of empty\nrows, like in the example below.\n\n<informalexample><programlisting>\nstatic gboolean\nvisible_func (GtkTreeModel *model,\nGtkTreeIter  *iter,\ngpointer      data)\n{\n/&ast; Visible if row is non-empty and first column is \"HI\" &ast;/\ngchar *str;\ngboolean visible = FALSE;\n\ngtk_tree_model_get (model, iter, 0, &str, -1);\nif (str && strcmp (str, \"HI\") == 0)\nvisible = TRUE;\ng_free (str);\n\nreturn visible;\n}\n</programlisting></informalexample>"
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "modify", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TreeModel", 
+                        "name": "child_model", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "ref:Gtk.TreeIter", 
+                        "name": "iter", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "GObject.Value", 
+                        "name": "value", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "column", 
+                        "description": ""
+                    }
+                ], 
+                "description": ""
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "visible", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TreeModel", 
+                        "name": "child_model", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "ref:Gtk.TreeIter", 
+                        "name": "iter", 
+                        "description": ""
+                    }
+                ], 
+                "description": ""
+            }
+        ], 
+        "properties": [
+            {
+                "writable": false, 
+                "type": "Gtk.TreeModel", 
+                "readable": false, 
+                "name": "child-model", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Gtk.TreePath", 
+                "readable": false, 
+                "name": "virtual-root", 
+                "description": ""
+            }
+        ]
+    }, 
+    "fullname": "Class Gtk.TreeModelFilter", 
+    "id": "Docs-TreeModelFilter", 
+    "description": "A #GtkTreeModelFilter is a tree model which wraps another tree model,\nand can do the following things:\n<itemizedlist>\n<listitem><para>\nFilter specific rows, based on data from a \"visible column\", a column\nstoring booleans indicating whether the row should be filtered or not,\nor based on the return value of a \"visible function\", which gets a\nmodel, iter and user_data and returns a boolean indicating whether the\nrow should be filtered or not.\n</para></listitem>\n<listitem><para>\nModify the \"appearance\" of the model, using a modify function.\nThis is extremely powerful and allows for just changing\nsome values and also for creating a completely different model based on\nthe given child model.\n</para></listitem>\n<listitem><para>\nSet a different root node, also known as a \"virtual root\". You can pass in\na #GtkTreePath indicating the root node for the filter at construction time.\n</para></listitem>\n</itemizedlist>\n\nThe basic API is similar to #GtkTreeModelSort. For an example on its usage,\nsee the section on #GtkTreeModelSort.\n\nWhen using #GtkTreeModelFilter, it is important to realize that\n#GtkTreeModelFilter maintains an internal cache of all nodes which are\nvisible in its clients. The cache is likely to be a subtree of the tree\nexposed by the child model. #GtkTreeModelFilter will not cache the entire\nchild model when unnecessary to not compromise the caching mechanism\nthat is exposed by the reference counting scheme. If the child model\nimplements reference counting, unnecessary signals may not be emitted\nbecause of reference counting rule 3, see the #GtkTreeModel\ndocumentation. (Note that e.g. #GtkTreeStore does not implement\nreference counting and will always emit all signals, even when\nthe receiving node is not visible).\n\nBecause of this, limitations for possible visible functions do apply.\nIn general, visible functions should only use data or properties from\nthe node for which the visibility state must be determined, its siblings\nor its parents. Usually, having a dependency on the state of any child\nnode is not possible, unless references are taken on these explicitly.\nWhen no such reference exists, no signals may be received for these child\nnodes (see reference couting rule number 3 in the #GtkTreeModel section).\n\nDetermining the visibility state of a given node based on the state\nof its child nodes is a frequently occurring use case. Therefore,\n#GtkTreeModelFilter explicitly supports this. For example, when a node\ndoes not have any children, you might not want the node to be visible.\nAs soon as the first row is added to the node's child level (or the\nlast row removed), the node's visibility should be updated.\n\nThis introduces a dependency from the node on its child nodes. In order\nto accommodate this, #GtkTreeModelFilter must make sure the necesary\nsignals are received from the child model. This is achieved by building,\nfor all nodes which are exposed as visible nodes to #GtkTreeModelFilter's\nclients, the child level (if any) and take a reference on the first node\nin this level. Furthermore, for every row-inserted, row-changed or\nrow-deleted signal (also these which were not handled because the node\nwas not cached), #GtkTreeModelFilter will check if the visibility state\nof any parent node has changed.\n\nBeware, however, that this explicit support is limited to these two\ncases. For example, if you want a node to be visible only if two nodes\nin a child's child level (2 levels deeper) are visible, you are on your\nown. In this case, either rely on #GtkTreeStore to emit all signals\nbecause it does not implement reference counting, or for models that\ndo implement reference counting, obtain references on these child levels\nyourself."
+}

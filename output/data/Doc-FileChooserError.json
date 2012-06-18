@@ -1,0 +1,29 @@
+{
+    "leaf": true, 
+    "name": "FileChooserError", 
+    "text": "FileChooserError", 
+    "version": null, 
+    "members": {
+        "properties": [
+            {
+                "name": "nonexistent", 
+                "value": "0"
+            }, 
+            {
+                "name": "bad_filename", 
+                "value": "1"
+            }, 
+            {
+                "name": "already_exists", 
+                "value": "2"
+            }, 
+            {
+                "name": "incomplete_hostname", 
+                "value": "3"
+            }
+        ]
+    }, 
+    "fullname": "Enumeration Gtk.FileChooserError", 
+    "id": "Docs-FileChooserError", 
+    "description": ""
+}

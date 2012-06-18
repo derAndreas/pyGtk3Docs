@@ -1,0 +1,121 @@
+{
+    "isAbstract": false, 
+    "leaf": true, 
+    "name": "LockButton", 
+    "text": "LockButton", 
+    "interfaces": [
+        [
+            "Atk.ImplementorIface"
+        ], 
+        [
+            "Actionable"
+        ], 
+        [
+            "Activatable"
+        ], 
+        [
+            "Buildable"
+        ]
+    ], 
+    "parents": [
+        "LockButton", 
+        "Button", 
+        "Bin", 
+        "Container", 
+        "Widget", 
+        "GObject.InitiallyUnowned"
+    ], 
+    "members": {
+        "signals": [], 
+        "methods": [
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a new #GtkLockButton", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": "3.2", 
+                "name": "Gtk.LockButton(Gio.Permission permission)", 
+                "parameters": [
+                    {
+                        "type": "Gio.Permission", 
+                        "name": "permission"
+                    }
+                ]
+            }, 
+            {
+                "returns": {
+                    "type": "Gio.Permission", 
+                    "description": "the #GPermission of @button"
+                }, 
+                "version": "3.2", 
+                "name": "get_permission", 
+                "parameters": null, 
+                "description": "Obtains the #GPermission object that controls @button."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "3.2", 
+                "name": "set_permission", 
+                "parameters": [
+                    {
+                        "type": "Gio.Permission", 
+                        "name": "permission", 
+                        "description": "a #GPermission object, or %NULL"
+                    }
+                ], 
+                "description": "Sets the #GPermission object that controls @button."
+            }
+        ], 
+        "properties": [
+            {
+                "writable": false, 
+                "type": "Gio.Permission", 
+                "readable": false, 
+                "name": "permission", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "String", 
+                "readable": false, 
+                "name": "text-lock", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "String", 
+                "readable": false, 
+                "name": "text-unlock", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "String", 
+                "readable": false, 
+                "name": "tooltip-lock", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "String", 
+                "readable": false, 
+                "name": "tooltip-not-authorized", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "String", 
+                "readable": false, 
+                "name": "tooltip-unlock", 
+                "description": ""
+            }
+        ]
+    }, 
+    "fullname": "Class Gtk.LockButton", 
+    "id": "Docs-LockButton", 
+    "description": "GtkLockButton is a widget that can be used in control panels or\npreference dialogs to allow users to obtain and revoke authorizations\nneeded to operate the controls. The required authorization is represented\nby a #GPermission object. Concrete implementations of #GPermission may use\nPolicyKit or some other authorization framework.\n\nIf the user lacks the authorization but authorization can be obtained\nthrough authentication, the widget looks like this\n<informalexample><inlinegraphic fileref=\"lockbutton-locked.png\"></inlinegraphic></informalexample>\nand the user can click the button to obtain the authorization. Depending\non the platform, this may pop up an authentication dialog or ask the user\nto authenticate in some other way. Once authorization is obtained, the\nwidget changes to this\n<informalexample><inlinegraphic fileref=\"lockbutton-unlocked.png\"></inlinegraphic></informalexample>\nand the authorization can be dropped by clicking the button. If the user\nis not able to obtain authorization at all, the widget looks like this\n<informalexample><inlinegraphic fileref=\"lockbutton-sorry.png\"></inlinegraphic></informalexample>\nIf the user is authorized and cannot drop the authorization, the button\nis hidden.\n\nThe text (and tooltips) that are shown in the various cases can be adjusted\nwith the #GtkLockButton:text-lock, #GtkLockButton:text-unlock,\n#GtkLockButton:tooltip-lock, #GtkLockButton:tooltip-unlock and\n#GtkLockButton:tooltip-not-authorized properties."
+}

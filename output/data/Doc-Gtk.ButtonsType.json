@@ -1,0 +1,37 @@
+{
+    "leaf": true, 
+    "name": "ButtonsType", 
+    "text": "ButtonsType", 
+    "version": null, 
+    "members": {
+        "properties": [
+            {
+                "name": "none", 
+                "value": "0"
+            }, 
+            {
+                "name": "ok", 
+                "value": "1"
+            }, 
+            {
+                "name": "close", 
+                "value": "2"
+            }, 
+            {
+                "name": "cancel", 
+                "value": "3"
+            }, 
+            {
+                "name": "yes_no", 
+                "value": "4"
+            }, 
+            {
+                "name": "ok_cancel", 
+                "value": "5"
+            }
+        ]
+    }, 
+    "fullname": "Enumeration Gtk.ButtonsType", 
+    "id": "Docs-ButtonsType", 
+    "description": ""
+}

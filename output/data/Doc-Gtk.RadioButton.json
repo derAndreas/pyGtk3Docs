@@ -1,0 +1,212 @@
+{
+    "isAbstract": false, 
+    "leaf": true, 
+    "name": "RadioButton", 
+    "text": "RadioButton", 
+    "interfaces": [
+        [
+            "Atk.ImplementorIface"
+        ], 
+        [
+            "Actionable"
+        ], 
+        [
+            "Activatable"
+        ], 
+        [
+            "Buildable"
+        ]
+    ], 
+    "parents": [
+        "RadioButton", 
+        "CheckButton", 
+        "ToggleButton", 
+        "Button", 
+        "Bin", 
+        "Container", 
+        "Widget", 
+        "GObject.InitiallyUnowned"
+    ], 
+    "members": {
+        "signals": [
+            {
+                "version": "2.4", 
+                "when": "first", 
+                "name": "group-changed", 
+                "description": "Emitted when the group of radio buttons that a radio button belongs\nto changes. This is emitted when a radio button switches from\nbeing alone to being part of a group of 2 or more buttons, or\nvice-versa, and when a button is moved from one group of 2 or\nmore buttons to a different one, but not when the composition\nof the group that a button belongs to changes."
+            }
+        ], 
+        "methods": [
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a new radio button", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": null, 
+                "name": "Gtk.RadioButton(GLib.SList group)", 
+                "parameters": [
+                    {
+                        "type": "GLib.SList", 
+                        "name": "group"
+                    }
+                ]
+            }, 
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a new radio button.", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": null, 
+                "name": "Gtk.RadioButton(Gtk.RadioButton radio_group_member)", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.RadioButton", 
+                        "name": "radio_group_member"
+                    }
+                ]
+            }, 
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a new radio button.", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": null, 
+                "name": "Gtk.RadioButton(GLib.SList group, String label)", 
+                "parameters": [
+                    {
+                        "type": "GLib.SList", 
+                        "name": "group"
+                    }, 
+                    {
+                        "type": "String", 
+                        "name": "label"
+                    }
+                ]
+            }, 
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a new radio button.", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": null, 
+                "name": "Gtk.RadioButton(Gtk.RadioButton radio_group_member, String label)", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.RadioButton", 
+                        "name": "radio_group_member"
+                    }, 
+                    {
+                        "type": "String", 
+                        "name": "label"
+                    }
+                ]
+            }, 
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a new #GtkRadioButton", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": null, 
+                "name": "Gtk.RadioButton(GLib.SList group, String label)", 
+                "parameters": [
+                    {
+                        "type": "GLib.SList", 
+                        "name": "group"
+                    }, 
+                    {
+                        "type": "String", 
+                        "name": "label"
+                    }
+                ]
+            }, 
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a new #GtkRadioButton", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": null, 
+                "name": "Gtk.RadioButton(Gtk.RadioButton radio_group_member, String label)", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.RadioButton", 
+                        "name": "radio_group_member"
+                    }, 
+                    {
+                        "type": "String", 
+                        "name": "label"
+                    }
+                ]
+            }, 
+            {
+                "returns": {
+                    "type": "GLib.SList", 
+                    "description": "a linked list"
+                }, 
+                "version": "", 
+                "name": "get_group", 
+                "parameters": null, 
+                "description": "Retrieves the group assigned to a radio button.\n\ncontaining all the radio buttons in the same group\nas @radio_button. The returned list is owned by the radio button\nand must not be modified or freed."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "3.0", 
+                "name": "join_group", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.RadioButton", 
+                        "name": "group_source", 
+                        "description": "a radio button object whos group we are joining, or %NULL to remove the radio button from its group"
+                    }
+                ], 
+                "description": "Joins a #GtkRadioButton object to the group of another #GtkRadioButton object\n\nUse this in language bindings instead of the gtk_radio_button_get_group() \nand gtk_radio_button_set_group() methods\n\nA common way to set up a group of radio buttons is the following:\n|[\nGtkRadioButton *radio_button;\nGtkRadioButton *last_button;\n\nwhile (/&ast; more buttons to add &ast;/)\n{\nradio_button = gtk_radio_button_new (...);\n\ngtk_radio_button_join_group (radio_button, last_button);\nlast_button = radio_button;\n}\n]|"
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_group", 
+                "parameters": [
+                    {
+                        "type": "GLib.SList", 
+                        "name": "group", 
+                        "description": "an existing radio button group, such as one returned from gtk_radio_button_get_group()."
+                    }
+                ], 
+                "description": "Sets a #GtkRadioButton's group. It should be noted that this does not change\nthe layout of your interface in any way, so if you are changing the group,\nit is likely you will need to re-arrange the user interface to reflect these\nchanges."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "group_changed", 
+                "parameters": null, 
+                "description": ""
+            }
+        ], 
+        "properties": [
+            {
+                "writable": false, 
+                "type": "Gtk.RadioButton", 
+                "readable": false, 
+                "name": "group", 
+                "description": "Sets a new group for a radio button."
+            }
+        ]
+    }, 
+    "fullname": "Class Gtk.RadioButton", 
+    "id": "Docs-RadioButton", 
+    "description": "A single radio button performs the same basic function as a #GtkCheckButton,\nas its position in the object hierarchy reflects. It is only when multiple\nradio buttons are grouped together that they become a different user\ninterface component in their own right.\n\nEvery radio button is a member of some group of radio buttons. When one is\nselected, all other radio buttons in the same group are deselected. A\n#GtkRadioButton is one way of giving the user a choice from many options.\n\nRadio button widgets are created with gtk_radio_button_new(), passing %NULL\nas the argument if this is the first radio button in a group. In subsequent\ncalls, the group you wish to add this button to should be passed as an\nargument. Optionally, gtk_radio_button_new_with_label() can be used if you\nwant a text label on the radio button.\n\nAlternatively, when adding widgets to an existing group of radio buttons,\nuse gtk_radio_button_new_from_widget() with a #GtkRadioButton that already\nhas a group assigned to it. The convenience function\ngtk_radio_button_new_with_label_from_widget() is also provided.\n\nTo retrieve the group a #GtkRadioButton is assigned to, use\ngtk_radio_button_get_group().\n\nTo remove a #GtkRadioButton from one group and make it part of a new one,\nuse gtk_radio_button_set_group().\n\nThe group list does not need to be freed, as each #GtkRadioButton will remove\nitself and its list item when it is destroyed.\n\n<example>\n<title>How to create a group of two radio buttons.</title>\n<programlisting>\nvoid create_radio_buttons (void) {\n\nGtkWidget *window, *radio1, *radio2, *box, *entry;\nwindow = gtk_window_new (GTK_WINDOW_TOPLEVEL);\nbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, TRUE, 2);\n\n/&ast; Create a radio button with a GtkEntry widget &ast;/\nradio1 = gtk_radio_button_new (NULL);\nentry = gtk_entry_new (<!-- -->);\ngtk_container_add (GTK_CONTAINER (radio1), entry);\n\n\n/&ast; Create a radio button with a label &ast;/\nradio2 = gtk_radio_button_new_with_label_from_widget (GTK_RADIO_BUTTON (radio1),\n\"I'm the second radio button.\");\n\n/&ast; Pack them into a box, then show all the widgets &ast;/\ngtk_box_pack_start (GTK_BOX (box), radio1, TRUE, TRUE, 2);\ngtk_box_pack_start (GTK_BOX (box), radio2, TRUE, TRUE, 2);\ngtk_container_add (GTK_CONTAINER (window), box);\ngtk_widget_show_all (window);\nreturn;\n}\n</programlisting>\n</example>\n\nWhen an unselected button in the group is clicked the clicked button\nreceives the #GtkToggleButton::toggled signal, as does the previously\nselected button.\nInside the #GtkToggleButton::toggled handler, gtk_toggle_button_get_active()\ncan be used to determine if the button has been selected or deselected."
+}

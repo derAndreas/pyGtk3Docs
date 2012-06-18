@@ -1,0 +1,433 @@
+{
+    "isAbstract": false, 
+    "leaf": true, 
+    "name": "ToolItem", 
+    "text": "ToolItem", 
+    "interfaces": [
+        [
+            "Atk.ImplementorIface"
+        ], 
+        [
+            "Activatable"
+        ], 
+        [
+            "Buildable"
+        ]
+    ], 
+    "parents": [
+        "ToolItem", 
+        "Bin", 
+        "Container", 
+        "Widget", 
+        "GObject.InitiallyUnowned"
+    ], 
+    "members": {
+        "signals": [
+            {
+                "version": "", 
+                "when": "last", 
+                "name": "create-menu-proxy", 
+                "description": "This signal is emitted when the toolbar needs information from @tool_item\nabout whether the item should appear in the toolbar overflow menu. In\nresponse the tool item should either\n<itemizedlist>\n<listitem>call gtk_tool_item_set_proxy_menu_item() with a %NULL\npointer and return %TRUE to indicate that the item should not appear\nin the overflow menu\n</listitem>\n<listitem> call gtk_tool_item_set_proxy_menu_item() with a new menu\nitem and return %TRUE, or \n</listitem>\n<listitem> return %FALSE to indicate that the signal was not\nhandled by the item. This means that\nthe item will not appear in the overflow menu unless a later handler\ninstalls a menu item.\n</listitem>\n</itemizedlist>\n\nThe toolbar may cache the result of this signal. When the tool item changes\nhow it will respond to this signal it must call gtk_tool_item_rebuild_menu()\nto invalidate the cache and ensure that the toolbar rebuilds its overflow\nmenu."
+            }, 
+            {
+                "version": "", 
+                "when": "last", 
+                "name": "toolbar-reconfigured", 
+                "description": "This signal is emitted when some property of the toolbar that the\nitem is a child of changes. For custom subclasses of #GtkToolItem,\nthe default handler of this signal use the functions\n<itemizedlist>\n<listitem>gtk_tool_shell_get_orientation()</listitem>\n<listitem>gtk_tool_shell_get_style()</listitem>\n<listitem>gtk_tool_shell_get_icon_size()</listitem>\n<listitem>gtk_tool_shell_get_relief_style()</listitem>\n</itemizedlist>\nto find out what the toolbar should look like and change\nthemselves accordingly."
+            }
+        ], 
+        "methods": [
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "the new #GtkToolItem", 
+                    "name": "ref:Gtk.ToolItem"
+                }, 
+                "version": "2.4", 
+                "name": "Gtk.ToolItem()", 
+                "parameters": null
+            }, 
+            {
+                "returns": {
+                    "type": "Pango.EllipsizeMode", 
+                    "description": "a #PangoEllipsizeMode indicating how text in @tool_item"
+                }, 
+                "version": "2.20", 
+                "name": "get_ellipsize_mode", 
+                "parameters": null, 
+                "description": "Returns the ellipsize mode used for @tool_item. Custom subclasses of\n#GtkToolItem should call this function to find out how text should\nbe ellipsized.\n\nshould be ellipsized."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE if @tool_item is allocated extra space."
+                }, 
+                "version": "2.4", 
+                "name": "get_expand", 
+                "parameters": null, 
+                "description": "Returns whether @tool_item is allocated extra space.\nSee gtk_tool_item_set_expand()."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE if the item is the same size as other homogeneous"
+                }, 
+                "version": "2.4", 
+                "name": "get_homogeneous", 
+                "parameters": null, 
+                "description": "Returns whether @tool_item is the same size as other homogeneous\nitems. See gtk_tool_item_set_homogeneous().\n\nitems."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.IconSize", 
+                    "description": "a #GtkIconSize indicating the icon size"
+                }, 
+                "version": "2.4", 
+                "name": "get_icon_size", 
+                "parameters": null, 
+                "description": "Returns the icon size used for @tool_item. Custom subclasses of\n#GtkToolItem should call this function to find out what size icons\nthey should use.\n\nused for @tool_item"
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE if @tool_item is considered important."
+                }, 
+                "version": "2.4", 
+                "name": "get_is_important", 
+                "parameters": null, 
+                "description": "Returns whether @tool_item is considered important. See\ngtk_tool_item_set_is_important()"
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.Orientation", 
+                    "description": "a #GtkOrientation indicating the orientation"
+                }, 
+                "version": "2.4", 
+                "name": "get_orientation", 
+                "parameters": null, 
+                "description": "Returns the orientation used for @tool_item. Custom subclasses of\n#GtkToolItem should call this function to find out what size icons\nthey should use.\n\nused for @tool_item"
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.Widget", 
+                    "description": "The #GtkMenuItem passed to"
+                }, 
+                "version": "2.4", 
+                "name": "get_proxy_menu_item", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "menu_item_id", 
+                        "description": "a string used to identify the menu item"
+                    }
+                ], 
+                "description": "If @menu_item_id matches the string passed to\ngtk_tool_item_set_proxy_menu_item() return the corresponding #GtkMenuItem.\n\nCustom subclasses of #GtkToolItem should use this function to\nupdate their menu item when the #GtkToolItem changes. That the\n@menu_item_id<!-- -->s must match ensures that a #GtkToolItem\nwill not inadvertently change a menu item that they did not create.\n\ngtk_tool_item_set_proxy_menu_item(), if the @menu_item_id<!-- -->s\nmatch."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.ReliefStyle", 
+                    "description": "a #GtkReliefStyle indicating the relief style used"
+                }, 
+                "version": "2.4", 
+                "name": "get_relief_style", 
+                "parameters": null, 
+                "description": "Returns the relief style of @tool_item. See gtk_button_set_relief_style().\nCustom subclasses of #GtkToolItem should call this function in the handler\nof the #GtkToolItem::toolbar_reconfigured signal to find out the\nrelief style of buttons.\n\nfor @tool_item."
+            }, 
+            {
+                "returns": {
+                    "type": "Float", 
+                    "description": "a #gfloat indicating the horizontal text alignment"
+                }, 
+                "version": "2.20", 
+                "name": "get_text_alignment", 
+                "parameters": null, 
+                "description": "Returns the text alignment used for @tool_item. Custom subclasses of\n#GtkToolItem should call this function to find out how text should\nbe aligned.\n\nused for @tool_item"
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.Orientation", 
+                    "description": "a #GtkOrientation indicating the text orientation"
+                }, 
+                "version": "2.20", 
+                "name": "get_text_orientation", 
+                "parameters": null, 
+                "description": "Returns the text orientation used for @tool_item. Custom subclasses of\n#GtkToolItem should call this function to find out how text should\nbe orientated.\n\nused for @tool_item"
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.SizeGroup", 
+                    "description": "a #GtkSizeGroup"
+                }, 
+                "version": "2.20", 
+                "name": "get_text_size_group", 
+                "parameters": null, 
+                "description": "Returns the size group used for labels in @tool_item.\nCustom subclasses of #GtkToolItem should call this function\nand use the size group for labels."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.ToolbarStyle", 
+                    "description": "A #GtkToolbarStyle indicating the toolbar style used"
+                }, 
+                "version": "2.4", 
+                "name": "get_toolbar_style", 
+                "parameters": null, 
+                "description": "Returns the toolbar style used for @tool_item. Custom subclasses of\n#GtkToolItem should call this function in the handler of the\nGtkToolItem::toolbar_reconfigured signal to find out in what style\nthe toolbar is displayed and change themselves accordingly \n\nPossibilities are:\n<itemizedlist>\n<listitem> GTK_TOOLBAR_BOTH, meaning the tool item should show\nboth an icon and a label, stacked vertically </listitem>\n<listitem> GTK_TOOLBAR_ICONS, meaning the toolbar shows\nonly icons </listitem>\n<listitem> GTK_TOOLBAR_TEXT, meaning the tool item should only\nshow text</listitem>\n<listitem> GTK_TOOLBAR_BOTH_HORIZ, meaning the tool item should show\nboth an icon and a label, arranged horizontally (however, note the \n#GtkToolButton:has_text_horizontally property that makes tool buttons not\nshow labels when the toolbar style is GTK_TOOLBAR_BOTH_HORIZ.\n</listitem>\n</itemizedlist>\n\nfor @tool_item."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE if @tool_item uses a drag window."
+                }, 
+                "version": "2.4", 
+                "name": "get_use_drag_window", 
+                "parameters": null, 
+                "description": "Returns whether @tool_item has a drag window. See\ngtk_tool_item_set_use_drag_window()."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE if @tool_item is visible on toolbars that are"
+                }, 
+                "version": "2.4", 
+                "name": "get_visible_horizontal", 
+                "parameters": null, 
+                "description": "Returns whether the @tool_item is visible on toolbars that are\ndocked horizontally.\n\ndocked horizontally."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "Whether @tool_item is visible when the toolbar is docked vertically"
+                }, 
+                "version": "2.4", 
+                "name": "get_visible_vertical", 
+                "parameters": null, 
+                "description": "Returns whether @tool_item is visible when the toolbar is docked vertically.\nSee gtk_tool_item_set_visible_vertical()."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.6", 
+                "name": "rebuild_menu", 
+                "parameters": null, 
+                "description": "Calling this function signals to the toolbar that the\noverflow menu item for @tool_item has changed. If the\noverflow menu is visible when this function it called,\nthe menu will be rebuilt.\n\nThe function must be called when the tool item changes what it\nwill do in response to the #GtkToolItem::create-menu-proxy signal."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.Widget", 
+                    "description": "The #GtkMenuItem that is going to appear in the"
+                }, 
+                "version": "2.4", 
+                "name": "retrieve_proxy_menu_item", 
+                "parameters": null, 
+                "description": "Returns the #GtkMenuItem that was last set by\ngtk_tool_item_set_proxy_menu_item(), ie. the #GtkMenuItem\nthat is going to appear in the overflow menu.\n\noverflow menu for @tool_item."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.4", 
+                "name": "set_expand", 
+                "parameters": [
+                    {
+                        "type": "Boolean", 
+                        "name": "expand", 
+                        "description": "Whether @tool_item is allocated extra space"
+                    }
+                ], 
+                "description": "Sets whether @tool_item is allocated extra space when there\nis more room on the toolbar then needed for the items. The\neffect is that the item gets bigger when the toolbar gets bigger\nand smaller when the toolbar gets smaller."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.4", 
+                "name": "set_homogeneous", 
+                "parameters": [
+                    {
+                        "type": "Boolean", 
+                        "name": "homogeneous", 
+                        "description": "whether @tool_item is the same size as other homogeneous items"
+                    }
+                ], 
+                "description": "Sets whether @tool_item is to be allocated the same size as other\nhomogeneous items. The effect is that all homogeneous items will have\nthe same width as the widest of the items."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.4", 
+                "name": "set_is_important", 
+                "parameters": [
+                    {
+                        "type": "Boolean", 
+                        "name": "is_important", 
+                        "description": "whether the tool item should be considered important"
+                    }
+                ], 
+                "description": "Sets whether @tool_item should be considered important. The #GtkToolButton\nclass uses this property to determine whether to show or hide its label\nwhen the toolbar style is %GTK_TOOLBAR_BOTH_HORIZ. The result is that\nonly tool buttons with the \"is_important\" property set have labels, an\neffect known as \"priority text\""
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.4", 
+                "name": "set_proxy_menu_item", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "menu_item_id", 
+                        "description": "a string used to identify @menu_item"
+                    }, 
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "menu_item", 
+                        "description": "a #GtkMenuItem to be used in the overflow menu"
+                    }
+                ], 
+                "description": "Sets the #GtkMenuItem used in the toolbar overflow menu. The\n@menu_item_id is used to identify the caller of this function and\nshould also be used with gtk_tool_item_get_proxy_menu_item()."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.12", 
+                "name": "set_tooltip_markup", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "markup", 
+                        "description": "markup text to be used as tooltip for @tool_item"
+                    }
+                ], 
+                "description": "Sets the markup text to be displayed as tooltip on the item.\nSee gtk_widget_set_tooltip_markup()."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.12", 
+                "name": "set_tooltip_text", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "text", 
+                        "description": "text to be used as tooltip for @tool_item"
+                    }
+                ], 
+                "description": "Sets the text to be displayed as tooltip on the item.\nSee gtk_widget_set_tooltip_text()."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.4", 
+                "name": "set_use_drag_window", 
+                "parameters": [
+                    {
+                        "type": "Boolean", 
+                        "name": "use_drag_window", 
+                        "description": "Whether @tool_item has a drag window."
+                    }
+                ], 
+                "description": "Sets whether @tool_item has a drag window. When %TRUE the\ntoolitem can be used as a drag source through gtk_drag_source_set().\nWhen @tool_item has a drag window it will intercept all events,\neven those that would otherwise be sent to a child of @tool_item."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.4", 
+                "name": "set_visible_horizontal", 
+                "parameters": [
+                    {
+                        "type": "Boolean", 
+                        "name": "visible_horizontal", 
+                        "description": "Whether @tool_item is visible when in horizontal mode"
+                    }
+                ], 
+                "description": "Sets whether @tool_item is visible when the toolbar is docked horizontally."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.4", 
+                "name": "set_visible_vertical", 
+                "parameters": [
+                    {
+                        "type": "Boolean", 
+                        "name": "visible_vertical", 
+                        "description": "whether @tool_item is visible when the toolbar is in vertical mode"
+                    }
+                ], 
+                "description": "Sets whether @tool_item is visible when the toolbar is docked\nvertically. Some tool items, such as text entries, are too wide to be\nuseful on a vertically docked toolbar. If @visible_vertical is %FALSE\n@tool_item will not appear on toolbars that are docked vertically."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.14", 
+                "name": "toolbar_reconfigured", 
+                "parameters": null, 
+                "description": "Emits the signal #GtkToolItem::toolbar_reconfigured on @tool_item.\n#GtkToolbar and other #GtkToolShell implementations use this function\nto notify children, when some aspect of their configuration changes."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "create_menu_proxy", 
+                "parameters": null, 
+                "description": ""
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.14", 
+                "name": "toolbar_reconfigured", 
+                "parameters": null, 
+                "description": "Emits the signal #GtkToolItem::toolbar_reconfigured on @tool_item.\n#GtkToolbar and other #GtkToolShell implementations use this function\nto notify children, when some aspect of their configuration changes."
+            }
+        ], 
+        "properties": [
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "is-important", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "visible-horizontal", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "visible-vertical", 
+                "description": ""
+            }
+        ]
+    }, 
+    "fullname": "Class Gtk.ToolItem", 
+    "id": "Docs-ToolItem", 
+    "description": "#GtkToolItem<!-- -->s are widgets that can appear on a toolbar. To\ncreate a toolbar item that contain something else than a button, use\ngtk_tool_item_new(). Use gtk_container_add() to add a child\nwidget to the tool item.\n\nFor toolbar items that contain buttons, see the #GtkToolButton,\n#GtkToggleToolButton and #GtkRadioToolButton classes.\n\nSee the #GtkToolbar class for a description of the toolbar widget, and\n#GtkToolShell for a description of the tool shell interface."
+}

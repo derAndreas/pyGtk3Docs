@@ -1,0 +1,54 @@
+{
+    "isAbstract": false, 
+    "leaf": true, 
+    "name": "FontChooserDialog", 
+    "text": "FontChooserDialog", 
+    "interfaces": [
+        [
+            "Atk.ImplementorIface"
+        ], 
+        [
+            "Buildable"
+        ], 
+        [
+            "FontChooser"
+        ]
+    ], 
+    "parents": [
+        "FontChooserDialog", 
+        "Dialog", 
+        "Window", 
+        "Bin", 
+        "Container", 
+        "Widget", 
+        "GObject.InitiallyUnowned"
+    ], 
+    "members": {
+        "signals": [], 
+        "methods": [
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a new #GtkFontChooserDialog", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": "3.2", 
+                "name": "Gtk.FontChooserDialog(String title, Gtk.Window parent)", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "title"
+                    }, 
+                    {
+                        "type": "ref:Gtk.Window", 
+                        "name": "parent"
+                    }
+                ]
+            }
+        ], 
+        "properties": []
+    }, 
+    "fullname": "Class Gtk.FontChooserDialog", 
+    "id": "Docs-FontChooserDialog", 
+    "description": "The #GtkFontChooserDialog widget is a dialog for selecting a font.\nIt implements the #GtkFontChooser interface.\n\n<refsect2 id=\"GtkFontChooserDialog-BUILDER-UI\">\n<title>GtkFontChooserDialog as GtkBuildable</title>\nThe GtkFontChooserDialog implementation of the GtkBuildable interface\nexposes the buttons with the names\n\"select_button\" and \"cancel_button.\n</refsect2>"
+}

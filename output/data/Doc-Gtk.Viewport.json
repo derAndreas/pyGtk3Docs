@@ -1,0 +1,158 @@
+{
+    "isAbstract": false, 
+    "leaf": true, 
+    "name": "Viewport", 
+    "text": "Viewport", 
+    "interfaces": [
+        [
+            "Atk.ImplementorIface"
+        ], 
+        [
+            "Buildable"
+        ], 
+        [
+            "Scrollable"
+        ]
+    ], 
+    "parents": [
+        "Viewport", 
+        "Bin", 
+        "Container", 
+        "Widget", 
+        "GObject.InitiallyUnowned"
+    ], 
+    "members": {
+        "signals": [], 
+        "methods": [
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a new #GtkViewport", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": null, 
+                "name": "Gtk.Viewport(Gtk.Adjustment hadjustment, Gtk.Adjustment vadjustment)", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Adjustment", 
+                        "name": "hadjustment"
+                    }, 
+                    {
+                        "type": "ref:Gtk.Adjustment", 
+                        "name": "vadjustment"
+                    }
+                ]
+            }, 
+            {
+                "returns": {
+                    "type": "Gdk.Window", 
+                    "description": "a #GdkWindow"
+                }, 
+                "version": "2.20", 
+                "name": "get_bin_window", 
+                "parameters": null, 
+                "description": "Gets the bin window of the #GtkViewport."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.Adjustment", 
+                    "description": "the horizontal adjustment of @viewport."
+                }, 
+                "version": "", 
+                "name": "get_hadjustment", 
+                "parameters": null, 
+                "description": "Returns the horizontal adjustment of the viewport."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.ShadowType", 
+                    "description": "the shadow type"
+                }, 
+                "version": "", 
+                "name": "get_shadow_type", 
+                "parameters": null, 
+                "description": "Gets the shadow type of the #GtkViewport. See\ngtk_viewport_set_shadow_type()."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.Adjustment", 
+                    "description": "the vertical adjustment of @viewport."
+                }, 
+                "version": "", 
+                "name": "get_vadjustment", 
+                "parameters": null, 
+                "description": "Returns the vertical adjustment of the viewport."
+            }, 
+            {
+                "returns": {
+                    "type": "Gdk.Window", 
+                    "description": "a #GdkWindow"
+                }, 
+                "version": "2.22", 
+                "name": "get_view_window", 
+                "parameters": null, 
+                "description": "Gets the view window of the #GtkViewport."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_hadjustment", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Adjustment", 
+                        "name": "adjustment", 
+                        "description": "a #GtkAdjustment."
+                    }
+                ], 
+                "description": "Sets the horizontal adjustment of the viewport."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_shadow_type", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.ShadowType", 
+                        "name": "type", 
+                        "description": "the new shadow type."
+                    }
+                ], 
+                "description": "Sets the shadow type of the viewport."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_vadjustment", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Adjustment", 
+                        "name": "adjustment", 
+                        "description": "a #GtkAdjustment."
+                    }
+                ], 
+                "description": "Sets the vertical adjustment of the viewport."
+            }
+        ], 
+        "properties": [
+            {
+                "writable": false, 
+                "type": "Gtk.ShadowType", 
+                "readable": false, 
+                "name": "shadow-type", 
+                "description": ""
+            }
+        ]
+    }, 
+    "fullname": "Class Gtk.Viewport", 
+    "id": "Docs-Viewport", 
+    "description": "The #GtkViewport widget acts as an adaptor class, implementing\nscrollability for child widgets that lack their own scrolling\ncapabilities. Use #GtkViewport to scroll child widgets such as\n#GtkGrid, #GtkBox, and so on.\n\nIf a widget has native scrolling abilities, such as #GtkTextView,\n#GtkTreeView or #GtkIconview, it can be added to a #GtkScrolledWindow\nwith gtk_container_add(). If a widget does not, you must first add the\nwidget to a #GtkViewport, then add the viewport to the scrolled window.\nThe convenience function gtk_scrolled_window_add_with_viewport() does\nexactly this, so you can ignore the presence of the viewport.\n\nThe #GtkViewport will start scrolling content only if allocated less\nthan the child widget's minimum size in a given orientation."
+}

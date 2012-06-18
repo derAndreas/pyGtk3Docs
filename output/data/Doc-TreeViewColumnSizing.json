@@ -1,0 +1,25 @@
+{
+    "leaf": true, 
+    "name": "TreeViewColumnSizing", 
+    "text": "TreeViewColumnSizing", 
+    "version": null, 
+    "members": {
+        "properties": [
+            {
+                "name": "grow_only", 
+                "value": "0"
+            }, 
+            {
+                "name": "autosize", 
+                "value": "1"
+            }, 
+            {
+                "name": "fixed", 
+                "value": "2"
+            }
+        ]
+    }, 
+    "fullname": "Enumeration Gtk.TreeViewColumnSizing", 
+    "id": "Docs-TreeViewColumnSizing", 
+    "description": ""
+}

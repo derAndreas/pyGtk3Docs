@@ -1,0 +1,50 @@
+{
+    "isAbstract": false, 
+    "leaf": true, 
+    "name": "HScrollbar", 
+    "text": "HScrollbar", 
+    "interfaces": [
+        [
+            "Atk.ImplementorIface"
+        ], 
+        [
+            "Buildable"
+        ], 
+        [
+            "Orientable"
+        ]
+    ], 
+    "parents": [
+        "HScrollbar", 
+        "Scrollbar", 
+        "Range", 
+        "Widget", 
+        "GObject.InitiallyUnowned"
+    ], 
+    "members": {
+        "signals": [], 
+        "methods": [
+            {
+                "returns": {
+                    "doc": "the new #GtkHScrollbar", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": null, 
+                "name": "Gtk.HScrollbar(Gtk.Adjustment adjustment)", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Adjustment", 
+                        "name": "adjustment"
+                    }
+                ], 
+                "deprecated": "Use gtk_scrollbar_new() with %GTK_ORIENTATION_HORIZONTAL instead", 
+                "deprecated_version": "3.2", 
+                "isConstructor": true
+            }
+        ], 
+        "properties": []
+    }, 
+    "fullname": "Class Gtk.HScrollbar", 
+    "id": "Docs-HScrollbar", 
+    "description": "The #GtkHScrollbar widget is a widget arranged horizontally creating a\nscrollbar. See #GtkScrollbar for details on\nscrollbars. #GtkAdjustment pointers may be added to handle the\nadjustment of the scrollbar or it may be left %NULL in which case one\nwill be created for you. See #GtkScrollbar for a description of what the\nfields in an adjustment represent for a scrollbar.\n\nGtkHScrollbar has been deprecated, use #GtkScrollbar instead."
+}

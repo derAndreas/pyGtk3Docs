@@ -1,0 +1,45 @@
+{
+    "isAbstract": false, 
+    "leaf": true, 
+    "name": "VPaned", 
+    "text": "VPaned", 
+    "interfaces": [
+        [
+            "Atk.ImplementorIface"
+        ], 
+        [
+            "Buildable"
+        ], 
+        [
+            "Orientable"
+        ]
+    ], 
+    "parents": [
+        "VPaned", 
+        "Paned", 
+        "Container", 
+        "Widget", 
+        "GObject.InitiallyUnowned"
+    ], 
+    "members": {
+        "signals": [], 
+        "methods": [
+            {
+                "returns": {
+                    "doc": "the new #GtkVPaned", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": null, 
+                "name": "Gtk.VPaned()", 
+                "parameters": null, 
+                "deprecated": "Use gtk_paned_new() with %GTK_ORIENTATION_VERTICAL instead", 
+                "deprecated_version": "3.2", 
+                "isConstructor": true
+            }
+        ], 
+        "properties": []
+    }, 
+    "fullname": "Class Gtk.VPaned", 
+    "id": "Docs-VPaned", 
+    "description": "The VPaned widget is a container widget with two\nchildren arranged vertically. The division between\nthe two panes is adjustable by the user by dragging\na handle. See #GtkPaned for details.\n\nGtkVPaned has been deprecated, use #GtkPaned instead."
+}

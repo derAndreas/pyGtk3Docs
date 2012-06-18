@@ -1,0 +1,805 @@
+{
+    "isAbstract": true, 
+    "leaf": true, 
+    "name": "Container", 
+    "text": "Container", 
+    "interfaces": [
+        [
+            "Atk.ImplementorIface"
+        ], 
+        [
+            "Buildable"
+        ]
+    ], 
+    "parents": [
+        "Container", 
+        "Widget", 
+        "GObject.InitiallyUnowned"
+    ], 
+    "members": {
+        "signals": [
+            {
+                "version": "", 
+                "when": "first", 
+                "name": "add", 
+                "description": ""
+            }, 
+            {
+                "version": "", 
+                "when": "last", 
+                "name": "check-resize", 
+                "description": ""
+            }, 
+            {
+                "version": "", 
+                "when": "first", 
+                "name": "remove", 
+                "description": ""
+            }, 
+            {
+                "version": "", 
+                "when": "first", 
+                "name": "set-focus-child", 
+                "description": ""
+            }
+        ], 
+        "methods": [
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "add", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "widget", 
+                        "description": "a widget to be placed inside @container"
+                    }
+                ], 
+                "description": "Adds @widget to @container. Typically used for simple containers\nsuch as #GtkWindow, #GtkFrame, or #GtkButton; for more complicated\nlayout containers such as #GtkBox or #GtkGrid, this function will\npick default packing parameters that may not be correct.  So\nconsider functions such as gtk_box_pack_start() and\ngtk_grid_attach() as an alternative to gtk_container_add() in\nthose cases. A widget may be added to only one container at a time;\nyou can't place the same widget inside two different containers."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "add_with_properties", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "widget", 
+                        "description": "a widget to be placed inside @container"
+                    }, 
+                    {
+                        "type": "String", 
+                        "name": "first_prop_name", 
+                        "description": "the name of the first child property to set"
+                    }, 
+                    {
+                        "type": "ref:VarArg", 
+                        "name": null, 
+                        "description": ""
+                    }
+                ], 
+                "description": "Adds @widget to @container, setting child properties at the same time.\nSee gtk_container_add() and gtk_container_child_set() for more details."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "check_resize", 
+                "parameters": null, 
+                "description": ""
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "child_get", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "child", 
+                        "description": "a widget which is a child of @container"
+                    }, 
+                    {
+                        "type": "String", 
+                        "name": "first_prop_name", 
+                        "description": "the name of the first property to get"
+                    }, 
+                    {
+                        "type": "ref:VarArg", 
+                        "name": null, 
+                        "description": ""
+                    }
+                ], 
+                "description": "Gets the values of one or more child properties for @child and @container."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "child_get_property", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "child", 
+                        "description": "a widget which is a child of @container"
+                    }, 
+                    {
+                        "type": "String", 
+                        "name": "property_name", 
+                        "description": "the name of the property to get"
+                    }, 
+                    {
+                        "type": "GObject.Value", 
+                        "name": "value", 
+                        "description": "a location to return the value"
+                    }
+                ], 
+                "description": "Gets the value of a child property for @child and @container."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "child_get_valist", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "child", 
+                        "description": "a widget which is a child of @container"
+                    }, 
+                    {
+                        "type": "String", 
+                        "name": "first_property_name", 
+                        "description": "the name of the first property to get"
+                    }, 
+                    {
+                        "type": "Mixed", 
+                        "name": "var_args", 
+                        "description": "return location for the first property, followed optionally by more name/return location pairs, followed by %NULL"
+                    }
+                ], 
+                "description": "Gets the values of one or more child properties for @child and @container."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "3.2", 
+                "name": "child_notify", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "child", 
+                        "description": "the child widget"
+                    }, 
+                    {
+                        "type": "String", 
+                        "name": "child_property", 
+                        "description": "the name of a child property installed on the class of @container"
+                    }
+                ], 
+                "description": "Emits a #GtkWidget::child-notify signal for the\n<link linkend=\"child-properties\">child property</link>\n@child_property on widget.\n\nThis is an analogue of g_object_notify() for child properties.\n\nAlso see gtk_widget_child_notify()."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "child_set", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "child", 
+                        "description": "a widget which is a child of @container"
+                    }, 
+                    {
+                        "type": "String", 
+                        "name": "first_prop_name", 
+                        "description": "the name of the first property to set"
+                    }, 
+                    {
+                        "type": "ref:VarArg", 
+                        "name": null, 
+                        "description": ""
+                    }
+                ], 
+                "description": "Sets one or more child properties for @child and @container."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "child_set_property", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "child", 
+                        "description": "a widget which is a child of @container"
+                    }, 
+                    {
+                        "type": "String", 
+                        "name": "property_name", 
+                        "description": "the name of the property to set"
+                    }, 
+                    {
+                        "type": "GObject.Value", 
+                        "name": "value", 
+                        "description": "the value to set the property to"
+                    }
+                ], 
+                "description": "Sets a child property for @child and @container."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "child_set_valist", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "child", 
+                        "description": "a widget which is a child of @container"
+                    }, 
+                    {
+                        "type": "String", 
+                        "name": "first_property_name", 
+                        "description": "the name of the first property to set"
+                    }, 
+                    {
+                        "type": "Mixed", 
+                        "name": "var_args", 
+                        "description": "a %NULL-terminated list of property names and values, starting with @first_prop_name"
+                    }
+                ], 
+                "description": "Sets one or more child properties for @child and @container."
+            }, 
+            {
+                "returns": {
+                    "type": "Integer", 
+                    "description": "a #GType."
+                }, 
+                "version": "", 
+                "name": "child_type", 
+                "parameters": null, 
+                "description": "Returns the type of the children supported by the container.\n\nNote that this may return %G_TYPE_NONE to indicate that no more\nchildren can be added, e.g. for a #GtkPaned which already has two\nchildren."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "forall", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Callback", 
+                        "name": "callback", 
+                        "description": "a callback"
+                    }, 
+                    {
+                        "type": "Mixed", 
+                        "name": "callback_data", 
+                        "description": "callback user data"
+                    }
+                ], 
+                "description": "Invokes @callback on each child of @container, including children\nthat are considered \"internal\" (implementation details of the\ncontainer). \"Internal\" children generally weren't added by the user\nof the container, but were added by the container implementation\nitself.  Most applications should use gtk_container_foreach(),\nrather than gtk_container_forall()."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "foreach", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Callback", 
+                        "name": "callback", 
+                        "description": "a callback"
+                    }, 
+                    {
+                        "type": "Mixed", 
+                        "name": "callback_data", 
+                        "description": "callback user data"
+                    }
+                ], 
+                "description": "Invokes @callback on each non-internal child of @container. See\ngtk_container_forall() for details on what constitutes an\n\"internal\" child.  Most applications should use\ngtk_container_foreach(), rather than gtk_container_forall()."
+            }, 
+            {
+                "returns": {
+                    "type": "Integer", 
+                    "description": "the current border width"
+                }, 
+                "version": "", 
+                "name": "get_border_width", 
+                "parameters": null, 
+                "description": "Retrieves the border width of the container. See\ngtk_container_set_border_width()."
+            }, 
+            {
+                "returns": {
+                    "type": "GLib.List", 
+                    "description": "a newly-allocated list of the container's non-internal children."
+                }, 
+                "version": "", 
+                "name": "get_children", 
+                "parameters": null, 
+                "description": "Returns the container's non-internal children. See\ngtk_container_forall() for details on what constitutes an \"internal\" child."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE if the focus chain of the container"
+                }, 
+                "version": "", 
+                "name": "get_focus_chain", 
+                "parameters": [
+                    {
+                        "type": "GLib.List", 
+                        "name": "focusable_widgets", 
+                        "description": "location to store the focus chain of the container, or %NULL. You should free this list using g_list_free() when you are done with it, however no additional reference count is added to the individual widgets in the focus chain."
+                    }
+                ], 
+                "description": "Retrieves the focus chain of the container, if one has been\nset explicitly. If no focus chain has been explicitly\nset, GTK+ computes the focus chain based on the positions\nof the children. In that case, GTK+ stores %NULL in\n@focusable_widgets and returns %FALSE.\n\nhas been set explicitly."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.Widget", 
+                    "description": "The child widget which will receive the"
+                }, 
+                "version": "2.14", 
+                "name": "get_focus_child", 
+                "parameters": null, 
+                "description": "Returns the current focus child widget inside @container. This is not the\ncurrently focused widget. That can be obtained by calling\ngtk_window_get_focus().\n\nfocus inside @container when the @conatiner is focussed,\nor %NULL if none is set."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.Adjustment", 
+                    "description": "the horizontal focus adjustment, or %NULL if"
+                }, 
+                "version": "", 
+                "name": "get_focus_hadjustment", 
+                "parameters": null, 
+                "description": "Retrieves the horizontal focus adjustment for the container. See\ngtk_container_set_focus_hadjustment ().\n\nnone has been set."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.Adjustment", 
+                    "description": "the vertical focus adjustment, or %NULL if"
+                }, 
+                "version": "", 
+                "name": "get_focus_vadjustment", 
+                "parameters": null, 
+                "description": "Retrieves the vertical focus adjustment for the container. See\ngtk_container_set_focus_vadjustment().\n\nnone has been set."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.WidgetPath", 
+                    "description": "A newly created #GtkWidgetPath"
+                }, 
+                "version": "", 
+                "name": "get_path_for_child", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "child", 
+                        "description": "a child of @container"
+                    }
+                ], 
+                "description": "Returns a newly created widget path representing all the widget hierarchy\nfrom the toplevel down to and including @child."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.ResizeMode", 
+                    "description": "the current resize mode"
+                }, 
+                "version": "", 
+                "name": "get_resize_mode", 
+                "parameters": null, 
+                "description": "Returns the resize mode for the container. See\ngtk_container_set_resize_mode ()."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "propagate_draw", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "child", 
+                        "description": "a child of @container"
+                    }, 
+                    {
+                        "type": "cairo.Context", 
+                        "name": "cr", 
+                        "description": "Cairo context as passed to the container. If you want to use @cr in container's draw function, consider using cairo_save() and cairo_restore() before calling this function."
+                    }
+                ], 
+                "description": "When a container receives a call to the draw function, it must send\nsynthetic #GtkWidget::draw calls to all children that don't have their\nown #GdkWindows. This function provides a convenient way of doing this.\nA container, when it receives a call to its #GtkWidget::draw function,\ncalls gtk_container_propagate_draw() once for each child, passing in\nthe @cr the container received.\n\ngtk_container_propagate_draw() takes care of translating the origin of @cr,\nand deciding whether the draw needs to be sent to the child. It is a\nconvenient and optimized way of getting the same effect as calling\ngtk_widget_draw() on the child directly.\n\nIn most cases, a container can simply either inherit the\n#GtkWidget::draw implementation from #GtkContainer, or do some drawing\nand then chain to the ::draw implementation from #GtkContainer."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "remove", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "widget", 
+                        "description": "a current child of @container"
+                    }
+                ], 
+                "description": "Removes @widget from @container. @widget must be inside @container.\nNote that @container will own a reference to @widget, and that this\nmay be the last reference held; so removing a widget from its\ncontainer can destroy that widget. If you want to use @widget\nagain, you need to add a reference to it while it's not inside\na container, using g_object_ref(). If you don't want to use @widget\nagain it's usually more efficient to simply destroy it directly\nusing gtk_widget_destroy() since this will remove it from the\ncontainer and help break any circular reference count cycles."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "resize_children", 
+                "parameters": null, 
+                "description": ""
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_border_width", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "border_width", 
+                        "description": "amount of blank space to leave <emphasis>outside</emphasis> the container. Valid values are in the range 0-65535 pixels."
+                    }
+                ], 
+                "description": "Sets the border width of the container.\n\nThe border width of a container is the amount of space to leave\naround the outside of the container. The only exception to this is\n#GtkWindow; because toplevel windows can't leave space outside,\nthey leave the space inside. The border is added on all sides of\nthe container. To add space to only one side, one approach is to\ncreate a #GtkAlignment widget, call gtk_widget_set_size_request()\nto give it a size, and place it on the side of the container as\na spacer."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_focus_chain", 
+                "parameters": [
+                    {
+                        "type": "GLib.List", 
+                        "name": "focusable_widgets", 
+                        "description": " the new focus chain"
+                    }
+                ], 
+                "description": "Sets a focus chain, overriding the one computed automatically by GTK+.\n\nIn principle each widget in the chain should be a descendant of the\ncontainer, but this is not enforced by this method, since it's allowed\nto set the focus chain before you pack the widgets, or have a widget\nin the chain that isn't always packed. The necessary checks are done\nwhen the focus chain is actually traversed."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_focus_child", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "child", 
+                        "description": "a #GtkWidget, or %NULL"
+                    }
+                ], 
+                "description": "Sets, or unsets if @child is %NULL, the focused child of @container.\n\nThis function emits the GtkContainer::set_focus_child signal of\n@container. Implementations of #GtkContainer can override the\ndefault behaviour by overriding the class closure of this signal.\n\nThis is function is mostly meant to be used by widgets. Applications can use\ngtk_widget_grab_focus() to manualy set the focus to a specific widget."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_focus_hadjustment", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Adjustment", 
+                        "name": "adjustment", 
+                        "description": "an adjustment which should be adjusted when the focus is moved among the descendents of @container"
+                    }
+                ], 
+                "description": "Hooks up an adjustment to focus handling in a container, so when a child\nof the container is focused, the adjustment is scrolled to show that\nwidget. This function sets the horizontal alignment.\nSee gtk_scrolled_window_get_hadjustment() for a typical way of obtaining\nthe adjustment and gtk_container_set_focus_vadjustment() for setting\nthe vertical adjustment.\n\nThe adjustments have to be in pixel units and in the same coordinate\nsystem as the allocation for immediate children of the container."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_focus_vadjustment", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Adjustment", 
+                        "name": "adjustment", 
+                        "description": "an adjustment which should be adjusted when the focus is moved among the descendents of @container"
+                    }
+                ], 
+                "description": "Hooks up an adjustment to focus handling in a container, so when a\nchild of the container is focused, the adjustment is scrolled to\nshow that widget. This function sets the vertical alignment. See\ngtk_scrolled_window_get_vadjustment() for a typical way of obtaining\nthe adjustment and gtk_container_set_focus_hadjustment() for setting\nthe horizontal adjustment.\n\nThe adjustments have to be in pixel units and in the same coordinate\nsystem as the allocation for immediate children of the container."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_reallocate_redraws", 
+                "parameters": [
+                    {
+                        "type": "Boolean", 
+                        "name": "needs_redraws", 
+                        "description": "the new value for the container's @reallocate_redraws flag"
+                    }
+                ], 
+                "description": "Sets the @reallocate_redraws flag of the container to the given value.\n\nContainers requesting reallocation redraws get automatically\nredrawn if any of their children changed allocation."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_resize_mode", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.ResizeMode", 
+                        "name": "resize_mode", 
+                        "description": "the new resize mode"
+                    }
+                ], 
+                "description": "Sets the resize mode for the container.\n\nThe resize mode of a container determines whether a resize request\nwill be passed to the container's parent, queued for later execution\nor executed immediately."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "unset_focus_chain", 
+                "parameters": null, 
+                "description": "Removes a focus chain explicitly set with gtk_container_set_focus_chain()."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "add", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "widget", 
+                        "description": "a widget to be placed inside @container"
+                    }
+                ], 
+                "description": "Adds @widget to @container. Typically used for simple containers\nsuch as #GtkWindow, #GtkFrame, or #GtkButton; for more complicated\nlayout containers such as #GtkBox or #GtkGrid, this function will\npick default packing parameters that may not be correct.  So\nconsider functions such as gtk_box_pack_start() and\ngtk_grid_attach() as an alternative to gtk_container_add() in\nthose cases. A widget may be added to only one container at a time;\nyou can't place the same widget inside two different containers."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "check_resize", 
+                "parameters": null, 
+                "description": ""
+            }, 
+            {
+                "returns": {
+                    "type": "Integer", 
+                    "description": "a #GType."
+                }, 
+                "version": "", 
+                "name": "child_type", 
+                "parameters": null, 
+                "description": "Returns the type of the children supported by the container.\n\nNote that this may return %G_TYPE_NONE to indicate that no more\nchildren can be added, e.g. for a #GtkPaned which already has two\nchildren."
+            }, 
+            {
+                "returns": {
+                    "type": "String", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "composite_name", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "child", 
+                        "description": ""
+                    }
+                ], 
+                "description": ""
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "forall", 
+                "parameters": [
+                    {
+                        "type": "Boolean", 
+                        "name": "include_internals", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "ref:Gtk.Callback", 
+                        "name": "callback", 
+                        "description": "a callback"
+                    }, 
+                    {
+                        "type": "Mixed", 
+                        "name": "callback_data", 
+                        "description": "callback user data"
+                    }
+                ], 
+                "description": "Invokes @callback on each child of @container, including children\nthat are considered \"internal\" (implementation details of the\ncontainer). \"Internal\" children generally weren't added by the user\nof the container, but were added by the container implementation\nitself.  Most applications should use gtk_container_foreach(),\nrather than gtk_container_forall()."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "get_child_property", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "child", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "property_id", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "GObject.Value", 
+                        "name": "value", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "GObject.ParamSpec", 
+                        "name": "pspec", 
+                        "description": ""
+                    }
+                ], 
+                "description": ""
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.WidgetPath", 
+                    "description": "A newly created #GtkWidgetPath"
+                }, 
+                "version": "", 
+                "name": "get_path_for_child", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "child", 
+                        "description": "a child of @container"
+                    }
+                ], 
+                "description": "Returns a newly created widget path representing all the widget hierarchy\nfrom the toplevel down to and including @child."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "remove", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "widget", 
+                        "description": "a current child of @container"
+                    }
+                ], 
+                "description": "Removes @widget from @container. @widget must be inside @container.\nNote that @container will own a reference to @widget, and that this\nmay be the last reference held; so removing a widget from its\ncontainer can destroy that widget. If you want to use @widget\nagain, you need to add a reference to it while it's not inside\na container, using g_object_ref(). If you don't want to use @widget\nagain it's usually more efficient to simply destroy it directly\nusing gtk_widget_destroy() since this will remove it from the\ncontainer and help break any circular reference count cycles."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_child_property", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "child", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "property_id", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "GObject.Value", 
+                        "name": "value", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "GObject.ParamSpec", 
+                        "name": "pspec", 
+                        "description": ""
+                    }
+                ], 
+                "description": ""
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_focus_child", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "child", 
+                        "description": "a #GtkWidget, or %NULL"
+                    }
+                ], 
+                "description": "Sets, or unsets if @child is %NULL, the focused child of @container.\n\nThis function emits the GtkContainer::set_focus_child signal of\n@container. Implementations of #GtkContainer can override the\ndefault behaviour by overriding the class closure of this signal.\n\nThis is function is mostly meant to be used by widgets. Applications can use\ngtk_widget_grab_focus() to manualy set the focus to a specific widget."
+            }
+        ], 
+        "properties": [
+            {
+                "writable": false, 
+                "type": "Integer", 
+                "readable": false, 
+                "name": "border-width", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Gtk.Widget", 
+                "readable": false, 
+                "name": "child", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Gtk.ResizeMode", 
+                "readable": false, 
+                "name": "resize-mode", 
+                "description": ""
+            }
+        ]
+    }, 
+    "fullname": "Class Gtk.Container", 
+    "id": "Docs-Container", 
+    "description": "A GTK+ user interface is constructed by nesting widgets inside widgets.\nContainer widgets are the inner nodes in the resulting tree of widgets:\nthey contain other widgets. So, for example, you might have a #GtkWindow\ncontaining a #GtkFrame containing a #GtkLabel. If you wanted an image instead\nof a textual label inside the frame, you might replace the #GtkLabel widget\nwith a #GtkImage widget.\n\nThere are two major kinds of container widgets in GTK+. Both are subclasses\nof the abstract GtkContainer base class.\n\nThe first type of container widget has a single child widget and derives\nfrom #GtkBin. These containers are <emphasis>decorators</emphasis>, which\nadd some kind of functionality to the child. For example, a #GtkButton makes\nits child into a clickable button; a #GtkFrame draws a frame around its child\nand a #GtkWindow places its child widget inside a top-level window.\n\nThe second type of container can have more than one child; its purpose is to\nmanage <emphasis>layout</emphasis>. This means that these containers assign\nsizes and positions to their children. For example, a #GtkHBox arranges its\nchildren in a horizontal row, and a #GtkGrid arranges the widgets it contains\nin a two-dimensional grid.\n\n<refsect2 id=\"container-geometry-management\">\n<title>Height for width geometry management</title>\n<para>\nGTK+ uses a height-for-width (and width-for-height) geometry management system.\nHeight-for-width means that a widget can change how much vertical space it needs,\ndepending on the amount of horizontal space that it is given (and similar for\nwidth-for-height).\n\nThere are some things to keep in mind when implementing container widgets\nthat make use of GTK+'s height for width geometry management system. First,\nit's important to note that a container must prioritize one of its\ndimensions, that is to say that a widget or container can only have a\n#GtkSizeRequestMode that is %GTK_SIZE_REQUEST_HEIGHT_FOR_WIDTH or\n%GTK_SIZE_REQUEST_WIDTH_FOR_HEIGHT. However, every widget and container\nmust be able to respond to the APIs for both dimensions, i.e. even if a\nwidget has a request mode that is height-for-width, it is possible that\nits parent will request its sizes using the width-for-height APIs.\n\nTo ensure that everything works properly, here are some guidelines to follow\nwhen implementing height-for-width (or width-for-height) containers.\n\nEach request mode involves 2 virtual methods. Height-for-width apis run\nthrough gtk_widget_get_preferred_width() and then through gtk_widget_get_preferred_height_for_width().\nWhen handling requests in the opposite #GtkSizeRequestMode it is important that\nevery widget request at least enough space to display all of its content at all times.\n\nWhen gtk_widget_get_preferred_height() is called on a container that is height-for-width,\nthe container must return the height for its minimum width. This is easily achieved by\nsimply calling the reverse apis implemented for itself as follows:\n\n<programlisting><![CDATA[\nstatic void\nfoo_container_get_preferred_height (GtkWidget *widget, gint *min_height, gint *nat_height)\n{\nif (i_am_in_height_for_width_mode)\n{\ngint min_width;\n\nGTK_WIDGET_GET_CLASS (widget)->get_preferred_width (widget, &min_width, NULL);\nGTK_WIDGET_GET_CLASS (widget)->get_preferred_height_for_width (widget, min_width,\nmin_height, nat_height);\n}\nelse\n{\n... many containers support both request modes, execute the real width-for-height\nrequest here by returning the collective heights of all widgets that are\nstacked vertically (or whatever is appropriate for this container) ...\n}\n}\n]]></programlisting>\n\nSimilarly, when gtk_widget_get_preferred_width_for_height() is called for a container or widget\nthat is height-for-width, it then only needs to return the base minimum width like so:\n\n<programlisting><![CDATA[\nstatic void\nfoo_container_get_preferred_width_for_height (GtkWidget *widget, gint for_height,\ngint *min_width, gint *nat_width)\n{\nif (i_am_in_height_for_width_mode)\n{\nGTK_WIDGET_GET_CLASS (widget)->get_preferred_width (widget, min_width, nat_width);\n}\nelse\n{\n... execute the real width-for-height request here based on the required width\nof the children collectively if the container were to be allocated the said height ...\n}\n}\n]]></programlisting>\n\nHeight for width requests are generally implemented in terms of a virtual allocation\nof widgets in the input orientation. Assuming an height-for-width request mode, a container\nwould implement the <function>get_preferred_height_for_width()</function> virtual function by first calling\ngtk_widget_get_preferred_width() for each of its children.\n\nFor each potential group of children that are lined up horizontally, the values returned by\ngtk_widget_get_preferred_width() should be collected in an array of #GtkRequestedSize structures.\nAny child spacing should be removed from the input @for_width and then the collective size should be\nallocated using the gtk_distribute_natural_allocation() convenience function.\n\nThe container will then move on to request the preferred height for each child by using\ngtk_widget_get_preferred_height_for_width() and using the sizes stored in the #GtkRequestedSize array.\n\nTo allocate a height-for-width container, it's again important\nto consider that a container must prioritize one dimension over the other. So if\na container is a height-for-width container it must first allocate all widgets horizontally\nusing a #GtkRequestedSize array and gtk_distribute_natural_allocation() and then add any\nextra space (if and where appropriate) for the widget to expand.\n\nAfter adding all the expand space, the container assumes it was allocated sufficient\nheight to fit all of its content. At this time, the container must use the total horizontal sizes\nof each widget to request the height-for-width of each of its children and store the requests in a\n#GtkRequestedSize array for any widgets that stack vertically (for tabular containers this can\nbe generalized into the heights and widths of rows and columns).\nThe vertical space must then again be distributed using gtk_distribute_natural_allocation()\nwhile this time considering the allocated height of the widget minus any vertical spacing\nthat the container adds. Then vertical expand space should be added where appropriate and available\nand the container should go on to actually allocating the child widgets.\n\nSee <link linkend=\"geometry-management\">GtkWidget's geometry management section</link>\nto learn more about implementing height-for-width geometry management for widgets.\n</para>\n</refsect2>\n<refsect2 id=\"child-properties\">\n<title>Child properties</title>\n<para>\nGtkContainer introduces <emphasis>child properties</emphasis>.\nThese are object properties that are not specific\nto either the container or the contained widget, but rather to their relation.\nTypical examples of child properties are the position or pack-type of a widget\nwhich is contained in a #GtkBox.\n\nUse gtk_container_class_install_child_property() to install child properties\nfor a container class and gtk_container_class_find_child_property() or\ngtk_container_class_list_child_properties() to get information about existing\nchild properties.\n\nTo set the value of a child property, use gtk_container_child_set_property(),\ngtk_container_child_set() or gtk_container_child_set_valist().\nTo obtain the value of a child property, use\ngtk_container_child_get_property(), gtk_container_child_get() or\ngtk_container_child_get_valist(). To emit notification about child property\nchanges, use gtk_widget_child_notify().\n</para>\n</refsect2>\n<refsect2 id=\"GtkContainer-BUILDER-UI\">\n<title>GtkContainer as GtkBuildable</title>\n<para>\nThe GtkContainer implementation of the GtkBuildable interface\nsupports a &lt;packing&gt; element for children, which can\ncontain multiple &lt;property&gt; elements that specify\nchild properties for the child.\n<example>\n<title>Child properties in UI definitions</title>\n<programlisting><![CDATA[\n<object class=\"GtkVBox\">\n<child>\n<object class=\"GtkLabel\"/>\n<packing>\n<property name=\"pack-type\">start</property>\n</packing>\n</child>\n</object>\n]]></programlisting>\n</example>\nSince 2.16, child properties can also be marked as translatable using\nthe same \"translatable\", \"comments\" and \"context\" attributes that are used\nfor regular properties.\n</para>\n</refsect2>"
+}

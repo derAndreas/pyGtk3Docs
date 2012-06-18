@@ -1,0 +1,1307 @@
+{
+    "isAbstract": false, 
+    "leaf": true, 
+    "name": "IconView", 
+    "text": "IconView", 
+    "interfaces": [
+        [
+            "Atk.ImplementorIface"
+        ], 
+        [
+            "Buildable"
+        ], 
+        [
+            "CellLayout"
+        ], 
+        [
+            "Scrollable"
+        ]
+    ], 
+    "parents": [
+        "IconView", 
+        "Container", 
+        "Widget", 
+        "GObject.InitiallyUnowned"
+    ], 
+    "members": {
+        "signals": [
+            {
+                "version": "", 
+                "when": "last", 
+                "name": "activate-cursor-item", 
+                "description": "A <link linkend=\"keybinding-signals\">keybinding signal</link>\nwhich gets emitted when the user activates the currently \nfocused item. \n\nApplications should not connect to it, but may emit it with\ng_signal_emit_by_name() if they need to control activation\nprogrammatically.\n\nThe default bindings for this signal are Space, Return and Enter."
+            }, 
+            {
+                "version": "", 
+                "when": "last", 
+                "name": "item-activated", 
+                "description": "The ::item-activated signal is emitted when the method\ngtk_icon_view_item_activated() is called or the user double \nclicks an item. It is also emitted when a non-editable item\nis selected and one of the keys: Space, Return or Enter is\npressed."
+            }, 
+            {
+                "version": "", 
+                "when": "last", 
+                "name": "move-cursor", 
+                "description": "The ::move-cursor signal is a\n<link linkend=\"keybinding-signals\">keybinding signal</link>\nwhich gets emitted when the user initiates a cursor movement.\n\nApplications should not connect to it, but may emit it with\ng_signal_emit_by_name() if they need to control the cursor\nprogrammatically.\n\nThe default bindings for this signal include\n<itemizedlist>\n<listitem>Arrow keys which move by individual steps</listitem>\n<listitem>Home/End keys which move to the first/last item</listitem>\n<listitem>PageUp/PageDown which move by \"pages\"</listitem>\n</itemizedlist>\n\nAll of these will extend the selection when combined with\nthe Shift modifier."
+            }, 
+            {
+                "version": "", 
+                "when": "last", 
+                "name": "select-all", 
+                "description": "A <link linkend=\"keybinding-signals\">keybinding signal</link>\nwhich gets emitted when the user selects all items.\n\nApplications should not connect to it, but may emit it with\ng_signal_emit_by_name() if they need to control selection\nprogrammatically.\n\nThe default binding for this signal is Ctrl-a."
+            }, 
+            {
+                "version": "", 
+                "when": "last", 
+                "name": "select-cursor-item", 
+                "description": "A <link linkend=\"keybinding-signals\">keybinding signal</link>\nwhich gets emitted when the user selects the item that is currently\nfocused.\n\nApplications should not connect to it, but may emit it with\ng_signal_emit_by_name() if they need to control selection\nprogrammatically.\n\nThere is no default binding for this signal."
+            }, 
+            {
+                "version": "", 
+                "when": "first", 
+                "name": "selection-changed", 
+                "description": "The ::selection-changed signal is emitted when the selection\n(i.e. the set of selected items) changes."
+            }, 
+            {
+                "version": "", 
+                "when": "last", 
+                "name": "toggle-cursor-item", 
+                "description": "A <link linkend=\"keybinding-signals\">keybinding signal</link>\nwhich gets emitted when the user toggles whether the currently\nfocused item is selected or not. The exact effect of this \ndepend on the selection mode.\n\nApplications should not connect to it, but may emit it with\ng_signal_emit_by_name() if they need to control selection\nprogrammatically.\n\nThere is no default binding for this signal is Ctrl-Space."
+            }, 
+            {
+                "version": "", 
+                "when": "last", 
+                "name": "unselect-all", 
+                "description": "A <link linkend=\"keybinding-signals\">keybinding signal</link>\nwhich gets emitted when the user unselects all items.\n\nApplications should not connect to it, but may emit it with\ng_signal_emit_by_name() if they need to control selection\nprogrammatically.\n\nThe default binding for this signal is Ctrl-Shift-a."
+            }
+        ], 
+        "methods": [
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "A newly created #GtkIconView widget", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": "2.6", 
+                "name": "Gtk.IconView()", 
+                "parameters": null
+            }, 
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "A newly created #GtkIconView widget", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": "3.0", 
+                "name": "Gtk.IconView(Gtk.CellArea area)", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.CellArea", 
+                        "name": "area"
+                    }
+                ]
+            }, 
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "A newly created #GtkIconView widget.", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": "2.6 ", 
+                "name": "Gtk.IconView(Gtk.TreeModel model)", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TreeModel", 
+                        "name": "model"
+                    }
+                ]
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.12", 
+                "name": "convert_widget_to_bin_window_coords", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "wx", 
+                        "description": "X coordinate relative to the widget"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "wy", 
+                        "description": "Y coordinate relative to the widget"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "bx", 
+                        "description": "return location for bin_window X coordinate"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "by", 
+                        "description": "return location for bin_window Y coordinate"
+                    }
+                ], 
+                "description": "Converts widget coordinates to coordinates for the bin_window,\nas expected by e.g. gtk_icon_view_get_path_at_pos()."
+            }, 
+            {
+                "returns": {
+                    "type": "cairo.Surface", 
+                    "description": "a newly-allocated surface of the drag icon."
+                }, 
+                "version": "2.8", 
+                "name": "create_drag_icon", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TreePath", 
+                        "name": "path", 
+                        "description": "a #GtkTreePath in @icon_view"
+                    }
+                ], 
+                "description": "Creates a #cairo_surface_t representation of the item at @path.  \nThis image is used for a drag icon."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.8", 
+                "name": "enable_model_drag_dest", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TargetEntry[]", 
+                        "name": "targets", 
+                        "description": "the table of targets that the drag will support"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "n_targets", 
+                        "description": "the number of items in @targets"
+                    }, 
+                    {
+                        "type": "Gdk.DragAction", 
+                        "name": "actions", 
+                        "description": "the bitmask of possible actions for a drag to this widget"
+                    }
+                ], 
+                "description": "Turns @icon_view into a drop destination for automatic DND. Calling this\nmethod sets #GtkIconView:reorderable to %FALSE."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.8", 
+                "name": "enable_model_drag_source", 
+                "parameters": [
+                    {
+                        "type": "Gdk.ModifierType", 
+                        "name": "start_button_mask", 
+                        "description": "Mask of allowed buttons to start drag"
+                    }, 
+                    {
+                        "type": "ref:Gtk.TargetEntry[]", 
+                        "name": "targets", 
+                        "description": "the table of targets that the drag will support"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "n_targets", 
+                        "description": "the number of items in @targets"
+                    }, 
+                    {
+                        "type": "Gdk.DragAction", 
+                        "name": "actions", 
+                        "description": "the bitmask of possible actions for a drag from this widget"
+                    }
+                ], 
+                "description": "Turns @icon_view into a drag source for automatic DND. Calling this\nmethod sets #GtkIconView:reorderable to %FALSE."
+            }, 
+            {
+                "returns": {
+                    "type": "Integer", 
+                    "description": "the space between columns"
+                }, 
+                "version": "2.6", 
+                "name": "get_column_spacing", 
+                "parameters": null, 
+                "description": "Returns the value of the ::column-spacing property."
+            }, 
+            {
+                "returns": {
+                    "type": "Integer", 
+                    "description": "the number of columns, or -1"
+                }, 
+                "version": "2.6", 
+                "name": "get_columns", 
+                "parameters": null, 
+                "description": "Returns the value of the ::columns property."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE if the cursor is set."
+                }, 
+                "version": "2.8", 
+                "name": "get_cursor", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TreePath", 
+                        "name": "path", 
+                        "description": "Return location for the current cursor path, or %NULL"
+                    }, 
+                    {
+                        "type": "ref:Gtk.CellRenderer", 
+                        "name": "cell", 
+                        "description": "Return location the current focus cell, or %NULL"
+                    }
+                ], 
+                "description": "Fills in @path and @cell with the current cursor path and cell. \nIf the cursor isn't currently set, then *@path will be %NULL.  \nIf no cell currently has focus, then *@cell will be %NULL.\n\nThe returned #GtkTreePath must be freed with gtk_tree_path_free()."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "whether there is an item at the given position."
+                }, 
+                "version": "2.8", 
+                "name": "get_dest_item_at_pos", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "drag_x", 
+                        "description": "the position to determine the destination item for"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "drag_y", 
+                        "description": "the position to determine the destination item for"
+                    }, 
+                    {
+                        "type": "ref:Gtk.TreePath", 
+                        "name": "path", 
+                        "description": "Return location for the path of the item, or %NULL."
+                    }, 
+                    {
+                        "type": "ref:Gtk.IconViewDropPosition", 
+                        "name": "pos", 
+                        "description": "Return location for the drop position, or %NULL"
+                    }
+                ], 
+                "description": "Determines the destination item for a given position."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.8", 
+                "name": "get_drag_dest_item", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TreePath", 
+                        "name": "path", 
+                        "description": "Return location for the path of the highlighted item, or %NULL."
+                    }, 
+                    {
+                        "type": "ref:Gtk.IconViewDropPosition", 
+                        "name": "pos", 
+                        "description": "Return location for the drop position, or %NULL"
+                    }
+                ], 
+                "description": "Gets information about the item that is highlighted for feedback."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE if an item exists at the specified position"
+                }, 
+                "version": "2.8", 
+                "name": "get_item_at_pos", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "x", 
+                        "description": "The x position to be identified"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "y", 
+                        "description": "The y position to be identified"
+                    }, 
+                    {
+                        "type": "ref:Gtk.TreePath", 
+                        "name": "path", 
+                        "description": "Return location for the path, or %NULL"
+                    }, 
+                    {
+                        "type": "ref:Gtk.CellRenderer", 
+                        "name": "cell", 
+                        "description": "Return location for the renderer responsible for the cell at (@x, @y), or %NULL"
+                    }
+                ], 
+                "description": "Finds the path at the point (@x, @y), relative to bin_window coordinates.\nIn contrast to gtk_icon_view_get_path_at_pos(), this function also \nobtains the cell at the specified position. The returned path should\nbe freed with gtk_tree_path_free().\nSee gtk_icon_view_convert_widget_to_bin_window_coords() for converting\nwidget coordinates to bin_window coordinates."
+            }, 
+            {
+                "returns": {
+                    "type": "Integer", 
+                    "description": "The column in which the item is displayed"
+                }, 
+                "version": "2.22", 
+                "name": "get_item_column", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TreePath", 
+                        "name": "path", 
+                        "description": "the #GtkTreePath of the item"
+                    }
+                ], 
+                "description": "Gets the column in which the item @path is currently\ndisplayed. Column numbers start at 0."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.Orientation", 
+                    "description": "the relative position of texts and icons"
+                }, 
+                "version": "2.6", 
+                "name": "get_item_orientation", 
+                "parameters": null, 
+                "description": "Returns the value of the ::item-orientation property which determines \nwhether the labels are drawn beside the icons instead of below."
+            }, 
+            {
+                "returns": {
+                    "type": "Integer", 
+                    "description": "the padding around items"
+                }, 
+                "version": "2.18", 
+                "name": "get_item_padding", 
+                "parameters": null, 
+                "description": "Returns the value of the ::item-padding property."
+            }, 
+            {
+                "returns": {
+                    "type": "Integer", 
+                    "description": "The row in which the item is displayed"
+                }, 
+                "version": "2.22", 
+                "name": "get_item_row", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TreePath", 
+                        "name": "path", 
+                        "description": "the #GtkTreePath of the item"
+                    }
+                ], 
+                "description": "Gets the row in which the item @path is currently\ndisplayed. Row numbers start at 0."
+            }, 
+            {
+                "returns": {
+                    "type": "Integer", 
+                    "description": "the width of a single item, or -1"
+                }, 
+                "version": "2.6", 
+                "name": "get_item_width", 
+                "parameters": null, 
+                "description": "Returns the value of the ::item-width property."
+            }, 
+            {
+                "returns": {
+                    "type": "Integer", 
+                    "description": "the space at the borders"
+                }, 
+                "version": "2.6", 
+                "name": "get_margin", 
+                "parameters": null, 
+                "description": "Returns the value of the ::margin property."
+            }, 
+            {
+                "returns": {
+                    "type": "Integer", 
+                    "description": "the markup column, or -1 if it's unset."
+                }, 
+                "version": "2.6", 
+                "name": "get_markup_column", 
+                "parameters": null, 
+                "description": "Returns the column with markup text for @icon_view."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.TreeModel", 
+                    "description": "A #GtkTreeModel, or %NULL if none is"
+                }, 
+                "version": "2.6 ", 
+                "name": "get_model", 
+                "parameters": null, 
+                "description": "Returns the model the #GtkIconView is based on.  Returns %NULL if the\nmodel is unset.\n\ncurrently being used."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.TreePath", 
+                    "description": "The #GtkTreePath corresponding to the icon or %NULL"
+                }, 
+                "version": "2.6 ", 
+                "name": "get_path_at_pos", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "x", 
+                        "description": "The x position to be identified"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "y", 
+                        "description": "The y position to be identified"
+                    }
+                ], 
+                "description": "Finds the path at the point (@x, @y), relative to bin_window coordinates.\nSee gtk_icon_view_get_item_at_pos(), if you are also interested in\nthe cell at the specified position. \nSee gtk_icon_view_convert_widget_to_bin_window_coords() for converting\nwidget coordinates to bin_window coordinates.\n\nif no icon exists at that position."
+            }, 
+            {
+                "returns": {
+                    "type": "Integer", 
+                    "description": "the pixbuf column, or -1 if it's unset."
+                }, 
+                "version": "2.6", 
+                "name": "get_pixbuf_column", 
+                "parameters": null, 
+                "description": "Returns the column with pixbufs for @icon_view."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE if the list can be reordered."
+                }, 
+                "version": "2.8", 
+                "name": "get_reorderable", 
+                "parameters": null, 
+                "description": "Retrieves whether the user can reorder the list via drag-and-drop. \nSee gtk_icon_view_set_reorderable()."
+            }, 
+            {
+                "returns": {
+                    "type": "Integer", 
+                    "description": "the space between rows"
+                }, 
+                "version": "2.6", 
+                "name": "get_row_spacing", 
+                "parameters": null, 
+                "description": "Returns the value of the ::row-spacing property."
+            }, 
+            {
+                "returns": {
+                    "type": "GLib.List", 
+                    "description": "A #GList containing a #GtkTreePath for each selected row."
+                }, 
+                "version": "2.6", 
+                "name": "get_selected_items", 
+                "parameters": null, 
+                "description": "Creates a list of paths of all selected items. Additionally, if you are\nplanning on modifying the model after calling this function, you may\nwant to convert the returned list into a list of #GtkTreeRowReference<!-- -->s.\nTo do this, you can use gtk_tree_row_reference_new().\n\nTo free the return value, use:\n|[\ng_list_free_full (list, (GDestroyNotify) gtk_tree_patch_free);\n]|"
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.SelectionMode", 
+                    "description": "the current selection mode"
+                }, 
+                "version": "2.6 ", 
+                "name": "get_selection_mode", 
+                "parameters": null, 
+                "description": "Gets the selection mode of the @icon_view."
+            }, 
+            {
+                "returns": {
+                    "type": "Integer", 
+                    "description": "the space between cells"
+                }, 
+                "version": "2.6", 
+                "name": "get_spacing", 
+                "parameters": null, 
+                "description": "Returns the value of the ::spacing property."
+            }, 
+            {
+                "returns": {
+                    "type": "Integer", 
+                    "description": "the text column, or -1 if it's unset."
+                }, 
+                "version": "2.6", 
+                "name": "get_text_column", 
+                "parameters": null, 
+                "description": "Returns the column with text for @icon_view."
+            }, 
+            {
+                "returns": {
+                    "type": "Integer", 
+                    "description": "the index of the tooltip column that is currently being"
+                }, 
+                "version": "2.12", 
+                "name": "get_tooltip_column", 
+                "parameters": null, 
+                "description": "Returns the column of @icon_view's model which is being used for\ndisplaying tooltips on @icon_view's rows.\n\nused, or -1 if this is disabled."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "whether or not the given tooltip context points to a item"
+                }, 
+                "version": "2.12", 
+                "name": "get_tooltip_context", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "x", 
+                        "description": "the x coordinate (relative to widget coordinates)"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "y", 
+                        "description": "the y coordinate (relative to widget coordinates)"
+                    }, 
+                    {
+                        "type": "Boolean", 
+                        "name": "keyboard_tip", 
+                        "description": "whether this is a keyboard tooltip or not"
+                    }, 
+                    {
+                        "type": "ref:Gtk.TreeModel", 
+                        "name": "model", 
+                        "description": "a pointer to receive a #GtkTreeModel or %NULL"
+                    }, 
+                    {
+                        "type": "ref:Gtk.TreePath", 
+                        "name": "path", 
+                        "description": "a pointer to receive a #GtkTreePath or %NULL"
+                    }, 
+                    {
+                        "type": "ref:Gtk.TreeIter", 
+                        "name": "iter", 
+                        "description": "a pointer to receive a #GtkTreeIter or %NULL"
+                    }
+                ], 
+                "description": "This function is supposed to be used in a #GtkWidget::query-tooltip\nsignal handler for #GtkIconView.  The @x, @y and @keyboard_tip values\nwhich are received in the signal handler, should be passed to this\nfunction without modification.\n\nThe return value indicates whether there is an icon view item at the given\ncoordinates (%TRUE) or not (%FALSE) for mouse tooltips. For keyboard\ntooltips the item returned will be the cursor item. When %TRUE, then any of\n@model, @path and @iter which have been provided will be set to point to\nthat row and the corresponding model. @x and @y will always be converted\nto be relative to @icon_view's bin_window if @keyboard_tooltip is %FALSE."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE, if valid paths were placed in @start_path and @end_path"
+                }, 
+                "version": "2.8", 
+                "name": "get_visible_range", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TreePath", 
+                        "name": "start_path", 
+                        "description": "Return location for start of region, or %NULL"
+                    }, 
+                    {
+                        "type": "ref:Gtk.TreePath", 
+                        "name": "end_path", 
+                        "description": "Return location for end of region, or %NULL"
+                    }
+                ], 
+                "description": "Sets @start_path and @end_path to be the first and last visible path. \nNote that there may be invisible paths in between.\n\nBoth paths should be freed with gtk_tree_path_free() after use."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.6", 
+                "name": "item_activated", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TreePath", 
+                        "name": "path", 
+                        "description": "The #GtkTreePath to be activated"
+                    }
+                ], 
+                "description": "Activates the item determined by @path."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE if @path is selected."
+                }, 
+                "version": "2.6", 
+                "name": "path_is_selected", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TreePath", 
+                        "name": "path", 
+                        "description": "A #GtkTreePath to check selection on."
+                    }
+                ], 
+                "description": "Returns %TRUE if the icon pointed to by @path is currently\nselected. If @path does not point to a valid location, %FALSE is returned."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.8", 
+                "name": "scroll_to_path", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TreePath", 
+                        "name": "path", 
+                        "description": "The path of the item to move to."
+                    }, 
+                    {
+                        "type": "Boolean", 
+                        "name": "use_align", 
+                        "description": "whether to use alignment arguments, or %FALSE."
+                    }, 
+                    {
+                        "type": "Float", 
+                        "name": "row_align", 
+                        "description": "The vertical alignment of the item specified by @path."
+                    }, 
+                    {
+                        "type": "Float", 
+                        "name": "col_align", 
+                        "description": "The horizontal alignment of the item specified by @path."
+                    }
+                ], 
+                "description": "Moves the alignments of @icon_view to the position specified by @path.  \n@row_align determines where the row is placed, and @col_align determines \nwhere @column is placed.  Both are expected to be between 0.0 and 1.0. \n0.0 means left/top alignment, 1.0 means right/bottom alignment, 0.5 means \ncenter.\n\nIf @use_align is %FALSE, then the alignment arguments are ignored, and the\ntree does the minimum amount of work to scroll the item onto the screen.\nThis means that the item will be scrolled to the edge closest to its current\nposition.  If the item is currently visible on the screen, nothing is done.\n\nThis function only works if the model is set, and @path is a valid row on \nthe model. If the model changes before the @icon_view is realized, the \ncentered path will be modified to reflect this change."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.6", 
+                "name": "select_all", 
+                "parameters": null, 
+                "description": "Selects all the icons. @icon_view must has its selection mode set\nto #GTK_SELECTION_MULTIPLE."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.6", 
+                "name": "select_path", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TreePath", 
+                        "name": "path", 
+                        "description": "The #GtkTreePath to be selected."
+                    }
+                ], 
+                "description": "Selects the row at @path."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.6 ", 
+                "name": "selected_foreach", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.IconViewForeachFunc", 
+                        "name": "func", 
+                        "description": "The function to call for each selected icon."
+                    }, 
+                    {
+                        "type": "Mixed", 
+                        "name": "data", 
+                        "description": "User data to pass to the function."
+                    }
+                ], 
+                "description": "Calls a function for each selected icon. Note that the model or\nselection cannot be modified from within this function."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.6", 
+                "name": "set_column_spacing", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "column_spacing", 
+                        "description": "the column spacing"
+                    }
+                ], 
+                "description": "Sets the ::column-spacing property which specifies the space \nwhich is inserted between the columns of the icon view."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.6", 
+                "name": "set_columns", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "columns", 
+                        "description": "the number of columns"
+                    }
+                ], 
+                "description": "Sets the ::columns property which determines in how\nmany columns the icons are arranged. If @columns is\n-1, the number of columns will be chosen automatically \nto fill the available area."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.8", 
+                "name": "set_cursor", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TreePath", 
+                        "name": "path", 
+                        "description": "A #GtkTreePath"
+                    }, 
+                    {
+                        "type": "ref:Gtk.CellRenderer", 
+                        "name": "cell", 
+                        "description": "One of the cell renderers of @icon_view, or %NULL"
+                    }, 
+                    {
+                        "type": "Boolean", 
+                        "name": "start_editing", 
+                        "description": "%TRUE if the specified cell should start being edited."
+                    }
+                ], 
+                "description": "Sets the current keyboard focus to be at @path, and selects it.  This is\nuseful when you want to focus the user's attention on a particular item.\nIf @cell is not %NULL, then focus is given to the cell specified by \nit. Additionally, if @start_editing is %TRUE, then editing should be \nstarted in the specified cell.  \n\nThis function is often followed by <literal>gtk_widget_grab_focus \n(icon_view)</literal> in order to give keyboard focus to the widget.  \nPlease note that editing can only happen when the widget is realized."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.8", 
+                "name": "set_drag_dest_item", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TreePath", 
+                        "name": "path", 
+                        "description": "The path of the item to highlight, or %NULL."
+                    }, 
+                    {
+                        "type": "ref:Gtk.IconViewDropPosition", 
+                        "name": "pos", 
+                        "description": "Specifies where to drop, relative to the item"
+                    }
+                ], 
+                "description": "Sets the item that is highlighted for feedback."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.6", 
+                "name": "set_item_orientation", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Orientation", 
+                        "name": "orientation", 
+                        "description": "the relative position of texts and icons"
+                    }
+                ], 
+                "description": "Sets the ::item-orientation property which determines whether the labels \nare drawn beside the icons instead of below."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.18", 
+                "name": "set_item_padding", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "item_padding", 
+                        "description": "the item padding"
+                    }
+                ], 
+                "description": "Sets the #GtkIconView:item-padding property which specifies the padding\naround each of the icon view's items."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.6", 
+                "name": "set_item_width", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "item_width", 
+                        "description": "the width for each item"
+                    }
+                ], 
+                "description": "Sets the ::item-width property which specifies the width \nto use for each item. If it is set to -1, the icon view will \nautomatically determine a suitable item size."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.6", 
+                "name": "set_margin", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "margin", 
+                        "description": "the margin"
+                    }
+                ], 
+                "description": "Sets the ::margin property which specifies the space \nwhich is inserted at the top, bottom, left and right \nof the icon view."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.6", 
+                "name": "set_markup_column", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "column", 
+                        "description": "A column in the currently used model, or -1 to display no text"
+                    }
+                ], 
+                "description": "Sets the column with markup information for @icon_view to be\n@column. The markup column must be of type #G_TYPE_STRING.\nIf the markup column is set to something, it overrides\nthe text column set by gtk_icon_view_set_text_column()."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.6 ", 
+                "name": "set_model", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TreeModel", 
+                        "name": "model", 
+                        "description": "The model."
+                    }
+                ], 
+                "description": "Sets the model for a #GtkIconView.\nIf the @icon_view already has a model set, it will remove\nit before setting the new model.  If @model is %NULL, then\nit will unset the old model."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.6 ", 
+                "name": "set_pixbuf_column", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "column", 
+                        "description": "A column in the currently used model, or -1 to disable"
+                    }
+                ], 
+                "description": "Sets the column with pixbufs for @icon_view to be @column. The pixbuf\ncolumn must be of type #GDK_TYPE_PIXBUF"
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.8", 
+                "name": "set_reorderable", 
+                "parameters": [
+                    {
+                        "type": "Boolean", 
+                        "name": "reorderable", 
+                        "description": "%TRUE, if the list of items can be reordered."
+                    }
+                ], 
+                "description": "This function is a convenience function to allow you to reorder models that\nsupport the #GtkTreeDragSourceIface and the #GtkTreeDragDestIface.  Both\n#GtkTreeStore and #GtkListStore support these.  If @reorderable is %TRUE, then\nthe user can reorder the model by dragging and dropping rows.  The\ndeveloper can listen to these changes by connecting to the model's\nrow_inserted and row_deleted signals. The reordering is implemented by setting up\nthe icon view as a drag source and destination. Therefore, drag and\ndrop can not be used in a reorderable view for any other purpose.\n\nThis function does not give you any degree of control over the order -- any\nreordering is allowed.  If more control is needed, you should probably\nhandle drag and drop manually."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.6", 
+                "name": "set_row_spacing", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "row_spacing", 
+                        "description": "the row spacing"
+                    }
+                ], 
+                "description": "Sets the ::row-spacing property which specifies the space \nwhich is inserted between the rows of the icon view."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.6 ", 
+                "name": "set_selection_mode", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.SelectionMode", 
+                        "name": "mode", 
+                        "description": "The selection mode"
+                    }
+                ], 
+                "description": "Sets the selection mode of the @icon_view."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.6", 
+                "name": "set_spacing", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "spacing", 
+                        "description": "the spacing"
+                    }
+                ], 
+                "description": "Sets the ::spacing property which specifies the space \nwhich is inserted between the cells (i.e. the icon and \nthe text) of an item."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.6 ", 
+                "name": "set_text_column", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "column", 
+                        "description": "A column in the currently used model, or -1 to display no text"
+                    }
+                ], 
+                "description": "Sets the column with text for @icon_view to be @column. The text\ncolumn must be of type #G_TYPE_STRING."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.12", 
+                "name": "set_tooltip_cell", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Tooltip", 
+                        "name": "tooltip", 
+                        "description": "a #GtkTooltip"
+                    }, 
+                    {
+                        "type": "ref:Gtk.TreePath", 
+                        "name": "path", 
+                        "description": "a #GtkTreePath"
+                    }, 
+                    {
+                        "type": "ref:Gtk.CellRenderer", 
+                        "name": "cell", 
+                        "description": "a #GtkCellRenderer or %NULL"
+                    }
+                ], 
+                "description": "Sets the tip area of @tooltip to the area which @cell occupies in\nthe item pointed to by @path. See also gtk_tooltip_set_tip_area().\n\nSee also gtk_icon_view_set_tooltip_column() for a simpler alternative."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.12", 
+                "name": "set_tooltip_column", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "column", 
+                        "description": "an integer, which is a valid column number for @icon_view's model"
+                    }
+                ], 
+                "description": "If you only plan to have simple (text-only) tooltips on full items, you\ncan use this function to have #GtkIconView handle these automatically\nfor you. @column should be set to the column in @icon_view's model\ncontaining the tooltip texts, or -1 to disable this feature.\n\nWhen enabled, #GtkWidget:has-tooltip will be set to %TRUE and\n@icon_view will connect a #GtkWidget::query-tooltip signal handler.\n\nNote that the signal handler sets the text with gtk_tooltip_set_markup(),\nso &amp;, &lt;, etc have to be escaped in the text."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.12", 
+                "name": "set_tooltip_item", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Tooltip", 
+                        "name": "tooltip", 
+                        "description": "a #GtkTooltip"
+                    }, 
+                    {
+                        "type": "ref:Gtk.TreePath", 
+                        "name": "path", 
+                        "description": "a #GtkTreePath"
+                    }
+                ], 
+                "description": "Sets the tip area of @tooltip to be the area covered by the item at @path.\nSee also gtk_icon_view_set_tooltip_column() for a simpler alternative.\nSee also gtk_tooltip_set_tip_area()."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.6", 
+                "name": "unselect_all", 
+                "parameters": null, 
+                "description": "Unselects all the icons."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.6", 
+                "name": "unselect_path", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TreePath", 
+                        "name": "path", 
+                        "description": "The #GtkTreePath to be unselected."
+                    }
+                ], 
+                "description": "Unselects the row at @path."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.8", 
+                "name": "unset_model_drag_dest", 
+                "parameters": null, 
+                "description": "Undoes the effect of gtk_icon_view_enable_model_drag_dest(). Calling this\nmethod sets #GtkIconView:reorderable to %FALSE."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.8", 
+                "name": "unset_model_drag_source", 
+                "parameters": null, 
+                "description": "Undoes the effect of gtk_icon_view_enable_model_drag_source(). Calling this\nmethod sets #GtkIconView:reorderable to %FALSE."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "activate_cursor_item", 
+                "parameters": null, 
+                "description": ""
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.6", 
+                "name": "item_activated", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TreePath", 
+                        "name": "path", 
+                        "description": "The #GtkTreePath to be activated"
+                    }
+                ], 
+                "description": "Activates the item determined by @path."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "move_cursor", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.MovementStep", 
+                        "name": "step", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "count", 
+                        "description": ""
+                    }
+                ], 
+                "description": ""
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.6", 
+                "name": "select_all", 
+                "parameters": null, 
+                "description": "Selects all the icons. @icon_view must has its selection mode set\nto #GTK_SELECTION_MULTIPLE."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "select_cursor_item", 
+                "parameters": null, 
+                "description": ""
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "selection_changed", 
+                "parameters": null, 
+                "description": ""
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "toggle_cursor_item", 
+                "parameters": null, 
+                "description": ""
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.6", 
+                "name": "unselect_all", 
+                "parameters": null, 
+                "description": "Unselects all the icons."
+            }
+        ], 
+        "properties": [
+            {
+                "writable": false, 
+                "type": "Gtk.CellArea", 
+                "readable": false, 
+                "name": "cell-area", 
+                "description": "The #GtkCellArea used to layout cell renderers for this view.\n\nIf no area is specified when creating the icon view with gtk_icon_view_new_with_area() \na #GtkCellAreaBox will be used."
+            }, 
+            {
+                "writable": false, 
+                "type": "Integer", 
+                "readable": false, 
+                "name": "column-spacing", 
+                "description": "The column-spacing property specifies the space which is inserted between\nthe columns of the icon view."
+            }, 
+            {
+                "writable": false, 
+                "type": "Integer", 
+                "readable": false, 
+                "name": "columns", 
+                "description": "The columns property contains the number of the columns in which the\nitems should be displayed. If it is -1, the number of columns will\nbe chosen automatically to fill the available area."
+            }, 
+            {
+                "writable": false, 
+                "type": "Gtk.Orientation", 
+                "readable": false, 
+                "name": "item-orientation", 
+                "description": "The item-orientation property specifies how the cells (i.e. the icon and\nthe text) of the item are positioned relative to each other."
+            }, 
+            {
+                "writable": false, 
+                "type": "Integer", 
+                "readable": false, 
+                "name": "item-padding", 
+                "description": "The item-padding property specifies the padding around each\nof the icon view's item."
+            }, 
+            {
+                "writable": false, 
+                "type": "Integer", 
+                "readable": false, 
+                "name": "item-width", 
+                "description": "The item-width property specifies the width to use for each item. \nIf it is set to -1, the icon view will automatically determine a \nsuitable item size."
+            }, 
+            {
+                "writable": false, 
+                "type": "Integer", 
+                "readable": false, 
+                "name": "margin", 
+                "description": "The margin property specifies the space which is inserted \nat the edges of the icon view."
+            }, 
+            {
+                "writable": false, 
+                "type": "Integer", 
+                "readable": false, 
+                "name": "markup-column", 
+                "description": "The ::markup-column property contains the number of the model column\ncontaining markup information to be displayed. The markup column must be \nof type #G_TYPE_STRING. If this property and the :text-column property \nare both set to column numbers, it overrides the text column.\nIf both are set to -1, no texts are displayed."
+            }, 
+            {
+                "writable": false, 
+                "type": "Gtk.TreeModel", 
+                "readable": false, 
+                "name": "model", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Integer", 
+                "readable": false, 
+                "name": "pixbuf-column", 
+                "description": "The ::pixbuf-column property contains the number of the model column\ncontaining the pixbufs which are displayed. The pixbuf column must be \nof type #GDK_TYPE_PIXBUF. Setting this property to -1 turns off the\ndisplay of pixbufs."
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "reorderable", 
+                "description": "The reorderable property specifies if the items can be reordered\nby DND."
+            }, 
+            {
+                "writable": false, 
+                "type": "Integer", 
+                "readable": false, 
+                "name": "row-spacing", 
+                "description": "The row-spacing property specifies the space which is inserted between\nthe rows of the icon view."
+            }, 
+            {
+                "writable": false, 
+                "type": "Gtk.SelectionMode", 
+                "readable": false, 
+                "name": "selection-mode", 
+                "description": "The ::selection-mode property specifies the selection mode of\nicon view. If the mode is #GTK_SELECTION_MULTIPLE, rubberband selection\nis enabled, for the other modes, only keyboard selection is possible."
+            }, 
+            {
+                "writable": false, 
+                "type": "Integer", 
+                "readable": false, 
+                "name": "spacing", 
+                "description": "The spacing property specifies the space which is inserted between\nthe cells (i.e. the icon and the text) of an item."
+            }, 
+            {
+                "writable": false, 
+                "type": "Integer", 
+                "readable": false, 
+                "name": "text-column", 
+                "description": "The ::text-column property contains the number of the model column\ncontaining the texts which are displayed. The text column must be \nof type #G_TYPE_STRING. If this property and the :markup-column \nproperty are both set to -1, no texts are displayed."
+            }, 
+            {
+                "writable": false, 
+                "type": "Integer", 
+                "readable": false, 
+                "name": "tooltip-column", 
+                "description": ""
+            }
+        ]
+    }, 
+    "fullname": "Class Gtk.IconView", 
+    "id": "Docs-IconView", 
+    "description": "#GtkIconView provides an alternative view on a #GtkTreeModel.\nIt displays the model as a grid of icons with labels. Like\n#GtkTreeView, it allows to select one or multiple items\n(depending on the selection mode, see gtk_icon_view_set_selection_mode()).\nIn addition to selection with the arrow keys, #GtkIconView supports\nrubberband selection, which is controlled by dragging the pointer.\n\nNote that if the tree model is backed by an actual tree store (as\nopposed to a flat list where the mapping to icons is obvious),\n#GtkIconView will only display the first level of the tree and\nignore the tree's branches."
+}

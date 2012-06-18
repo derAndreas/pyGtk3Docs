@@ -1,0 +1,489 @@
+{
+    "isAbstract": true, 
+    "leaf": true, 
+    "name": "IMContext", 
+    "text": "IMContext", 
+    "interfaces": [], 
+    "parents": [
+        "IMContext", 
+        "GObject.Object"
+    ], 
+    "members": {
+        "signals": [
+            {
+                "version": "", 
+                "when": "last", 
+                "name": "commit", 
+                "description": "The ::commit signal is emitted when a complete input sequence\nhas been entered by the user. This can be a single character\nimmediately after a key press or the final result of preediting."
+            }, 
+            {
+                "version": "", 
+                "when": "last", 
+                "name": "delete-surrounding", 
+                "description": "The ::delete-surrounding signal is emitted when the input method\nneeds to delete all or part of the context surrounding the cursor."
+            }, 
+            {
+                "version": "", 
+                "when": "last", 
+                "name": "preedit-changed", 
+                "description": "The ::preedit-changed signal is emitted whenever the preedit sequence\ncurrently being entered has changed.  It is also emitted at the end of\na preedit sequence, in which case\ngtk_im_context_get_preedit_string() returns the empty string."
+            }, 
+            {
+                "version": "", 
+                "when": "last", 
+                "name": "preedit-end", 
+                "description": "The ::preedit-end signal is emitted when a preediting sequence\nhas been completed or canceled."
+            }, 
+            {
+                "version": "", 
+                "when": "last", 
+                "name": "preedit-start", 
+                "description": "The ::preedit-start signal is emitted when a new preediting sequence\nstarts."
+            }, 
+            {
+                "version": "", 
+                "when": "last", 
+                "name": "retrieve-surrounding", 
+                "description": "The ::retrieve-surrounding signal is emitted when the input method\nrequires the context surrounding the cursor.  The callback should set\nthe input method surrounding context by calling the\ngtk_im_context_set_surrounding() method."
+            }
+        ], 
+        "methods": [
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE if the signal was handled."
+                }, 
+                "version": "", 
+                "name": "delete_surrounding", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "offset", 
+                        "description": "offset from cursor position in chars; a negative value means start before the cursor."
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "n_chars", 
+                        "description": "number of characters to delete."
+                    }
+                ], 
+                "description": "Asks the widget that the input context is attached to to delete\ncharacters around the cursor position by emitting the\nGtkIMContext::delete_surrounding signal. Note that @offset and @n_chars\nare in characters not in bytes which differs from the usage other\nplaces in #GtkIMContext.\n\nIn order to use this function, you should first call\ngtk_im_context_get_surrounding() to get the current context, and\ncall this function immediately afterwards to make sure that you\nknow what you are deleting. You should also account for the fact\nthat even if the signal was handled, the input context might not\nhave deleted all the characters that were requested to be deleted.\n\nThis function is used by an input method that wants to make\nsubsitutions in the existing text in response to new input. It is\nnot useful for applications."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE if the input method handled the key event."
+                }, 
+                "version": "", 
+                "name": "filter_keypress", 
+                "parameters": [
+                    {
+                        "type": "Gdk.EventKey", 
+                        "name": "event", 
+                        "description": "the key event"
+                    }
+                ], 
+                "description": "Allow an input method to internally handle key press and release \nevents. If this function returns %TRUE, then no further processing\nshould be done for this key event."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "focus_in", 
+                "parameters": null, 
+                "description": "Notify the input method that the widget to which this\ninput context corresponds has gained focus. The input method\nmay, for example, change the displayed feedback to reflect\nthis change."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "focus_out", 
+                "parameters": null, 
+                "description": "Notify the input method that the widget to which this\ninput context corresponds has lost focus. The input method\nmay, for example, change the displayed feedback or reset the contexts\nstate to reflect this change."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "get_preedit_string", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "str", 
+                        "description": "location to store the retrieved string. The string retrieved must be freed with g_free()."
+                    }, 
+                    {
+                        "type": "Pango.AttrList", 
+                        "name": "attrs", 
+                        "description": "location to store the retrieved attribute list.  When you are done with this list, you must unreference it with pango_attr_list_unref()."
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "cursor_pos", 
+                        "description": "location to store position of cursor (in characters) within the preedit string."
+                    }
+                ], 
+                "description": "Retrieve the current preedit string for the input context,\nand a list of attributes to apply to the string.\nThis string should be displayed inserted at the insertion\npoint."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE if surrounding text was provided; in this case"
+                }, 
+                "version": "", 
+                "name": "get_surrounding", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "text", 
+                        "description": "location to store a UTF-8 encoded string of text holding context around the insertion point. If the function returns %TRUE, then you must free the result stored in this location with g_free()."
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "cursor_index", 
+                        "description": "(out) location to store byte index of the insertion cursor within @text."
+                    }
+                ], 
+                "description": "Retrieves context around the insertion point. Input methods\ntypically want context in order to constrain input text based on\nexisting text; this is important for languages such as Thai where\nonly some sequences of characters are allowed.\n\nThis function is implemented by emitting the\nGtkIMContext::retrieve_surrounding signal on the input method; in\nresponse to this signal, a widget should provide as much context as\nis available, up to an entire paragraph, by calling\ngtk_im_context_set_surrounding(). Note that there is no obligation\nfor a widget to respond to the ::retrieve_surrounding signal, so input\nmethods must be prepared to function without context.\n\nyou must free the result stored in *text."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "reset", 
+                "parameters": null, 
+                "description": "Notify the input method that a change such as a change in cursor\nposition has been made. This will typically cause the input\nmethod to clear the preedit state."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_client_window", 
+                "parameters": [
+                    {
+                        "type": "Gdk.Window", 
+                        "name": "window", 
+                        "description": "the client window. This may be %NULL to indicate that the previous client window no longer exists."
+                    }
+                ], 
+                "description": "Set the client window for the input context; this is the\n#GdkWindow in which the input appears. This window is\nused in order to correctly position status windows, and may\nalso be used for purposes internal to the input method."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_cursor_location", 
+                "parameters": [
+                    {
+                        "type": "Gdk.Rectangle", 
+                        "name": "area", 
+                        "description": "new location"
+                    }
+                ], 
+                "description": "Notify the input method that a change in cursor \nposition has been made. The location is relative to the client\nwindow."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_surrounding", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "text", 
+                        "description": "text surrounding the insertion point, as UTF-8. the preedit string should not be included within @text."
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "len", 
+                        "description": "the length of @text, or -1 if @text is nul-terminated"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "cursor_index", 
+                        "description": "the byte index of the insertion cursor within @text."
+                    }
+                ], 
+                "description": "Sets surrounding context around the insertion point and preedit\nstring. This function is expected to be called in response to the\nGtkIMContext::retrieve_surrounding signal, and will likely have no\neffect if called at other times."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_use_preedit", 
+                "parameters": [
+                    {
+                        "type": "Boolean", 
+                        "name": "use_preedit", 
+                        "description": "whether the IM context should use the preedit string."
+                    }
+                ], 
+                "description": "Sets whether the IM context should use the preedit string\nto display feedback. If @use_preedit is FALSE (default\nis TRUE), then the IM context may use some other method to display\nfeedback, such as displaying it in a child of the root window."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "commit", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "str", 
+                        "description": ""
+                    }
+                ], 
+                "description": ""
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE if the signal was handled."
+                }, 
+                "version": "", 
+                "name": "delete_surrounding", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "offset", 
+                        "description": "offset from cursor position in chars; a negative value means start before the cursor."
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "n_chars", 
+                        "description": "number of characters to delete."
+                    }
+                ], 
+                "description": "Asks the widget that the input context is attached to to delete\ncharacters around the cursor position by emitting the\nGtkIMContext::delete_surrounding signal. Note that @offset and @n_chars\nare in characters not in bytes which differs from the usage other\nplaces in #GtkIMContext.\n\nIn order to use this function, you should first call\ngtk_im_context_get_surrounding() to get the current context, and\ncall this function immediately afterwards to make sure that you\nknow what you are deleting. You should also account for the fact\nthat even if the signal was handled, the input context might not\nhave deleted all the characters that were requested to be deleted.\n\nThis function is used by an input method that wants to make\nsubsitutions in the existing text in response to new input. It is\nnot useful for applications."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE if the input method handled the key event."
+                }, 
+                "version": "", 
+                "name": "filter_keypress", 
+                "parameters": [
+                    {
+                        "type": "Gdk.EventKey", 
+                        "name": "event", 
+                        "description": "the key event"
+                    }
+                ], 
+                "description": "Allow an input method to internally handle key press and release \nevents. If this function returns %TRUE, then no further processing\nshould be done for this key event."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "focus_in", 
+                "parameters": null, 
+                "description": "Notify the input method that the widget to which this\ninput context corresponds has gained focus. The input method\nmay, for example, change the displayed feedback to reflect\nthis change."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "focus_out", 
+                "parameters": null, 
+                "description": "Notify the input method that the widget to which this\ninput context corresponds has lost focus. The input method\nmay, for example, change the displayed feedback or reset the contexts\nstate to reflect this change."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "get_preedit_string", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "str", 
+                        "description": "location to store the retrieved string. The string retrieved must be freed with g_free()."
+                    }, 
+                    {
+                        "type": "Pango.AttrList", 
+                        "name": "attrs", 
+                        "description": "location to store the retrieved attribute list.  When you are done with this list, you must unreference it with pango_attr_list_unref()."
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "cursor_pos", 
+                        "description": "location to store position of cursor (in characters) within the preedit string."
+                    }
+                ], 
+                "description": "Retrieve the current preedit string for the input context,\nand a list of attributes to apply to the string.\nThis string should be displayed inserted at the insertion\npoint."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE if surrounding text was provided; in this case"
+                }, 
+                "version": "", 
+                "name": "get_surrounding", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "text", 
+                        "description": "location to store a UTF-8 encoded string of text holding context around the insertion point. If the function returns %TRUE, then you must free the result stored in this location with g_free()."
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "cursor_index", 
+                        "description": "(out) location to store byte index of the insertion cursor within @text."
+                    }
+                ], 
+                "description": "Retrieves context around the insertion point. Input methods\ntypically want context in order to constrain input text based on\nexisting text; this is important for languages such as Thai where\nonly some sequences of characters are allowed.\n\nThis function is implemented by emitting the\nGtkIMContext::retrieve_surrounding signal on the input method; in\nresponse to this signal, a widget should provide as much context as\nis available, up to an entire paragraph, by calling\ngtk_im_context_set_surrounding(). Note that there is no obligation\nfor a widget to respond to the ::retrieve_surrounding signal, so input\nmethods must be prepared to function without context.\n\nyou must free the result stored in *text."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "preedit_changed", 
+                "parameters": null, 
+                "description": ""
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "preedit_end", 
+                "parameters": null, 
+                "description": ""
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "preedit_start", 
+                "parameters": null, 
+                "description": ""
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "reset", 
+                "parameters": null, 
+                "description": "Notify the input method that a change such as a change in cursor\nposition has been made. This will typically cause the input\nmethod to clear the preedit state."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "retrieve_surrounding", 
+                "parameters": null, 
+                "description": ""
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_client_window", 
+                "parameters": [
+                    {
+                        "type": "Gdk.Window", 
+                        "name": "window", 
+                        "description": "the client window. This may be %NULL to indicate that the previous client window no longer exists."
+                    }
+                ], 
+                "description": "Set the client window for the input context; this is the\n#GdkWindow in which the input appears. This window is\nused in order to correctly position status windows, and may\nalso be used for purposes internal to the input method."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_cursor_location", 
+                "parameters": [
+                    {
+                        "type": "Gdk.Rectangle", 
+                        "name": "area", 
+                        "description": "new location"
+                    }
+                ], 
+                "description": "Notify the input method that a change in cursor \nposition has been made. The location is relative to the client\nwindow."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_surrounding", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "text", 
+                        "description": "text surrounding the insertion point, as UTF-8. the preedit string should not be included within @text."
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "len", 
+                        "description": "the length of @text, or -1 if @text is nul-terminated"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "cursor_index", 
+                        "description": "the byte index of the insertion cursor within @text."
+                    }
+                ], 
+                "description": "Sets surrounding context around the insertion point and preedit\nstring. This function is expected to be called in response to the\nGtkIMContext::retrieve_surrounding signal, and will likely have no\neffect if called at other times."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_use_preedit", 
+                "parameters": [
+                    {
+                        "type": "Boolean", 
+                        "name": "use_preedit", 
+                        "description": "whether the IM context should use the preedit string."
+                    }
+                ], 
+                "description": "Sets whether the IM context should use the preedit string\nto display feedback. If @use_preedit is FALSE (default\nis TRUE), then the IM context may use some other method to display\nfeedback, such as displaying it in a child of the root window."
+            }
+        ], 
+        "properties": []
+    }, 
+    "fullname": "Class Gtk.IMContext", 
+    "id": "Docs-IMContext", 
+    "description": "#GtkIMContext defines the interface for GTK+ input methods. An input method\nis used by GTK+ text input widgets like #GtkEntry to map from key events to\nUnicode character strings.\n\nThe user may change the current input method via a context menu, unless the   \n#GtkSettings:gtk-show-input-method-menu GtkSettings property is set to FALSE. \nThe default input method can be set programmatically via the \n#GtkSettings:gtk-im-module GtkSettings property. Alternatively, you may set \nthe GTK_IM_MODULE environment variable as documented in #gtk-running.\n\nThe #GtkEntry #GtkEntry:im-module and #GtkTextView #GtkTextView:im-module \nproperties may also be used to set input methods for specific widget \ninstances. For instance, a certain entry widget might be expected to contain \ncertain characters which would be easier to input with a certain input \nmethod.\n\nAn input method may consume multiple key events in sequence and finally\noutput the composed result. This is called preediting, and an input method\nmay provide feedback about this process by displaying the intermediate\ncomposition states as preedit text. For instance, the default GTK+ input\nmethod implements the input of arbitrary Unicode code points by holding down\nthe Control and Shift keys and then typing \"U\" followed by the hexadecimal\ndigits of the code point.  When releasing the Control and Shift keys,\npreediting ends and the character is inserted as text. Ctrl+Shift+u20AC for\nexample results in the \u20ac sign.\n\nAdditional input methods can be made available for use by GTK+ widgets as\nloadable modules. An input method module is a small shared library which\nimplements a subclass of #GtkIMContext or #GtkIMContextSimple and exports\nthese four functions:\n\n<informalexample><programlisting>\nvoid im_module_init(#GTypeModule *module);\n</programlisting></informalexample>\nThis function should register the #GType of the #GtkIMContext subclass which\nimplements the input method by means of g_type_module_register_type(). Note\nthat g_type_register_static() cannot be used as the type needs to be\nregistered dynamically.\n\n<informalexample><programlisting>\nvoid im_module_exit(void);\n</programlisting></informalexample>\nHere goes any cleanup code your input method might require on module unload.\n\n<informalexample><programlisting>\nvoid im_module_list(const #GtkIMContextInfo ***contexts, int *n_contexts)\n{\n*contexts = info_list;\n*n_contexts = G_N_ELEMENTS (info_list);\n}\n</programlisting></informalexample>\nThis function returns the list of input methods provided by the module. The\nexample implementation above shows a common solution and simply returns a\npointer to statically defined array of #GtkIMContextInfo items for each\nprovided input method.\n\n<informalexample><programlisting>\n#GtkIMContext * im_module_create(const #gchar *context_id);\n</programlisting></informalexample>\nThis function should return a pointer to a newly created instance of the\n#GtkIMContext subclass identified by @context_id. The context ID is the same\nas specified in the #GtkIMContextInfo array returned by im_module_list().\n\nAfter a new loadable input method module has been installed on the system,\nthe configuration file <filename>gtk.immodules</filename> needs to be\nregenerated by <link linkend=\"gtk-query-immodules-3.0\">gtk-query-immodules-3.0</link>,\nin order for the new input method to become available to GTK+ applications."
+}

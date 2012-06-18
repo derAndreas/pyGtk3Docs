@@ -1,0 +1,45 @@
+{
+    "leaf": true, 
+    "name": "StateFlags", 
+    "text": "StateFlags", 
+    "version": null, 
+    "members": {
+        "properties": [
+            {
+                "name": "normal", 
+                "value": "0"
+            }, 
+            {
+                "name": "active", 
+                "value": "1"
+            }, 
+            {
+                "name": "prelight", 
+                "value": "2"
+            }, 
+            {
+                "name": "selected", 
+                "value": "4"
+            }, 
+            {
+                "name": "insensitive", 
+                "value": "8"
+            }, 
+            {
+                "name": "inconsistent", 
+                "value": "16"
+            }, 
+            {
+                "name": "focused", 
+                "value": "32"
+            }, 
+            {
+                "name": "backdrop", 
+                "value": "64"
+            }
+        ]
+    }, 
+    "fullname": "Bitfield Gtk.StateFlags", 
+    "id": "Docs-StateFlags", 
+    "description": ""
+}

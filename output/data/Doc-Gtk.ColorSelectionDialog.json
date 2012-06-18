@@ -1,0 +1,86 @@
+{
+    "isAbstract": false, 
+    "leaf": true, 
+    "name": "ColorSelectionDialog", 
+    "text": "ColorSelectionDialog", 
+    "interfaces": [
+        [
+            "Atk.ImplementorIface"
+        ], 
+        [
+            "Buildable"
+        ]
+    ], 
+    "parents": [
+        "ColorSelectionDialog", 
+        "Dialog", 
+        "Window", 
+        "Bin", 
+        "Container", 
+        "Widget", 
+        "GObject.InitiallyUnowned"
+    ], 
+    "members": {
+        "signals": [], 
+        "methods": [
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a #GtkColorSelectionDialog.", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": null, 
+                "name": "Gtk.ColorSelectionDialog(String title)", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "title"
+                    }
+                ]
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.Widget", 
+                    "description": "the embedded #GtkColorSelection"
+                }, 
+                "version": "2.14", 
+                "name": "get_color_selection", 
+                "parameters": null, 
+                "description": "Retrieves the #GtkColorSelection widget embedded in the dialog."
+            }
+        ], 
+        "properties": [
+            {
+                "writable": false, 
+                "type": "Gtk.Widget", 
+                "readable": false, 
+                "name": "cancel-button", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Gtk.Widget", 
+                "readable": false, 
+                "name": "color-selection", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Gtk.Widget", 
+                "readable": false, 
+                "name": "help-button", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Gtk.Widget", 
+                "readable": false, 
+                "name": "ok-button", 
+                "description": ""
+            }
+        ]
+    }, 
+    "fullname": "Class Gtk.ColorSelectionDialog", 
+    "id": "Docs-ColorSelectionDialog", 
+    "description": ""
+}

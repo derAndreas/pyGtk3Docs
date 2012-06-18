@@ -1,0 +1,46 @@
+{
+    "isAbstract": false, 
+    "leaf": true, 
+    "name": "VButtonBox", 
+    "text": "VButtonBox", 
+    "interfaces": [
+        [
+            "Atk.ImplementorIface"
+        ], 
+        [
+            "Buildable"
+        ], 
+        [
+            "Orientable"
+        ]
+    ], 
+    "parents": [
+        "VButtonBox", 
+        "ButtonBox", 
+        "Box", 
+        "Container", 
+        "Widget", 
+        "GObject.InitiallyUnowned"
+    ], 
+    "members": {
+        "signals": [], 
+        "methods": [
+            {
+                "returns": {
+                    "doc": "a new button box #GtkWidget.", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": null, 
+                "name": "Gtk.VButtonBox()", 
+                "parameters": null, 
+                "deprecated": "Use gtk_button_box_new() with %GTK_ORIENTATION_VERTICAL instead", 
+                "deprecated_version": "3.2", 
+                "isConstructor": true
+            }
+        ], 
+        "properties": []
+    }, 
+    "fullname": "Class Gtk.VButtonBox", 
+    "id": "Docs-VButtonBox", 
+    "description": ""
+}

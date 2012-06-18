@@ -1,0 +1,1081 @@
+{
+    "isAbstract": false, 
+    "leaf": true, 
+    "name": "Notebook", 
+    "text": "Notebook", 
+    "interfaces": [
+        [
+            "Atk.ImplementorIface"
+        ], 
+        [
+            "Buildable"
+        ]
+    ], 
+    "parents": [
+        "Notebook", 
+        "Container", 
+        "Widget", 
+        "GObject.InitiallyUnowned"
+    ], 
+    "members": {
+        "signals": [
+            {
+                "version": "", 
+                "when": "last", 
+                "name": "change-current-page", 
+                "description": ""
+            }, 
+            {
+                "version": "2.12", 
+                "when": "last", 
+                "name": "create-window", 
+                "description": "The ::create-window signal is emitted when a detachable\ntab is dropped on the root window.\n\nA handler for this signal can create a window containing\na notebook where the tab will be attached. It is also\nresponsible for moving/resizing the window and adding the\nnecessary properties to the notebook (e.g. the\n#GtkNotebook:group ).\n\nadded to, or %NULL."
+            }, 
+            {
+                "version": "", 
+                "when": "last", 
+                "name": "focus-tab", 
+                "description": ""
+            }, 
+            {
+                "version": "", 
+                "when": "last", 
+                "name": "move-focus-out", 
+                "description": ""
+            }, 
+            {
+                "version": "2.10", 
+                "when": "last", 
+                "name": "page-added", 
+                "description": "the ::page-added signal is emitted in the notebook\nright after a page is added to the notebook."
+            }, 
+            {
+                "version": "2.10", 
+                "when": "last", 
+                "name": "page-removed", 
+                "description": "the ::page-removed signal is emitted in the notebook\nright after a page is removed from the notebook."
+            }, 
+            {
+                "version": "2.10", 
+                "when": "last", 
+                "name": "page-reordered", 
+                "description": "the ::page-reordered signal is emitted in the notebook\nright after a page has been reordered."
+            }, 
+            {
+                "version": "", 
+                "when": "last", 
+                "name": "reorder-tab", 
+                "description": ""
+            }, 
+            {
+                "version": "", 
+                "when": "last", 
+                "name": "select-page", 
+                "description": ""
+            }, 
+            {
+                "version": "", 
+                "when": "last", 
+                "name": "switch-page", 
+                "description": "Emitted when the user or a function changes the current page."
+            }
+        ], 
+        "methods": [
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "the newly created #GtkNotebook", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": null, 
+                "name": "Gtk.Notebook()", 
+                "parameters": null
+            }, 
+            {
+                "returns": {
+                    "type": "Integer", 
+                    "description": "the index (starting from 0) of the appended"
+                }, 
+                "version": "", 
+                "name": "append_page", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "child", 
+                        "description": "the #GtkWidget to use as the contents of the page"
+                    }, 
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "tab_label", 
+                        "description": "the #GtkWidget to be used as the label for the page, or %NULL to use the default label, 'page N'"
+                    }
+                ], 
+                "description": "Appends a page to @notebook.\n\npage in the notebook, or -1 if function fails"
+            }, 
+            {
+                "returns": {
+                    "type": "Integer", 
+                    "description": "the index (starting from 0) of the appended"
+                }, 
+                "version": "", 
+                "name": "append_page_menu", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "child", 
+                        "description": "the #GtkWidget to use as the contents of the page"
+                    }, 
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "tab_label", 
+                        "description": "the #GtkWidget to be used as the label for the page, or %NULL to use the default label, 'page N'"
+                    }, 
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "menu_label", 
+                        "description": "the widget to use as a label for the page-switch menu, if that is enabled. If %NULL, and @tab_label is a #GtkLabel or %NULL, then the menu label will be a newly created label with the same text as @tab_label; if @tab_label is not a #GtkLabel, @menu_label must be specified if the page-switch menu is to be used."
+                    }
+                ], 
+                "description": "Appends a page to @notebook, specifying the widget to use as the\nlabel in the popup menu.\n\npage in the notebook, or -1 if function fails"
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.Widget", 
+                    "description": "The action widget with the given @pack_type"
+                }, 
+                "version": "2.20", 
+                "name": "get_action_widget", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.PackType", 
+                        "name": "pack_type", 
+                        "description": "pack type of the action widget to receive"
+                    }
+                ], 
+                "description": "Gets one of the action widgets. See gtk_notebook_set_action_widget().\n\nor %NULL when this action widget has not been set"
+            }, 
+            {
+                "returns": {
+                    "type": "Integer", 
+                    "description": "the index (starting from 0) of the current"
+                }, 
+                "version": "", 
+                "name": "get_current_page", 
+                "parameters": null, 
+                "description": "Returns the page number of the current page.\n\npage in the notebook. If the notebook has no pages,\nthen -1 will be returned."
+            }, 
+            {
+                "returns": {
+                    "type": "String", 
+                    "description": "the group name,"
+                }, 
+                "version": "2.24", 
+                "name": "get_group_name", 
+                "parameters": null, 
+                "description": "Gets the current group name for @notebook.\n\nor %NULL if none is set."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.Widget", 
+                    "description": "the menu label, or %NULL if the"
+                }, 
+                "version": "", 
+                "name": "get_menu_label", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "child", 
+                        "description": "a widget contained in a page of @notebook"
+                    }
+                ], 
+                "description": "Retrieves the menu label widget of the page containing @child.\n\nnotebook page does not have a menu label other than the\ndefault (the tab label)."
+            }, 
+            {
+                "returns": {
+                    "type": "String", 
+                    "description": "the text of the tab label, or %NULL if the"
+                }, 
+                "version": "", 
+                "name": "get_menu_label_text", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "child", 
+                        "description": "the child widget of a page of the notebook."
+                    }
+                ], 
+                "description": "Retrieves the text of the menu label for the page containing\n@child.\n\nwidget does not have a menu label other than the default\nmenu label, or the menu label widget is not a #GtkLabel.\nThe string is owned by the widget and must not be freed."
+            }, 
+            {
+                "returns": {
+                    "type": "Integer", 
+                    "description": "the number of pages in the notebook"
+                }, 
+                "version": "2.2", 
+                "name": "get_n_pages", 
+                "parameters": null, 
+                "description": "Gets the number of pages in a notebook."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.Widget", 
+                    "description": "the child widget, or %NULL"
+                }, 
+                "version": "", 
+                "name": "get_nth_page", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "page_num", 
+                        "description": "the index of a page in the notebook, or -1 to get the last page"
+                    }
+                ], 
+                "description": "Returns the child widget contained in page number @page_num.\n\nif @page_num is out of bounds"
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE if arrows for scrolling are present"
+                }, 
+                "version": "", 
+                "name": "get_scrollable", 
+                "parameters": null, 
+                "description": "Returns whether the tab label area has arrows for scrolling.\nSee gtk_notebook_set_scrollable()."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE if the bevel is drawn"
+                }, 
+                "version": "", 
+                "name": "get_show_border", 
+                "parameters": null, 
+                "description": "Returns whether a bevel will be drawn around the notebook pages.\nSee gtk_notebook_set_show_border()."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE if the tabs are shown"
+                }, 
+                "version": "", 
+                "name": "get_show_tabs", 
+                "parameters": null, 
+                "description": "Returns whether the tabs of the notebook are shown.\nSee gtk_notebook_set_show_tabs()."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE if the tab is detachable."
+                }, 
+                "version": "2.10", 
+                "name": "get_tab_detachable", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "child", 
+                        "description": "a child #GtkWidget"
+                    }
+                ], 
+                "description": "Returns whether the tab contents can be detached from @notebook."
+            }, 
+            {
+                "returns": {
+                    "type": "Integer", 
+                    "description": "horizontal width of a tab border"
+                }, 
+                "version": "2.22", 
+                "name": "get_tab_hborder", 
+                "parameters": null, 
+                "description": "Returns the horizontal width of a tab border."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.Widget", 
+                    "description": "the tab label"
+                }, 
+                "version": "", 
+                "name": "get_tab_label", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "child", 
+                        "description": "the page"
+                    }
+                ], 
+                "description": "Returns the tab label widget for the page @child.\n%NULL is returned if @child is not in @notebook or\nif no tab label has specifically been set for @child."
+            }, 
+            {
+                "returns": {
+                    "type": "String", 
+                    "description": "the text of the tab label, or %NULL if the"
+                }, 
+                "version": "", 
+                "name": "get_tab_label_text", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "child", 
+                        "description": "a widget contained in a page of @notebook"
+                    }
+                ], 
+                "description": "Retrieves the text of the tab label for the page containing\n@child.\n\ntab label widget is not a #GtkLabel. The string is owned\nby the widget and must not be freed."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.PositionType", 
+                    "description": "the edge at which the tabs are drawn"
+                }, 
+                "version": "", 
+                "name": "get_tab_pos", 
+                "parameters": null, 
+                "description": "Gets the edge at which the tabs for switching pages in the\nnotebook are drawn."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE if the tab is reorderable."
+                }, 
+                "version": "2.10", 
+                "name": "get_tab_reorderable", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "child", 
+                        "description": "a child #GtkWidget"
+                    }
+                ], 
+                "description": "Gets whether the tab can be reordered via drag and drop or not."
+            }, 
+            {
+                "returns": {
+                    "type": "Integer", 
+                    "description": "vertical width of a tab border"
+                }, 
+                "version": "2.22", 
+                "name": "get_tab_vborder", 
+                "parameters": null, 
+                "description": "Returns the vertical width of a tab border."
+            }, 
+            {
+                "returns": {
+                    "type": "Integer", 
+                    "description": "the index (starting from 0) of the inserted"
+                }, 
+                "version": "", 
+                "name": "insert_page", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "child", 
+                        "description": "the #GtkWidget to use as the contents of the page"
+                    }, 
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "tab_label", 
+                        "description": "the #GtkWidget to be used as the label for the page, or %NULL to use the default label, 'page N'"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "position", 
+                        "description": "the index (starting at 0) at which to insert the page, or -1 to append the page after all other pages"
+                    }
+                ], 
+                "description": "Insert a page into @notebook at the given position.\n\npage in the notebook, or -1 if function fails"
+            }, 
+            {
+                "returns": {
+                    "type": "Integer", 
+                    "description": "the index (starting from 0) of the inserted"
+                }, 
+                "version": "", 
+                "name": "insert_page_menu", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "child", 
+                        "description": "the #GtkWidget to use as the contents of the page"
+                    }, 
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "tab_label", 
+                        "description": "the #GtkWidget to be used as the label for the page, or %NULL to use the default label, 'page N'"
+                    }, 
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "menu_label", 
+                        "description": "the widget to use as a label for the page-switch menu, if that is enabled. If %NULL, and @tab_label is a #GtkLabel or %NULL, then the menu label will be a newly created label with the same text as @tab_label; if @tab_label is not a #GtkLabel, @menu_label must be specified if the page-switch menu is to be used."
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "position", 
+                        "description": "the index (starting at 0) at which to insert the page, or -1 to append the page after all other pages."
+                    }
+                ], 
+                "description": "Insert a page into @notebook at the given position, specifying\nthe widget to use as the label in the popup menu.\n\npage in the notebook"
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "next_page", 
+                "parameters": null, 
+                "description": "Switches to the next page. Nothing happens if the current page is\nthe last page."
+            }, 
+            {
+                "returns": {
+                    "type": "Integer", 
+                    "description": "the index of the page containing @child, or"
+                }, 
+                "version": "", 
+                "name": "page_num", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "child", 
+                        "description": "a #GtkWidget"
+                    }
+                ], 
+                "description": "Finds the index of the page which contains the given child\nwidget.\n\n-1 if @child is not in the notebook"
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "popup_disable", 
+                "parameters": null, 
+                "description": "Disables the popup menu."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "popup_enable", 
+                "parameters": null, 
+                "description": "Enables the popup menu: if the user clicks with the right\nmouse button on the tab labels, a menu with all the pages\nwill be popped up."
+            }, 
+            {
+                "returns": {
+                    "type": "Integer", 
+                    "description": "the index (starting from 0) of the prepended"
+                }, 
+                "version": "", 
+                "name": "prepend_page", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "child", 
+                        "description": "the #GtkWidget to use as the contents of the page"
+                    }, 
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "tab_label", 
+                        "description": "the #GtkWidget to be used as the label for the page, or %NULL to use the default label, 'page N'"
+                    }
+                ], 
+                "description": "Prepends a page to @notebook.\n\npage in the notebook, or -1 if function fails"
+            }, 
+            {
+                "returns": {
+                    "type": "Integer", 
+                    "description": "the index (starting from 0) of the prepended"
+                }, 
+                "version": "", 
+                "name": "prepend_page_menu", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "child", 
+                        "description": "the #GtkWidget to use as the contents of the page"
+                    }, 
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "tab_label", 
+                        "description": "the #GtkWidget to be used as the label for the page, or %NULL to use the default label, 'page N'"
+                    }, 
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "menu_label", 
+                        "description": "the widget to use as a label for the page-switch menu, if that is enabled. If %NULL, and @tab_label is a #GtkLabel or %NULL, then the menu label will be a newly created label with the same text as @tab_label; if @tab_label is not a #GtkLabel, @menu_label must be specified if the page-switch menu is to be used."
+                    }
+                ], 
+                "description": "Prepends a page to @notebook, specifying the widget to use as the\nlabel in the popup menu.\n\npage in the notebook, or -1 if function fails"
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "prev_page", 
+                "parameters": null, 
+                "description": "Switches to the previous page. Nothing happens if the current page\nis the first page."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "remove_page", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "page_num", 
+                        "description": "the index of a notebook page, starting from 0. If -1, the last page will be removed."
+                    }
+                ], 
+                "description": "Removes a page from the notebook given its index\nin the notebook."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "reorder_child", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "child", 
+                        "description": "the child to move"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "position", 
+                        "description": "the new position, or -1 to move to the end"
+                    }
+                ], 
+                "description": "Reorders the page containing @child, so that it appears in position\n@position. If @position is greater than or equal to the number of\nchildren in the list or negative, @child will be moved to the end\nof the list."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.20", 
+                "name": "set_action_widget", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "widget", 
+                        "description": "a #GtkWidget"
+                    }, 
+                    {
+                        "type": "ref:Gtk.PackType", 
+                        "name": "pack_type", 
+                        "description": "pack type of the action widget"
+                    }
+                ], 
+                "description": "Sets @widget as one of the action widgets. Depending on the pack type\nthe widget will be placed before or after the tabs. You can use\na #GtkBox if you need to pack more than one widget on the same side.\n\nNote that action widgets are \"internal\" children of the notebook and thus\nnot included in the list returned from gtk_container_foreach()."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_current_page", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "page_num", 
+                        "description": "index of the page to switch to, starting from 0. If negative, the last page will be used. If greater than the number of pages in the notebook, nothing will be done."
+                    }
+                ], 
+                "description": "Switches to the page number @page_num.\n\nNote that due to historical reasons, GtkNotebook refuses\nto switch to a page unless the child widget is visible.\nTherefore, it is recommended to show child widgets before\nadding them to a notebook."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.24", 
+                "name": "set_group_name", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "group_name", 
+                        "description": "the name of the notebook group, or %NULL to unset it"
+                    }
+                ], 
+                "description": "Sets a group name for @notebook.\n\nNotebooks with the same name will be able to exchange tabs\nvia drag and drop. A notebook with a %NULL group name will\nnot be able to exchange tabs with any other notebook."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_menu_label", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "child", 
+                        "description": "the child widget"
+                    }, 
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "menu_label", 
+                        "description": "the menu label, or %NULL for default"
+                    }
+                ], 
+                "description": "Changes the menu label for the page containing @child."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_menu_label_text", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "child", 
+                        "description": "the child widget"
+                    }, 
+                    {
+                        "type": "String", 
+                        "name": "menu_text", 
+                        "description": "the label text"
+                    }
+                ], 
+                "description": "Creates a new label and sets it as the menu label of @child."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_scrollable", 
+                "parameters": [
+                    {
+                        "type": "Boolean", 
+                        "name": "scrollable", 
+                        "description": "%TRUE if scroll arrows should be added"
+                    }
+                ], 
+                "description": "Sets whether the tab label area will have arrows for\nscrolling if there are too many tabs to fit in the area."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_show_border", 
+                "parameters": [
+                    {
+                        "type": "Boolean", 
+                        "name": "show_border", 
+                        "description": "%TRUE if a bevel should be drawn around the notebook"
+                    }
+                ], 
+                "description": "Sets whether a bevel will be drawn around the notebook pages.\nThis only has a visual effect when the tabs are not shown.\nSee gtk_notebook_set_show_tabs()."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_show_tabs", 
+                "parameters": [
+                    {
+                        "type": "Boolean", 
+                        "name": "show_tabs", 
+                        "description": "%TRUE if the tabs should be shown"
+                    }
+                ], 
+                "description": "Sets whether to show the tabs for the notebook or not."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.10", 
+                "name": "set_tab_detachable", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "child", 
+                        "description": "a child #GtkWidget"
+                    }, 
+                    {
+                        "type": "Boolean", 
+                        "name": "detachable", 
+                        "description": "whether the tab is detachable or not"
+                    }
+                ], 
+                "description": "Sets whether the tab can be detached from @notebook to another\nnotebook or widget.\n\nNote that 2 notebooks must share a common group identificator\n(see gtk_notebook_set_group_name()) to allow automatic tabs\ninterchange between them.\n\nIf you want a widget to interact with a notebook through DnD\n(i.e.: accept dragged tabs from it) it must be set as a drop\ndestination and accept the target \"GTK_NOTEBOOK_TAB\". The notebook\nwill fill the selection with a GtkWidget** pointing to the child\nwidget that corresponds to the dropped tab.\n|[\nstatic void\non_drop_zone_drag_data_received (GtkWidget        *widget,\nGdkDragContext   *context,\ngint              x,\ngint              y,\nGtkSelectionData *selection_data,\nguint             info,\nguint             time,\ngpointer          user_data)\n{\nGtkWidget *notebook;\nGtkWidget **child;\n\nnotebook = gtk_drag_get_source_widget (context);\nchild = (void*) gtk_selection_data_get_data (selection_data);\n\nprocess_widget (*child);\ngtk_container_remove (GTK_CONTAINER (notebook), *child);\n}\n]|\n\nIf you want a notebook to accept drags from other widgets,\nyou will have to set your own DnD code to do it."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_tab_label", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "child", 
+                        "description": "the page"
+                    }, 
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "tab_label", 
+                        "description": "the tab label widget to use, or %NULL for default tab label"
+                    }
+                ], 
+                "description": "Changes the tab label for @child.\nIf %NULL is specified for @tab_label, then the page will\nhave the label 'page N'."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_tab_label_text", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "child", 
+                        "description": "the page"
+                    }, 
+                    {
+                        "type": "String", 
+                        "name": "tab_text", 
+                        "description": "the label text"
+                    }
+                ], 
+                "description": "Creates a new label and sets it as the tab label for the page\ncontaining @child."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_tab_pos", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.PositionType", 
+                        "name": "pos", 
+                        "description": "the edge to draw the tabs at"
+                    }
+                ], 
+                "description": "Sets the edge at which the tabs for switching pages in the\nnotebook are drawn."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.10", 
+                "name": "set_tab_reorderable", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "child", 
+                        "description": "a child #GtkWidget"
+                    }, 
+                    {
+                        "type": "Boolean", 
+                        "name": "reorderable", 
+                        "description": "whether the tab is reorderable or not"
+                    }
+                ], 
+                "description": "Sets whether the notebook tab can be reordered\nvia drag and drop or not."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "change_current_page", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "offset", 
+                        "description": ""
+                    }
+                ], 
+                "description": ""
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.Notebook", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "create_window", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "page", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "x", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "y", 
+                        "description": ""
+                    }
+                ], 
+                "description": ""
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "focus_tab", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.NotebookTab", 
+                        "name": "type", 
+                        "description": ""
+                    }
+                ], 
+                "description": ""
+            }, 
+            {
+                "returns": {
+                    "type": "Integer", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "insert_page", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "child", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "tab_label", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "menu_label", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "position", 
+                        "description": ""
+                    }
+                ], 
+                "description": ""
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "move_focus_out", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.DirectionType", 
+                        "name": "direction", 
+                        "description": ""
+                    }
+                ], 
+                "description": ""
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "page_added", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "child", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "page_num", 
+                        "description": ""
+                    }
+                ], 
+                "description": ""
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "page_removed", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "child", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "page_num", 
+                        "description": ""
+                    }
+                ], 
+                "description": ""
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "page_reordered", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "child", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "page_num", 
+                        "description": ""
+                    }
+                ], 
+                "description": ""
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "reorder_tab", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.DirectionType", 
+                        "name": "direction", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Boolean", 
+                        "name": "move_to_last", 
+                        "description": ""
+                    }
+                ], 
+                "description": ""
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "select_page", 
+                "parameters": [
+                    {
+                        "type": "Boolean", 
+                        "name": "move_focus", 
+                        "description": ""
+                    }
+                ], 
+                "description": ""
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "switch_page", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "page", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "page_num", 
+                        "description": ""
+                    }
+                ], 
+                "description": ""
+            }
+        ], 
+        "properties": [
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "enable-popup", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "String", 
+                "readable": false, 
+                "name": "group-name", 
+                "description": "Group name for tab drag and drop."
+            }, 
+            {
+                "writable": false, 
+                "type": "Integer", 
+                "readable": false, 
+                "name": "page", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "scrollable", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "show-border", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "show-tabs", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Gtk.PositionType", 
+                "readable": false, 
+                "name": "tab-pos", 
+                "description": ""
+            }
+        ]
+    }, 
+    "fullname": "Class Gtk.Notebook", 
+    "id": "Docs-Notebook", 
+    "description": "The #GtkNotebook widget is a #GtkContainer whose children are pages that\ncan be switched between using tab labels along one edge.\n\nThere are many configuration options for GtkNotebook. Among other\nthings, you can choose on which edge the tabs appear\n(see gtk_notebook_set_tab_pos()), whether, if there are too many\ntabs to fit the notebook should be made bigger or scrolling\narrows added (see gtk_notebook_set_scrollable()), and whether there\nwill be a popup menu allowing the users to switch pages.\n(see gtk_notebook_popup_enable(), gtk_notebook_popup_disable())\n\n<refsect2 id=\"GtkNotebook-BUILDER-UI\">\n<title>GtkNotebook as GtkBuildable</title>\n<para>\nThe GtkNotebook implementation of the #GtkBuildable interface\nsupports placing children into tabs by specifying \"tab\" as the\n\"type\" attribute of a &lt;child&gt; element. Note that the content\nof the tab must be created before the tab can be filled.\nA tab child can be specified without specifying a &lt;child&gt;\ntype attribute.\n\nTo add a child widget in the notebooks action area, specify\n\"action-start\" or \"action-end\" as the \"type\" attribute of the &lt;child&gt;\nelement.\n</para>\n<example>\n<title>A UI definition fragment with GtkNotebook</title>\n<programlisting><![CDATA[\n<object class=\"GtkNotebook\">\n<child>\n<object class=\"GtkLabel\" id=\"notebook-content\">\n<property name=\"label\">Content</property>\n</object>\n</child>\n<child type=\"tab\">\n<object class=\"GtkLabel\" id=\"notebook-tab\">\n<property name=\"label\">Tab</property>\n</object>\n</child>\n</object>\n]]></programlisting>\n</example>\n</refsect2>"
+}

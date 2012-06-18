@@ -1,0 +1,233 @@
+{
+    "isAbstract": false, 
+    "leaf": true, 
+    "name": "ScaleButton", 
+    "text": "ScaleButton", 
+    "interfaces": [
+        [
+            "Atk.ImplementorIface"
+        ], 
+        [
+            "Actionable"
+        ], 
+        [
+            "Activatable"
+        ], 
+        [
+            "Buildable"
+        ], 
+        [
+            "Orientable"
+        ]
+    ], 
+    "parents": [
+        "ScaleButton", 
+        "Button", 
+        "Bin", 
+        "Container", 
+        "Widget", 
+        "GObject.InitiallyUnowned"
+    ], 
+    "members": {
+        "signals": [
+            {
+                "version": "2.12", 
+                "when": "last", 
+                "name": "popdown", 
+                "description": "The ::popdown signal is a\n<link linkend=\"keybinding-signals\">keybinding signal</link>\nwhich gets emitted to popdown the scale widget.\n\nThe default binding for this signal is Escape."
+            }, 
+            {
+                "version": "2.12", 
+                "when": "last", 
+                "name": "popup", 
+                "description": "The ::popup signal is a\n<link linkend=\"keybinding-signals\">keybinding signal</link>\nwhich gets emitted to popup the scale widget.\n\nThe default bindings for this signal are Space, Enter and Return."
+            }, 
+            {
+                "version": "2.12", 
+                "when": "last", 
+                "name": "value-changed", 
+                "description": "The ::value-changed signal is emitted when the value field has\nchanged."
+            }
+        ], 
+        "methods": [
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a new #GtkScaleButton", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": "2.12", 
+                "name": "Gtk.ScaleButton(Gtk.IconSize size, Float min, Float max, Float step, String[] icons)", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.IconSize", 
+                        "name": "size"
+                    }, 
+                    {
+                        "type": "Float", 
+                        "name": "min"
+                    }, 
+                    {
+                        "type": "Float", 
+                        "name": "max"
+                    }, 
+                    {
+                        "type": "Float", 
+                        "name": "step"
+                    }, 
+                    {
+                        "type": "String[]", 
+                        "name": "icons"
+                    }
+                ]
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.Adjustment", 
+                    "description": "the adjustment associated with the scale"
+                }, 
+                "version": "2.12", 
+                "name": "get_adjustment", 
+                "parameters": null, 
+                "description": "Gets the #GtkAdjustment associated with the #GtkScaleButton's scale.\nSee gtk_range_get_adjustment() for details."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.Widget", 
+                    "description": "the minus button of the #GtkScaleButton"
+                }, 
+                "version": "2.14", 
+                "name": "get_minus_button", 
+                "parameters": null, 
+                "description": "Retrieves the minus button of the #GtkScaleButton."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.Widget", 
+                    "description": "the plus button of the #GtkScaleButton"
+                }, 
+                "version": "2.14", 
+                "name": "get_plus_button", 
+                "parameters": null, 
+                "description": "Retrieves the plus button of the #GtkScaleButton."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.Widget", 
+                    "description": "the popup of the #GtkScaleButton"
+                }, 
+                "version": "2.14", 
+                "name": "get_popup", 
+                "parameters": null, 
+                "description": "Retrieves the popup of the #GtkScaleButton."
+            }, 
+            {
+                "returns": {
+                    "type": "Float", 
+                    "description": "current value of the scale button"
+                }, 
+                "version": "2.12", 
+                "name": "get_value", 
+                "parameters": null, 
+                "description": "Gets the current value of the scale button."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.12", 
+                "name": "set_adjustment", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Adjustment", 
+                        "name": "adjustment", 
+                        "description": "a #GtkAdjustment"
+                    }
+                ], 
+                "description": "Sets the #GtkAdjustment to be used as a model\nfor the #GtkScaleButton's scale.\nSee gtk_range_set_adjustment() for details."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.12", 
+                "name": "set_icons", 
+                "parameters": [
+                    {
+                        "type": "String[]", 
+                        "name": "icons", 
+                        "description": "a %NULL-terminated array of icon names"
+                    }
+                ], 
+                "description": "Sets the icons to be used by the scale button.\nFor details, see the #GtkScaleButton:icons property."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.12", 
+                "name": "set_value", 
+                "parameters": [
+                    {
+                        "type": "Float", 
+                        "name": "value", 
+                        "description": "new value of the scale button"
+                    }
+                ], 
+                "description": "Sets the current value of the scale; if the value is outside\nthe minimum or maximum range values, it will be clamped to fit\ninside them. The scale button emits the #GtkScaleButton::value-changed\nsignal if the value changes."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "value_changed", 
+                "parameters": [
+                    {
+                        "type": "Float", 
+                        "name": "value", 
+                        "description": ""
+                    }
+                ], 
+                "description": ""
+            }
+        ], 
+        "properties": [
+            {
+                "writable": false, 
+                "type": "Gtk.Adjustment", 
+                "readable": false, 
+                "name": "adjustment", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "String[]", 
+                "readable": false, 
+                "name": "icons", 
+                "description": "The names of the icons to be used by the scale button.\nThe first item in the array will be used in the button\nwhen the current value is the lowest value, the second\nitem for the highest value. All the subsequent icons will\nbe used for all the other values, spread evenly over the\nrange of values.\n\nIf there's only one icon name in the @icons array, it will\nbe used for all the values. If only two icon names are in\nthe @icons array, the first one will be used for the bottom\n50% of the scale, and the second one for the top 50%.\n\nIt is recommended to use at least 3 icons so that the\n#GtkScaleButton reflects the current value of the scale\nbetter for the users."
+            }, 
+            {
+                "writable": false, 
+                "type": "Gtk.IconSize", 
+                "readable": false, 
+                "name": "size", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Float", 
+                "readable": false, 
+                "name": "value", 
+                "description": ""
+            }
+        ]
+    }, 
+    "fullname": "Class Gtk.ScaleButton", 
+    "id": "Docs-ScaleButton", 
+    "description": "#GtkScaleButton provides a button which pops up a scale widget.\nThis kind of widget is commonly used for volume controls in multimedia\napplications, and GTK+ provides a #GtkVolumeButton subclass that\nis tailored for this use case."
+}

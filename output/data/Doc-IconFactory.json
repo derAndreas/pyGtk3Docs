@@ -1,0 +1,91 @@
+{
+    "isAbstract": false, 
+    "leaf": true, 
+    "name": "IconFactory", 
+    "text": "IconFactory", 
+    "interfaces": [
+        [
+            "Buildable"
+        ]
+    ], 
+    "parents": [
+        "IconFactory", 
+        "GObject.Object"
+    ], 
+    "members": {
+        "signals": [], 
+        "methods": [
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a new #GtkIconFactory", 
+                    "name": "ref:Gtk.IconFactory"
+                }, 
+                "version": null, 
+                "name": "Gtk.IconFactory()", 
+                "parameters": null
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "add", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "stock_id", 
+                        "description": "icon name"
+                    }, 
+                    {
+                        "type": "ref:Gtk.IconSet", 
+                        "name": "icon_set", 
+                        "description": "icon set"
+                    }
+                ], 
+                "description": "Adds the given @icon_set to the icon factory, under the name\n@stock_id.  @stock_id should be namespaced for your application,\ne.g. \"myapp-whatever-icon\".  Normally applications create a\n#GtkIconFactory, then add it to the list of default factories with\ngtk_icon_factory_add_default(). Then they pass the @stock_id to\nwidgets such as #GtkImage to display the icon. Themes can provide\nan icon with the same name (such as \"myapp-whatever-icon\") to\noverride your application's default icons. If an icon already\nexisted in @factory for @stock_id, it is unreferenced and replaced\nwith the new @icon_set."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "add_default", 
+                "parameters": null, 
+                "description": "Adds an icon factory to the list of icon factories searched by\ngtk_style_lookup_icon_set(). This means that, for example,\ngtk_image_new_from_stock() will be able to find icons in @factory.\nThere will normally be an icon factory added for each library or\napplication that comes with icons. The default icon factories\ncan be overridden by themes."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.IconSet", 
+                    "description": "icon set of @stock_id."
+                }, 
+                "version": "", 
+                "name": "lookup", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "stock_id", 
+                        "description": "an icon name"
+                    }
+                ], 
+                "description": "Looks up @stock_id in the icon factory, returning an icon set\nif found, otherwise %NULL. For display to the user, you should\nuse gtk_style_lookup_icon_set() on the #GtkStyle for the\nwidget that will display the icon, instead of using this\nfunction directly, so that themes are taken into account."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "remove_default", 
+                "parameters": null, 
+                "description": "Removes an icon factory from the list of default icon\nfactories. Not normally used; you might use it for a library that\ncan be unloaded or shut down."
+            }
+        ], 
+        "properties": []
+    }, 
+    "fullname": "Class Gtk.IconFactory", 
+    "id": "Docs-IconFactory", 
+    "description": "Browse the available stock icons in the list of stock IDs found <link\nlinkend=\"gtk-Stock-Items\">here</link>. You can also use\nthe <application>gtk-demo</application> application for this purpose.\n\nAn icon factory manages a collection of #GtkIconSet; a #GtkIconSet manages a\nset of variants of a particular icon (i.e. a #GtkIconSet contains variants for\ndifferent sizes and widget states). Icons in an icon factory are named by a\nstock ID, which is a simple string identifying the icon. Each #GtkStyle has a\nlist of #GtkIconFactory derived from the current theme; those icon factories\nare consulted first when searching for an icon. If the theme doesn't set a\nparticular icon, GTK+ looks for the icon in a list of default icon factories,\nmaintained by gtk_icon_factory_add_default() and\ngtk_icon_factory_remove_default(). Applications with icons should add a default\nicon factory with their icons, which will allow themes to override the icons\nfor the application.\n\nTo display an icon, always use gtk_style_lookup_icon_set() on the widget that\nwill display the icon, or the convenience function\ngtk_widget_render_icon(). These functions take the theme into account when\nlooking up the icon to use for a given stock ID.\n\n<refsect2 id=\"GtkIconFactory-BUILDER-UI\">\n<title>GtkIconFactory as GtkBuildable</title>\n<para>\nGtkIconFactory supports a custom &lt;sources&gt; element, which can contain\nmultiple &lt;source&gt; elements.\nThe following attributes are allowed:\n<variablelist>\n<varlistentry>\n<term>stock-id</term>\n<listitem><para>\nThe stock id of the source, a string.\nThis attribute is mandatory\n</para></listitem>\n</varlistentry>\n<varlistentry>\n<term>filename</term>\n<listitem><para>\nThe filename of the source, a string.\nThis attribute is optional\n</para></listitem>\n</varlistentry>\n<varlistentry>\n<term>icon-name</term>\n<listitem><para>\nThe icon name for the source, a string.\nThis attribute is optional.\n</para></listitem>\n</varlistentry>\n<varlistentry>\n<term>size</term>\n<listitem><para>\nSize of the icon, a #GtkIconSize enum value.\nThis attribute is optional.\n</para></listitem>\n</varlistentry>\n<varlistentry>\n<term>direction</term>\n<listitem><para>\nDirection of the source, a #GtkTextDirection enum value.\nThis attribute is optional.\n</para></listitem>\n</varlistentry>\n<varlistentry>\n<term>state</term>\n<listitem><para>\nState of the source, a #GtkStateType enum value.\nThis attribute is optional.\n</para></listitem>\n</varlistentry>\n</variablelist>\n<example>\n<title>A #GtkIconFactory UI definition fragment.</title>\n<programlisting><![CDATA[\n<object class=\"GtkIconFactory\" id=\"iconfactory1\">\n<sources>\n<source stock-id=\"apple-red\" filename=\"apple-red.png\"/>\n</sources>\n</object>\n<object class=\"GtkWindow\" id=\"window1\">\n<child>\n<object class=\"GtkButton\" id=\"apple_button\">\n<property name=\"label\">apple-red</property>\n<property name=\"use-stock\">True</property>\n</object>\n</child>\n</object>\n]]>\n</programlisting>\n</example>\n</para>\n</refsect2>"
+}

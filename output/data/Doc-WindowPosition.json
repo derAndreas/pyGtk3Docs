@@ -1,0 +1,33 @@
+{
+    "leaf": true, 
+    "name": "WindowPosition", 
+    "text": "WindowPosition", 
+    "version": null, 
+    "members": {
+        "properties": [
+            {
+                "name": "none", 
+                "value": "0"
+            }, 
+            {
+                "name": "center", 
+                "value": "1"
+            }, 
+            {
+                "name": "mouse", 
+                "value": "2"
+            }, 
+            {
+                "name": "center_always", 
+                "value": "3"
+            }, 
+            {
+                "name": "center_on_parent", 
+                "value": "4"
+            }
+        ]
+    }, 
+    "fullname": "Enumeration Gtk.WindowPosition", 
+    "id": "Docs-WindowPosition", 
+    "description": ""
+}

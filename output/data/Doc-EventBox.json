@@ -1,0 +1,107 @@
+{
+    "isAbstract": false, 
+    "leaf": true, 
+    "name": "EventBox", 
+    "text": "EventBox", 
+    "interfaces": [
+        [
+            "Atk.ImplementorIface"
+        ], 
+        [
+            "Buildable"
+        ]
+    ], 
+    "parents": [
+        "EventBox", 
+        "Bin", 
+        "Container", 
+        "Widget", 
+        "GObject.InitiallyUnowned"
+    ], 
+    "members": {
+        "signals": [], 
+        "methods": [
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a new #GtkEventBox", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": null, 
+                "name": "Gtk.EventBox()", 
+                "parameters": null
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE if the event box window is above the"
+                }, 
+                "version": "2.4", 
+                "name": "get_above_child", 
+                "parameters": null, 
+                "description": "Returns whether the event box window is above or below the\nwindows of its child. See gtk_event_box_set_above_child()\nfor details.\n\nwindow of its child"
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE if the event box window is visible"
+                }, 
+                "version": "2.4", 
+                "name": "get_visible_window", 
+                "parameters": null, 
+                "description": "Returns whether the event box has a visible window.\nSee gtk_event_box_set_visible_window() for details."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.4", 
+                "name": "set_above_child", 
+                "parameters": [
+                    {
+                        "type": "Boolean", 
+                        "name": "above_child", 
+                        "description": "%TRUE if the event box window is above its child"
+                    }
+                ], 
+                "description": "Set whether the event box window is positioned above the windows\nof its child, as opposed to below it. If the window is above, all\nevents inside the event box will go to the event box. If the window\nis below, events in windows of child widgets will first got to that\nwidget, and then to its parents.\n\nThe default is to keep the window below the child."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.4", 
+                "name": "set_visible_window", 
+                "parameters": [
+                    {
+                        "type": "Boolean", 
+                        "name": "visible_window", 
+                        "description": "%TRUE to make the event box have a visible window"
+                    }
+                ], 
+                "description": "Set whether the event box uses a visible or invisible child\nwindow. The default is to use visible windows.\n\nIn an invisible window event box, the window that the\nevent box creates is a %GDK_INPUT_ONLY window, which\nmeans that it is invisible and only serves to receive\nevents.\n\nA visible window event box creates a visible (%GDK_INPUT_OUTPUT)\nwindow that acts as the parent window for all the widgets\ncontained in the event box.\n\nYou should generally make your event box invisible if\nyou just want to trap events. Creating a visible window\nmay cause artifacts that are visible to the user, especially\nif the user is using a theme with gradients or pixmaps.\n\nThe main reason to create a non input-only event box is if\nyou want to set the background to a different color or\ndraw on it.\n\n<note><para>\nThere is one unexpected issue for an invisible event box that has its\nwindow below the child. (See gtk_event_box_set_above_child().)\nSince the input-only window is not an ancestor window of any windows\nthat descendent widgets of the event box create, events on these\nwindows aren't propagated up by the windowing system, but only by GTK+.\nThe practical effect of this is if an event isn't in the event\nmask for the descendant window (see gtk_widget_add_events()),\nit won't be received by the event box.\n</para><para>\nThis problem doesn't occur for visible event boxes, because in\nthat case, the event box window is actually the ancestor of the\ndescendant windows, not just at the same place on the screen.\n</para></note>"
+            }
+        ], 
+        "properties": [
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "above-child", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "visible-window", 
+                "description": ""
+            }
+        ]
+    }, 
+    "fullname": "Class Gtk.EventBox", 
+    "id": "Docs-EventBox", 
+    "description": "The #GtkEventBox widget is a subclass of #GtkBin which also has its\nown window. It is useful since it allows you to catch events for widgets\nwhich do not have their own window."
+}

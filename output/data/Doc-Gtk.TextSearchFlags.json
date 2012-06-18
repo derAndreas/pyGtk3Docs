@@ -1,0 +1,25 @@
+{
+    "leaf": true, 
+    "name": "TextSearchFlags", 
+    "text": "TextSearchFlags", 
+    "version": null, 
+    "members": {
+        "properties": [
+            {
+                "name": "visible_only", 
+                "value": "1"
+            }, 
+            {
+                "name": "text_only", 
+                "value": "2"
+            }, 
+            {
+                "name": "case_insensitive", 
+                "value": "4"
+            }
+        ]
+    }, 
+    "fullname": "Bitfield Gtk.TextSearchFlags", 
+    "id": "Docs-TextSearchFlags", 
+    "description": ""
+}

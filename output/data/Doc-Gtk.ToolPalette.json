@@ -1,0 +1,375 @@
+{
+    "isAbstract": false, 
+    "leaf": true, 
+    "name": "ToolPalette", 
+    "text": "ToolPalette", 
+    "interfaces": [
+        [
+            "Atk.ImplementorIface"
+        ], 
+        [
+            "Buildable"
+        ], 
+        [
+            "Orientable"
+        ], 
+        [
+            "Scrollable"
+        ]
+    ], 
+    "parents": [
+        "ToolPalette", 
+        "Container", 
+        "Widget", 
+        "GObject.InitiallyUnowned"
+    ], 
+    "members": {
+        "signals": [], 
+        "methods": [
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a new #GtkToolPalette", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": "2.20", 
+                "name": "Gtk.ToolPalette()", 
+                "parameters": null
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.20", 
+                "name": "add_drag_dest", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "widget", 
+                        "description": "a #GtkWidget which should be a drag destination for @palette"
+                    }, 
+                    {
+                        "type": "ref:Gtk.DestDefaults", 
+                        "name": "flags", 
+                        "description": "the flags that specify what actions GTK+ should take for drops on that widget"
+                    }, 
+                    {
+                        "type": "ref:Gtk.ToolPaletteDragTargets", 
+                        "name": "targets", 
+                        "description": "the #GtkToolPaletteDragTarget<!-- -->s which the widget should support"
+                    }, 
+                    {
+                        "type": "Gdk.DragAction", 
+                        "name": "actions", 
+                        "description": "the #GdkDragAction<!-- -->s which the widget should suppport"
+                    }
+                ], 
+                "description": "Sets @palette as drag source (see gtk_tool_palette_set_drag_source())\nand sets @widget as a drag destination for drags from @palette.\nSee gtk_drag_dest_set()."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.Widget", 
+                    "description": "the dragged item in selection"
+                }, 
+                "version": "2.20", 
+                "name": "get_drag_item", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.SelectionData", 
+                        "name": "selection", 
+                        "description": "a #GtkSelectionData"
+                    }
+                ], 
+                "description": "Get the dragged item from the selection.\nThis could be a #GtkToolItem or a #GtkToolItemGroup."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.ToolItemGroup", 
+                    "description": "the #GtkToolItemGroup at position or %NULL"
+                }, 
+                "version": "2.20", 
+                "name": "get_drop_group", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "x", 
+                        "description": "the x position"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "y", 
+                        "description": "the y position"
+                    }
+                ], 
+                "description": "Gets the group at position (x, y).\n\nif there is no such group"
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.ToolItem", 
+                    "description": "the #GtkToolItem at position or %NULL if there is no such item"
+                }, 
+                "version": "2.20", 
+                "name": "get_drop_item", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "x", 
+                        "description": "the x position"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "y", 
+                        "description": "the y position"
+                    }
+                ], 
+                "description": "Gets the item at position (x, y).\nSee gtk_tool_palette_get_drop_group()."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE if @group is exclusive"
+                }, 
+                "version": "2.20", 
+                "name": "get_exclusive", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.ToolItemGroup", 
+                        "name": "group", 
+                        "description": "a #GtkToolItemGroup which is a child of palette"
+                    }
+                ], 
+                "description": "Gets whether @group is exclusive or not.\nSee gtk_tool_palette_set_exclusive()."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE if group should be given extra space, %FALSE otherwise"
+                }, 
+                "version": "2.20", 
+                "name": "get_expand", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.ToolItemGroup", 
+                        "name": "group", 
+                        "description": "a #GtkToolItemGroup which is a child of palette"
+                    }
+                ], 
+                "description": "Gets whether group should be given extra space.\nSee gtk_tool_palette_set_expand()."
+            }, 
+            {
+                "returns": {
+                    "type": "Integer", 
+                    "description": "the index of group or -1 if @group is not a child of @palette"
+                }, 
+                "version": "2.20", 
+                "name": "get_group_position", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.ToolItemGroup", 
+                        "name": "group", 
+                        "description": "a #GtkToolItemGroup"
+                    }
+                ], 
+                "description": "Gets the position of @group in @palette as index.\nSee gtk_tool_palette_set_group_position()."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.Adjustment", 
+                    "description": "the horizontal adjustment of @palette"
+                }, 
+                "version": "2.20", 
+                "name": "get_hadjustment", 
+                "parameters": null, 
+                "description": "Gets the horizontal adjustment of the tool palette."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.IconSize", 
+                    "description": "the #GtkIconSize of icons in the tool palette"
+                }, 
+                "version": "2.20", 
+                "name": "get_icon_size", 
+                "parameters": null, 
+                "description": "Gets the size of icons in the tool palette.\nSee gtk_tool_palette_set_icon_size()."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.ToolbarStyle", 
+                    "description": "the #GtkToolbarStyle of items in the tool palette."
+                }, 
+                "version": "2.20", 
+                "name": "get_style", 
+                "parameters": null, 
+                "description": "Gets the style (icons, text or both) of items in the tool palette."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.Adjustment", 
+                    "description": "the vertical adjustment of @palette"
+                }, 
+                "version": "2.20", 
+                "name": "get_vadjustment", 
+                "parameters": null, 
+                "description": "Gets the vertical adjustment of the tool palette."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.20", 
+                "name": "set_drag_source", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.ToolPaletteDragTargets", 
+                        "name": "targets", 
+                        "description": "the #GtkToolPaletteDragTarget<!-- -->s which the widget should support"
+                    }
+                ], 
+                "description": "Sets the tool palette as a drag source.\nEnables all groups and items in the tool palette as drag sources\non button 1 and button 3 press with copy and move actions.\nSee gtk_drag_source_set()."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.20", 
+                "name": "set_exclusive", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.ToolItemGroup", 
+                        "name": "group", 
+                        "description": "a #GtkToolItemGroup which is a child of palette"
+                    }, 
+                    {
+                        "type": "Boolean", 
+                        "name": "exclusive", 
+                        "description": "whether the group should be exclusive or not"
+                    }
+                ], 
+                "description": "Sets whether the group should be exclusive or not.\nIf an exclusive group is expanded all other groups are collapsed."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.20", 
+                "name": "set_expand", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.ToolItemGroup", 
+                        "name": "group", 
+                        "description": "a #GtkToolItemGroup which is a child of palette"
+                    }, 
+                    {
+                        "type": "Boolean", 
+                        "name": "expand", 
+                        "description": "whether the group should be given extra space"
+                    }
+                ], 
+                "description": "Sets whether the group should be given extra space."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.20", 
+                "name": "set_group_position", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.ToolItemGroup", 
+                        "name": "group", 
+                        "description": "a #GtkToolItemGroup which is a child of palette"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "position", 
+                        "description": "a new index for group"
+                    }
+                ], 
+                "description": "Sets the position of the group as an index of the tool palette.\nIf position is 0 the group will become the first child, if position is\n-1 it will become the last child."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.20", 
+                "name": "set_icon_size", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.IconSize", 
+                        "name": "icon_size", 
+                        "description": "the #GtkIconSize that icons in the tool palette shall have"
+                    }
+                ], 
+                "description": "Sets the size of icons in the tool palette."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.20", 
+                "name": "set_style", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.ToolbarStyle", 
+                        "name": "style", 
+                        "description": "the #GtkToolbarStyle that items in the tool palette shall have"
+                    }
+                ], 
+                "description": "Sets the style (text, icons or both) of items in the tool palette."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.20", 
+                "name": "unset_icon_size", 
+                "parameters": null, 
+                "description": "Unsets the tool palette icon size set with gtk_tool_palette_set_icon_size(),\nso that user preferences will be used to determine the icon size."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.20", 
+                "name": "unset_style", 
+                "parameters": null, 
+                "description": "Unsets a toolbar style set with gtk_tool_palette_set_style(),\nso that user preferences will be used to determine the toolbar style."
+            }
+        ], 
+        "properties": [
+            {
+                "writable": false, 
+                "type": "Gtk.IconSize", 
+                "readable": false, 
+                "name": "icon-size", 
+                "description": "The size of the icons in a tool palette is normally determined by\nthe #GtkSettings:toolbar-icon-size setting. When this property is set,\nit overrides the setting.\n\nThis should only be used for special-purpose tool palettes, normal\napplication tool palettes should respect the user preferences for the\nsize of icons."
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "icon-size-set", 
+                "description": "Is %TRUE if the #GtkToolPalette:icon-size property has been set."
+            }, 
+            {
+                "writable": false, 
+                "type": "Gtk.ToolbarStyle", 
+                "readable": false, 
+                "name": "toolbar-style", 
+                "description": "The style of items in the tool palette."
+            }
+        ]
+    }, 
+    "fullname": "Class Gtk.ToolPalette", 
+    "id": "Docs-ToolPalette", 
+    "description": "A #GtkToolPalette allows you to add #GtkToolItem<!-- -->s to a palette-like\ncontainer with different categories and drag and drop support.\n\nA #GtkToolPalette is created with a call to gtk_tool_palette_new().\n\n#GtkToolItem<!-- -->s cannot be added directly to a #GtkToolPalette - \ninstead they are added to a #GtkToolItemGroup which can than be added\nto a #GtkToolPalette. To add a #GtkToolItemGroup to a #GtkToolPalette,\nuse gtk_container_add().\n\n|[\nGtkWidget *palette, *group;\nGtkToolItem *item;\n\npalette = gtk_tool_palette_new ();\ngroup = gtk_tool_item_group_new (_(\"Test Category\"));\ngtk_container_add (GTK_CONTAINER (palette), group);\n\nitem = gtk_tool_button_new_from_stock (GTK_STOCK_OK);\ngtk_tool_item_group_insert (GTK_TOOL_ITEM_GROUP (group), item, -1);\n]|\n\nThe easiest way to use drag and drop with #GtkToolPalette is to call\ngtk_tool_palette_add_drag_dest() with the desired drag source @palette\nand the desired drag target @widget. Then gtk_tool_palette_get_drag_item()\ncan be used to get the dragged item in the #GtkWidget::drag-data-received\nsignal handler of the drag target.\n\n|[\nstatic void\npassive_canvas_drag_data_received (GtkWidget        *widget,\nGdkDragContext   *context,\ngint              x,\ngint              y,\nGtkSelectionData *selection,\nguint             info,\nguint             time,\ngpointer          data)\n{\nGtkWidget *palette;\nGtkWidget *item;\n\n/<!-- -->* Get the dragged item *<!-- -->/\npalette = gtk_widget_get_ancestor (gtk_drag_get_source_widget (context),\nGTK_TYPE_TOOL_PALETTE);\nif (palette != NULL)\nitem = gtk_tool_palette_get_drag_item (GTK_TOOL_PALETTE (palette),\nselection);\n\n/<!-- -->* Do something with item *<!-- -->/\n}\n\nGtkWidget *target, palette;\n\npalette = gtk_tool_palette_new ();\ntarget = gtk_drawing_area_new ();\n\ng_signal_connect (G_OBJECT (target), \"drag-data-received\",\nG_CALLBACK (passive_canvas_drag_data_received), NULL);\ngtk_tool_palette_add_drag_dest (GTK_TOOL_PALETTE (palette), target,\nGTK_DEST_DEFAULT_ALL,\nGTK_TOOL_PALETTE_DRAG_ITEMS,\nGDK_ACTION_COPY);\n]|"
+}

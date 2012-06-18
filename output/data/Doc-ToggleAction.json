@@ -1,0 +1,146 @@
+{
+    "isAbstract": false, 
+    "leaf": true, 
+    "name": "ToggleAction", 
+    "text": "ToggleAction", 
+    "interfaces": [
+        [
+            "Buildable"
+        ]
+    ], 
+    "parents": [
+        "ToggleAction", 
+        "Action", 
+        "GObject.Object"
+    ], 
+    "members": {
+        "signals": [
+            {
+                "version": "", 
+                "when": "first", 
+                "name": "toggled", 
+                "description": "Should be connected if you wish to perform an action\nwhenever the #GtkToggleAction state is changed."
+            }
+        ], 
+        "methods": [
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a new #GtkToggleAction", 
+                    "name": "ref:Gtk.ToggleAction"
+                }, 
+                "version": "2.4", 
+                "name": "Gtk.ToggleAction(String name, String label, String tooltip, String stock_id)", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "name"
+                    }, 
+                    {
+                        "type": "String", 
+                        "name": "label"
+                    }, 
+                    {
+                        "type": "String", 
+                        "name": "tooltip"
+                    }, 
+                    {
+                        "type": "String", 
+                        "name": "stock_id"
+                    }
+                ]
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "the checked state of the toggle action"
+                }, 
+                "version": "2.4", 
+                "name": "get_active", 
+                "parameters": null, 
+                "description": "Returns the checked state of the toggle action."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "whether the action should have proxies like a radio action."
+                }, 
+                "version": "2.4", 
+                "name": "get_draw_as_radio", 
+                "parameters": null, 
+                "description": "Returns whether the action should have proxies like a radio action."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.4", 
+                "name": "set_active", 
+                "parameters": [
+                    {
+                        "type": "Boolean", 
+                        "name": "is_active", 
+                        "description": "whether the action should be checked or not"
+                    }
+                ], 
+                "description": "Sets the checked state on the toggle action."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.4", 
+                "name": "set_draw_as_radio", 
+                "parameters": [
+                    {
+                        "type": "Boolean", 
+                        "name": "draw_as_radio", 
+                        "description": "whether the action should have proxies like a radio action"
+                    }
+                ], 
+                "description": "Sets whether the action should have proxies like a radio action."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.4", 
+                "name": "toggled", 
+                "parameters": null, 
+                "description": "Emits the \"toggled\" signal on the toggle action."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.4", 
+                "name": "toggled", 
+                "parameters": null, 
+                "description": "Emits the \"toggled\" signal on the toggle action."
+            }
+        ], 
+        "properties": [
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "active", 
+                "description": "Whether the toggle action should be active."
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "draw-as-radio", 
+                "description": "Whether the proxies for this action look like radio action proxies.\n\nThis is an appearance property and thus only applies if \n#GtkActivatable:use-action-appearance is %TRUE."
+            }
+        ]
+    }, 
+    "fullname": "Class Gtk.ToggleAction", 
+    "id": "Docs-ToggleAction", 
+    "description": "A #GtkToggleAction corresponds roughly to a #GtkCheckMenuItem. It has an\n\"active\" state specifying whether the action has been checked or not."
+}

@@ -1,0 +1,46 @@
+{
+    "isAbstract": false, 
+    "leaf": true, 
+    "name": "FontChooserWidget", 
+    "text": "FontChooserWidget", 
+    "interfaces": [
+        [
+            "Atk.ImplementorIface"
+        ], 
+        [
+            "Buildable"
+        ], 
+        [
+            "FontChooser"
+        ], 
+        [
+            "Orientable"
+        ]
+    ], 
+    "parents": [
+        "FontChooserWidget", 
+        "Box", 
+        "Container", 
+        "Widget", 
+        "GObject.InitiallyUnowned"
+    ], 
+    "members": {
+        "signals": [], 
+        "methods": [
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a new #GtkFontChooserWidget", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": "3.2", 
+                "name": "Gtk.FontChooserWidget()", 
+                "parameters": null
+            }
+        ], 
+        "properties": []
+    }, 
+    "fullname": "Class Gtk.FontChooserWidget", 
+    "id": "Docs-FontChooserWidget", 
+    "description": "The #GtkFontChooserWidget widget lists the available fonts,\nstyles and sizes, allowing the user to select a font. It is\nused in the #GtkFontChooserDialog widget to provide a\ndialog box for selecting fonts.\n\nTo set the font which is initially selected, use\ngtk_font_chooser_set_font() or gtk_font_chooser_set_font_desc().\n\nTo get the selected font use gtk_font_chooser_get_font() or\ngtk_font_chooser_get_font_desc().\n\nTo change the text which is shown in the preview area, use\ngtk_font_chooser_set_preview_text()."
+}

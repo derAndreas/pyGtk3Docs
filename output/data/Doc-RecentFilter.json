@@ -1,0 +1,207 @@
+{
+    "isAbstract": false, 
+    "leaf": true, 
+    "name": "RecentFilter", 
+    "text": "RecentFilter", 
+    "interfaces": [
+        [
+            "Buildable"
+        ]
+    ], 
+    "parents": [
+        "RecentFilter", 
+        "GObject.InitiallyUnowned"
+    ], 
+    "members": {
+        "signals": [], 
+        "methods": [
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a new #GtkRecentFilter", 
+                    "name": "ref:Gtk.RecentFilter"
+                }, 
+                "version": "2.10", 
+                "name": "Gtk.RecentFilter()", 
+                "parameters": null
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.10", 
+                "name": "add_age", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "days", 
+                        "description": "number of days"
+                    }
+                ], 
+                "description": "Adds a rule that allows resources based on their age - that is, the number\nof days elapsed since they were last modified."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.10", 
+                "name": "add_application", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "application", 
+                        "description": "an application name"
+                    }
+                ], 
+                "description": "Adds a rule that allows resources based on the name of the application\nthat has registered them."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.10", 
+                "name": "add_custom", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.RecentFilterFlags", 
+                        "name": "needed", 
+                        "description": "bitfield of flags indicating the information that the custom filter function needs."
+                    }, 
+                    {
+                        "type": "ref:Gtk.RecentFilterFunc", 
+                        "name": "func", 
+                        "description": "callback function; if the function returns %TRUE, then the file will be displayed."
+                    }, 
+                    {
+                        "type": "Mixed", 
+                        "name": "data", 
+                        "description": "data to pass to @func"
+                    }, 
+                    {
+                        "type": "GLib.DestroyNotify", 
+                        "name": "data_destroy", 
+                        "description": "function to call to free @data when it is no longer needed."
+                    }
+                ], 
+                "description": "Adds a rule to a filter that allows resources based on a custom callback\nfunction. The bitfield @needed which is passed in provides information\nabout what sorts of information that the filter function needs;\nthis allows GTK+ to avoid retrieving expensive information when\nit isn't needed by the filter."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.10", 
+                "name": "add_group", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "group", 
+                        "description": "a group name"
+                    }
+                ], 
+                "description": "Adds a rule that allows resources based on the name of the group\nto which they belong"
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.10", 
+                "name": "add_mime_type", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "mime_type", 
+                        "description": "a MIME type"
+                    }
+                ], 
+                "description": "Adds a rule that allows resources based on their registered MIME type."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.10", 
+                "name": "add_pattern", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "pattern", 
+                        "description": "a file pattern"
+                    }
+                ], 
+                "description": "Adds a rule that allows resources based on a pattern matching their\ndisplay name."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.10", 
+                "name": "add_pixbuf_formats", 
+                "parameters": null, 
+                "description": "Adds a rule allowing image files in the formats supported\nby GdkPixbuf."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE if the file should be displayed"
+                }, 
+                "version": "2.10", 
+                "name": "filter", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.RecentFilterInfo", 
+                        "name": "filter_info", 
+                        "description": "a #GtkRecentFilterInfo structure containing information about a recently used resource"
+                    }
+                ], 
+                "description": "Tests whether a file should be displayed according to @filter.\nThe #GtkRecentFilterInfo structure @filter_info should include\nthe fields returned from gtk_recent_filter_get_needed().\n\nThis function will not typically be used by applications; it\nis intended principally for use in the implementation of\n#GtkRecentChooser."
+            }, 
+            {
+                "returns": {
+                    "type": "String", 
+                    "description": "the name of the filter, or %NULL.  The returned string"
+                }, 
+                "version": "2.10", 
+                "name": "get_name", 
+                "parameters": null, 
+                "description": "Gets the human-readable name for the filter.\nSee gtk_recent_filter_set_name().\n\nis owned by the filter object and should not be freed."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.RecentFilterFlags", 
+                    "description": "bitfield of flags indicating needed fields when"
+                }, 
+                "version": "2.10", 
+                "name": "get_needed", 
+                "parameters": null, 
+                "description": "Gets the fields that need to be filled in for the structure\npassed to gtk_recent_filter_filter()\n\nThis function will not typically be used by applications; it\nis intended principally for use in the implementation of\n#GtkRecentChooser.\n\ncalling gtk_recent_filter_filter()"
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.10", 
+                "name": "set_name", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "name", 
+                        "description": "then human readable name of @filter"
+                    }
+                ], 
+                "description": "Sets the human-readable name of the filter; this is the string\nthat will be displayed in the recently used resources selector\nuser interface if there is a selectable list of filters."
+            }
+        ], 
+        "properties": []
+    }, 
+    "fullname": "Class Gtk.RecentFilter", 
+    "id": "Docs-RecentFilter", 
+    "description": "A #GtkRecentFilter can be used to restrict the files being shown\nin a #GtkRecentChooser.  Files can be filtered based on their name\n(with gtk_recent_filter_add_pattern()), on their mime type (with\ngtk_file_filter_add_mime_type()), on the application that has\nregistered them (with gtk_recent_filter_add_application()), or by\na custom filter function (with gtk_recent_filter_add_custom()).\n\nFiltering by mime type handles aliasing and subclassing of mime\ntypes; e.g. a filter for text/plain also matches a file with mime\ntype application/rtf, since application/rtf is a subclass of text/plain.\nNote that #GtkRecentFilter allows wildcards for the subtype of a\nmime type, so you can e.g. filter for image/<!-- -->*.\n\nNormally, filters are used by adding them to a #GtkRecentChooser,\nsee gtk_recent_chooser_add_filter(), but it is also possible to\nmanually use a filter on a file with gtk_recent_filter_filter().\n\nRecently used files are supported since GTK+ 2.10.\n\n<refsect2 id=\"GtkRecentFilter-BUILDER-UI\">\n<title>GtkRecentFilter as GtkBuildable</title>\n<para>\nThe GtkRecentFilter implementation of the GtkBuildable interface\nsupports adding rules using the &lt;mime-types&gt;, &lt;patterns&gt; and\n&lt;applications&gt; elements and listing the rules within. Specifying\na &lt;mime-type&gt;, &lt;pattern&gt; or &lt;application&gt; is the same\nas calling gtk_recent_filter_add_mime_type(), gtk_recent_filter_add_pattern()\nor gtk_recent_filter_add_application().\n\n<example>\n<title>A UI definition fragment specifying GtkRecentFilter rules</title>\n<programlisting><![CDATA[\n<object class=\"GtkRecentFilter\">\n<mime-types>\n<mime-type>text/plain</mime-type>\n<mime-type>image/png</mime-type>\n</mime-types>\n<patterns>\n<pattern>*.txt</pattern>\n<pattern>*.png</pattern>\n</patterns>\n<applications>\n<application>gimp</application>\n<application>gedit</application>\n<application>glade</application>\n</applications>\n</object>\n]]></programlisting>\n</example>\n</para>\n</refsect2>"
+}

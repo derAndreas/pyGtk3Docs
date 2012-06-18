@@ -1,0 +1,217 @@
+{
+    "isAbstract": false, 
+    "leaf": true, 
+    "name": "Frame", 
+    "text": "Frame", 
+    "interfaces": [
+        [
+            "Atk.ImplementorIface"
+        ], 
+        [
+            "Buildable"
+        ]
+    ], 
+    "parents": [
+        "Frame", 
+        "Bin", 
+        "Container", 
+        "Widget", 
+        "GObject.InitiallyUnowned"
+    ], 
+    "members": {
+        "signals": [], 
+        "methods": [
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a new #GtkFrame widget", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": null, 
+                "name": "Gtk.Frame(String label)", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "label"
+                    }
+                ]
+            }, 
+            {
+                "returns": {
+                    "type": "String", 
+                    "description": "the text in the label, or %NULL if there"
+                }, 
+                "version": "", 
+                "name": "get_label", 
+                "parameters": null, 
+                "description": "If the frame's label widget is a #GtkLabel, returns the\ntext in the label widget. (The frame will have a #GtkLabel\nfor the label widget if a non-%NULL argument was passed\nto gtk_frame_new().)\n\nwas no label widget or the lable widget was not\na #GtkLabel. This string is owned by GTK+ and\nmust not be modified or freed."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "get_label_align", 
+                "parameters": [
+                    {
+                        "type": "Float", 
+                        "name": "xalign", 
+                        "description": "location to store X alignment of frame's label, or %NULL"
+                    }, 
+                    {
+                        "type": "Float", 
+                        "name": "yalign", 
+                        "description": "location to store X alignment of frame's label, or %NULL"
+                    }
+                ], 
+                "description": "Retrieves the X and Y alignment of the frame's label. See\ngtk_frame_set_label_align()."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.Widget", 
+                    "description": "the label widget, or %NULL if there is none."
+                }, 
+                "version": "", 
+                "name": "get_label_widget", 
+                "parameters": null, 
+                "description": "Retrieves the label widget for the frame. See\ngtk_frame_set_label_widget()."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.ShadowType", 
+                    "description": "the current shadow type of the frame."
+                }, 
+                "version": "", 
+                "name": "get_shadow_type", 
+                "parameters": null, 
+                "description": "Retrieves the shadow type of the frame. See\ngtk_frame_set_shadow_type()."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_label", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "label", 
+                        "description": "the text to use as the label of the frame"
+                    }
+                ], 
+                "description": "Sets the text of the label. If @label is %NULL,\nthe current label is removed."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_label_align", 
+                "parameters": [
+                    {
+                        "type": "Float", 
+                        "name": "xalign", 
+                        "description": "The position of the label along the top edge of the widget. A value of 0.0 represents left alignment; 1.0 represents right alignment."
+                    }, 
+                    {
+                        "type": "Float", 
+                        "name": "yalign", 
+                        "description": "The y alignment of the label. A value of 0.0 aligns under the frame; 1.0 aligns above the frame. If the values are exactly 0.0 or 1.0 the gap in the frame won't be painted because the label will be completely above or below the frame."
+                    }
+                ], 
+                "description": "Sets the alignment of the frame widget's label. The\ndefault values for a newly created frame are 0.0 and 0.5."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_label_widget", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "label_widget", 
+                        "description": "the new label widget"
+                    }
+                ], 
+                "description": "Sets the label widget for the frame. This is the widget that\nwill appear embedded in the top edge of the frame as a\ntitle."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_shadow_type", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.ShadowType", 
+                        "name": "type", 
+                        "description": "the new #GtkShadowType"
+                    }
+                ], 
+                "description": "Sets the shadow type for @frame."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "compute_child_allocation", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Allocation", 
+                        "name": "allocation", 
+                        "description": ""
+                    }
+                ], 
+                "description": ""
+            }
+        ], 
+        "properties": [
+            {
+                "writable": false, 
+                "type": "String", 
+                "readable": false, 
+                "name": "label", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Gtk.Widget", 
+                "readable": false, 
+                "name": "label-widget", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Float", 
+                "readable": false, 
+                "name": "label-xalign", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Float", 
+                "readable": false, 
+                "name": "label-yalign", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Gtk.ShadowType", 
+                "readable": false, 
+                "name": "shadow-type", 
+                "description": ""
+            }
+        ]
+    }, 
+    "fullname": "Class Gtk.Frame", 
+    "id": "Docs-Frame", 
+    "description": "The frame widget is a Bin that surrounds its child\nwith a decorative frame and an optional label.\nIf present, the label is drawn in a gap in the\ntop side of the frame. The position of the\nlabel can be controlled with gtk_frame_set_label_align().\n\n<refsect2 id=\"GtkFrame-BUILDER-UI\">\n<title>GtkFrame as GtkBuildable</title>\n<para>\nThe GtkFrame implementation of the GtkBuildable interface\nsupports placing a child in the label position by specifying\n\"label\" as the \"type\" attribute of a &lt;child&gt; element.\nA normal content child can be specified without specifying\na &lt;child&gt; type attribute.\n</para>\n<example>\n<title>A UI definition fragment with GtkFrame</title>\n<programlisting><![CDATA[\n<object class=\"GtkFrame\">\n<child type=\"label\">\n<object class=\"GtkLabel\" id=\"frame-label\"/>\n</child>\n<child>\n<object class=\"GtkEntry\" id=\"frame-content\"/>\n</child>\n</object>\n]]></programlisting>\n</example>\n</refsect2>"
+}

@@ -1,0 +1,582 @@
+{
+    "isAbstract": false, 
+    "leaf": true, 
+    "name": "AboutDialog", 
+    "text": "AboutDialog", 
+    "interfaces": [
+        [
+            "Atk.ImplementorIface"
+        ], 
+        [
+            "Buildable"
+        ]
+    ], 
+    "parents": [
+        "AboutDialog", 
+        "Dialog", 
+        "Window", 
+        "Bin", 
+        "Container", 
+        "Widget", 
+        "GObject.InitiallyUnowned"
+    ], 
+    "members": {
+        "signals": [
+            {
+                "version": "2.24", 
+                "when": "last", 
+                "name": "activate-link", 
+                "description": "The signal which gets emitted to activate a URI.\nApplications may connect to it to override the default behaviour,\nwhich is to call gtk_show_uri()."
+            }
+        ], 
+        "methods": [
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a newly created #GtkAboutDialog", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": "2.6", 
+                "name": "Gtk.AboutDialog()", 
+                "parameters": null
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "3.4", 
+                "name": "add_credit_section", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "section_name", 
+                        "description": "The name of the section"
+                    }, 
+                    {
+                        "type": "String", 
+                        "name": "people", 
+                        "description": "The people who belong to that section"
+                    }
+                ], 
+                "description": "Creates a new section in the Credits page."
+            }, 
+            {
+                "returns": {
+                    "type": "String[]", 
+                    "description": "A"
+                }, 
+                "version": "2.6", 
+                "name": "get_artists", 
+                "parameters": null, 
+                "description": "Returns the string which are displayed in the artists tab\nof the secondary credits dialog.\n\n%NULL-terminated string array containing the artists. The array is\nowned by the about dialog and must not be modified."
+            }, 
+            {
+                "returns": {
+                    "type": "String[]", 
+                    "description": "A"
+                }, 
+                "version": "2.6", 
+                "name": "get_authors", 
+                "parameters": null, 
+                "description": "Returns the string which are displayed in the authors tab\nof the secondary credits dialog.\n\n%NULL-terminated string array containing the authors. The array is\nowned by the about dialog and must not be modified."
+            }, 
+            {
+                "returns": {
+                    "type": "String", 
+                    "description": "The comments. The string is owned by the about"
+                }, 
+                "version": "2.6", 
+                "name": "get_comments", 
+                "parameters": null, 
+                "description": "Returns the comments string.\n\ndialog and must not be modified."
+            }, 
+            {
+                "returns": {
+                    "type": "String", 
+                    "description": "The copyright string. The string is owned by the about"
+                }, 
+                "version": "2.6", 
+                "name": "get_copyright", 
+                "parameters": null, 
+                "description": "Returns the copyright string.\n\ndialog and must not be modified."
+            }, 
+            {
+                "returns": {
+                    "type": "String[]", 
+                    "description": "A"
+                }, 
+                "version": "2.6", 
+                "name": "get_documenters", 
+                "parameters": null, 
+                "description": "Returns the string which are displayed in the documenters\ntab of the secondary credits dialog.\n\n%NULL-terminated string array containing the documenters. The\narray is owned by the about dialog and must not be modified."
+            }, 
+            {
+                "returns": {
+                    "type": "String", 
+                    "description": "The license information. The string is owned by the about"
+                }, 
+                "version": "2.6", 
+                "name": "get_license", 
+                "parameters": null, 
+                "description": "Returns the license information.\n\ndialog and must not be modified."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.License", 
+                    "description": "a #GtkLicense value"
+                }, 
+                "version": "3.0", 
+                "name": "get_license_type", 
+                "parameters": null, 
+                "description": "Retrieves the license set using gtk_about_dialog_set_license_type()"
+            }, 
+            {
+                "returns": {
+                    "type": "GdkPixbuf.Pixbuf", 
+                    "description": "the pixbuf displayed as logo. The"
+                }, 
+                "version": "2.6", 
+                "name": "get_logo", 
+                "parameters": null, 
+                "description": "Returns the pixbuf displayed as logo in the about dialog.\n\npixbuf is owned by the about dialog. If you want to keep a\nreference to it, you have to call g_object_ref() on it."
+            }, 
+            {
+                "returns": {
+                    "type": "String", 
+                    "description": "the icon name displayed as logo. The string is"
+                }, 
+                "version": "2.6", 
+                "name": "get_logo_icon_name", 
+                "parameters": null, 
+                "description": "Returns the icon name displayed as logo in the about dialog.\n\nowned by the dialog. If you want to keep a reference\nto it, you have to call g_strdup() on it."
+            }, 
+            {
+                "returns": {
+                    "type": "String", 
+                    "description": "The program name. The string is owned by the about"
+                }, 
+                "version": "2.12", 
+                "name": "get_program_name", 
+                "parameters": null, 
+                "description": "Returns the program name displayed in the about dialog.\n\ndialog and must not be modified."
+            }, 
+            {
+                "returns": {
+                    "type": "String", 
+                    "description": "The translator credits string. The string is"
+                }, 
+                "version": "2.6", 
+                "name": "get_translator_credits", 
+                "parameters": null, 
+                "description": "Returns the translator credits string which is displayed\nin the translators tab of the secondary credits dialog.\n\nowned by the about dialog and must not be modified."
+            }, 
+            {
+                "returns": {
+                    "type": "String", 
+                    "description": "The version string. The string is owned by the about"
+                }, 
+                "version": "2.6", 
+                "name": "get_version", 
+                "parameters": null, 
+                "description": "Returns the version string.\n\ndialog and must not be modified."
+            }, 
+            {
+                "returns": {
+                    "type": "String", 
+                    "description": "The website URL. The string is owned by the about"
+                }, 
+                "version": "2.6", 
+                "name": "get_website", 
+                "parameters": null, 
+                "description": "Returns the website URL.\n\ndialog and must not be modified."
+            }, 
+            {
+                "returns": {
+                    "type": "String", 
+                    "description": "The label used for the website link. The string is"
+                }, 
+                "version": "2.6", 
+                "name": "get_website_label", 
+                "parameters": null, 
+                "description": "Returns the label used for the website link.\n\nowned by the about dialog and must not be modified."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE if the license text is wrapped"
+                }, 
+                "version": "2.8", 
+                "name": "get_wrap_license", 
+                "parameters": null, 
+                "description": "Returns whether the license text in @about is\nautomatically wrapped."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.6", 
+                "name": "set_artists", 
+                "parameters": [
+                    {
+                        "type": "String[]", 
+                        "name": "artists", 
+                        "description": "a %NULL-terminated array of strings"
+                    }
+                ], 
+                "description": "Sets the strings which are displayed in the artists tab\nof the secondary credits dialog."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.6", 
+                "name": "set_authors", 
+                "parameters": [
+                    {
+                        "type": "String[]", 
+                        "name": "authors", 
+                        "description": "a %NULL-terminated array of strings"
+                    }
+                ], 
+                "description": "Sets the strings which are displayed in the authors tab\nof the secondary credits dialog."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.6", 
+                "name": "set_comments", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "comments", 
+                        "description": "a comments string"
+                    }
+                ], 
+                "description": "Sets the comments string to display in the about dialog.\nThis should be a short string of one or two lines."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.6", 
+                "name": "set_copyright", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "copyright", 
+                        "description": "(allow-none) the copyright string"
+                    }
+                ], 
+                "description": "Sets the copyright string to display in the about dialog.\nThis should be a short string of one or two lines."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.6", 
+                "name": "set_documenters", 
+                "parameters": [
+                    {
+                        "type": "String[]", 
+                        "name": "documenters", 
+                        "description": "a %NULL-terminated array of strings"
+                    }
+                ], 
+                "description": "Sets the strings which are displayed in the documenters tab\nof the secondary credits dialog."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.6", 
+                "name": "set_license", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "license", 
+                        "description": "the license information or %NULL"
+                    }
+                ], 
+                "description": "Sets the license information to be displayed in the secondary\nlicense dialog. If @license is %NULL, the license button is\nhidden."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "3.0", 
+                "name": "set_license_type", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.License", 
+                        "name": "license_type", 
+                        "description": "the type of license"
+                    }
+                ], 
+                "description": "Sets the license of the application showing the @about dialog from a\nlist of known licenses.\n\nThis function overrides the license set using\ngtk_about_dialog_set_license()."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.6", 
+                "name": "set_logo", 
+                "parameters": [
+                    {
+                        "type": "GdkPixbuf.Pixbuf", 
+                        "name": "logo", 
+                        "description": "a #GdkPixbuf, or %NULL"
+                    }
+                ], 
+                "description": "Sets the pixbuf to be displayed as logo in the about dialog.\nIf it is %NULL, the default window icon set with\ngtk_window_set_default_icon() will be used."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.6", 
+                "name": "set_logo_icon_name", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "icon_name", 
+                        "description": "an icon name, or %NULL"
+                    }
+                ], 
+                "description": "Sets the pixbuf to be displayed as logo in the about dialog.\nIf it is %NULL, the default window icon set with\ngtk_window_set_default_icon() will be used."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.12", 
+                "name": "set_program_name", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "name", 
+                        "description": "the program name"
+                    }
+                ], 
+                "description": "Sets the name to display in the about dialog.\nIf this is not set, it defaults to g_get_application_name()."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.6", 
+                "name": "set_translator_credits", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "translator_credits", 
+                        "description": "the translator credits"
+                    }
+                ], 
+                "description": "Sets the translator credits string which is displayed in\nthe translators tab of the secondary credits dialog.\n\nThe intended use for this string is to display the translator\nof the language which is currently used in the user interface.\nUsing gettext(), a simple way to achieve that is to mark the\nstring for translation:\n|[\ngtk_about_dialog_set_translator_credits (about, _(\"translator-credits\"));\n]|\nIt is a good idea to use the customary msgid \"translator-credits\" for this\npurpose, since translators will already know the purpose of that msgid, and\nsince #GtkAboutDialog will detect if \"translator-credits\" is untranslated\nand hide the tab."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.6", 
+                "name": "set_version", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "version", 
+                        "description": "the version string"
+                    }
+                ], 
+                "description": "Sets the version string to display in the about dialog."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.6", 
+                "name": "set_website", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "website", 
+                        "description": "a URL string starting with \"http://\""
+                    }
+                ], 
+                "description": "Sets the URL to use for the website link."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.6", 
+                "name": "set_website_label", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "website_label", 
+                        "description": "the label used for the website link"
+                    }
+                ], 
+                "description": "Sets the label to be used for the website link."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.8", 
+                "name": "set_wrap_license", 
+                "parameters": [
+                    {
+                        "type": "Boolean", 
+                        "name": "wrap_license", 
+                        "description": "whether to wrap the license"
+                    }
+                ], 
+                "description": "Sets whether the license text in @about is\nautomatically wrapped."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "activate_link", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "uri", 
+                        "description": ""
+                    }
+                ], 
+                "description": ""
+            }
+        ], 
+        "properties": [
+            {
+                "writable": false, 
+                "type": "String[]", 
+                "readable": false, 
+                "name": "artists", 
+                "description": "The people who contributed artwork to the program, as a %NULL-terminated\narray of strings. Each string may contain email addresses and URLs, which\nwill be displayed as links, see the introduction for more details."
+            }, 
+            {
+                "writable": false, 
+                "type": "String[]", 
+                "readable": false, 
+                "name": "authors", 
+                "description": "The authors of the program, as a %NULL-terminated array of strings.\nEach string may contain email addresses and URLs, which will be displayed\nas links, see the introduction for more details."
+            }, 
+            {
+                "writable": false, 
+                "type": "String", 
+                "readable": false, 
+                "name": "comments", 
+                "description": "Comments about the program. This string is displayed in a label\nin the main dialog, thus it should be a short explanation of\nthe main purpose of the program, not a detailed list of features."
+            }, 
+            {
+                "writable": false, 
+                "type": "String", 
+                "readable": false, 
+                "name": "copyright", 
+                "description": "Copyright information for the program."
+            }, 
+            {
+                "writable": false, 
+                "type": "String[]", 
+                "readable": false, 
+                "name": "documenters", 
+                "description": "The people documenting the program, as a %NULL-terminated array of strings.\nEach string may contain email addresses and URLs, which will be displayed\nas links, see the introduction for more details."
+            }, 
+            {
+                "writable": false, 
+                "type": "String", 
+                "readable": false, 
+                "name": "license", 
+                "description": "The license of the program. This string is displayed in a\ntext view in a secondary dialog, therefore it is fine to use\na long multi-paragraph text. Note that the text is only wrapped\nin the text view if the \"wrap-license\" property is set to %TRUE;\notherwise the text itself must contain the intended linebreaks.\nWhen setting this property to a non-%NULL value, the\n#GtkAboutDialog:license-type property is set to %GTK_LICENSE_CUSTOM\nas a side effect."
+            }, 
+            {
+                "writable": false, 
+                "type": "Gtk.License", 
+                "readable": false, 
+                "name": "license-type", 
+                "description": "The license of the program, as a value of the %GtkLicense enumeration.\n\nThe #GtkAboutDialog will automatically fill out a standard disclaimer\nand link the user to the appropriate online resource for the license\ntext.\n\nIf %GTK_LICENSE_UNKNOWN is used, the link used will be the same\nspecified in the #GtkAboutDialog:website property.\n\nIf %GTK_LICENSE_CUSTOM is used, the current contents of the\n#GtkAboutDialog:license property are used.\n\nFor any other #GtkLicense value, the contents of the\n#GtkAboutDialog:license property are also set by this property as\na side effect."
+            }, 
+            {
+                "writable": false, 
+                "type": "GdkPixbuf.Pixbuf", 
+                "readable": false, 
+                "name": "logo", 
+                "description": "A logo for the about box. If this is not set, it defaults to\ngtk_window_get_default_icon_list()."
+            }, 
+            {
+                "writable": false, 
+                "type": "String", 
+                "readable": false, 
+                "name": "logo-icon-name", 
+                "description": "A named icon to use as the logo for the about box. This property\noverrides the #GtkAboutDialog:logo property."
+            }, 
+            {
+                "writable": false, 
+                "type": "String", 
+                "readable": false, 
+                "name": "program-name", 
+                "description": "The name of the program.\nIf this is not set, it defaults to g_get_application_name()."
+            }, 
+            {
+                "writable": false, 
+                "type": "String", 
+                "readable": false, 
+                "name": "translator-credits", 
+                "description": "Credits to the translators. This string should be marked as translatable.\nThe string may contain email addresses and URLs, which will be displayed\nas links, see the introduction for more details."
+            }, 
+            {
+                "writable": false, 
+                "type": "String", 
+                "readable": false, 
+                "name": "version", 
+                "description": "The version of the program."
+            }, 
+            {
+                "writable": false, 
+                "type": "String", 
+                "readable": false, 
+                "name": "website", 
+                "description": "The URL for the link to the website of the program.\nThis should be a string starting with \"http://."
+            }, 
+            {
+                "writable": false, 
+                "type": "String", 
+                "readable": false, 
+                "name": "website-label", 
+                "description": "The label for the link to the website of the program."
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "wrap-license", 
+                "description": "Whether to wrap the text in the license dialog."
+            }
+        ]
+    }, 
+    "fullname": "Class Gtk.AboutDialog", 
+    "id": "Docs-AboutDialog", 
+    "description": "The GtkAboutDialog offers a simple way to display information about\na program like its logo, name, copyright, website and license. It is\nalso possible to give credits to the authors, documenters, translators\nand artists who have worked on the program. An about dialog is typically\nopened when the user selects the <literal>About</literal> option from\nthe <literal>Help</literal> menu. All parts of the dialog are optional.\n\nAbout dialog often contain links and email addresses. GtkAboutDialog\ndisplays these as clickable links. By default, it calls gtk_show_uri()\nwhen a user clicks one. The behaviour can be overridden with the\n#GtkAboutDialog::activate-link signal.\n\nTo make constructing a GtkAboutDialog as convenient as possible, you can\nuse the function gtk_show_about_dialog() which constructs and shows a dialog\nand keeps it around so that it can be shown again.\n\nNote that GTK+ sets a default title of <literal>_(\"About &percnt;s\")</literal>\non the dialog window (where &percnt;s is replaced by the name of the\napplication, but in order to ensure proper translation of the title,\napplications should set the title property explicitly when constructing\na GtkAboutDialog, as shown in the following example:\n<informalexample><programlisting>\ngtk_show_about_dialog (NULL,\n\"program-name\", \"ExampleCode\",\n\"logo\", example_logo,\n\"title\" _(\"About ExampleCode\"),\nNULL);\n</programlisting></informalexample>\n\nIt is also possible to show a #GtkAboutDialog like any other #GtkDialog,\ne.g. using gtk_dialog_run(). In this case, you might need to know that\nthe 'Close' button returns the #GTK_RESPONSE_CANCEL response id."
+}

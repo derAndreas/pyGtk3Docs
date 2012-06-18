@@ -1,0 +1,564 @@
+{
+    "isAbstract": false, 
+    "leaf": true, 
+    "name": "SpinButton", 
+    "text": "SpinButton", 
+    "interfaces": [
+        [
+            "Atk.ImplementorIface"
+        ], 
+        [
+            "Buildable"
+        ], 
+        [
+            "CellEditable"
+        ], 
+        [
+            "Editable"
+        ]
+    ], 
+    "parents": [
+        "SpinButton", 
+        "Entry", 
+        "Widget", 
+        "GObject.InitiallyUnowned"
+    ], 
+    "members": {
+        "signals": [
+            {
+                "version": "", 
+                "when": "last", 
+                "name": "change-value", 
+                "description": ""
+            }, 
+            {
+                "version": "", 
+                "when": "last", 
+                "name": "input", 
+                "description": "The ::input signal can be used to influence the conversion of\nthe users input into a double value. The signal handler is\nexpected to use gtk_entry_get_text() to retrieve the text of\nthe entry and set @new_value to the new value.\n\nThe default conversion uses g_strtod().\n\nwas not handled, and %GTK_INPUT_ERROR if the conversion failed."
+            }, 
+            {
+                "version": "", 
+                "when": "last", 
+                "name": "output", 
+                "description": "The ::output signal can be used to change to formatting\nof the value that is displayed in the spin buttons entry.\n|[\n/&ast; show leading zeros &ast;/\nstatic gboolean\non_output (GtkSpinButton *spin,\ngpointer       data)\n{\nGtkAdjustment *adjustment;\ngchar *text;\nint value;\n\nadjustment = gtk_spin_button_get_adjustment (spin);\nvalue = (int)gtk_adjustment_get_value (adjustment);\ntext = g_strdup_printf (\"%02d\", value);\ngtk_entry_set_text (GTK_ENTRY (spin), text);\ng_free (text);\n\nreturn TRUE;\n}\n]|"
+            }, 
+            {
+                "version": "", 
+                "when": "last", 
+                "name": "value-changed", 
+                "description": ""
+            }, 
+            {
+                "version": "2.10", 
+                "when": "last", 
+                "name": "wrapped", 
+                "description": "The wrapped signal is emitted right after the spinbutton wraps\nfrom its maximum to minimum value or vice-versa."
+            }
+        ], 
+        "methods": [
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "The new spin button as a #GtkWidget", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": null, 
+                "name": "Gtk.SpinButton(Gtk.Adjustment adjustment, Float climb_rate, Integer digits)", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Adjustment", 
+                        "name": "adjustment"
+                    }, 
+                    {
+                        "type": "Float", 
+                        "name": "climb_rate"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "digits"
+                    }
+                ]
+            }, 
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "The new spin button as a #GtkWidget", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": null, 
+                "name": "Gtk.SpinButton(Float min, Float max, Float step)", 
+                "parameters": [
+                    {
+                        "type": "Float", 
+                        "name": "min"
+                    }, 
+                    {
+                        "type": "Float", 
+                        "name": "max"
+                    }, 
+                    {
+                        "type": "Float", 
+                        "name": "step"
+                    }
+                ]
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "configure", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Adjustment", 
+                        "name": "adjustment", 
+                        "description": "a #GtkAdjustment"
+                    }, 
+                    {
+                        "type": "Float", 
+                        "name": "climb_rate", 
+                        "description": "the new climb rate"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "digits", 
+                        "description": "the number of decimal places to display in the spin button"
+                    }
+                ], 
+                "description": "Changes the properties of an existing spin button. The adjustment,\nclimb rate, and number of decimal places are all changed accordingly,\nafter this function call."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.Adjustment", 
+                    "description": "the #GtkAdjustment of @spin_button"
+                }, 
+                "version": "", 
+                "name": "get_adjustment", 
+                "parameters": null, 
+                "description": "Get the adjustment associated with a #GtkSpinButton"
+            }, 
+            {
+                "returns": {
+                    "type": "Integer", 
+                    "description": "the current precision"
+                }, 
+                "version": "", 
+                "name": "get_digits", 
+                "parameters": null, 
+                "description": "Fetches the precision of @spin_button. See gtk_spin_button_set_digits()."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "get_increments", 
+                "parameters": [
+                    {
+                        "type": "Float", 
+                        "name": "step", 
+                        "description": "location to store step increment, or %NULL"
+                    }, 
+                    {
+                        "type": "Float", 
+                        "name": "page", 
+                        "description": "location to store page increment, or %NULL"
+                    }
+                ], 
+                "description": "Gets the current step and page the increments used by @spin_button. See\ngtk_spin_button_set_increments()."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE if only numeric text can be entered"
+                }, 
+                "version": "", 
+                "name": "get_numeric", 
+                "parameters": null, 
+                "description": "Returns whether non-numeric text can be typed into the spin button.\nSee gtk_spin_button_set_numeric()."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "get_range", 
+                "parameters": [
+                    {
+                        "type": "Float", 
+                        "name": "min", 
+                        "description": "location to store minimum allowed value, or %NULL"
+                    }, 
+                    {
+                        "type": "Float", 
+                        "name": "max", 
+                        "description": "location to store maximum allowed value, or %NULL"
+                    }
+                ], 
+                "description": "Gets the range allowed for @spin_button.\nSee gtk_spin_button_set_range()."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE if values are snapped to the nearest step"
+                }, 
+                "version": "", 
+                "name": "get_snap_to_ticks", 
+                "parameters": null, 
+                "description": "Returns whether the values are corrected to the nearest step.\nSee gtk_spin_button_set_snap_to_ticks()."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.SpinButtonUpdatePolicy", 
+                    "description": "the current update policy"
+                }, 
+                "version": "", 
+                "name": "get_update_policy", 
+                "parameters": null, 
+                "description": "Gets the update behavior of a spin button.\nSee gtk_spin_button_set_update_policy()."
+            }, 
+            {
+                "returns": {
+                    "type": "Float", 
+                    "description": "the value of @spin_button"
+                }, 
+                "version": "", 
+                "name": "get_value", 
+                "parameters": null, 
+                "description": "Get the value in the @spin_button."
+            }, 
+            {
+                "returns": {
+                    "type": "Integer", 
+                    "description": "the value of @spin_button"
+                }, 
+                "version": "", 
+                "name": "get_value_as_int", 
+                "parameters": null, 
+                "description": "Get the value @spin_button represented as an integer."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE if the spin button wraps around"
+                }, 
+                "version": "", 
+                "name": "get_wrap", 
+                "parameters": null, 
+                "description": "Returns whether the spin button's value wraps around to the\nopposite limit when the upper or lower limit of the range is\nexceeded. See gtk_spin_button_set_wrap()."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_adjustment", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Adjustment", 
+                        "name": "adjustment", 
+                        "description": "a #GtkAdjustment to replace the existing adjustment"
+                    }
+                ], 
+                "description": "Replaces the #GtkAdjustment associated with @spin_button."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_digits", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "digits", 
+                        "description": "the number of digits after the decimal point to be displayed for the spin button's value"
+                    }
+                ], 
+                "description": "Set the precision to be displayed by @spin_button. Up to 20 digit precision\nis allowed."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_increments", 
+                "parameters": [
+                    {
+                        "type": "Float", 
+                        "name": "step", 
+                        "description": "increment applied for a button 1 press."
+                    }, 
+                    {
+                        "type": "Float", 
+                        "name": "page", 
+                        "description": "increment applied for a button 2 press."
+                    }
+                ], 
+                "description": "Sets the step and page increments for spin_button.  This affects how\nquickly the value changes when the spin button's arrows are activated."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_numeric", 
+                "parameters": [
+                    {
+                        "type": "Boolean", 
+                        "name": "numeric", 
+                        "description": "flag indicating if only numeric entry is allowed"
+                    }
+                ], 
+                "description": "Sets the flag that determines if non-numeric text can be typed\ninto the spin button."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_range", 
+                "parameters": [
+                    {
+                        "type": "Float", 
+                        "name": "min", 
+                        "description": "minimum allowable value"
+                    }, 
+                    {
+                        "type": "Float", 
+                        "name": "max", 
+                        "description": "maximum allowable value"
+                    }
+                ], 
+                "description": "Sets the minimum and maximum allowable values for @spin_button.\n\nIf the current value is outside this range, it will be adjusted\nto fit within the range, otherwise it will remain unchanged."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_snap_to_ticks", 
+                "parameters": [
+                    {
+                        "type": "Boolean", 
+                        "name": "snap_to_ticks", 
+                        "description": "a flag indicating if invalid values should be corrected"
+                    }
+                ], 
+                "description": "Sets the policy as to whether values are corrected to the\nnearest step increment when a spin button is activated after\nproviding an invalid value."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_update_policy", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.SpinButtonUpdatePolicy", 
+                        "name": "policy", 
+                        "description": "a #GtkSpinButtonUpdatePolicy value"
+                    }
+                ], 
+                "description": "Sets the update behavior of a spin button.\nThis determines wether the spin button is always updated\nor only when a valid value is set."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_value", 
+                "parameters": [
+                    {
+                        "type": "Float", 
+                        "name": "value", 
+                        "description": "the new value"
+                    }
+                ], 
+                "description": "Sets the value of @spin_button."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_wrap", 
+                "parameters": [
+                    {
+                        "type": "Boolean", 
+                        "name": "wrap", 
+                        "description": "a flag indicating if wrapping behavior is performed"
+                    }
+                ], 
+                "description": "Sets the flag that determines if a spin button value wraps\naround to the opposite limit when the upper or lower limit\nof the range is exceeded."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "spin", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.SpinType", 
+                        "name": "direction", 
+                        "description": "a #GtkSpinType indicating the direction to spin"
+                    }, 
+                    {
+                        "type": "Float", 
+                        "name": "increment", 
+                        "description": "step increment to apply in the specified direction"
+                    }
+                ], 
+                "description": "Increment or decrement a spin button's value in a specified\ndirection by a specified amount."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "update", 
+                "parameters": null, 
+                "description": "Manually force an update of the spin button."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "change_value", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.ScrollType", 
+                        "name": "scroll", 
+                        "description": ""
+                    }
+                ], 
+                "description": ""
+            }, 
+            {
+                "returns": {
+                    "type": "Integer", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "input", 
+                "parameters": [
+                    {
+                        "type": "Float", 
+                        "name": "new_value", 
+                        "description": ""
+                    }
+                ], 
+                "description": ""
+            }, 
+            {
+                "returns": {
+                    "type": "Integer", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "output", 
+                "parameters": null, 
+                "description": ""
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "value_changed", 
+                "parameters": null, 
+                "description": ""
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "wrapped", 
+                "parameters": null, 
+                "description": ""
+            }
+        ], 
+        "properties": [
+            {
+                "writable": false, 
+                "type": "Gtk.Adjustment", 
+                "readable": false, 
+                "name": "adjustment", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Float", 
+                "readable": false, 
+                "name": "climb-rate", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Integer", 
+                "readable": false, 
+                "name": "digits", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "numeric", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "snap-to-ticks", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Gtk.SpinButtonUpdatePolicy", 
+                "readable": false, 
+                "name": "update-policy", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Float", 
+                "readable": false, 
+                "name": "value", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "wrap", 
+                "description": ""
+            }
+        ]
+    }, 
+    "fullname": "Class Gtk.SpinButton", 
+    "id": "Docs-SpinButton", 
+    "description": "A #GtkSpinButton is an ideal way to allow the user to set the value of\nsome attribute. Rather than having to directly type a number into a\n#GtkEntry, GtkSpinButton allows the user to click on one of two arrows\nto increment or decrement the displayed value. A value can still be\ntyped in, with the bonus that it can be checked to ensure it is in a\ngiven range.\n\nThe main properties of a GtkSpinButton are through an adjustment.\nSee the #GtkAdjustment section for more details about an adjustment's\nproperties.\n\n<example>\n<title>Using a GtkSpinButton to get an integer</title>\n<programlisting>\n/&ast; Provides a function to retrieve an integer value from a\n&ast; GtkSpinButton and creates a spin button to model percentage\n&ast; values.\n&ast;/\n\ngint\ngrab_int_value (GtkSpinButton *button,\ngpointer       user_data)\n{\nreturn gtk_spin_button_get_value_as_int (button);\n}\n\nvoid\ncreate_integer_spin_button (void)\n{\n\nGtkWidget *window, *button;\nGtkAdjustment *adjustment;\n\nadjustment = gtk_adjustment_new (50.0, 0.0, 100.0, 1.0, 5.0, 0.0);\n\nwindow = gtk_window_new (GTK_WINDOW_TOPLEVEL);\ngtk_container_set_border_width (GTK_CONTAINER (window), 5);\n\n/&ast; creates the spinbutton, with no decimal places &ast;/\nbutton = gtk_spin_button_new (adjustment, 1.0, 0);\ngtk_container_add (GTK_CONTAINER (window), button);\n\ngtk_widget_show_all (window);\n}\n</programlisting>\n</example>\n\n<example>\n<title>Using a GtkSpinButton to get a floating point value</title>\n<programlisting>\n/&ast; Provides a function to retrieve a floating point value from a\n&ast; GtkSpinButton, and creates a high precision spin button.\n&ast;/\n\ngfloat\ngrab_float_value (GtkSpinButton *button,\ngpointer       user_data)\n{\nreturn gtk_spin_button_get_value (button);\n}\n\nvoid\ncreate_floating_spin_button (void)\n{\nGtkWidget *window, *button;\nGtkAdjustment *adjustment;\n\nadjustment = gtk_adjustment_new (2.500, 0.0, 5.0, 0.001, 0.1, 0.0);\n\nwindow = gtk_window_new (GTK_WINDOW_TOPLEVEL);\ngtk_container_set_border_width (GTK_CONTAINER (window), 5);\n\n/&ast; creates the spinbutton, with three decimal places &ast;/\nbutton = gtk_spin_button_new (adjustment, 0.001, 3);\ngtk_container_add (GTK_CONTAINER (window), button);\n\ngtk_widget_show_all (window);\n}\n</programlisting>\n</example>"
+}

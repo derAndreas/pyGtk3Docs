@@ -1,0 +1,59 @@
+{
+    "isAbstract": false, 
+    "leaf": true, 
+    "name": "VolumeButton", 
+    "text": "VolumeButton", 
+    "interfaces": [
+        [
+            "Atk.ImplementorIface"
+        ], 
+        [
+            "Actionable"
+        ], 
+        [
+            "Activatable"
+        ], 
+        [
+            "Buildable"
+        ], 
+        [
+            "Orientable"
+        ]
+    ], 
+    "parents": [
+        "VolumeButton", 
+        "ScaleButton", 
+        "Button", 
+        "Bin", 
+        "Container", 
+        "Widget", 
+        "GObject.InitiallyUnowned"
+    ], 
+    "members": {
+        "signals": [], 
+        "methods": [
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a new #GtkVolumeButton", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": "2.12", 
+                "name": "Gtk.VolumeButton()", 
+                "parameters": null
+            }
+        ], 
+        "properties": [
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "use-symbolic", 
+                "description": "Whether to use symbolic icons as the icons. Note that\nif the symbolic icons are not available in your installed\ntheme, then the normal (potentially colorful) icons will\nbe used."
+            }
+        ]
+    }, 
+    "fullname": "Class Gtk.VolumeButton", 
+    "id": "Docs-VolumeButton", 
+    "description": "#GtkVolumeButton is a subclass of #GtkScaleButton that has\nbeen tailored for use as a volume control widget with suitable\nicons, tooltips and accessible labels."
+}

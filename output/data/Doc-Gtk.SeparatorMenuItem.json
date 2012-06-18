@@ -1,0 +1,44 @@
+{
+    "isAbstract": false, 
+    "leaf": true, 
+    "name": "SeparatorMenuItem", 
+    "text": "SeparatorMenuItem", 
+    "interfaces": [
+        [
+            "Atk.ImplementorIface"
+        ], 
+        [
+            "Activatable"
+        ], 
+        [
+            "Buildable"
+        ]
+    ], 
+    "parents": [
+        "SeparatorMenuItem", 
+        "MenuItem", 
+        "Bin", 
+        "Container", 
+        "Widget", 
+        "GObject.InitiallyUnowned"
+    ], 
+    "members": {
+        "signals": [], 
+        "methods": [
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a new #GtkSeparatorMenuItem.", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": null, 
+                "name": "Gtk.SeparatorMenuItem()", 
+                "parameters": null
+            }
+        ], 
+        "properties": []
+    }, 
+    "fullname": "Class Gtk.SeparatorMenuItem", 
+    "id": "Docs-SeparatorMenuItem", 
+    "description": "The #GtkSeparatorMenuItem is a separator used to group\nitems within a menu. It displays a horizontal line with a shadow to\nmake it appear sunken into the interface."
+}

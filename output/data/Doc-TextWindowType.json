@@ -1,0 +1,41 @@
+{
+    "leaf": true, 
+    "name": "TextWindowType", 
+    "text": "TextWindowType", 
+    "version": null, 
+    "members": {
+        "properties": [
+            {
+                "name": "private", 
+                "value": "0"
+            }, 
+            {
+                "name": "widget", 
+                "value": "1"
+            }, 
+            {
+                "name": "text", 
+                "value": "2"
+            }, 
+            {
+                "name": "left", 
+                "value": "3"
+            }, 
+            {
+                "name": "right", 
+                "value": "4"
+            }, 
+            {
+                "name": "top", 
+                "value": "5"
+            }, 
+            {
+                "name": "bottom", 
+                "value": "6"
+            }
+        ]
+    }, 
+    "fullname": "Enumeration Gtk.TextWindowType", 
+    "id": "Docs-TextWindowType", 
+    "description": ""
+}

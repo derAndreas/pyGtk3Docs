@@ -1,0 +1,33 @@
+{
+    "leaf": true, 
+    "name": "CalendarDisplayOptions", 
+    "text": "CalendarDisplayOptions", 
+    "version": null, 
+    "members": {
+        "properties": [
+            {
+                "name": "show_heading", 
+                "value": "1"
+            }, 
+            {
+                "name": "show_day_names", 
+                "value": "2"
+            }, 
+            {
+                "name": "no_month_change", 
+                "value": "4"
+            }, 
+            {
+                "name": "show_week_numbers", 
+                "value": "8"
+            }, 
+            {
+                "name": "show_details", 
+                "value": "32"
+            }
+        ]
+    }, 
+    "fullname": "Bitfield Gtk.CalendarDisplayOptions", 
+    "id": "Docs-CalendarDisplayOptions", 
+    "description": ""
+}

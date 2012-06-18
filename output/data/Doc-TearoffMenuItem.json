@@ -1,0 +1,46 @@
+{
+    "isAbstract": false, 
+    "leaf": true, 
+    "name": "TearoffMenuItem", 
+    "text": "TearoffMenuItem", 
+    "interfaces": [
+        [
+            "Atk.ImplementorIface"
+        ], 
+        [
+            "Activatable"
+        ], 
+        [
+            "Buildable"
+        ]
+    ], 
+    "parents": [
+        "TearoffMenuItem", 
+        "MenuItem", 
+        "Bin", 
+        "Container", 
+        "Widget", 
+        "GObject.InitiallyUnowned"
+    ], 
+    "members": {
+        "signals": [], 
+        "methods": [
+            {
+                "returns": {
+                    "doc": "a new #GtkTearoffMenuItem.", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": null, 
+                "name": "Gtk.TearoffMenuItem()", 
+                "parameters": null, 
+                "deprecated": "#GtkTearoffMenuItem is deprecated and should not be", 
+                "deprecated_version": "3.4", 
+                "isConstructor": true
+            }
+        ], 
+        "properties": []
+    }, 
+    "fullname": "Class Gtk.TearoffMenuItem", 
+    "id": "Docs-TearoffMenuItem", 
+    "description": "A #GtkTearoffMenuItem is a special #GtkMenuItem which is used to\ntear off and reattach its menu.\n\nWhen its menu is shown normally, the #GtkTearoffMenuItem is drawn as a\ndotted line indicating that the menu can be torn off.  Activating it\ncauses its menu to be torn off and displayed in its own window\nas a tearoff menu.\n\nWhen its menu is shown as a tearoff menu, the #GtkTearoffMenuItem is drawn\nas a dotted line which has a left pointing arrow graphic indicating that\nthe tearoff menu can be reattached.  Activating it will erase the tearoff\nmenu window.\n\n<note>#GtkTearoffMenuItem is deprecated and should not be used in newly\nwritten code. Menus are not meant to be torn around.</note>"
+}

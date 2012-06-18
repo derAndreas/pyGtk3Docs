@@ -1,0 +1,29 @@
+{
+    "leaf": true, 
+    "name": "SelectionMode", 
+    "text": "SelectionMode", 
+    "version": null, 
+    "members": {
+        "properties": [
+            {
+                "name": "none", 
+                "value": "0"
+            }, 
+            {
+                "name": "single", 
+                "value": "1"
+            }, 
+            {
+                "name": "browse", 
+                "value": "2"
+            }, 
+            {
+                "name": "multiple", 
+                "value": "3"
+            }
+        ]
+    }, 
+    "fullname": "Enumeration Gtk.SelectionMode", 
+    "id": "Docs-SelectionMode", 
+    "description": ""
+}

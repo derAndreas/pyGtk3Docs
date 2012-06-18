@@ -1,0 +1,29 @@
+{
+    "leaf": true, 
+    "name": "RcFlags", 
+    "text": "RcFlags", 
+    "version": null, 
+    "members": {
+        "properties": [
+            {
+                "name": "fg", 
+                "value": "1"
+            }, 
+            {
+                "name": "bg", 
+                "value": "2"
+            }, 
+            {
+                "name": "text", 
+                "value": "4"
+            }, 
+            {
+                "name": "base", 
+                "value": "8"
+            }
+        ]
+    }, 
+    "fullname": "Bitfield Gtk.RcFlags", 
+    "id": "Docs-RcFlags", 
+    "description": ""
+}

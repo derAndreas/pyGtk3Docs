@@ -1,0 +1,44 @@
+{
+    "isAbstract": false, 
+    "leaf": true, 
+    "name": "HSeparator", 
+    "text": "HSeparator", 
+    "interfaces": [
+        [
+            "Atk.ImplementorIface"
+        ], 
+        [
+            "Buildable"
+        ], 
+        [
+            "Orientable"
+        ]
+    ], 
+    "parents": [
+        "HSeparator", 
+        "Separator", 
+        "Widget", 
+        "GObject.InitiallyUnowned"
+    ], 
+    "members": {
+        "signals": [], 
+        "methods": [
+            {
+                "returns": {
+                    "doc": "a new #GtkHSeparator.", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": null, 
+                "name": "Gtk.HSeparator()", 
+                "parameters": null, 
+                "deprecated": "Use gtk_separator_new() with %GTK_ORIENTATION_HORIZONTAL instead", 
+                "deprecated_version": "3.2", 
+                "isConstructor": true
+            }
+        ], 
+        "properties": []
+    }, 
+    "fullname": "Class Gtk.HSeparator", 
+    "id": "Docs-HSeparator", 
+    "description": "The #GtkHSeparator widget is a horizontal separator, used to group the\nwidgets within a window. It displays a horizontal line with a shadow to\nmake it appear sunken into the interface.\n\n<note>\nThe #GtkHSeparator widget is not used as a separator within menus.\nTo create a separator in a menu create an empty #GtkSeparatorMenuItem\nwidget using gtk_separator_menu_item_new() and add it to the menu with\ngtk_menu_shell_append().\n</note>\n\nGtkHSeparator has been deprecated, use #GtkSeparator instead."
+}

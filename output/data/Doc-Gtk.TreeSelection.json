@@ -1,0 +1,353 @@
+{
+    "isAbstract": false, 
+    "leaf": true, 
+    "name": "TreeSelection", 
+    "text": "TreeSelection", 
+    "interfaces": [], 
+    "parents": [
+        "TreeSelection", 
+        "GObject.Object"
+    ], 
+    "members": {
+        "signals": [
+            {
+                "version": "", 
+                "when": "first", 
+                "name": "changed", 
+                "description": "Emitted whenever the selection has (possibly) changed. Please note that\nthis signal is mostly a hint.  It may only be emitted once when a range\nof rows are selected, and it may occasionally be emitted when nothing\nhas happened."
+            }
+        ], 
+        "methods": [
+            {
+                "returns": {
+                    "type": "Integer", 
+                    "description": "The number of rows selected."
+                }, 
+                "version": "2.2", 
+                "name": "count_selected_rows", 
+                "parameters": null, 
+                "description": "Returns the number of rows that have been selected in @tree."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.SelectionMode", 
+                    "description": "the current selection mode"
+                }, 
+                "version": "", 
+                "name": "get_mode", 
+                "parameters": null, 
+                "description": "Gets the selection mode for @selection. See\ngtk_tree_selection_set_mode()."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.TreeSelectionFunc", 
+                    "description": "The function."
+                }, 
+                "version": "2.14", 
+                "name": "get_select_function", 
+                "parameters": null, 
+                "description": "Returns the current selection function."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "TRUE, if there is a selected node."
+                }, 
+                "version": "", 
+                "name": "get_selected", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TreeModel", 
+                        "name": "model", 
+                        "description": "A pointer to set to the #GtkTreeModel, or NULL."
+                    }, 
+                    {
+                        "type": "ref:Gtk.TreeIter", 
+                        "name": "iter", 
+                        "description": "The #GtkTreeIter, or NULL."
+                    }
+                ], 
+                "description": "Sets @iter to the currently selected node if @selection is set to\n#GTK_SELECTION_SINGLE or #GTK_SELECTION_BROWSE.  @iter may be NULL if you\njust want to test if @selection has any selected nodes.  @model is filled\nwith the current model as a convenience.  This function will not work if you\nuse @selection is #GTK_SELECTION_MULTIPLE."
+            }, 
+            {
+                "returns": {
+                    "type": "GLib.List", 
+                    "description": "A #GList containing a #GtkTreePath for each selected row."
+                }, 
+                "version": "2.2", 
+                "name": "get_selected_rows", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TreeModel", 
+                        "name": "model", 
+                        "description": "A pointer to set to the #GtkTreeModel, or %NULL."
+                    }
+                ], 
+                "description": "Creates a list of path of all selected rows. Additionally, if you are\nplanning on modifying the model after calling this function, you may\nwant to convert the returned list into a list of #GtkTreeRowReference<!-- -->s.\nTo do this, you can use gtk_tree_row_reference_new().\n\nTo free the return value, use:\n|[\ng_list_free_full (list, (GDestroyNotify) gtk_tree_path_free);\n]|"
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.TreeView", 
+                    "description": "A #GtkTreeView"
+                }, 
+                "version": "", 
+                "name": "get_tree_view", 
+                "parameters": null, 
+                "description": "Returns the tree view associated with @selection."
+            }, 
+            {
+                "returns": {
+                    "type": "Mixed", 
+                    "description": "The user data."
+                }, 
+                "version": "", 
+                "name": "get_user_data", 
+                "parameters": null, 
+                "description": "Returns the user data for the selection function."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE, if @iter is selected"
+                }, 
+                "version": "", 
+                "name": "iter_is_selected", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TreeIter", 
+                        "name": "iter", 
+                        "description": "A valid #GtkTreeIter"
+                    }
+                ], 
+                "description": "Returns %TRUE if the row at @iter is currently selected."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE if @path is selected."
+                }, 
+                "version": "", 
+                "name": "path_is_selected", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TreePath", 
+                        "name": "path", 
+                        "description": "A #GtkTreePath to check selection on."
+                    }
+                ], 
+                "description": "Returns %TRUE if the row pointed to by @path is currently selected.  If @path\ndoes not point to a valid location, %FALSE is returned"
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "select_all", 
+                "parameters": null, 
+                "description": "Selects all the nodes. @selection must be set to #GTK_SELECTION_MULTIPLE\nmode."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "select_iter", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TreeIter", 
+                        "name": "iter", 
+                        "description": "The #GtkTreeIter to be selected."
+                    }
+                ], 
+                "description": "Selects the specified iterator."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "select_path", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TreePath", 
+                        "name": "path", 
+                        "description": "The #GtkTreePath to be selected."
+                    }
+                ], 
+                "description": "Select the row at @path."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "select_range", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TreePath", 
+                        "name": "start_path", 
+                        "description": "The initial node of the range."
+                    }, 
+                    {
+                        "type": "ref:Gtk.TreePath", 
+                        "name": "end_path", 
+                        "description": "The final node of the range."
+                    }
+                ], 
+                "description": "Selects a range of nodes, determined by @start_path and @end_path inclusive.\n@selection must be set to #GTK_SELECTION_MULTIPLE mode."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "selected_foreach", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TreeSelectionForeachFunc", 
+                        "name": "func", 
+                        "description": "The function to call for each selected node."
+                    }, 
+                    {
+                        "type": "Mixed", 
+                        "name": "data", 
+                        "description": "user data to pass to the function."
+                    }
+                ], 
+                "description": "Calls a function for each selected node. Note that you cannot modify\nthe tree or selection from within this function. As a result,\ngtk_tree_selection_get_selected_rows() might be more useful."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_mode", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.SelectionMode", 
+                        "name": "type", 
+                        "description": "The selection mode"
+                    }
+                ], 
+                "description": "Sets the selection mode of the @selection.  If the previous type was\n#GTK_SELECTION_MULTIPLE, then the anchor is kept selected, if it was\npreviously selected."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_select_function", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TreeSelectionFunc", 
+                        "name": "func", 
+                        "description": "The selection function. May be %NULL"
+                    }, 
+                    {
+                        "type": "Mixed", 
+                        "name": "data", 
+                        "description": "The selection function's data. May be %NULL"
+                    }, 
+                    {
+                        "type": "GLib.DestroyNotify", 
+                        "name": "destroy", 
+                        "description": "The destroy function for user data.  May be %NULL"
+                    }
+                ], 
+                "description": "Sets the selection function.\n\nIf set, this function is called before any node is selected or unselected,\ngiving some control over which nodes are selected. The select function\nshould return %TRUE if the state of the node may be toggled, and %FALSE\nif the state of the node should be left unchanged."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "unselect_all", 
+                "parameters": null, 
+                "description": "Unselects all the nodes."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "unselect_iter", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TreeIter", 
+                        "name": "iter", 
+                        "description": "The #GtkTreeIter to be unselected."
+                    }
+                ], 
+                "description": "Unselects the specified iterator."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "unselect_path", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TreePath", 
+                        "name": "path", 
+                        "description": "The #GtkTreePath to be unselected."
+                    }
+                ], 
+                "description": "Unselects the row at @path."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.2", 
+                "name": "unselect_range", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TreePath", 
+                        "name": "start_path", 
+                        "description": "The initial node of the range."
+                    }, 
+                    {
+                        "type": "ref:Gtk.TreePath", 
+                        "name": "end_path", 
+                        "description": "The initial node of the range."
+                    }
+                ], 
+                "description": "Unselects a range of nodes, determined by @start_path and @end_path\ninclusive."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "changed", 
+                "parameters": null, 
+                "description": ""
+            }
+        ], 
+        "properties": [
+            {
+                "writable": false, 
+                "type": "Gtk.SelectionMode", 
+                "readable": false, 
+                "name": "mode", 
+                "description": "Selection mode.\nSee gtk_tree_selection_set_mode() for more information on this property."
+            }
+        ]
+    }, 
+    "fullname": "Class Gtk.TreeSelection", 
+    "id": "Docs-TreeSelection", 
+    "description": "The #GtkTreeSelection object is a helper object to manage the selection\nfor a #GtkTreeView widget.  The #GtkTreeSelection object is\nautomatically created when a new #GtkTreeView widget is created, and\ncannot exist independentally of this widget.  The primary reason the\n#GtkTreeSelection objects exists is for cleanliness of code and API.\nThat is, there is no conceptual reason all these functions could not be\nmethods on the #GtkTreeView widget instead of a separate function.\n\nThe #GtkTreeSelection object is gotten from a #GtkTreeView by calling\ngtk_tree_view_get_selection().  It can be manipulated to check the\nselection status of the tree, as well as select and deselect individual\nrows.  Selection is done completely view side.  As a result, multiple\nviews of the same model can have completely different selections.\nAdditionally, you cannot change the selection of a row on the model that\nis not currently displayed by the view without expanding its parents\nfirst.\n\nOne of the important things to remember when monitoring the selection of\na view is that the #GtkTreeSelection::changed signal is mostly a hint.\nThat is,it may only emit one signal when a range of rows is selected.\nAdditionally, it may on occasion emit a #GtkTreeSelection::changed signal\nwhen nothing has happened (mostly as a result of programmers calling\nselect_row on an already selected row)."
+}

@@ -1,0 +1,91 @@
+{
+    "isAbstract": false, 
+    "leaf": true, 
+    "name": "Fixed", 
+    "text": "Fixed", 
+    "interfaces": [
+        [
+            "Atk.ImplementorIface"
+        ], 
+        [
+            "Buildable"
+        ]
+    ], 
+    "parents": [
+        "Fixed", 
+        "Container", 
+        "Widget", 
+        "GObject.InitiallyUnowned"
+    ], 
+    "members": {
+        "signals": [], 
+        "methods": [
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a new #GtkFixed.", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": null, 
+                "name": "Gtk.Fixed()", 
+                "parameters": null
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "move", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "widget", 
+                        "description": "the child widget."
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "x", 
+                        "description": "the horizontal position to move the widget to."
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "y", 
+                        "description": "the vertical position to move the widget to."
+                    }
+                ], 
+                "description": "Moves a child of a #GtkFixed container to the given position."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "put", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "widget", 
+                        "description": "the widget to add."
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "x", 
+                        "description": "the horizontal position to place the widget at."
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "y", 
+                        "description": "the vertical position to place the widget at."
+                    }
+                ], 
+                "description": "Adds a widget to a #GtkFixed container at the given position."
+            }
+        ], 
+        "properties": []
+    }, 
+    "fullname": "Class Gtk.Fixed", 
+    "id": "Docs-Fixed", 
+    "description": "The #GtkFixed widget is a container which can place child widgets\nat fixed positions and with fixed sizes, given in pixels. #GtkFixed\nperforms no automatic layout management.\n\nFor most applications, you should not use this container! It keeps\nyou from having to learn about the other GTK+ containers, but it\nresults in broken applications.  With #GtkFixed, the following\nthings will result in truncated text, overlapping widgets, and\nother display bugs:\n<itemizedlist>\n<listitem><para>\nThemes, which may change widget sizes.\n</para></listitem>\n<listitem><para>\nFonts other than the one you used to write the app will of course\nchange the size of widgets containing text; keep in mind that\nusers may use a larger font because of difficulty reading the\ndefault, or they may be using Windows or the framebuffer port of\nGTK+, where different fonts are available.\n</para></listitem>\n<listitem><para>\nTranslation of text into other languages changes its size. Also,\ndisplay of non-English text will use a different font in many\ncases.\n</para></listitem>\n</itemizedlist>\n\nIn addition, the fixed widget can't properly be mirrored in\nright-to-left languages such as Hebrew and Arabic. i.e. normally\nGTK+ will flip the interface to put labels to the right of the\nthing they label, but it can't do that with #GtkFixed. So your\napplication will not be usable in right-to-left languages.\n\nFinally, fixed positioning makes it kind of annoying to add/remove\nGUI elements, since you have to reposition all the other\nelements. This is a long-term maintenance problem for your\napplication.\n\nIf you know none of these things are an issue for your application,\nand prefer the simplicity of #GtkFixed, by all means use the\nwidget. But you should be aware of the tradeoffs."
+}

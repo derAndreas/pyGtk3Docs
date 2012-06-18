@@ -1,0 +1,21 @@
+{
+    "leaf": true, 
+    "name": "ToolbarSpaceStyle", 
+    "text": "ToolbarSpaceStyle", 
+    "version": null, 
+    "members": {
+        "properties": [
+            {
+                "name": "empty", 
+                "value": "0"
+            }, 
+            {
+                "name": "line", 
+                "value": "1"
+            }
+        ]
+    }, 
+    "fullname": "Enumeration Gtk.ToolbarSpaceStyle", 
+    "id": "Docs-ToolbarSpaceStyle", 
+    "description": ""
+}

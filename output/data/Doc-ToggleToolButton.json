@@ -1,0 +1,114 @@
+{
+    "isAbstract": false, 
+    "leaf": true, 
+    "name": "ToggleToolButton", 
+    "text": "ToggleToolButton", 
+    "interfaces": [
+        [
+            "Atk.ImplementorIface"
+        ], 
+        [
+            "Actionable"
+        ], 
+        [
+            "Activatable"
+        ], 
+        [
+            "Buildable"
+        ]
+    ], 
+    "parents": [
+        "ToggleToolButton", 
+        "ToolButton", 
+        "ToolItem", 
+        "Bin", 
+        "Container", 
+        "Widget", 
+        "GObject.InitiallyUnowned"
+    ], 
+    "members": {
+        "signals": [
+            {
+                "version": "", 
+                "when": "first", 
+                "name": "toggled", 
+                "description": "Emitted whenever the toggle tool button changes state."
+            }
+        ], 
+        "methods": [
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a newly created #GtkToggleToolButton", 
+                    "name": "ref:Gtk.ToolItem"
+                }, 
+                "version": "2.4", 
+                "name": "Gtk.ToggleToolButton()", 
+                "parameters": null
+            }, 
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "A new #GtkToggleToolButton", 
+                    "name": "ref:Gtk.ToolItem"
+                }, 
+                "version": "2.4", 
+                "name": "Gtk.ToggleToolButton(String stock_id)", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "stock_id"
+                    }
+                ]
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE if the toggle tool button is pressed in, %FALSE if not"
+                }, 
+                "version": "2.4", 
+                "name": "get_active", 
+                "parameters": null, 
+                "description": "Queries a #GtkToggleToolButton and returns its current state.\nReturns %TRUE if the toggle button is pressed in and %FALSE if it is raised."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.4", 
+                "name": "set_active", 
+                "parameters": [
+                    {
+                        "type": "Boolean", 
+                        "name": "is_active", 
+                        "description": "whether @button should be active"
+                    }
+                ], 
+                "description": "Sets the status of the toggle tool button. Set to %TRUE if you\nwant the GtkToggleButton to be 'pressed in', and %FALSE to raise it.\nThis action causes the toggled signal to be emitted."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "toggled", 
+                "parameters": null, 
+                "description": ""
+            }
+        ], 
+        "properties": [
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "active", 
+                "description": "If the toggle tool button should be pressed in."
+            }
+        ]
+    }, 
+    "fullname": "Class Gtk.ToggleToolButton", 
+    "id": "Docs-ToggleToolButton", 
+    "description": "A #GtkToggleToolButton is a #GtkToolItem that contains a toggle\nbutton.\n\nUse gtk_toggle_tool_button_new() to create a new\n#GtkToggleToolButton. Use gtk_toggle_tool_button_new_from_stock() to\ncreate a new #GtkToggleToolButton containing a stock item."
+}

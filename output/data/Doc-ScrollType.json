@@ -1,0 +1,77 @@
+{
+    "leaf": true, 
+    "name": "ScrollType", 
+    "text": "ScrollType", 
+    "version": null, 
+    "members": {
+        "properties": [
+            {
+                "name": "none", 
+                "value": "0"
+            }, 
+            {
+                "name": "jump", 
+                "value": "1"
+            }, 
+            {
+                "name": "step_backward", 
+                "value": "2"
+            }, 
+            {
+                "name": "step_forward", 
+                "value": "3"
+            }, 
+            {
+                "name": "page_backward", 
+                "value": "4"
+            }, 
+            {
+                "name": "page_forward", 
+                "value": "5"
+            }, 
+            {
+                "name": "step_up", 
+                "value": "6"
+            }, 
+            {
+                "name": "step_down", 
+                "value": "7"
+            }, 
+            {
+                "name": "page_up", 
+                "value": "8"
+            }, 
+            {
+                "name": "page_down", 
+                "value": "9"
+            }, 
+            {
+                "name": "step_left", 
+                "value": "10"
+            }, 
+            {
+                "name": "step_right", 
+                "value": "11"
+            }, 
+            {
+                "name": "page_left", 
+                "value": "12"
+            }, 
+            {
+                "name": "page_right", 
+                "value": "13"
+            }, 
+            {
+                "name": "start", 
+                "value": "14"
+            }, 
+            {
+                "name": "end", 
+                "value": "15"
+            }
+        ]
+    }, 
+    "fullname": "Enumeration Gtk.ScrollType", 
+    "id": "Docs-ScrollType", 
+    "description": ""
+}

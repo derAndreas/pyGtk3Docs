@@ -1,0 +1,25 @@
+{
+    "leaf": true, 
+    "name": "TextBufferTargetInfo", 
+    "text": "TextBufferTargetInfo", 
+    "version": null, 
+    "members": {
+        "properties": [
+            {
+                "name": "buffer_contents", 
+                "value": "-1"
+            }, 
+            {
+                "name": "rich_text", 
+                "value": "-2"
+            }, 
+            {
+                "name": "text", 
+                "value": "-3"
+            }
+        ]
+    }, 
+    "fullname": "Enumeration Gtk.TextBufferTargetInfo", 
+    "id": "Docs-TextBufferTargetInfo", 
+    "description": ""
+}

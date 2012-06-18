@@ -1,0 +1,57 @@
+{
+    "isAbstract": false, 
+    "leaf": true, 
+    "name": "IMContextSimple", 
+    "text": "IMContextSimple", 
+    "interfaces": [], 
+    "parents": [
+        "IMContextSimple", 
+        "IMContext", 
+        "GObject.Object"
+    ], 
+    "members": {
+        "signals": [], 
+        "methods": [
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a new #GtkIMContextSimple.", 
+                    "name": "ref:Gtk.IMContext"
+                }, 
+                "version": null, 
+                "name": "Gtk.IMContextSimple()", 
+                "parameters": null
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "add_table", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "data", 
+                        "description": "the table"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "max_seq_len", 
+                        "description": "Maximum length of a sequence in the table (cannot be greater than #GTK_MAX_COMPOSE_LEN)"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "n_seqs", 
+                        "description": "number of sequences in the table"
+                    }
+                ], 
+                "description": "Adds an additional table to search to the input context.\nEach row of the table consists of @max_seq_len key symbols\nfollowed by two #guint16 interpreted as the high and low\nwords of a #gunicode value. Tables are searched starting\nfrom the last added.\n\nThe table must be sorted in dictionary order on the\nnumeric value of the key symbol fields. (Values beyond\nthe length of the sequence should be zero.)"
+            }
+        ], 
+        "properties": []
+    }, 
+    "fullname": "Class Gtk.IMContextSimple", 
+    "id": "Docs-IMContextSimple", 
+    "description": ""
+}

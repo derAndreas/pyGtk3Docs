@@ -1,0 +1,99 @@
+{
+    "isAbstract": false, 
+    "leaf": true, 
+    "name": "RcStyle", 
+    "text": "RcStyle", 
+    "interfaces": [], 
+    "parents": [
+        "RcStyle", 
+        "GObject.Object"
+    ], 
+    "members": {
+        "signals": [], 
+        "methods": [
+            {
+                "returns": {
+                    "doc": "the newly-created #GtkRcStyle", 
+                    "name": "ref:Gtk.RcStyle"
+                }, 
+                "version": null, 
+                "name": "Gtk.RcStyle()", 
+                "parameters": null, 
+                "deprecated": "Use #GtkCssProvider instead.", 
+                "deprecated_version": "3.0", 
+                "isConstructor": true
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.RcStyle", 
+                    "description": "the resulting #GtkRcStyle"
+                }, 
+                "version": "", 
+                "name": "copy", 
+                "parameters": null, 
+                "description": "Makes a copy of the specified #GtkRcStyle. This function\nwill correctly copy an RC style that is a member of a class\nderived from #GtkRcStyle."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.RcStyle", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "create_rc_style", 
+                "parameters": null, 
+                "description": ""
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.Style", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "create_style", 
+                "parameters": null, 
+                "description": ""
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "merge", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.RcStyle", 
+                        "name": "src", 
+                        "description": ""
+                    }
+                ], 
+                "description": ""
+            }, 
+            {
+                "returns": {
+                    "type": "Integer", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "parse", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Settings", 
+                        "name": "settings", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "GLib.Scanner", 
+                        "name": "scanner", 
+                        "description": ""
+                    }
+                ], 
+                "description": ""
+            }
+        ], 
+        "properties": []
+    }, 
+    "fullname": "Class Gtk.RcStyle", 
+    "id": "Docs-RcStyle", 
+    "description": "The #GtkRcStyle structure is used to represent a set\nof information about the appearance of a widget.\nThis can later be composited together with other\n#GtkRcStyle structures to form a #GtkStyle."
+}

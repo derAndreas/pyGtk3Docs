@@ -1,0 +1,21 @@
+{
+    "leaf": true, 
+    "name": "WindowType", 
+    "text": "WindowType", 
+    "version": null, 
+    "members": {
+        "properties": [
+            {
+                "name": "toplevel", 
+                "value": "0"
+            }, 
+            {
+                "name": "popup", 
+                "value": "1"
+            }
+        ]
+    }, 
+    "fullname": "Enumeration Gtk.WindowType", 
+    "id": "Docs-WindowType", 
+    "description": ""
+}

@@ -1,0 +1,54 @@
+{
+    "isAbstract": false, 
+    "leaf": true, 
+    "name": "VBox", 
+    "text": "VBox", 
+    "interfaces": [
+        [
+            "Atk.ImplementorIface"
+        ], 
+        [
+            "Buildable"
+        ], 
+        [
+            "Orientable"
+        ]
+    ], 
+    "parents": [
+        "VBox", 
+        "Box", 
+        "Container", 
+        "Widget", 
+        "GObject.InitiallyUnowned"
+    ], 
+    "members": {
+        "signals": [], 
+        "methods": [
+            {
+                "returns": {
+                    "doc": "a new #GtkVBox.", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": null, 
+                "name": "Gtk.VBox(Boolean homogeneous, Integer spacing)", 
+                "parameters": [
+                    {
+                        "type": "Boolean", 
+                        "name": "homogeneous"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "spacing"
+                    }
+                ], 
+                "deprecated": "You can use gtk_box_new() with %GTK_ORIENTATION_VERTICAL instead,", 
+                "deprecated_version": "3.2", 
+                "isConstructor": true
+            }
+        ], 
+        "properties": []
+    }, 
+    "fullname": "Class Gtk.VBox", 
+    "id": "Docs-VBox", 
+    "description": "A #GtkVBox is a container that organizes child widgets into a single column.\n\nUse the #GtkBox packing interface to determine the arrangement,\nspacing, height, and alignment of #GtkVBox children.\n\nAll children are allocated the same width.\n\nGtkVBox has been deprecated. You can use #GtkBox instead, which is a\nvery quick and easy\u00a0change. If you have derived your own classes from\nGtkVBox, you can simply change the inheritance to derive directly\nfrom #GtkBox, and set the #GtkOrientable:orientation property to\n%GTK_ORIENTATION_VERTICAL in your instance init function, with a\ncall like:\n|[\ngtk_orientable_set_orientation (GTK_ORIENTABLE (object),\nGTK_ORIENTATION_VERTICAL);\n]|\nIf you want your code to be future-proof, the recommendation is to\nswitch to #GtkGrid, since #GtkBox is going to be deprecated in favor\nof the more flexible grid widget eventually. For more information\nabout migrating to #GtkGrid, see <xref linkend=\"gtk-migrating-GtkGrid\"/>."
+}

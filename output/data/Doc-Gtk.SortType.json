@@ -1,0 +1,21 @@
+{
+    "leaf": true, 
+    "name": "SortType", 
+    "text": "SortType", 
+    "version": null, 
+    "members": {
+        "properties": [
+            {
+                "name": "ascending", 
+                "value": "0"
+            }, 
+            {
+                "name": "descending", 
+                "value": "1"
+            }
+        ]
+    }, 
+    "fullname": "Enumeration Gtk.SortType", 
+    "id": "Docs-SortType", 
+    "description": ""
+}

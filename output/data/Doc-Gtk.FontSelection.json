@@ -1,0 +1,190 @@
+{
+    "isAbstract": false, 
+    "leaf": true, 
+    "name": "FontSelection", 
+    "text": "FontSelection", 
+    "interfaces": [
+        [
+            "Atk.ImplementorIface"
+        ], 
+        [
+            "Buildable"
+        ], 
+        [
+            "Orientable"
+        ]
+    ], 
+    "parents": [
+        "FontSelection", 
+        "Box", 
+        "Container", 
+        "Widget", 
+        "GObject.InitiallyUnowned"
+    ], 
+    "members": {
+        "signals": [], 
+        "methods": [
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a n ew #GtkFontSelection", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": null, 
+                "name": "Gtk.FontSelection()", 
+                "parameters": null
+            }, 
+            {
+                "returns": {
+                    "type": "Pango.FontFace", 
+                    "description": "A #PangoFontFace representing the"
+                }, 
+                "version": "2.14", 
+                "name": "get_face", 
+                "parameters": null, 
+                "description": "Gets the #PangoFontFace representing the selected font group\ndetails (i.e. family, slant, weight, width, etc).\n\nselected font group details. The returned object is owned by\n@fontsel and must not be modified or freed."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.Widget", 
+                    "description": "A #GtkWidget that is part of @fontsel"
+                }, 
+                "version": "2.14", 
+                "name": "get_face_list", 
+                "parameters": null, 
+                "description": "This returns the #GtkTreeView which lists all styles available for\nthe selected font. For example, 'Regular', 'Bold', etc."
+            }, 
+            {
+                "returns": {
+                    "type": "Pango.FontFamily", 
+                    "description": "A #PangoFontFamily representing the"
+                }, 
+                "version": "2.14", 
+                "name": "get_family", 
+                "parameters": null, 
+                "description": "Gets the #PangoFontFamily representing the selected font family.\n\nselected font family. Font families are a collection of font\nfaces. The returned object is owned by @fontsel and must not\nbe modified or freed."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.Widget", 
+                    "description": "A #GtkWidget that is part of @fontsel"
+                }, 
+                "version": "2.14", 
+                "name": "get_family_list", 
+                "parameters": null, 
+                "description": "This returns the #GtkTreeView that lists font families, for\nexample, 'Sans', 'Serif', etc."
+            }, 
+            {
+                "returns": {
+                    "type": "String", 
+                    "description": "A string with the name of the current font, or %NULL if"
+                }, 
+                "version": "", 
+                "name": "get_font_name", 
+                "parameters": null, 
+                "description": "Gets the currently-selected font name. \n\nNote that this can be a different string than what you set with \ngtk_font_selection_set_font_name(), as the font selection widget may \nnormalize font names and thus return a string with a different structure. \nFor example, \"Helvetica Italic Bold 12\" could be normalized to \n\"Helvetica Bold Italic 12\". Use pango_font_description_equal()\nif you want to compare two font descriptions.\n\nno font is selected. You must free this string with g_free()."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.Widget", 
+                    "description": "A #GtkWidget that is part of @fontsel"
+                }, 
+                "version": "2.14", 
+                "name": "get_preview_entry", 
+                "parameters": null, 
+                "description": "This returns the #GtkEntry used to display the font as a preview."
+            }, 
+            {
+                "returns": {
+                    "type": "String", 
+                    "description": "the text displayed in the preview area."
+                }, 
+                "version": "", 
+                "name": "get_preview_text", 
+                "parameters": null, 
+                "description": "Gets the text displayed in the preview area.\n\nThis string is owned by the widget and should not be \nmodified or freed"
+            }, 
+            {
+                "returns": {
+                    "type": "Integer", 
+                    "description": "A n integer representing the selected font size,"
+                }, 
+                "version": "2.14", 
+                "name": "get_size", 
+                "parameters": null, 
+                "description": "The selected font size.\n\nor -1 if no font size is selected."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.Widget", 
+                    "description": "A #GtkWidget that is part of @fontsel"
+                }, 
+                "version": "2.14", 
+                "name": "get_size_entry", 
+                "parameters": null, 
+                "description": "This returns the #GtkEntry used to allow the user to edit the font\nnumber manually instead of selecting it from the list of font sizes."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.Widget", 
+                    "description": "A #GtkWidget that is part of @fontsel"
+                }, 
+                "version": "2.14", 
+                "name": "get_size_list", 
+                "parameters": null, 
+                "description": "This returns the #GtkTreeeView used to list font sizes."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE if the font could be set successfully; %FALSE if no"
+                }, 
+                "version": "", 
+                "name": "set_font_name", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "fontname", 
+                        "description": "a font name like \"Helvetica 12\" or \"Times Bold 18\""
+                    }
+                ], 
+                "description": "Sets the currently-selected font. \n\nNote that the @fontsel needs to know the screen in which it will appear \nfor this to work; this can be guaranteed by simply making sure that the \n@fontsel is inserted in a toplevel window before you call this function.\n\nsuch font exists or if the @fontsel doesn't belong to a particular \nscreen yet."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_preview_text", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "text", 
+                        "description": "the text to display in the preview area"
+                    }
+                ], 
+                "description": "Sets the text displayed in the preview area.\nThe @text is used to show how the selected font looks."
+            }
+        ], 
+        "properties": [
+            {
+                "writable": false, 
+                "type": "String", 
+                "readable": false, 
+                "name": "font-name", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "String", 
+                "readable": false, 
+                "name": "preview-text", 
+                "description": ""
+            }
+        ]
+    }, 
+    "fullname": "Class Gtk.FontSelection", 
+    "id": "Docs-FontSelection", 
+    "description": ""
+}

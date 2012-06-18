@@ -1,0 +1,33 @@
+{
+    "leaf": true, 
+    "name": "ShadowType", 
+    "text": "ShadowType", 
+    "version": null, 
+    "members": {
+        "properties": [
+            {
+                "name": "none", 
+                "value": "0"
+            }, 
+            {
+                "name": "in", 
+                "value": "1"
+            }, 
+            {
+                "name": "out", 
+                "value": "2"
+            }, 
+            {
+                "name": "etched_in", 
+                "value": "3"
+            }, 
+            {
+                "name": "etched_out", 
+                "value": "4"
+            }
+        ]
+    }, 
+    "fullname": "Enumeration Gtk.ShadowType", 
+    "id": "Docs-ShadowType", 
+    "description": ""
+}

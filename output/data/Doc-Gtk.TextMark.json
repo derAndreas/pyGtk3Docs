@@ -1,0 +1,120 @@
+{
+    "isAbstract": false, 
+    "leaf": true, 
+    "name": "TextMark", 
+    "text": "TextMark", 
+    "interfaces": [], 
+    "parents": [
+        "TextMark", 
+        "GObject.Object"
+    ], 
+    "members": {
+        "signals": [], 
+        "methods": [
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "new #GtkTextMark", 
+                    "name": "ref:Gtk.TextMark"
+                }, 
+                "version": "2.12", 
+                "name": "Gtk.TextMark(String name, Boolean left_gravity)", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "name"
+                    }, 
+                    {
+                        "type": "Boolean", 
+                        "name": "left_gravity"
+                    }
+                ]
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.TextBuffer", 
+                    "description": "the mark's #GtkTextBuffer"
+                }, 
+                "version": "", 
+                "name": "get_buffer", 
+                "parameters": null, 
+                "description": "Gets the buffer this mark is located inside,\nor %NULL if the mark is deleted."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "whether the mark is deleted"
+                }, 
+                "version": "", 
+                "name": "get_deleted", 
+                "parameters": null, 
+                "description": "Returns %TRUE if the mark has been removed from its buffer\nwith gtk_text_buffer_delete_mark(). See gtk_text_buffer_add_mark()\nfor a way to add it to a buffer again."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE if the mark has left gravity, %FALSE otherwise"
+                }, 
+                "version": "", 
+                "name": "get_left_gravity", 
+                "parameters": null, 
+                "description": "Determines whether the mark has left gravity."
+            }, 
+            {
+                "returns": {
+                    "type": "String", 
+                    "description": "mark name"
+                }, 
+                "version": "", 
+                "name": "get_name", 
+                "parameters": null, 
+                "description": "Returns the mark name; returns NULL for anonymous marks."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE if visible"
+                }, 
+                "version": "", 
+                "name": "get_visible", 
+                "parameters": null, 
+                "description": "Returns %TRUE if the mark is visible (i.e. a cursor is displayed\nfor it)."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_visible", 
+                "parameters": [
+                    {
+                        "type": "Boolean", 
+                        "name": "setting", 
+                        "description": "visibility of mark"
+                    }
+                ], 
+                "description": "Sets the visibility of @mark; the insertion point is normally\nvisible, i.e. you can see it as a vertical bar. Also, the text\nwidget uses a visible mark to indicate where a drop will occur when\ndragging-and-dropping text. Most other marks are not visible.\nMarks are not visible by default."
+            }
+        ], 
+        "properties": [
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "left-gravity", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "String", 
+                "readable": false, 
+                "name": "name", 
+                "description": ""
+            }
+        ]
+    }, 
+    "fullname": "Class Gtk.TextMark", 
+    "id": "Docs-TextMark", 
+    "description": "You may wish to begin by reading the <link linkend=\"TextWidget\">text widget\nconceptual overview</link> which gives an overview of all the objects and data\ntypes related to the text widget and how they work together.\n\nA #GtkTextMark is like a bookmark in a text buffer; it preserves a position in\nthe text. You can convert the mark to an iterator using\ngtk_text_buffer_get_iter_at_mark(). Unlike iterators, marks remain valid across\nbuffer mutations, because their behavior is defined when text is inserted or\ndeleted. When text containing a mark is deleted, the mark remains in the\nposition originally occupied by the deleted text. When text is inserted at a\nmark, a mark with <firstterm>left gravity</firstterm> will be moved to the\nbeginning of the newly-inserted text, and a mark with <firstterm>right\ngravity</firstterm> will be moved to the end.\n\n<footnote>\n\"left\" and \"right\" here refer to logical direction (left is the toward the start\nof the buffer); in some languages such as Hebrew the logically-leftmost text is\nnot actually on the left when displayed.\n</footnote>\n\nMarks are reference counted, but the reference count only controls the validity\nof the memory; marks can be deleted from the buffer at any time with\ngtk_text_buffer_delete_mark(). Once deleted from the buffer, a mark is\nessentially useless.\n\nMarks optionally have names; these can be convenient to avoid passing the\n#GtkTextMark object around.\n\nMarks are typically created using the gtk_text_buffer_create_mark() function."
+}

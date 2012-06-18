@@ -1,0 +1,95 @@
+{
+    "isAbstract": false, 
+    "leaf": true, 
+    "name": "Switch", 
+    "text": "Switch", 
+    "interfaces": [
+        [
+            "Atk.ImplementorIface"
+        ], 
+        [
+            "Actionable"
+        ], 
+        [
+            "Activatable"
+        ], 
+        [
+            "Buildable"
+        ]
+    ], 
+    "parents": [
+        "Switch", 
+        "Widget", 
+        "GObject.InitiallyUnowned"
+    ], 
+    "members": {
+        "signals": [
+            {
+                "version": "", 
+                "when": "first", 
+                "name": "activate", 
+                "description": "The ::activate signal on GtkSwitch is an action signal and\nemitting it causes the switch to animate.\nApplications should never connect to this signal, but use the\nnotify::active signal."
+            }
+        ], 
+        "methods": [
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "the newly created #GtkSwitch instance", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": "3.0", 
+                "name": "Gtk.Switch()", 
+                "parameters": null
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE if the #GtkSwitch is active, and %FALSE otherwise"
+                }, 
+                "version": "3.0", 
+                "name": "get_active", 
+                "parameters": null, 
+                "description": "Gets whether the #GtkSwitch is in its \"on\" or \"off\" state."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "3.0", 
+                "name": "set_active", 
+                "parameters": [
+                    {
+                        "type": "Boolean", 
+                        "name": "is_active", 
+                        "description": "%TRUE if @sw should be active, and %FALSE otherwise"
+                    }
+                ], 
+                "description": "Changes the state of @sw to the desired one."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "activate", 
+                "parameters": null, 
+                "description": ""
+            }
+        ], 
+        "properties": [
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "active", 
+                "description": "Whether the #GtkSwitch widget is in its on or off state."
+            }
+        ]
+    }, 
+    "fullname": "Class Gtk.Switch", 
+    "id": "Docs-Switch", 
+    "description": "#GtkSwitch is a widget that has two states: on or off. The user can control\nwhich state should be active by clicking the empty area, or by dragging the\nhandle."
+}

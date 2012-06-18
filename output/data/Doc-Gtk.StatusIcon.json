@@ -1,0 +1,738 @@
+{
+    "isAbstract": false, 
+    "leaf": true, 
+    "name": "StatusIcon", 
+    "text": "StatusIcon", 
+    "interfaces": [], 
+    "parents": [
+        "StatusIcon", 
+        "GObject.Object"
+    ], 
+    "members": {
+        "signals": [
+            {
+                "version": "2.10", 
+                "when": "first", 
+                "name": "activate", 
+                "description": "Gets emitted when the user activates the status icon. \nIf and how status icons can activated is platform-dependent.\n\nUnlike most G_SIGNAL_ACTION signals, this signal is meant to \nbe used by applications and should be wrapped by language bindings."
+            }, 
+            {
+                "version": "2.14", 
+                "when": "last", 
+                "name": "button-press-event", 
+                "description": "The ::button-press-event signal will be emitted when a button\n(typically from a mouse) is pressed.\n\nWhether this event is emitted is platform-dependent.  Use the ::activate\nand ::popup-menu signals in preference.\n\nfor the event. %FALSE to propagate the event further."
+            }, 
+            {
+                "version": "2.14", 
+                "when": "last", 
+                "name": "button-release-event", 
+                "description": "The ::button-release-event signal will be emitted when a button\n(typically from a mouse) is released.\n\nWhether this event is emitted is platform-dependent.  Use the ::activate\nand ::popup-menu signals in preference.\n\nfor the event. %FALSE to propagate the event further."
+            }, 
+            {
+                "version": "2.10", 
+                "when": "first", 
+                "name": "popup-menu", 
+                "description": "Gets emitted when the user brings up the context menu\nof the status icon. Whether status icons can have context \nmenus and how these are activated is platform-dependent.\n\nThe @button and @activate_time parameters should be \npassed as the last to arguments to gtk_menu_popup().\n\nUnlike most G_SIGNAL_ACTION signals, this signal is meant to \nbe used by applications and should be wrapped by language bindings."
+            }, 
+            {
+                "version": "2.16", 
+                "when": "last", 
+                "name": "query-tooltip", 
+                "description": "Emitted when the #GtkSettings:gtk-tooltip-timeout has expired with the\ncursor hovering above @status_icon; or emitted when @status_icon got\nfocus in keyboard mode.\n\nUsing the given coordinates, the signal handler should determine\nwhether a tooltip should be shown for @status_icon. If this is\nthe case %TRUE should be returned, %FALSE otherwise. Note that if\n@keyboard_mode is %TRUE, the values of @x and @y are undefined and\nshould not be used.\n\nThe signal handler is free to manipulate @tooltip with the therefore\ndestined function calls.\n\nWhether this signal is emitted is platform-dependent.\nFor plain text tooltips, use #GtkStatusIcon:tooltip-text in preference."
+            }, 
+            {
+                "version": "2.16", 
+                "when": "last", 
+                "name": "scroll-event", 
+                "description": "The ::scroll-event signal is emitted when a button in the 4 to 7\nrange is pressed. Wheel mice are usually configured to generate\nbutton press events for buttons 4 and 5 when the wheel is turned.\n\nWhether this event is emitted is platform-dependent.\n\n%FALSE to propagate the event further."
+            }, 
+            {
+                "version": "2.10", 
+                "when": "last", 
+                "name": "size-changed", 
+                "description": "Gets emitted when the size available for the image\nchanges, e.g. because the notification area got resized.\n\nsize. Otherwise, GTK+ will scale the icon as necessary."
+            }
+        ], 
+        "methods": [
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a new #GtkStatusIcon", 
+                    "name": "ref:Gtk.StatusIcon"
+                }, 
+                "version": "2.10", 
+                "name": "Gtk.StatusIcon()", 
+                "parameters": null
+            }, 
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a new #GtkStatusIcon", 
+                    "name": "ref:Gtk.StatusIcon"
+                }, 
+                "version": "2.10", 
+                "name": "Gtk.StatusIcon(String filename)", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "filename"
+                    }
+                ]
+            }, 
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a new #GtkStatusIcon", 
+                    "name": "ref:Gtk.StatusIcon"
+                }, 
+                "version": "2.14", 
+                "name": "Gtk.StatusIcon(Gio.Icon icon)", 
+                "parameters": [
+                    {
+                        "type": "Gio.Icon", 
+                        "name": "icon"
+                    }
+                ]
+            }, 
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a new #GtkStatusIcon", 
+                    "name": "ref:Gtk.StatusIcon"
+                }, 
+                "version": "2.10", 
+                "name": "Gtk.StatusIcon(String icon_name)", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "icon_name"
+                    }
+                ]
+            }, 
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a new #GtkStatusIcon", 
+                    "name": "ref:Gtk.StatusIcon"
+                }, 
+                "version": "2.10", 
+                "name": "Gtk.StatusIcon(GdkPixbuf.Pixbuf pixbuf)", 
+                "parameters": [
+                    {
+                        "type": "GdkPixbuf.Pixbuf", 
+                        "name": "pixbuf"
+                    }
+                ]
+            }, 
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a new #GtkStatusIcon", 
+                    "name": "ref:Gtk.StatusIcon"
+                }, 
+                "version": "2.10", 
+                "name": "Gtk.StatusIcon(String stock_id)", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "stock_id"
+                    }
+                ]
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE if the location information has"
+                }, 
+                "version": "2.10", 
+                "name": "get_geometry", 
+                "parameters": [
+                    {
+                        "type": "Gdk.Screen", 
+                        "name": "screen", 
+                        "description": "return location for the screen, or %NULL if the information is not needed"
+                    }, 
+                    {
+                        "type": "Gdk.Rectangle", 
+                        "name": "area", 
+                        "description": "return location for the area occupied by the status icon, or %NULL"
+                    }, 
+                    {
+                        "type": "ref:Gtk.Orientation", 
+                        "name": "orientation", 
+                        "description": "return location for the orientation of the panel in which the status icon is embedded, or %NULL. A panel at the top or bottom of the screen is horizontal, a panel at the left or right is vertical."
+                    }
+                ], 
+                "description": "Obtains information about the location of the status icon\non screen. This information can be used to e.g. position \npopups like notification bubbles. \n\nSee gtk_status_icon_position_menu() for a more convenient \nalternative for positioning menus.\n\nNote that some platforms do not allow GTK+ to provide \nthis information, and even on platforms that do allow it,\nthe information is not reliable unless the status icon\nis embedded in a notification area, see\ngtk_status_icon_is_embedded().\n\nbeen filled in"
+            }, 
+            {
+                "returns": {
+                    "type": "Gio.Icon", 
+                    "description": "the displayed icon, or %NULL if the image is empty"
+                }, 
+                "version": "2.14", 
+                "name": "get_gicon", 
+                "parameters": null, 
+                "description": "Retrieves the #GIcon being displayed by the #GtkStatusIcon.\nThe storage type of the status icon must be %GTK_IMAGE_EMPTY or\n%GTK_IMAGE_GICON (see gtk_status_icon_get_storage_type()).\nThe caller of this function does not own a reference to the\nreturned #GIcon.\n\nIf this function fails, @icon is left unchanged;"
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "current value of has-tooltip on @status_icon."
+                }, 
+                "version": "2.16", 
+                "name": "get_has_tooltip", 
+                "parameters": null, 
+                "description": "Returns the current value of the has-tooltip property.\nSee #GtkStatusIcon:has-tooltip for more information."
+            }, 
+            {
+                "returns": {
+                    "type": "String", 
+                    "description": "name of the displayed icon, or %NULL if the image is empty."
+                }, 
+                "version": "2.10", 
+                "name": "get_icon_name", 
+                "parameters": null, 
+                "description": "Gets the name of the icon being displayed by the #GtkStatusIcon.\nThe storage type of the status icon must be %GTK_IMAGE_EMPTY or\n%GTK_IMAGE_ICON_NAME (see gtk_status_icon_get_storage_type()).\nThe returned string is owned by the #GtkStatusIcon and should not\nbe freed or modified."
+            }, 
+            {
+                "returns": {
+                    "type": "GdkPixbuf.Pixbuf", 
+                    "description": "the displayed pixbuf,"
+                }, 
+                "version": "2.10", 
+                "name": "get_pixbuf", 
+                "parameters": null, 
+                "description": "Gets the #GdkPixbuf being displayed by the #GtkStatusIcon.\nThe storage type of the status icon must be %GTK_IMAGE_EMPTY or\n%GTK_IMAGE_PIXBUF (see gtk_status_icon_get_storage_type()).\nThe caller of this function does not own a reference to the\nreturned pixbuf.\n\nor %NULL if the image is empty."
+            }, 
+            {
+                "returns": {
+                    "type": "Gdk.Screen", 
+                    "description": "a #GdkScreen."
+                }, 
+                "version": "2.12", 
+                "name": "get_screen", 
+                "parameters": null, 
+                "description": "Returns the #GdkScreen associated with @status_icon."
+            }, 
+            {
+                "returns": {
+                    "type": "Integer", 
+                    "description": "the size that is available for the image"
+                }, 
+                "version": "2.10", 
+                "name": "get_size", 
+                "parameters": null, 
+                "description": "Gets the size in pixels that is available for the image. \nStock icons and named icons adapt their size automatically\nif the size of the notification area changes. For other\nstorage types, the size-changed signal can be used to\nreact to size changes.\n\nNote that the returned size is only meaningful while the \nstatus icon is embedded (see gtk_status_icon_is_embedded())."
+            }, 
+            {
+                "returns": {
+                    "type": "String", 
+                    "description": "stock id of the displayed stock icon,"
+                }, 
+                "version": "2.10", 
+                "name": "get_stock", 
+                "parameters": null, 
+                "description": "Gets the id of the stock icon being displayed by the #GtkStatusIcon.\nThe storage type of the status icon must be %GTK_IMAGE_EMPTY or\n%GTK_IMAGE_STOCK (see gtk_status_icon_get_storage_type()).\nThe returned string is owned by the #GtkStatusIcon and should not\nbe freed or modified.\n\nor %NULL if the image is empty."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.ImageType", 
+                    "description": "the image representation being used"
+                }, 
+                "version": "2.10", 
+                "name": "get_storage_type", 
+                "parameters": null, 
+                "description": "Gets the type of representation being used by the #GtkStatusIcon\nto store image data. If the #GtkStatusIcon has no image data,\nthe return value will be %GTK_IMAGE_EMPTY."
+            }, 
+            {
+                "returns": {
+                    "type": "String", 
+                    "description": "the title of the status icon"
+                }, 
+                "version": "2.18", 
+                "name": "get_title", 
+                "parameters": null, 
+                "description": "Gets the title of this tray icon. See gtk_status_icon_set_title()."
+            }, 
+            {
+                "returns": {
+                    "type": "String", 
+                    "description": "the tooltip text, or %NULL. You should free the"
+                }, 
+                "version": "2.16", 
+                "name": "get_tooltip_markup", 
+                "parameters": null, 
+                "description": "Gets the contents of the tooltip for @status_icon.\n\nreturned string with g_free() when done."
+            }, 
+            {
+                "returns": {
+                    "type": "String", 
+                    "description": "the tooltip text, or %NULL. You should free the"
+                }, 
+                "version": "2.16", 
+                "name": "get_tooltip_text", 
+                "parameters": null, 
+                "description": "Gets the contents of the tooltip for @status_icon.\n\nreturned string with g_free() when done."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE if the status icon is visible"
+                }, 
+                "version": "2.10", 
+                "name": "get_visible", 
+                "parameters": null, 
+                "description": "Returns whether the status icon is visible or not. \nNote that being visible does not guarantee that \nthe user can actually see the icon, see also \ngtk_status_icon_is_embedded()."
+            }, 
+            {
+                "returns": {
+                    "type": "Integer", 
+                    "description": "An 32 bit unsigned integer identifier for the"
+                }, 
+                "version": "2.14", 
+                "name": "get_x11_window_id", 
+                "parameters": null, 
+                "description": "This function is only useful on the X11/freedesktop.org platform.\nIt returns a window ID for the widget in the underlying\nstatus icon implementation.  This is useful for the Galago \nnotification service, which can send a window ID in the protocol \nin order for the server to position notification windows \npointing to a status icon reliably.\n\nThis function is not intended for other use cases which are\nmore likely to be met by one of the non-X11 specific methods, such\nas gtk_status_icon_position_menu().\n\nunderlying X11 Window"
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE if the status icon is embedded in"
+                }, 
+                "version": "2.10", 
+                "name": "is_embedded", 
+                "parameters": null, 
+                "description": "Returns whether the status icon is embedded in a notification\narea. \n\na notification area."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.10 ", 
+                "name": "set_from_file", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "filename", 
+                        "description": "a filename"
+                    }
+                ], 
+                "description": "Makes @status_icon display the file @filename.\nSee gtk_status_icon_new_from_file() for details."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.14", 
+                "name": "set_from_gicon", 
+                "parameters": [
+                    {
+                        "type": "Gio.Icon", 
+                        "name": "icon", 
+                        "description": "a GIcon"
+                    }
+                ], 
+                "description": "Makes @status_icon display the #GIcon.\nSee gtk_status_icon_new_from_gicon() for details."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.10 ", 
+                "name": "set_from_icon_name", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "icon_name", 
+                        "description": "an icon name"
+                    }
+                ], 
+                "description": "Makes @status_icon display the icon named @icon_name from the \ncurrent icon theme.\nSee gtk_status_icon_new_from_icon_name() for details."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.10", 
+                "name": "set_from_pixbuf", 
+                "parameters": [
+                    {
+                        "type": "GdkPixbuf.Pixbuf", 
+                        "name": "pixbuf", 
+                        "description": "a #GdkPixbuf or %NULL"
+                    }
+                ], 
+                "description": "Makes @status_icon display @pixbuf.\nSee gtk_status_icon_new_from_pixbuf() for details."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.10 ", 
+                "name": "set_from_stock", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "stock_id", 
+                        "description": "a stock icon id"
+                    }
+                ], 
+                "description": "Makes @status_icon display the stock icon with the id @stock_id.\nSee gtk_status_icon_new_from_stock() for details."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.16", 
+                "name": "set_has_tooltip", 
+                "parameters": [
+                    {
+                        "type": "Boolean", 
+                        "name": "has_tooltip", 
+                        "description": "whether or not @status_icon has a tooltip"
+                    }
+                ], 
+                "description": "Sets the has-tooltip property on @status_icon to @has_tooltip.\nSee #GtkStatusIcon:has-tooltip for more information."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.20", 
+                "name": "set_name", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "name", 
+                        "description": "the name"
+                    }
+                ], 
+                "description": "Sets the name of this tray icon.\nThis should be a string identifying this icon. It is may be\nused for sorting the icons in the tray and will not be shown to\nthe user."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.12", 
+                "name": "set_screen", 
+                "parameters": [
+                    {
+                        "type": "Gdk.Screen", 
+                        "name": "screen", 
+                        "description": "a #GdkScreen"
+                    }
+                ], 
+                "description": "Sets the #GdkScreen where @status_icon is displayed; if\nthe icon is already mapped, it will be unmapped, and\nthen remapped on the new screen."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.18", 
+                "name": "set_title", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "title", 
+                        "description": "the title"
+                    }
+                ], 
+                "description": "Sets the title of this tray icon.\nThis should be a short, human-readable, localized string \ndescribing the tray icon. It may be used by tools like screen\nreaders to render the tray icon."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.16", 
+                "name": "set_tooltip_markup", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "markup", 
+                        "description": "the contents of the tooltip for @status_icon, or %NULL"
+                    }
+                ], 
+                "description": "Sets @markup as the contents of the tooltip, which is marked up with\nthe <link linkend=\"PangoMarkupFormat\">Pango text markup language</link>.\n\nThis function will take care of setting #GtkStatusIcon:has-tooltip to %TRUE\nand of the default handler for the #GtkStatusIcon::query-tooltip signal.\n\nSee also the #GtkStatusIcon:tooltip-markup property and\ngtk_tooltip_set_markup()."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.16", 
+                "name": "set_tooltip_text", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "text", 
+                        "description": "the contents of the tooltip for @status_icon"
+                    }
+                ], 
+                "description": "Sets @text as the contents of the tooltip.\n\nThis function will take care of setting #GtkStatusIcon:has-tooltip to\n%TRUE and of the default handler for the #GtkStatusIcon::query-tooltip\nsignal.\n\nSee also the #GtkStatusIcon:tooltip-text property and\ngtk_tooltip_set_text()."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.10", 
+                "name": "set_visible", 
+                "parameters": [
+                    {
+                        "type": "Boolean", 
+                        "name": "visible", 
+                        "description": "%TRUE to show the status icon, %FALSE to hide it"
+                    }
+                ], 
+                "description": "Shows or hides a status icon."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "activate", 
+                "parameters": null, 
+                "description": ""
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "button_press_event", 
+                "parameters": [
+                    {
+                        "type": "Gdk.EventButton", 
+                        "name": "event", 
+                        "description": ""
+                    }
+                ], 
+                "description": ""
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "button_release_event", 
+                "parameters": [
+                    {
+                        "type": "Gdk.EventButton", 
+                        "name": "event", 
+                        "description": ""
+                    }
+                ], 
+                "description": ""
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "popup_menu", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "button", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "activate_time", 
+                        "description": ""
+                    }
+                ], 
+                "description": ""
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "query_tooltip", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "x", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "y", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Boolean", 
+                        "name": "keyboard_mode", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "ref:Gtk.Tooltip", 
+                        "name": "tooltip", 
+                        "description": ""
+                    }
+                ], 
+                "description": ""
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "scroll_event", 
+                "parameters": [
+                    {
+                        "type": "Gdk.EventScroll", 
+                        "name": "event", 
+                        "description": ""
+                    }
+                ], 
+                "description": ""
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "size_changed", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "size", 
+                        "description": ""
+                    }
+                ], 
+                "description": ""
+            }
+        ], 
+        "properties": [
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "embedded", 
+                "description": "%TRUE if the statusicon is embedded in a notification area."
+            }, 
+            {
+                "writable": false, 
+                "type": "String", 
+                "readable": false, 
+                "name": "file", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Gio.Icon", 
+                "readable": false, 
+                "name": "gicon", 
+                "description": "The #GIcon displayed in the #GtkStatusIcon. For themed icons,\nthe image will be updated automatically if the theme changes."
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "has-tooltip", 
+                "description": "Enables or disables the emission of #GtkStatusIcon::query-tooltip on\n@status_icon.  A value of %TRUE indicates that @status_icon can have a\ntooltip, in this case the status icon will be queried using\n#GtkStatusIcon::query-tooltip to determine whether it will provide a\ntooltip or not.\n\nNote that setting this property to %TRUE for the first time will change\nthe event masks of the windows of this status icon to include leave-notify\nand motion-notify events. This will not be undone when the property is set\nto %FALSE again.\n\nWhether this property is respected is platform dependent.\nFor plain text tooltips, use #GtkStatusIcon:tooltip-text in preference."
+            }, 
+            {
+                "writable": false, 
+                "type": "String", 
+                "readable": false, 
+                "name": "icon-name", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Gtk.Orientation", 
+                "readable": false, 
+                "name": "orientation", 
+                "description": "The orientation of the tray in which the statusicon \nis embedded."
+            }, 
+            {
+                "writable": false, 
+                "type": "GdkPixbuf.Pixbuf", 
+                "readable": false, 
+                "name": "pixbuf", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Gdk.Screen", 
+                "readable": false, 
+                "name": "screen", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Integer", 
+                "readable": false, 
+                "name": "size", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "String", 
+                "readable": false, 
+                "name": "stock", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Gtk.ImageType", 
+                "readable": false, 
+                "name": "storage-type", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "String", 
+                "readable": false, 
+                "name": "title", 
+                "description": "The title of this tray icon. This should be a short, human-readable,\nlocalized string describing the tray icon. It may be used by tools\nlike screen readers to render the tray icon."
+            }, 
+            {
+                "writable": false, 
+                "type": "String", 
+                "readable": false, 
+                "name": "tooltip-markup", 
+                "description": "Sets the text of tooltip to be the given string, which is marked up\nwith the <link linkend=\"PangoMarkupFormat\">Pango text markup \nlanguage</link>. Also see gtk_tooltip_set_markup().\n\nThis is a convenience property which will take care of getting the\ntooltip shown if the given string is not %NULL.\n#GtkStatusIcon:has-tooltip will automatically be set to %TRUE and\nthe default handler for the #GtkStatusIcon::query-tooltip signal\nwill take care of displaying the tooltip.\n\nOn some platforms, embedded markup will be ignored."
+            }, 
+            {
+                "writable": false, 
+                "type": "String", 
+                "readable": false, 
+                "name": "tooltip-text", 
+                "description": "Sets the text of tooltip to be the given string.\n\nAlso see gtk_tooltip_set_text().\n\nThis is a convenience property which will take care of getting the\ntooltip shown if the given string is not %NULL.\n#GtkStatusIcon:has-tooltip will automatically be set to %TRUE and\nthe default handler for the #GtkStatusIcon::query-tooltip signal\nwill take care of displaying the tooltip.\n\nNote that some platforms have limitations on the length of tooltips\nthat they allow on status icons, e.g. Windows only shows the first\n64 characters."
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "visible", 
+                "description": ""
+            }
+        ]
+    }, 
+    "fullname": "Class Gtk.StatusIcon", 
+    "id": "Docs-StatusIcon", 
+    "description": "The \"system tray\" or notification area is normally used for transient icons\nthat indicate some special state. For example, a system tray icon might\nappear to tell the user that they have new mail, or have an incoming instant\nmessage, or something along those lines. The basic idea is that creating an\nicon in the notification area is less annoying than popping up a dialog.\n\nA #GtkStatusIcon object can be used to display an icon in a \"system tray\".\nThe icon can have a tooltip, and the user can interact with it by\nactivating it or popping up a context menu. Critical information should\nnot solely be displayed in a #GtkStatusIcon, since it may not be\nvisible (e.g. when the user doesn't have a notification area on his panel).\nThis can be checked with gtk_status_icon_is_embedded().\n\nOn X11, the implementation follows the freedesktop.org \"System Tray\"\n<ulink url=\"http://www.freedesktop.org/wiki/Specifications/systemtray-spec\">specification</ulink>.\nImplementations of the \"tray\" side of this specification can\nbe found e.g. in the GNOME 2 and KDE panel applications.\n\nNote that a GtkStatusIcon is <emphasis>not</emphasis> a widget, but just\na #GObject. Making it a widget would be impractical, since the system tray\non Win32 doesn't allow to embed arbitrary widgets."
+}

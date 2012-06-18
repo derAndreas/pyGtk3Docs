@@ -1,0 +1,25 @@
+{
+    "leaf": true, 
+    "name": "CellRendererAccelMode", 
+    "text": "CellRendererAccelMode", 
+    "version": null, 
+    "members": {
+        "properties": [
+            {
+                "name": "gtk", 
+                "value": "0"
+            }, 
+            {
+                "name": "other", 
+                "value": "1"
+            }, 
+            {
+                "name": "modifier_tap", 
+                "value": "2"
+            }
+        ]
+    }, 
+    "fullname": "Enumeration Gtk.CellRendererAccelMode", 
+    "id": "Docs-CellRendererAccelMode", 
+    "description": ""
+}

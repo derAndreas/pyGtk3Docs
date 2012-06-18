@@ -1,0 +1,405 @@
+{
+    "isAbstract": false, 
+    "leaf": true, 
+    "name": "CellRendererText", 
+    "text": "CellRendererText", 
+    "interfaces": [], 
+    "parents": [
+        "CellRendererText", 
+        "CellRenderer", 
+        "GObject.InitiallyUnowned"
+    ], 
+    "members": {
+        "signals": [
+            {
+                "version": "", 
+                "when": "last", 
+                "name": "edited", 
+                "description": "This signal is emitted after @renderer has been edited.\n\nIt is the responsibility of the application to update the model\nand store @new_text at the position indicated by @path."
+            }
+        ], 
+        "methods": [
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "the new cell renderer", 
+                    "name": "ref:Gtk.CellRenderer"
+                }, 
+                "version": null, 
+                "name": "Gtk.CellRendererText()", 
+                "parameters": null
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_fixed_height_from_font", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "number_of_rows", 
+                        "description": "Number of rows of text each cell renderer is allocated, or -1"
+                    }
+                ], 
+                "description": "Sets the height of a renderer to explicitly be determined by the \"font\" and\n\"y_pad\" property set on it.  Further changes in these properties do not\naffect the height, so they must be accompanied by a subsequent call to this\nfunction.  Using this function is unflexible, and should really only be used\nif calculating the size of a cell is too slow (ie, a massive number of cells\ndisplayed).  If @number_of_rows is -1, then the fixed height is unset, and\nthe height is determined by the properties again."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "edited", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "path", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "String", 
+                        "name": "new_text", 
+                        "description": ""
+                    }
+                ], 
+                "description": ""
+            }
+        ], 
+        "properties": [
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "align-set", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Pango.Alignment", 
+                "readable": false, 
+                "name": "alignment", 
+                "description": "Specifies how to align the lines of text with respect to each other. \n\nNote that this property describes how to align the lines of text in \ncase there are several of them. The \"xalign\" property of #GtkCellRenderer, \non the other hand, sets the horizontal alignment of the whole text."
+            }, 
+            {
+                "writable": false, 
+                "type": "Pango.AttrList", 
+                "readable": false, 
+                "name": "attributes", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "String", 
+                "readable": false, 
+                "name": "background", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Gdk.Color", 
+                "readable": false, 
+                "name": "background-gdk", 
+                "description": "Background color as a #GdkColor"
+            }, 
+            {
+                "writable": false, 
+                "type": "Gdk.RGBA", 
+                "readable": false, 
+                "name": "background-rgba", 
+                "description": "Background color as a #GdkRGBA"
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "background-set", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "editable", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "editable-set", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Pango.EllipsizeMode", 
+                "readable": false, 
+                "name": "ellipsize", 
+                "description": "Specifies the preferred place to ellipsize the string, if the cell renderer \ndoes not have enough room to display the entire string. Setting it to \n%PANGO_ELLIPSIZE_NONE turns off ellipsizing. See the wrap-width property\nfor another way of making the text fit into a given width."
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "ellipsize-set", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "String", 
+                "readable": false, 
+                "name": "family", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "family-set", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "String", 
+                "readable": false, 
+                "name": "font", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Pango.FontDescription", 
+                "readable": false, 
+                "name": "font-desc", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "String", 
+                "readable": false, 
+                "name": "foreground", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Gdk.Color", 
+                "readable": false, 
+                "name": "foreground-gdk", 
+                "description": "Foreground color as a #GdkColor"
+            }, 
+            {
+                "writable": false, 
+                "type": "Gdk.RGBA", 
+                "readable": false, 
+                "name": "foreground-rgba", 
+                "description": "Foreground color as a #GdkRGBA"
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "foreground-set", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "String", 
+                "readable": false, 
+                "name": "language", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "language-set", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "String", 
+                "readable": false, 
+                "name": "markup", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Integer", 
+                "readable": false, 
+                "name": "max-width-chars", 
+                "description": "The desired maximum width of the cell, in characters. If this property \nis set to -1, the width will be calculated automatically.\n\nFor cell renderers that ellipsize or wrap text; this property\ncontrols the maximum reported width of the cell. The\ncell should not receive any greater allocation unless it is\nset to expand in its #GtkCellLayout and all of the cell's siblings\nhave received their natural width."
+            }, 
+            {
+                "writable": false, 
+                "type": "Integer", 
+                "readable": false, 
+                "name": "rise", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "rise-set", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Float", 
+                "readable": false, 
+                "name": "scale", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "scale-set", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "single-paragraph-mode", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Integer", 
+                "readable": false, 
+                "name": "size", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Float", 
+                "readable": false, 
+                "name": "size-points", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "size-set", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Pango.Stretch", 
+                "readable": false, 
+                "name": "stretch", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "stretch-set", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "strikethrough", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "strikethrough-set", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Pango.Style", 
+                "readable": false, 
+                "name": "style", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "style-set", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "String", 
+                "readable": false, 
+                "name": "text", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Pango.Underline", 
+                "readable": false, 
+                "name": "underline", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "underline-set", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Pango.Variant", 
+                "readable": false, 
+                "name": "variant", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "variant-set", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Integer", 
+                "readable": false, 
+                "name": "weight", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "weight-set", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Integer", 
+                "readable": false, 
+                "name": "width-chars", 
+                "description": "The desired width of the cell, in characters. If this property is set to\n-1, the width will be calculated automatically, otherwise the cell will\nrequest either 3 characters or the property value, whichever is greater."
+            }, 
+            {
+                "writable": false, 
+                "type": "Pango.WrapMode", 
+                "readable": false, 
+                "name": "wrap-mode", 
+                "description": "Specifies how to break the string into multiple lines, if the cell \nrenderer does not have enough room to display the entire string. \nThis property has no effect unless the wrap-width property is set."
+            }, 
+            {
+                "writable": false, 
+                "type": "Integer", 
+                "readable": false, 
+                "name": "wrap-width", 
+                "description": "Specifies the minimum width at which the text is wrapped. The wrap-mode property can \nbe used to influence at what character positions the line breaks can be placed.\nSetting wrap-width to -1 turns wrapping off."
+            }
+        ]
+    }, 
+    "fullname": "Class Gtk.CellRendererText", 
+    "id": "Docs-CellRendererText", 
+    "description": "A #GtkCellRendererText renders a given text in its cell, using the font, color and\nstyle information provided by its properties. The text will be ellipsized if it is\ntoo long and the #GtkCellRendererText:ellipsize property allows it.\n\nIf the #GtkCellRenderer:mode is %GTK_CELL_RENDERER_MODE_EDITABLE,\nthe #GtkCellRendererText allows to edit its text using an entry."
+}

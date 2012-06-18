@@ -1,0 +1,120 @@
+{
+    "isAbstract": false, 
+    "leaf": true, 
+    "name": "RecentAction", 
+    "text": "RecentAction", 
+    "interfaces": [
+        [
+            "Buildable"
+        ], 
+        [
+            "RecentChooser"
+        ]
+    ], 
+    "parents": [
+        "RecentAction", 
+        "Action", 
+        "GObject.Object"
+    ], 
+    "members": {
+        "signals": [], 
+        "methods": [
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "the newly created #GtkRecentAction.", 
+                    "name": "ref:Gtk.Action"
+                }, 
+                "version": "2.12", 
+                "name": "Gtk.RecentAction(String name, String label, String tooltip, String stock_id)", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "name"
+                    }, 
+                    {
+                        "type": "String", 
+                        "name": "label"
+                    }, 
+                    {
+                        "type": "String", 
+                        "name": "tooltip"
+                    }, 
+                    {
+                        "type": "String", 
+                        "name": "stock_id"
+                    }
+                ]
+            }, 
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "the newly created #GtkRecentAction", 
+                    "name": "ref:Gtk.Action"
+                }, 
+                "version": "2.12", 
+                "name": "Gtk.RecentAction(String name, String label, String tooltip, String stock_id, Gtk.RecentManager manager)", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "name"
+                    }, 
+                    {
+                        "type": "String", 
+                        "name": "label"
+                    }, 
+                    {
+                        "type": "String", 
+                        "name": "tooltip"
+                    }, 
+                    {
+                        "type": "String", 
+                        "name": "stock_id"
+                    }, 
+                    {
+                        "type": "ref:Gtk.RecentManager", 
+                        "name": "manager"
+                    }
+                ]
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE if numbers should be shown."
+                }, 
+                "version": "2.12", 
+                "name": "get_show_numbers", 
+                "parameters": null, 
+                "description": "Returns the value set by gtk_recent_chooser_menu_set_show_numbers()."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.12", 
+                "name": "set_show_numbers", 
+                "parameters": [
+                    {
+                        "type": "Boolean", 
+                        "name": "show_numbers", 
+                        "description": "%TRUE if the shown items should be numbered"
+                    }
+                ], 
+                "description": "Sets whether a number should be added to the items shown by the\nwidgets representing @action. The numbers are shown to provide\na unique character for a mnemonic to be used inside the menu item's\nlabel. Only the first ten items get a number to avoid clashes."
+            }
+        ], 
+        "properties": [
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "show-numbers", 
+                "description": ""
+            }
+        ]
+    }, 
+    "fullname": "Class Gtk.RecentAction", 
+    "id": "Docs-RecentAction", 
+    "description": "A #GtkRecentAction represents a list of recently used files, which\ncan be shown by widgets such as #GtkRecentChooserDialog or\n#GtkRecentChooserMenu.\n\nTo construct a submenu showing recently used files, use a #GtkRecentAction\nas the action for a &lt;menuitem&gt;. To construct a menu toolbutton showing\nthe recently used files in the popup menu, use a #GtkRecentAction as the\naction for a &lt;toolitem&gt; element."
+}

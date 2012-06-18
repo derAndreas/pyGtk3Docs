@@ -1,0 +1,21 @@
+{
+    "leaf": true, 
+    "name": "WidgetHelpType", 
+    "text": "WidgetHelpType", 
+    "version": null, 
+    "members": {
+        "properties": [
+            {
+                "name": "tooltip", 
+                "value": "0"
+            }, 
+            {
+                "name": "whats_this", 
+                "value": "1"
+            }
+        ]
+    }, 
+    "fullname": "Enumeration Gtk.WidgetHelpType", 
+    "id": "Docs-WidgetHelpType", 
+    "description": ""
+}

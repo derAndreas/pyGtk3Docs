@@ -1,0 +1,291 @@
+{
+    "isAbstract": false, 
+    "leaf": true, 
+    "name": "AccelGroup", 
+    "text": "AccelGroup", 
+    "interfaces": [], 
+    "parents": [
+        "AccelGroup", 
+        "GObject.Object"
+    ], 
+    "members": {
+        "signals": [
+            {
+                "version": "", 
+                "when": null, 
+                "name": "accel-activate", 
+                "description": "The accel-activate signal is an implementation detail of\n#GtkAccelGroup and not meant to be used by applications."
+            }, 
+            {
+                "version": "", 
+                "when": "first", 
+                "name": "accel-changed", 
+                "description": "The accel-changed signal is emitted when a #GtkAccelGroupEntry\nis added to or removed from the accel group.\n\nWidgets like #GtkAccelLabel which display an associated\naccelerator should connect to this signal, and rebuild\ntheir visual representation if the @accel_closure is theirs."
+            }
+        ], 
+        "methods": [
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a new #GtkAccelGroup object", 
+                    "name": "ref:Gtk.AccelGroup"
+                }, 
+                "version": null, 
+                "name": "Gtk.AccelGroup()", 
+                "parameters": null
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE if an accelerator was activated and handled"
+                }, 
+                "version": "", 
+                "name": "activate", 
+                "parameters": [
+                    {
+                        "type": "GLib.Quark", 
+                        "name": "accel_quark", 
+                        "description": "the quark for the accelerator name"
+                    }, 
+                    {
+                        "type": "GObject.Object", 
+                        "name": "acceleratable", 
+                        "description": "the #GObject, usually a #GtkWindow, on which to activate the accelerator"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "accel_key", 
+                        "description": "accelerator keyval from a key event"
+                    }, 
+                    {
+                        "type": "Gdk.ModifierType", 
+                        "name": "accel_mods", 
+                        "description": "keyboard state mask from a key event"
+                    }
+                ], 
+                "description": "Finds the first accelerator in @accel_group that matches\n@accel_key and @accel_mods, and activates it.\n\nthis keypress"
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "connect", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "accel_key", 
+                        "description": "key value of the accelerator"
+                    }, 
+                    {
+                        "type": "Gdk.ModifierType", 
+                        "name": "accel_mods", 
+                        "description": "modifier combination of the accelerator"
+                    }, 
+                    {
+                        "type": "ref:Gtk.AccelFlags", 
+                        "name": "accel_flags", 
+                        "description": "a flag mask to configure this accelerator"
+                    }, 
+                    {
+                        "type": "GObject.Closure", 
+                        "name": "closure", 
+                        "description": "closure to be executed upon accelerator activation"
+                    }
+                ], 
+                "description": "Installs an accelerator in this group. When @accel_group is being\nactivated in response to a call to gtk_accel_groups_activate(),\n@closure will be invoked if the @accel_key and @accel_mods from\ngtk_accel_groups_activate() match those of this connection.\n\nThe signature used for the @closure is that of #GtkAccelGroupActivate.\n\nNote that, due to implementation details, a single closure can\nonly be connected to one accelerator group."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "connect_by_path", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "accel_path", 
+                        "description": "path used for determining key and modifiers"
+                    }, 
+                    {
+                        "type": "GObject.Closure", 
+                        "name": "closure", 
+                        "description": "closure to be executed upon accelerator activation"
+                    }
+                ], 
+                "description": "Installs an accelerator in this group, using an accelerator path\nto look up the appropriate key and modifiers (see\ngtk_accel_map_add_entry()). When @accel_group is being activated\nin response to a call to gtk_accel_groups_activate(), @closure will\nbe invoked if the @accel_key and @accel_mods from\ngtk_accel_groups_activate() match the key and modifiers for the path.\n\nThe signature used for the @closure is that of #GtkAccelGroupActivate.\n\nNote that @accel_path string will be stored in a #GQuark. Therefore,\nif you pass a static string, you can save some memory by interning it\nfirst with g_intern_static_string()."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE if the closure was found and got disconnected"
+                }, 
+                "version": "", 
+                "name": "disconnect", 
+                "parameters": [
+                    {
+                        "type": "GObject.Closure", 
+                        "name": "closure", 
+                        "description": "the closure to remove from this accelerator group, or %NULL to remove all closures"
+                    }
+                ], 
+                "description": "Removes an accelerator previously installed through\ngtk_accel_group_connect().\n\nSince 2.20 @closure can be %NULL."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE if there was an accelerator which could be"
+                }, 
+                "version": "", 
+                "name": "disconnect_key", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "accel_key", 
+                        "description": "key value of the accelerator"
+                    }, 
+                    {
+                        "type": "Gdk.ModifierType", 
+                        "name": "accel_mods", 
+                        "description": "modifier combination of the accelerator"
+                    }
+                ], 
+                "description": "Removes an accelerator previously installed through\ngtk_accel_group_connect().\n\nremoved, %FALSE otherwise"
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.AccelKey", 
+                    "description": "the key of the first entry passing"
+                }, 
+                "version": "", 
+                "name": "find", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.AccelGroupFindFunc", 
+                        "name": "find_func", 
+                        "description": "a function to filter the entries of @accel_group with"
+                    }, 
+                    {
+                        "type": "Mixed", 
+                        "name": "data", 
+                        "description": "data to pass to @find_func"
+                    }
+                ], 
+                "description": "Finds the first entry in an accelerator group for which\n@find_func returns %TRUE and returns its #GtkAccelKey.\n\n@find_func. The key is owned by GTK+ and must not be freed."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE if there are 1 or more locks on the @accel_group,"
+                }, 
+                "version": "2.14", 
+                "name": "get_is_locked", 
+                "parameters": null, 
+                "description": "Locks are added and removed using gtk_accel_group_lock() and\ngtk_accel_group_unlock().\n\n%FALSE otherwise."
+            }, 
+            {
+                "returns": {
+                    "type": "Gdk.ModifierType", 
+                    "description": "the modifier mask for this accel group."
+                }, 
+                "version": "2.14", 
+                "name": "get_modifier_mask", 
+                "parameters": null, 
+                "description": "Gets a #GdkModifierType representing the mask for this\n@accel_group. For example, #GDK_CONTROL_MASK, #GDK_SHIFT_MASK, etc."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "lock", 
+                "parameters": null, 
+                "description": "Locks the given accelerator group.\n\nLocking an acelerator group prevents the accelerators contained\nwithin it to be changed during runtime. Refer to\ngtk_accel_map_change_entry() about runtime accelerator changes.\n\nIf called more than once, @accel_group remains locked until\ngtk_accel_group_unlock() has been called an equivalent number\nof times."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.AccelGroupEntry[]", 
+                    "description": "an array of"
+                }, 
+                "version": "", 
+                "name": "query", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "accel_key", 
+                        "description": "key value of the accelerator"
+                    }, 
+                    {
+                        "type": "Gdk.ModifierType", 
+                        "name": "accel_mods", 
+                        "description": "modifier combination of the accelerator"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "n_entries", 
+                        "description": "location to return the number of entries found, or %NULL"
+                    }
+                ], 
+                "description": "Queries an accelerator group for all entries matching @accel_key\nand @accel_mods.\n\n@n_entries #GtkAccelGroupEntry elements, or %NULL. The array\nis owned by GTK+ and must not be freed."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "unlock", 
+                "parameters": null, 
+                "description": "Undoes the last call to gtk_accel_group_lock() on this @accel_group."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "accel_changed", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "keyval", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Gdk.ModifierType", 
+                        "name": "modifier", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "GObject.Closure", 
+                        "name": "accel_closure", 
+                        "description": ""
+                    }
+                ], 
+                "description": ""
+            }
+        ], 
+        "properties": [
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "is-locked", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Gdk.ModifierType", 
+                "readable": false, 
+                "name": "modifier-mask", 
+                "description": ""
+            }
+        ]
+    }, 
+    "fullname": "Class Gtk.AccelGroup", 
+    "id": "Docs-AccelGroup", 
+    "description": "A #GtkAccelGroup represents a group of keyboard accelerators,\ntypically attached to a toplevel #GtkWindow (with\ngtk_window_add_accel_group()). Usually you won't need to create a\n#GtkAccelGroup directly; instead, when using #GtkUIManager, GTK+\nautomatically sets up the accelerators for your menus in the ui\nmanager's #GtkAccelGroup.\n\nNote that <firstterm>accelerators</firstterm> are different from\n<firstterm>mnemonics</firstterm>. Accelerators are shortcuts for\nactivating a menu item; they appear alongside the menu item they're a\nshortcut for. For example \"Ctrl+Q\" might appear alongside the \"Quit\"\nmenu item. Mnemonics are shortcuts for GUI elements such as text\nentries or buttons; they appear as underlined characters. See\ngtk_label_new_with_mnemonic(). Menu items can have both accelerators\nand mnemonics, of course."
+}

@@ -1,0 +1,54 @@
+{
+    "isAbstract": false, 
+    "leaf": true, 
+    "name": "ColorChooserWidget", 
+    "text": "ColorChooserWidget", 
+    "interfaces": [
+        [
+            "Atk.ImplementorIface"
+        ], 
+        [
+            "Buildable"
+        ], 
+        [
+            "ColorChooser"
+        ], 
+        [
+            "Orientable"
+        ]
+    ], 
+    "parents": [
+        "ColorChooserWidget", 
+        "Box", 
+        "Container", 
+        "Widget", 
+        "GObject.InitiallyUnowned"
+    ], 
+    "members": {
+        "signals": [], 
+        "methods": [
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a new #GtkColorChooserWidget", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": "3.4", 
+                "name": "Gtk.ColorChooserWidget()", 
+                "parameters": null
+            }
+        ], 
+        "properties": [
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "show-editor", 
+                "description": "The ::show-editor property is %TRUE when the color chooser\nis showing the single-color editor. It can be set to switch\nthe color chooser into single-color editing mode."
+            }
+        ]
+    }, 
+    "fullname": "Class Gtk.ColorChooserWidget", 
+    "id": "Docs-ColorChooserWidget", 
+    "description": "The #GtkColorChooserWidget widget lets the user select a\ncolor. By default, the chooser presents a prefined palette\nof colors, plus a small number of settable custom colors.\nIt is also possible to select a different color with the\nsingle-color editor. To enter the single-color editing mode,\nuse the context menu of any color of the palette, or use the\n'+' button to add a new custom color.\n\nThe chooser automatically remembers the last selection, as well\nas custom colors.\n\nTo change the initially selected color, use gtk_color_chooser_set_rgba().\nTo get the selected font use gtk_color_chooser_get_rgba().\n\nThe #GtkColorChooserWidget is used in the #GtkColorChooserDialog\nto provide a dialog for selecting colors."
+}

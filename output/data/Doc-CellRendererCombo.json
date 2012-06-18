@@ -1,0 +1,61 @@
+{
+    "isAbstract": false, 
+    "leaf": true, 
+    "name": "CellRendererCombo", 
+    "text": "CellRendererCombo", 
+    "interfaces": [], 
+    "parents": [
+        "CellRendererCombo", 
+        "CellRendererText", 
+        "CellRenderer", 
+        "GObject.InitiallyUnowned"
+    ], 
+    "members": {
+        "signals": [
+            {
+                "version": "2.14", 
+                "when": "last", 
+                "name": "changed", 
+                "description": "This signal is emitted each time after the user selected an item in\nthe combo box, either by using the mouse or the arrow keys.  Contrary\nto GtkComboBox, GtkCellRendererCombo::changed is not emitted for\nchanges made to a selected item in the entry.  The argument @new_iter\ncorresponds to the newly selected item in the combo box and it is relative\nto the GtkTreeModel set via the model property on GtkCellRendererCombo.\n\nNote that as soon as you change the model displayed in the tree view,\nthe tree view will immediately cease the editing operating.  This\nmeans that you most probably want to refrain from changing the model\nuntil the combo cell renderer emits the edited or editing_canceled signal."
+            }
+        ], 
+        "methods": [
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "the new cell renderer", 
+                    "name": "ref:Gtk.CellRenderer"
+                }, 
+                "version": "2.6", 
+                "name": "Gtk.CellRendererCombo()", 
+                "parameters": null
+            }
+        ], 
+        "properties": [
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "has-entry", 
+                "description": "If %TRUE, the cell renderer will include an entry and allow to enter \nvalues other than the ones in the popup list."
+            }, 
+            {
+                "writable": false, 
+                "type": "Gtk.TreeModel", 
+                "readable": false, 
+                "name": "model", 
+                "description": "Holds a tree model containing the possible values for the combo box. \nUse the text_column property to specify the column holding the values."
+            }, 
+            {
+                "writable": false, 
+                "type": "Integer", 
+                "readable": false, 
+                "name": "text-column", 
+                "description": "Specifies the model column which holds the possible values for the \ncombo box. \n\nNote that this refers to the model specified in the model property, \n<emphasis>not</emphasis> the model backing the tree view to which \nthis cell renderer is attached.\n\n#GtkCellRendererCombo automatically adds a text cell renderer for \nthis column to its combo box."
+            }
+        ]
+    }, 
+    "fullname": "Class Gtk.CellRendererCombo", 
+    "id": "Docs-CellRendererCombo", 
+    "description": "#GtkCellRendererCombo renders text in a cell like #GtkCellRendererText from\nwhich it is derived. But while #GtkCellRendererText offers a simple entry to\nedit the text, #GtkCellRendererCombo offers a #GtkComboBox or #GtkComboBoxEntry\nwidget to edit the text. The values to display in the combo box are taken from\nthe tree model specified in the #GtkCellRendererCombo:model property.\n\nThe combo cell renderer takes care of adding a text cell renderer to the combo\nbox and sets it to display the column specified by its\n#GtkCellRendererCombo:text-column property. Further properties of the comnbo box\ncan be set in a handler for the #GtkCellRenderer::editing-started signal.\n\nThe #GtkCellRendererCombo cell renderer was added in GTK+ 2.6."
+}

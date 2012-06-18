@@ -1,0 +1,75 @@
+{
+    "isAbstract": false, 
+    "leaf": true, 
+    "name": "HScale", 
+    "text": "HScale", 
+    "interfaces": [
+        [
+            "Atk.ImplementorIface"
+        ], 
+        [
+            "Buildable"
+        ], 
+        [
+            "Orientable"
+        ]
+    ], 
+    "parents": [
+        "HScale", 
+        "Scale", 
+        "Range", 
+        "Widget", 
+        "GObject.InitiallyUnowned"
+    ], 
+    "members": {
+        "signals": [], 
+        "methods": [
+            {
+                "returns": {
+                    "doc": "a new #GtkHScale.", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": null, 
+                "name": "Gtk.HScale(Gtk.Adjustment adjustment)", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Adjustment", 
+                        "name": "adjustment"
+                    }
+                ], 
+                "deprecated": "Use gtk_scale_new() with %GTK_ORIENTATION_HORIZONTAL instead", 
+                "deprecated_version": "3.2", 
+                "isConstructor": true
+            }, 
+            {
+                "returns": {
+                    "doc": "a new #GtkHScale", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": null, 
+                "name": "Gtk.HScale(Float min, Float max, Float step)", 
+                "parameters": [
+                    {
+                        "type": "Float", 
+                        "name": "min"
+                    }, 
+                    {
+                        "type": "Float", 
+                        "name": "max"
+                    }, 
+                    {
+                        "type": "Float", 
+                        "name": "step"
+                    }
+                ], 
+                "deprecated": "Use gtk_scale_new_with_range() with %GTK_ORIENTATION_HORIZONTAL instead", 
+                "deprecated_version": "3.2", 
+                "isConstructor": true
+            }
+        ], 
+        "properties": []
+    }, 
+    "fullname": "Class Gtk.HScale", 
+    "id": "Docs-HScale", 
+    "description": "The #GtkHScale widget is used to allow the user to select a value using\na horizontal slider. To create one, use gtk_hscale_new_with_range().\n\nThe position to show the current value, and the number of decimal places\nshown can be set using the parent #GtkScale class's functions.\n\nGtkHScale has been deprecated, use #GtkScale instead."
+}

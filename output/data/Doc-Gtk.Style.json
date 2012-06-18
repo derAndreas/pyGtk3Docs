@@ -1,0 +1,1581 @@
+{
+    "isAbstract": false, 
+    "leaf": true, 
+    "name": "Style", 
+    "text": "Style", 
+    "interfaces": [], 
+    "parents": [
+        "Style", 
+        "GObject.Object"
+    ], 
+    "members": {
+        "signals": [
+            {
+                "version": "2.4", 
+                "when": "first", 
+                "name": "realize", 
+                "description": "Emitted when the style has been initialized for a particular\nvisual. Connecting to this signal is probably seldom\nuseful since most of the time applications and widgets only\ndeal with styles that have been already realized."
+            }, 
+            {
+                "version": "2.4", 
+                "when": "first", 
+                "name": "unrealize", 
+                "description": "Emitted when the aspects of the style specific to a particular visual\nis being cleaned up. A connection to this signal can be useful\nif a widget wants to cache objects as object data on #GtkStyle.\nThis signal provides a convenient place to free such cached objects."
+            }
+        ], 
+        "methods": [
+            {
+                "returns": {
+                    "doc": "a new #GtkStyle.", 
+                    "name": "ref:Gtk.Style"
+                }, 
+                "version": null, 
+                "name": "Gtk.Style()", 
+                "parameters": null, 
+                "deprecated": "Use #GtkStyleContext", 
+                "deprecated_version": "3.0", 
+                "isConstructor": true
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "apply_default_background", 
+                "parameters": [
+                    {
+                        "type": "cairo.Context", 
+                        "name": "cr", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Gdk.Window", 
+                        "name": "window", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "ref:Gtk.StateType", 
+                        "name": "state_type", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "x", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "y", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "width", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "height", 
+                        "description": ""
+                    }
+                ], 
+                "description": "Deprecated:3.0: Use #GtkStyleContext instead"
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.Style", 
+                    "description": "Either @style, or a newly-created #GtkStyle."
+                }, 
+                "version": "", 
+                "name": "attach", 
+                "parameters": [
+                    {
+                        "type": "Gdk.Window", 
+                        "name": "window", 
+                        "description": "a #GdkWindow."
+                    }
+                ], 
+                "description": "Attaches a style to a window; this process allocates the\ncolors and creates the GC's for the style - it specializes\nit to a particular visual. The process may involve the creation\nof a new style if the style has already been attached to a\nwindow with a different style and visual.\n\nSince this function may return a new object, you have to use it\nin the following way:\n<literal>style = gtk_style_attach (style, window)</literal>\n\nIf the style is newly created, the style parameter\nwill be unref'ed, and the new style will have\na reference count belonging to the caller.\n\nDeprecated:3.0: Use gtk_widget_style_attach() instead"
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.Style", 
+                    "description": "a copy of @style"
+                }, 
+                "version": "", 
+                "name": "copy", 
+                "parameters": null, 
+                "description": "Creates a copy of the passed in #GtkStyle object.\n\n\nDeprecated:3.0: Use #GtkStyleContext instead"
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "detach", 
+                "parameters": null, 
+                "description": "Detaches a style from a window. If the style is not attached\nto any windows anymore, it is unrealized. See gtk_style_attach().\n\nDeprecated:3.0: Use #GtkStyleContext instead"
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.16", 
+                "name": "get", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "widget_type", 
+                        "description": "the #GType of a descendant of #GtkWidget"
+                    }, 
+                    {
+                        "type": "String", 
+                        "name": "first_property_name", 
+                        "description": "the name of the first style property to get"
+                    }, 
+                    {
+                        "type": "ref:VarArg", 
+                        "name": null, 
+                        "description": ""
+                    }
+                ], 
+                "description": "Gets the values of a multiple style properties for @widget_type\nfrom @style."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.16", 
+                "name": "get_style_property", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "widget_type", 
+                        "description": "the #GType of a descendant of #GtkWidget"
+                    }, 
+                    {
+                        "type": "String", 
+                        "name": "property_name", 
+                        "description": "the name of the style property to get"
+                    }, 
+                    {
+                        "type": "GObject.Value", 
+                        "name": "value", 
+                        "description": "a #GValue where the value of the property being queried will be stored"
+                    }
+                ], 
+                "description": "Queries the value of a style property corresponding to a\nwidget class is in the given style."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.16", 
+                "name": "get_valist", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "widget_type", 
+                        "description": "the #GType of a descendant of #GtkWidget"
+                    }, 
+                    {
+                        "type": "String", 
+                        "name": "first_property_name", 
+                        "description": "the name of the first style property to get"
+                    }, 
+                    {
+                        "type": "Mixed", 
+                        "name": "var_args", 
+                        "description": "a <type>va_list</type> of pairs of property names and locations to return the property values, starting with the location for @first_property_name."
+                    }
+                ], 
+                "description": "Non-vararg variant of gtk_style_get().\nUsed primarily by language bindings."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE if @style has a #GtkStyleContext"
+                }, 
+                "version": "3.0", 
+                "name": "has_context", 
+                "parameters": null, 
+                "description": "Returns whether @style has an associated #GtkStyleContext."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE if the mapping was found."
+                }, 
+                "version": "2.10", 
+                "name": "lookup_color", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "color_name", 
+                        "description": "the name of the logical color to look up"
+                    }, 
+                    {
+                        "type": "Gdk.Color", 
+                        "name": "color", 
+                        "description": "the #GdkColor to fill in"
+                    }
+                ], 
+                "description": "Looks up @color_name in the style's logical color mappings,\nfilling in @color and returning %TRUE if found, otherwise\nreturning %FALSE. Do not cache the found mapping, because\nit depends on the #GtkStyle and might change when a theme\nswitch occurs.\n\n\n\nDeprecated:3.0: Use gtk_style_context_lookup_color() instead"
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.IconSet", 
+                    "description": "icon set of @stock_id"
+                }, 
+                "version": "", 
+                "name": "lookup_icon_set", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "stock_id", 
+                        "description": "an icon name"
+                    }
+                ], 
+                "description": "Looks up @stock_id in the icon factories associated with @style\nand the default icon factory, returning an icon set if found,\notherwise %NULL.\n\n\nDeprecated:3.0: Use gtk_style_context_lookup_icon_set() instead"
+            }, 
+            {
+                "returns": {
+                    "type": "GdkPixbuf.Pixbuf", 
+                    "description": "a newly-created #GdkPixbuf"
+                }, 
+                "version": "", 
+                "name": "render_icon", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.IconSource", 
+                        "name": "source", 
+                        "description": "the #GtkIconSource specifying the icon to render"
+                    }, 
+                    {
+                        "type": "ref:Gtk.TextDirection", 
+                        "name": "direction", 
+                        "description": "a text direction"
+                    }, 
+                    {
+                        "type": "ref:Gtk.StateType", 
+                        "name": "state", 
+                        "description": "a state"
+                    }, 
+                    {
+                        "type": "ref:Gtk.IconSize", 
+                        "name": "size", 
+                        "description": "the size to render the icon at. A size of (GtkIconSize)-1 means render at the size of the source and don't scale."
+                    }, 
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "widget", 
+                        "description": "the widget"
+                    }, 
+                    {
+                        "type": "String", 
+                        "name": "detail", 
+                        "description": "a style detail"
+                    }
+                ], 
+                "description": "Renders the icon specified by @source at the given @size\naccording to the given parameters and returns the result in a\npixbuf.\n\ncontaining the rendered icon\n\nDeprecated:3.0: Use gtk_render_icon_pixbuf() instead"
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_background", 
+                "parameters": [
+                    {
+                        "type": "Gdk.Window", 
+                        "name": "window", 
+                        "description": "a #GdkWindow"
+                    }, 
+                    {
+                        "type": "ref:Gtk.StateType", 
+                        "name": "state_type", 
+                        "description": "a state"
+                    }
+                ], 
+                "description": "Sets the background of @window to the background color or pixmap\nspecified by @style for the given state.\n\nDeprecated:3.0: Use gtk_style_context_set_background() instead"
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.Style", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "clone", 
+                "parameters": null, 
+                "description": ""
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "copy", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Style", 
+                        "name": "src", 
+                        "description": ""
+                    }
+                ], 
+                "description": ""
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "draw_arrow", 
+                "parameters": [
+                    {
+                        "type": "cairo.Context", 
+                        "name": "cr", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "ref:Gtk.StateType", 
+                        "name": "state_type", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "ref:Gtk.ShadowType", 
+                        "name": "shadow_type", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "widget", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "String", 
+                        "name": "detail", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "ref:Gtk.ArrowType", 
+                        "name": "arrow_type", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Boolean", 
+                        "name": "fill", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "x", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "y", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "width", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "height", 
+                        "description": ""
+                    }
+                ], 
+                "description": ""
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "draw_box", 
+                "parameters": [
+                    {
+                        "type": "cairo.Context", 
+                        "name": "cr", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "ref:Gtk.StateType", 
+                        "name": "state_type", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "ref:Gtk.ShadowType", 
+                        "name": "shadow_type", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "widget", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "String", 
+                        "name": "detail", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "x", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "y", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "width", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "height", 
+                        "description": ""
+                    }
+                ], 
+                "description": ""
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "draw_box_gap", 
+                "parameters": [
+                    {
+                        "type": "cairo.Context", 
+                        "name": "cr", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "ref:Gtk.StateType", 
+                        "name": "state_type", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "ref:Gtk.ShadowType", 
+                        "name": "shadow_type", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "widget", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "String", 
+                        "name": "detail", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "x", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "y", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "width", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "height", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "ref:Gtk.PositionType", 
+                        "name": "gap_side", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "gap_x", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "gap_width", 
+                        "description": ""
+                    }
+                ], 
+                "description": ""
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "draw_check", 
+                "parameters": [
+                    {
+                        "type": "cairo.Context", 
+                        "name": "cr", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "ref:Gtk.StateType", 
+                        "name": "state_type", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "ref:Gtk.ShadowType", 
+                        "name": "shadow_type", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "widget", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "String", 
+                        "name": "detail", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "x", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "y", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "width", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "height", 
+                        "description": ""
+                    }
+                ], 
+                "description": ""
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "draw_diamond", 
+                "parameters": [
+                    {
+                        "type": "cairo.Context", 
+                        "name": "cr", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "ref:Gtk.StateType", 
+                        "name": "state_type", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "ref:Gtk.ShadowType", 
+                        "name": "shadow_type", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "widget", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "String", 
+                        "name": "detail", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "x", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "y", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "width", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "height", 
+                        "description": ""
+                    }
+                ], 
+                "description": ""
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "draw_expander", 
+                "parameters": [
+                    {
+                        "type": "cairo.Context", 
+                        "name": "cr", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "ref:Gtk.StateType", 
+                        "name": "state_type", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "widget", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "String", 
+                        "name": "detail", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "x", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "y", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "ref:Gtk.ExpanderStyle", 
+                        "name": "expander_style", 
+                        "description": ""
+                    }
+                ], 
+                "description": ""
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "draw_extension", 
+                "parameters": [
+                    {
+                        "type": "cairo.Context", 
+                        "name": "cr", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "ref:Gtk.StateType", 
+                        "name": "state_type", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "ref:Gtk.ShadowType", 
+                        "name": "shadow_type", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "widget", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "String", 
+                        "name": "detail", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "x", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "y", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "width", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "height", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "ref:Gtk.PositionType", 
+                        "name": "gap_side", 
+                        "description": ""
+                    }
+                ], 
+                "description": ""
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "draw_flat_box", 
+                "parameters": [
+                    {
+                        "type": "cairo.Context", 
+                        "name": "cr", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "ref:Gtk.StateType", 
+                        "name": "state_type", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "ref:Gtk.ShadowType", 
+                        "name": "shadow_type", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "widget", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "String", 
+                        "name": "detail", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "x", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "y", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "width", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "height", 
+                        "description": ""
+                    }
+                ], 
+                "description": ""
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "draw_focus", 
+                "parameters": [
+                    {
+                        "type": "cairo.Context", 
+                        "name": "cr", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "ref:Gtk.StateType", 
+                        "name": "state_type", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "widget", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "String", 
+                        "name": "detail", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "x", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "y", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "width", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "height", 
+                        "description": ""
+                    }
+                ], 
+                "description": ""
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "draw_handle", 
+                "parameters": [
+                    {
+                        "type": "cairo.Context", 
+                        "name": "cr", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "ref:Gtk.StateType", 
+                        "name": "state_type", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "ref:Gtk.ShadowType", 
+                        "name": "shadow_type", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "widget", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "String", 
+                        "name": "detail", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "x", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "y", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "width", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "height", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "ref:Gtk.Orientation", 
+                        "name": "orientation", 
+                        "description": ""
+                    }
+                ], 
+                "description": ""
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "draw_hline", 
+                "parameters": [
+                    {
+                        "type": "cairo.Context", 
+                        "name": "cr", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "ref:Gtk.StateType", 
+                        "name": "state_type", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "widget", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "String", 
+                        "name": "detail", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "x1", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "x2", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "y", 
+                        "description": ""
+                    }
+                ], 
+                "description": ""
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "draw_layout", 
+                "parameters": [
+                    {
+                        "type": "cairo.Context", 
+                        "name": "cr", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "ref:Gtk.StateType", 
+                        "name": "state_type", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Boolean", 
+                        "name": "use_text", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "widget", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "String", 
+                        "name": "detail", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "x", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "y", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Pango.Layout", 
+                        "name": "layout", 
+                        "description": ""
+                    }
+                ], 
+                "description": ""
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "draw_option", 
+                "parameters": [
+                    {
+                        "type": "cairo.Context", 
+                        "name": "cr", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "ref:Gtk.StateType", 
+                        "name": "state_type", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "ref:Gtk.ShadowType", 
+                        "name": "shadow_type", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "widget", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "String", 
+                        "name": "detail", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "x", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "y", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "width", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "height", 
+                        "description": ""
+                    }
+                ], 
+                "description": ""
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "draw_resize_grip", 
+                "parameters": [
+                    {
+                        "type": "cairo.Context", 
+                        "name": "cr", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "ref:Gtk.StateType", 
+                        "name": "state_type", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "widget", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "String", 
+                        "name": "detail", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Gdk.WindowEdge", 
+                        "name": "edge", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "x", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "y", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "width", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "height", 
+                        "description": ""
+                    }
+                ], 
+                "description": ""
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "draw_shadow", 
+                "parameters": [
+                    {
+                        "type": "cairo.Context", 
+                        "name": "cr", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "ref:Gtk.StateType", 
+                        "name": "state_type", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "ref:Gtk.ShadowType", 
+                        "name": "shadow_type", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "widget", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "String", 
+                        "name": "detail", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "x", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "y", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "width", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "height", 
+                        "description": ""
+                    }
+                ], 
+                "description": ""
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "draw_shadow_gap", 
+                "parameters": [
+                    {
+                        "type": "cairo.Context", 
+                        "name": "cr", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "ref:Gtk.StateType", 
+                        "name": "state_type", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "ref:Gtk.ShadowType", 
+                        "name": "shadow_type", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "widget", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "String", 
+                        "name": "detail", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "x", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "y", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "width", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "height", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "ref:Gtk.PositionType", 
+                        "name": "gap_side", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "gap_x", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "gap_width", 
+                        "description": ""
+                    }
+                ], 
+                "description": ""
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "draw_slider", 
+                "parameters": [
+                    {
+                        "type": "cairo.Context", 
+                        "name": "cr", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "ref:Gtk.StateType", 
+                        "name": "state_type", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "ref:Gtk.ShadowType", 
+                        "name": "shadow_type", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "widget", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "String", 
+                        "name": "detail", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "x", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "y", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "width", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "height", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "ref:Gtk.Orientation", 
+                        "name": "orientation", 
+                        "description": ""
+                    }
+                ], 
+                "description": ""
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "draw_spinner", 
+                "parameters": [
+                    {
+                        "type": "cairo.Context", 
+                        "name": "cr", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "ref:Gtk.StateType", 
+                        "name": "state_type", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "widget", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "String", 
+                        "name": "detail", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "step", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "x", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "y", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "width", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "height", 
+                        "description": ""
+                    }
+                ], 
+                "description": ""
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "draw_tab", 
+                "parameters": [
+                    {
+                        "type": "cairo.Context", 
+                        "name": "cr", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "ref:Gtk.StateType", 
+                        "name": "state_type", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "ref:Gtk.ShadowType", 
+                        "name": "shadow_type", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "widget", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "String", 
+                        "name": "detail", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "x", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "y", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "width", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "height", 
+                        "description": ""
+                    }
+                ], 
+                "description": ""
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "draw_vline", 
+                "parameters": [
+                    {
+                        "type": "cairo.Context", 
+                        "name": "cr", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "ref:Gtk.StateType", 
+                        "name": "state_type", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "widget", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "String", 
+                        "name": "detail", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "y1_", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "y2_", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "x", 
+                        "description": ""
+                    }
+                ], 
+                "description": ""
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "init_from_rc", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.RcStyle", 
+                        "name": "rc_style", 
+                        "description": ""
+                    }
+                ], 
+                "description": ""
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "realize", 
+                "parameters": null, 
+                "description": ""
+            }, 
+            {
+                "returns": {
+                    "type": "GdkPixbuf.Pixbuf", 
+                    "description": "a newly-created #GdkPixbuf"
+                }, 
+                "version": "", 
+                "name": "render_icon", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.IconSource", 
+                        "name": "source", 
+                        "description": "the #GtkIconSource specifying the icon to render"
+                    }, 
+                    {
+                        "type": "ref:Gtk.TextDirection", 
+                        "name": "direction", 
+                        "description": "a text direction"
+                    }, 
+                    {
+                        "type": "ref:Gtk.StateType", 
+                        "name": "state", 
+                        "description": "a state"
+                    }, 
+                    {
+                        "type": "ref:Gtk.IconSize", 
+                        "name": "size", 
+                        "description": "the size to render the icon at. A size of (GtkIconSize)-1 means render at the size of the source and don't scale."
+                    }, 
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "widget", 
+                        "description": "the widget"
+                    }, 
+                    {
+                        "type": "String", 
+                        "name": "detail", 
+                        "description": "a style detail"
+                    }
+                ], 
+                "description": "Renders the icon specified by @source at the given @size\naccording to the given parameters and returns the result in a\npixbuf.\n\ncontaining the rendered icon\n\nDeprecated:3.0: Use gtk_render_icon_pixbuf() instead"
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_background", 
+                "parameters": [
+                    {
+                        "type": "Gdk.Window", 
+                        "name": "window", 
+                        "description": "a #GdkWindow"
+                    }, 
+                    {
+                        "type": "ref:Gtk.StateType", 
+                        "name": "state_type", 
+                        "description": "a state"
+                    }
+                ], 
+                "description": "Sets the background of @window to the background color or pixmap\nspecified by @style for the given state.\n\nDeprecated:3.0: Use gtk_style_context_set_background() instead"
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "unrealize", 
+                "parameters": null, 
+                "description": ""
+            }
+        ], 
+        "properties": [
+            {
+                "writable": false, 
+                "type": "Gtk.StyleContext", 
+                "readable": false, 
+                "name": "context", 
+                "description": ""
+            }
+        ]
+    }, 
+    "fullname": "Class Gtk.Style", 
+    "id": "Docs-Style", 
+    "description": "A #GtkStyle object encapsulates the information that provides the look and\nfeel for a widget.\n\n<warning>\nIn GTK+ 3.0, GtkStyle has been deprecated and replaced by #GtkStyleContext.\n</warning>\n\nEach #GtkWidget has an associated #GtkStyle object that is used when\nrendering that widget. Also, a #GtkStyle holds information for the five\npossible widget states though not every widget supports all five\nstates; see #GtkStateType.\n\nUsually the #GtkStyle for a widget is the same as the default style that\nis set by GTK+ and modified the theme engine.\n\nUsually applications should not need to use or modify the #GtkStyle of\ntheir widgets."
+}

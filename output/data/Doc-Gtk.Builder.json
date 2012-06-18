@@ -1,0 +1,332 @@
+{
+    "isAbstract": false, 
+    "leaf": true, 
+    "name": "Builder", 
+    "text": "Builder", 
+    "interfaces": [], 
+    "parents": [
+        "Builder", 
+        "GObject.Object"
+    ], 
+    "members": {
+        "signals": [], 
+        "methods": [
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a new #GtkBuilder object", 
+                    "name": "ref:Gtk.Builder"
+                }, 
+                "version": "2.12", 
+                "name": "Gtk.Builder()", 
+                "parameters": null
+            }, 
+            {
+                "returns": {
+                    "type": "Integer", 
+                    "description": "A positive value on success, 0 if an error occurred"
+                }, 
+                "version": "2.12", 
+                "name": "add_from_file", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "filename", 
+                        "description": "the name of the file to parse"
+                    }
+                ], 
+                "description": "Parses a file containing a <link linkend=\"BUILDER-UI\">GtkBuilder \nUI definition</link> and merges it with the current contents of @builder. \n\nUpon errors 0 will be returned and @error will be assigned a\n#GError from the #GTK_BUILDER_ERROR, #G_MARKUP_ERROR or #G_FILE_ERROR \ndomain."
+            }, 
+            {
+                "returns": {
+                    "type": "Integer", 
+                    "description": "A positive value on success, 0 if an error occurred"
+                }, 
+                "version": "3.4", 
+                "name": "add_from_resource", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "resource_path", 
+                        "description": "the path of the resource file to parse"
+                    }
+                ], 
+                "description": "Parses a resource file containing a <link linkend=\"BUILDER-UI\">GtkBuilder\nUI definition</link> and merges it with the current contents of @builder.\n\nUpon errors 0 will be returned and @error will be assigned a\n#GError from the #GTK_BUILDER_ERROR, #G_MARKUP_ERROR or #G_RESOURCE_ERROR\ndomain."
+            }, 
+            {
+                "returns": {
+                    "type": "Integer", 
+                    "description": "A positive value on success, 0 if an error occurred"
+                }, 
+                "version": "2.12", 
+                "name": "add_from_string", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "buffer", 
+                        "description": "the string to parse"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "length", 
+                        "description": "the length of @buffer (may be -1 if @buffer is nul-terminated)"
+                    }
+                ], 
+                "description": "Parses a string containing a <link linkend=\"BUILDER-UI\">GtkBuilder \nUI definition</link> and merges it with the current contents of @builder. \n\nUpon errors 0 will be returned and @error will be assigned a\n#GError from the #GTK_BUILDER_ERROR or #G_MARKUP_ERROR domain."
+            }, 
+            {
+                "returns": {
+                    "type": "Integer", 
+                    "description": "A positive value on success, 0 if an error occurred"
+                }, 
+                "version": "2.14", 
+                "name": "add_objects_from_file", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "filename", 
+                        "description": "the name of the file to parse"
+                    }, 
+                    {
+                        "type": "String[]", 
+                        "name": "object_ids", 
+                        "description": "nul-terminated array of objects to build"
+                    }
+                ], 
+                "description": "Parses a file containing a <link linkend=\"BUILDER-UI\">GtkBuilder \nUI definition</link> building only the requested objects and merges\nthem with the current contents of @builder. \n\nUpon errors 0 will be returned and @error will be assigned a\n#GError from the #GTK_BUILDER_ERROR, #G_MARKUP_ERROR or #G_FILE_ERROR \ndomain.\n\n<note><para>\nIf you are adding an object that depends on an object that is not \nits child (for instance a #GtkTreeView that depends on its\n#GtkTreeModel), you have to explicitely list all of them in @object_ids. \n</para></note>"
+            }, 
+            {
+                "returns": {
+                    "type": "Integer", 
+                    "description": "A positive value on success, 0 if an error occurred"
+                }, 
+                "version": "3.4", 
+                "name": "add_objects_from_resource", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "resource_path", 
+                        "description": "the path of the resource file to parse"
+                    }, 
+                    {
+                        "type": "String[]", 
+                        "name": "object_ids", 
+                        "description": "nul-terminated array of objects to build"
+                    }
+                ], 
+                "description": "Parses a resource file containing a <link linkend=\"BUILDER-UI\">GtkBuilder\nUI definition</link> building only the requested objects and merges\nthem with the current contents of @builder.\n\nUpon errors 0 will be returned and @error will be assigned a\n#GError from the #GTK_BUILDER_ERROR, #G_MARKUP_ERROR or #G_RESOURCE_ERROR\ndomain.\n\n<note><para>\nIf you are adding an object that depends on an object that is not\nits child (for instance a #GtkTreeView that depends on its\n#GtkTreeModel), you have to explicitely list all of them in @object_ids.\n</para></note>"
+            }, 
+            {
+                "returns": {
+                    "type": "Integer", 
+                    "description": "A positive value on success, 0 if an error occurred"
+                }, 
+                "version": "2.14", 
+                "name": "add_objects_from_string", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "buffer", 
+                        "description": "the string to parse"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "length", 
+                        "description": "the length of @buffer (may be -1 if @buffer is nul-terminated)"
+                    }, 
+                    {
+                        "type": "String[]", 
+                        "name": "object_ids", 
+                        "description": "nul-terminated array of objects to build"
+                    }
+                ], 
+                "description": "Parses a string containing a <link linkend=\"BUILDER-UI\">GtkBuilder \nUI definition</link> building only the requested objects and merges\nthem with the current contents of @builder. \n\nUpon errors 0 will be returned and @error will be assigned a\n#GError from the #GTK_BUILDER_ERROR or #G_MARKUP_ERROR domain.\n\n<note><para>\nIf you are adding an object that depends on an object that is not \nits child (for instance a #GtkTreeView that depends on its\n#GtkTreeModel), you have to explicitely list all of them in @object_ids. \n</para></note>"
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.12", 
+                "name": "connect_signals", 
+                "parameters": [
+                    {
+                        "type": "Mixed", 
+                        "name": "user_data", 
+                        "description": "a pointer to a structure sent in as user data to all signals"
+                    }
+                ], 
+                "description": "This method is a simpler variation of gtk_builder_connect_signals_full().\nIt uses #GModule's introspective features (by opening the module %NULL) \nto look at the application's symbol table. From here it tries to match\nthe signal handler names given in the interface description with\nsymbols in the application and connects the signals. Note that this\nfunction can only be called once, subsequent calls will do nothing.\n\nNote that this function will not work correctly if #GModule is not\nsupported on the platform.\n\nWhen compiling applications for Windows, you must declare signal callbacks\nwith #G_MODULE_EXPORT, or they will not be put in the symbol table.\nOn Linux and Unices, this is not necessary; applications should instead\nbe compiled with the -Wl,--export-dynamic CFLAGS, and linked against\ngmodule-export-2.0."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.12", 
+                "name": "connect_signals_full", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.BuilderConnectFunc", 
+                        "name": "func", 
+                        "description": "the function used to connect the signals"
+                    }, 
+                    {
+                        "type": "Mixed", 
+                        "name": "user_data", 
+                        "description": "arbitrary data that will be passed to the connection function"
+                    }
+                ], 
+                "description": "This function can be thought of the interpreted language binding\nversion of gtk_builder_connect_signals(), except that it does not\nrequire GModule to function correctly."
+            }, 
+            {
+                "returns": {
+                    "type": "GObject.Object", 
+                    "description": "the object named @name or %NULL if"
+                }, 
+                "version": "2.12", 
+                "name": "get_object", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "name", 
+                        "description": "name of object to get"
+                    }
+                ], 
+                "description": "Gets the object named @name. Note that this function does not\nincrement the reference count of the returned object. \n\nit could not be found in the object tree."
+            }, 
+            {
+                "returns": {
+                    "type": "GLib.SList", 
+                    "description": "a newly-allocated #GSList containing all the objects"
+                }, 
+                "version": "2.12", 
+                "name": "get_objects", 
+                "parameters": null, 
+                "description": "Gets all objects that have been constructed by @builder. Note that \nthis function does not increment the reference counts of the returned\nobjects.\n\nconstructed by the #GtkBuilder instance. It should be freed by\ng_slist_free()"
+            }, 
+            {
+                "returns": {
+                    "type": "String", 
+                    "description": "the translation domain. This string is owned"
+                }, 
+                "version": "2.12", 
+                "name": "get_translation_domain", 
+                "parameters": null, 
+                "description": "Gets the translation domain of @builder.\n\nby the builder object and must not be modified or freed."
+            }, 
+            {
+                "returns": {
+                    "type": "Integer", 
+                    "description": "the #GType found for @type_name or #G_TYPE_INVALID"
+                }, 
+                "version": "2.12", 
+                "name": "get_type_from_name", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "type_name", 
+                        "description": "type name to lookup"
+                    }
+                ], 
+                "description": "Looks up a type by name, using the virtual function that \n#GtkBuilder has for that purpose. This is mainly used when\nimplementing the #GtkBuildable interface on a type.\n\nif no type was found"
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.12", 
+                "name": "set_translation_domain", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "domain", 
+                        "description": "the translation domain or %NULL"
+                    }
+                ], 
+                "description": "Sets the translation domain of @builder. \nSee #GtkBuilder:translation-domain."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE on success"
+                }, 
+                "version": "2.12", 
+                "name": "value_from_string", 
+                "parameters": [
+                    {
+                        "type": "GObject.ParamSpec", 
+                        "name": "pspec", 
+                        "description": "the #GParamSpec for the property"
+                    }, 
+                    {
+                        "type": "String", 
+                        "name": "string", 
+                        "description": "the string representation of the value"
+                    }, 
+                    {
+                        "type": "GObject.Value", 
+                        "name": "value", 
+                        "description": "the #GValue to store the result in"
+                    }
+                ], 
+                "description": "This function demarshals a value from a string. This function\ncalls g_value_init() on the @value argument, so it need not be\ninitialised beforehand.\n\nThis function can handle char, uchar, boolean, int, uint, long,\nulong, enum, flags, float, double, string, #GdkColor, #GdkRGBA and\n#GtkAdjustment type values. Support for #GtkWidget type values is\nstill to come.\n\nUpon errors %FALSE will be returned and @error will be assigned a\n#GError from the #GTK_BUILDER_ERROR domain."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE on success"
+                }, 
+                "version": "2.12", 
+                "name": "value_from_string_type", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "type", 
+                        "description": "the #GType of the value"
+                    }, 
+                    {
+                        "type": "String", 
+                        "name": "string", 
+                        "description": "the string representation of the value"
+                    }, 
+                    {
+                        "type": "GObject.Value", 
+                        "name": "value", 
+                        "description": "the #GValue to store the result in"
+                    }
+                ], 
+                "description": "Like gtk_builder_value_from_string(), this function demarshals \na value from a string, but takes a #GType instead of #GParamSpec.\nThis function calls g_value_init() on the @value argument, so it \nneed not be initialised beforehand.\n\nUpon errors %FALSE will be returned and @error will be assigned a\n#GError from the #GTK_BUILDER_ERROR domain."
+            }, 
+            {
+                "returns": {
+                    "type": "Integer", 
+                    "description": "the #GType found for @type_name or #G_TYPE_INVALID"
+                }, 
+                "version": "2.12", 
+                "name": "get_type_from_name", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "type_name", 
+                        "description": "type name to lookup"
+                    }
+                ], 
+                "description": "Looks up a type by name, using the virtual function that \n#GtkBuilder has for that purpose. This is mainly used when\nimplementing the #GtkBuildable interface on a type.\n\nif no type was found"
+            }
+        ], 
+        "properties": [
+            {
+                "writable": false, 
+                "type": "String", 
+                "readable": false, 
+                "name": "translation-domain", 
+                "description": "The translation domain used when translating property values that\nhave been marked as translatable in interface descriptions.\nIf the translation domain is %NULL, #GtkBuilder uses gettext(),\notherwise g_dgettext()."
+            }
+        ]
+    }, 
+    "fullname": "Class Gtk.Builder", 
+    "id": "Docs-Builder", 
+    "description": "A GtkBuilder is an auxiliary object that reads textual descriptions\nof a user interface and instantiates the described objects. To pass a\ndescription to a GtkBuilder, call gtk_builder_add_from_file() or\ngtk_builder_add_from_string(). These functions can be called multiple\ntimes; the builder merges the content of all descriptions.\n\nA GtkBuilder holds a reference to all objects that it has constructed\nand drops these references when it is finalized. This finalization can\ncause the destruction of non-widget objects or widgets which are not\ncontained in a toplevel window. For toplevel windows constructed by a\nbuilder, it is the responsibility of the user to call gtk_widget_destroy()\nto get rid of them and all the widgets they contain.\n\nThe functions gtk_builder_get_object() and gtk_builder_get_objects()\ncan be used to access the widgets in the interface by the names assigned\nto them inside the UI description. Toplevel windows returned by these\nfunctions will stay around until the user explicitly destroys them\nwith gtk_widget_destroy(). Other widgets will either be part of a\nlarger hierarchy constructed by the builder (in which case you should\nnot have to worry about their lifecycle), or without a parent, in which\ncase they have to be added to some container to make use of them.\nNon-widget objects need to be reffed with g_object_ref() to keep them\nbeyond the lifespan of the builder.\n\nThe function gtk_builder_connect_signals() and variants thereof can be\nused to connect handlers to the named signals in the description.\n\n<refsect2 id=\"BUILDER-UI\">\n<title>GtkBuilder UI Definitions</title>\n<para>\nGtkBuilder parses textual descriptions of user interfaces which are specified\nin an XML format which can be roughly described by the RELAX NG schema below.\nWe refer to these descriptions as <firstterm>GtkBuilder UI definitions</firstterm>\nor just <firstterm>UI definitions</firstterm> if the context is clear. Do not\nconfuse GtkBuilder UI Definitions with\n<link linkend=\"XML-UI\">GtkUIManager UI Definitions</link>, which are more\nlimited in scope.\n</para>\n<programlisting>\n<xi:include xmlns:xi=\"http://www.w3.org/2001/XInclude\" parse=\"text\" href=\"../../../../gtk/gtkbuilder.rnc\">\n<xi:fallback>FIXME: MISSING XINCLUDE CONTENT</xi:fallback>\n</xi:include>\n</programlisting>\n<para>\nThe toplevel element is &lt;interface&gt;. It optionally takes a \"domain\"\nattribute, which will make the builder look for translated strings using\ndgettext() in the domain specified. This can also be done by calling\ngtk_builder_set_translation_domain() on the builder. Objects are described by\n&lt;object&gt; elements, which can contain &lt;property&gt; elements to set\nproperties, &lt;signal&gt; elements which connect signals to handlers, and\n&lt;child&gt; elements, which describe child objects (most often widgets\ninside a container, but also e.g. actions in an action group, or columns in a\ntree model). A &lt;child&gt; element contains an &lt;object&gt; element which\ndescribes the child object. The target toolkit version(s) are described by\n&lt;requires&gt; elements, the \"lib\" attribute specifies the widget library\nin question (currently the only supported value is \"gtk+\") and the \"version\"\nattribute specifies the target version in the form\n\"&lt;major&gt;.&lt;minor&gt;\". The builder will error out if the version\nrequirements are not met.\n\nTypically, the specific kind of object represented by an &lt;object&gt;\nelement is specified by the \"class\" attribute. If the type has not been\nloaded yet, GTK+ tries to find the <function>_get_type()</function> from the\nclass name by applying heuristics. This works in most cases, but if\nnecessary, it is possible to specify the name of the\n<function>_get_type()</function> explictly with the \"type-func\" attribute.\nAs a special case, GtkBuilder allows to use an object that has been\nconstructed by a #GtkUIManager in another part of the UI definition by\nspecifying the id of the #GtkUIManager in the \"constructor\" attribute and the\nname of the object in the \"id\" attribute.\n\nObjects must be given a name with the \"id\" attribute, which allows the\napplication to retrieve them from the builder with gtk_builder_get_object().\nAn id is also necessary to use the object as property value in other parts of\nthe UI definition.\n</para>\n<note><para>\nPrior to 2.20, GtkBuilder was setting the \"name\" property of constructed widgets to the\n\"id\" attribute. In GTK+ 2.20 or newer, you have to use gtk_buildable_get_name() instead\nof gtk_widget_get_name() to obtain the \"id\", or set the \"name\" property in your UI\ndefinition.\n</para></note>\n<para>\nSetting properties of objects is pretty straightforward with the\n&lt;property&gt; element: the \"name\" attribute specifies the name of the\nproperty, and the content of the element specifies the value. If the\n\"translatable\" attribute is set to a true value, GTK+ uses gettext() (or\ndgettext() if the builder has a translation domain set) to find a translation\nfor the value. This happens before the value is parsed, so it can be used for\nproperties of any type, but it is probably most useful for string properties.\nIt is also possible to specify a context to disambiguate short strings, and\ncomments which may help the translators.\n\nGtkBuilder can parse textual representations for the most common property\ntypes: characters, strings, integers, floating-point numbers, booleans\n(strings like \"TRUE\", \"t\", \"yes\", \"y\", \"1\" are interpreted as %TRUE, strings\nlike \"FALSE, \"f\", \"no\", \"n\", \"0\" are interpreted as %FALSE), enumerations\n(can be specified by their name, nick or integer value), flags (can be\nspecified by their name, nick, integer value, optionally combined with \"|\",\ne.g. \"GTK_VISIBLE|GTK_REALIZED\")  and colors (in a format understood by\ngdk_color_parse()). Objects can be referred to by their name. Pixbufs can be\nspecified as a filename of an image file to load. In general, GtkBuilder\nallows forward references to objects &mdash; an object doesn't have to be\nconstructed before it can be referred to. The exception to this rule is that\nan object has to be constructed before it can be used as the value of a\nconstruct-only property.\n\nSignal handlers are set up with the &lt;signal&gt; element. The \"name\"\nattribute specifies the name of the signal, and the \"handler\" attribute\nspecifies the function to connect to the signal. By default, GTK+ tries to\nfind the handler using g_module_symbol(), but this can be changed by passing\na custom #GtkBuilderConnectFunc to gtk_builder_connect_signals_full(). The\nremaining attributes, \"after\", \"swapped\" and \"object\", have the same meaning\nas the corresponding parameters of the g_signal_connect_object() or\ng_signal_connect_data() functions. A \"last_modification_time\" attribute\nis also allowed, but it does not have a meaning to the builder.\n\nSometimes it is necessary to refer to widgets which have implicitly been\nconstructed by GTK+ as part of a composite widget, to set properties on them\nor to add further children (e.g. the @vbox of a #GtkDialog). This can be\nachieved by setting the \"internal-child\" propery of the &lt;child&gt; element\nto a true value. Note that GtkBuilder still requires an &lt;object&gt;\nelement for the internal child, even if it has already been constructed.\n\nA number of widgets have different places where a child can be added (e.g.\ntabs vs. page content in notebooks). This can be reflected in a UI definition\nby specifying the \"type\" attribute on a &lt;child&gt;. The possible values\nfor the \"type\" attribute are described in the sections describing the\nwidget-specific portions of UI definitions.\n</para>\n<example>\n<title>A GtkBuilder UI Definition</title>\n<programlisting><![CDATA[\n<interface>\n<object class=\"GtkDialog\" id=\"dialog1\">\n<child internal-child=\"vbox\">\n<object class=\"GtkVBox\" id=\"vbox1\">\n<property name=\"border-width\">10</property>\n<child internal-child=\"action_area\">\n<object class=\"GtkHButtonBox\" id=\"hbuttonbox1\">\n<property name=\"border-width\">20</property>\n<child>\n<object class=\"GtkButton\" id=\"ok_button\">\n<property name=\"label\">gtk-ok</property>\n<property name=\"use-stock\">TRUE</property>\n<signal name=\"clicked\" handler=\"ok_button_clicked\"/>\n</object>\n</child>\n</object>\n</child>\n</object>\n</child>\n</object>\n</interface>\n]]></programlisting>\n</example>\n<para>\nBeyond this general structure, several object classes define their own XML\nDTD fragments for filling in the ANY placeholders in the DTD above. Note that\na custom element in a &lt;child&gt; element gets parsed by the custom tag\nhandler of the parent object, while a custom element in an &lt;object&gt;\nelement gets parsed by the custom tag handler of the object.\n\nThese XML fragments are explained in the documentation of the respective\nobjects, see\n<link linkend=\"GtkWidget-BUILDER-UI\">GtkWidget</link>,\n<link linkend=\"GtkLabel-BUILDER-UI\">GtkLabel</link>,\n<link linkend=\"GtkWindow-BUILDER-UI\">GtkWindow</link>,\n<link linkend=\"GtkContainer-BUILDER-UI\">GtkContainer</link>,\n<link linkend=\"GtkDialog-BUILDER-UI\">GtkDialog</link>,\n<link linkend=\"GtkCellLayout-BUILDER-UI\">GtkCellLayout</link>,\n<link linkend=\"GtkColorSelectionDialog-BUILDER-UI\">GtkColorSelectionDialog</link>,\n<link linkend=\"GtkFontSelectionDialog-BUILDER-UI\">GtkFontSelectionDialog</link>,\n<link linkend=\"GtkExpander-BUILDER-UI\">GtkExpander</link>,\n<link linkend=\"GtkFrame-BUILDER-UI\">GtkFrame</link>,\n<link linkend=\"GtkListStore-BUILDER-UI\">GtkListStore</link>,\n<link linkend=\"GtkTreeStore-BUILDER-UI\">GtkTreeStore</link>,\n<link linkend=\"GtkNotebook-BUILDER-UI\">GtkNotebook</link>,\n<link linkend=\"GtkSizeGroup-BUILDER-UI\">GtkSizeGroup</link>,\n<link linkend=\"GtkTreeView-BUILDER-UI\">GtkTreeView</link>,\n<link linkend=\"GtkUIManager-BUILDER-UI\">GtkUIManager</link>,\n<link linkend=\"GtkActionGroup-BUILDER-UI\">GtkActionGroup</link>.\n<link linkend=\"GtkMenuItem-BUILDER-UI\">GtkMenuItem</link>,\n<link linkend=\"GtkMenuToolButton-BUILDER-UI\">GtkMenuToolButton</link>,\n<link linkend=\"GtkAssistant-BUILDER-UI\">GtkAssistant</link>,\n<link linkend=\"GtkScale-BUILDER-UI\">GtkScale</link>,\n<link linkend=\"GtkComboBoxText-BUILDER-UI\">GtkComboBoxText</link>,\n<link linkend=\"GtkRecentFilter-BUILDER-UI\">GtkRecentFilter</link>,\n<link linkend=\"GtkFileFilter-BUILDER-UI\">GtkFileFilter</link>,\n<link linkend=\"GtkTextTagTable-BUILDER-UI\">GtkTextTagTable</link>.\n</para>\n</refsect2>\n<refsect2>\n<title>Embedding other XML</title>\n<para>\nApart from the language for UI descriptions that has been explained\nin the previous section, GtkBuilder can also parse XML fragments\nof <link linkend=\"gio-GMenu-Markup\">GMenu markup</link>. The resulting\n#GMenu object and its named submenus are available via\ngtk_builder_get_object() like other constructed objects.\n</para>\n</refsect2>"
+}

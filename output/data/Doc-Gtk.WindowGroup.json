@@ -1,0 +1,98 @@
+{
+    "isAbstract": false, 
+    "leaf": true, 
+    "name": "WindowGroup", 
+    "text": "WindowGroup", 
+    "interfaces": [], 
+    "parents": [
+        "WindowGroup", 
+        "GObject.Object"
+    ], 
+    "members": {
+        "signals": [], 
+        "methods": [
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a new #GtkWindowGroup.", 
+                    "name": "ref:Gtk.WindowGroup"
+                }, 
+                "version": null, 
+                "name": "Gtk.WindowGroup()", 
+                "parameters": null
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "add_window", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Window", 
+                        "name": "window", 
+                        "description": "the #GtkWindow to add"
+                    }
+                ], 
+                "description": "Adds a window to a #GtkWindowGroup."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.Widget", 
+                    "description": "The grab widget, or %NULL"
+                }, 
+                "version": "3.0", 
+                "name": "get_current_device_grab", 
+                "parameters": [
+                    {
+                        "type": "Gdk.Device", 
+                        "name": "device", 
+                        "description": "a #GdkDevice"
+                    }
+                ], 
+                "description": "Returns the current grab widget for @device, or %NULL if none."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.Widget", 
+                    "description": "the current grab widget of the group"
+                }, 
+                "version": "2.22", 
+                "name": "get_current_grab", 
+                "parameters": null, 
+                "description": "Gets the current grab widget of the given group,\nsee gtk_grab_add()."
+            }, 
+            {
+                "returns": {
+                    "type": "GLib.List", 
+                    "description": "A"
+                }, 
+                "version": "2.14", 
+                "name": "list_windows", 
+                "parameters": null, 
+                "description": "Returns a list of the #GtkWindows that belong to @window_group.\n\nnewly-allocated list of windows inside the group."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "remove_window", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Window", 
+                        "name": "window", 
+                        "description": "the #GtkWindow to remove"
+                    }
+                ], 
+                "description": "Removes a window from a #GtkWindowGroup."
+            }
+        ], 
+        "properties": []
+    }, 
+    "fullname": "Class Gtk.WindowGroup", 
+    "id": "Docs-WindowGroup", 
+    "description": "#GtkWindowGroup objects are referenced by each window in the group,\nso once you have added all windows to a #GtkWindowGroup, you can drop\nthe initial reference to the window group with g_object_unref(). If the\nwindows in the window group are subsequently destroyed, then they will\nbe removed from the window group and drop their references on the window\ngroup; when all window have been removed, the window group will be\nfreed."
+}

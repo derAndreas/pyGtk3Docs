@@ -1,0 +1,259 @@
+{
+    "isAbstract": false, 
+    "leaf": true, 
+    "name": "StyleProperties", 
+    "text": "StyleProperties", 
+    "interfaces": [
+        [
+            "StyleProvider"
+        ]
+    ], 
+    "parents": [
+        "StyleProperties", 
+        "GObject.Object"
+    ], 
+    "members": {
+        "signals": [], 
+        "methods": [
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a new #GtkStyleProperties", 
+                    "name": "ref:Gtk.StyleProperties"
+                }, 
+                "version": null, 
+                "name": "Gtk.StyleProperties()", 
+                "parameters": null
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "clear", 
+                "parameters": null, 
+                "description": "Clears all style information from @props."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "3.0", 
+                "name": "get", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.StateFlags", 
+                        "name": "state", 
+                        "description": "state to retrieve the property values for"
+                    }, 
+                    {
+                        "type": "ref:VarArg", 
+                        "name": null, 
+                        "description": ""
+                    }
+                ], 
+                "description": "Retrieves several style property values from @props for a\ngiven state."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE if the property exists in @props, %FALSE otherwise"
+                }, 
+                "version": "3.0", 
+                "name": "get_property", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "property", 
+                        "description": "style property name"
+                    }, 
+                    {
+                        "type": "ref:Gtk.StateFlags", 
+                        "name": "state", 
+                        "description": "state to retrieve the property value for"
+                    }, 
+                    {
+                        "type": "GObject.Value", 
+                        "name": "value", 
+                        "description": "return location for the style property value."
+                    }
+                ], 
+                "description": "Gets a style property from @props for the given state. When done with @value,\ng_value_unset() needs to be called to free any allocated memory."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "3.0", 
+                "name": "get_valist", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.StateFlags", 
+                        "name": "state", 
+                        "description": "state to retrieve the property values for"
+                    }, 
+                    {
+                        "type": "Mixed", 
+                        "name": "args", 
+                        "description": "va_list of property name/return location pairs, followed by %NULL"
+                    }
+                ], 
+                "description": "Retrieves several style property values from @props for a given state."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.SymbolicColor", 
+                    "description": "The mapped color"
+                }, 
+                "version": "3.0", 
+                "name": "lookup_color", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "name", 
+                        "description": "color name to lookup"
+                    }
+                ], 
+                "description": "Returns the symbolic color that is mapped\nto @name."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "3.0", 
+                "name": "map_color", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "name", 
+                        "description": "color name"
+                    }, 
+                    {
+                        "type": "ref:Gtk.SymbolicColor", 
+                        "name": "color", 
+                        "description": "#GtkSymbolicColor to map @name to"
+                    }
+                ], 
+                "description": "Maps @color so it can be referenced by @name. See\ngtk_style_properties_lookup_color()"
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "3.0", 
+                "name": "merge", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.StyleProperties", 
+                        "name": "props_to_merge", 
+                        "description": "a second #GtkStyleProperties"
+                    }, 
+                    {
+                        "type": "Boolean", 
+                        "name": "replace", 
+                        "description": "whether to replace values or not"
+                    }
+                ], 
+                "description": "Merges into @props all the style information contained\nin @props_to_merge. If @replace is %TRUE, the values\nwill be overwritten, if it is %FALSE, the older values\nwill prevail."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "3.0", 
+                "name": "set", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.StateFlags", 
+                        "name": "state", 
+                        "description": "state to set the values for"
+                    }, 
+                    {
+                        "type": "ref:VarArg", 
+                        "name": null, 
+                        "description": ""
+                    }
+                ], 
+                "description": "Sets several style properties on @props."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "3.0", 
+                "name": "set_property", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "property", 
+                        "description": "styling property to set"
+                    }, 
+                    {
+                        "type": "ref:Gtk.StateFlags", 
+                        "name": "state", 
+                        "description": "state to set the value for"
+                    }, 
+                    {
+                        "type": "GObject.Value", 
+                        "name": "value", 
+                        "description": "new value for the property"
+                    }
+                ], 
+                "description": "Sets a styling property in @props."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "3.0", 
+                "name": "set_valist", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.StateFlags", 
+                        "name": "state", 
+                        "description": "state to set the values for"
+                    }, 
+                    {
+                        "type": "Mixed", 
+                        "name": "args", 
+                        "description": "va_list of property name/value pairs, followed by %NULL"
+                    }
+                ], 
+                "description": "Sets several style properties on @props."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "3.0", 
+                "name": "unset_property", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "property", 
+                        "description": "property to unset"
+                    }, 
+                    {
+                        "type": "ref:Gtk.StateFlags", 
+                        "name": "state", 
+                        "description": "state to unset"
+                    }
+                ], 
+                "description": "Unsets a style property in @props."
+            }
+        ], 
+        "properties": []
+    }, 
+    "fullname": "Class Gtk.StyleProperties", 
+    "id": "Docs-StyleProperties", 
+    "description": "GtkStyleProperties provides the storage for style information\nthat is used by #GtkStyleContext and other #GtkStyleProvider\nimplementations.\n\nBefore style properties can be stored in GtkStyleProperties, they\nmust be registered with gtk_style_properties_register_property().\n\nUnless you are writing a #GtkStyleProvider implementation, you\nare unlikely to use this API directly, as gtk_style_context_get()\nand its variants are the preferred way to access styling information\nfrom widget implementations and theming engine implementations\nshould use the APIs provided by #GtkThemingEngine instead."
+}

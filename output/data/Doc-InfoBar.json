@@ -1,0 +1,271 @@
+{
+    "isAbstract": false, 
+    "leaf": true, 
+    "name": "InfoBar", 
+    "text": "InfoBar", 
+    "interfaces": [
+        [
+            "Atk.ImplementorIface"
+        ], 
+        [
+            "Buildable"
+        ], 
+        [
+            "Orientable"
+        ]
+    ], 
+    "parents": [
+        "InfoBar", 
+        "Box", 
+        "Container", 
+        "Widget", 
+        "GObject.InitiallyUnowned"
+    ], 
+    "members": {
+        "signals": [
+            {
+                "version": "2.18", 
+                "when": "last", 
+                "name": "close", 
+                "description": "The ::close signal is a\n<link linkend=\"keybinding-signals\">keybinding signal</link>\nwhich gets emitted when the user uses a keybinding to dismiss\nthe info bar.\n\nThe default binding for this signal is the Escape key."
+            }, 
+            {
+                "version": "2.18", 
+                "when": "last", 
+                "name": "response", 
+                "description": "Emitted when an action widget is clicked or the application programmer\ncalls gtk_dialog_response(). The @response_id depends on which action\nwidget was clicked."
+            }
+        ], 
+        "methods": [
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a new #GtkInfoBar object", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": "2.18", 
+                "name": "Gtk.InfoBar()", 
+                "parameters": null
+            }, 
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a new #GtkInfoBar", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": null, 
+                "name": "Gtk.InfoBar(String first_button_text, VarArg None)", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "first_button_text"
+                    }, 
+                    {
+                        "type": "ref:VarArg", 
+                        "name": null
+                    }
+                ]
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.18", 
+                "name": "add_action_widget", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "child", 
+                        "description": "an activatable widget"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "response_id", 
+                        "description": "response ID for @child"
+                    }
+                ], 
+                "description": "Add an activatable widget to the action area of a #GtkInfoBar,\nconnecting a signal handler that will emit the #GtkInfoBar::response\nsignal on the message area when the widget is activated. The widget\nis appended to the end of the message areas action area."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.Widget", 
+                    "description": "the #GtkButton widget that was added"
+                }, 
+                "version": "2.18", 
+                "name": "add_button", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "button_text", 
+                        "description": "text of button, or stock ID"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "response_id", 
+                        "description": "response ID for the button"
+                    }
+                ], 
+                "description": "Adds a button with the given text (or a stock button, if button_text\nis a stock ID) and sets things up so that clicking the button will emit\nthe \"response\" signal with the given response_id. The button is appended\nto the end of the info bars's action area. The button widget is\nreturned, but usually you don't need it."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.18", 
+                "name": "add_buttons", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "first_button_text", 
+                        "description": "button text or stock ID"
+                    }, 
+                    {
+                        "type": "ref:VarArg", 
+                        "name": null, 
+                        "description": ""
+                    }
+                ], 
+                "description": "Adds more buttons, same as calling gtk_info_bar_add_button()\nrepeatedly. The variable argument list should be %NULL-terminated\nas with gtk_info_bar_new_with_buttons(). Each button must have both\ntext and response ID."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.Widget", 
+                    "description": "the action area"
+                }, 
+                "version": "2.18", 
+                "name": "get_action_area", 
+                "parameters": null, 
+                "description": "Returns the action area of @info_bar."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.Widget", 
+                    "description": "the content area"
+                }, 
+                "version": "2.18", 
+                "name": "get_content_area", 
+                "parameters": null, 
+                "description": "Returns the content area of @info_bar."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.MessageType", 
+                    "description": "the message type of the message area."
+                }, 
+                "version": "2.18", 
+                "name": "get_message_type", 
+                "parameters": null, 
+                "description": "Returns the message type of the message area."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.18", 
+                "name": "response", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "response_id", 
+                        "description": "a response ID"
+                    }
+                ], 
+                "description": "Emits the 'response' signal with the given @response_id."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.18", 
+                "name": "set_default_response", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "response_id", 
+                        "description": "a response ID"
+                    }
+                ], 
+                "description": "Sets the last widget in the info bar's action area with\nthe given response_id as the default widget for the dialog.\nPressing \"Enter\" normally activates the default widget.\n\nNote that this function currently requires @info_bar to\nbe added to a widget hierarchy."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.18", 
+                "name": "set_message_type", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.MessageType", 
+                        "name": "message_type", 
+                        "description": "a #GtkMessageType"
+                    }
+                ], 
+                "description": "Sets the message type of the message area.\nGTK+ uses this type to determine what color to use\nwhen drawing the message area."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.18", 
+                "name": "set_response_sensitive", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "response_id", 
+                        "description": "a response ID"
+                    }, 
+                    {
+                        "type": "Boolean", 
+                        "name": "setting", 
+                        "description": "TRUE for sensitive"
+                    }
+                ], 
+                "description": "Calls gtk_widget_set_sensitive (widget, setting) for each\nwidget in the info bars's action area with the given response_id.\nA convenient way to sensitize/desensitize dialog buttons."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "close", 
+                "parameters": null, 
+                "description": ""
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.18", 
+                "name": "response", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "response_id", 
+                        "description": "a response ID"
+                    }
+                ], 
+                "description": "Emits the 'response' signal with the given @response_id."
+            }
+        ], 
+        "properties": [
+            {
+                "writable": false, 
+                "type": "Gtk.MessageType", 
+                "readable": false, 
+                "name": "message-type", 
+                "description": "The type of the message.\n\nThe type is used to determine the colors to use in the info bar.\nThe following symbolic color names can by used to customize\nthese colors:\n\"info_fg_color\", \"info_bg_color\",\n\"warning_fg_color\", \"warning_bg_color\",\n\"question_fg_color\", \"question_bg_color\",\n\"error_fg_color\", \"error_bg_color\".\n\"other_fg_color\", \"other_bg_color\".\n\nIf the type is #GTK_MESSAGE_OTHER, no info bar is painted but the\ncolors are still set."
+            }
+        ]
+    }, 
+    "fullname": "Class Gtk.InfoBar", 
+    "id": "Docs-InfoBar", 
+    "description": "#GtkInfoBar is a widget that can be used to show messages to\nthe user without showing a dialog. It is often temporarily shown\nat the top or bottom of a document. In contrast to #GtkDialog, which\nhas a horizontal action area at the bottom, #GtkInfoBar has a\nvertical action area at the side.\n\nThe API of #GtkInfoBar is very similar to #GtkDialog, allowing you\nto add buttons to the action area with gtk_info_bar_add_button() or\ngtk_info_bar_new_with_buttons(). The sensitivity of action widgets\ncan be controlled with gtk_info_bar_set_response_sensitive().\nTo add widgets to the main content area of a #GtkInfoBar, use\ngtk_info_bar_get_content_area() and add your widgets to the container.\n\nSimilar to #GtkMessageDialog, the contents of a #GtkInfoBar can by\nclassified as error message, warning, informational message, etc,\nby using gtk_info_bar_set_message_type(). GTK+ uses the message type\nto determine the background color of the message area.\n\n<example>\n<title>Simple GtkInfoBar usage.</title>\n<programlisting>\n/&ast; set up info bar &ast;/\ninfo_bar = gtk_info_bar_new ();\ngtk_widget_set_no_show_all (info_bar, TRUE);\nmessage_label = gtk_label_new (\"\");\ngtk_widget_show (message_label);\ncontent_area = gtk_info_bar_get_content_area (GTK_INFO_BAR (info_bar));\ngtk_container_add (GTK_CONTAINER (content_area), message_label);\ngtk_info_bar_add_button (GTK_INFO_BAR (info_bar),\nGTK_STOCK_OK, GTK_RESPONSE_OK);\ng_signal_connect (info_bar, \"response\",\nG_CALLBACK (gtk_widget_hide), NULL);\ngtk_grid_attach (GTK_GRID (grid),\ninfo_bar,\n0, 2, 1, 1);\n\n/&ast; ... &ast;/\n\n/&ast; show an error message &ast;/\ngtk_label_set_text (GTK_LABEL (message_label), error_message);\ngtk_info_bar_set_message_type (GTK_INFO_BAR (info_bar),\nGTK_MESSAGE_ERROR);\ngtk_widget_show (info_bar);\n</programlisting>\n</example>\n\n<refsect2 id=\"GtkInfoBar-BUILDER-UI\">\n<title>GtkInfoBar as GtkBuildable</title>\n<para>\nThe GtkInfoBar implementation of the GtkBuildable interface exposes\nthe content area and action area as internal children with the names\n\"content_area\" and \"action_area\".\n</para>\n<para>\nGtkInfoBar supports a custom &lt;action-widgets&gt; element, which\ncan contain multiple &lt;action-widget&gt; elements. The \"response\"\nattribute specifies a numeric response, and the content of the element\nis the id of widget (which should be a child of the dialogs @action_area).\n</para>\n</refsect2>"
+}

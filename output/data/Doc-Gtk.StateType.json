@@ -1,0 +1,41 @@
+{
+    "leaf": true, 
+    "name": "StateType", 
+    "text": "StateType", 
+    "version": null, 
+    "members": {
+        "properties": [
+            {
+                "name": "normal", 
+                "value": "0"
+            }, 
+            {
+                "name": "active", 
+                "value": "1"
+            }, 
+            {
+                "name": "prelight", 
+                "value": "2"
+            }, 
+            {
+                "name": "selected", 
+                "value": "3"
+            }, 
+            {
+                "name": "insensitive", 
+                "value": "4"
+            }, 
+            {
+                "name": "inconsistent", 
+                "value": "5"
+            }, 
+            {
+                "name": "focused", 
+                "value": "6"
+            }
+        ]
+    }, 
+    "fullname": "Enumeration Gtk.StateType", 
+    "id": "Docs-StateType", 
+    "description": ""
+}

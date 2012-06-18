@@ -1,0 +1,376 @@
+{
+    "isAbstract": false, 
+    "leaf": true, 
+    "name": "Table", 
+    "text": "Table", 
+    "interfaces": [
+        [
+            "Atk.ImplementorIface"
+        ], 
+        [
+            "Buildable"
+        ]
+    ], 
+    "parents": [
+        "Table", 
+        "Container", 
+        "Widget", 
+        "GObject.InitiallyUnowned"
+    ], 
+    "members": {
+        "signals": [], 
+        "methods": [
+            {
+                "returns": {
+                    "doc": "A pointer to the the newly created table widget.", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": null, 
+                "name": "Gtk.Table(Integer rows, Integer columns, Boolean homogeneous)", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "rows"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "columns"
+                    }, 
+                    {
+                        "type": "Boolean", 
+                        "name": "homogeneous"
+                    }
+                ], 
+                "deprecated": "Use gtk_grid_new().", 
+                "deprecated_version": "3.4", 
+                "isConstructor": true
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "attach", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "child", 
+                        "description": "The widget to add."
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "left_attach", 
+                        "description": "the column number to attach the left side of a child widget to."
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "right_attach", 
+                        "description": "the column number to attach the right side of a child widget to."
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "top_attach", 
+                        "description": "the row number to attach the top of a child widget to."
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "bottom_attach", 
+                        "description": "the row number to attach the bottom of a child widget to."
+                    }, 
+                    {
+                        "type": "ref:Gtk.AttachOptions", 
+                        "name": "xoptions", 
+                        "description": "Used to specify the properties of the child widget when the table is resized."
+                    }, 
+                    {
+                        "type": "ref:Gtk.AttachOptions", 
+                        "name": "yoptions", 
+                        "description": "The same as xoptions, except this field determines behaviour of vertical resizing."
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "xpadding", 
+                        "description": "An integer value specifying the padding on the left and right of the widget being added to the table."
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "ypadding", 
+                        "description": "The amount of padding above and below the child widget."
+                    }
+                ], 
+                "description": "Adds a widget to a table. The number of 'cells' that a widget will occupy is\nspecified by @left_attach, @right_attach, @top_attach and @bottom_attach.\nThese each represent the leftmost, rightmost, uppermost and lowest column\nand row numbers of the table. (Columns and rows are indexed from zero).\n\nTo make a button occupy the lower right cell of a 2x2 table, use\n<informalexample><programlisting>\ngtk_table_attach (table, button,\n1, 2, // left, right attach\n1, 2, // top, bottom attach\nxoptions, yoptions,\nxpadding, ypadding);\n</programlisting></informalexample>\nIf you want to make the button span the entire bottom row, use @left_attach == 0 and @right_attach = 2 instead.\n\narguments differ between those two functions."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "attach_defaults", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "widget", 
+                        "description": "The child widget to add."
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "left_attach", 
+                        "description": "The column number to attach the left side of the child widget to."
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "right_attach", 
+                        "description": "The column number to attach the right side of the child widget to."
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "top_attach", 
+                        "description": "The row number to attach the top of the child widget to."
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "bottom_attach", 
+                        "description": "The row number to attach the bottom of the child widget to."
+                    }
+                ], 
+                "description": "As there are many options associated with gtk_table_attach(), this convenience\nfunction provides the programmer with a means to add children to a table with\nidentical padding and expansion options. The values used for the #GtkAttachOptions\nare <literal>GTK_EXPAND | GTK_FILL</literal>, and the padding is set to 0.\n\narguments differ between those two functions."
+            }, 
+            {
+                "returns": {
+                    "type": "Integer", 
+                    "description": "the column spacing"
+                }, 
+                "version": "", 
+                "name": "get_col_spacing", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "column", 
+                        "description": "a column in the table, 0 indicates the first column"
+                    }
+                ], 
+                "description": "Gets the amount of space between column @col, and\ncolumn @col + 1. See gtk_table_set_col_spacing().\n\n\nfunctionality."
+            }, 
+            {
+                "returns": {
+                    "type": "Integer", 
+                    "description": "the default column spacing"
+                }, 
+                "version": "", 
+                "name": "get_default_col_spacing", 
+                "parameters": null, 
+                "description": "Gets the default column spacing for the table. This is\nthe spacing that will be used for newly added columns.\n(See gtk_table_set_col_spacings())"
+            }, 
+            {
+                "returns": {
+                    "type": "Integer", 
+                    "description": "the default row spacing"
+                }, 
+                "version": "", 
+                "name": "get_default_row_spacing", 
+                "parameters": null, 
+                "description": "Gets the default row spacing for the table. This is\nthe spacing that will be used for newly added rows.\n(See gtk_table_set_row_spacings())"
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE if the cells are all constrained to the same size"
+                }, 
+                "version": "", 
+                "name": "get_homogeneous", 
+                "parameters": null, 
+                "description": "Returns whether the table cells are all constrained to the same\nwidth and height. (See gtk_table_set_homogenous ())\n\n\ngtk_grid_get_column_homogeneous() with #GtkGrid."
+            }, 
+            {
+                "returns": {
+                    "type": "Integer", 
+                    "description": "the row spacing"
+                }, 
+                "version": "", 
+                "name": "get_row_spacing", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "row", 
+                        "description": "a row in the table, 0 indicates the first row"
+                    }
+                ], 
+                "description": "Gets the amount of space between row @row, and\nrow @row + 1. See gtk_table_set_row_spacing().\n\n\nfunctionality."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.22", 
+                "name": "get_size", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "rows", 
+                        "description": "return location for the number of rows, or %NULL"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "columns", 
+                        "description": "return location for the number of columns, or %NULL"
+                    }
+                ], 
+                "description": "Gets the number of rows and columns in the table.\n\n\nrows."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "resize", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "rows", 
+                        "description": "The new number of rows."
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "columns", 
+                        "description": "The new number of columns."
+                    }
+                ], 
+                "description": "If you need to change a table's size <emphasis>after</emphasis>\nit has been created, this function allows you to do so."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_col_spacing", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "column", 
+                        "description": "the column whose spacing should be changed."
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "spacing", 
+                        "description": "number of pixels that the spacing should take up."
+                    }
+                ], 
+                "description": "Alters the amount of space between a given table column and the following\ncolumn.\n\ngtk_widget_set_margin_right() on the widgets contained in the row if\nyou need this functionality. #GtkGrid does not support per-row spacing."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_col_spacings", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "spacing", 
+                        "description": "the number of pixels of space to place between every column in the table."
+                    }
+                ], 
+                "description": "Sets the space between every column in @table equal to @spacing."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_homogeneous", 
+                "parameters": [
+                    {
+                        "type": "Boolean", 
+                        "name": "homogeneous", 
+                        "description": "Set to %TRUE to ensure all table cells are the same size. Set to %FALSE if this is not your desired behaviour."
+                    }
+                ], 
+                "description": "Changes the homogenous property of table cells, ie. whether all cells are\nan equal size or not.\n\ngtk_grid_set_column_homogeneous() with #GtkGrid."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_row_spacing", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "row", 
+                        "description": "row number whose spacing will be changed."
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "spacing", 
+                        "description": "number of pixels that the spacing should take up."
+                    }
+                ], 
+                "description": "Changes the space between a given table row and the subsequent row.\n\ngtk_widget_set_margin_bottom() on the widgets contained in the row if\nyou need this functionality. #GtkGrid does not support per-row spacing."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_row_spacings", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "spacing", 
+                        "description": "the number of pixels of space to place between every row in the table."
+                    }
+                ], 
+                "description": "Sets the space between every row in @table equal to @spacing."
+            }
+        ], 
+        "properties": [
+            {
+                "writable": false, 
+                "type": "Integer", 
+                "readable": false, 
+                "name": "column-spacing", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "homogeneous", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Integer", 
+                "readable": false, 
+                "name": "n-columns", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Integer", 
+                "readable": false, 
+                "name": "n-rows", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Integer", 
+                "readable": false, 
+                "name": "row-spacing", 
+                "description": ""
+            }
+        ]
+    }, 
+    "fullname": "Class Gtk.Table", 
+    "id": "Docs-Table", 
+    "description": "The #GtkTable functions allow the programmer to arrange widgets in rows and\ncolumns, making it easy to align many widgets next to each other,\nhorizontally and vertically.\n\nTables are created with a call to gtk_table_new(), the size of which can\nlater be changed with gtk_table_resize().\n\nWidgets can be added to a table using gtk_table_attach() or the more\nconvenient (but slightly less flexible) gtk_table_attach_defaults().\n\nTo alter the space next to a specific row, use gtk_table_set_row_spacing(),\nand for a column, gtk_table_set_col_spacing().\nThe gaps between <emphasis>all</emphasis> rows or columns can be changed by\ncalling gtk_table_set_row_spacings() or gtk_table_set_col_spacings()\nrespectively. Note that spacing is added <emphasis>between</emphasis> the\nchildren, while padding added by gtk_table_attach() is added <emphasis>on\neither side</emphasis> of the widget it belongs to.\n\ngtk_table_set_homogeneous(), can be used to set whether all cells in the\ntable will resize themselves to the size of the largest widget in the table.\n\n<note>\n#GtkTable has been deprecated. Use #GtkGrid instead. It provides the same\ncapabilities as GtkTable for arranging widgets in a rectangular grid, but\ndoes support height-for-width geometry management.\n</note>"
+}

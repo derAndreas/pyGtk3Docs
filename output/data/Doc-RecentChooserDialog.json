@@ -1,0 +1,93 @@
+{
+    "isAbstract": false, 
+    "leaf": true, 
+    "name": "RecentChooserDialog", 
+    "text": "RecentChooserDialog", 
+    "interfaces": [
+        [
+            "Atk.ImplementorIface"
+        ], 
+        [
+            "Buildable"
+        ], 
+        [
+            "RecentChooser"
+        ]
+    ], 
+    "parents": [
+        "RecentChooserDialog", 
+        "Dialog", 
+        "Window", 
+        "Bin", 
+        "Container", 
+        "Widget", 
+        "GObject.InitiallyUnowned"
+    ], 
+    "members": {
+        "signals": [], 
+        "methods": [
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a new #GtkRecentChooserDialog", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": "2.10", 
+                "name": "Gtk.RecentChooserDialog(String title, Gtk.Window parent, String first_button_text, VarArg None)", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "title"
+                    }, 
+                    {
+                        "type": "ref:Gtk.Window", 
+                        "name": "parent"
+                    }, 
+                    {
+                        "type": "String", 
+                        "name": "first_button_text"
+                    }, 
+                    {
+                        "type": "ref:VarArg", 
+                        "name": null
+                    }
+                ]
+            }, 
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a new #GtkRecentChooserDialog", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": "2.10", 
+                "name": "Gtk.RecentChooserDialog(String title, Gtk.Window parent, Gtk.RecentManager manager, String first_button_text, VarArg None)", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "title"
+                    }, 
+                    {
+                        "type": "ref:Gtk.Window", 
+                        "name": "parent"
+                    }, 
+                    {
+                        "type": "ref:Gtk.RecentManager", 
+                        "name": "manager"
+                    }, 
+                    {
+                        "type": "String", 
+                        "name": "first_button_text"
+                    }, 
+                    {
+                        "type": "ref:VarArg", 
+                        "name": null
+                    }
+                ]
+            }
+        ], 
+        "properties": []
+    }, 
+    "fullname": "Class Gtk.RecentChooserDialog", 
+    "id": "Docs-RecentChooserDialog", 
+    "description": "#GtkRecentChooserDialog is a dialog box suitable for displaying the recently\nused documents.  This widgets works by putting a #GtkRecentChooserWidget inside\na #GtkDialog.  It exposes the #GtkRecentChooserIface interface, so you can use\nall the #GtkRecentChooser functions on the recent chooser dialog as well as\nthose for #GtkDialog.\n\nNote that #GtkRecentChooserDialog does not have any methods of its own.\nInstead, you should use the functions that work on a #GtkRecentChooser.\n\n<example id=\"gtkrecentchooser-typical-usage\">\n<title>Typical usage</title>\nIn the simplest of cases, you can use the following code to use\na #GtkRecentChooserDialog to select a recently used file:\n<programlisting>\nGtkWidget *dialog;\n\ndialog = gtk_recent_chooser_dialog_new (\"Recent Documents\",\nparent_window,\nGTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL,\nGTK_STOCK_OPEN, GTK_RESPONSE_ACCEPT,\nNULL);\n\nif (gtk_dialog_run (GTK_DIALOG (dialog)) == GTK_RESPONSE_ACCEPT)\n{\nGtkRecentInfo *info;\n\ninfo = gtk_recent_chooser_get_current_item (GTK_RECENT_CHOOSER (dialog));\nopen_file (gtk_recent_info_get_uri (info));\ngtk_recent_info_unref (info);\n}\n\ngtk_widget_destroy (dialog);\n</programlisting>\n</example>\n\nRecently used files are supported since GTK+ 2.10."
+}

@@ -1,0 +1,273 @@
+{
+    "isAbstract": false, 
+    "leaf": true, 
+    "name": "Box", 
+    "text": "Box", 
+    "interfaces": [
+        [
+            "Atk.ImplementorIface"
+        ], 
+        [
+            "Buildable"
+        ], 
+        [
+            "Orientable"
+        ]
+    ], 
+    "parents": [
+        "Box", 
+        "Container", 
+        "Widget", 
+        "GObject.InitiallyUnowned"
+    ], 
+    "members": {
+        "signals": [], 
+        "methods": [
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a new #GtkBox.", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": "3.0", 
+                "name": "Gtk.Box(Gtk.Orientation orientation, Integer spacing)", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Orientation", 
+                        "name": "orientation"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "spacing"
+                    }
+                ]
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE if the box is homogeneous."
+                }, 
+                "version": "", 
+                "name": "get_homogeneous", 
+                "parameters": null, 
+                "description": "Returns whether the box is homogeneous (all children are the\nsame size). See gtk_box_set_homogeneous()."
+            }, 
+            {
+                "returns": {
+                    "type": "Integer", 
+                    "description": "spacing between children"
+                }, 
+                "version": "", 
+                "name": "get_spacing", 
+                "parameters": null, 
+                "description": "Gets the value set by gtk_box_set_spacing()."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "pack_end", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "child", 
+                        "description": "the #GtkWidget to be added to @box"
+                    }, 
+                    {
+                        "type": "Boolean", 
+                        "name": "expand", 
+                        "description": "%TRUE if the new child is to be given extra space allocated to @box. The extra space will be divided evenly between all children of @box that use this option"
+                    }, 
+                    {
+                        "type": "Boolean", 
+                        "name": "fill", 
+                        "description": "%TRUE if space given to @child by the @expand option is actually allocated to @child, rather than just padding it.  This parameter has no effect if @expand is set to %FALSE.  A child is always allocated the full height of a horizontal #GtkBox and the full width of a vertical #GtkBox.  This option affects the other dimension"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "padding", 
+                        "description": "extra space in pixels to put between this child and its neighbors, over and above the global amount specified by #GtkBox:spacing property.  If @child is a widget at one of the reference ends of @box, then @padding pixels are also put between @child and the reference edge of @box"
+                    }
+                ], 
+                "description": "Adds @child to @box, packed with reference to the end of @box.\nThe @child is packed after (away from end of) any other child\npacked with reference to the end of @box."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "pack_start", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "child", 
+                        "description": "the #GtkWidget to be added to @box"
+                    }, 
+                    {
+                        "type": "Boolean", 
+                        "name": "expand", 
+                        "description": "%TRUE if the new child is to be given extra space allocated to @box. The extra space will be divided evenly between all children that use this option"
+                    }, 
+                    {
+                        "type": "Boolean", 
+                        "name": "fill", 
+                        "description": "%TRUE if space given to @child by the @expand option is actually allocated to @child, rather than just padding it.  This parameter has no effect if @expand is set to %FALSE.  A child is always allocated the full height of a horizontal #GtkBox and the full width of a vertical #GtkBox. This option affects the other dimension"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "padding", 
+                        "description": "extra space in pixels to put between this child and its neighbors, over and above the global amount specified by #GtkBox:spacing property.  If @child is a widget at one of the reference ends of @box, then @padding pixels are also put between @child and the reference edge of @box"
+                    }
+                ], 
+                "description": "Adds @child to @box, packed with reference to the start of @box.\nThe @child is packed after any other child packed with reference\nto the start of @box."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "query_child_packing", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "child", 
+                        "description": "the #GtkWidget of the child to query"
+                    }, 
+                    {
+                        "type": "Boolean", 
+                        "name": "expand", 
+                        "description": "pointer to return location for #GtkBox:expand child property"
+                    }, 
+                    {
+                        "type": "Boolean", 
+                        "name": "fill", 
+                        "description": "pointer to return location for #GtkBox:fill child property"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "padding", 
+                        "description": "pointer to return location for #GtkBox:padding child property"
+                    }, 
+                    {
+                        "type": "ref:Gtk.PackType", 
+                        "name": "pack_type", 
+                        "description": "pointer to return location for #GtkBox:pack-type child property"
+                    }
+                ], 
+                "description": "Obtains information about how @child is packed into @box."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "reorder_child", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "child", 
+                        "description": "the #GtkWidget to move"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "position", 
+                        "description": "the new position for @child in the list of children of @box, starting from 0. If negative, indicates the end of the list"
+                    }
+                ], 
+                "description": "Moves @child to a new @position in the list of @box children.\nThe list is the <structfield>children</structfield> field of\n#GtkBox-struct, and contains both widgets packed #GTK_PACK_START\nas well as widgets packed #GTK_PACK_END, in the order that these\nwidgets were added to @box.\n\nA widget's position in the @box children list determines where\nthe widget is packed into @box.  A child widget at some position\nin the list will be packed just after all other widgets of the\nsame packing type that appear earlier in the list."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_child_packing", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "child", 
+                        "description": "the #GtkWidget of the child to set"
+                    }, 
+                    {
+                        "type": "Boolean", 
+                        "name": "expand", 
+                        "description": "the new value of the #GtkBox:expand child property"
+                    }, 
+                    {
+                        "type": "Boolean", 
+                        "name": "fill", 
+                        "description": "the new value of the #GtkBox:fill child property"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "padding", 
+                        "description": "the new value of the #GtkBox:padding child property"
+                    }, 
+                    {
+                        "type": "ref:Gtk.PackType", 
+                        "name": "pack_type", 
+                        "description": "the new value of the #GtkBox:pack-type child property"
+                    }
+                ], 
+                "description": "Sets the way @child is packed into @box."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_homogeneous", 
+                "parameters": [
+                    {
+                        "type": "Boolean", 
+                        "name": "homogeneous", 
+                        "description": "a boolean value, %TRUE to create equal allotments, %FALSE for variable allotments"
+                    }
+                ], 
+                "description": "Sets the #GtkBox:homogeneous property of @box, controlling\nwhether or not all children of @box are given equal space\nin the box."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_spacing", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "spacing", 
+                        "description": "the number of pixels to put between children"
+                    }
+                ], 
+                "description": "Sets the #GtkBox:spacing property of @box, which is the\nnumber of pixels to place between children of @box."
+            }
+        ], 
+        "properties": [
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "homogeneous", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Integer", 
+                "readable": false, 
+                "name": "spacing", 
+                "description": ""
+            }
+        ]
+    }, 
+    "fullname": "Class Gtk.Box", 
+    "id": "Docs-Box", 
+    "description": "The GtkBox widget organizes child widgets into a rectangular area.\n\nThe rectangular area of a GtkBox is organized into either a single row\nor a single column of child widgets depending upon the orientation.\nThus, all children of a GtkBox are allocated one dimension in common,\nwhich is the height of a row, or the width of a column.\n\nGtkBox uses a notion of <emphasis>packing</emphasis>. Packing refers\nto adding widgets with reference to a particular position in a\n#GtkContainer. For a GtkBox, there are two reference positions: the\n<emphasis>start</emphasis> and the <emphasis>end</emphasis> of the box.\nFor a vertical #GtkBox, the start is defined as the top of the box and\nthe end is defined as the bottom. For a horizontal #GtkBox the start\nis defined as the left side and the end is defined as the right side.\n\nUse repeated calls to gtk_box_pack_start() to pack widgets into a\nGtkBox from start to end. Use gtk_box_pack_end() to add widgets from\nend to start. You may intersperse these calls and add widgets from\nboth ends of the same GtkBox.\n\nBecause GtkBox is a #GtkContainer, you may also use gtk_container_add()\nto insert widgets into the box, and they will be packed with the default\nvalues for #GtkBox:expand and #GtkBox:fill. Use gtk_container_remove()\nto remove widgets from the GtkBox.\n\nUse gtk_box_set_homogeneous() to specify whether or not all children\nof the GtkBox are forced to get the same amount of space.\n\nUse gtk_box_set_spacing() to determine how much space will be\nminimally placed between all children in the GtkBox. Note that\nspacing is added <emphasis>between</emphasis> the children, while\npadding added by gtk_box_pack_start() or gtk_box_pack_end() is added\n<emphasis>on either side</emphasis> of the widget it belongs to.\n\nUse gtk_box_reorder_child() to move a GtkBox child to a different\nplace in the box.\n\nUse gtk_box_set_child_packing() to reset the #GtkBox:expand,\n#GtkBox:fill and #GtkBox:padding child properties.\nUse gtk_box_query_child_packing() to query these fields.\n\n<note><para>\nNote that a single-row or single-column #GtkGrid provides exactly\nthe same functionality as #GtkBox.\n</para></note>"
+}

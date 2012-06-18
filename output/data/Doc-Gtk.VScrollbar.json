@@ -1,0 +1,50 @@
+{
+    "isAbstract": false, 
+    "leaf": true, 
+    "name": "VScrollbar", 
+    "text": "VScrollbar", 
+    "interfaces": [
+        [
+            "Atk.ImplementorIface"
+        ], 
+        [
+            "Buildable"
+        ], 
+        [
+            "Orientable"
+        ]
+    ], 
+    "parents": [
+        "VScrollbar", 
+        "Scrollbar", 
+        "Range", 
+        "Widget", 
+        "GObject.InitiallyUnowned"
+    ], 
+    "members": {
+        "signals": [], 
+        "methods": [
+            {
+                "returns": {
+                    "doc": "the new #GtkVScrollbar", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": null, 
+                "name": "Gtk.VScrollbar(Gtk.Adjustment adjustment)", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Adjustment", 
+                        "name": "adjustment"
+                    }
+                ], 
+                "deprecated": "Use gtk_scrollbar_new() with %GTK_ORIENTATION_VERTICAL instead", 
+                "deprecated_version": "3.2", 
+                "isConstructor": true
+            }
+        ], 
+        "properties": []
+    }, 
+    "fullname": "Class Gtk.VScrollbar", 
+    "id": "Docs-VScrollbar", 
+    "description": "The #GtkVScrollbar widget is a widget arranged vertically creating a\nscrollbar. See #GtkScrollbar for details on\nscrollbars. #GtkAdjustment pointers may be added to handle the\nadjustment of the scrollbar or it may be left %NULL in which case one\nwill be created for you. See #GtkScrollbar for a description of what the\nfields in an adjustment represent for a scrollbar.\n\nGtkVScrollbar has been deprecated, use #GtkScrollbar instead."
+}

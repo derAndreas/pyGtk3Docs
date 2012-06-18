@@ -1,0 +1,73 @@
+{
+    "isAbstract": false, 
+    "leaf": true, 
+    "name": "IMMulticontext", 
+    "text": "IMMulticontext", 
+    "interfaces": [], 
+    "parents": [
+        "IMMulticontext", 
+        "IMContext", 
+        "GObject.Object"
+    ], 
+    "members": {
+        "signals": [], 
+        "methods": [
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a new #GtkIMMulticontext.", 
+                    "name": "ref:Gtk.IMContext"
+                }, 
+                "version": null, 
+                "name": "Gtk.IMMulticontext()", 
+                "parameters": null
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "append_menuitems", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.MenuShell", 
+                        "name": "menushell", 
+                        "description": "a #GtkMenuShell"
+                    }
+                ], 
+                "description": "Add menuitems for various available input methods to a menu;\nthe menuitems, when selected, will switch the input method\nfor the context and the global default input method."
+            }, 
+            {
+                "returns": {
+                    "type": "String", 
+                    "description": "the id of the currently active slave"
+                }, 
+                "version": "2.16", 
+                "name": "get_context_id", 
+                "parameters": null, 
+                "description": "Gets the id of the currently active slave of the @context."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.16", 
+                "name": "set_context_id", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "context_id", 
+                        "description": "the id to use"
+                    }
+                ], 
+                "description": "Sets the context id for @context.\n\nThis causes the currently active slave of @context to be\nreplaced by the slave corresponding to the new context id."
+            }
+        ], 
+        "properties": []
+    }, 
+    "fullname": "Class Gtk.IMMulticontext", 
+    "id": "Docs-IMMulticontext", 
+    "description": ""
+}

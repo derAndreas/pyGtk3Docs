@@ -1,0 +1,516 @@
+{
+    "isAbstract": false, 
+    "leaf": true, 
+    "name": "Assistant", 
+    "text": "Assistant", 
+    "interfaces": [
+        [
+            "Atk.ImplementorIface"
+        ], 
+        [
+            "Buildable"
+        ]
+    ], 
+    "parents": [
+        "Assistant", 
+        "Window", 
+        "Bin", 
+        "Container", 
+        "Widget", 
+        "GObject.InitiallyUnowned"
+    ], 
+    "members": {
+        "signals": [
+            {
+                "version": "2.10", 
+                "when": "last", 
+                "name": "apply", 
+                "description": "The ::apply signal is emitted when the apply button is clicked.\n\nThe default behavior of the #GtkAssistant is to switch to the page\nafter the current page, unless the current page is the last one.\n\nA handler for the ::apply signal should carry out the actions for\nwhich the wizard has collected data. If the action takes a long time\nto complete, you might consider putting a page of type\n%GTK_ASSISTANT_PAGE_PROGRESS after the confirmation page and handle\nthis operation within the #GtkAssistant::prepare signal of the progress\npage."
+            }, 
+            {
+                "version": "2.10", 
+                "when": "last", 
+                "name": "cancel", 
+                "description": "The ::cancel signal is emitted when then the cancel button is clicked."
+            }, 
+            {
+                "version": "2.10", 
+                "when": "last", 
+                "name": "close", 
+                "description": "The ::close signal is emitted either when the close button of\na summary page is clicked, or when the apply button in the last\npage in the flow (of type %GTK_ASSISTANT_PAGE_CONFIRM) is clicked."
+            }, 
+            {
+                "version": "2.10", 
+                "when": "last", 
+                "name": "prepare", 
+                "description": "The ::prepare signal is emitted when a new page is set as the\nassistant's current page, before making the new page visible.\n\nA handler for this signal can do any preparations which are\nnecessary before showing @page."
+            }
+        ], 
+        "methods": [
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a newly created #GtkAssistant", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": "2.10", 
+                "name": "Gtk.Assistant()", 
+                "parameters": null
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.10", 
+                "name": "add_action_widget", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "child", 
+                        "description": "a #GtkWidget"
+                    }
+                ], 
+                "description": "Adds a widget to the action area of a #GtkAssistant."
+            }, 
+            {
+                "returns": {
+                    "type": "Integer", 
+                    "description": "the index (starting at 0) of the inserted page"
+                }, 
+                "version": "2.10", 
+                "name": "append_page", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "page", 
+                        "description": "a #GtkWidget"
+                    }
+                ], 
+                "description": "Appends a page to the @assistant."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.22", 
+                "name": "commit", 
+                "parameters": null, 
+                "description": "Erases the visited page history so the back button is not\nshown on the current page, and removes the cancel button\nfrom subsequent pages.\n\nUse this when the information provided up to the current\npage is hereafter deemed permanent and cannot be modified\nor undone. For example, showing a progress page to track\na long-running, unreversible operation after the user has\nclicked apply on a confirmation page."
+            }, 
+            {
+                "returns": {
+                    "type": "Integer", 
+                    "description": "The index (starting from 0) of the current"
+                }, 
+                "version": "2.10", 
+                "name": "get_current_page", 
+                "parameters": null, 
+                "description": "Returns the page number of the current page.\n\npage in the @assistant, or -1 if the @assistant has no pages,\nor no current page."
+            }, 
+            {
+                "returns": {
+                    "type": "Integer", 
+                    "description": "the number of pages in the @assistant"
+                }, 
+                "version": "2.10", 
+                "name": "get_n_pages", 
+                "parameters": null, 
+                "description": "Returns the number of pages in the @assistant"
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.Widget", 
+                    "description": "the child widget, or %NULL"
+                }, 
+                "version": "2.10", 
+                "name": "get_nth_page", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "page_num", 
+                        "description": "the index of a page in the @assistant, or -1 to get the last page"
+                    }
+                ], 
+                "description": "Returns the child widget contained in page number @page_num.\n\nif @page_num is out of bounds"
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE if @page is complete."
+                }, 
+                "version": "2.10", 
+                "name": "get_page_complete", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "page", 
+                        "description": "a page of @assistant"
+                    }
+                ], 
+                "description": "Gets whether @page is complete."
+            }, 
+            {
+                "returns": {
+                    "type": "GdkPixbuf.Pixbuf", 
+                    "description": "the header image for @page,"
+                }, 
+                "version": "2.10", 
+                "name": "get_page_header_image", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "page", 
+                        "description": "a page of @assistant"
+                    }
+                ], 
+                "description": "Gets the header image for @page.\n\nor %NULL if there's no header image for the page\n\n\nadd your header decoration to the page content instead."
+            }, 
+            {
+                "returns": {
+                    "type": "GdkPixbuf.Pixbuf", 
+                    "description": "the side image for @page,"
+                }, 
+                "version": "2.10", 
+                "name": "get_page_side_image", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "page", 
+                        "description": "a page of @assistant"
+                    }
+                ], 
+                "description": "Gets the side image for @page.\n\nor %NULL if there's no side image for the page\n\n\nshown anymore."
+            }, 
+            {
+                "returns": {
+                    "type": "String", 
+                    "description": "the title for @page"
+                }, 
+                "version": "2.10", 
+                "name": "get_page_title", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "page", 
+                        "description": "a page of @assistant"
+                    }
+                ], 
+                "description": "Gets the title for @page."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.AssistantPageType", 
+                    "description": "the page type of @page"
+                }, 
+                "version": "2.10", 
+                "name": "get_page_type", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "page", 
+                        "description": "a page of @assistant"
+                    }
+                ], 
+                "description": "Gets the page type of @page."
+            }, 
+            {
+                "returns": {
+                    "type": "Integer", 
+                    "description": "the index (starting from 0) of the inserted page"
+                }, 
+                "version": "2.10", 
+                "name": "insert_page", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "page", 
+                        "description": "a #GtkWidget"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "position", 
+                        "description": "the index (starting at 0) at which to insert the page, or -1 to append the page to the @assistant"
+                    }
+                ], 
+                "description": "Inserts a page in the @assistant at a given position."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "3.0", 
+                "name": "next_page", 
+                "parameters": null, 
+                "description": "Navigate to the next page.\n\nIt is a programming error to call this function when\nthere is no next page.\n\nThis function is for use when creating pages of the\n#GTK_ASSISTANT_PAGE_CUSTOM type."
+            }, 
+            {
+                "returns": {
+                    "type": "Integer", 
+                    "description": "the index (starting at 0) of the inserted page"
+                }, 
+                "version": "2.10", 
+                "name": "prepend_page", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "page", 
+                        "description": "a #GtkWidget"
+                    }
+                ], 
+                "description": "Prepends a page to the @assistant."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "3.0", 
+                "name": "previous_page", 
+                "parameters": null, 
+                "description": "Navigate to the previous visited page.\n\nIt is a programming error to call this function when\nno previous page is available.\n\nThis function is for use when creating pages of the\n#GTK_ASSISTANT_PAGE_CUSTOM type."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.10", 
+                "name": "remove_action_widget", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "child", 
+                        "description": "a #GtkWidget"
+                    }
+                ], 
+                "description": "Removes a widget from the action area of a #GtkAssistant."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "3.2", 
+                "name": "remove_page", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "page_num", 
+                        "description": "the index of a page in the @assistant, or -1 to remove the last page"
+                    }
+                ], 
+                "description": "Removes the @page_num's page from @assistant."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.10", 
+                "name": "set_current_page", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "page_num", 
+                        "description": "index of the page to switch to, starting from 0. If negative, the last page will be used. If greater than the number of pages in the @assistant, nothing will be done."
+                    }
+                ], 
+                "description": "Switches the page to @page_num.\n\nNote that this will only be necessary in custom buttons,\nas the @assistant flow can be set with\ngtk_assistant_set_forward_page_func()."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.10", 
+                "name": "set_forward_page_func", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.AssistantPageFunc", 
+                        "name": "page_func", 
+                        "description": "the #GtkAssistantPageFunc, or %NULL to use the default one"
+                    }, 
+                    {
+                        "type": "Mixed", 
+                        "name": "data", 
+                        "description": "user data for @page_func"
+                    }, 
+                    {
+                        "type": "GLib.DestroyNotify", 
+                        "name": "destroy", 
+                        "description": "destroy notifier for @data"
+                    }
+                ], 
+                "description": "Sets the page forwarding function to be @page_func.\n\nThis function will be used to determine what will be\nthe next page when the user presses the forward button.\nSetting @page_func to %NULL will make the assistant to\nuse the default forward function, which just goes to the\nnext visible page."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.10", 
+                "name": "set_page_complete", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "page", 
+                        "description": "a page of @assistant"
+                    }, 
+                    {
+                        "type": "Boolean", 
+                        "name": "complete", 
+                        "description": "the completeness status of the page"
+                    }
+                ], 
+                "description": "Sets whether @page contents are complete.\n\nThis will make @assistant update the buttons state\nto be able to continue the task."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.10", 
+                "name": "set_page_header_image", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "page", 
+                        "description": "a page of @assistant"
+                    }, 
+                    {
+                        "type": "GdkPixbuf.Pixbuf", 
+                        "name": "pixbuf", 
+                        "description": "the new header image @page"
+                    }
+                ], 
+                "description": "Sets a header image for @page.\n\n\nadd your header decoration to the page content instead."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.10", 
+                "name": "set_page_side_image", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "page", 
+                        "description": "a page of @assistant"
+                    }, 
+                    {
+                        "type": "GdkPixbuf.Pixbuf", 
+                        "name": "pixbuf", 
+                        "description": "the new side image @page"
+                    }
+                ], 
+                "description": "Sets a side image for @page.\n\nThis image used to be displayed in the side area of the assistant\nwhen @page is the current page.\n\n\nshown anymore."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.10", 
+                "name": "set_page_title", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "page", 
+                        "description": "a page of @assistant"
+                    }, 
+                    {
+                        "type": "String", 
+                        "name": "title", 
+                        "description": "the new title for @page"
+                    }
+                ], 
+                "description": "Sets a title for @page.\n\nThe title is displayed in the header area of the assistant\nwhen @page is the current page."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.10", 
+                "name": "set_page_type", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "page", 
+                        "description": "a page of @assistant"
+                    }, 
+                    {
+                        "type": "ref:Gtk.AssistantPageType", 
+                        "name": "type", 
+                        "description": "the new type for @page"
+                    }
+                ], 
+                "description": "Sets the page type for @page.\n\nThe page type determines the page behavior in the @assistant."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.10", 
+                "name": "update_buttons_state", 
+                "parameters": null, 
+                "description": "Forces @assistant to recompute the buttons state.\n\nGTK+ automatically takes care of this in most situations,\ne.g. when the user goes to a different page, or when the\nvisibility or completeness of a page changes.\n\nOne situation where it can be necessary to call this\nfunction is when changing a value on the current page\naffects the future page flow of the assistant."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "apply", 
+                "parameters": null, 
+                "description": ""
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "cancel", 
+                "parameters": null, 
+                "description": ""
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "close", 
+                "parameters": null, 
+                "description": ""
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "prepare", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "page", 
+                        "description": ""
+                    }
+                ], 
+                "description": ""
+            }
+        ], 
+        "properties": []
+    }, 
+    "fullname": "Class Gtk.Assistant", 
+    "id": "Docs-Assistant", 
+    "description": "A #GtkAssistant is a widget used to represent a generally complex\noperation splitted in several steps, guiding the user through its pages\nand controlling the page flow to collect the necessary data.\n\nThe design of GtkAssistant is that it controls what buttons to show and\nto make sensitive, based on what it knows about the page sequence and\nthe <link linkend=\"GtkAssistantPageType\">type</link> of each page, in\naddition to state information like the page\n<link linkend=\"gtk-assistant-set-page-complete\">completion</link> and\n<link linkend=\"gtk-assistant-commit\">committed</link> status.\n\nIf you have a case that doesn't quite fit in #GtkAssistants way of\nhandling buttons, you can use the #GTK_ASSISTANT_PAGE_CUSTOM page type\nand handle buttons yourself.\n\n<refsect2 id=\"GtkAssistant-BUILDER-UI\">\n<title>GtkAssistant as GtkBuildable</title>\n<para>\nThe GtkAssistant implementation of the GtkBuildable interface exposes the\n@action_area as internal children with the name \"action_area\".\n\nTo add pages to an assistant in GtkBuilder, simply add it as a\n&lt;child&gt; to the GtkAssistant object, and set its child properties\nas necessary.\n</para>\n</refsect2>"
+}

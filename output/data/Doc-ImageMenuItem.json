@@ -1,0 +1,216 @@
+{
+    "isAbstract": false, 
+    "leaf": true, 
+    "name": "ImageMenuItem", 
+    "text": "ImageMenuItem", 
+    "interfaces": [
+        [
+            "Atk.ImplementorIface"
+        ], 
+        [
+            "Activatable"
+        ], 
+        [
+            "Buildable"
+        ]
+    ], 
+    "parents": [
+        "ImageMenuItem", 
+        "MenuItem", 
+        "Bin", 
+        "Container", 
+        "Widget", 
+        "GObject.InitiallyUnowned"
+    ], 
+    "members": {
+        "signals": [], 
+        "methods": [
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a new #GtkImageMenuItem", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": null, 
+                "name": "Gtk.ImageMenuItem()", 
+                "parameters": null
+            }, 
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a new #GtkImageMenuItem.", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": null, 
+                "name": "Gtk.ImageMenuItem(String stock_id, Gtk.AccelGroup accel_group)", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "stock_id"
+                    }, 
+                    {
+                        "type": "ref:Gtk.AccelGroup", 
+                        "name": "accel_group"
+                    }
+                ]
+            }, 
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a new #GtkImageMenuItem.", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": null, 
+                "name": "Gtk.ImageMenuItem(String label)", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "label"
+                    }
+                ]
+            }, 
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a new #GtkImageMenuItem", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": null, 
+                "name": "Gtk.ImageMenuItem(String label)", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "label"
+                    }
+                ]
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE if the menu item will always show the image"
+                }, 
+                "version": "2.16", 
+                "name": "get_always_show_image", 
+                "parameters": null, 
+                "description": "Returns whether the menu item will ignore the #GtkSettings:gtk-menu-images\nsetting and always show the image, if available."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.Widget", 
+                    "description": "the widget set as image of @image_menu_item"
+                }, 
+                "version": "", 
+                "name": "get_image", 
+                "parameters": null, 
+                "description": "Gets the widget that is currently set as the image of @image_menu_item.\nSee gtk_image_menu_item_set_image()."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE if the label set in the menuitem is used as a"
+                }, 
+                "version": "2.16", 
+                "name": "get_use_stock", 
+                "parameters": null, 
+                "description": "Checks whether the label set in the menuitem is used as a\nstock id to select the stock item for the item.\n\nstock id to select the stock item for the item"
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.16", 
+                "name": "set_accel_group", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.AccelGroup", 
+                        "name": "accel_group", 
+                        "description": "the #GtkAccelGroup"
+                    }
+                ], 
+                "description": "Specifies an @accel_group to add the menu items accelerator to\n(this only applies to stock items so a stock item must already\nbe set, make sure to call gtk_image_menu_item_set_use_stock()\nand gtk_menu_item_set_label() with a valid stock item first).\n\nIf you want this menu item to have changeable accelerators then\nyou shouldnt need this (see gtk_image_menu_item_new_from_stock())."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.16", 
+                "name": "set_always_show_image", 
+                "parameters": [
+                    {
+                        "type": "Boolean", 
+                        "name": "always_show", 
+                        "description": "%TRUE if the menuitem should always show the image"
+                    }
+                ], 
+                "description": "If %TRUE, the menu item will ignore the #GtkSettings:gtk-menu-images\nsetting and always show the image, if available.\n\nUse this property if the menuitem would be useless or hard to use\nwithout the image."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_image", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "image", 
+                        "description": "a widget to set as the image for the menu item."
+                    }
+                ], 
+                "description": "Sets the image of @image_menu_item to the given widget.\nNote that it depends on the show-menu-images setting whether\nthe image will be displayed or not."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.16", 
+                "name": "set_use_stock", 
+                "parameters": [
+                    {
+                        "type": "Boolean", 
+                        "name": "use_stock", 
+                        "description": "%TRUE if the menuitem should use a stock item"
+                    }
+                ], 
+                "description": "If %TRUE, the label set in the menuitem is used as a\nstock id to select the stock item for the item."
+            }
+        ], 
+        "properties": [
+            {
+                "writable": false, 
+                "type": "Gtk.AccelGroup", 
+                "readable": false, 
+                "name": "accel-group", 
+                "description": "The Accel Group to use for stock accelerator keys"
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "always-show-image", 
+                "description": "If %TRUE, the menu item will ignore the #GtkSettings:gtk-menu-images\nsetting and always show the image, if available.\n\nUse this property if the menuitem would be useless or hard to use\nwithout the image."
+            }, 
+            {
+                "writable": false, 
+                "type": "Gtk.Widget", 
+                "readable": false, 
+                "name": "image", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "use-stock", 
+                "description": "If %TRUE, the label set in the menuitem is used as a\nstock id to select the stock item for the item."
+            }
+        ]
+    }, 
+    "fullname": "Class Gtk.ImageMenuItem", 
+    "id": "Docs-ImageMenuItem", 
+    "description": "A GtkImageMenuItem is a menu item which has an icon next to the text label.\n\nNote that the user can disable display of menu icons, so make sure to still\nfill in the text label."
+}

@@ -1,0 +1,37 @@
+{
+    "leaf": true, 
+    "name": "RegionFlags", 
+    "text": "RegionFlags", 
+    "version": null, 
+    "members": {
+        "properties": [
+            {
+                "name": "even", 
+                "value": "1"
+            }, 
+            {
+                "name": "odd", 
+                "value": "2"
+            }, 
+            {
+                "name": "first", 
+                "value": "4"
+            }, 
+            {
+                "name": "last", 
+                "value": "8"
+            }, 
+            {
+                "name": "only", 
+                "value": "16"
+            }, 
+            {
+                "name": "sorted", 
+                "value": "32"
+            }
+        ]
+    }, 
+    "fullname": "Bitfield Gtk.RegionFlags", 
+    "id": "Docs-RegionFlags", 
+    "description": ""
+}

@@ -1,0 +1,33 @@
+{
+    "leaf": true, 
+    "name": "ArrowType", 
+    "text": "ArrowType", 
+    "version": null, 
+    "members": {
+        "properties": [
+            {
+                "name": "up", 
+                "value": "0"
+            }, 
+            {
+                "name": "down", 
+                "value": "1"
+            }, 
+            {
+                "name": "left", 
+                "value": "2"
+            }, 
+            {
+                "name": "right", 
+                "value": "3"
+            }, 
+            {
+                "name": "none", 
+                "value": "4"
+            }
+        ]
+    }, 
+    "fullname": "Enumeration Gtk.ArrowType", 
+    "id": "Docs-ArrowType", 
+    "description": ""
+}

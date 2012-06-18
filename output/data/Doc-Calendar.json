@@ -1,0 +1,447 @@
+{
+    "isAbstract": false, 
+    "leaf": true, 
+    "name": "Calendar", 
+    "text": "Calendar", 
+    "interfaces": [
+        [
+            "Atk.ImplementorIface"
+        ], 
+        [
+            "Buildable"
+        ]
+    ], 
+    "parents": [
+        "Calendar", 
+        "Widget", 
+        "GObject.InitiallyUnowned"
+    ], 
+    "members": {
+        "signals": [
+            {
+                "version": "", 
+                "when": "first", 
+                "name": "day-selected", 
+                "description": "Emitted when the user selects a day."
+            }, 
+            {
+                "version": "", 
+                "when": "first", 
+                "name": "day-selected-double-click", 
+                "description": "Emitted when the user double-clicks a day."
+            }, 
+            {
+                "version": "", 
+                "when": "first", 
+                "name": "month-changed", 
+                "description": "Emitted when the user clicks a button to change the selected month on a\ncalendar."
+            }, 
+            {
+                "version": "", 
+                "when": "first", 
+                "name": "next-month", 
+                "description": "Emitted when the user switched to the next month."
+            }, 
+            {
+                "version": "", 
+                "when": "first", 
+                "name": "next-year", 
+                "description": "Emitted when user switched to the next year."
+            }, 
+            {
+                "version": "", 
+                "when": "first", 
+                "name": "prev-month", 
+                "description": "Emitted when the user switched to the previous month."
+            }, 
+            {
+                "version": "", 
+                "when": "first", 
+                "name": "prev-year", 
+                "description": "Emitted when user switched to the previous year."
+            }
+        ], 
+        "methods": [
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a newly #GtkCalendar widget", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": null, 
+                "name": "Gtk.Calendar()", 
+                "parameters": null
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "clear_marks", 
+                "parameters": null, 
+                "description": "Remove all visual markers."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "get_date", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "year", 
+                        "description": "location to store the year as a decimal number (e.g. 2011), or %NULL"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "month", 
+                        "description": "location to store the month number (between 0 and 11), or %NULL"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "day", 
+                        "description": "location to store the day number (between 1 and 31), or %NULL"
+                    }
+                ], 
+                "description": "Obtains the selected date from a #GtkCalendar."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "whether the day is marked."
+                }, 
+                "version": "3.0", 
+                "name": "get_day_is_marked", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "day", 
+                        "description": "the day number between 1 and 31."
+                    }
+                ], 
+                "description": "Returns if the @day of the @calendar is already marked."
+            }, 
+            {
+                "returns": {
+                    "type": "Integer", 
+                    "description": "The height of detail cells, in rows."
+                }, 
+                "version": "2.14", 
+                "name": "get_detail_height_rows", 
+                "parameters": null, 
+                "description": "Queries the height of detail cells, in rows.\nSee #GtkCalendar:detail-width-chars."
+            }, 
+            {
+                "returns": {
+                    "type": "Integer", 
+                    "description": "The width of detail cells, in characters."
+                }, 
+                "version": "2.14", 
+                "name": "get_detail_width_chars", 
+                "parameters": null, 
+                "description": "Queries the width of detail cells, in characters.\nSee #GtkCalendar:detail-width-chars."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.CalendarDisplayOptions", 
+                    "description": "the display options."
+                }, 
+                "version": "2.4", 
+                "name": "get_display_options", 
+                "parameters": null, 
+                "description": "Returns the current display options of @calendar."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "mark_day", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "day", 
+                        "description": "the day number to mark between 1 and 31."
+                    }
+                ], 
+                "description": "Places a visual marker on a particular day."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "select_day", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "day", 
+                        "description": "the day number between 1 and 31, or 0 to unselect the currently selected day."
+                    }
+                ], 
+                "description": "Selects a day from the current month."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "select_month", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "month", 
+                        "description": "a month number between 0 and 11."
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "year", 
+                        "description": "the year the month is in."
+                    }
+                ], 
+                "description": "Shifts the calendar to a different month."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.14", 
+                "name": "set_detail_func", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.CalendarDetailFunc", 
+                        "name": "func", 
+                        "description": "a function providing details for each day."
+                    }, 
+                    {
+                        "type": "Mixed", 
+                        "name": "data", 
+                        "description": "data to pass to @func invokations."
+                    }, 
+                    {
+                        "type": "GLib.DestroyNotify", 
+                        "name": "destroy", 
+                        "description": "a function for releasing @data."
+                    }
+                ], 
+                "description": "Installs a function which provides Pango markup with detail information\nfor each day. Examples for such details are holidays or appointments. That\ninformation is shown below each day when #GtkCalendar:show-details is set.\nA tooltip containing with full detail information is provided, if the entire\ntext should not fit into the details area, or if #GtkCalendar:show-details\nis not set.\n\nThe size of the details area can be restricted by setting the\n#GtkCalendar:detail-width-chars and #GtkCalendar:detail-height-rows\nproperties."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.14", 
+                "name": "set_detail_height_rows", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "rows", 
+                        "description": "detail height in rows."
+                    }
+                ], 
+                "description": "Updates the height of detail cells.\nSee #GtkCalendar:detail-height-rows."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.14", 
+                "name": "set_detail_width_chars", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "chars", 
+                        "description": "detail width in characters."
+                    }
+                ], 
+                "description": "Updates the width of detail cells.\nSee #GtkCalendar:detail-width-chars."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.4", 
+                "name": "set_display_options", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.CalendarDisplayOptions", 
+                        "name": "flags", 
+                        "description": "the display options to set"
+                    }
+                ], 
+                "description": "Sets display options (whether to display the heading and the month\nheadings)."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "unmark_day", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "day", 
+                        "description": "the day number to unmark between 1 and 31."
+                    }
+                ], 
+                "description": "Removes the visual marker from a particular day."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "day_selected", 
+                "parameters": null, 
+                "description": ""
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "day_selected_double_click", 
+                "parameters": null, 
+                "description": ""
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "month_changed", 
+                "parameters": null, 
+                "description": ""
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "next_month", 
+                "parameters": null, 
+                "description": ""
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "next_year", 
+                "parameters": null, 
+                "description": ""
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "prev_month", 
+                "parameters": null, 
+                "description": ""
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "prev_year", 
+                "parameters": null, 
+                "description": ""
+            }
+        ], 
+        "properties": [
+            {
+                "writable": false, 
+                "type": "Integer", 
+                "readable": false, 
+                "name": "day", 
+                "description": "The selected day (as a number between 1 and 31, or 0\nto unselect the currently selected day).\nThis property gets initially set to the current day."
+            }, 
+            {
+                "writable": false, 
+                "type": "Integer", 
+                "readable": false, 
+                "name": "detail-height-rows", 
+                "description": "Height of a detail cell, in rows.\nA value of 0 allows any width. See gtk_calendar_set_detail_func()."
+            }, 
+            {
+                "writable": false, 
+                "type": "Integer", 
+                "readable": false, 
+                "name": "detail-width-chars", 
+                "description": "Width of a detail cell, in characters.\nA value of 0 allows any width. See gtk_calendar_set_detail_func()."
+            }, 
+            {
+                "writable": false, 
+                "type": "Integer", 
+                "readable": false, 
+                "name": "month", 
+                "description": "The selected month (as a number between 0 and 11).\nThis property gets initially set to the current month."
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "no-month-change", 
+                "description": "Determines whether the selected month can be changed."
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "show-day-names", 
+                "description": "Determines whether day names are displayed."
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "show-details", 
+                "description": "Determines whether details are shown directly in the widget, or if they are\navailable only as tooltip. When this property is set days with details are\nmarked."
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "show-heading", 
+                "description": "Determines whether a heading is displayed."
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "show-week-numbers", 
+                "description": "Determines whether week numbers are displayed."
+            }, 
+            {
+                "writable": false, 
+                "type": "Integer", 
+                "readable": false, 
+                "name": "year", 
+                "description": "The selected year.\nThis property gets initially set to the current year."
+            }
+        ]
+    }, 
+    "fullname": "Class Gtk.Calendar", 
+    "id": "Docs-Calendar", 
+    "description": "#GtkCalendar is a widget that displays a Gregorian calendar, one month\nat a time. It can be created with gtk_calendar_new().\n\nThe month and year currently displayed can be altered with\ngtk_calendar_select_month(). The exact day can be selected from the\ndisplayed month using gtk_calendar_select_day().\n\nTo place a visual marker on a particular day, use gtk_calendar_mark_day()\nand to remove the marker, gtk_calendar_unmark_day(). Alternative, all\nmarks can be cleared with gtk_calendar_clear_marks().\n\nThe way in which the calendar itself is displayed can be altered using\ngtk_calendar_set_display_options().\n\nThe selected date can be retrieved from a #GtkCalendar using\ngtk_calendar_get_date().\n\nUsers should be aware that, although the Gregorian calendar is the legal\ncalendar in most countries, it was adopted progressively between 1582 and\n1929. Display before these dates is likely to be historically incorrect."
+}

@@ -1,0 +1,37 @@
+{
+    "leaf": true, 
+    "name": "IconViewDropPosition", 
+    "text": "IconViewDropPosition", 
+    "version": null, 
+    "members": {
+        "properties": [
+            {
+                "name": "no_drop", 
+                "value": "0"
+            }, 
+            {
+                "name": "drop_into", 
+                "value": "1"
+            }, 
+            {
+                "name": "drop_left", 
+                "value": "2"
+            }, 
+            {
+                "name": "drop_right", 
+                "value": "3"
+            }, 
+            {
+                "name": "drop_above", 
+                "value": "4"
+            }, 
+            {
+                "name": "drop_below", 
+                "value": "5"
+            }
+        ]
+    }, 
+    "fullname": "Enumeration Gtk.IconViewDropPosition", 
+    "id": "Docs-IconViewDropPosition", 
+    "description": ""
+}

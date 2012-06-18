@@ -1,0 +1,84 @@
+{
+    "isAbstract": false, 
+    "leaf": true, 
+    "name": "Arrow", 
+    "text": "Arrow", 
+    "interfaces": [
+        [
+            "Atk.ImplementorIface"
+        ], 
+        [
+            "Buildable"
+        ]
+    ], 
+    "parents": [
+        "Arrow", 
+        "Misc", 
+        "Widget", 
+        "GObject.InitiallyUnowned"
+    ], 
+    "members": {
+        "signals": [], 
+        "methods": [
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "the new #GtkArrow widget.", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": null, 
+                "name": "Gtk.Arrow(Gtk.ArrowType arrow_type, Gtk.ShadowType shadow_type)", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.ArrowType", 
+                        "name": "arrow_type"
+                    }, 
+                    {
+                        "type": "ref:Gtk.ShadowType", 
+                        "name": "shadow_type"
+                    }
+                ]
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.ArrowType", 
+                        "name": "arrow_type", 
+                        "description": "a valid #GtkArrowType."
+                    }, 
+                    {
+                        "type": "ref:Gtk.ShadowType", 
+                        "name": "shadow_type", 
+                        "description": "a valid #GtkShadowType."
+                    }
+                ], 
+                "description": "Sets the direction and style of the #GtkArrow, @arrow."
+            }
+        ], 
+        "properties": [
+            {
+                "writable": false, 
+                "type": "Gtk.ArrowType", 
+                "readable": false, 
+                "name": "arrow-type", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Gtk.ShadowType", 
+                "readable": false, 
+                "name": "shadow-type", 
+                "description": ""
+            }
+        ]
+    }, 
+    "fullname": "Class Gtk.Arrow", 
+    "id": "Docs-Arrow", 
+    "description": "GtkArrow should be used to draw simple arrows that need to point in\none of the four cardinal directions (up, down, left, or right).  The\nstyle of the arrow can be one of shadow in, shadow out, etched in, or\netched out.  Note that these directions and style types may be\nammended in versions of GTK+ to come.\n\nGtkArrow will fill any space alloted to it, but since it is inherited\nfrom #GtkMisc, it can be padded and/or aligned, to fill exactly the\nspace the programmer desires.\n\nArrows are created with a call to gtk_arrow_new().  The direction or\nstyle of an arrow can be changed after creation by using gtk_arrow_set()."
+}

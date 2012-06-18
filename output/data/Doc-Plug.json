@@ -1,0 +1,164 @@
+{
+    "isAbstract": false, 
+    "leaf": true, 
+    "name": "Plug", 
+    "text": "Plug", 
+    "interfaces": [
+        [
+            "Atk.ImplementorIface"
+        ], 
+        [
+            "Buildable"
+        ]
+    ], 
+    "parents": [
+        "Plug", 
+        "Window", 
+        "Bin", 
+        "Container", 
+        "Widget", 
+        "GObject.InitiallyUnowned"
+    ], 
+    "members": {
+        "signals": [
+            {
+                "version": "", 
+                "when": "last", 
+                "name": "embedded", 
+                "description": "Gets emitted when the plug becomes embedded in a socket."
+            }
+        ], 
+        "methods": [
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "the new #GtkPlug widget.", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": null, 
+                "name": "Gtk.Plug(xlib.Window socket_id)", 
+                "parameters": [
+                    {
+                        "type": "xlib.Window", 
+                        "name": "socket_id"
+                    }
+                ]
+            }, 
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "the new #GtkPlug widget.", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": "2.2", 
+                "name": "Gtk.Plug(Gdk.Display display, xlib.Window socket_id)", 
+                "parameters": [
+                    {
+                        "type": "Gdk.Display", 
+                        "name": "display"
+                    }, 
+                    {
+                        "type": "xlib.Window", 
+                        "name": "socket_id"
+                    }
+                ]
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "construct", 
+                "parameters": [
+                    {
+                        "type": "xlib.Window", 
+                        "name": "socket_id", 
+                        "description": "the XID of the socket's window."
+                    }
+                ], 
+                "description": "Finish the initialization of @plug for a given #GtkSocket identified by\n@socket_id. This function will generally only be used by classes deriving from #GtkPlug."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.2", 
+                "name": "construct_for_display", 
+                "parameters": [
+                    {
+                        "type": "Gdk.Display", 
+                        "name": "display", 
+                        "description": "the #GdkDisplay associated with @socket_id's #GtkSocket."
+                    }, 
+                    {
+                        "type": "xlib.Window", 
+                        "name": "socket_id", 
+                        "description": "the XID of the socket's window."
+                    }
+                ], 
+                "description": "Finish the initialization of @plug for a given #GtkSocket identified by\n@socket_id which is currently displayed on @display.\nThis function will generally only be used by classes deriving from #GtkPlug."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE if the plug is embedded in a socket"
+                }, 
+                "version": "2.14", 
+                "name": "get_embedded", 
+                "parameters": null, 
+                "description": "Determines whether the plug is embedded in a socket."
+            }, 
+            {
+                "returns": {
+                    "type": "xlib.Window", 
+                    "description": "the window ID for the plug"
+                }, 
+                "version": "", 
+                "name": "get_id", 
+                "parameters": null, 
+                "description": "Gets the window ID of a #GtkPlug widget, which can then\nbe used to embed this window inside another window, for\ninstance with gtk_socket_add_id()."
+            }, 
+            {
+                "returns": {
+                    "type": "Gdk.Window", 
+                    "description": "the window of the socket, or %NULL"
+                }, 
+                "version": "2.14", 
+                "name": "get_socket_window", 
+                "parameters": null, 
+                "description": "Retrieves the socket the plug is embedded in."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "embedded", 
+                "parameters": null, 
+                "description": ""
+            }
+        ], 
+        "properties": [
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "embedded", 
+                "description": "%TRUE if the plug is embedded in a socket."
+            }, 
+            {
+                "writable": false, 
+                "type": "Gdk.Window", 
+                "readable": false, 
+                "name": "socket-window", 
+                "description": "The window of the socket the plug is embedded in."
+            }
+        ]
+    }, 
+    "fullname": "Class Gtk.Plug", 
+    "id": "Docs-Plug", 
+    "description": "Together with #GtkSocket, #GtkPlug provides the ability to embed\nwidgets from one process into another process in a fashion that is\ntransparent to the user. One process creates a #GtkSocket widget\nand passes the ID of that widget's window to the other process,\nwhich then creates a #GtkPlug with that window ID. Any widgets\ncontained in the #GtkPlug then will appear inside the first\napplication's window.\n\nThe communication between a #GtkSocket and a #GtkPlug follows the\n<ulink url=\"http://www.freedesktop.org/Standards/xembed-spec\">XEmbed</ulink>\nprotocol. This protocol has also been implemented in other toolkits,\ne.g. <application>Qt</application>, allowing the same level of\nintegration when embedding a <application>Qt</application> widget\nin GTK+ or vice versa.\n\n<note>\nThe #GtkPlug and #GtkSocket widgets are only available when GTK+\nis compiled for the X11 platform and %GDK_WINDOWING_X11 is defined.\nThey can only be used on a #GdkX11Display. To use #GtkPlug and\n#GtkSocket, you need to include the <filename>gtk/gtkx.h</filename>\nheader.\n</note>"
+}

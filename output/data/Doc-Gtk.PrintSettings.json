@@ -1,0 +1,1136 @@
+{
+    "isAbstract": false, 
+    "leaf": true, 
+    "name": "PrintSettings", 
+    "text": "PrintSettings", 
+    "interfaces": [], 
+    "parents": [
+        "PrintSettings", 
+        "GObject.Object"
+    ], 
+    "members": {
+        "signals": [], 
+        "methods": [
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a new #GtkPrintSettings object", 
+                    "name": "ref:Gtk.PrintSettings"
+                }, 
+                "version": "2.10", 
+                "name": "Gtk.PrintSettings()", 
+                "parameters": null
+            }, 
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "the restored #GtkPrintSettings", 
+                    "name": "ref:Gtk.PrintSettings"
+                }, 
+                "version": "2.12", 
+                "name": "Gtk.PrintSettings(String file_name)", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "file_name"
+                    }
+                ]
+            }, 
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "the restored #GtkPrintSettings", 
+                    "name": "ref:Gtk.PrintSettings"
+                }, 
+                "version": "2.12", 
+                "name": "Gtk.PrintSettings(GLib.KeyFile key_file, String group_name)", 
+                "parameters": [
+                    {
+                        "type": "GLib.KeyFile", 
+                        "name": "key_file"
+                    }, 
+                    {
+                        "type": "String", 
+                        "name": "group_name"
+                    }
+                ]
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.PrintSettings", 
+                    "description": "a newly allocated copy of @other"
+                }, 
+                "version": "2.10", 
+                "name": "copy", 
+                "parameters": null, 
+                "description": "Copies a #GtkPrintSettings object."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.10", 
+                "name": "foreach", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.PrintSettingsFunc", 
+                        "name": "func", 
+                        "description": "the function to call"
+                    }, 
+                    {
+                        "type": "Mixed", 
+                        "name": "user_data", 
+                        "description": "user data for @func"
+                    }
+                ], 
+                "description": "Calls @func for each key-value pair of @settings."
+            }, 
+            {
+                "returns": {
+                    "type": "String", 
+                    "description": "the string value for @key"
+                }, 
+                "version": "2.10", 
+                "name": "get", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "key", 
+                        "description": "a key"
+                    }
+                ], 
+                "description": "Looks up the string value associated with @key."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE, if @key maps to a true value."
+                }, 
+                "version": "2.10", 
+                "name": "get_bool", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "key", 
+                        "description": "a key"
+                    }
+                ], 
+                "description": "Returns the boolean represented by the value\nthat is associated with @key. \n\nThe string \"true\" represents %TRUE, any other \nstring %FALSE."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "whether to collate the printed pages"
+                }, 
+                "version": "2.10", 
+                "name": "get_collate", 
+                "parameters": null, 
+                "description": "Gets the value of %GTK_PRINT_SETTINGS_COLLATE."
+            }, 
+            {
+                "returns": {
+                    "type": "String", 
+                    "description": "the default source"
+                }, 
+                "version": "2.10", 
+                "name": "get_default_source", 
+                "parameters": null, 
+                "description": "Gets the value of %GTK_PRINT_SETTINGS_DEFAULT_SOURCE."
+            }, 
+            {
+                "returns": {
+                    "type": "String", 
+                    "description": "the dithering that is used"
+                }, 
+                "version": "2.10", 
+                "name": "get_dither", 
+                "parameters": null, 
+                "description": "Gets the value of %GTK_PRINT_SETTINGS_DITHER."
+            }, 
+            {
+                "returns": {
+                    "type": "Float", 
+                    "description": "the double value of @key"
+                }, 
+                "version": "2.10", 
+                "name": "get_double", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "key", 
+                        "description": "a key"
+                    }
+                ], 
+                "description": "Returns the double value associated with @key, or 0."
+            }, 
+            {
+                "returns": {
+                    "type": "Float", 
+                    "description": "the floating point number associated with @key"
+                }, 
+                "version": "2.10", 
+                "name": "get_double_with_default", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "key", 
+                        "description": "a key"
+                    }, 
+                    {
+                        "type": "Float", 
+                        "name": "def", 
+                        "description": "the default value"
+                    }
+                ], 
+                "description": "Returns the floating point number represented by \nthe value that is associated with @key, or @default_val\nif the value does not represent a floating point number.\n\nFloating point numbers are parsed with g_ascii_strtod()."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.PrintDuplex", 
+                    "description": "whether to print the output in duplex."
+                }, 
+                "version": "2.10", 
+                "name": "get_duplex", 
+                "parameters": null, 
+                "description": "Gets the value of %GTK_PRINT_SETTINGS_DUPLEX."
+            }, 
+            {
+                "returns": {
+                    "type": "String", 
+                    "description": "the finishings"
+                }, 
+                "version": "2.10", 
+                "name": "get_finishings", 
+                "parameters": null, 
+                "description": "Gets the value of %GTK_PRINT_SETTINGS_FINISHINGS."
+            }, 
+            {
+                "returns": {
+                    "type": "Integer", 
+                    "description": "the integer value of @key"
+                }, 
+                "version": "2.10", 
+                "name": "get_int", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "key", 
+                        "description": "a key"
+                    }
+                ], 
+                "description": "Returns the integer value of @key, or 0."
+            }, 
+            {
+                "returns": {
+                    "type": "Integer", 
+                    "description": "the integer value of @key"
+                }, 
+                "version": "2.10", 
+                "name": "get_int_with_default", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "key", 
+                        "description": "a key"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "def", 
+                        "description": "the default value"
+                    }
+                ], 
+                "description": "Returns the value of @key, interpreted as\nan integer, or the default value."
+            }, 
+            {
+                "returns": {
+                    "type": "Float", 
+                    "description": "the length value of @key, converted to @unit"
+                }, 
+                "version": "2.10", 
+                "name": "get_length", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "key", 
+                        "description": "a key"
+                    }, 
+                    {
+                        "type": "ref:Gtk.Unit", 
+                        "name": "unit", 
+                        "description": "the unit of the return value"
+                    }
+                ], 
+                "description": "Returns the value associated with @key, interpreted\nas a length. The returned value is converted to @units."
+            }, 
+            {
+                "returns": {
+                    "type": "String", 
+                    "description": "the media type"
+                }, 
+                "version": "2.10", 
+                "name": "get_media_type", 
+                "parameters": null, 
+                "description": "Gets the value of %GTK_PRINT_SETTINGS_MEDIA_TYPE.\n\nThe set of media types is defined in PWG 5101.1-2002 PWG.\n<!-- FIXME link here -->"
+            }, 
+            {
+                "returns": {
+                    "type": "Integer", 
+                    "description": "the number of copies to print"
+                }, 
+                "version": "2.10", 
+                "name": "get_n_copies", 
+                "parameters": null, 
+                "description": "Gets the value of %GTK_PRINT_SETTINGS_N_COPIES."
+            }, 
+            {
+                "returns": {
+                    "type": "Integer", 
+                    "description": "the number of pages per sheet"
+                }, 
+                "version": "2.10", 
+                "name": "get_number_up", 
+                "parameters": null, 
+                "description": "Gets the value of %GTK_PRINT_SETTINGS_NUMBER_UP."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.NumberUpLayout", 
+                    "description": "layout of page in number-up mode"
+                }, 
+                "version": "2.14", 
+                "name": "get_number_up_layout", 
+                "parameters": null, 
+                "description": "Gets the value of %GTK_PRINT_SETTINGS_NUMBER_UP_LAYOUT."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.PageOrientation", 
+                    "description": "the orientation"
+                }, 
+                "version": "2.10", 
+                "name": "get_orientation", 
+                "parameters": null, 
+                "description": "Get the value of %GTK_PRINT_SETTINGS_ORIENTATION, \nconverted to a #GtkPageOrientation."
+            }, 
+            {
+                "returns": {
+                    "type": "String", 
+                    "description": "the output bin"
+                }, 
+                "version": "2.10", 
+                "name": "get_output_bin", 
+                "parameters": null, 
+                "description": "Gets the value of %GTK_PRINT_SETTINGS_OUTPUT_BIN."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.PageRange[]", 
+                    "description": "an array"
+                }, 
+                "version": "2.10", 
+                "name": "get_page_ranges", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "num_ranges", 
+                        "description": "return location for the length of the returned array"
+                    }
+                ], 
+                "description": "Gets the value of %GTK_PRINT_SETTINGS_PAGE_RANGES.\n\nof #GtkPageRange<!-- -->s.  Use g_free() to free the array when\nit is no longer needed."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.PageSet", 
+                    "description": "the set of pages to print"
+                }, 
+                "version": "2.10", 
+                "name": "get_page_set", 
+                "parameters": null, 
+                "description": "Gets the value of %GTK_PRINT_SETTINGS_PAGE_SET."
+            }, 
+            {
+                "returns": {
+                    "type": "Float", 
+                    "description": "the paper height, in units of @unit"
+                }, 
+                "version": "2.10", 
+                "name": "get_paper_height", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Unit", 
+                        "name": "unit", 
+                        "description": "the unit for the return value"
+                    }
+                ], 
+                "description": "Gets the value of %GTK_PRINT_SETTINGS_PAPER_HEIGHT,\nconverted to @unit."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.PaperSize", 
+                    "description": "the paper size"
+                }, 
+                "version": "2.10", 
+                "name": "get_paper_size", 
+                "parameters": null, 
+                "description": "Gets the value of %GTK_PRINT_SETTINGS_PAPER_FORMAT, \nconverted to a #GtkPaperSize."
+            }, 
+            {
+                "returns": {
+                    "type": "Float", 
+                    "description": "the paper width, in units of @unit"
+                }, 
+                "version": "2.10", 
+                "name": "get_paper_width", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Unit", 
+                        "name": "unit", 
+                        "description": "the unit for the return value"
+                    }
+                ], 
+                "description": "Gets the value of %GTK_PRINT_SETTINGS_PAPER_WIDTH,\nconverted to @unit."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.PrintPages", 
+                    "description": "which pages to print"
+                }, 
+                "version": "2.10", 
+                "name": "get_print_pages", 
+                "parameters": null, 
+                "description": "Gets the value of %GTK_PRINT_SETTINGS_PRINT_PAGES."
+            }, 
+            {
+                "returns": {
+                    "type": "String", 
+                    "description": "the printer name"
+                }, 
+                "version": "2.10", 
+                "name": "get_printer", 
+                "parameters": null, 
+                "description": "Convenience function to obtain the value of \n%GTK_PRINT_SETTINGS_PRINTER."
+            }, 
+            {
+                "returns": {
+                    "type": "Float", 
+                    "description": "the resolution in lpi (lines per inch)"
+                }, 
+                "version": "2.16", 
+                "name": "get_printer_lpi", 
+                "parameters": null, 
+                "description": "Gets the value of %GTK_PRINT_SETTINGS_PRINTER_LPI."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.PrintQuality", 
+                    "description": "the print quality"
+                }, 
+                "version": "2.10", 
+                "name": "get_quality", 
+                "parameters": null, 
+                "description": "Gets the value of %GTK_PRINT_SETTINGS_QUALITY."
+            }, 
+            {
+                "returns": {
+                    "type": "Integer", 
+                    "description": "the resolution in dpi"
+                }, 
+                "version": "2.10", 
+                "name": "get_resolution", 
+                "parameters": null, 
+                "description": "Gets the value of %GTK_PRINT_SETTINGS_RESOLUTION."
+            }, 
+            {
+                "returns": {
+                    "type": "Integer", 
+                    "description": "the horizontal resolution in dpi"
+                }, 
+                "version": "2.16", 
+                "name": "get_resolution_x", 
+                "parameters": null, 
+                "description": "Gets the value of %GTK_PRINT_SETTINGS_RESOLUTION_X."
+            }, 
+            {
+                "returns": {
+                    "type": "Integer", 
+                    "description": "the vertical resolution in dpi"
+                }, 
+                "version": "2.16", 
+                "name": "get_resolution_y", 
+                "parameters": null, 
+                "description": "Gets the value of %GTK_PRINT_SETTINGS_RESOLUTION_Y."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "whether to reverse the order of the printed pages"
+                }, 
+                "version": "2.10", 
+                "name": "get_reverse", 
+                "parameters": null, 
+                "description": "Gets the value of %GTK_PRINT_SETTINGS_REVERSE."
+            }, 
+            {
+                "returns": {
+                    "type": "Float", 
+                    "description": "the scale in percent"
+                }, 
+                "version": "2.10", 
+                "name": "get_scale", 
+                "parameters": null, 
+                "description": "Gets the value of %GTK_PRINT_SETTINGS_SCALE."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "whether to use color"
+                }, 
+                "version": "2.10", 
+                "name": "get_use_color", 
+                "parameters": null, 
+                "description": "Gets the value of %GTK_PRINT_SETTINGS_USE_COLOR."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE, if @key has a value"
+                }, 
+                "version": "2.10", 
+                "name": "has_key", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "key", 
+                        "description": "a key"
+                    }
+                ], 
+                "description": "Returns %TRUE, if a value is associated with @key."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE on success"
+                }, 
+                "version": "2.14", 
+                "name": "load_file", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "file_name", 
+                        "description": "the filename to read the settings from"
+                    }
+                ], 
+                "description": "Reads the print settings from @file_name. If the file could not be loaded\nthen error is set to either a #GFileError or #GKeyFileError.\nSee gtk_print_settings_to_file()."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE on success"
+                }, 
+                "version": "2.14", 
+                "name": "load_key_file", 
+                "parameters": [
+                    {
+                        "type": "GLib.KeyFile", 
+                        "name": "key_file", 
+                        "description": "the #GKeyFile to retrieve the settings from"
+                    }, 
+                    {
+                        "type": "String", 
+                        "name": "group_name", 
+                        "description": "the name of the group to use, or %NULL to use the default \"Print Settings\""
+                    }
+                ], 
+                "description": "Reads the print settings from the group @group_name in @key_file. If the\nfile could not be loaded then error is set to either a #GFileError or\n#GKeyFileError."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.10", 
+                "name": "set", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "key", 
+                        "description": "a key"
+                    }, 
+                    {
+                        "type": "String", 
+                        "name": "value", 
+                        "description": "a string value, or %NULL"
+                    }
+                ], 
+                "description": "Associates @value with @key."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.10", 
+                "name": "set_bool", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "key", 
+                        "description": "a key"
+                    }, 
+                    {
+                        "type": "Boolean", 
+                        "name": "value", 
+                        "description": "a boolean"
+                    }
+                ], 
+                "description": "Sets @key to a boolean value."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.10", 
+                "name": "set_collate", 
+                "parameters": [
+                    {
+                        "type": "Boolean", 
+                        "name": "collate", 
+                        "description": "whether to collate the output"
+                    }
+                ], 
+                "description": "Sets the value of %GTK_PRINT_SETTINGS_COLLATE."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.10", 
+                "name": "set_default_source", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "default_source", 
+                        "description": "the default source"
+                    }
+                ], 
+                "description": "Sets the value of %GTK_PRINT_SETTINGS_DEFAULT_SOURCE."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.10", 
+                "name": "set_dither", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "dither", 
+                        "description": "the dithering that is used"
+                    }
+                ], 
+                "description": "Sets the value of %GTK_PRINT_SETTINGS_DITHER."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.10", 
+                "name": "set_double", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "key", 
+                        "description": "a key"
+                    }, 
+                    {
+                        "type": "Float", 
+                        "name": "value", 
+                        "description": "a double value"
+                    }
+                ], 
+                "description": "Sets @key to a double value."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.10", 
+                "name": "set_duplex", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.PrintDuplex", 
+                        "name": "duplex", 
+                        "description": "a #GtkPrintDuplex value"
+                    }
+                ], 
+                "description": "Sets the value of %GTK_PRINT_SETTINGS_DUPLEX."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.10", 
+                "name": "set_finishings", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "finishings", 
+                        "description": "the finishings"
+                    }
+                ], 
+                "description": "Sets the value of %GTK_PRINT_SETTINGS_FINISHINGS."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.10", 
+                "name": "set_int", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "key", 
+                        "description": "a key"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "value", 
+                        "description": "an integer"
+                    }
+                ], 
+                "description": "Sets @key to an integer value."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.10", 
+                "name": "set_length", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "key", 
+                        "description": "a key"
+                    }, 
+                    {
+                        "type": "Float", 
+                        "name": "value", 
+                        "description": "a length"
+                    }, 
+                    {
+                        "type": "ref:Gtk.Unit", 
+                        "name": "unit", 
+                        "description": "the unit of @length"
+                    }
+                ], 
+                "description": "Associates a length in units of @unit with @key."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.10", 
+                "name": "set_media_type", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "media_type", 
+                        "description": "the media type"
+                    }
+                ], 
+                "description": "Sets the value of %GTK_PRINT_SETTINGS_MEDIA_TYPE.\n\nThe set of media types is defined in PWG 5101.1-2002 PWG.\n<!-- FIXME link here -->"
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.10", 
+                "name": "set_n_copies", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "num_copies", 
+                        "description": "the number of copies"
+                    }
+                ], 
+                "description": "Sets the value of %GTK_PRINT_SETTINGS_N_COPIES."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.10", 
+                "name": "set_number_up", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "number_up", 
+                        "description": "the number of pages per sheet"
+                    }
+                ], 
+                "description": "Sets the value of %GTK_PRINT_SETTINGS_NUMBER_UP."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.14", 
+                "name": "set_number_up_layout", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.NumberUpLayout", 
+                        "name": "number_up_layout", 
+                        "description": "a #GtkNumberUpLayout value"
+                    }
+                ], 
+                "description": "Sets the value of %GTK_PRINT_SETTINGS_NUMBER_UP_LAYOUT."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.10", 
+                "name": "set_orientation", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.PageOrientation", 
+                        "name": "orientation", 
+                        "description": "a page orientation"
+                    }
+                ], 
+                "description": "Sets the value of %GTK_PRINT_SETTINGS_ORIENTATION."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.10", 
+                "name": "set_output_bin", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "output_bin", 
+                        "description": "the output bin"
+                    }
+                ], 
+                "description": "Sets the value of %GTK_PRINT_SETTINGS_OUTPUT_BIN."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.10", 
+                "name": "set_page_ranges", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.PageRange[]", 
+                        "name": "page_ranges", 
+                        "description": "an array of #GtkPageRange<!-- -->s"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "num_ranges", 
+                        "description": "the length of @page_ranges"
+                    }
+                ], 
+                "description": "Sets the value of %GTK_PRINT_SETTINGS_PAGE_RANGES."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.10", 
+                "name": "set_page_set", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.PageSet", 
+                        "name": "page_set", 
+                        "description": "a #GtkPageSet value"
+                    }
+                ], 
+                "description": "Sets the value of %GTK_PRINT_SETTINGS_PAGE_SET."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.10", 
+                "name": "set_paper_height", 
+                "parameters": [
+                    {
+                        "type": "Float", 
+                        "name": "height", 
+                        "description": "the paper height"
+                    }, 
+                    {
+                        "type": "ref:Gtk.Unit", 
+                        "name": "unit", 
+                        "description": "the units of @height"
+                    }
+                ], 
+                "description": "Sets the value of %GTK_PRINT_SETTINGS_PAPER_HEIGHT."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.10", 
+                "name": "set_paper_size", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.PaperSize", 
+                        "name": "paper_size", 
+                        "description": "a paper size"
+                    }
+                ], 
+                "description": "Sets the value of %GTK_PRINT_SETTINGS_PAPER_FORMAT,\n%GTK_PRINT_SETTINGS_PAPER_WIDTH and\n%GTK_PRINT_SETTINGS_PAPER_HEIGHT."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.10", 
+                "name": "set_paper_width", 
+                "parameters": [
+                    {
+                        "type": "Float", 
+                        "name": "width", 
+                        "description": "the paper width"
+                    }, 
+                    {
+                        "type": "ref:Gtk.Unit", 
+                        "name": "unit", 
+                        "description": "the units of @width"
+                    }
+                ], 
+                "description": "Sets the value of %GTK_PRINT_SETTINGS_PAPER_WIDTH."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.10", 
+                "name": "set_print_pages", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.PrintPages", 
+                        "name": "pages", 
+                        "description": "a #GtkPrintPages value"
+                    }
+                ], 
+                "description": "Sets the value of %GTK_PRINT_SETTINGS_PRINT_PAGES."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.10", 
+                "name": "set_printer", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "printer", 
+                        "description": "the printer name"
+                    }
+                ], 
+                "description": "Convenience function to set %GTK_PRINT_SETTINGS_PRINTER\nto @printer."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.16", 
+                "name": "set_printer_lpi", 
+                "parameters": [
+                    {
+                        "type": "Float", 
+                        "name": "lpi", 
+                        "description": "the resolution in lpi (lines per inch)"
+                    }
+                ], 
+                "description": "Sets the value of %GTK_PRINT_SETTINGS_PRINTER_LPI."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.10", 
+                "name": "set_quality", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.PrintQuality", 
+                        "name": "quality", 
+                        "description": "a #GtkPrintQuality value"
+                    }
+                ], 
+                "description": "Sets the value of %GTK_PRINT_SETTINGS_QUALITY."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.10", 
+                "name": "set_resolution", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "resolution", 
+                        "description": "the resolution in dpi"
+                    }
+                ], 
+                "description": "Sets the values of %GTK_PRINT_SETTINGS_RESOLUTION,\n%GTK_PRINT_SETTINGS_RESOLUTION_X and \n%GTK_PRINT_SETTINGS_RESOLUTION_Y."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.16", 
+                "name": "set_resolution_xy", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "resolution_x", 
+                        "description": "the horizontal resolution in dpi"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "resolution_y", 
+                        "description": "the vertical resolution in dpi"
+                    }
+                ], 
+                "description": "Sets the values of %GTK_PRINT_SETTINGS_RESOLUTION,\n%GTK_PRINT_SETTINGS_RESOLUTION_X and\n%GTK_PRINT_SETTINGS_RESOLUTION_Y."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.10", 
+                "name": "set_reverse", 
+                "parameters": [
+                    {
+                        "type": "Boolean", 
+                        "name": "reverse", 
+                        "description": "whether to reverse the output"
+                    }
+                ], 
+                "description": "Sets the value of %GTK_PRINT_SETTINGS_REVERSE."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.10", 
+                "name": "set_scale", 
+                "parameters": [
+                    {
+                        "type": "Float", 
+                        "name": "scale", 
+                        "description": "the scale in percent"
+                    }
+                ], 
+                "description": "Sets the value of %GTK_PRINT_SETTINGS_SCALE."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.10", 
+                "name": "set_use_color", 
+                "parameters": [
+                    {
+                        "type": "Boolean", 
+                        "name": "use_color", 
+                        "description": "whether to use color"
+                    }
+                ], 
+                "description": "Sets the value of %GTK_PRINT_SETTINGS_USE_COLOR."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE on success"
+                }, 
+                "version": "2.12", 
+                "name": "to_file", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "file_name", 
+                        "description": "the file to save to"
+                    }
+                ], 
+                "description": "This function saves the print settings from @settings to @file_name. If the\nfile could not be loaded then error is set to either a #GFileError or\n#GKeyFileError."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.12", 
+                "name": "to_key_file", 
+                "parameters": [
+                    {
+                        "type": "GLib.KeyFile", 
+                        "name": "key_file", 
+                        "description": "the #GKeyFile to save the print settings to"
+                    }, 
+                    {
+                        "type": "String", 
+                        "name": "group_name", 
+                        "description": "the group to add the settings to in @key_file, or %NULL to use the default \"Print Settings\""
+                    }
+                ], 
+                "description": "This function adds the print settings from @settings to @key_file."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.10", 
+                "name": "unset", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "key", 
+                        "description": "a key"
+                    }
+                ], 
+                "description": "Removes any value associated with @key. \nThis has the same effect as setting the value to %NULL."
+            }
+        ], 
+        "properties": []
+    }, 
+    "fullname": "Class Gtk.PrintSettings", 
+    "id": "Docs-PrintSettings", 
+    "description": "A GtkPrintSettings object represents the settings of a print dialog in\na system-independent way. The main use for this object is that once\nyou've printed you can get a settings object that represents the settings\nthe user chose, and the next time you print you can pass that object in so\nthat the user doesn't have to re-set all his settings.\n\nIts also possible to enumerate the settings so that you can easily save\nthe settings for the next time your app runs, or even store them in a\ndocument. The predefined keys try to use shared values as much as possible\nso that moving such a document between systems still works.\n\n<!-- TODO example of getting, storing and setting settings -->\n\nPrinting support was added in GTK+ 2.10."
+}

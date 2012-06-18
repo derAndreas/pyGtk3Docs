@@ -1,0 +1,2297 @@
+{
+    "isAbstract": false, 
+    "leaf": true, 
+    "name": "TreeView", 
+    "text": "TreeView", 
+    "interfaces": [
+        [
+            "Atk.ImplementorIface"
+        ], 
+        [
+            "Buildable"
+        ], 
+        [
+            "Scrollable"
+        ]
+    ], 
+    "parents": [
+        "TreeView", 
+        "Container", 
+        "Widget", 
+        "GObject.InitiallyUnowned"
+    ], 
+    "members": {
+        "signals": [
+            {
+                "version": "", 
+                "when": "last", 
+                "name": "columns-changed", 
+                "description": "The number of columns of the treeview has changed."
+            }, 
+            {
+                "version": "", 
+                "when": "last", 
+                "name": "cursor-changed", 
+                "description": "The position of the cursor (focused cell) has changed."
+            }, 
+            {
+                "version": "", 
+                "when": "last", 
+                "name": "expand-collapse-cursor-row", 
+                "description": ""
+            }, 
+            {
+                "version": "", 
+                "when": "last", 
+                "name": "move-cursor", 
+                "description": ""
+            }, 
+            {
+                "version": "", 
+                "when": "last", 
+                "name": "row-activated", 
+                "description": "The \"row-activated\" signal is emitted when the method\ngtk_tree_view_row_activated() is called or the user double clicks \na treeview row. It is also emitted when a non-editable row is \nselected and one of the keys: Space, Shift+Space, Return or \nEnter is pressed.\n\nFor selection handling refer to the <link linkend=\"TreeWidget\">tree \nwidget conceptual overview</link> as well as #GtkTreeSelection."
+            }, 
+            {
+                "version": "", 
+                "when": "last", 
+                "name": "row-collapsed", 
+                "description": "The given row has been collapsed (child nodes are hidden)."
+            }, 
+            {
+                "version": "", 
+                "when": "last", 
+                "name": "row-expanded", 
+                "description": "The given row has been expanded (child nodes are shown)."
+            }, 
+            {
+                "version": "", 
+                "when": "last", 
+                "name": "select-all", 
+                "description": ""
+            }, 
+            {
+                "version": "", 
+                "when": "last", 
+                "name": "select-cursor-parent", 
+                "description": ""
+            }, 
+            {
+                "version": "", 
+                "when": "last", 
+                "name": "select-cursor-row", 
+                "description": ""
+            }, 
+            {
+                "version": "", 
+                "when": "last", 
+                "name": "start-interactive-search", 
+                "description": ""
+            }, 
+            {
+                "version": "", 
+                "when": "last", 
+                "name": "test-collapse-row", 
+                "description": "The given row is about to be collapsed (hide its children nodes). Use this\nsignal if you need to control the collapsibility of individual rows."
+            }, 
+            {
+                "version": "", 
+                "when": "last", 
+                "name": "test-expand-row", 
+                "description": "The given row is about to be expanded (show its children nodes). Use this\nsignal if you need to control the expandability of individual rows."
+            }, 
+            {
+                "version": "", 
+                "when": "last", 
+                "name": "toggle-cursor-row", 
+                "description": ""
+            }, 
+            {
+                "version": "", 
+                "when": "last", 
+                "name": "unselect-all", 
+                "description": ""
+            }
+        ], 
+        "methods": [
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "A newly created #GtkTreeView widget.", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": null, 
+                "name": "Gtk.TreeView()", 
+                "parameters": null
+            }, 
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "A newly created #GtkTreeView widget.", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": null, 
+                "name": "Gtk.TreeView(Gtk.TreeModel model)", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TreeModel", 
+                        "name": "model"
+                    }
+                ]
+            }, 
+            {
+                "returns": {
+                    "type": "Integer", 
+                    "description": "The number of columns in @tree_view after appending."
+                }, 
+                "version": "", 
+                "name": "append_column", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TreeViewColumn", 
+                        "name": "column", 
+                        "description": "The #GtkTreeViewColumn to add."
+                    }
+                ], 
+                "description": "Appends @column to the list of columns. If @tree_view has \"fixed_height\"\nmode enabled, then @column must have its \"sizing\" property set to be\nGTK_TREE_VIEW_COLUMN_FIXED."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "collapse_all", 
+                "parameters": null, 
+                "description": "Recursively collapses all visible, expanded nodes in @tree_view."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE if the row was collapsed."
+                }, 
+                "version": "", 
+                "name": "collapse_row", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TreePath", 
+                        "name": "path", 
+                        "description": "path to a row in the @tree_view"
+                    }
+                ], 
+                "description": "Collapses a row (hides its child rows, if they exist)."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "columns_autosize", 
+                "parameters": null, 
+                "description": "Resizes all columns to their optimal width. Only works after the\ntreeview has been realized."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.12", 
+                "name": "convert_bin_window_to_tree_coords", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "bx", 
+                        "description": "X coordinate relative to bin_window"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "by", 
+                        "description": "Y coordinate relative to bin_window"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "tx", 
+                        "description": "return location for tree X coordinate"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "ty", 
+                        "description": "return location for tree Y coordinate"
+                    }
+                ], 
+                "description": "Converts bin_window coordinates to coordinates for the\ntree (the full scrollable area of the tree)."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.12", 
+                "name": "convert_bin_window_to_widget_coords", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "bx", 
+                        "description": "bin_window X coordinate"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "by", 
+                        "description": "bin_window Y coordinate"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "wx", 
+                        "description": "return location for widget X coordinate"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "wy", 
+                        "description": "return location for widget Y coordinate"
+                    }
+                ], 
+                "description": "Converts bin_window coordinates (see gtk_tree_view_get_bin_window())\nto widget relative coordinates."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.12", 
+                "name": "convert_tree_to_bin_window_coords", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "tx", 
+                        "description": "tree X coordinate"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "ty", 
+                        "description": "tree Y coordinate"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "bx", 
+                        "description": "return location for X coordinate relative to bin_window"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "by", 
+                        "description": "return location for Y coordinate relative to bin_window"
+                    }
+                ], 
+                "description": "Converts tree coordinates (coordinates in full scrollable area of the tree)\nto bin_window coordinates."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.12", 
+                "name": "convert_tree_to_widget_coords", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "tx", 
+                        "description": "X coordinate relative to the tree"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "ty", 
+                        "description": "Y coordinate relative to the tree"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "wx", 
+                        "description": "return location for widget X coordinate"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "wy", 
+                        "description": "return location for widget Y coordinate"
+                    }
+                ], 
+                "description": "Converts tree coordinates (coordinates in full scrollable area of the tree)\nto widget coordinates."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.12", 
+                "name": "convert_widget_to_bin_window_coords", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "wx", 
+                        "description": "X coordinate relative to the widget"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "wy", 
+                        "description": "Y coordinate relative to the widget"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "bx", 
+                        "description": "return location for bin_window X coordinate"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "by", 
+                        "description": "return location for bin_window Y coordinate"
+                    }
+                ], 
+                "description": "Converts widget coordinates to coordinates for the bin_window\n(see gtk_tree_view_get_bin_window())."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.12", 
+                "name": "convert_widget_to_tree_coords", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "wx", 
+                        "description": "X coordinate relative to the widget"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "wy", 
+                        "description": "Y coordinate relative to the widget"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "tx", 
+                        "description": "return location for tree X coordinate"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "ty", 
+                        "description": "return location for tree Y coordinate"
+                    }
+                ], 
+                "description": "Converts widget coordinates to coordinates for the\ntree (the full scrollable area of the tree)."
+            }, 
+            {
+                "returns": {
+                    "type": "cairo.Surface", 
+                    "description": "a newly-allocated surface of the drag icon."
+                }, 
+                "version": "", 
+                "name": "create_row_drag_icon", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TreePath", 
+                        "name": "path", 
+                        "description": "a #GtkTreePath in @tree_view"
+                    }
+                ], 
+                "description": "Creates a #cairo_surface_t representation of the row at @path.  \nThis image is used for a drag icon."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "enable_model_drag_dest", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TargetEntry[]", 
+                        "name": "targets", 
+                        "description": "the table of targets that the drag will support"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "n_targets", 
+                        "description": "the number of items in @targets"
+                    }, 
+                    {
+                        "type": "Gdk.DragAction", 
+                        "name": "actions", 
+                        "description": "the bitmask of possible actions for a drag from this widget"
+                    }
+                ], 
+                "description": "Turns @tree_view into a drop destination for automatic DND. Calling\nthis method sets #GtkTreeView:reorderable to %FALSE."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "enable_model_drag_source", 
+                "parameters": [
+                    {
+                        "type": "Gdk.ModifierType", 
+                        "name": "start_button_mask", 
+                        "description": "Mask of allowed buttons to start drag"
+                    }, 
+                    {
+                        "type": "ref:Gtk.TargetEntry[]", 
+                        "name": "targets", 
+                        "description": "the table of targets that the drag will support"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "n_targets", 
+                        "description": "the number of items in @targets"
+                    }, 
+                    {
+                        "type": "Gdk.DragAction", 
+                        "name": "actions", 
+                        "description": "the bitmask of possible actions for a drag from this widget"
+                    }
+                ], 
+                "description": "Turns @tree_view into a drag source for automatic DND. Calling this\nmethod sets #GtkTreeView:reorderable to %FALSE."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "expand_all", 
+                "parameters": null, 
+                "description": "Recursively expands all nodes in the @tree_view."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE if the row existed and had children"
+                }, 
+                "version": "", 
+                "name": "expand_row", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TreePath", 
+                        "name": "path", 
+                        "description": "path to a row"
+                    }, 
+                    {
+                        "type": "Boolean", 
+                        "name": "open_all", 
+                        "description": "whether to recursively expand, or just expand immediate children"
+                    }
+                ], 
+                "description": "Opens the row so its children are visible."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.2", 
+                "name": "expand_to_path", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TreePath", 
+                        "name": "path", 
+                        "description": "path to a row."
+                    }
+                ], 
+                "description": "Expands the row at @path. This will also expand all parent rows of\n@path as necessary."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "get_background_area", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TreePath", 
+                        "name": "path", 
+                        "description": "a #GtkTreePath for the row, or %NULL to get only horizontal coordinates"
+                    }, 
+                    {
+                        "type": "ref:Gtk.TreeViewColumn", 
+                        "name": "column", 
+                        "description": "a #GtkTreeViewColumn for the column, or %NULL to get only vertical coordiantes"
+                    }, 
+                    {
+                        "type": "Gdk.Rectangle", 
+                        "name": "rect", 
+                        "description": "rectangle to fill with cell background rect"
+                    }
+                ], 
+                "description": "Fills the bounding rectangle in bin_window coordinates for the cell at the\nrow specified by @path and the column specified by @column.  If @path is\n%NULL, or points to a node not found in the tree, the @y and @height fields of\nthe rectangle will be filled with 0. If @column is %NULL, the @x and @width\nfields will be filled with 0.  The returned rectangle is equivalent to the\n@background_area passed to gtk_cell_renderer_render().  These background\nareas tile to cover the entire bin window.  Contrast with the @cell_area,\nreturned by gtk_tree_view_get_cell_area(), which returns only the cell\nitself, excluding surrounding borders and the tree expander area."
+            }, 
+            {
+                "returns": {
+                    "type": "Gdk.Window", 
+                    "description": "A #GdkWindow, or %NULL when @tree_view"
+                }, 
+                "version": "", 
+                "name": "get_bin_window", 
+                "parameters": null, 
+                "description": "Returns the window that @tree_view renders to.\nThis is used primarily to compare to <literal>event->window</literal>\nto confirm that the event on @tree_view is on the right window.\n\nhasn't been realized yet"
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "get_cell_area", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TreePath", 
+                        "name": "path", 
+                        "description": "a #GtkTreePath for the row, or %NULL to get only horizontal coordinates"
+                    }, 
+                    {
+                        "type": "ref:Gtk.TreeViewColumn", 
+                        "name": "column", 
+                        "description": "a #GtkTreeViewColumn for the column, or %NULL to get only vertical coordinates"
+                    }, 
+                    {
+                        "type": "Gdk.Rectangle", 
+                        "name": "rect", 
+                        "description": "rectangle to fill with cell rect"
+                    }
+                ], 
+                "description": "Fills the bounding rectangle in bin_window coordinates for the cell at the\nrow specified by @path and the column specified by @column.  If @path is\n%NULL, or points to a path not currently displayed, the @y and @height fields\nof the rectangle will be filled with 0. If @column is %NULL, the @x and @width\nfields will be filled with 0.  The sum of all cell rects does not cover the\nentire tree; there are extra pixels in between rows, for example. The\nreturned rectangle is equivalent to the @cell_area passed to\ngtk_cell_renderer_render().  This function is only valid if @tree_view is\nrealized."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.TreeViewColumn", 
+                    "description": "The #GtkTreeViewColumn, or %NULL if the"
+                }, 
+                "version": "", 
+                "name": "get_column", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "n", 
+                        "description": "The position of the column, counting from 0."
+                    }
+                ], 
+                "description": "Gets the #GtkTreeViewColumn at the given position in the #tree_view.\n\nposition is outside the range of columns."
+            }, 
+            {
+                "returns": {
+                    "type": "GLib.List", 
+                    "description": "A list of #GtkTreeViewColumn s"
+                }, 
+                "version": "", 
+                "name": "get_columns", 
+                "parameters": null, 
+                "description": "Returns a #GList of all the #GtkTreeViewColumn s currently in @tree_view.\nThe returned list must be freed with g_list_free ()."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "get_cursor", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TreePath", 
+                        "name": "path", 
+                        "description": "A pointer to be filled with the current cursor path, or %NULL"
+                    }, 
+                    {
+                        "type": "ref:Gtk.TreeViewColumn", 
+                        "name": "focus_column", 
+                        "description": "A pointer to be filled with the current focus column, or %NULL"
+                    }
+                ], 
+                "description": "Fills in @path and @focus_column with the current path and focus column.  If\nthe cursor isn't currently set, then *@path will be %NULL.  If no column\ncurrently has focus, then *@focus_column will be %NULL.\n\nThe returned #GtkTreePath must be freed with gtk_tree_path_free() when\nyou are done with it."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "whether there is a row at the given position, %TRUE if this"
+                }, 
+                "version": "", 
+                "name": "get_dest_row_at_pos", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "drag_x", 
+                        "description": "the position to determine the destination row for"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "drag_y", 
+                        "description": "the position to determine the destination row for"
+                    }, 
+                    {
+                        "type": "ref:Gtk.TreePath", 
+                        "name": "path", 
+                        "description": "Return location for the path of the highlighted row, or %NULL."
+                    }, 
+                    {
+                        "type": "ref:Gtk.TreeViewDropPosition", 
+                        "name": "pos", 
+                        "description": "Return location for the drop position, or %NULL"
+                    }
+                ], 
+                "description": "Determines the destination row for a given position.  @drag_x and\n@drag_y are expected to be in widget coordinates.  This function is only\nmeaningful if @tree_view is realized.  Therefore this function will always\nreturn %FALSE if @tree_view is not realized or does not have a model.\n\nis indeed the case."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "get_drag_dest_row", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TreePath", 
+                        "name": "path", 
+                        "description": "Return location for the path of the highlighted row, or %NULL."
+                    }, 
+                    {
+                        "type": "ref:Gtk.TreeViewDropPosition", 
+                        "name": "pos", 
+                        "description": "Return location for the drop position, or %NULL"
+                    }
+                ], 
+                "description": "Gets information about the row that is highlighted for feedback."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "whether or not to let the user search interactively"
+                }, 
+                "version": "", 
+                "name": "get_enable_search", 
+                "parameters": null, 
+                "description": "Returns whether or not the tree allows to start interactive searching \nby typing in text."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE if tree lines are drawn in @tree_view, %FALSE"
+                }, 
+                "version": "2.10", 
+                "name": "get_enable_tree_lines", 
+                "parameters": null, 
+                "description": "Returns whether or not tree lines are drawn in @tree_view.\n\notherwise."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.TreeViewColumn", 
+                    "description": "The expander column."
+                }, 
+                "version": "", 
+                "name": "get_expander_column", 
+                "parameters": null, 
+                "description": "Returns the column that is the current expander column.\nThis column has the expander arrow drawn next to it."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE if @tree_view is in fixed height mode"
+                }, 
+                "version": "2.6", 
+                "name": "get_fixed_height_mode", 
+                "parameters": null, 
+                "description": "Returns whether fixed height mode is turned on for @tree_view."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.TreeViewGridLines", 
+                    "description": "a #GtkTreeViewGridLines value indicating which grid lines"
+                }, 
+                "version": "2.10", 
+                "name": "get_grid_lines", 
+                "parameters": null, 
+                "description": "Returns which grid lines are enabled in @tree_view.\n\nare enabled."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.Adjustment", 
+                    "description": "A #GtkAdjustment object, or %NULL"
+                }, 
+                "version": "", 
+                "name": "get_hadjustment", 
+                "parameters": null, 
+                "description": "Gets the #GtkAdjustment currently being used for the horizontal aspect.\n\nif none is currently being used."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE if all header columns are clickable, otherwise %FALSE"
+                }, 
+                "version": "2.10", 
+                "name": "get_headers_clickable", 
+                "parameters": null, 
+                "description": "Returns whether all header columns are clickable."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "Whether the headers are visible or not."
+                }, 
+                "version": "", 
+                "name": "get_headers_visible", 
+                "parameters": null, 
+                "description": "Returns %TRUE if the headers on the @tree_view are visible."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE if @tree_view is in hover expansion mode"
+                }, 
+                "version": "2.6 ", 
+                "name": "get_hover_expand", 
+                "parameters": null, 
+                "description": "Returns whether hover expansion mode is turned on for @tree_view."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE if @tree_view is in hover selection mode"
+                }, 
+                "version": "2.6 ", 
+                "name": "get_hover_selection", 
+                "parameters": null, 
+                "description": "Returns whether hover selection mode is turned on for @tree_view."
+            }, 
+            {
+                "returns": {
+                    "type": "Integer", 
+                    "description": "the amount of extra indentation for child levels in"
+                }, 
+                "version": "2.12", 
+                "name": "get_level_indentation", 
+                "parameters": null, 
+                "description": "Returns the amount, in pixels, of extra indentation for child levels\nin @tree_view.\n\n@tree_view.  A return value of 0 means that this feature is disabled."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.TreeModel", 
+                    "description": "A #GtkTreeModel, or %NULL if none is currently being used."
+                }, 
+                "version": "", 
+                "name": "get_model", 
+                "parameters": null, 
+                "description": "Returns the model the #GtkTreeView is based on.  Returns %NULL if the\nmodel is unset."
+            }, 
+            {
+                "returns": {
+                    "type": "Integer", 
+                    "description": "The number of columns in the @tree_view"
+                }, 
+                "version": "3.4", 
+                "name": "get_n_columns", 
+                "parameters": null, 
+                "description": "Queries the number of columns in the given @tree_view."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE if a row exists at that coordinate."
+                }, 
+                "version": "", 
+                "name": "get_path_at_pos", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "x", 
+                        "description": "The x position to be identified (relative to bin_window)."
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "y", 
+                        "description": "The y position to be identified (relative to bin_window)."
+                    }, 
+                    {
+                        "type": "ref:Gtk.TreePath", 
+                        "name": "path", 
+                        "description": "A pointer to a #GtkTreePath pointer to be filled in, or %NULL"
+                    }, 
+                    {
+                        "type": "ref:Gtk.TreeViewColumn", 
+                        "name": "column", 
+                        "description": "A pointer to a #GtkTreeViewColumn pointer to be filled in, or %NULL"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "cell_x", 
+                        "description": "A pointer where the X coordinate relative to the cell can be placed, or %NULL"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "cell_y", 
+                        "description": "A pointer where the Y coordinate relative to the cell can be placed, or %NULL"
+                    }
+                ], 
+                "description": "Finds the path at the point (@x, @y), relative to bin_window coordinates\n(please see gtk_tree_view_get_bin_window()).\nThat is, @x and @y are relative to an events coordinates. @x and @y must\ncome from an event on the @tree_view only where <literal>event->window ==\ngtk_tree_view_get_bin_window (<!-- -->)</literal>. It is primarily for\nthings like popup menus. If @path is non-%NULL, then it will be filled\nwith the #GtkTreePath at that point.  This path should be freed with\ngtk_tree_path_free().  If @column is non-%NULL, then it will be filled\nwith the column at that point.  @cell_x and @cell_y return the coordinates\nrelative to the cell background (i.e. the @background_area passed to\ngtk_cell_renderer_render()).  This function is only meaningful if\n@tree_view is realized.  Therefore this function will always return %FALSE\nif @tree_view is not realized or does not have a model.\n\nFor converting widget coordinates (eg. the ones you get from\nGtkWidget::query-tooltip), please see\ngtk_tree_view_convert_widget_to_bin_window_coords()."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE if the tree can be reordered."
+                }, 
+                "version": "", 
+                "name": "get_reorderable", 
+                "parameters": null, 
+                "description": "Retrieves whether the user can reorder the tree via drag-and-drop. See\ngtk_tree_view_set_reorderable()."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.TreeViewRowSeparatorFunc", 
+                    "description": "the current row separator function."
+                }, 
+                "version": "2.6", 
+                "name": "get_row_separator_func", 
+                "parameters": null, 
+                "description": "Returns the current row separator function."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE if rubber banding in @tree_view is enabled."
+                }, 
+                "version": "2.10", 
+                "name": "get_rubber_banding", 
+                "parameters": null, 
+                "description": "Returns whether rubber banding is turned on for @tree_view.  If the\nselection mode is #GTK_SELECTION_MULTIPLE, rubber banding will allow the\nuser to select multiple rows by dragging the mouse."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE if rules are useful for the user of this tree"
+                }, 
+                "version": "", 
+                "name": "get_rules_hint", 
+                "parameters": null, 
+                "description": "Gets the setting set by gtk_tree_view_set_rules_hint()."
+            }, 
+            {
+                "returns": {
+                    "type": "Integer", 
+                    "description": "the column the interactive search code searches in."
+                }, 
+                "version": "", 
+                "name": "get_search_column", 
+                "parameters": null, 
+                "description": "Gets the column searched on by the interactive search code."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.Entry", 
+                    "description": "the entry currently in use as search entry."
+                }, 
+                "version": "2.10", 
+                "name": "get_search_entry", 
+                "parameters": null, 
+                "description": "Returns the #GtkEntry which is currently in use as interactive search\nentry for @tree_view.  In case the built-in entry is being used, %NULL\nwill be returned."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.TreeViewSearchEqualFunc", 
+                    "description": "the currently used compare function for the search code."
+                }, 
+                "version": "", 
+                "name": "get_search_equal_func", 
+                "parameters": null, 
+                "description": "Returns the compare function currently in use."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.TreeViewSearchPositionFunc", 
+                    "description": "the currently used function for positioning the search dialog."
+                }, 
+                "version": "2.10", 
+                "name": "get_search_position_func", 
+                "parameters": null, 
+                "description": "Returns the positioning function currently in use."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.TreeSelection", 
+                    "description": "A #GtkTreeSelection object."
+                }, 
+                "version": "", 
+                "name": "get_selection", 
+                "parameters": null, 
+                "description": "Gets the #GtkTreeSelection associated with @tree_view."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE if expanders are drawn in @tree_view, %FALSE"
+                }, 
+                "version": "2.12", 
+                "name": "get_show_expanders", 
+                "parameters": null, 
+                "description": "Returns whether or not expanders are drawn in @tree_view.\n\notherwise."
+            }, 
+            {
+                "returns": {
+                    "type": "Integer", 
+                    "description": "the index of the tooltip column that is currently being"
+                }, 
+                "version": "2.12", 
+                "name": "get_tooltip_column", 
+                "parameters": null, 
+                "description": "Returns the column of @tree_view's model which is being used for\ndisplaying tooltips on @tree_view's rows.\n\nused, or -1 if this is disabled."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "whether or not the given tooltip context points to a row."
+                }, 
+                "version": "2.12", 
+                "name": "get_tooltip_context", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "x", 
+                        "description": "the x coordinate (relative to widget coordinates)"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "y", 
+                        "description": "the y coordinate (relative to widget coordinates)"
+                    }, 
+                    {
+                        "type": "Boolean", 
+                        "name": "keyboard_tip", 
+                        "description": "whether this is a keyboard tooltip or not"
+                    }, 
+                    {
+                        "type": "ref:Gtk.TreeModel", 
+                        "name": "model", 
+                        "description": "a pointer to receive a #GtkTreeModel or %NULL"
+                    }, 
+                    {
+                        "type": "ref:Gtk.TreePath", 
+                        "name": "path", 
+                        "description": "a pointer to receive a #GtkTreePath or %NULL"
+                    }, 
+                    {
+                        "type": "ref:Gtk.TreeIter", 
+                        "name": "iter", 
+                        "description": "a pointer to receive a #GtkTreeIter or %NULL"
+                    }
+                ], 
+                "description": "This function is supposed to be used in a #GtkWidget::query-tooltip\nsignal handler for #GtkTreeView.  The @x, @y and @keyboard_tip values\nwhich are received in the signal handler, should be passed to this\nfunction without modification.\n\nThe return value indicates whether there is a tree view row at the given\ncoordinates (%TRUE) or not (%FALSE) for mouse tooltips.  For keyboard\ntooltips the row returned will be the cursor row.  When %TRUE, then any of\n@model, @path and @iter which have been provided will be set to point to\nthat row and the corresponding model.  @x and @y will always be converted\nto be relative to @tree_view's bin_window if @keyboard_tooltip is %FALSE."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.Adjustment", 
+                    "description": "A #GtkAdjustment object, or %NULL"
+                }, 
+                "version": "", 
+                "name": "get_vadjustment", 
+                "parameters": null, 
+                "description": "Gets the #GtkAdjustment currently being used for the vertical aspect.\n\nif none is currently being used."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE, if valid paths were placed in @start_path and @end_path."
+                }, 
+                "version": "2.8", 
+                "name": "get_visible_range", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TreePath", 
+                        "name": "start_path", 
+                        "description": "Return location for start of region, or %NULL."
+                    }, 
+                    {
+                        "type": "ref:Gtk.TreePath", 
+                        "name": "end_path", 
+                        "description": "Return location for end of region, or %NULL."
+                    }
+                ], 
+                "description": "Sets @start_path and @end_path to be the first and last visible path.\nNote that there may be invisible paths in between.\n\nThe paths should be freed with gtk_tree_path_free() after use."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "get_visible_rect", 
+                "parameters": [
+                    {
+                        "type": "Gdk.Rectangle", 
+                        "name": "visible_rect", 
+                        "description": "rectangle to fill"
+                    }
+                ], 
+                "description": "Fills @visible_rect with the currently-visible region of the\nbuffer, in tree coordinates. Convert to bin_window coordinates with\ngtk_tree_view_convert_tree_to_bin_window_coords().\nTree coordinates start at 0,0 for row 0 of the tree, and cover the entire\nscrollable area of the tree."
+            }, 
+            {
+                "returns": {
+                    "type": "Integer", 
+                    "description": "The number of columns in @tree_view after insertion."
+                }, 
+                "version": "", 
+                "name": "insert_column", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TreeViewColumn", 
+                        "name": "column", 
+                        "description": "The #GtkTreeViewColumn to be inserted."
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "position", 
+                        "description": "The position to insert @column in."
+                    }
+                ], 
+                "description": "This inserts the @column into the @tree_view at @position.  If @position is\n-1, then the column is inserted at the end. If @tree_view has\n\"fixed_height\" mode enabled, then @column must have its \"sizing\" property\nset to be GTK_TREE_VIEW_COLUMN_FIXED."
+            }, 
+            {
+                "returns": {
+                    "type": "Integer", 
+                    "description": "The number of columns in @tree_view after insertion."
+                }, 
+                "version": "", 
+                "name": "insert_column_with_attributes", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "position", 
+                        "description": "The position to insert the new column in"
+                    }, 
+                    {
+                        "type": "String", 
+                        "name": "title", 
+                        "description": "The title to set the header to"
+                    }, 
+                    {
+                        "type": "ref:Gtk.CellRenderer", 
+                        "name": "cell", 
+                        "description": "The #GtkCellRenderer"
+                    }, 
+                    {
+                        "type": "ref:VarArg", 
+                        "name": null, 
+                        "description": ""
+                    }
+                ], 
+                "description": "Creates a new #GtkTreeViewColumn and inserts it into the @tree_view at\n@position.  If @position is -1, then the newly created column is inserted at\nthe end.  The column is initialized with the attributes given. If @tree_view\nhas \"fixed_height\" mode enabled, then the new column will have its sizing\nproperty set to be GTK_TREE_VIEW_COLUMN_FIXED."
+            }, 
+            {
+                "returns": {
+                    "type": "Integer", 
+                    "description": "number of columns in the tree view post-insert"
+                }, 
+                "version": "", 
+                "name": "insert_column_with_data_func", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "position", 
+                        "description": "Position to insert, -1 for append"
+                    }, 
+                    {
+                        "type": "String", 
+                        "name": "title", 
+                        "description": "column title"
+                    }, 
+                    {
+                        "type": "ref:Gtk.CellRenderer", 
+                        "name": "cell", 
+                        "description": "cell renderer for column"
+                    }, 
+                    {
+                        "type": "ref:Gtk.TreeCellDataFunc", 
+                        "name": "func", 
+                        "description": "function to set attributes of cell renderer"
+                    }, 
+                    {
+                        "type": "Mixed", 
+                        "name": "data", 
+                        "description": "data for @func"
+                    }, 
+                    {
+                        "type": "GLib.DestroyNotify", 
+                        "name": "dnotify", 
+                        "description": "destroy notifier for @data"
+                    }
+                ], 
+                "description": "Convenience function that inserts a new column into the #GtkTreeView\nwith the given cell renderer and a #GtkCellDataFunc to set cell renderer\nattributes (normally using data from the model). See also\ngtk_tree_view_column_set_cell_data_func(), gtk_tree_view_column_pack_start().\nIf @tree_view has \"fixed_height\" mode enabled, then the new column will have its\n\"sizing\" property set to be GTK_TREE_VIEW_COLUMN_FIXED."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE if the area at the given coordinates is blank,"
+                }, 
+                "version": "3.0", 
+                "name": "is_blank_at_pos", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "x", 
+                        "description": "The x position to be identified (relative to bin_window)"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "y", 
+                        "description": "The y position to be identified (relative to bin_window)"
+                    }, 
+                    {
+                        "type": "ref:Gtk.TreePath", 
+                        "name": "path", 
+                        "description": "A pointer to a #GtkTreePath pointer to be filled in, or %NULL"
+                    }, 
+                    {
+                        "type": "ref:Gtk.TreeViewColumn", 
+                        "name": "column", 
+                        "description": "A pointer to a #GtkTreeViewColumn pointer to be filled in, or %NULL"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "cell_x", 
+                        "description": "A pointer where the X coordinate relative to the cell can be placed, or %NULL"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "cell_y", 
+                        "description": "A pointer where the Y coordinate relative to the cell can be placed, or %NULL"
+                    }
+                ], 
+                "description": "Determine whether the point (@x, @y) in @tree_view is blank, that is no\ncell content nor an expander arrow is drawn at the location. If so, the\nlocation can be considered as the background. You might wish to take\nspecial action on clicks on the background, such as clearing a current\nselection, having a custom context menu or starting rubber banding.\n\nThe @x and @y coordinate that are provided must be relative to bin_window\ncoordinates.  That is, @x and @y must come from an event on @tree_view\nwhere <literal>event->window == gtk_tree_view_get_bin_window (<!-- -->)</literal>.\n\nFor converting widget coordinates (eg. the ones you get from\nGtkWidget::query-tooltip), please see\ngtk_tree_view_convert_widget_to_bin_window_coords().\n\nThe @path, @column, @cell_x and @cell_y arguments will be filled in\nlikewise as for gtk_tree_view_get_path_at_pos().  Please see\ngtk_tree_view_get_path_at_pos() for more information.\n\n%FALSE otherwise."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE if a rubber banding operation is currently being"
+                }, 
+                "version": "2.12", 
+                "name": "is_rubber_banding_active", 
+                "parameters": null, 
+                "description": "Returns whether a rubber banding operation is currently being done\nin @tree_view.\n\ndone in @tree_view."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "map_expanded_rows", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TreeViewMappingFunc", 
+                        "name": "func", 
+                        "description": "A function to be called"
+                    }, 
+                    {
+                        "type": "Mixed", 
+                        "name": "data", 
+                        "description": "User data to be passed to the function."
+                    }
+                ], 
+                "description": "Calls @func on all expanded rows."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "move_column_after", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TreeViewColumn", 
+                        "name": "column", 
+                        "description": "The #GtkTreeViewColumn to be moved."
+                    }, 
+                    {
+                        "type": "ref:Gtk.TreeViewColumn", 
+                        "name": "base_column", 
+                        "description": "The #GtkTreeViewColumn to be moved relative to, or %NULL."
+                    }
+                ], 
+                "description": "Moves @column to be after to @base_column.  If @base_column is %NULL, then\n@column is placed in the first position."
+            }, 
+            {
+                "returns": {
+                    "type": "Integer", 
+                    "description": "The number of columns in @tree_view after removing."
+                }, 
+                "version": "", 
+                "name": "remove_column", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TreeViewColumn", 
+                        "name": "column", 
+                        "description": "The #GtkTreeViewColumn to remove."
+                    }
+                ], 
+                "description": "Removes @column from @tree_view."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "row_activated", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TreePath", 
+                        "name": "path", 
+                        "description": "The #GtkTreePath to be activated."
+                    }, 
+                    {
+                        "type": "ref:Gtk.TreeViewColumn", 
+                        "name": "column", 
+                        "description": "The #GtkTreeViewColumn to be activated."
+                    }
+                ], 
+                "description": "Activates the cell determined by @path and @column."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE if #path is expanded."
+                }, 
+                "version": "", 
+                "name": "row_expanded", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TreePath", 
+                        "name": "path", 
+                        "description": "A #GtkTreePath to test expansion state."
+                    }
+                ], 
+                "description": "Returns %TRUE if the node pointed to by @path is expanded in @tree_view."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "scroll_to_cell", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TreePath", 
+                        "name": "path", 
+                        "description": "The path of the row to move to, or %NULL."
+                    }, 
+                    {
+                        "type": "ref:Gtk.TreeViewColumn", 
+                        "name": "column", 
+                        "description": "The #GtkTreeViewColumn to move horizontally to, or %NULL."
+                    }, 
+                    {
+                        "type": "Boolean", 
+                        "name": "use_align", 
+                        "description": "whether to use alignment arguments, or %FALSE."
+                    }, 
+                    {
+                        "type": "Float", 
+                        "name": "row_align", 
+                        "description": "The vertical alignment of the row specified by @path."
+                    }, 
+                    {
+                        "type": "Float", 
+                        "name": "col_align", 
+                        "description": "The horizontal alignment of the column specified by @column."
+                    }
+                ], 
+                "description": "Moves the alignments of @tree_view to the position specified by @column and\n@path.  If @column is %NULL, then no horizontal scrolling occurs.  Likewise,\nif @path is %NULL no vertical scrolling occurs.  At a minimum, one of @column\nor @path need to be non-%NULL.  @row_align determines where the row is\nplaced, and @col_align determines where @column is placed.  Both are expected\nto be between 0.0 and 1.0. 0.0 means left/top alignment, 1.0 means\nright/bottom alignment, 0.5 means center.\n\nIf @use_align is %FALSE, then the alignment arguments are ignored, and the\ntree does the minimum amount of work to scroll the cell onto the screen.\nThis means that the cell will be scrolled to the edge closest to its current\nposition.  If the cell is currently visible on the screen, nothing is done.\n\nThis function only works if the model is set, and @path is a valid row on the\nmodel.  If the model changes before the @tree_view is realized, the centered\npath will be modified to reflect this change."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "scroll_to_point", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "tree_x", 
+                        "description": "X coordinate of new top-left pixel of visible area, or -1"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "tree_y", 
+                        "description": "Y coordinate of new top-left pixel of visible area, or -1"
+                    }
+                ], 
+                "description": "Scrolls the tree view such that the top-left corner of the visible\narea is @tree_x, @tree_y, where @tree_x and @tree_y are specified\nin tree coordinates.  The @tree_view must be realized before\nthis function is called.  If it isn't, you probably want to be\nusing gtk_tree_view_scroll_to_cell().\n\nIf either @tree_x or @tree_y are -1, then that direction isn't scrolled."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_column_drag_function", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TreeViewColumnDropFunc", 
+                        "name": "func", 
+                        "description": "A function to determine which columns are reorderable, or %NULL."
+                    }, 
+                    {
+                        "type": "Mixed", 
+                        "name": "user_data", 
+                        "description": "User data to be passed to @func, or %NULL"
+                    }, 
+                    {
+                        "type": "GLib.DestroyNotify", 
+                        "name": "destroy", 
+                        "description": "Destroy notifier for @user_data, or %NULL"
+                    }
+                ], 
+                "description": "Sets a user function for determining where a column may be dropped when\ndragged.  This function is called on every column pair in turn at the\nbeginning of a column drag to determine where a drop can take place.  The\narguments passed to @func are: the @tree_view, the #GtkTreeViewColumn being\ndragged, the two #GtkTreeViewColumn s determining the drop spot, and\n@user_data.  If either of the #GtkTreeViewColumn arguments for the drop spot\nare %NULL, then they indicate an edge.  If @func is set to be %NULL, then\n@tree_view reverts to the default behavior of allowing all columns to be\ndropped everywhere."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_cursor", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TreePath", 
+                        "name": "path", 
+                        "description": "A #GtkTreePath"
+                    }, 
+                    {
+                        "type": "ref:Gtk.TreeViewColumn", 
+                        "name": "focus_column", 
+                        "description": "A #GtkTreeViewColumn, or %NULL"
+                    }, 
+                    {
+                        "type": "Boolean", 
+                        "name": "start_editing", 
+                        "description": "%TRUE if the specified cell should start being edited."
+                    }
+                ], 
+                "description": "Sets the current keyboard focus to be at @path, and selects it.  This is\nuseful when you want to focus the user's attention on a particular row.  If\n@focus_column is not %NULL, then focus is given to the column specified by \nit. Additionally, if @focus_column is specified, and @start_editing is \n%TRUE, then editing should be started in the specified cell.  \nThis function is often followed by @gtk_widget_grab_focus (@tree_view) \nin order to give keyboard focus to the widget.  Please note that editing \ncan only happen when the widget is realized.\n\nIf @path is invalid for @model, the current cursor (if any) will be unset\nand the function will return without failing."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.2", 
+                "name": "set_cursor_on_cell", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TreePath", 
+                        "name": "path", 
+                        "description": "A #GtkTreePath"
+                    }, 
+                    {
+                        "type": "ref:Gtk.TreeViewColumn", 
+                        "name": "focus_column", 
+                        "description": "A #GtkTreeViewColumn, or %NULL"
+                    }, 
+                    {
+                        "type": "ref:Gtk.CellRenderer", 
+                        "name": "focus_cell", 
+                        "description": "A #GtkCellRenderer, or %NULL"
+                    }, 
+                    {
+                        "type": "Boolean", 
+                        "name": "start_editing", 
+                        "description": "%TRUE if the specified cell should start being edited."
+                    }
+                ], 
+                "description": "Sets the current keyboard focus to be at @path, and selects it.  This is\nuseful when you want to focus the user's attention on a particular row.  If\n@focus_column is not %NULL, then focus is given to the column specified by\nit. If @focus_column and @focus_cell are not %NULL, and @focus_column\ncontains 2 or more editable or activatable cells, then focus is given to\nthe cell specified by @focus_cell. Additionally, if @focus_column is\nspecified, and @start_editing is %TRUE, then editing should be started in\nthe specified cell.  This function is often followed by\n@gtk_widget_grab_focus (@tree_view) in order to give keyboard focus to the\nwidget.  Please note that editing can only happen when the widget is\nrealized.\n\nIf @path is invalid for @model, the current cursor (if any) will be unset\nand the function will return without failing."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_destroy_count_func", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TreeDestroyCountFunc", 
+                        "name": "func", 
+                        "description": "Function to be called when a view row is destroyed, or %NULL"
+                    }, 
+                    {
+                        "type": "Mixed", 
+                        "name": "data", 
+                        "description": "User data to be passed to @func, or %NULL"
+                    }, 
+                    {
+                        "type": "GLib.DestroyNotify", 
+                        "name": "destroy", 
+                        "description": "Destroy notifier for @data, or %NULL"
+                    }
+                ], 
+                "description": "This function should almost never be used.  It is meant for private use by\nATK for determining the number of visible children that are removed when the\nuser collapses a row, or a row is deleted."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_drag_dest_row", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TreePath", 
+                        "name": "path", 
+                        "description": "The path of the row to highlight, or %NULL"
+                    }, 
+                    {
+                        "type": "ref:Gtk.TreeViewDropPosition", 
+                        "name": "pos", 
+                        "description": "Specifies whether to drop before, after or into the row"
+                    }
+                ], 
+                "description": "Sets the row that is highlighted for feedback.\nIf @path is %NULL, an existing highlight is removed."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_enable_search", 
+                "parameters": [
+                    {
+                        "type": "Boolean", 
+                        "name": "enable_search", 
+                        "description": "%TRUE, if the user can search interactively"
+                    }
+                ], 
+                "description": "If @enable_search is set, then the user can type in text to search through\nthe tree interactively (this is sometimes called \"typeahead find\").\n\nNote that even if this is %FALSE, the user can still initiate a search \nusing the \"start-interactive-search\" key binding."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.10", 
+                "name": "set_enable_tree_lines", 
+                "parameters": [
+                    {
+                        "type": "Boolean", 
+                        "name": "enabled", 
+                        "description": "%TRUE to enable tree line drawing, %FALSE otherwise."
+                    }
+                ], 
+                "description": "Sets whether to draw lines interconnecting the expanders in @tree_view.\nThis does not have any visible effects for lists."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_expander_column", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TreeViewColumn", 
+                        "name": "column", 
+                        "description": "%NULL, or the column to draw the expander arrow at."
+                    }
+                ], 
+                "description": "Sets the column to draw the expander arrow at. It must be in @tree_view.  \nIf @column is %NULL, then the expander arrow is always at the first \nvisible column.\n\nIf you do not want expander arrow to appear in your tree, set the \nexpander column to a hidden column."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.6 ", 
+                "name": "set_fixed_height_mode", 
+                "parameters": [
+                    {
+                        "type": "Boolean", 
+                        "name": "enable", 
+                        "description": "%TRUE to enable fixed height mode"
+                    }
+                ], 
+                "description": "Enables or disables the fixed height mode of @tree_view. \nFixed height mode speeds up #GtkTreeView by assuming that all \nrows have the same height. \nOnly enable this option if all rows are the same height and all\ncolumns are of type %GTK_TREE_VIEW_COLUMN_FIXED."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.10", 
+                "name": "set_grid_lines", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TreeViewGridLines", 
+                        "name": "grid_lines", 
+                        "description": "a #GtkTreeViewGridLines value indicating which grid lines to enable."
+                    }
+                ], 
+                "description": "Sets which grid lines to draw in @tree_view."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_hadjustment", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Adjustment", 
+                        "name": "adjustment", 
+                        "description": "The #GtkAdjustment to set, or %NULL"
+                    }
+                ], 
+                "description": "Sets the #GtkAdjustment for the current horizontal aspect."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_headers_clickable", 
+                "parameters": [
+                    {
+                        "type": "Boolean", 
+                        "name": "setting", 
+                        "description": "%TRUE if the columns are clickable."
+                    }
+                ], 
+                "description": "Allow the column title buttons to be clicked."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_headers_visible", 
+                "parameters": [
+                    {
+                        "type": "Boolean", 
+                        "name": "headers_visible", 
+                        "description": "%TRUE if the headers are visible"
+                    }
+                ], 
+                "description": "Sets the visibility state of the headers."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.6", 
+                "name": "set_hover_expand", 
+                "parameters": [
+                    {
+                        "type": "Boolean", 
+                        "name": "expand", 
+                        "description": "%TRUE to enable hover selection mode"
+                    }
+                ], 
+                "description": "Enables or disables the hover expansion mode of @tree_view.\nHover expansion makes rows expand or collapse if the pointer \nmoves over them."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.6", 
+                "name": "set_hover_selection", 
+                "parameters": [
+                    {
+                        "type": "Boolean", 
+                        "name": "hover", 
+                        "description": "%TRUE to enable hover selection mode"
+                    }
+                ], 
+                "description": "Enables or disables the hover selection mode of @tree_view.\nHover selection makes the selected row follow the pointer.\nCurrently, this works only for the selection modes \n%GTK_SELECTION_SINGLE and %GTK_SELECTION_BROWSE."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.12", 
+                "name": "set_level_indentation", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "indentation", 
+                        "description": "the amount, in pixels, of extra indentation in @tree_view."
+                    }
+                ], 
+                "description": "Sets the amount of extra indentation for child levels to use in @tree_view\nin addition to the default indentation.  The value should be specified in\npixels, a value of 0 disables this feature and in this case only the default\nindentation will be used.\nThis does not have any visible effects for lists."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_model", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TreeModel", 
+                        "name": "model", 
+                        "description": "The model."
+                    }
+                ], 
+                "description": "Sets the model for a #GtkTreeView.  If the @tree_view already has a model\nset, it will remove it before setting the new model.  If @model is %NULL,\nthen it will unset the old model."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_reorderable", 
+                "parameters": [
+                    {
+                        "type": "Boolean", 
+                        "name": "reorderable", 
+                        "description": "%TRUE, if the tree can be reordered."
+                    }
+                ], 
+                "description": "This function is a convenience function to allow you to reorder\nmodels that support the #GtkTreeDragSourceIface and the\n#GtkTreeDragDestIface.  Both #GtkTreeStore and #GtkListStore support\nthese.  If @reorderable is %TRUE, then the user can reorder the\nmodel by dragging and dropping rows. The developer can listen to\nthese changes by connecting to the model's row_inserted and\nrow_deleted signals. The reordering is implemented by setting up\nthe tree view as a drag source and destination. Therefore, drag and\ndrop can not be used in a reorderable view for any other purpose.\n\nThis function does not give you any degree of control over the order -- any\nreordering is allowed.  If more control is needed, you should probably\nhandle drag and drop manually."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.6", 
+                "name": "set_row_separator_func", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TreeViewRowSeparatorFunc", 
+                        "name": "func", 
+                        "description": "a #GtkTreeViewRowSeparatorFunc"
+                    }, 
+                    {
+                        "type": "Mixed", 
+                        "name": "data", 
+                        "description": "user data to pass to @func, or %NULL"
+                    }, 
+                    {
+                        "type": "GLib.DestroyNotify", 
+                        "name": "destroy", 
+                        "description": "destroy notifier for @data, or %NULL"
+                    }
+                ], 
+                "description": "Sets the row separator function, which is used to determine\nwhether a row should be drawn as a separator. If the row separator\nfunction is %NULL, no separators are drawn. This is the default value."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.10", 
+                "name": "set_rubber_banding", 
+                "parameters": [
+                    {
+                        "type": "Boolean", 
+                        "name": "enable", 
+                        "description": "%TRUE to enable rubber banding"
+                    }
+                ], 
+                "description": "Enables or disables rubber banding in @tree_view.  If the selection mode\nis #GTK_SELECTION_MULTIPLE, rubber banding will allow the user to select\nmultiple rows by dragging the mouse."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_rules_hint", 
+                "parameters": [
+                    {
+                        "type": "Boolean", 
+                        "name": "setting", 
+                        "description": "%TRUE if the tree requires reading across rows"
+                    }
+                ], 
+                "description": "This function tells GTK+ that the user interface for your\napplication requires users to read across tree rows and associate\ncells with one another. By default, GTK+ will then render the tree\nwith alternating row colors. Do <emphasis>not</emphasis> use it\njust because you prefer the appearance of the ruled tree; that's a\nquestion for the theme. Some themes will draw tree rows in\nalternating colors even when rules are turned off, and users who\nprefer that appearance all the time can choose those themes. You\nshould call this function only as a <emphasis>semantic</emphasis>\nhint to the theme engine that your tree makes alternating colors\nuseful from a functional standpoint (since it has lots of columns,\ngenerally)."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_search_column", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "column", 
+                        "description": "the column of the model to search in, or -1 to disable searching"
+                    }
+                ], 
+                "description": "Sets @column as the column where the interactive search code should\nsearch in for the current model. \n\nIf the search column is set, users can use the \"start-interactive-search\"\nkey binding to bring up search popup. The enable-search property controls\nwhether simply typing text will also start an interactive search.\n\nNote that @column refers to a column of the current model. The search \ncolumn is reset to -1 when the model is changed."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.10", 
+                "name": "set_search_entry", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Entry", 
+                        "name": "entry", 
+                        "description": "the entry the interactive search code of @tree_view should use or %NULL"
+                    }
+                ], 
+                "description": "Sets the entry which the interactive search code will use for this\n@tree_view.  This is useful when you want to provide a search entry\nin our interface at all time at a fixed position.  Passing %NULL for\n@entry will make the interactive search code use the built-in popup\nentry again."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_search_equal_func", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TreeViewSearchEqualFunc", 
+                        "name": "search_equal_func", 
+                        "description": "the compare function to use during the search"
+                    }, 
+                    {
+                        "type": "Mixed", 
+                        "name": "search_user_data", 
+                        "description": "user data to pass to @search_equal_func, or %NULL"
+                    }, 
+                    {
+                        "type": "GLib.DestroyNotify", 
+                        "name": "search_destroy", 
+                        "description": "Destroy notifier for @search_user_data, or %NULL"
+                    }
+                ], 
+                "description": "Sets the compare function for the interactive search capabilities; note\nthat somewhat like strcmp() returning 0 for equality\n#GtkTreeViewSearchEqualFunc returns %FALSE on matches."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.10", 
+                "name": "set_search_position_func", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TreeViewSearchPositionFunc", 
+                        "name": "func", 
+                        "description": "the function to use to position the search dialog, or %NULL to use the default search position function"
+                    }, 
+                    {
+                        "type": "Mixed", 
+                        "name": "data", 
+                        "description": "user data to pass to @func, or %NULL"
+                    }, 
+                    {
+                        "type": "GLib.DestroyNotify", 
+                        "name": "destroy", 
+                        "description": "Destroy notifier for @data, or %NULL"
+                    }
+                ], 
+                "description": "Sets the function to use when positioning the search dialog."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.12", 
+                "name": "set_show_expanders", 
+                "parameters": [
+                    {
+                        "type": "Boolean", 
+                        "name": "enabled", 
+                        "description": "%TRUE to enable expander drawing, %FALSE otherwise."
+                    }
+                ], 
+                "description": "Sets whether to draw and enable expanders and indent child rows in\n@tree_view.  When disabled there will be no expanders visible in trees\nand there will be no way to expand and collapse rows by default.  Also\nnote that hiding the expanders will disable the default indentation.  You\ncan set a custom indentation in this case using\ngtk_tree_view_set_level_indentation().\nThis does not have any visible effects for lists."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.12", 
+                "name": "set_tooltip_cell", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Tooltip", 
+                        "name": "tooltip", 
+                        "description": "a #GtkTooltip"
+                    }, 
+                    {
+                        "type": "ref:Gtk.TreePath", 
+                        "name": "path", 
+                        "description": "a #GtkTreePath or %NULL"
+                    }, 
+                    {
+                        "type": "ref:Gtk.TreeViewColumn", 
+                        "name": "column", 
+                        "description": "a #GtkTreeViewColumn or %NULL"
+                    }, 
+                    {
+                        "type": "ref:Gtk.CellRenderer", 
+                        "name": "cell", 
+                        "description": "a #GtkCellRenderer or %NULL"
+                    }
+                ], 
+                "description": "Sets the tip area of @tooltip to the area @path, @column and @cell have\nin common.  For example if @path is %NULL and @column is set, the tip\narea will be set to the full area covered by @column.  See also\ngtk_tooltip_set_tip_area().\n\nNote that if @path is not specified and @cell is set and part of a column\ncontaining the expander, the tooltip might not show and hide at the correct\nposition.  In such cases @path must be set to the current node under the\nmouse cursor for this function to operate correctly.\n\nSee also gtk_tree_view_set_tooltip_column() for a simpler alternative."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.12", 
+                "name": "set_tooltip_column", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "column", 
+                        "description": "an integer, which is a valid column number for @tree_view's model"
+                    }
+                ], 
+                "description": "If you only plan to have simple (text-only) tooltips on full rows, you\ncan use this function to have #GtkTreeView handle these automatically\nfor you. @column should be set to the column in @tree_view's model\ncontaining the tooltip texts, or -1 to disable this feature.\n\nWhen enabled, #GtkWidget::has-tooltip will be set to %TRUE and\n@tree_view will connect a #GtkWidget::query-tooltip signal handler.\n\nNote that the signal handler sets the text with gtk_tooltip_set_markup(),\nso &amp;, &lt;, etc have to be escaped in the text."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.12", 
+                "name": "set_tooltip_row", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Tooltip", 
+                        "name": "tooltip", 
+                        "description": "a #GtkTooltip"
+                    }, 
+                    {
+                        "type": "ref:Gtk.TreePath", 
+                        "name": "path", 
+                        "description": "a #GtkTreePath"
+                    }
+                ], 
+                "description": "Sets the tip area of @tooltip to be the area covered by the row at @path.\nSee also gtk_tree_view_set_tooltip_column() for a simpler alternative.\nSee also gtk_tooltip_set_tip_area()."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_vadjustment", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Adjustment", 
+                        "name": "adjustment", 
+                        "description": "The #GtkAdjustment to set, or %NULL"
+                    }
+                ], 
+                "description": "Sets the #GtkAdjustment for the current vertical aspect."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "unset_rows_drag_dest", 
+                "parameters": null, 
+                "description": "Undoes the effect of\ngtk_tree_view_enable_model_drag_dest(). Calling this method sets\n#GtkTreeView:reorderable to %FALSE."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "unset_rows_drag_source", 
+                "parameters": null, 
+                "description": "Undoes the effect of\ngtk_tree_view_enable_model_drag_source(). Calling this method sets\n#GtkTreeView:reorderable to %FALSE."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "columns_changed", 
+                "parameters": null, 
+                "description": ""
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "cursor_changed", 
+                "parameters": null, 
+                "description": ""
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "expand_collapse_cursor_row", 
+                "parameters": [
+                    {
+                        "type": "Boolean", 
+                        "name": "logical", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Boolean", 
+                        "name": "expand", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Boolean", 
+                        "name": "open_all", 
+                        "description": ""
+                    }
+                ], 
+                "description": ""
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "move_cursor", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.MovementStep", 
+                        "name": "step", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "count", 
+                        "description": ""
+                    }
+                ], 
+                "description": ""
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "row_activated", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TreePath", 
+                        "name": "path", 
+                        "description": "The #GtkTreePath to be activated."
+                    }, 
+                    {
+                        "type": "ref:Gtk.TreeViewColumn", 
+                        "name": "column", 
+                        "description": "The #GtkTreeViewColumn to be activated."
+                    }
+                ], 
+                "description": "Activates the cell determined by @path and @column."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "row_collapsed", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TreeIter", 
+                        "name": "iter", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "ref:Gtk.TreePath", 
+                        "name": "path", 
+                        "description": ""
+                    }
+                ], 
+                "description": ""
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "row_expanded", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TreeIter", 
+                        "name": "iter", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "ref:Gtk.TreePath", 
+                        "name": "path", 
+                        "description": ""
+                    }
+                ], 
+                "description": ""
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "select_all", 
+                "parameters": null, 
+                "description": ""
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "select_cursor_parent", 
+                "parameters": null, 
+                "description": ""
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "select_cursor_row", 
+                "parameters": [
+                    {
+                        "type": "Boolean", 
+                        "name": "start_editing", 
+                        "description": ""
+                    }
+                ], 
+                "description": ""
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "start_interactive_search", 
+                "parameters": null, 
+                "description": ""
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "test_collapse_row", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TreeIter", 
+                        "name": "iter", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "ref:Gtk.TreePath", 
+                        "name": "path", 
+                        "description": ""
+                    }
+                ], 
+                "description": ""
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "test_expand_row", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TreeIter", 
+                        "name": "iter", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "ref:Gtk.TreePath", 
+                        "name": "path", 
+                        "description": ""
+                    }
+                ], 
+                "description": ""
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "toggle_cursor_row", 
+                "parameters": null, 
+                "description": ""
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "unselect_all", 
+                "parameters": null, 
+                "description": ""
+            }
+        ], 
+        "properties": [
+            {
+                "writable": false, 
+                "type": "Gtk.TreeViewGridLines", 
+                "readable": false, 
+                "name": "enable-grid-lines", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "enable-search", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "enable-tree-lines", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Gtk.TreeViewColumn", 
+                "readable": false, 
+                "name": "expander-column", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "fixed-height-mode", 
+                "description": "Setting the ::fixed-height-mode property to %TRUE speeds up \n#GtkTreeView by assuming that all rows have the same height. \nOnly enable this option if all rows are the same height.  \nPlease see gtk_tree_view_set_fixed_height_mode() for more \ninformation on this option."
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "headers-clickable", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "headers-visible", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "hover-expand", 
+                "description": "Enables or disables the hover expansion mode of @tree_view.\nHover expansion makes rows expand or collapse if the pointer moves \nover them.\n\nThis mode is primarily intended for treeviews in popups, e.g.\nin #GtkComboBox or #GtkEntryCompletion."
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "hover-selection", 
+                "description": "Enables or disables the hover selection mode of @tree_view.\nHover selection makes the selected row follow the pointer.\nCurrently, this works only for the selection modes \n%GTK_SELECTION_SINGLE and %GTK_SELECTION_BROWSE.\n\nThis mode is primarily intended for treeviews in popups, e.g.\nin #GtkComboBox or #GtkEntryCompletion."
+            }, 
+            {
+                "writable": false, 
+                "type": "Integer", 
+                "readable": false, 
+                "name": "level-indentation", 
+                "description": "Extra indentation for each level."
+            }, 
+            {
+                "writable": false, 
+                "type": "Gtk.TreeModel", 
+                "readable": false, 
+                "name": "model", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "reorderable", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "rubber-banding", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "rules-hint", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Integer", 
+                "readable": false, 
+                "name": "search-column", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "show-expanders", 
+                "description": "%TRUE if the view has expanders."
+            }, 
+            {
+                "writable": false, 
+                "type": "Integer", 
+                "readable": false, 
+                "name": "tooltip-column", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "ubuntu-almost-fixed-height-mode", 
+                "description": ""
+            }
+        ]
+    }, 
+    "fullname": "Class Gtk.TreeView", 
+    "id": "Docs-TreeView", 
+    "description": "Widget that displays any object that implements the #GtkTreeModel interface.\n\nPlease refer to the <link linkend=\"TreeWidget\">tree widget conceptual\noverview</link> for an overview of all the objects and data types related\nto the tree widget and how they work together.\n\nSeveral different coordinate systems are exposed in the GtkTreeView API.\nThese are:\n\n<inlinegraphic fileref=\"tree-view-coordinates.png\" format=\"PNG\"></inlinegraphic>\n<variablelist><title>Coordinate systems in GtkTreeView API</title>\n<varlistentry><term>Widget coordinates</term>\n<listitem>\n<para>\nCoordinates relative to the widget (usually <literal>widget->window</literal>).\n</para>\n</listitem>\n</varlistentry>\n<varlistentry><term>Bin window coordinates</term>\n<listitem>\n<para>\nCoordinates relative to the window that GtkTreeView renders to.\n</para>\n</listitem>\n</varlistentry>\n<varlistentry><term>Tree coordinates</term>\n<listitem>\n<para>\nCoordinates relative to the entire scrollable area of GtkTreeView. These\ncoordinates start at (0, 0) for row 0 of the tree.\n</para>\n</listitem>\n</varlistentry>\n</variablelist>\n\nSeveral functions are available for converting between the different\ncoordinate systems.  The most common translations are between widget and bin\nwindow coordinates and between bin window and tree coordinates. For the\nformer you can use gtk_tree_view_convert_widget_to_bin_window_coords()\n(and vice versa), for the latter gtk_tree_view_convert_bin_window_to_tree_coords()\n(and vice versa).\n\n<refsect2 id=\"GtkTreeView-BUILDER-UI\">\n<title>GtkTreeView as GtkBuildable</title>\nThe GtkTreeView implementation of the GtkBuildable interface accepts\n#GtkTreeViewColumn objects as &lt;child&gt; elements and exposes the\ninternal #GtkTreeSelection in UI definitions.\n<example>\n<title>A UI definition fragment with GtkTreeView</title>\n<programlisting><![CDATA[\n<object class=\"GtkTreeView\" id=\"treeview\">\n<property name=\"model\">liststore1</property>\n<child>\n<object class=\"GtkTreeViewColumn\" id=\"test-column\">\n<property name=\"title\">Test</property>\n<child>\n<object class=\"GtkCellRendererText\" id=\"test-renderer\"/>\n<attributes>\n<attribute name=\"text\">1</attribute>\n</attributes>\n</child>\n</object>\n</child>\n<child internal-child=\"selection\">\n<object class=\"GtkTreeSelection\" id=\"selection\">\n<signal name=\"changed\" handler=\"on_treeview_selection_changed\"/>\n</object>\n</child>\n</object>\n]]></programlisting>\n</example>\n</refsect2>"
+}

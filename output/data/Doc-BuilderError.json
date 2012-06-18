@@ -1,0 +1,49 @@
+{
+    "leaf": true, 
+    "name": "BuilderError", 
+    "text": "BuilderError", 
+    "version": null, 
+    "members": {
+        "properties": [
+            {
+                "name": "invalid_type_function", 
+                "value": "0"
+            }, 
+            {
+                "name": "unhandled_tag", 
+                "value": "1"
+            }, 
+            {
+                "name": "missing_attribute", 
+                "value": "2"
+            }, 
+            {
+                "name": "invalid_attribute", 
+                "value": "3"
+            }, 
+            {
+                "name": "invalid_tag", 
+                "value": "4"
+            }, 
+            {
+                "name": "missing_property_value", 
+                "value": "5"
+            }, 
+            {
+                "name": "invalid_value", 
+                "value": "6"
+            }, 
+            {
+                "name": "version_mismatch", 
+                "value": "7"
+            }, 
+            {
+                "name": "duplicate_id", 
+                "value": "8"
+            }
+        ]
+    }, 
+    "fullname": "Enumeration Gtk.BuilderError", 
+    "id": "Docs-BuilderError", 
+    "description": ""
+}

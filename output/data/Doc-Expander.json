@@ -1,0 +1,342 @@
+{
+    "isAbstract": false, 
+    "leaf": true, 
+    "name": "Expander", 
+    "text": "Expander", 
+    "interfaces": [
+        [
+            "Atk.ImplementorIface"
+        ], 
+        [
+            "Buildable"
+        ]
+    ], 
+    "parents": [
+        "Expander", 
+        "Bin", 
+        "Container", 
+        "Widget", 
+        "GObject.InitiallyUnowned"
+    ], 
+    "members": {
+        "signals": [
+            {
+                "version": "", 
+                "when": "last", 
+                "name": "activate", 
+                "description": ""
+            }
+        ], 
+        "methods": [
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a new #GtkExpander widget.", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": "2.4", 
+                "name": "Gtk.Expander(String label)", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "label"
+                    }
+                ]
+            }, 
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a new #GtkExpander widget.", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": "2.4", 
+                "name": "Gtk.Expander(String label)", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "label"
+                    }
+                ]
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "the current state of the expander"
+                }, 
+                "version": "2.4", 
+                "name": "get_expanded", 
+                "parameters": null, 
+                "description": "Queries a #GtkExpander and returns its current state. Returns %TRUE\nif the child widget is revealed.\n\nSee gtk_expander_set_expanded()."
+            }, 
+            {
+                "returns": {
+                    "type": "String", 
+                    "description": "The text of the label widget. This string is owned"
+                }, 
+                "version": "2.4", 
+                "name": "get_label", 
+                "parameters": null, 
+                "description": "Fetches the text from a label widget including any embedded\nunderlines indicating mnemonics and Pango markup, as set by\ngtk_expander_set_label(). If the label text has not been set the\nreturn value will be %NULL. This will be the case if you create an\nempty button with gtk_button_new() to use as a container.\n\nNote that this function behaved differently in versions prior to\n2.14 and used to return the label text stripped of embedded\nunderlines indicating mnemonics and Pango markup. This problem can\nbe avoided by fetching the label text directly from the label\nwidget.\n\nby the widget and must not be modified or freed."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE if the label widget will fill all"
+                }, 
+                "version": "2.22", 
+                "name": "get_label_fill", 
+                "parameters": null, 
+                "description": "Returns whether the label widget will fill all available\nhorizontal space allocated to @expander.\n\navailable horizontal space"
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.Widget", 
+                    "description": "the label widget,"
+                }, 
+                "version": "2.4", 
+                "name": "get_label_widget", 
+                "parameters": null, 
+                "description": "Retrieves the label widget for the frame. See\ngtk_expander_set_label_widget().\n\nor %NULL if there is none"
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "the \"resize toplevel\" setting."
+                }, 
+                "version": "3.2", 
+                "name": "get_resize_toplevel", 
+                "parameters": null, 
+                "description": "Returns whether the expander will resize the toplevel widget\ncontaining the expander upon resizing and collpasing."
+            }, 
+            {
+                "returns": {
+                    "type": "Integer", 
+                    "description": "spacing between the expander and child"
+                }, 
+                "version": "2.4", 
+                "name": "get_spacing", 
+                "parameters": null, 
+                "description": "Gets the value set by gtk_expander_set_spacing()."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE if the label's text will be parsed for markup"
+                }, 
+                "version": "2.4", 
+                "name": "get_use_markup", 
+                "parameters": null, 
+                "description": "Returns whether the label's text is interpreted as marked up with\nthe <link linkend=\"PangoMarkupFormat\">Pango text markup\nlanguage</link>. See gtk_expander_set_use_markup()."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE if an embedded underline in the expander"
+                }, 
+                "version": "2.4", 
+                "name": "get_use_underline", 
+                "parameters": null, 
+                "description": "Returns whether an embedded underline in the expander label\nindicates a mnemonic. See gtk_expander_set_use_underline().\n\nlabel indicates the mnemonic accelerator keys"
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.4", 
+                "name": "set_expanded", 
+                "parameters": [
+                    {
+                        "type": "Boolean", 
+                        "name": "expanded", 
+                        "description": "whether the child widget is revealed"
+                    }
+                ], 
+                "description": "Sets the state of the expander. Set to %TRUE, if you want\nthe child widget to be revealed, and %FALSE if you want the\nchild widget to be hidden."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.4", 
+                "name": "set_label", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "label", 
+                        "description": "a string"
+                    }
+                ], 
+                "description": "Sets the text of the label of the expander to @label.\n\nThis will also clear any previously set labels."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.22", 
+                "name": "set_label_fill", 
+                "parameters": [
+                    {
+                        "type": "Boolean", 
+                        "name": "label_fill", 
+                        "description": "%TRUE if the label should should fill all available horizontal space"
+                    }
+                ], 
+                "description": "Sets whether the label widget should fill all available\nhorizontal space allocated to @expander."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.4", 
+                "name": "set_label_widget", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "label_widget", 
+                        "description": "the new label widget"
+                    }
+                ], 
+                "description": "Set the label widget for the expander. This is the widget\nthat will appear embedded alongside the expander arrow."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "3.2", 
+                "name": "set_resize_toplevel", 
+                "parameters": [
+                    {
+                        "type": "Boolean", 
+                        "name": "resize_toplevel", 
+                        "description": "whether to resize the toplevel"
+                    }
+                ], 
+                "description": "Sets whether the expander will resize the toplevel widget\ncontaining the expander upon resizing and collpasing."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.4", 
+                "name": "set_spacing", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "spacing", 
+                        "description": "distance between the expander and child in pixels"
+                    }
+                ], 
+                "description": "Sets the spacing field of @expander, which is the number of\npixels to place between expander and the child."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.4", 
+                "name": "set_use_markup", 
+                "parameters": [
+                    {
+                        "type": "Boolean", 
+                        "name": "use_markup", 
+                        "description": "%TRUE if the label's text should be parsed for markup"
+                    }
+                ], 
+                "description": "Sets whether the text of the label contains markup in <link\nlinkend=\"PangoMarkupFormat\">Pango's text markup\nlanguage</link>. See gtk_label_set_markup()."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.4", 
+                "name": "set_use_underline", 
+                "parameters": [
+                    {
+                        "type": "Boolean", 
+                        "name": "use_underline", 
+                        "description": "%TRUE if underlines in the text indicate mnemonics"
+                    }
+                ], 
+                "description": "If true, an underline in the text of the expander label indicates\nthe next character should be used for the mnemonic accelerator key."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "activate", 
+                "parameters": null, 
+                "description": ""
+            }
+        ], 
+        "properties": [
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "expanded", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "String", 
+                "readable": false, 
+                "name": "label", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "label-fill", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Gtk.Widget", 
+                "readable": false, 
+                "name": "label-widget", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "resize-toplevel", 
+                "description": "When this property is %TRUE, the expander will resize the toplevel\nwidget containing the expander upon expanding and collapsing."
+            }, 
+            {
+                "writable": false, 
+                "type": "Integer", 
+                "readable": false, 
+                "name": "spacing", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "use-markup", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "use-underline", 
+                "description": ""
+            }
+        ]
+    }, 
+    "fullname": "Class Gtk.Expander", 
+    "id": "Docs-Expander", 
+    "description": "A #GtkExpander allows the user to hide or show its child by clicking\non an expander triangle similar to the triangles used in a #GtkTreeView.\n\nNormally you use an expander as you would use any other descendant\nof #GtkBin; you create the child widget and use gtk_container_add()\nto add it to the expander. When the expander is toggled, it will take\ncare of showing and hiding the child automatically.\n\n<refsect2 id=\"expander-special-usage\">\n<title>Special Usage</title>\n<para>\nThere are situations in which you may prefer to show and hide the\nexpanded widget yourself, such as when you want to actually create\nthe widget at expansion time. In this case, create a #GtkExpander\nbut do not add a child to it. The expander widget has an\n#GtkExpander:expanded property which can be used to monitor\nits expansion state. You should watch this property with a signal\nconnection as follows:\n</para>\n<informalexample>\n<programlisting id=\"expander-callback-example\">\nexpander = gtk_expander_new_with_mnemonic (\"_More Options\");\ng_signal_connect (expander, \"notify::expanded\",\nG_CALLBACK (expander_callback), NULL);\n\n...\n\nstatic void\nexpander_callback (GObject    *object,\nGParamSpec *param_spec,\ngpointer    user_data)\n{\nGtkExpander *expander;\n\nexpander = GTK_EXPANDER (object);\n\nif (gtk_expander_get_expanded (expander))\n{\n/&ast; Show or create widgets &ast;/\n}\nelse\n{\n/&ast; Hide or destroy widgets &ast;/\n}\n}\n</programlisting>\n</informalexample>\n</refsect2>\n<refsect2 id=\"GtkExpander-BUILDER-UI\">\n<title>GtkExpander as GtkBuildable</title>\n<para>\nThe GtkExpander implementation of the GtkBuildable interface\nsupports placing a child in the label position by specifying\n\"label\" as the \"type\" attribute of a &lt;child&gt; element.\nA normal content child can be specified without specifying\na &lt;child&gt; type attribute.\n</para>\n<example>\n<title>A UI definition fragment with GtkExpander</title>\n<programlisting><![CDATA[\n<object class=\"GtkExpander\">\n<child type=\"label\">\n<object class=\"GtkLabel\" id=\"expander-label\"/>\n</child>\n<child>\n<object class=\"GtkEntry\" id=\"expander-content\"/>\n</child>\n</object>\n]]></programlisting>\n</example>\n</refsect2>"
+}

@@ -1,0 +1,170 @@
+{
+    "isAbstract": false, 
+    "leaf": true, 
+    "name": "RadioAction", 
+    "text": "RadioAction", 
+    "interfaces": [
+        [
+            "Buildable"
+        ]
+    ], 
+    "parents": [
+        "RadioAction", 
+        "ToggleAction", 
+        "Action", 
+        "GObject.Object"
+    ], 
+    "members": {
+        "signals": [
+            {
+                "version": "2.4", 
+                "when": "first", 
+                "name": "changed", 
+                "description": "The ::changed signal is emitted on every member of a radio group when the\nactive member is changed. The signal gets emitted after the ::activate signals\nfor the previous and current active members."
+            }
+        ], 
+        "methods": [
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a new #GtkRadioAction", 
+                    "name": "ref:Gtk.RadioAction"
+                }, 
+                "version": "2.4", 
+                "name": "Gtk.RadioAction(String name, String label, String tooltip, String stock_id, Integer value)", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "name"
+                    }, 
+                    {
+                        "type": "String", 
+                        "name": "label"
+                    }, 
+                    {
+                        "type": "String", 
+                        "name": "tooltip"
+                    }, 
+                    {
+                        "type": "String", 
+                        "name": "stock_id"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "value"
+                    }
+                ]
+            }, 
+            {
+                "returns": {
+                    "type": "Integer", 
+                    "description": "The value of the currently active group member"
+                }, 
+                "version": "2.4", 
+                "name": "get_current_value", 
+                "parameters": null, 
+                "description": "Obtains the value property of the currently active member of \nthe group to which @action belongs."
+            }, 
+            {
+                "returns": {
+                    "type": "GLib.SList", 
+                    "description": "the list representing the radio group for this object"
+                }, 
+                "version": "2.4", 
+                "name": "get_group", 
+                "parameters": null, 
+                "description": "Returns the list representing the radio group for this object.\nNote that the returned list is only valid until the next change\nto the group. \n\nA common way to set up a group of radio group is the following:\n|[\nGSList *group = NULL;\nGtkRadioAction *action;\n\nwhile (/&ast; more actions to add &ast;/)\n{\naction = gtk_radio_action_new (...);\n\ngtk_radio_action_set_group (action, group);\ngroup = gtk_radio_action_get_group (action);\n}\n]|"
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "3.0", 
+                "name": "join_group", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.RadioAction", 
+                        "name": "group_source", 
+                        "description": "a radio action object whos group we are joining, or %NULL to remove the radio action from its group"
+                    }
+                ], 
+                "description": "Joins a radio action object to the group of another radio action object.\n\nUse this in language bindings instead of the gtk_radio_action_get_group() \nand gtk_radio_action_set_group() methods\n\nA common way to set up a group of radio actions is the following:\n|[\nGtkRadioAction *action;\nGtkRadioAction *last_action;\n\nwhile (/&ast; more actions to add &ast;/)\n{\naction = gtk_radio_action_new (...);\n\ngtk_radio_action_join_group (action, last_action);\nlast_action = action;\n}\n]|"
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.10", 
+                "name": "set_current_value", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "current_value", 
+                        "description": "the new value"
+                    }
+                ], 
+                "description": "Sets the currently active group member to the member with value\nproperty @current_value."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.4", 
+                "name": "set_group", 
+                "parameters": [
+                    {
+                        "type": "GLib.SList", 
+                        "name": "group", 
+                        "description": "a list representing a radio group"
+                    }
+                ], 
+                "description": "Sets the radio group for the radio action object."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "changed", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.RadioAction", 
+                        "name": "current", 
+                        "description": ""
+                    }
+                ], 
+                "description": ""
+            }
+        ], 
+        "properties": [
+            {
+                "writable": false, 
+                "type": "Integer", 
+                "readable": false, 
+                "name": "current-value", 
+                "description": "The value property of the currently active member of the group to which\nthis action belongs."
+            }, 
+            {
+                "writable": false, 
+                "type": "Gtk.RadioAction", 
+                "readable": false, 
+                "name": "group", 
+                "description": "Sets a new group for a radio action."
+            }, 
+            {
+                "writable": false, 
+                "type": "Integer", 
+                "readable": false, 
+                "name": "value", 
+                "description": "The value is an arbitrary integer which can be used as a\nconvenient way to determine which action in the group is \ncurrently active in an ::activate or ::changed signal handler.\nSee gtk_radio_action_get_current_value() and #GtkRadioActionEntry\nfor convenient ways to get and set this property."
+            }
+        ]
+    }, 
+    "fullname": "Class Gtk.RadioAction", 
+    "id": "Docs-RadioAction", 
+    "description": "A #GtkRadioAction is similar to #GtkRadioMenuItem. A number of radio\nactions can be linked together so that only one may be active at any\none time."
+}

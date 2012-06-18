@@ -1,0 +1,472 @@
+{
+    "isAbstract": false, 
+    "leaf": true, 
+    "name": "ListStore", 
+    "text": "ListStore", 
+    "interfaces": [
+        [
+            "Buildable"
+        ], 
+        [
+            "TreeDragDest"
+        ], 
+        [
+            "TreeDragSource"
+        ], 
+        [
+            "TreeModel"
+        ], 
+        [
+            "TreeSortable"
+        ]
+    ], 
+    "parents": [
+        "ListStore", 
+        "GObject.Object"
+    ], 
+    "members": {
+        "signals": [], 
+        "methods": [
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a new #GtkListStore", 
+                    "name": "ref:Gtk.ListStore"
+                }, 
+                "version": null, 
+                "name": "Gtk.ListStore(Integer n_columns, VarArg None)", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "n_columns"
+                    }, 
+                    {
+                        "type": "ref:VarArg", 
+                        "name": null
+                    }
+                ]
+            }, 
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a new #GtkListStore", 
+                    "name": "ref:Gtk.ListStore"
+                }, 
+                "version": null, 
+                "name": "Gtk.ListStore(Integer n_columns, Integer[] types)", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "n_columns"
+                    }, 
+                    {
+                        "type": "Integer[]", 
+                        "name": "types"
+                    }
+                ]
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "append", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TreeIter", 
+                        "name": "iter", 
+                        "description": "An unset #GtkTreeIter to set to the appended row"
+                    }
+                ], 
+                "description": "Appends a new row to @list_store.  @iter will be changed to point to this new\nrow.  The row will be empty after this function is called.  To fill in\nvalues, you need to call gtk_list_store_set() or gtk_list_store_set_value()."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "clear", 
+                "parameters": null, 
+                "description": "Removes all rows from the list store."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "insert", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TreeIter", 
+                        "name": "iter", 
+                        "description": "An unset #GtkTreeIter to set to the new row"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "position", 
+                        "description": "position to insert the new row"
+                    }
+                ], 
+                "description": "Creates a new row at @position.  @iter will be changed to point to this new\nrow.  If @position is larger than the number of rows on the list, then the\nnew row will be appended to the list. The row will be empty after this\nfunction is called.  To fill in values, you need to call \ngtk_list_store_set() or gtk_list_store_set_value()."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "insert_after", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TreeIter", 
+                        "name": "iter", 
+                        "description": "An unset #GtkTreeIter to set to the new row"
+                    }, 
+                    {
+                        "type": "ref:Gtk.TreeIter", 
+                        "name": "sibling", 
+                        "description": "A valid #GtkTreeIter, or %NULL"
+                    }
+                ], 
+                "description": "Inserts a new row after @sibling. If @sibling is %NULL, then the row will be\nprepended to the beginning of the list. @iter will be changed to point to\nthis new row. The row will be empty after this function is called. To fill\nin values, you need to call gtk_list_store_set() or gtk_list_store_set_value()."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "insert_before", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TreeIter", 
+                        "name": "iter", 
+                        "description": "An unset #GtkTreeIter to set to the new row"
+                    }, 
+                    {
+                        "type": "ref:Gtk.TreeIter", 
+                        "name": "sibling", 
+                        "description": "A valid #GtkTreeIter, or %NULL"
+                    }
+                ], 
+                "description": "Inserts a new row before @sibling. If @sibling is %NULL, then the row will \nbe appended to the end of the list. @iter will be changed to point to this \nnew row. The row will be empty after this function is called. To fill in \nvalues, you need to call gtk_list_store_set() or gtk_list_store_set_value()."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.6", 
+                "name": "insert_with_values", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TreeIter", 
+                        "name": "iter", 
+                        "description": "An unset #GtkTreeIter to set to the new row, or %NULL"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "position", 
+                        "description": "position to insert the new row, or -1 to append after existing rows"
+                    }, 
+                    {
+                        "type": "ref:VarArg", 
+                        "name": null, 
+                        "description": ""
+                    }
+                ], 
+                "description": "Creates a new row at @position. @iter will be changed to point to this new\nrow. If @position is -1, or larger than the number of rows in the list, then\nthe new row will be appended to the list. The row will be filled with the\nvalues given to this function.\n\nCalling\n<literal>gtk_list_store_insert_with_values (list_store, iter, position...)</literal>\nhas the same effect as calling\n|[\ngtk_list_store_insert (list_store, iter, position);\ngtk_list_store_set (list_store, iter, ...);\n]|\nwith the difference that the former will only emit a row_inserted signal,\nwhile the latter will emit row_inserted, row_changed and, if the list store\nis sorted, rows_reordered. Since emitting the rows_reordered signal\nrepeatedly can affect the performance of the program,\ngtk_list_store_insert_with_values() should generally be preferred when\ninserting rows in a sorted list store."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.6", 
+                "name": "insert_with_valuesv", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TreeIter", 
+                        "name": "iter", 
+                        "description": "An unset #GtkTreeIter to set to the new row, or %NULL."
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "position", 
+                        "description": "position to insert the new row"
+                    }, 
+                    {
+                        "type": "Integer[]", 
+                        "name": "columns", 
+                        "description": "an array of column numbers"
+                    }, 
+                    {
+                        "type": "GObject.Value[]", 
+                        "name": "values", 
+                        "description": "an array of GValues"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "n_values", 
+                        "description": "the length of the @columns and @values arrays"
+                    }
+                ], 
+                "description": "A variant of gtk_list_store_insert_with_values() which\ntakes the columns and values as two arrays, instead of\nvarargs. This function is mainly intended for \nlanguage-bindings."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE if the iter is valid, %FALSE if the iter is invalid."
+                }, 
+                "version": "2.2", 
+                "name": "iter_is_valid", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TreeIter", 
+                        "name": "iter", 
+                        "description": "A #GtkTreeIter."
+                    }
+                ], 
+                "description": "<warning>This function is slow. Only use it for debugging and/or testing\npurposes.</warning>\n\nChecks if the given iter is a valid iter for this #GtkListStore."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.2", 
+                "name": "move_after", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TreeIter", 
+                        "name": "iter", 
+                        "description": "A #GtkTreeIter."
+                    }, 
+                    {
+                        "type": "ref:Gtk.TreeIter", 
+                        "name": "position", 
+                        "description": "A #GtkTreeIter or %NULL."
+                    }
+                ], 
+                "description": "Moves @iter in @store to the position after @position. Note that this\nfunction only works with unsorted stores. If @position is %NULL, @iter\nwill be moved to the start of the list."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.2", 
+                "name": "move_before", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TreeIter", 
+                        "name": "iter", 
+                        "description": "A #GtkTreeIter."
+                    }, 
+                    {
+                        "type": "ref:Gtk.TreeIter", 
+                        "name": "position", 
+                        "description": "A #GtkTreeIter, or %NULL."
+                    }
+                ], 
+                "description": "Moves @iter in @store to the position before @position. Note that this\nfunction only works with unsorted stores. If @position is %NULL, @iter\nwill be moved to the end of the list."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "prepend", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TreeIter", 
+                        "name": "iter", 
+                        "description": "An unset #GtkTreeIter to set to the prepend row"
+                    }
+                ], 
+                "description": "Prepends a new row to @list_store. @iter will be changed to point to this new\nrow. The row will be empty after this function is called. To fill in\nvalues, you need to call gtk_list_store_set() or gtk_list_store_set_value()."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE if @iter is valid, %FALSE if not."
+                }, 
+                "version": "", 
+                "name": "remove", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TreeIter", 
+                        "name": "iter", 
+                        "description": "A valid #GtkTreeIter"
+                    }
+                ], 
+                "description": "Removes the given row from the list store.  After being removed, \n@iter is set to be the next valid row, or invalidated if it pointed \nto the last row in @list_store."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.2", 
+                "name": "reorder", 
+                "parameters": [
+                    {
+                        "type": "Integer[]", 
+                        "name": "new_order", 
+                        "description": "an array of integers mapping the new position of each child to its old position before the re-ordering, i.e. @new_order<literal>[newpos] = oldpos</literal>."
+                    }
+                ], 
+                "description": "Reorders @store to follow the order indicated by @new_order. Note that\nthis function only works with unsorted stores."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TreeIter", 
+                        "name": "iter", 
+                        "description": "row iterator"
+                    }, 
+                    {
+                        "type": "ref:VarArg", 
+                        "name": null, 
+                        "description": ""
+                    }
+                ], 
+                "description": "Sets the value of one or more cells in the row referenced by @iter.\nThe variable argument list should contain integer column numbers,\neach column number followed by the value to be set.\nThe list is terminated by a -1. For example, to set column 0 with type\n%G_TYPE_STRING to \"Foo\", you would write <literal>gtk_list_store_set (store, iter,\n0, \"Foo\", -1)</literal>.\n\nThe value will be referenced by the store if it is a %G_TYPE_OBJECT, and it\nwill be copied if it is a %G_TYPE_STRING or %G_TYPE_BOXED."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_column_types", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "n_columns", 
+                        "description": "Number of columns for the list store"
+                    }, 
+                    {
+                        "type": "Integer[]", 
+                        "name": "types", 
+                        "description": "An array length n of #GTypes"
+                    }
+                ], 
+                "description": "This function is meant primarily for #GObjects that inherit from #GtkListStore,\nand should only be used when constructing a new #GtkListStore.  It will not\nfunction after a row has been added, or a method on the #GtkTreeModel\ninterface is called."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_valist", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TreeIter", 
+                        "name": "iter", 
+                        "description": "A valid #GtkTreeIter for the row being modified"
+                    }, 
+                    {
+                        "type": "Mixed", 
+                        "name": "var_args", 
+                        "description": "va_list of column/value pairs"
+                    }
+                ], 
+                "description": "See gtk_list_store_set(); this version takes a va_list for use by language\nbindings."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_value", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TreeIter", 
+                        "name": "iter", 
+                        "description": "A valid #GtkTreeIter for the row being modified"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "column", 
+                        "description": "column number to modify"
+                    }, 
+                    {
+                        "type": "GObject.Value", 
+                        "name": "value", 
+                        "description": "new value for the cell"
+                    }
+                ], 
+                "description": "Sets the data in the cell specified by @iter and @column.\nThe type of @value must be convertible to the type of the\ncolumn."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.12", 
+                "name": "set_valuesv", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TreeIter", 
+                        "name": "iter", 
+                        "description": "A valid #GtkTreeIter for the row being modified"
+                    }, 
+                    {
+                        "type": "Integer[]", 
+                        "name": "columns", 
+                        "description": "an array of column numbers"
+                    }, 
+                    {
+                        "type": "GObject.Value[]", 
+                        "name": "values", 
+                        "description": "an array of GValues"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "n_values", 
+                        "description": "the length of the @columns and @values arrays"
+                    }
+                ], 
+                "description": "A variant of gtk_list_store_set_valist() which\ntakes the columns and values as two arrays, instead of\nvarargs. This function is mainly intended for \nlanguage-bindings and in case the number of columns to\nchange is not known until run-time."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.2", 
+                "name": "swap", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TreeIter", 
+                        "name": "a", 
+                        "description": "A #GtkTreeIter."
+                    }, 
+                    {
+                        "type": "ref:Gtk.TreeIter", 
+                        "name": "b", 
+                        "description": "Another #GtkTreeIter."
+                    }
+                ], 
+                "description": "Swaps @a and @b in @store. Note that this function only works with\nunsorted stores."
+            }
+        ], 
+        "properties": []
+    }, 
+    "fullname": "Class Gtk.ListStore", 
+    "id": "Docs-ListStore", 
+    "description": "The #GtkListStore object is a list model for use with a #GtkTreeView\nwidget.  It implements the #GtkTreeModel interface, and consequentialy,\ncan use all of the methods available there.  It also implements the\n#GtkTreeSortable interface so it can be sorted by the view.\nFinally, it also implements the tree <link linkend=\"gtktreednd\">drag and\ndrop</link> interfaces.\n\nThe #GtkListStore can accept most GObject types as a column type, though\nit can't accept all custom types.  Internally, it will keep a copy of\ndata passed in (such as a string or a boxed pointer).  Columns that\naccept #GObject<!-- -->s are handled a little differently.  The\n#GtkListStore will keep a reference to the object instead of copying the\nvalue.  As a result, if the object is modified, it is up to the\napplication writer to call gtk_tree_model_row_changed() to emit the\n#GtkTreeModel::row_changed signal.  This most commonly affects lists with\n#GdkPixbuf<!-- -->s stored.\n\n<example>\n<title>Creating a simple list store.</title>\n<programlisting>\nenum {\nCOLUMN_STRING,\nCOLUMN_INT,\nCOLUMN_BOOLEAN,\nN_COLUMNS\n};\n\n{\nGtkListStore *list_store;\nGtkTreePath *path;\nGtkTreeIter iter;\ngint i;\n\nlist_store = gtk_list_store_new (N_COLUMNS,\nG_TYPE_STRING,\nG_TYPE_INT,\nG_TYPE_BOOLEAN);\n\nfor (i = 0; i < 10; i++)\n{\ngchar *some_data;\n\nsome_data = get_some_data (i);\n\n// Add a new row to the model\ngtk_list_store_append (list_store, &iter);\ngtk_list_store_set (list_store, &iter,\nCOLUMN_STRING, some_data,\nCOLUMN_INT, i,\nCOLUMN_BOOLEAN,  FALSE,\n-1);\n\n/<!---->* As the store will keep a copy of the string internally, we\n* free some_data.\n*<!---->/\ng_free (some_data);\n}\n\n// Modify a particular row\npath = gtk_tree_path_new_from_string (\"4\");\ngtk_tree_model_get_iter (GTK_TREE_MODEL (list_store),\n&iter,\npath);\ngtk_tree_path_free (path);\ngtk_list_store_set (list_store, &iter,\nCOLUMN_BOOLEAN, TRUE,\n-1);\n}\n</programlisting>\n</example>\n\n<refsect2>\n<title>Performance Considerations</title>\nInternally, the #GtkListStore was implemented with a linked list with a\ntail pointer prior to GTK+ 2.6.  As a result, it was fast at data\ninsertion and deletion, and not fast at random data access.  The\n#GtkListStore sets the #GTK_TREE_MODEL_ITERS_PERSIST flag, which means\nthat #GtkTreeIter<!-- -->s can be cached while the row exists.  Thus, if\naccess to a particular row is needed often and your code is expected to\nrun on older versions of GTK+, it is worth keeping the iter around.\n</refsect2>\n<refsect2>\n<title>Atomic Operations</title>\nIt is important to note that only the methods\ngtk_list_store_insert_with_values() and gtk_list_store_insert_with_valuesv()\nare atomic, in the sense that the row is being appended to the store and the\nvalues filled in in a single operation with regard to #GtkTreeModel signaling.\nIn contrast, using e.g. gtk_list_store_append() and then gtk_list_store_set()\nwill first create a row, which triggers the #GtkTreeModel::row-inserted signal\non #GtkListStore. The row, however, is still empty, and any signal handler\nconnecting to #GtkTreeModel::row-inserted on this particular store should be prepared\nfor the situation that the row might be empty. This is especially important\nif you are wrapping the #GtkListStore inside a #GtkTreeModelFilter and are\nusing a #GtkTreeModelFilterVisibleFunc. Using any of the non-atomic operations\nto append rows to the #GtkListStore will cause the\n#GtkTreeModelFilterVisibleFunc to be visited with an empty row first; the\nfunction must be prepared for that.\n</refsect2>\n<refsect2 id=\"GtkListStore-BUILDER-UI\">\n<title>GtkListStore as GtkBuildable</title>\n<para>\nThe GtkListStore implementation of the GtkBuildable interface allows\nto specify the model columns with a &lt;columns&gt; element that may\ncontain multiple &lt;column&gt; elements, each specifying one model\ncolumn. The \"type\" attribute specifies the data type for the column.\n\nAdditionally, it is possible to specify content for the list store\nin the UI definition, with the &lt;data&gt; element. It can contain\nmultiple &lt;row&gt; elements, each specifying to content for one\nrow of the list model. Inside a &lt;row&gt;, the &lt;col&gt; elements\nspecify the content for individual cells.\n\nNote that it is probably more common to define your models\nin the code, and one might consider it a layering violation\nto specify the content of a list store in a UI definition,\n<emphasis>data</emphasis>, not <emphasis>presentation</emphasis>,\nand common wisdom is to separate the two, as far as possible.\n<!-- FIXME a bit inconclusive -->\n\n<example>\n<title>A UI Definition fragment for a list store</title>\n<programlisting><![CDATA[\n<object class=\"GtkListStore\">\n<columns>\n<column type=\"gchararray\"/>\n<column type=\"gchararray\"/>\n<column type=\"gint\"/>\n</columns>\n<data>\n<row>\n<col id=\"0\">John</col>\n<col id=\"1\">Doe</col>\n<col id=\"2\">25</col>\n</row>\n<row>\n<col id=\"0\">Johan</col>\n<col id=\"1\">Dahlin</col>\n<col id=\"2\">50</col>\n</row>\n</data>\n</object>\n]]></programlisting>\n</example>\n</para>\n</refsect2>"
+}

@@ -1,0 +1,29 @@
+{
+    "leaf": true, 
+    "name": "WrapMode", 
+    "text": "WrapMode", 
+    "version": null, 
+    "members": {
+        "properties": [
+            {
+                "name": "none", 
+                "value": "0"
+            }, 
+            {
+                "name": "char", 
+                "value": "1"
+            }, 
+            {
+                "name": "word", 
+                "value": "2"
+            }, 
+            {
+                "name": "word_char", 
+                "value": "3"
+            }
+        ]
+    }, 
+    "fullname": "Enumeration Gtk.WrapMode", 
+    "id": "Docs-WrapMode", 
+    "description": ""
+}

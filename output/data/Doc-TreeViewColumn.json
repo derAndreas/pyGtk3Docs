@@ -1,0 +1,967 @@
+{
+    "isAbstract": false, 
+    "leaf": true, 
+    "name": "TreeViewColumn", 
+    "text": "TreeViewColumn", 
+    "interfaces": [
+        [
+            "Buildable"
+        ], 
+        [
+            "CellLayout"
+        ]
+    ], 
+    "parents": [
+        "TreeViewColumn", 
+        "GObject.InitiallyUnowned"
+    ], 
+    "members": {
+        "signals": [
+            {
+                "version": "", 
+                "when": "last", 
+                "name": "clicked", 
+                "description": ""
+            }
+        ], 
+        "methods": [
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "A newly created #GtkTreeViewColumn.", 
+                    "name": "ref:Gtk.TreeViewColumn"
+                }, 
+                "version": null, 
+                "name": "Gtk.TreeViewColumn()", 
+                "parameters": null
+            }, 
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "A newly created #GtkTreeViewColumn.", 
+                    "name": "ref:Gtk.TreeViewColumn"
+                }, 
+                "version": "3.0", 
+                "name": "Gtk.TreeViewColumn(Gtk.CellArea area)", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.CellArea", 
+                        "name": "area"
+                    }
+                ]
+            }, 
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "A newly created #GtkTreeViewColumn.", 
+                    "name": "ref:Gtk.TreeViewColumn"
+                }, 
+                "version": null, 
+                "name": "Gtk.TreeViewColumn(String title, Gtk.CellRenderer cell, VarArg None)", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "title"
+                    }, 
+                    {
+                        "type": "ref:Gtk.CellRenderer", 
+                        "name": "cell"
+                    }, 
+                    {
+                        "type": "ref:VarArg", 
+                        "name": null
+                    }
+                ]
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "add_attribute", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.CellRenderer", 
+                        "name": "cell_renderer", 
+                        "description": "the #GtkCellRenderer to set attributes on"
+                    }, 
+                    {
+                        "type": "String", 
+                        "name": "attribute", 
+                        "description": "An attribute on the renderer"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "column", 
+                        "description": "The column position on the model to get the attribute from."
+                    }
+                ], 
+                "description": "Adds an attribute mapping to the list in @tree_column.  The @column is the\ncolumn of the model to get a value from, and the @attribute is the\nparameter on @cell_renderer to be set from the value. So for example\nif column 2 of the model contains strings, you could have the\n\"text\" attribute of a #GtkCellRendererText get its values from\ncolumn 2."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE if @cell belongs to @tree_column."
+                }, 
+                "version": "", 
+                "name": "cell_get_position", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.CellRenderer", 
+                        "name": "cell_renderer", 
+                        "description": "a #GtkCellRenderer"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "x_offset", 
+                        "description": "return location for the horizontal position of @cell within @tree_column, may be %NULL"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "width", 
+                        "description": "return location for the width of @cell, may be %NULL"
+                    }
+                ], 
+                "description": "Obtains the horizontal position and size of a cell in a column. If the\ncell is not found in the column, @start_pos and @width are not changed and\n%FALSE is returned."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "cell_get_size", 
+                "parameters": [
+                    {
+                        "type": "Gdk.Rectangle", 
+                        "name": "cell_area", 
+                        "description": "The area a cell in the column will be allocated, or %NULL"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "x_offset", 
+                        "description": "location to return x offset of a cell relative to @cell_area, or %NULL"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "y_offset", 
+                        "description": "location to return y offset of a cell relative to @cell_area, or %NULL"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "width", 
+                        "description": "location to return width needed to render a cell, or %NULL"
+                    }, 
+                    {
+                        "type": "Integer", 
+                        "name": "height", 
+                        "description": "location to return height needed to render a cell, or %NULL"
+                    }
+                ], 
+                "description": "Obtains the width and height needed to render the column.  This is used\nprimarily by the #GtkTreeView."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE, if any of the cells packed into the @tree_column are currently visible"
+                }, 
+                "version": "", 
+                "name": "cell_is_visible", 
+                "parameters": null, 
+                "description": "Returns %TRUE if any of the cells packed into the @tree_column are visible.\nFor this to be meaningful, you must first initialize the cells with\ngtk_tree_view_column_cell_set_cell_data()"
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "cell_set_cell_data", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TreeModel", 
+                        "name": "tree_model", 
+                        "description": "The #GtkTreeModel to to get the cell renderers attributes from."
+                    }, 
+                    {
+                        "type": "ref:Gtk.TreeIter", 
+                        "name": "iter", 
+                        "description": "The #GtkTreeIter to to get the cell renderer's attributes from."
+                    }, 
+                    {
+                        "type": "Boolean", 
+                        "name": "is_expander", 
+                        "description": "%TRUE, if the row has children"
+                    }, 
+                    {
+                        "type": "Boolean", 
+                        "name": "is_expanded", 
+                        "description": "%TRUE, if the row has visible children"
+                    }
+                ], 
+                "description": "Sets the cell renderer based on the @tree_model and @iter.  That is, for\nevery attribute mapping in @tree_column, it will get a value from the set\ncolumn on the @iter, and use that value to set the attribute on the cell\nrenderer.  This is used primarily by the #GtkTreeView."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "clear", 
+                "parameters": null, 
+                "description": "Unsets all the mappings on all renderers on the @tree_column."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "clear_attributes", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.CellRenderer", 
+                        "name": "cell_renderer", 
+                        "description": "a #GtkCellRenderer to clear the attribute mapping on."
+                    }
+                ], 
+                "description": "Clears all existing attributes previously set with\ngtk_tree_view_column_set_attributes()."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "clicked", 
+                "parameters": null, 
+                "description": "Emits the \"clicked\" signal on the column.  This function will only work if\n@tree_column is clickable."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.2", 
+                "name": "focus_cell", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.CellRenderer", 
+                        "name": "cell", 
+                        "description": "A #GtkCellRenderer"
+                    }
+                ], 
+                "description": "Sets the current keyboard focus to be at @cell, if the column contains\n2 or more editable and activatable cells."
+            }, 
+            {
+                "returns": {
+                    "type": "Float", 
+                    "description": "The current alignent of @tree_column."
+                }, 
+                "version": "", 
+                "name": "get_alignment", 
+                "parameters": null, 
+                "description": "Returns the current x alignment of @tree_column.  This value can range\nbetween 0.0 and 1.0."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.Widget", 
+                    "description": "The button for the column header."
+                }, 
+                "version": "3.0", 
+                "name": "get_button", 
+                "parameters": null, 
+                "description": "Returns the button used in the treeview column header"
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE if user can click the column header."
+                }, 
+                "version": "", 
+                "name": "get_clickable", 
+                "parameters": null, 
+                "description": "Returns %TRUE if the user can click on the header for the column."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE, if the column expands"
+                }, 
+                "version": "2.4", 
+                "name": "get_expand", 
+                "parameters": null, 
+                "description": "Return %TRUE if the column expands to take any available space."
+            }, 
+            {
+                "returns": {
+                    "type": "Integer", 
+                    "description": "the fixed width of the column"
+                }, 
+                "version": "", 
+                "name": "get_fixed_width", 
+                "parameters": null, 
+                "description": "Gets the fixed width of the column.  This value is only meaning may not be\nthe actual width of the column on the screen, just what is requested."
+            }, 
+            {
+                "returns": {
+                    "type": "Integer", 
+                    "description": "The maximum width of the @tree_column."
+                }, 
+                "version": "", 
+                "name": "get_max_width", 
+                "parameters": null, 
+                "description": "Returns the maximum width in pixels of the @tree_column, or -1 if no maximum\nwidth is set."
+            }, 
+            {
+                "returns": {
+                    "type": "Integer", 
+                    "description": "The minimum width of the @tree_column."
+                }, 
+                "version": "", 
+                "name": "get_min_width", 
+                "parameters": null, 
+                "description": "Returns the minimum width in pixels of the @tree_column, or -1 if no minimum\nwidth is set."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE if the @tree_column can be reordered by the user."
+                }, 
+                "version": "", 
+                "name": "get_reorderable", 
+                "parameters": null, 
+                "description": "Returns %TRUE if the @tree_column can be reordered by the user."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE, if the @tree_column can be resized."
+                }, 
+                "version": "", 
+                "name": "get_resizable", 
+                "parameters": null, 
+                "description": "Returns %TRUE if the @tree_column can be resized by the end user."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.TreeViewColumnSizing", 
+                    "description": "The type of @tree_column."
+                }, 
+                "version": "", 
+                "name": "get_sizing", 
+                "parameters": null, 
+                "description": "Returns the current type of @tree_column."
+            }, 
+            {
+                "returns": {
+                    "type": "Integer", 
+                    "description": "the current @sort_column_id for this column, or -1 if"
+                }, 
+                "version": "", 
+                "name": "get_sort_column_id", 
+                "parameters": null, 
+                "description": "Gets the logical @sort_column_id that the model sorts on when this\ncolumn is selected for sorting.\nSee gtk_tree_view_column_set_sort_column_id().\n\nthis column can't be used for sorting."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "whether the sort indicator arrow is displayed"
+                }, 
+                "version": "", 
+                "name": "get_sort_indicator", 
+                "parameters": null, 
+                "description": "Gets the value set by gtk_tree_view_column_set_sort_indicator()."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.SortType", 
+                    "description": "the sort order the sort indicator is indicating"
+                }, 
+                "version": "", 
+                "name": "get_sort_order", 
+                "parameters": null, 
+                "description": "Gets the value set by gtk_tree_view_column_set_sort_order()."
+            }, 
+            {
+                "returns": {
+                    "type": "Integer", 
+                    "description": "the spacing of @tree_column."
+                }, 
+                "version": "", 
+                "name": "get_spacing", 
+                "parameters": null, 
+                "description": "Returns the spacing of @tree_column."
+            }, 
+            {
+                "returns": {
+                    "type": "String", 
+                    "description": "the title of the column. This string should not be"
+                }, 
+                "version": "", 
+                "name": "get_title", 
+                "parameters": null, 
+                "description": "Returns the title of the widget.\n\nmodified or freed."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.Widget", 
+                    "description": "The tree view wherein @column has"
+                }, 
+                "version": "2.12", 
+                "name": "get_tree_view", 
+                "parameters": null, 
+                "description": "Returns the #GtkTreeView wherein @tree_column has been inserted.\nIf @column is currently not inserted in any tree view, %NULL is\nreturned.\n\nbeen inserted if any, %NULL otherwise."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "whether the column is visible or not.  If it is visible, then"
+                }, 
+                "version": "", 
+                "name": "get_visible", 
+                "parameters": null, 
+                "description": "Returns %TRUE if @tree_column is visible.\n\nthe tree will show the column."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.Widget", 
+                    "description": "The #GtkWidget in the column"
+                }, 
+                "version": "", 
+                "name": "get_widget", 
+                "parameters": null, 
+                "description": "Returns the #GtkWidget in the button on the column header.\nIf a custom widget has not been set then %NULL is returned.\n\nheader, or %NULL"
+            }, 
+            {
+                "returns": {
+                    "type": "Integer", 
+                    "description": "The current width of @tree_column."
+                }, 
+                "version": "", 
+                "name": "get_width", 
+                "parameters": null, 
+                "description": "Returns the current size of @tree_column in pixels."
+            }, 
+            {
+                "returns": {
+                    "type": "Integer", 
+                    "description": "The current X offset of @tree_column."
+                }, 
+                "version": "3.2", 
+                "name": "get_x_offset", 
+                "parameters": null, 
+                "description": "Returns the current X offset of @tree_column in pixels."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "pack_end", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.CellRenderer", 
+                        "name": "cell", 
+                        "description": "The #GtkCellRenderer."
+                    }, 
+                    {
+                        "type": "Boolean", 
+                        "name": "expand", 
+                        "description": "%TRUE if @cell is to be given extra space allocated to @tree_column."
+                    }
+                ], 
+                "description": "Adds the @cell to end of the column. If @expand is %FALSE, then the @cell\nis allocated no more space than it needs. Any unused space is divided\nevenly between cells for which @expand is %TRUE."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "pack_start", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.CellRenderer", 
+                        "name": "cell", 
+                        "description": "The #GtkCellRenderer."
+                    }, 
+                    {
+                        "type": "Boolean", 
+                        "name": "expand", 
+                        "description": "%TRUE if @cell is to be given extra space allocated to @tree_column."
+                    }
+                ], 
+                "description": "Packs the @cell into the beginning of the column. If @expand is %FALSE, then\nthe @cell is allocated no more space than it needs. Any unused space is divided\nevenly between cells for which @expand is %TRUE."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.8", 
+                "name": "queue_resize", 
+                "parameters": null, 
+                "description": "Flags the column, and the cell renderers added to this column, to have\ntheir sizes renegotiated."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_alignment", 
+                "parameters": [
+                    {
+                        "type": "Float", 
+                        "name": "xalign", 
+                        "description": "The alignment, which is between [0.0 and 1.0] inclusive."
+                    }
+                ], 
+                "description": "Sets the alignment of the title or custom widget inside the column header.\nThe alignment determines its location inside the button -- 0.0 for left, 0.5\nfor center, 1.0 for right."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_attributes", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.CellRenderer", 
+                        "name": "cell_renderer", 
+                        "description": "the #GtkCellRenderer we're setting the attributes of"
+                    }, 
+                    {
+                        "type": "ref:VarArg", 
+                        "name": null, 
+                        "description": ""
+                    }
+                ], 
+                "description": "Sets the attributes in the list as the attributes of @tree_column.\nThe attributes should be in attribute/column order, as in\ngtk_tree_view_column_add_attribute(). All existing attributes\nare removed, and replaced with the new attributes."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_cell_data_func", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.CellRenderer", 
+                        "name": "cell_renderer", 
+                        "description": "A #GtkCellRenderer"
+                    }, 
+                    {
+                        "type": "ref:Gtk.TreeCellDataFunc", 
+                        "name": "func", 
+                        "description": "The #GtkTreeViewColumnFunc to use."
+                    }, 
+                    {
+                        "type": "Mixed", 
+                        "name": "func_data", 
+                        "description": "The user data for @func."
+                    }, 
+                    {
+                        "type": "GLib.DestroyNotify", 
+                        "name": "destroy", 
+                        "description": "The destroy notification for @func_data"
+                    }
+                ], 
+                "description": "Sets the #GtkTreeViewColumnFunc to use for the column.  This\nfunction is used instead of the standard attributes mapping for\nsetting the column value, and should set the value of @tree_column's\ncell renderer as appropriate.  @func may be %NULL to remove an\nolder one."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_clickable", 
+                "parameters": [
+                    {
+                        "type": "Boolean", 
+                        "name": "clickable", 
+                        "description": "%TRUE if the header is active."
+                    }
+                ], 
+                "description": "Sets the header to be active if @clickable is %TRUE.  When the header is\nactive, then it can take keyboard focus, and can be clicked."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.4", 
+                "name": "set_expand", 
+                "parameters": [
+                    {
+                        "type": "Boolean", 
+                        "name": "expand", 
+                        "description": "%TRUE if the column should take available extra space, %FALSE if not"
+                    }
+                ], 
+                "description": "Sets the column to take available extra space.  This space is shared equally\namongst all columns that have the expand set to %TRUE.  If no column has this\noption set, then the last column gets all extra space.  By default, every\ncolumn is created with this %FALSE."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_fixed_width", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "fixed_width", 
+                        "description": "The size to set @tree_column to. Must be greater than 0."
+                    }
+                ], 
+                "description": "Sets the size of the column in pixels.  This is meaningful only if the sizing\ntype is #GTK_TREE_VIEW_COLUMN_FIXED.  The size of the column is clamped to\nthe min/max width for the column.  Please note that the min/max width of the\ncolumn doesn't actually affect the \"fixed_width\" property of the widget, just\nthe actual size when displayed."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_max_width", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "max_width", 
+                        "description": "The maximum width of the column in pixels, or -1."
+                    }
+                ], 
+                "description": "Sets the maximum width of the @tree_column.  If @max_width is -1, then the\nmaximum width is unset.  Note, the column can actually be wider than max\nwidth if it's the last column in a view.  In this case, the column expands to\nfill any extra space."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_min_width", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "min_width", 
+                        "description": "The minimum width of the column in pixels, or -1."
+                    }
+                ], 
+                "description": "Sets the minimum width of the @tree_column.  If @min_width is -1, then the\nminimum width is unset."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_reorderable", 
+                "parameters": [
+                    {
+                        "type": "Boolean", 
+                        "name": "reorderable", 
+                        "description": "%TRUE, if the column can be reordered."
+                    }
+                ], 
+                "description": "If @reorderable is %TRUE, then the column can be reordered by the end user\ndragging the header."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_resizable", 
+                "parameters": [
+                    {
+                        "type": "Boolean", 
+                        "name": "resizable", 
+                        "description": "%TRUE, if the column can be resized"
+                    }
+                ], 
+                "description": "If @resizable is %TRUE, then the user can explicitly resize the column by\ngrabbing the outer edge of the column button.  If resizable is %TRUE and\nsizing mode of the column is #GTK_TREE_VIEW_COLUMN_AUTOSIZE, then the sizing\nmode is changed to #GTK_TREE_VIEW_COLUMN_GROW_ONLY."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_sizing", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TreeViewColumnSizing", 
+                        "name": "type", 
+                        "description": "The #GtkTreeViewColumnSizing."
+                    }
+                ], 
+                "description": "Sets the growth behavior of @tree_column to @type."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_sort_column_id", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "sort_column_id", 
+                        "description": "The @sort_column_id of the model to sort on."
+                    }
+                ], 
+                "description": "Sets the logical @sort_column_id that this column sorts on when this column \nis selected for sorting.  Doing so makes the column header clickable."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_sort_indicator", 
+                "parameters": [
+                    {
+                        "type": "Boolean", 
+                        "name": "setting", 
+                        "description": "%TRUE to display an indicator that the column is sorted"
+                    }
+                ], 
+                "description": "Call this function with a @setting of %TRUE to display an arrow in\nthe header button indicating the column is sorted. Call\ngtk_tree_view_column_set_sort_order() to change the direction of\nthe arrow."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_sort_order", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.SortType", 
+                        "name": "order", 
+                        "description": "sort order that the sort indicator should indicate"
+                    }
+                ], 
+                "description": "Changes the appearance of the sort indicator. \n\nThis <emphasis>does not</emphasis> actually sort the model.  Use\ngtk_tree_view_column_set_sort_column_id() if you want automatic sorting\nsupport.  This function is primarily for custom sorting behavior, and should\nbe used in conjunction with gtk_tree_sortable_set_sort_column() to do\nthat. For custom models, the mechanism will vary. \n\nThe sort indicator changes direction to indicate normal sort or reverse sort.\nNote that you must have the sort indicator enabled to see anything when \ncalling this function; see gtk_tree_view_column_set_sort_indicator()."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_spacing", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "spacing", 
+                        "description": "distance between cell renderers in pixels."
+                    }
+                ], 
+                "description": "Sets the spacing field of @tree_column, which is the number of pixels to\nplace between cell renderers packed into it."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_title", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "title", 
+                        "description": "The title of the @tree_column."
+                    }
+                ], 
+                "description": "Sets the title of the @tree_column.  If a custom widget has been set, then\nthis value is ignored."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_visible", 
+                "parameters": [
+                    {
+                        "type": "Boolean", 
+                        "name": "visible", 
+                        "description": "%TRUE if the @tree_column is visible."
+                    }
+                ], 
+                "description": "Sets the visibility of @tree_column."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_widget", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "widget", 
+                        "description": "A child #GtkWidget, or %NULL."
+                    }
+                ], 
+                "description": "Sets the widget in the header to be @widget.  If widget is %NULL, then the\nheader button is set with a #GtkLabel set to the title of @tree_column."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "clicked", 
+                "parameters": null, 
+                "description": "Emits the \"clicked\" signal on the column.  This function will only work if\n@tree_column is clickable."
+            }
+        ], 
+        "properties": [
+            {
+                "writable": false, 
+                "type": "Float", 
+                "readable": false, 
+                "name": "alignment", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Gtk.CellArea", 
+                "readable": false, 
+                "name": "cell-area", 
+                "description": "The #GtkCellArea used to layout cell renderers for this column.\n\nIf no area is specified when creating the tree view column with gtk_tree_view_column_new_with_area() \na horizontally oriented #GtkCellAreaBox will be used."
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "clickable", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "expand", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Integer", 
+                "readable": false, 
+                "name": "fixed-width", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Integer", 
+                "readable": false, 
+                "name": "max-width", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Integer", 
+                "readable": false, 
+                "name": "min-width", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "reorderable", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "resizable", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Gtk.TreeViewColumnSizing", 
+                "readable": false, 
+                "name": "sizing", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Integer", 
+                "readable": false, 
+                "name": "sort-column-id", 
+                "description": "Logical sort column ID this column sorts on when selected for sorting. Setting the sort column ID makes the column header\nclickable. Set to %-1 to make the column unsortable."
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "sort-indicator", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Gtk.SortType", 
+                "readable": false, 
+                "name": "sort-order", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Integer", 
+                "readable": false, 
+                "name": "spacing", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "String", 
+                "readable": false, 
+                "name": "title", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "visible", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Gtk.Widget", 
+                "readable": false, 
+                "name": "widget", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Integer", 
+                "readable": false, 
+                "name": "width", 
+                "description": ""
+            }, 
+            {
+                "writable": false, 
+                "type": "Integer", 
+                "readable": false, 
+                "name": "x-offset", 
+                "description": ""
+            }
+        ]
+    }, 
+    "fullname": "Class Gtk.TreeViewColumn", 
+    "id": "Docs-TreeViewColumn", 
+    "description": "The GtkTreeViewColumn object represents a visible column in a #GtkTreeView widget.\nIt allows to set properties of the column header, and functions as a holding pen for\nthe cell renderers which determine how the data in the column is displayed.\n\nPlease refer to the <link linkend=\"TreeWidget\">tree widget conceptual overview</link>\nfor an overview of all the objects and data types related to the tree widget and how\nthey work together."
+}

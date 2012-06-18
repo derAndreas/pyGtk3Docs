@@ -1,0 +1,29 @@
+{
+    "leaf": true, 
+    "name": "PositionType", 
+    "text": "PositionType", 
+    "version": null, 
+    "members": {
+        "properties": [
+            {
+                "name": "left", 
+                "value": "0"
+            }, 
+            {
+                "name": "right", 
+                "value": "1"
+            }, 
+            {
+                "name": "top", 
+                "value": "2"
+            }, 
+            {
+                "name": "bottom", 
+                "value": "3"
+            }
+        ]
+    }, 
+    "fullname": "Enumeration Gtk.PositionType", 
+    "id": "Docs-PositionType", 
+    "description": ""
+}

@@ -1,0 +1,61 @@
+{
+    "isAbstract": false, 
+    "leaf": true, 
+    "name": "RecentChooserWidget", 
+    "text": "RecentChooserWidget", 
+    "interfaces": [
+        [
+            "Atk.ImplementorIface"
+        ], 
+        [
+            "Buildable"
+        ], 
+        [
+            "Orientable"
+        ], 
+        [
+            "RecentChooser"
+        ]
+    ], 
+    "parents": [
+        "RecentChooserWidget", 
+        "Box", 
+        "Container", 
+        "Widget", 
+        "GObject.InitiallyUnowned"
+    ], 
+    "members": {
+        "signals": [], 
+        "methods": [
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a new #GtkRecentChooserWidget", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": "2.10", 
+                "name": "Gtk.RecentChooserWidget()", 
+                "parameters": null
+            }, 
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a new #GtkRecentChooserWidget", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": "2.10", 
+                "name": "Gtk.RecentChooserWidget(Gtk.RecentManager manager)", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.RecentManager", 
+                        "name": "manager"
+                    }
+                ]
+            }
+        ], 
+        "properties": []
+    }, 
+    "fullname": "Class Gtk.RecentChooserWidget", 
+    "id": "Docs-RecentChooserWidget", 
+    "description": "#GtkRecentChooserWidget is a widget suitable for selecting recently used\nfiles.  It is the main building block of a #GtkRecentChooserDialog.  Most\napplications will only need to use the latter; you can use\n#GtkRecentChooserWidget as part of a larger window if you have special needs.\n\nNote that #GtkRecentChooserWidget does not have any methods of its own.\nInstead, you should use the functions that work on a #GtkRecentChooser.\n\nRecently used files are supported since GTK+ 2.10."
+}

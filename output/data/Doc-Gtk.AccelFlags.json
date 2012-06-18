@@ -1,0 +1,25 @@
+{
+    "leaf": true, 
+    "name": "AccelFlags", 
+    "text": "AccelFlags", 
+    "version": null, 
+    "members": {
+        "properties": [
+            {
+                "name": "visible", 
+                "value": "1"
+            }, 
+            {
+                "name": "locked", 
+                "value": "2"
+            }, 
+            {
+                "name": "mask", 
+                "value": "7"
+            }
+        ]
+    }, 
+    "fullname": "Bitfield Gtk.AccelFlags", 
+    "id": "Docs-AccelFlags", 
+    "description": ""
+}

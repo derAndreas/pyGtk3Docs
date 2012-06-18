@@ -1,0 +1,194 @@
+{
+    "isAbstract": false, 
+    "leaf": true, 
+    "name": "FileChooserButton", 
+    "text": "FileChooserButton", 
+    "interfaces": [
+        [
+            "Atk.ImplementorIface"
+        ], 
+        [
+            "Buildable"
+        ], 
+        [
+            "FileChooser"
+        ], 
+        [
+            "Orientable"
+        ]
+    ], 
+    "parents": [
+        "FileChooserButton", 
+        "Box", 
+        "Container", 
+        "Widget", 
+        "GObject.InitiallyUnowned"
+    ], 
+    "members": {
+        "signals": [
+            {
+                "version": "2.12", 
+                "when": "first", 
+                "name": "file-set", 
+                "description": "The ::file-set signal is emitted when the user selects a file.\n\nNote that this signal is only emitted when the <emphasis>user</emphasis>\nchanges the file."
+            }
+        ], 
+        "methods": [
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a new button widget.", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": "2.6", 
+                "name": "Gtk.FileChooserButton(String title, Gtk.FileChooserAction action)", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "title"
+                    }, 
+                    {
+                        "type": "ref:Gtk.FileChooserAction", 
+                        "name": "action"
+                    }
+                ]
+            }, 
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a new button widget.", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": "2.6", 
+                "name": "Gtk.FileChooserButton(Gtk.Widget dialog)", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "dialog"
+                    }
+                ]
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE if the button grabs focus when it is clicked with"
+                }, 
+                "version": "2.10", 
+                "name": "get_focus_on_click", 
+                "parameters": null, 
+                "description": "Returns whether the button grabs focus when it is clicked with the mouse.\nSee gtk_file_chooser_button_set_focus_on_click().\n\nthe mouse."
+            }, 
+            {
+                "returns": {
+                    "type": "String", 
+                    "description": "a pointer to the browse dialog's title."
+                }, 
+                "version": "2.6", 
+                "name": "get_title", 
+                "parameters": null, 
+                "description": "Retrieves the title of the browse dialog used by @button. The returned value\nshould not be modified or freed."
+            }, 
+            {
+                "returns": {
+                    "type": "Integer", 
+                    "description": "an integer width (in characters) that the button will use to size itself."
+                }, 
+                "version": "2.6", 
+                "name": "get_width_chars", 
+                "parameters": null, 
+                "description": "Retrieves the width in characters of the @button widget's entry and/or label."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.10", 
+                "name": "set_focus_on_click", 
+                "parameters": [
+                    {
+                        "type": "Boolean", 
+                        "name": "focus_on_click", 
+                        "description": "whether the button grabs focus when clicked with the mouse"
+                    }
+                ], 
+                "description": "Sets whether the button will grab focus when it is clicked with the mouse.\nMaking mouse clicks not grab focus is useful in places like toolbars where\nyou don't want the keyboard focus removed from the main area of the\napplication."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.6", 
+                "name": "set_title", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "title", 
+                        "description": "the new browse dialog title."
+                    }
+                ], 
+                "description": "Modifies the @title of the browse dialog used by @button."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.6", 
+                "name": "set_width_chars", 
+                "parameters": [
+                    {
+                        "type": "Integer", 
+                        "name": "n_chars", 
+                        "description": "the new width, in characters."
+                    }
+                ], 
+                "description": "Sets the width (in characters) that @button will use to @n_chars."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "file_set", 
+                "parameters": null, 
+                "description": ""
+            }
+        ], 
+        "properties": [
+            {
+                "writable": false, 
+                "type": "Gtk.FileChooser", 
+                "readable": false, 
+                "name": "dialog", 
+                "description": "Instance of the #GtkFileChooserDialog associated with the button."
+            }, 
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "focus-on-click", 
+                "description": "Whether the #GtkFileChooserButton button grabs focus when it is clicked\nwith the mouse."
+            }, 
+            {
+                "writable": false, 
+                "type": "String", 
+                "readable": false, 
+                "name": "title", 
+                "description": "Title to put on the #GtkFileChooserDialog associated with the button."
+            }, 
+            {
+                "writable": false, 
+                "type": "Integer", 
+                "readable": false, 
+                "name": "width-chars", 
+                "description": "The width of the entry and label inside the button, in characters."
+            }
+        ]
+    }, 
+    "fullname": "Class Gtk.FileChooserButton", 
+    "id": "Docs-FileChooserButton", 
+    "description": "The #GtkFileChooserButton is a widget that lets the user select a\nfile.  It implements the #GtkFileChooser interface.  Visually, it is a\nfile name with a button to bring up a #GtkFileChooserDialog.\nThe user can then use that dialog to change the file associated with\nthat button.  This widget does not support setting the\n#GtkFileChooser:select-multiple property to %TRUE.\n\n<example>\n<title>Create a button to let the user select a file in /etc</title>\n<programlisting>\n{\nGtkWidget *button;\n\nbutton = gtk_file_chooser_button_new (_(\"Select a file\"),\nGTK_FILE_CHOOSER_ACTION_OPEN);\ngtk_file_chooser_set_current_folder (GTK_FILE_CHOOSER (button),\n\"/etc\");\n}\n</programlisting>\n</example>\n\nThe #GtkFileChooserButton supports the #GtkFileChooserAction<!-- -->s\n%GTK_FILE_CHOOSER_ACTION_OPEN and %GTK_FILE_CHOOSER_ACTION_SELECT_FOLDER.\n\n<important>\nThe #GtkFileChooserButton will ellipsize the label,\nand thus will thus request little horizontal space.  To give the button\nmore space, you should call gtk_widget_get_preferred_size(),\ngtk_file_chooser_button_set_width_chars(), or pack the button in\nsuch a way that other interface elements give space to the widget.\n</important>"
+}

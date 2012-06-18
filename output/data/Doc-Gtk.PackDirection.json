@@ -1,0 +1,29 @@
+{
+    "leaf": true, 
+    "name": "PackDirection", 
+    "text": "PackDirection", 
+    "version": null, 
+    "members": {
+        "properties": [
+            {
+                "name": "ltr", 
+                "value": "0"
+            }, 
+            {
+                "name": "rtl", 
+                "value": "1"
+            }, 
+            {
+                "name": "ttb", 
+                "value": "2"
+            }, 
+            {
+                "name": "btt", 
+                "value": "3"
+            }
+        ]
+    }, 
+    "fullname": "Enumeration Gtk.PackDirection", 
+    "id": "Docs-PackDirection", 
+    "description": ""
+}

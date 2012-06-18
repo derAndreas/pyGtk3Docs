@@ -1,0 +1,84 @@
+{
+    "isAbstract": false, 
+    "leaf": true, 
+    "name": "Overlay", 
+    "text": "Overlay", 
+    "interfaces": [
+        [
+            "Atk.ImplementorIface"
+        ], 
+        [
+            "Buildable"
+        ]
+    ], 
+    "parents": [
+        "Overlay", 
+        "Bin", 
+        "Container", 
+        "Widget", 
+        "GObject.InitiallyUnowned"
+    ], 
+    "members": {
+        "signals": [
+            {
+                "version": "", 
+                "when": "last", 
+                "name": "get-child-position", 
+                "description": "The ::get-child-position signal is emitted to determine\nthe position and size of any overlay child widgets. A\nhandler for this signal should fill @allocation with\nthe desired position and size for @widget, relative to\nthe 'main' child of @overlay.\n\nThe default handler for this signal uses the @widget's\nhalign and valign properties to determine the position\nand gives the widget its natural size (except that an\nalignment of %GTK_ALIGN_FILL will cause the overlay to\nbe full-width/height). If the main child is a\n#GtkScrolledWindow, the overlays are placed relative\nto its contents."
+            }
+        ], 
+        "methods": [
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a new #GtkOverlay object.", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": "3.2", 
+                "name": "Gtk.Overlay()", 
+                "parameters": null
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "3.2", 
+                "name": "add_overlay", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "widget", 
+                        "description": "a #GtkWidget to be added to the container"
+                    }
+                ], 
+                "description": "Adds @widget to @overlay.\n\nThe widget will be stacked on top of the main widget\nadded with gtk_container_add().\n\nThe position at which @widget is placed is determined\nfrom its #GtkWidget:halign and #GtkWidget:valign properties."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "get_child_position", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "widget", 
+                        "description": ""
+                    }, 
+                    {
+                        "type": "ref:Gtk.Allocation", 
+                        "name": "allocation", 
+                        "description": ""
+                    }
+                ], 
+                "description": ""
+            }
+        ], 
+        "properties": []
+    }, 
+    "fullname": "Class Gtk.Overlay", 
+    "id": "Docs-Overlay", 
+    "description": "GtkOverlay is a container which contains a single main child, on top\nof which it can place <firstterm>overlay</firstterm> widgets. The\nposition of each overlay widget is determined by its #GtkWidget:halign\nand #GtkWidget:valign properties. E.g. a widget with both alignments\nset to %GTK_ALIGN_START will be placed at the top left corner of the\nmain widget, whereas an overlay with halign set to %GTK_ALIGN_CENTER\nand valign set to %GTK_ALIGN_END will be placed a the bottom edge of\nthe main widget, horizontally centered. The position can be adjusted\nby setting the margin properties of the child to non-zero values.\n\nMore complicated placement of overlays is possible by connecting\nto the #GtkOverlay::get-child-position signal.\n\n<refsect2 id=\"GtkOverlay-BUILDER-UI\">\n<title>GtkOverlay as GtkBuildable</title>\n<para>\nThe GtkOverlay implementation of the GtkBuildable interface\nsupports placing a child as an overlay by specifying \"overlay\" as\nthe \"type\" attribute of a <tag class=\"starttag\">child</tag> element.\n</para>\n</refsect2>"
+}

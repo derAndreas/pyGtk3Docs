@@ -1,0 +1,29 @@
+{
+    "leaf": true, 
+    "name": "PrintQuality", 
+    "text": "PrintQuality", 
+    "version": null, 
+    "members": {
+        "properties": [
+            {
+                "name": "low", 
+                "value": "0"
+            }, 
+            {
+                "name": "normal", 
+                "value": "1"
+            }, 
+            {
+                "name": "high", 
+                "value": "2"
+            }, 
+            {
+                "name": "draft", 
+                "value": "3"
+            }
+        ]
+    }, 
+    "fullname": "Enumeration Gtk.PrintQuality", 
+    "id": "Docs-PrintQuality", 
+    "description": ""
+}

@@ -1,0 +1,49 @@
+{
+    "leaf": true, 
+    "name": "JunctionSides", 
+    "text": "JunctionSides", 
+    "version": null, 
+    "members": {
+        "properties": [
+            {
+                "name": "none", 
+                "value": "0"
+            }, 
+            {
+                "name": "corner_topleft", 
+                "value": "1"
+            }, 
+            {
+                "name": "corner_topright", 
+                "value": "2"
+            }, 
+            {
+                "name": "corner_bottomleft", 
+                "value": "4"
+            }, 
+            {
+                "name": "corner_bottomright", 
+                "value": "8"
+            }, 
+            {
+                "name": "top", 
+                "value": "3"
+            }, 
+            {
+                "name": "bottom", 
+                "value": "12"
+            }, 
+            {
+                "name": "left", 
+                "value": "5"
+            }, 
+            {
+                "name": "right", 
+                "value": "10"
+            }
+        ]
+    }, 
+    "fullname": "Bitfield Gtk.JunctionSides", 
+    "id": "Docs-JunctionSides", 
+    "description": ""
+}

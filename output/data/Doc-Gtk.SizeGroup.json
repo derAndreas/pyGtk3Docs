@@ -1,0 +1,148 @@
+{
+    "isAbstract": false, 
+    "leaf": true, 
+    "name": "SizeGroup", 
+    "text": "SizeGroup", 
+    "interfaces": [
+        [
+            "Buildable"
+        ]
+    ], 
+    "parents": [
+        "SizeGroup", 
+        "GObject.Object"
+    ], 
+    "members": {
+        "signals": [], 
+        "methods": [
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a newly created #GtkSizeGroup", 
+                    "name": "ref:Gtk.SizeGroup"
+                }, 
+                "version": null, 
+                "name": "Gtk.SizeGroup(Gtk.SizeGroupMode mode)", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.SizeGroupMode", 
+                        "name": "mode"
+                    }
+                ]
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "add_widget", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "widget", 
+                        "description": "the #GtkWidget to add"
+                    }
+                ], 
+                "description": "Adds a widget to a #GtkSizeGroup. In the future, the requisition\nof the widget will be determined as the maximum of its requisition\nand the requisition of the other widgets in the size group.\nWhether this applies horizontally, vertically, or in both directions\ndepends on the mode of the size group. See gtk_size_group_set_mode().\n\nWhen the widget is destroyed or no longer referenced elsewhere, it will \nbe removed from the size group."
+            }, 
+            {
+                "returns": {
+                    "type": "Boolean", 
+                    "description": "%TRUE if invisible widgets are ignored."
+                }, 
+                "version": "2.8", 
+                "name": "get_ignore_hidden", 
+                "parameters": null, 
+                "description": "Returns if invisible widgets are ignored when calculating the size."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.SizeGroupMode", 
+                    "description": "the current mode of the size group."
+                }, 
+                "version": "", 
+                "name": "get_mode", 
+                "parameters": null, 
+                "description": "Gets the current mode of the size group. See gtk_size_group_set_mode()."
+            }, 
+            {
+                "returns": {
+                    "type": "GLib.SList", 
+                    "description": "a #GSList of"
+                }, 
+                "version": "2.10", 
+                "name": "get_widgets", 
+                "parameters": null, 
+                "description": "Returns the list of widgets associated with @size_group.\n\nwidgets. The list is owned by GTK+ and should not be modified."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "remove_widget", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.Widget", 
+                        "name": "widget", 
+                        "description": "the #GtkWidget to remove"
+                    }
+                ], 
+                "description": "Removes a widget from a #GtkSizeGroup."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.8", 
+                "name": "set_ignore_hidden", 
+                "parameters": [
+                    {
+                        "type": "Boolean", 
+                        "name": "ignore_hidden", 
+                        "description": "whether unmapped widgets should be ignored when calculating the size"
+                    }
+                ], 
+                "description": "Sets whether unmapped widgets should be ignored when\ncalculating the size."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "", 
+                "name": "set_mode", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.SizeGroupMode", 
+                        "name": "mode", 
+                        "description": "the mode to set for the size group."
+                    }
+                ], 
+                "description": "Sets the #GtkSizeGroupMode of the size group. The mode of the size\ngroup determines whether the widgets in the size group should\nall have the same horizontal requisition (%GTK_SIZE_GROUP_HORIZONTAL)\nall have the same vertical requisition (%GTK_SIZE_GROUP_VERTICAL),\nor should all have the same requisition in both directions\n(%GTK_SIZE_GROUP_BOTH)."
+            }
+        ], 
+        "properties": [
+            {
+                "writable": false, 
+                "type": "Boolean", 
+                "readable": false, 
+                "name": "ignore-hidden", 
+                "description": "If %TRUE, unmapped widgets are ignored when determining \nthe size of the group."
+            }, 
+            {
+                "writable": false, 
+                "type": "Gtk.SizeGroupMode", 
+                "readable": false, 
+                "name": "mode", 
+                "description": ""
+            }
+        ]
+    }, 
+    "fullname": "Class Gtk.SizeGroup", 
+    "id": "Docs-SizeGroup", 
+    "description": "#GtkSizeGroup provides a mechanism for grouping a number of widgets\ntogether so they all request the same amount of space.  This is\ntypically useful when you want a column of widgets to have the same\nsize, but you can't use a #GtkGrid widget.\n\nIn detail, the size requested for each widget in a #GtkSizeGroup is\nthe maximum of the sizes that would have been requested for each\nwidget in the size group if they were not in the size group. The mode\nof the size group (see gtk_size_group_set_mode()) determines whether\nthis applies to the horizontal size, the vertical size, or both sizes.\n\nNote that size groups only affect the amount of space requested, not\nthe size that the widgets finally receive. If you want the widgets in\na #GtkSizeGroup to actually be the same size, you need to pack them in\nsuch a way that they get the size they request and not more. For\nexample, if you are packing your widgets into a table, you would not\ninclude the %GTK_FILL flag.\n\n#GtkSizeGroup objects are referenced by each widget in the size group,\nso once you have added all widgets to a #GtkSizeGroup, you can drop\nthe initial reference to the size group with g_object_unref(). If the\nwidgets in the size group are subsequently destroyed, then they will\nbe removed from the size group and drop their references on the size\ngroup; when all widgets have been removed, the size group will be\nfreed.\n\nWidgets can be part of multiple size groups; GTK+ will compute the\nhorizontal size of a widget from the horizontal requisition of all\nwidgets that can be reached from the widget by a chain of size groups\nof type %GTK_SIZE_GROUP_HORIZONTAL or %GTK_SIZE_GROUP_BOTH, and the\nvertical size from the vertical requisition of all widgets that can be\nreached from the widget by a chain of size groups of type\n%GTK_SIZE_GROUP_VERTICAL or %GTK_SIZE_GROUP_BOTH.\n\nNote that only non-contextual sizes of every widget are ever consulted\nby size groups (since size groups have no knowledge of what size a widget\nwill be allocated in one dimension, it cannot derive how much height\na widget will receive for a given width). When grouping widgets that\ntrade height for width in mode %GTK_SIZE_GROUP_VERTICAL or %GTK_SIZE_GROUP_BOTH:\nthe height for the minimum width will be the requested height for all\nwidgets in the group. The same is of course true when horizontally grouping\nwidth for height widgets.\n\nWidgets that trade height-for-width should set a reasonably large minimum width\nby way of #GtkLabel:width-chars for instance. Widgets with static sizes as well\nas widgets that grow (such as ellipsizing text) need no such considerations.\n\n<refsect2 id=\"GtkSizeGroup-BUILDER-UI\">\n<title>GtkSizeGroup as GtkBuildable</title>\n<para>\nSize groups can be specified in a UI definition by placing an\n&lt;object&gt; element with <literal>class=\"GtkSizeGroup\"</literal>\nsomewhere in the UI definition. The widgets that belong to the\nsize group are specified by a &lt;widgets&gt; element that may\ncontain multiple &lt;widget&gt; elements, one for each member\nof the size group. The name attribute gives the id of the widget.\n\n<example>\n<title>A UI definition fragment with GtkSizeGroup</title>\n<programlisting><![CDATA[\n<object class=\"GtkSizeGroup\">\n<property name=\"mode\">GTK_SIZE_GROUP_HORIZONTAL</property>\n<widgets>\n<widget name=\"radio1\"/>\n<widget name=\"radio2\"/>\n</widgets>\n</object>\n]]></programlisting>\n</example>\n</para>\n</refsect2>"
+}

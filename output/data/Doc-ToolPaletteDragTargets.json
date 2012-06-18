@@ -1,0 +1,21 @@
+{
+    "leaf": true, 
+    "name": "ToolPaletteDragTargets", 
+    "text": "ToolPaletteDragTargets", 
+    "version": null, 
+    "members": {
+        "properties": [
+            {
+                "name": "items", 
+                "value": "1"
+            }, 
+            {
+                "name": "groups", 
+                "value": "2"
+            }
+        ]
+    }, 
+    "fullname": "Bitfield Gtk.ToolPaletteDragTargets", 
+    "id": "Docs-ToolPaletteDragTargets", 
+    "description": ""
+}

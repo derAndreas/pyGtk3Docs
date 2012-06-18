@@ -1,0 +1,122 @@
+{
+    "isAbstract": false, 
+    "leaf": true, 
+    "name": "MenuBar", 
+    "text": "MenuBar", 
+    "interfaces": [
+        [
+            "Atk.ImplementorIface"
+        ], 
+        [
+            "Buildable"
+        ]
+    ], 
+    "parents": [
+        "MenuBar", 
+        "MenuShell", 
+        "Container", 
+        "Widget", 
+        "GObject.InitiallyUnowned"
+    ], 
+    "members": {
+        "signals": [], 
+        "methods": [
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "the new menu bar, as a #GtkWidget", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": null, 
+                "name": "Gtk.MenuBar()", 
+                "parameters": null
+            }, 
+            {
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a new #GtkMenuBar", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": "3.4", 
+                "name": "Gtk.MenuBar(Gio.MenuModel model)", 
+                "parameters": [
+                    {
+                        "type": "Gio.MenuModel", 
+                        "name": "model"
+                    }
+                ]
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.PackDirection", 
+                    "description": "the child pack direction"
+                }, 
+                "version": "2.8", 
+                "name": "get_child_pack_direction", 
+                "parameters": null, 
+                "description": "Retrieves the current child pack direction of the menubar.\nSee gtk_menu_bar_set_child_pack_direction()."
+            }, 
+            {
+                "returns": {
+                    "type": "ref:Gtk.PackDirection", 
+                    "description": "the pack direction"
+                }, 
+                "version": "2.8", 
+                "name": "get_pack_direction", 
+                "parameters": null, 
+                "description": "Retrieves the current pack direction of the menubar. \nSee gtk_menu_bar_set_pack_direction()."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.8", 
+                "name": "set_child_pack_direction", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.PackDirection", 
+                        "name": "child_pack_dir", 
+                        "description": "a new #GtkPackDirection"
+                    }
+                ], 
+                "description": "Sets how widgets should be packed inside the children of a menubar."
+            }, 
+            {
+                "returns": {
+                    "type": "void", 
+                    "description": ""
+                }, 
+                "version": "2.8", 
+                "name": "set_pack_direction", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.PackDirection", 
+                        "name": "pack_dir", 
+                        "description": "a new #GtkPackDirection"
+                    }
+                ], 
+                "description": "Sets how items should be packed inside a menubar."
+            }
+        ], 
+        "properties": [
+            {
+                "writable": false, 
+                "type": "Gtk.PackDirection", 
+                "readable": false, 
+                "name": "child-pack-direction", 
+                "description": "The child pack direction of the menubar. It determines how\nthe widgets contained in child menuitems are arranged."
+            }, 
+            {
+                "writable": false, 
+                "type": "Gtk.PackDirection", 
+                "readable": false, 
+                "name": "pack-direction", 
+                "description": "The pack direction of the menubar. It determines how\nmenuitems are arranged in the menubar."
+            }
+        ]
+    }, 
+    "fullname": "Class Gtk.MenuBar", 
+    "id": "Docs-MenuBar", 
+    "description": "The #GtkMenuBar is a subclass of #GtkMenuShell which contains one or\nmore #GtkMenuItems. The result is a standard menu bar which can hold\nmany menu items."
+}
