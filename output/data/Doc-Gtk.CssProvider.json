@@ -23,14 +23,15 @@
         ], 
         "methods": [
             {
+                "name": "Gtk.CssProvider()", 
+                "parameters": null, 
                 "isConstructor": true, 
                 "returns": {
                     "doc": "A new #GtkCssProvider", 
                     "name": "ref:Gtk.CssProvider"
                 }, 
                 "version": null, 
-                "name": "Gtk.CssProvider()", 
-                "parameters": null
+                "description": "Returns a newly created #GtkCssProvider."
             }, 
             {
                 "returns": {

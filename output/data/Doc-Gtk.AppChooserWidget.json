@@ -47,19 +47,20 @@
         ], 
         "methods": [
             {
-                "isConstructor": true, 
-                "returns": {
-                    "doc": "a newly created #GtkAppChooserWidget", 
-                    "name": "ref:Gtk.Widget"
-                }, 
-                "version": "3.0", 
                 "name": "Gtk.AppChooserWidget(String content_type)", 
                 "parameters": [
                     {
                         "type": "String", 
                         "name": "content_type"
                     }
-                ]
+                ], 
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a newly created #GtkAppChooserWidget", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": "3.0", 
+                "description": "Creates a new #GtkAppChooserWidget for applications\nthat can handle content of the given type."
             }, 
             {
                 "returns": {

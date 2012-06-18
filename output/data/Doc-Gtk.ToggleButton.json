@@ -36,44 +36,47 @@
         ], 
         "methods": [
             {
+                "name": "Gtk.ToggleButton()", 
+                "parameters": null, 
                 "isConstructor": true, 
                 "returns": {
                     "doc": "a new toggle button.", 
                     "name": "ref:Gtk.Widget"
                 }, 
                 "version": null, 
-                "name": "Gtk.ToggleButton()", 
-                "parameters": null
+                "description": "Creates a new toggle button. A widget should be packed into the button, as in gtk_button_new()."
             }, 
             {
-                "isConstructor": true, 
-                "returns": {
-                    "doc": "a new toggle button.", 
-                    "name": "ref:Gtk.Widget"
-                }, 
-                "version": null, 
                 "name": "Gtk.ToggleButton(String label)", 
                 "parameters": [
                     {
                         "type": "String", 
                         "name": "label"
                     }
-                ]
+                ], 
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a new toggle button.", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": null, 
+                "description": "Creates a new toggle button with a text label."
             }, 
             {
+                "name": "Gtk.ToggleButton(String label)", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "label"
+                    }
+                ], 
                 "isConstructor": true, 
                 "returns": {
                     "doc": "a new #GtkToggleButton", 
                     "name": "ref:Gtk.Widget"
                 }, 
                 "version": null, 
-                "name": "Gtk.ToggleButton(String label)", 
-                "parameters": [
-                    {
-                        "type": "String", 
-                        "name": "label"
-                    }
-                ]
+                "description": "Creates a new #GtkToggleButton containing a label. The label\nwill be created using gtk_label_new_with_mnemonic(), so underscores\nin @label indicate the mnemonic for the button."
             }, 
             {
                 "returns": {

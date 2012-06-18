@@ -29,19 +29,20 @@
         "signals": [], 
         "methods": [
             {
-                "isConstructor": true, 
-                "returns": {
-                    "doc": "a newly created #GtkApplicationWindow", 
-                    "name": "ref:Gtk.Widget"
-                }, 
-                "version": "3.4", 
                 "name": "Gtk.ApplicationWindow(Gtk.Application application)", 
                 "parameters": [
                     {
                         "type": "ref:Gtk.Application", 
                         "name": "application"
                     }
-                ]
+                ], 
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a newly created #GtkApplicationWindow", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": "3.4", 
+                "description": "Creates a new #GtkApplicationWindow."
             }, 
             {
                 "returns": {

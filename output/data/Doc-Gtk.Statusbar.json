@@ -38,14 +38,15 @@
         ], 
         "methods": [
             {
+                "name": "Gtk.Statusbar()", 
+                "parameters": null, 
                 "isConstructor": true, 
                 "returns": {
                     "doc": "the new #GtkStatusbar", 
                     "name": "ref:Gtk.Widget"
                 }, 
                 "version": null, 
-                "name": "Gtk.Statusbar()", 
-                "parameters": null
+                "description": "Creates a new #GtkStatusbar ready for messages."
             }, 
             {
                 "returns": {

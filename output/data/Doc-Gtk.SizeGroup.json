@@ -16,19 +16,20 @@
         "signals": [], 
         "methods": [
             {
-                "isConstructor": true, 
-                "returns": {
-                    "doc": "a newly created #GtkSizeGroup", 
-                    "name": "ref:Gtk.SizeGroup"
-                }, 
-                "version": null, 
                 "name": "Gtk.SizeGroup(Gtk.SizeGroupMode mode)", 
                 "parameters": [
                     {
                         "type": "ref:Gtk.SizeGroupMode", 
                         "name": "mode"
                     }
-                ]
+                ], 
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a newly created #GtkSizeGroup", 
+                    "name": "ref:Gtk.SizeGroup"
+                }, 
+                "version": null, 
+                "description": "Create a new #GtkSizeGroup."
             }, 
             {
                 "returns": {

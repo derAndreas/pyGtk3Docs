@@ -29,24 +29,26 @@
         "signals": [], 
         "methods": [
             {
+                "name": "Gtk.ComboBoxText()", 
+                "parameters": null, 
                 "isConstructor": true, 
                 "returns": {
                     "doc": "A new #GtkComboBoxText", 
                     "name": "ref:Gtk.Widget"
                 }, 
                 "version": "2.24", 
-                "name": "Gtk.ComboBoxText()", 
-                "parameters": null
+                "description": "Creates a new #GtkComboBoxText, which is a #GtkComboBox just displaying\nstrings."
             }, 
             {
+                "name": "Gtk.ComboBoxText()", 
+                "parameters": null, 
                 "isConstructor": true, 
                 "returns": {
                     "doc": "a new #GtkComboBoxText", 
                     "name": "ref:Gtk.Widget"
                 }, 
                 "version": "2.24", 
-                "name": "Gtk.ComboBoxText()", 
-                "parameters": null
+                "description": "Creates a new #GtkComboBoxText, which is a #GtkComboBox just displaying\nstrings. The combo box created by this function has an entry."
             }, 
             {
                 "returns": {

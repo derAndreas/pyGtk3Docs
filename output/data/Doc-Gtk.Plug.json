@@ -30,27 +30,22 @@
         ], 
         "methods": [
             {
-                "isConstructor": true, 
-                "returns": {
-                    "doc": "the new #GtkPlug widget.", 
-                    "name": "ref:Gtk.Widget"
-                }, 
-                "version": null, 
                 "name": "Gtk.Plug(xlib.Window socket_id)", 
                 "parameters": [
                     {
                         "type": "xlib.Window", 
                         "name": "socket_id"
                     }
-                ]
-            }, 
-            {
+                ], 
                 "isConstructor": true, 
                 "returns": {
                     "doc": "the new #GtkPlug widget.", 
                     "name": "ref:Gtk.Widget"
                 }, 
-                "version": "2.2", 
+                "version": null, 
+                "description": "Creates a new plug widget inside the #GtkSocket identified\nby @socket_id. If @socket_id is 0, the plug is left \"unplugged\" and\ncan later be plugged into a #GtkSocket by  gtk_socket_add_id()."
+            }, 
+            {
                 "name": "Gtk.Plug(Gdk.Display display, xlib.Window socket_id)", 
                 "parameters": [
                     {
@@ -61,7 +56,14 @@
                         "type": "xlib.Window", 
                         "name": "socket_id"
                     }
-                ]
+                ], 
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "the new #GtkPlug widget.", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": "2.2", 
+                "description": "Create a new plug widget inside the #GtkSocket identified by socket_id."
             }, 
             {
                 "returns": {

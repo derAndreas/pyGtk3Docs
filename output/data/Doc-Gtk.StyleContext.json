@@ -19,14 +19,15 @@
         ], 
         "methods": [
             {
+                "name": "Gtk.StyleContext()", 
+                "parameters": null, 
                 "isConstructor": true, 
                 "returns": {
                     "doc": "A newly created #GtkStyleContext.", 
                     "name": "ref:Gtk.StyleContext"
                 }, 
                 "version": null, 
-                "name": "Gtk.StyleContext()", 
-                "parameters": null
+                "description": "Creates a standalone #GtkStyleContext, this style context\nwon't be attached to any widget, so you may want\nto call gtk_style_context_set_path() yourself.\n\n<note>\nThis function is only useful when using the theming layer\nseparated from GTK+, if you are using #GtkStyleContext to\ntheme #GtkWidget<!-- -->s, use gtk_widget_get_style_context()\nin order to get a style context ready to theme the widget.\n</note>"
             }, 
             {
                 "returns": {

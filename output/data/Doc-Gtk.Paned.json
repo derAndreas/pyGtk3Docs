@@ -61,19 +61,20 @@
         ], 
         "methods": [
             {
-                "isConstructor": true, 
-                "returns": {
-                    "doc": "a new #GtkPaned.", 
-                    "name": "ref:Gtk.Widget"
-                }, 
-                "version": "3.0", 
                 "name": "Gtk.Paned(Gtk.Orientation orientation)", 
                 "parameters": [
                     {
                         "type": "ref:Gtk.Orientation", 
                         "name": "orientation"
                     }
-                ]
+                ], 
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a new #GtkPaned.", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": "3.0", 
+                "description": "Creates a new #GtkPaned widget."
             }, 
             {
                 "returns": {

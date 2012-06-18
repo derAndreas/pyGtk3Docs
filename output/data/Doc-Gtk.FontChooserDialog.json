@@ -27,12 +27,6 @@
         "signals": [], 
         "methods": [
             {
-                "isConstructor": true, 
-                "returns": {
-                    "doc": "a new #GtkFontChooserDialog", 
-                    "name": "ref:Gtk.Widget"
-                }, 
-                "version": "3.2", 
                 "name": "Gtk.FontChooserDialog(String title, Gtk.Window parent)", 
                 "parameters": [
                     {
@@ -43,7 +37,14 @@
                         "type": "ref:Gtk.Window", 
                         "name": "parent"
                     }
-                ]
+                ], 
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a new #GtkFontChooserDialog", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": "3.2", 
+                "description": "Creates a new #GtkFontChooserDialog."
             }
         ], 
         "properties": []

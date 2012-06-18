@@ -25,16 +25,17 @@
         "signals": [], 
         "methods": [
             {
+                "name": "Gtk.HPaned()", 
+                "parameters": null, 
+                "isConstructor": true, 
                 "returns": {
                     "doc": "the new #GtkHPaned", 
                     "name": "ref:Gtk.Widget"
                 }, 
                 "version": null, 
-                "name": "Gtk.HPaned()", 
-                "parameters": null, 
                 "deprecated": "Use gtk_paned_new() with %GTK_ORIENTATION_HORIZONTAL instead", 
                 "deprecated_version": "3.2", 
-                "isConstructor": true
+                "description": "Create a new #GtkHPaned"
             }
         ], 
         "properties": []

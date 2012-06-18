@@ -34,14 +34,15 @@
         ], 
         "methods": [
             {
+                "name": "Gtk.Socket()", 
+                "parameters": null, 
                 "isConstructor": true, 
                 "returns": {
                     "doc": "the new #GtkSocket.", 
                     "name": "ref:Gtk.Widget"
                 }, 
                 "version": null, 
-                "name": "Gtk.Socket()", 
-                "parameters": null
+                "description": "Create a new empty #GtkSocket."
             }, 
             {
                 "returns": {

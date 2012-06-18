@@ -26,22 +26,17 @@
         "signals": [], 
         "methods": [
             {
+                "name": "Gtk.CellView()", 
+                "parameters": null, 
                 "isConstructor": true, 
                 "returns": {
                     "doc": "A newly created #GtkCellView widget.", 
                     "name": "ref:Gtk.Widget"
                 }, 
                 "version": "2.6", 
-                "name": "Gtk.CellView()", 
-                "parameters": null
+                "description": "Creates a new #GtkCellView widget."
             }, 
             {
-                "isConstructor": true, 
-                "returns": {
-                    "doc": "A newly created #GtkCellView widget.", 
-                    "name": "ref:Gtk.Widget"
-                }, 
-                "version": "2.6", 
                 "name": "Gtk.CellView(Gtk.CellArea area, Gtk.CellAreaContext context)", 
                 "parameters": [
                     {
@@ -52,52 +47,62 @@
                         "type": "ref:Gtk.CellAreaContext", 
                         "name": "context"
                     }
-                ]
-            }, 
-            {
+                ], 
                 "isConstructor": true, 
                 "returns": {
                     "doc": "A newly created #GtkCellView widget.", 
                     "name": "ref:Gtk.Widget"
                 }, 
                 "version": "2.6", 
+                "description": "Creates a new #GtkCellView widget with a specific #GtkCellArea\nto layout cells and a specific #GtkCellAreaContext.\n\nSpecifying the same context for a handfull of cells lets\nthe underlying area synchronize the geometry for those cells,\nin this way alignments with cellviews for other rows are\npossible."
+            }, 
+            {
                 "name": "Gtk.CellView(String markup)", 
                 "parameters": [
                     {
                         "type": "String", 
                         "name": "markup"
                     }
-                ]
-            }, 
-            {
+                ], 
                 "isConstructor": true, 
                 "returns": {
                     "doc": "A newly created #GtkCellView widget.", 
                     "name": "ref:Gtk.Widget"
                 }, 
                 "version": "2.6", 
+                "description": "Creates a new #GtkCellView widget, adds a #GtkCellRendererText \nto it, and makes it show @markup. The text can be\nmarked up with the <link linkend=\"PangoMarkupFormat\">Pango text \nmarkup language</link>."
+            }, 
+            {
                 "name": "Gtk.CellView(GdkPixbuf.Pixbuf pixbuf)", 
                 "parameters": [
                     {
                         "type": "GdkPixbuf.Pixbuf", 
                         "name": "pixbuf"
                     }
-                ]
-            }, 
-            {
+                ], 
                 "isConstructor": true, 
                 "returns": {
                     "doc": "A newly created #GtkCellView widget.", 
                     "name": "ref:Gtk.Widget"
                 }, 
                 "version": "2.6", 
+                "description": "Creates a new #GtkCellView widget, adds a #GtkCellRendererPixbuf \nto it, and makes its show @pixbuf."
+            }, 
+            {
                 "name": "Gtk.CellView(String text)", 
                 "parameters": [
                     {
                         "type": "String", 
                         "name": "text"
                     }
-                ]
+                ], 
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "A newly created #GtkCellView widget.", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": "2.6", 
+                "description": "Creates a new #GtkCellView widget, adds a #GtkCellRendererText \nto it, and makes its show @text."
             }, 
             {
                 "returns": {

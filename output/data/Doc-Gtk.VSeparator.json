@@ -24,16 +24,17 @@
         "signals": [], 
         "methods": [
             {
+                "name": "Gtk.VSeparator()", 
+                "parameters": null, 
+                "isConstructor": true, 
                 "returns": {
                     "doc": "a new #GtkVSeparator.", 
                     "name": "ref:Gtk.Widget"
                 }, 
                 "version": null, 
-                "name": "Gtk.VSeparator()", 
-                "parameters": null, 
                 "deprecated": "Use gtk_separator_new() with %GTK_ORIENTATION_VERTICAL instead", 
                 "deprecated_version": "3.2", 
-                "isConstructor": true
+                "description": "Creates a new #GtkVSeparator."
             }
         ], 
         "properties": []

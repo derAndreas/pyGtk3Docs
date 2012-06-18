@@ -28,14 +28,15 @@
         "signals": [], 
         "methods": [
             {
+                "name": "Gtk.FontChooserWidget()", 
+                "parameters": null, 
                 "isConstructor": true, 
                 "returns": {
                     "doc": "a new #GtkFontChooserWidget", 
                     "name": "ref:Gtk.Widget"
                 }, 
                 "version": "3.2", 
-                "name": "Gtk.FontChooserWidget()", 
-                "parameters": null
+                "description": "Creates a new #GtkFontChooserWidget."
             }
         ], 
         "properties": []

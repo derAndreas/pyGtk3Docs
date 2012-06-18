@@ -20,14 +20,15 @@
         ], 
         "methods": [
             {
+                "name": "Gtk.CellRendererToggle()", 
+                "parameters": null, 
                 "isConstructor": true, 
                 "returns": {
                     "doc": "the new cell renderer", 
                     "name": "ref:Gtk.CellRenderer"
                 }, 
                 "version": null, 
-                "name": "Gtk.CellRendererToggle()", 
-                "parameters": null
+                "description": "Creates a new #GtkCellRendererToggle. Adjust rendering\nparameters using object properties. Object properties can be set\nglobally (with g_object_set()). Also, with #GtkTreeViewColumn, you\ncan bind a property to a value in a #GtkTreeModel. For example, you\ncan bind the \"active\" property on the cell renderer to a boolean value\nin the model, thus causing the check button to reflect the state of\nthe model."
             }, 
             {
                 "returns": {

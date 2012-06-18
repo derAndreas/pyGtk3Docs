@@ -33,14 +33,15 @@
         ], 
         "methods": [
             {
+                "name": "Gtk.HSV()", 
+                "parameters": null, 
                 "isConstructor": true, 
                 "returns": {
                     "doc": "A newly-created HSV color selector.", 
                     "name": "ref:Gtk.Widget"
                 }, 
                 "version": "2.14", 
-                "name": "Gtk.HSV()", 
-                "parameters": null
+                "description": "Creates a new HSV color selector."
             }, 
             {
                 "returns": {

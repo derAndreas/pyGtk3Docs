@@ -17,14 +17,15 @@
         "signals": [], 
         "methods": [
             {
+                "name": "Gtk.CellRendererProgress()", 
+                "parameters": null, 
                 "isConstructor": true, 
                 "returns": {
                     "doc": "the new cell renderer", 
                     "name": "ref:Gtk.CellRenderer"
                 }, 
                 "version": "2.6", 
-                "name": "Gtk.CellRendererProgress()", 
-                "parameters": null
+                "description": "Creates a new #GtkCellRendererProgress."
             }
         ], 
         "properties": [

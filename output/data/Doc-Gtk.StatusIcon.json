@@ -55,89 +55,95 @@
         ], 
         "methods": [
             {
+                "name": "Gtk.StatusIcon()", 
+                "parameters": null, 
                 "isConstructor": true, 
                 "returns": {
                     "doc": "a new #GtkStatusIcon", 
                     "name": "ref:Gtk.StatusIcon"
                 }, 
                 "version": "2.10", 
-                "name": "Gtk.StatusIcon()", 
-                "parameters": null
+                "description": "Creates an empty status icon object."
             }, 
             {
-                "isConstructor": true, 
-                "returns": {
-                    "doc": "a new #GtkStatusIcon", 
-                    "name": "ref:Gtk.StatusIcon"
-                }, 
-                "version": "2.10", 
                 "name": "Gtk.StatusIcon(String filename)", 
                 "parameters": [
                     {
                         "type": "String", 
                         "name": "filename"
                     }
-                ]
-            }, 
-            {
+                ], 
                 "isConstructor": true, 
                 "returns": {
                     "doc": "a new #GtkStatusIcon", 
                     "name": "ref:Gtk.StatusIcon"
                 }, 
-                "version": "2.14", 
+                "version": "2.10", 
+                "description": "Creates a status icon displaying the file @filename. \n\nThe image will be scaled down to fit in the available \nspace in the notification area, if necessary."
+            }, 
+            {
                 "name": "Gtk.StatusIcon(Gio.Icon icon)", 
                 "parameters": [
                     {
                         "type": "Gio.Icon", 
                         "name": "icon"
                     }
-                ]
-            }, 
-            {
+                ], 
                 "isConstructor": true, 
                 "returns": {
                     "doc": "a new #GtkStatusIcon", 
                     "name": "ref:Gtk.StatusIcon"
                 }, 
-                "version": "2.10", 
+                "version": "2.14", 
+                "description": "Creates a status icon displaying a #GIcon. If the icon is a\nthemed icon, it will be updated when the theme changes."
+            }, 
+            {
                 "name": "Gtk.StatusIcon(String icon_name)", 
                 "parameters": [
                     {
                         "type": "String", 
                         "name": "icon_name"
                     }
-                ]
-            }, 
-            {
+                ], 
                 "isConstructor": true, 
                 "returns": {
                     "doc": "a new #GtkStatusIcon", 
                     "name": "ref:Gtk.StatusIcon"
                 }, 
                 "version": "2.10", 
+                "description": "Creates a status icon displaying an icon from the current icon theme.\nIf the current icon theme is changed, the icon will be updated \nappropriately."
+            }, 
+            {
                 "name": "Gtk.StatusIcon(GdkPixbuf.Pixbuf pixbuf)", 
                 "parameters": [
                     {
                         "type": "GdkPixbuf.Pixbuf", 
                         "name": "pixbuf"
                     }
-                ]
-            }, 
-            {
+                ], 
                 "isConstructor": true, 
                 "returns": {
                     "doc": "a new #GtkStatusIcon", 
                     "name": "ref:Gtk.StatusIcon"
                 }, 
                 "version": "2.10", 
+                "description": "Creates a status icon displaying @pixbuf. \n\nThe image will be scaled down to fit in the available \nspace in the notification area, if necessary."
+            }, 
+            {
                 "name": "Gtk.StatusIcon(String stock_id)", 
                 "parameters": [
                     {
                         "type": "String", 
                         "name": "stock_id"
                     }
-                ]
+                ], 
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a new #GtkStatusIcon", 
+                    "name": "ref:Gtk.StatusIcon"
+                }, 
+                "version": "2.10", 
+                "description": "Creates a status icon displaying a stock icon. Sample stock icon\nnames are #GTK_STOCK_OPEN, #GTK_STOCK_QUIT. You can register your \nown stock icon names, see gtk_icon_factory_add_default() and \ngtk_icon_factory_add()."
             }, 
             {
                 "returns": {

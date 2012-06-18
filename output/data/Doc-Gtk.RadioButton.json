@@ -38,42 +38,38 @@
         ], 
         "methods": [
             {
-                "isConstructor": true, 
-                "returns": {
-                    "doc": "a new radio button", 
-                    "name": "ref:Gtk.Widget"
-                }, 
-                "version": null, 
                 "name": "Gtk.RadioButton(GLib.SList group)", 
                 "parameters": [
                     {
                         "type": "GLib.SList", 
                         "name": "group"
                     }
-                ]
-            }, 
-            {
+                ], 
                 "isConstructor": true, 
                 "returns": {
-                    "doc": "a new radio button.", 
+                    "doc": "a new radio button", 
                     "name": "ref:Gtk.Widget"
                 }, 
                 "version": null, 
+                "description": "Creates a new #GtkRadioButton. To be of any practical value, a widget should\nthen be packed into the radio button."
+            }, 
+            {
                 "name": "Gtk.RadioButton(Gtk.RadioButton radio_group_member)", 
                 "parameters": [
                     {
                         "type": "ref:Gtk.RadioButton", 
                         "name": "radio_group_member"
                     }
-                ]
-            }, 
-            {
+                ], 
                 "isConstructor": true, 
                 "returns": {
                     "doc": "a new radio button.", 
                     "name": "ref:Gtk.Widget"
                 }, 
                 "version": null, 
+                "description": "Creates a new #GtkRadioButton, adding it to the same group as\n@radio_group_member. As with gtk_radio_button_new(), a widget\nshould be packed into the radio button."
+            }, 
+            {
                 "name": "Gtk.RadioButton(GLib.SList group, String label)", 
                 "parameters": [
                     {
@@ -84,15 +80,16 @@
                         "type": "String", 
                         "name": "label"
                     }
-                ]
-            }, 
-            {
+                ], 
                 "isConstructor": true, 
                 "returns": {
                     "doc": "a new radio button.", 
                     "name": "ref:Gtk.Widget"
                 }, 
                 "version": null, 
+                "description": "Creates a new #GtkRadioButton with a text label."
+            }, 
+            {
                 "name": "Gtk.RadioButton(Gtk.RadioButton radio_group_member, String label)", 
                 "parameters": [
                     {
@@ -103,15 +100,16 @@
                         "type": "String", 
                         "name": "label"
                     }
-                ]
-            }, 
-            {
+                ], 
                 "isConstructor": true, 
                 "returns": {
-                    "doc": "a new #GtkRadioButton", 
+                    "doc": "a new radio button.", 
                     "name": "ref:Gtk.Widget"
                 }, 
                 "version": null, 
+                "description": "Creates a new #GtkRadioButton with a text label, adding it to\nthe same group as @radio_group_member."
+            }, 
+            {
                 "name": "Gtk.RadioButton(GLib.SList group, String label)", 
                 "parameters": [
                     {
@@ -122,15 +120,16 @@
                         "type": "String", 
                         "name": "label"
                     }
-                ]
-            }, 
-            {
+                ], 
                 "isConstructor": true, 
                 "returns": {
                     "doc": "a new #GtkRadioButton", 
                     "name": "ref:Gtk.Widget"
                 }, 
                 "version": null, 
+                "description": "Creates a new #GtkRadioButton containing a label, adding it to the same\ngroup as @group. The label will be created using\ngtk_label_new_with_mnemonic(), so underscores in @label indicate the\nmnemonic for the button."
+            }, 
+            {
                 "name": "Gtk.RadioButton(Gtk.RadioButton radio_group_member, String label)", 
                 "parameters": [
                     {
@@ -141,7 +140,14 @@
                         "type": "String", 
                         "name": "label"
                     }
-                ]
+                ], 
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a new #GtkRadioButton", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": null, 
+                "description": "Creates a new #GtkRadioButton containing a label. The label\nwill be created using gtk_label_new_with_mnemonic(), so underscores\nin @label indicate the mnemonic for the button."
             }, 
             {
                 "returns": {

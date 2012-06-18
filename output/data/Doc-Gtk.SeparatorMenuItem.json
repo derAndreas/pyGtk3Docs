@@ -26,14 +26,15 @@
         "signals": [], 
         "methods": [
             {
+                "name": "Gtk.SeparatorMenuItem()", 
+                "parameters": null, 
                 "isConstructor": true, 
                 "returns": {
                     "doc": "a new #GtkSeparatorMenuItem.", 
                     "name": "ref:Gtk.Widget"
                 }, 
                 "version": null, 
-                "name": "Gtk.SeparatorMenuItem()", 
-                "parameters": null
+                "description": "Creates a new #GtkSeparatorMenuItem."
             }
         ], 
         "properties": []

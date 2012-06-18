@@ -36,12 +36,6 @@
         ], 
         "methods": [
             {
-                "isConstructor": true, 
-                "returns": {
-                    "doc": "A new #GtkToolButton", 
-                    "name": "ref:Gtk.ToolItem"
-                }, 
-                "version": "2.4", 
                 "name": "Gtk.ToolButton(Gtk.Widget icon_widget, String label)", 
                 "parameters": [
                     {
@@ -52,22 +46,30 @@
                         "type": "String", 
                         "name": "label"
                     }
-                ]
-            }, 
-            {
+                ], 
                 "isConstructor": true, 
                 "returns": {
                     "doc": "A new #GtkToolButton", 
                     "name": "ref:Gtk.ToolItem"
                 }, 
                 "version": "2.4", 
+                "description": "Creates a new %GtkToolButton using @icon_widget as contents and @label as\nlabel."
+            }, 
+            {
                 "name": "Gtk.ToolButton(String stock_id)", 
                 "parameters": [
                     {
                         "type": "String", 
                         "name": "stock_id"
                     }
-                ]
+                ], 
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "A new #GtkToolButton", 
+                    "name": "ref:Gtk.ToolItem"
+                }, 
+                "version": "2.4", 
+                "description": "Creates a new #GtkToolButton containing the image and text from a\nstock item. Some stock ids have preprocessor macros like #GTK_STOCK_OK\nand #GTK_STOCK_APPLY.\n\nIt is an error if @stock_id is not a name of a stock item."
             }, 
             {
                 "returns": {

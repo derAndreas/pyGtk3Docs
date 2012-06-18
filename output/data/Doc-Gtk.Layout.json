@@ -24,12 +24,6 @@
         "signals": [], 
         "methods": [
             {
-                "isConstructor": true, 
-                "returns": {
-                    "doc": "a new #GtkLayout", 
-                    "name": "ref:Gtk.Widget"
-                }, 
-                "version": null, 
                 "name": "Gtk.Layout(Gtk.Adjustment hadjustment, Gtk.Adjustment vadjustment)", 
                 "parameters": [
                     {
@@ -40,7 +34,14 @@
                         "type": "ref:Gtk.Adjustment", 
                         "name": "vadjustment"
                     }
-                ]
+                ], 
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a new #GtkLayout", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": null, 
+                "description": "Creates a new #GtkLayout. Unless you have a specific adjustment\nyou'd like the layout to use for scrolling, pass %NULL for\n@hadjustment and @vadjustment."
             }, 
             {
                 "returns": {

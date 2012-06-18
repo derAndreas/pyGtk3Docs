@@ -24,16 +24,17 @@
         "signals": [], 
         "methods": [
             {
+                "name": "Gtk.HSeparator()", 
+                "parameters": null, 
+                "isConstructor": true, 
                 "returns": {
                     "doc": "a new #GtkHSeparator.", 
                     "name": "ref:Gtk.Widget"
                 }, 
                 "version": null, 
-                "name": "Gtk.HSeparator()", 
-                "parameters": null, 
                 "deprecated": "Use gtk_separator_new() with %GTK_ORIENTATION_HORIZONTAL instead", 
                 "deprecated_version": "3.2", 
-                "isConstructor": true
+                "description": "Creates a new #GtkHSeparator."
             }
         ], 
         "properties": []

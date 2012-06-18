@@ -12,37 +12,33 @@
         "signals": [], 
         "methods": [
             {
+                "name": "Gtk.PrintSettings()", 
+                "parameters": null, 
                 "isConstructor": true, 
                 "returns": {
                     "doc": "a new #GtkPrintSettings object", 
                     "name": "ref:Gtk.PrintSettings"
                 }, 
                 "version": "2.10", 
-                "name": "Gtk.PrintSettings()", 
-                "parameters": null
+                "description": "Creates a new #GtkPrintSettings object."
             }, 
             {
-                "isConstructor": true, 
-                "returns": {
-                    "doc": "the restored #GtkPrintSettings", 
-                    "name": "ref:Gtk.PrintSettings"
-                }, 
-                "version": "2.12", 
                 "name": "Gtk.PrintSettings(String file_name)", 
                 "parameters": [
                     {
                         "type": "String", 
                         "name": "file_name"
                     }
-                ]
-            }, 
-            {
+                ], 
                 "isConstructor": true, 
                 "returns": {
                     "doc": "the restored #GtkPrintSettings", 
                     "name": "ref:Gtk.PrintSettings"
                 }, 
                 "version": "2.12", 
+                "description": "Reads the print settings from @file_name. Returns a new #GtkPrintSettings\nobject with the restored settings, or %NULL if an error occurred. If the\nfile could not be loaded then error is set to either a #GFileError or\n#GKeyFileError.  See gtk_print_settings_to_file()."
+            }, 
+            {
                 "name": "Gtk.PrintSettings(GLib.KeyFile key_file, String group_name)", 
                 "parameters": [
                     {
@@ -53,7 +49,14 @@
                         "type": "String", 
                         "name": "group_name"
                     }
-                ]
+                ], 
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "the restored #GtkPrintSettings", 
+                    "name": "ref:Gtk.PrintSettings"
+                }, 
+                "version": "2.12", 
+                "description": "Reads the print settings from the group @group_name in @key_file.  Returns a\nnew #GtkPrintSettings object with the restored settings, or %NULL if an\nerror occurred. If the file could not be loaded then error is set to either\na #GFileError or #GKeyFileError."
             }, 
             {
                 "returns": {

@@ -29,14 +29,15 @@
         ], 
         "methods": [
             {
+                "name": "Gtk.Overlay()", 
+                "parameters": null, 
                 "isConstructor": true, 
                 "returns": {
                     "doc": "a new #GtkOverlay object.", 
                     "name": "ref:Gtk.Widget"
                 }, 
                 "version": "3.2", 
-                "name": "Gtk.Overlay()", 
-                "parameters": null
+                "description": "Creates a new #GtkOverlay."
             }, 
             {
                 "returns": {

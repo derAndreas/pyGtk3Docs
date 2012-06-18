@@ -27,14 +27,15 @@
         "signals": [], 
         "methods": [
             {
+                "name": "Gtk.ToolPalette()", 
+                "parameters": null, 
                 "isConstructor": true, 
                 "returns": {
                     "doc": "a new #GtkToolPalette", 
                     "name": "ref:Gtk.Widget"
                 }, 
                 "version": "2.20", 
-                "name": "Gtk.ToolPalette()", 
-                "parameters": null
+                "description": "Creates a new tool palette."
             }, 
             {
                 "returns": {

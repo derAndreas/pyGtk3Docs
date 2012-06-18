@@ -26,14 +26,15 @@
         "signals": [], 
         "methods": [
             {
+                "name": "Gtk.SeparatorToolItem()", 
+                "parameters": null, 
                 "isConstructor": true, 
                 "returns": {
                     "doc": "the new #GtkSeparatorToolItem", 
                     "name": "ref:Gtk.ToolItem"
                 }, 
                 "version": "2.4", 
-                "name": "Gtk.SeparatorToolItem()", 
-                "parameters": null
+                "description": "Create a new #GtkSeparatorToolItem"
             }, 
             {
                 "returns": {

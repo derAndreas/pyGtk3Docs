@@ -13,14 +13,15 @@
         "signals": [], 
         "methods": [
             {
+                "name": "Gtk.IMMulticontext()", 
+                "parameters": null, 
                 "isConstructor": true, 
                 "returns": {
                     "doc": "a new #GtkIMMulticontext.", 
                     "name": "ref:Gtk.IMContext"
                 }, 
                 "version": null, 
-                "name": "Gtk.IMMulticontext()", 
-                "parameters": null
+                "description": "Creates a new #GtkIMMulticontext."
             }, 
             {
                 "returns": {

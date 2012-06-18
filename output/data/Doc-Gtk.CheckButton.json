@@ -30,44 +30,47 @@
         "signals": [], 
         "methods": [
             {
+                "name": "Gtk.CheckButton()", 
+                "parameters": null, 
                 "isConstructor": true, 
                 "returns": {
                     "doc": "a #GtkWidget.", 
                     "name": "ref:Gtk.Widget"
                 }, 
                 "version": null, 
-                "name": "Gtk.CheckButton()", 
-                "parameters": null
+                "description": "Creates a new #GtkCheckButton."
             }, 
             {
-                "isConstructor": true, 
-                "returns": {
-                    "doc": "a #GtkWidget.", 
-                    "name": "ref:Gtk.Widget"
-                }, 
-                "version": null, 
                 "name": "Gtk.CheckButton(String label)", 
                 "parameters": [
                     {
                         "type": "String", 
                         "name": "label"
                     }
-                ]
+                ], 
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a #GtkWidget.", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": null, 
+                "description": "Creates a new #GtkCheckButton with a #GtkLabel to the right of it."
             }, 
             {
+                "name": "Gtk.CheckButton(String label)", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "label"
+                    }
+                ], 
                 "isConstructor": true, 
                 "returns": {
                     "doc": "a new #GtkCheckButton", 
                     "name": "ref:Gtk.Widget"
                 }, 
                 "version": null, 
-                "name": "Gtk.CheckButton(String label)", 
-                "parameters": [
-                    {
-                        "type": "String", 
-                        "name": "label"
-                    }
-                ]
+                "description": "Creates a new #GtkCheckButton containing a label. The label\nwill be created using gtk_label_new_with_mnemonic(), so underscores\nin @label indicate the mnemonic for the check button."
             }, 
             {
                 "returns": {

@@ -35,12 +35,6 @@
         ], 
         "methods": [
             {
-                "isConstructor": true, 
-                "returns": {
-                    "doc": "a new button widget.", 
-                    "name": "ref:Gtk.Widget"
-                }, 
-                "version": "2.6", 
                 "name": "Gtk.FileChooserButton(String title, Gtk.FileChooserAction action)", 
                 "parameters": [
                     {
@@ -51,22 +45,30 @@
                         "type": "ref:Gtk.FileChooserAction", 
                         "name": "action"
                     }
-                ]
-            }, 
-            {
+                ], 
                 "isConstructor": true, 
                 "returns": {
                     "doc": "a new button widget.", 
                     "name": "ref:Gtk.Widget"
                 }, 
                 "version": "2.6", 
+                "description": "Creates a new file-selecting button widget."
+            }, 
+            {
                 "name": "Gtk.FileChooserButton(Gtk.Widget dialog)", 
                 "parameters": [
                     {
                         "type": "ref:Gtk.Widget", 
                         "name": "dialog"
                     }
-                ]
+                ], 
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a new button widget.", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": "2.6", 
+                "description": "Creates a #GtkFileChooserButton widget which uses @dialog as its\nfile-picking window.\n\nNote that @dialog must be a #GtkDialog (or subclass) which\nimplements the #GtkFileChooser interface and must not have\n%GTK_DIALOG_DESTROY_WITH_PARENT set.\n\nAlso note that the dialog needs to have its confirmative button\nadded with response %GTK_RESPONSE_ACCEPT or %GTK_RESPONSE_OK in\norder for the button to take over the file selected in the dialog."
             }, 
             {
                 "returns": {

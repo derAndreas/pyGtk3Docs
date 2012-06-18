@@ -76,44 +76,47 @@
         ], 
         "methods": [
             {
+                "name": "Gtk.IconView()", 
+                "parameters": null, 
                 "isConstructor": true, 
                 "returns": {
                     "doc": "A newly created #GtkIconView widget", 
                     "name": "ref:Gtk.Widget"
                 }, 
                 "version": "2.6", 
-                "name": "Gtk.IconView()", 
-                "parameters": null
+                "description": "Creates a new #GtkIconView widget"
             }, 
             {
-                "isConstructor": true, 
-                "returns": {
-                    "doc": "A newly created #GtkIconView widget", 
-                    "name": "ref:Gtk.Widget"
-                }, 
-                "version": "3.0", 
                 "name": "Gtk.IconView(Gtk.CellArea area)", 
                 "parameters": [
                     {
                         "type": "ref:Gtk.CellArea", 
                         "name": "area"
                     }
-                ]
-            }, 
-            {
+                ], 
                 "isConstructor": true, 
                 "returns": {
-                    "doc": "A newly created #GtkIconView widget.", 
+                    "doc": "A newly created #GtkIconView widget", 
                     "name": "ref:Gtk.Widget"
                 }, 
-                "version": "2.6 ", 
+                "version": "3.0", 
+                "description": "Creates a new #GtkIconView widget using the\nspecified @area to layout cells inside the icons."
+            }, 
+            {
                 "name": "Gtk.IconView(Gtk.TreeModel model)", 
                 "parameters": [
                     {
                         "type": "ref:Gtk.TreeModel", 
                         "name": "model"
                     }
-                ]
+                ], 
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "A newly created #GtkIconView widget.", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": "2.6 ", 
+                "description": "Creates a new #GtkIconView widget with the model @model."
             }, 
             {
                 "returns": {

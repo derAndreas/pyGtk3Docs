@@ -23,19 +23,20 @@
         "signals": [], 
         "methods": [
             {
-                "isConstructor": true, 
-                "returns": {
-                    "doc": "a new #GtkSeparator.", 
-                    "name": "ref:Gtk.Widget"
-                }, 
-                "version": "3.0", 
                 "name": "Gtk.Separator(Gtk.Orientation orientation)", 
                 "parameters": [
                     {
                         "type": "ref:Gtk.Orientation", 
                         "name": "orientation"
                     }
-                ]
+                ], 
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a new #GtkSeparator.", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": "3.0", 
+                "description": "Creates a new #GtkSeparator with the given orientation."
             }
         ], 
         "properties": []

@@ -12,14 +12,15 @@
         "signals": [], 
         "methods": [
             {
+                "name": "Gtk.WindowGroup()", 
+                "parameters": null, 
                 "isConstructor": true, 
                 "returns": {
                     "doc": "a new #GtkWindowGroup.", 
                     "name": "ref:Gtk.WindowGroup"
                 }, 
                 "version": null, 
-                "name": "Gtk.WindowGroup()", 
-                "parameters": null
+                "description": "Creates a new #GtkWindowGroup object. Grabs added with\ngtk_grab_add() only affect windows within the same #GtkWindowGroup."
             }, 
             {
                 "returns": {

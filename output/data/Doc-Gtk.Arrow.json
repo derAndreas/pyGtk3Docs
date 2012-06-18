@@ -21,12 +21,6 @@
         "signals": [], 
         "methods": [
             {
-                "isConstructor": true, 
-                "returns": {
-                    "doc": "the new #GtkArrow widget.", 
-                    "name": "ref:Gtk.Widget"
-                }, 
-                "version": null, 
                 "name": "Gtk.Arrow(Gtk.ArrowType arrow_type, Gtk.ShadowType shadow_type)", 
                 "parameters": [
                     {
@@ -37,7 +31,14 @@
                         "type": "ref:Gtk.ShadowType", 
                         "name": "shadow_type"
                     }
-                ]
+                ], 
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "the new #GtkArrow widget.", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": null, 
+                "description": "Creates a new #GtkArrow widget."
             }, 
             {
                 "returns": {

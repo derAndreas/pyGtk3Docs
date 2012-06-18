@@ -22,12 +22,6 @@
         "signals": [], 
         "methods": [
             {
-                "isConstructor": true, 
-                "returns": {
-                    "doc": "the new #GtkAlignment.", 
-                    "name": "ref:Gtk.Widget"
-                }, 
-                "version": null, 
                 "name": "Gtk.Alignment(Float xalign, Float yalign, Float xscale, Float yscale)", 
                 "parameters": [
                     {
@@ -46,7 +40,14 @@
                         "type": "Float", 
                         "name": "yscale"
                     }
-                ]
+                ], 
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "the new #GtkAlignment.", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": null, 
+                "description": "Creates a new #GtkAlignment."
             }, 
             {
                 "returns": {

@@ -21,14 +21,15 @@
         "signals": [], 
         "methods": [
             {
+                "name": "Gtk.Fixed()", 
+                "parameters": null, 
                 "isConstructor": true, 
                 "returns": {
                     "doc": "a new #GtkFixed.", 
                     "name": "ref:Gtk.Widget"
                 }, 
                 "version": null, 
-                "name": "Gtk.Fixed()", 
-                "parameters": null
+                "description": "Creates a new #GtkFixed."
             }, 
             {
                 "returns": {

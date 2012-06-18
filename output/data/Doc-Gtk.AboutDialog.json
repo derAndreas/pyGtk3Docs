@@ -31,14 +31,15 @@
         ], 
         "methods": [
             {
+                "name": "Gtk.AboutDialog()", 
+                "parameters": null, 
                 "isConstructor": true, 
                 "returns": {
                     "doc": "a newly created #GtkAboutDialog", 
                     "name": "ref:Gtk.Widget"
                 }, 
                 "version": "2.6", 
-                "name": "Gtk.AboutDialog()", 
-                "parameters": null
+                "description": "Creates a new #GtkAboutDialog."
             }, 
             {
                 "returns": {

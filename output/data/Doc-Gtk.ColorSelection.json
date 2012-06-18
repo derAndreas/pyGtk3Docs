@@ -32,14 +32,15 @@
         ], 
         "methods": [
             {
+                "name": "Gtk.ColorSelection()", 
+                "parameters": null, 
                 "isConstructor": true, 
                 "returns": {
                     "doc": "a new #GtkColorSelection", 
                     "name": "ref:Gtk.Widget"
                 }, 
                 "version": null, 
-                "name": "Gtk.ColorSelection()", 
-                "parameters": null
+                "description": "Creates a new GtkColorSelection."
             }, 
             {
                 "returns": {

@@ -51,12 +51,6 @@
         ], 
         "methods": [
             {
-                "isConstructor": true, 
-                "returns": {
-                    "doc": "a new #GtkScaleButton", 
-                    "name": "ref:Gtk.Widget"
-                }, 
-                "version": "2.12", 
                 "name": "Gtk.ScaleButton(Gtk.IconSize size, Float min, Float max, Float step, String[] icons)", 
                 "parameters": [
                     {
@@ -79,7 +73,14 @@
                         "type": "String[]", 
                         "name": "icons"
                     }
-                ]
+                ], 
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a new #GtkScaleButton", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": "2.12", 
+                "description": "Creates a #GtkScaleButton, with a range between @min and @max, with\na stepping of @step."
             }, 
             {
                 "returns": {

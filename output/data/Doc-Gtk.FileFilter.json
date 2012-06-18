@@ -16,14 +16,15 @@
         "signals": [], 
         "methods": [
             {
+                "name": "Gtk.FileFilter()", 
+                "parameters": null, 
                 "isConstructor": true, 
                 "returns": {
                     "doc": "a new #GtkFileFilter", 
                     "name": "ref:Gtk.FileFilter"
                 }, 
                 "version": "2.4", 
-                "name": "Gtk.FileFilter()", 
-                "parameters": null
+                "description": "Creates a new #GtkFileFilter with no rules added to it.\nSuch a filter doesn't accept any files, so is not\nparticularly useful until you add rules with\ngtk_file_filter_add_mime_type(), gtk_file_filter_add_pattern(),\nor gtk_file_filter_add_custom(). To create a filter\nthat accepts any file, use:\n|[\nGtkFileFilter *filter = gtk_file_filter_new ();\ngtk_file_filter_add_pattern (filter, \"*\");\n]|"
             }, 
             {
                 "returns": {

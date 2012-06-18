@@ -16,14 +16,15 @@
         "signals": [], 
         "methods": [
             {
+                "name": "Gtk.StyleProperties()", 
+                "parameters": null, 
                 "isConstructor": true, 
                 "returns": {
                     "doc": "a new #GtkStyleProperties", 
                     "name": "ref:Gtk.StyleProperties"
                 }, 
                 "version": null, 
-                "name": "Gtk.StyleProperties()", 
-                "parameters": null
+                "description": "Returns a newly created #GtkStyleProperties"
             }, 
             {
                 "returns": {

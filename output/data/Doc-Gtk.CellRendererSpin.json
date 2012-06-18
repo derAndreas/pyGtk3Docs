@@ -14,14 +14,15 @@
         "signals": [], 
         "methods": [
             {
+                "name": "Gtk.CellRendererSpin()", 
+                "parameters": null, 
                 "isConstructor": true, 
                 "returns": {
                     "doc": "a new #GtkCellRendererSpin", 
                     "name": "ref:Gtk.CellRenderer"
                 }, 
                 "version": "2.10", 
-                "name": "Gtk.CellRendererSpin()", 
-                "parameters": null
+                "description": "Creates a new #GtkCellRendererSpin."
             }
         ], 
         "properties": [

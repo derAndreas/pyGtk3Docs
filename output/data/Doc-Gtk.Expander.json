@@ -29,34 +29,36 @@
         ], 
         "methods": [
             {
-                "isConstructor": true, 
-                "returns": {
-                    "doc": "a new #GtkExpander widget.", 
-                    "name": "ref:Gtk.Widget"
-                }, 
-                "version": "2.4", 
                 "name": "Gtk.Expander(String label)", 
                 "parameters": [
                     {
                         "type": "String", 
                         "name": "label"
                     }
-                ]
+                ], 
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a new #GtkExpander widget.", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": "2.4", 
+                "description": "Creates a new expander using @label as the text of the label."
             }, 
             {
-                "isConstructor": true, 
-                "returns": {
-                    "doc": "a new #GtkExpander widget.", 
-                    "name": "ref:Gtk.Widget"
-                }, 
-                "version": "2.4", 
                 "name": "Gtk.Expander(String label)", 
                 "parameters": [
                     {
                         "type": "String", 
                         "name": "label"
                     }
-                ]
+                ], 
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a new #GtkExpander widget.", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": "2.4", 
+                "description": "Creates a new expander using @label as the text of the label.\nIf characters in @label are preceded by an underscore, they are underlined.\nIf you need a literal underscore character in a label, use '__' (two\nunderscores). The first underlined character represents a keyboard\naccelerator called a mnemonic.\nPressing Alt and that key activates the button."
             }, 
             {
                 "returns": {

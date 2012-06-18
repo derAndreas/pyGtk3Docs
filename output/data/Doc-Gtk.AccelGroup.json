@@ -25,14 +25,15 @@
         ], 
         "methods": [
             {
+                "name": "Gtk.AccelGroup()", 
+                "parameters": null, 
                 "isConstructor": true, 
                 "returns": {
                     "doc": "a new #GtkAccelGroup object", 
                     "name": "ref:Gtk.AccelGroup"
                 }, 
                 "version": null, 
-                "name": "Gtk.AccelGroup()", 
-                "parameters": null
+                "description": "Creates a new #GtkAccelGroup."
             }, 
             {
                 "returns": {

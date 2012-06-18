@@ -25,11 +25,6 @@
         "signals": [], 
         "methods": [
             {
-                "returns": {
-                    "doc": "a new #GtkVScale.", 
-                    "name": "ref:Gtk.Widget"
-                }, 
-                "version": null, 
                 "name": "Gtk.VScale(Gtk.Adjustment adjustment)", 
                 "parameters": [
                     {
@@ -37,16 +32,17 @@
                         "name": "adjustment"
                     }
                 ], 
-                "deprecated": "Use gtk_scale_new() with %GTK_ORIENTATION_VERTICAL instead", 
-                "deprecated_version": "3.2", 
-                "isConstructor": true
-            }, 
-            {
+                "isConstructor": true, 
                 "returns": {
-                    "doc": "a new #GtkVScale", 
+                    "doc": "a new #GtkVScale.", 
                     "name": "ref:Gtk.Widget"
                 }, 
                 "version": null, 
+                "deprecated": "Use gtk_scale_new() with %GTK_ORIENTATION_VERTICAL instead", 
+                "deprecated_version": "3.2", 
+                "description": "Creates a new #GtkVScale."
+            }, 
+            {
                 "name": "Gtk.VScale(Float min, Float max, Float step)", 
                 "parameters": [
                     {
@@ -62,9 +58,15 @@
                         "name": "step"
                     }
                 ], 
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a new #GtkVScale", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": null, 
                 "deprecated": "Use gtk_scale_new_with_range() with %GTK_ORIENTATION_VERTICAL instead", 
                 "deprecated_version": "3.2", 
-                "isConstructor": true
+                "description": "Creates a new vertical scale widget that lets the user input a\nnumber between @min and @max (including @min and @max) with the\nincrement @step.  @step must be nonzero; it's the distance the\nslider moves when using the arrow keys to adjust the scale value.\n\nNote that the way in which the precision is derived works best if @step\nis a power of ten. If the resulting precision is not suitable for your\nneeds, use gtk_scale_set_digits() to correct it."
             }
         ], 
         "properties": []

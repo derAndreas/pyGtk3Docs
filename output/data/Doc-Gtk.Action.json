@@ -23,12 +23,6 @@
         ], 
         "methods": [
             {
-                "isConstructor": true, 
-                "returns": {
-                    "doc": "a new #GtkAction", 
-                    "name": "ref:Gtk.Action"
-                }, 
-                "version": "2.4", 
                 "name": "Gtk.Action(String name, String label, String tooltip, String stock_id)", 
                 "parameters": [
                     {
@@ -47,7 +41,14 @@
                         "type": "String", 
                         "name": "stock_id"
                     }
-                ]
+                ], 
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a new #GtkAction", 
+                    "name": "ref:Gtk.Action"
+                }, 
+                "version": "2.4", 
+                "description": "Creates a new #GtkAction object. To add the action to a\n#GtkActionGroup and set the accelerator for the action,\ncall gtk_action_group_add_action_with_accel().\nSee <xref linkend=\"XML-UI\"/> for information on allowed action\nnames."
             }, 
             {
                 "returns": {

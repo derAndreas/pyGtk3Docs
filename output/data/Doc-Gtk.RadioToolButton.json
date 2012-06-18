@@ -31,27 +31,22 @@
         "signals": [], 
         "methods": [
             {
-                "isConstructor": true, 
-                "returns": {
-                    "doc": "The new #GtkRadioToolButton", 
-                    "name": "ref:Gtk.ToolItem"
-                }, 
-                "version": "2.4", 
                 "name": "Gtk.RadioToolButton(GLib.SList group)", 
                 "parameters": [
                     {
                         "type": "GLib.SList", 
                         "name": "group"
                     }
-                ]
-            }, 
-            {
+                ], 
                 "isConstructor": true, 
                 "returns": {
-                    "doc": "The new #GtkRadioToolItem", 
+                    "doc": "The new #GtkRadioToolButton", 
                     "name": "ref:Gtk.ToolItem"
                 }, 
                 "version": "2.4", 
+                "description": "Creates a new #GtkRadioToolButton, adding it to @group."
+            }, 
+            {
                 "name": "Gtk.RadioToolButton(GLib.SList group, String stock_id)", 
                 "parameters": [
                     {
@@ -62,30 +57,32 @@
                         "type": "String", 
                         "name": "stock_id"
                     }
-                ]
-            }, 
-            {
+                ], 
                 "isConstructor": true, 
                 "returns": {
-                    "doc": "The new #GtkRadioToolButton", 
+                    "doc": "The new #GtkRadioToolItem", 
                     "name": "ref:Gtk.ToolItem"
                 }, 
                 "version": "2.4", 
+                "description": "Creates a new #GtkRadioToolButton, adding it to @group. \nThe new #GtkRadioToolButton will contain an icon and label from the\nstock item indicated by @stock_id."
+            }, 
+            {
                 "name": "Gtk.RadioToolButton(Gtk.RadioToolButton group)", 
                 "parameters": [
                     {
                         "type": "ref:Gtk.RadioToolButton", 
                         "name": "group"
                     }
-                ]
-            }, 
-            {
+                ], 
                 "isConstructor": true, 
                 "returns": {
-                    "doc": "A new #GtkRadioToolButton", 
+                    "doc": "The new #GtkRadioToolButton", 
                     "name": "ref:Gtk.ToolItem"
                 }, 
                 "version": "2.4", 
+                "description": "Creates a new #GtkRadioToolButton adding it to the same group as @gruup"
+            }, 
+            {
                 "name": "Gtk.RadioToolButton(Gtk.RadioToolButton group, String stock_id)", 
                 "parameters": [
                     {
@@ -96,7 +93,14 @@
                         "type": "String", 
                         "name": "stock_id"
                     }
-                ]
+                ], 
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "A new #GtkRadioToolButton", 
+                    "name": "ref:Gtk.ToolItem"
+                }, 
+                "version": "2.4", 
+                "description": "Creates a new #GtkRadioToolButton adding it to the same group as @group.\nThe new #GtkRadioToolButton will contain an icon and label from the\nstock item indicated by @stock_id."
             }, 
             {
                 "returns": {

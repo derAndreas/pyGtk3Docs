@@ -36,27 +36,22 @@
         ], 
         "methods": [
             {
-                "isConstructor": true, 
-                "returns": {
-                    "doc": "a new link button widget.", 
-                    "name": "ref:Gtk.Widget"
-                }, 
-                "version": "2.10", 
                 "name": "Gtk.LinkButton(String uri)", 
                 "parameters": [
                     {
                         "type": "String", 
                         "name": "uri"
                     }
-                ]
-            }, 
-            {
+                ], 
                 "isConstructor": true, 
                 "returns": {
                     "doc": "a new link button widget.", 
                     "name": "ref:Gtk.Widget"
                 }, 
                 "version": "2.10", 
+                "description": "Creates a new #GtkLinkButton with the URI as its text."
+            }, 
+            {
                 "name": "Gtk.LinkButton(String uri, String label)", 
                 "parameters": [
                     {
@@ -67,7 +62,14 @@
                         "type": "String", 
                         "name": "label"
                     }
-                ]
+                ], 
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a new link button widget.", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": "2.10", 
+                "description": "Creates a new #GtkLinkButton containing a label."
             }, 
             {
                 "returns": {

@@ -23,12 +23,6 @@
         "signals": [], 
         "methods": [
             {
-                "isConstructor": true, 
-                "returns": {
-                    "doc": "the new #GtkAspectFrame.", 
-                    "name": "ref:Gtk.Widget"
-                }, 
-                "version": null, 
                 "name": "Gtk.AspectFrame(String label, Float xalign, Float yalign, Float ratio, Boolean obey_child)", 
                 "parameters": [
                     {
@@ -51,7 +45,14 @@
                         "type": "Boolean", 
                         "name": "obey_child"
                     }
-                ]
+                ], 
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "the new #GtkAspectFrame.", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": null, 
+                "description": "Create a new #GtkAspectFrame."
             }, 
             {
                 "returns": {

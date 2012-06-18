@@ -62,44 +62,47 @@
         ], 
         "methods": [
             {
+                "name": "Gtk.MenuItem()", 
+                "parameters": null, 
                 "isConstructor": true, 
                 "returns": {
                     "doc": "the newly created #GtkMenuItem", 
                     "name": "ref:Gtk.Widget"
                 }, 
                 "version": null, 
-                "name": "Gtk.MenuItem()", 
-                "parameters": null
+                "description": "Creates a new #GtkMenuItem."
             }, 
             {
-                "isConstructor": true, 
-                "returns": {
-                    "doc": "the newly created #GtkMenuItem", 
-                    "name": "ref:Gtk.Widget"
-                }, 
-                "version": null, 
                 "name": "Gtk.MenuItem(String label)", 
                 "parameters": [
                     {
                         "type": "String", 
                         "name": "label"
                     }
-                ]
+                ], 
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "the newly created #GtkMenuItem", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": null, 
+                "description": "Creates a new #GtkMenuItem whose child is a #GtkLabel."
             }, 
             {
+                "name": "Gtk.MenuItem(String label)", 
+                "parameters": [
+                    {
+                        "type": "String", 
+                        "name": "label"
+                    }
+                ], 
                 "isConstructor": true, 
                 "returns": {
                     "doc": "a new #GtkMenuItem", 
                     "name": "ref:Gtk.Widget"
                 }, 
                 "version": null, 
-                "name": "Gtk.MenuItem(String label)", 
-                "parameters": [
-                    {
-                        "type": "String", 
-                        "name": "label"
-                    }
-                ]
+                "description": "Creates a new #GtkMenuItem containing a label.\n\nThe label will be created using gtk_label_new_with_mnemonic(),\nso underscores in @label indicate the mnemonic for the menu item."
             }, 
             {
                 "returns": {

@@ -83,14 +83,15 @@
         ], 
         "methods": [
             {
+                "name": "Gtk.PrintOperation()", 
+                "parameters": null, 
                 "isConstructor": true, 
                 "returns": {
                     "doc": "a new #GtkPrintOperation", 
                     "name": "ref:Gtk.PrintOperation"
                 }, 
                 "version": "2.10", 
-                "name": "Gtk.PrintOperation()", 
-                "parameters": null
+                "description": "Creates a new #GtkPrintOperation."
             }, 
             {
                 "returns": {

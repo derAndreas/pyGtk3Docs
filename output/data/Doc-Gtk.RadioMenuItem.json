@@ -34,80 +34,38 @@
         ], 
         "methods": [
             {
-                "isConstructor": true, 
-                "returns": {
-                    "doc": "a new #GtkRadioMenuItem", 
-                    "name": "ref:Gtk.Widget"
-                }, 
-                "version": null, 
                 "name": "Gtk.RadioMenuItem(GLib.SList group)", 
                 "parameters": [
                     {
                         "type": "GLib.SList", 
                         "name": "group"
                     }
-                ]
-            }, 
-            {
-                "isConstructor": true, 
-                "returns": {
-                    "doc": "The new #GtkRadioMenuItem", 
-                    "name": "ref:Gtk.Widget"
-                }, 
-                "version": "2.4", 
-                "name": "Gtk.RadioMenuItem(Gtk.RadioMenuItem group)", 
-                "parameters": [
-                    {
-                        "type": "ref:Gtk.RadioMenuItem", 
-                        "name": "group"
-                    }
-                ]
-            }, 
-            {
-                "isConstructor": true, 
-                "returns": {
-                    "doc": "A new #GtkRadioMenuItem", 
-                    "name": "ref:Gtk.Widget"
-                }, 
-                "version": null, 
-                "name": "Gtk.RadioMenuItem(GLib.SList group, String label)", 
-                "parameters": [
-                    {
-                        "type": "GLib.SList", 
-                        "name": "group"
-                    }, 
-                    {
-                        "type": "String", 
-                        "name": "label"
-                    }
-                ]
-            }, 
-            {
-                "isConstructor": true, 
-                "returns": {
-                    "doc": "The new #GtkRadioMenuItem", 
-                    "name": "ref:Gtk.Widget"
-                }, 
-                "version": "2.4", 
-                "name": "Gtk.RadioMenuItem(Gtk.RadioMenuItem group, String label)", 
-                "parameters": [
-                    {
-                        "type": "ref:Gtk.RadioMenuItem", 
-                        "name": "group"
-                    }, 
-                    {
-                        "type": "String", 
-                        "name": "label"
-                    }
-                ]
-            }, 
-            {
+                ], 
                 "isConstructor": true, 
                 "returns": {
                     "doc": "a new #GtkRadioMenuItem", 
                     "name": "ref:Gtk.Widget"
                 }, 
                 "version": null, 
+                "description": "Creates a new #GtkRadioMenuItem."
+            }, 
+            {
+                "name": "Gtk.RadioMenuItem(Gtk.RadioMenuItem group)", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.RadioMenuItem", 
+                        "name": "group"
+                    }
+                ], 
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "The new #GtkRadioMenuItem", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": "2.4", 
+                "description": "Creates a new #GtkRadioMenuItem adding it to the same group as @group."
+            }, 
+            {
                 "name": "Gtk.RadioMenuItem(GLib.SList group, String label)", 
                 "parameters": [
                     {
@@ -118,15 +76,16 @@
                         "type": "String", 
                         "name": "label"
                     }
-                ]
-            }, 
-            {
+                ], 
                 "isConstructor": true, 
                 "returns": {
-                    "doc": "The new #GtkRadioMenuItem", 
+                    "doc": "A new #GtkRadioMenuItem", 
                     "name": "ref:Gtk.Widget"
                 }, 
-                "version": "2.4", 
+                "version": null, 
+                "description": "Creates a new #GtkRadioMenuItem whose child is a simple #GtkLabel."
+            }, 
+            {
                 "name": "Gtk.RadioMenuItem(Gtk.RadioMenuItem group, String label)", 
                 "parameters": [
                     {
@@ -137,7 +96,54 @@
                         "type": "String", 
                         "name": "label"
                     }
-                ]
+                ], 
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "The new #GtkRadioMenuItem", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": "2.4", 
+                "description": "Creates a new GtkRadioMenuItem whose child is a simple GtkLabel.\nThe new #GtkRadioMenuItem is added to the same group as @group."
+            }, 
+            {
+                "name": "Gtk.RadioMenuItem(GLib.SList group, String label)", 
+                "parameters": [
+                    {
+                        "type": "GLib.SList", 
+                        "name": "group"
+                    }, 
+                    {
+                        "type": "String", 
+                        "name": "label"
+                    }
+                ], 
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a new #GtkRadioMenuItem", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": null, 
+                "description": "Creates a new #GtkRadioMenuItem containing a label. The label\nwill be created using gtk_label_new_with_mnemonic(), so underscores\nin @label indicate the mnemonic for the menu item."
+            }, 
+            {
+                "name": "Gtk.RadioMenuItem(Gtk.RadioMenuItem group, String label)", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.RadioMenuItem", 
+                        "name": "group"
+                    }, 
+                    {
+                        "type": "String", 
+                        "name": "label"
+                    }
+                ], 
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "The new #GtkRadioMenuItem", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": "2.4", 
+                "description": "Creates a new GtkRadioMenuItem containing a label. The label will be\ncreated using gtk_label_new_with_mnemonic(), so underscores in label\nindicate the mnemonic for the menu item.\n\nThe new #GtkRadioMenuItem is added to the same group as @group."
             }, 
             {
                 "returns": {

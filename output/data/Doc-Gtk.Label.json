@@ -52,34 +52,36 @@
         ], 
         "methods": [
             {
-                "isConstructor": true, 
-                "returns": {
-                    "doc": "the new #GtkLabel", 
-                    "name": "ref:Gtk.Widget"
-                }, 
-                "version": null, 
                 "name": "Gtk.Label(String str)", 
                 "parameters": [
                     {
                         "type": "String", 
                         "name": "str"
                     }
-                ]
+                ], 
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "the new #GtkLabel", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": null, 
+                "description": "Creates a new label with the given text inside it. You can\npass %NULL to get an empty label widget."
             }, 
             {
-                "isConstructor": true, 
-                "returns": {
-                    "doc": "the new #GtkLabel", 
-                    "name": "ref:Gtk.Widget"
-                }, 
-                "version": null, 
                 "name": "Gtk.Label(String str)", 
                 "parameters": [
                     {
                         "type": "String", 
                         "name": "str"
                     }
-                ]
+                ], 
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "the new #GtkLabel", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": null, 
+                "description": "Creates a new #GtkLabel, containing the text in @str.\n\nIf characters in @str are preceded by an underscore, they are\nunderlined. If you need a literal underscore character in a label, use\n'__' (two underscores). The first underlined character represents a \nkeyboard accelerator called a mnemonic. The mnemonic key can be used \nto activate another widget, chosen automatically, or explicitly using\ngtk_label_set_mnemonic_widget().\n\nIf gtk_label_set_mnemonic_widget() is not called, then the first \nactivatable ancestor of the #GtkLabel will be chosen as the mnemonic \nwidget. For instance, if the label is inside a button or menu item, \nthe button or menu item will automatically become the mnemonic widget \nand be activated by the mnemonic."
             }, 
             {
                 "returns": {

@@ -31,12 +31,6 @@
         ], 
         "methods": [
             {
-                "isConstructor": true, 
-                "returns": {
-                    "doc": "a new #GtkScale", 
-                    "name": "ref:Gtk.Widget"
-                }, 
-                "version": "3.0", 
                 "name": "Gtk.Scale(Gtk.Orientation orientation, Gtk.Adjustment adjustment)", 
                 "parameters": [
                     {
@@ -47,15 +41,16 @@
                         "type": "ref:Gtk.Adjustment", 
                         "name": "adjustment"
                     }
-                ]
-            }, 
-            {
+                ], 
                 "isConstructor": true, 
                 "returns": {
                     "doc": "a new #GtkScale", 
                     "name": "ref:Gtk.Widget"
                 }, 
                 "version": "3.0", 
+                "description": "Creates a new #GtkScale."
+            }, 
+            {
                 "name": "Gtk.Scale(Gtk.Orientation orientation, Float min, Float max, Float step)", 
                 "parameters": [
                     {
@@ -74,7 +69,14 @@
                         "type": "Float", 
                         "name": "step"
                     }
-                ]
+                ], 
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a new #GtkScale", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": "3.0", 
+                "description": "Creates a new scale widget with the given orientation that lets the\nuser input a number between @min and @max (including @min and @max)\nwith the increment @step.  @step must be nonzero; it's the distance\nthe slider moves when using the arrow keys to adjust the scale\nvalue.\n\nNote that the way in which the precision is derived works best if @step\nis a power of ten. If the resulting precision is not suitable for your\nneeds, use gtk_scale_set_digits() to correct it."
             }, 
             {
                 "returns": {

@@ -37,12 +37,6 @@
         ], 
         "methods": [
             {
-                "isConstructor": true, 
-                "returns": {
-                    "doc": "the new #GtkMenuToolButton", 
-                    "name": "ref:Gtk.ToolItem"
-                }, 
-                "version": "2.6", 
                 "name": "Gtk.MenuToolButton(Gtk.Widget icon_widget, String label)", 
                 "parameters": [
                     {
@@ -53,22 +47,30 @@
                         "type": "String", 
                         "name": "label"
                     }
-                ]
-            }, 
-            {
+                ], 
                 "isConstructor": true, 
                 "returns": {
                     "doc": "the new #GtkMenuToolButton", 
                     "name": "ref:Gtk.ToolItem"
                 }, 
                 "version": "2.6", 
+                "description": "Creates a new #GtkMenuToolButton using @icon_widget as icon and\n@label as label."
+            }, 
+            {
                 "name": "Gtk.MenuToolButton(String stock_id)", 
                 "parameters": [
                     {
                         "type": "String", 
                         "name": "stock_id"
                     }
-                ]
+                ], 
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "the new #GtkMenuToolButton", 
+                    "name": "ref:Gtk.ToolItem"
+                }, 
+                "version": "2.6", 
+                "description": "Creates a new #GtkMenuToolButton.\nThe new #GtkMenuToolButton will contain an icon and label from\nthe stock item indicated by @stock_id."
             }, 
             {
                 "returns": {

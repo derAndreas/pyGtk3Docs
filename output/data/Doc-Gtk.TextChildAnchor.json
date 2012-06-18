@@ -12,14 +12,15 @@
         "signals": [], 
         "methods": [
             {
+                "name": "Gtk.TextChildAnchor()", 
+                "parameters": null, 
                 "isConstructor": true, 
                 "returns": {
                     "doc": "a new #GtkTextChildAnchor", 
                     "name": "ref:Gtk.TextChildAnchor"
                 }, 
                 "version": null, 
-                "name": "Gtk.TextChildAnchor()", 
-                "parameters": null
+                "description": "Creates a new #GtkTextChildAnchor. Usually you would then insert\nit into a #GtkTextBuffer with gtk_text_buffer_insert_child_anchor().\nTo perform the creation and insertion in one step, use the\nconvenience function gtk_text_buffer_create_child_anchor()."
             }, 
             {
                 "returns": {

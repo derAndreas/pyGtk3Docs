@@ -59,84 +59,90 @@
         ], 
         "methods": [
             {
+                "name": "Gtk.ComboBox()", 
+                "parameters": null, 
                 "isConstructor": true, 
                 "returns": {
                     "doc": "A new #GtkComboBox.", 
                     "name": "ref:Gtk.Widget"
                 }, 
                 "version": "2.4", 
-                "name": "Gtk.ComboBox()", 
-                "parameters": null
+                "description": "Creates a new empty #GtkComboBox."
             }, 
             {
-                "isConstructor": true, 
-                "returns": {
-                    "doc": "A new #GtkComboBox.", 
-                    "name": "ref:Gtk.Widget"
-                }, 
-                "version": null, 
                 "name": "Gtk.ComboBox(Gtk.CellArea area)", 
                 "parameters": [
                     {
                         "type": "ref:Gtk.CellArea", 
                         "name": "area"
                     }
-                ]
-            }, 
-            {
+                ], 
                 "isConstructor": true, 
                 "returns": {
                     "doc": "A new #GtkComboBox.", 
                     "name": "ref:Gtk.Widget"
                 }, 
                 "version": null, 
+                "description": "Creates a new empty #GtkComboBox using @area to layout cells."
+            }, 
+            {
                 "name": "Gtk.ComboBox(Gtk.CellArea area)", 
                 "parameters": [
                     {
                         "type": "ref:Gtk.CellArea", 
                         "name": "area"
                     }
-                ]
-            }, 
-            {
+                ], 
                 "isConstructor": true, 
                 "returns": {
                     "doc": "A new #GtkComboBox.", 
                     "name": "ref:Gtk.Widget"
                 }, 
                 "version": null, 
-                "name": "Gtk.ComboBox()", 
-                "parameters": null
+                "description": "Creates a new empty #GtkComboBox with an entry.\n\nThe new combo box will use @area to layout cells."
             }, 
             {
+                "name": "Gtk.ComboBox()", 
+                "parameters": null, 
                 "isConstructor": true, 
                 "returns": {
                     "doc": "A new #GtkComboBox.", 
                     "name": "ref:Gtk.Widget"
                 }, 
-                "version": "2.4", 
+                "version": null, 
+                "description": "Creates a new empty #GtkComboBox with an entry."
+            }, 
+            {
                 "name": "Gtk.ComboBox(Gtk.TreeModel model)", 
                 "parameters": [
                     {
                         "type": "ref:Gtk.TreeModel", 
                         "name": "model"
                     }
-                ]
+                ], 
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "A new #GtkComboBox.", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": "2.4", 
+                "description": "Creates a new #GtkComboBox with the model initialized to @model."
             }, 
             {
+                "name": "Gtk.ComboBox(Gtk.TreeModel model)", 
+                "parameters": [
+                    {
+                        "type": "ref:Gtk.TreeModel", 
+                        "name": "model"
+                    }
+                ], 
                 "isConstructor": true, 
                 "returns": {
                     "doc": "A new #GtkComboBox", 
                     "name": "ref:Gtk.Widget"
                 }, 
                 "version": null, 
-                "name": "Gtk.ComboBox(Gtk.TreeModel model)", 
-                "parameters": [
-                    {
-                        "type": "ref:Gtk.TreeModel", 
-                        "name": "model"
-                    }
-                ]
+                "description": "Creates a new empty #GtkComboBox with an entry\nand with the model initialized to @model."
             }, 
             {
                 "returns": {

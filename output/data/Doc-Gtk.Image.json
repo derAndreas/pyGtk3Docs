@@ -21,52 +21,49 @@
         "signals": [], 
         "methods": [
             {
+                "name": "Gtk.Image()", 
+                "parameters": null, 
                 "isConstructor": true, 
                 "returns": {
                     "doc": "a newly created #GtkImage widget.", 
                     "name": "ref:Gtk.Widget"
                 }, 
                 "version": null, 
-                "name": "Gtk.Image()", 
-                "parameters": null
+                "description": "Creates a new empty #GtkImage widget."
             }, 
             {
-                "isConstructor": true, 
-                "returns": {
-                    "doc": "a new #GtkImage widget", 
-                    "name": "ref:Gtk.Widget"
-                }, 
-                "version": null, 
                 "name": "Gtk.Image(GdkPixbuf.PixbufAnimation animation)", 
                 "parameters": [
                     {
                         "type": "GdkPixbuf.PixbufAnimation", 
                         "name": "animation"
                     }
-                ]
-            }, 
-            {
+                ], 
                 "isConstructor": true, 
                 "returns": {
-                    "doc": "a new #GtkImage", 
+                    "doc": "a new #GtkImage widget", 
                     "name": "ref:Gtk.Widget"
                 }, 
                 "version": null, 
+                "description": "Creates a #GtkImage displaying the given animation.\nThe #GtkImage does not assume a reference to the\nanimation; you still need to unref it if you own references.\n#GtkImage will add its own reference rather than adopting yours.\n\nNote that the animation frames are shown using a timeout with\n#G_PRIORITY_DEFAULT. When using animations to indicate busyness,\nkeep in mind that the animation will only be shown if the main loop\nis not busy with something that has a higher priority."
+            }, 
+            {
                 "name": "Gtk.Image(String filename)", 
                 "parameters": [
                     {
                         "type": "String", 
                         "name": "filename"
                     }
-                ]
-            }, 
-            {
+                ], 
                 "isConstructor": true, 
                 "returns": {
-                    "doc": "a new #GtkImage displaying the themed icon", 
+                    "doc": "a new #GtkImage", 
                     "name": "ref:Gtk.Widget"
                 }, 
-                "version": "2.14", 
+                "version": null, 
+                "description": "Creates a new #GtkImage displaying the file @filename. If the file\nisn't found or can't be loaded, the resulting #GtkImage will\ndisplay a \"broken image\" icon. This function never returns %NULL,\nit always returns a valid #GtkImage widget.\n\nIf the file contains an animation, the image will contain an\nanimation.\n\nIf you need to detect failures to load the file, use\ngdk_pixbuf_new_from_file() to load the file yourself, then create\nthe #GtkImage from the pixbuf. (Or for animations, use\ngdk_pixbuf_animation_new_from_file()).\n\nThe storage type (gtk_image_get_storage_type()) of the returned\nimage is not defined, it will be whatever is appropriate for\ndisplaying the file."
+            }, 
+            {
                 "name": "Gtk.Image(Gio.Icon icon, Gtk.IconSize size)", 
                 "parameters": [
                     {
@@ -77,15 +74,16 @@
                         "type": "ref:Gtk.IconSize", 
                         "name": "size"
                     }
-                ]
-            }, 
-            {
+                ], 
                 "isConstructor": true, 
                 "returns": {
                     "doc": "a new #GtkImage displaying the themed icon", 
                     "name": "ref:Gtk.Widget"
                 }, 
-                "version": "2.6", 
+                "version": "2.14", 
+                "description": "Creates a #GtkImage displaying an icon from the current icon theme.\nIf the icon name isn't known, a \"broken image\" icon will be\ndisplayed instead.  If the current icon theme is changed, the icon\nwill be updated appropriately."
+            }, 
+            {
                 "name": "Gtk.Image(String icon_name, Gtk.IconSize size)", 
                 "parameters": [
                     {
@@ -96,15 +94,16 @@
                         "type": "ref:Gtk.IconSize", 
                         "name": "size"
                     }
-                ]
-            }, 
-            {
+                ], 
                 "isConstructor": true, 
                 "returns": {
-                    "doc": "a new #GtkImage", 
+                    "doc": "a new #GtkImage displaying the themed icon", 
                     "name": "ref:Gtk.Widget"
                 }, 
-                "version": null, 
+                "version": "2.6", 
+                "description": "Creates a #GtkImage displaying an icon from the current icon theme.\nIf the icon name isn't known, a \"broken image\" icon will be\ndisplayed instead.  If the current icon theme is changed, the icon\nwill be updated appropriately."
+            }, 
+            {
                 "name": "Gtk.Image(Gtk.IconSet icon_set, Gtk.IconSize size)", 
                 "parameters": [
                     {
@@ -115,45 +114,48 @@
                         "type": "ref:Gtk.IconSize", 
                         "name": "size"
                     }
-                ]
-            }, 
-            {
+                ], 
                 "isConstructor": true, 
                 "returns": {
                     "doc": "a new #GtkImage", 
                     "name": "ref:Gtk.Widget"
                 }, 
                 "version": null, 
+                "description": "Creates a #GtkImage displaying an icon set. Sample stock sizes are\n#GTK_ICON_SIZE_MENU, #GTK_ICON_SIZE_SMALL_TOOLBAR. Instead of using\nthis function, usually it's better to create a #GtkIconFactory, put\nyour icon sets in the icon factory, add the icon factory to the\nlist of default factories with gtk_icon_factory_add_default(), and\nthen use gtk_image_new_from_stock(). This will allow themes to\noverride the icon you ship with your application.\n\nThe #GtkImage does not assume a reference to the\nicon set; you still need to unref it if you own references.\n#GtkImage will add its own reference rather than adopting yours."
+            }, 
+            {
                 "name": "Gtk.Image(GdkPixbuf.Pixbuf pixbuf)", 
                 "parameters": [
                     {
                         "type": "GdkPixbuf.Pixbuf", 
                         "name": "pixbuf"
                     }
-                ]
-            }, 
-            {
+                ], 
                 "isConstructor": true, 
                 "returns": {
                     "doc": "a new #GtkImage", 
                     "name": "ref:Gtk.Widget"
                 }, 
-                "version": "3.4", 
+                "version": null, 
+                "description": "Creates a new #GtkImage displaying @pixbuf.\nThe #GtkImage does not assume a reference to the\npixbuf; you still need to unref it if you own references.\n#GtkImage will add its own reference rather than adopting yours.\n\nNote that this function just creates an #GtkImage from the pixbuf. The\n#GtkImage created will not react to state changes. Should you want that, \nyou should use gtk_image_new_from_icon_set()."
+            }, 
+            {
                 "name": "Gtk.Image(String resource_path)", 
                 "parameters": [
                     {
                         "type": "String", 
                         "name": "resource_path"
                     }
-                ]
-            }, 
-            {
+                ], 
                 "isConstructor": true, 
                 "returns": {
-                    "doc": "a new #GtkImage displaying the stock icon", 
+                    "doc": "a new #GtkImage", 
                     "name": "ref:Gtk.Widget"
                 }, 
-                "version": null, 
+                "version": "3.4", 
+                "description": "Creates a new #GtkImage displaying the resource file @resource_path. If the file\nisn't found or can't be loaded, the resulting #GtkImage will\ndisplay a \"broken image\" icon. This function never returns %NULL,\nit always returns a valid #GtkImage widget.\n\nIf the file contains an animation, the image will contain an\nanimation.\n\nIf you need to detect failures to load the file, use\ngdk_pixbuf_new_from_file() to load the file yourself, then create\nthe #GtkImage from the pixbuf. (Or for animations, use\ngdk_pixbuf_animation_new_from_file()).\n\nThe storage type (gtk_image_get_storage_type()) of the returned\nimage is not defined, it will be whatever is appropriate for\ndisplaying the file."
+            }, 
+            {
                 "name": "Gtk.Image(String stock_id, Gtk.IconSize size)", 
                 "parameters": [
                     {
@@ -164,7 +166,14 @@
                         "type": "ref:Gtk.IconSize", 
                         "name": "size"
                     }
-                ]
+                ], 
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a new #GtkImage displaying the stock icon", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": null, 
+                "description": "Creates a #GtkImage displaying a stock icon. Sample stock icon\nnames are #GTK_STOCK_OPEN, #GTK_STOCK_QUIT. Sample stock sizes\nare #GTK_ICON_SIZE_MENU, #GTK_ICON_SIZE_SMALL_TOOLBAR. If the stock\nicon name isn't known, the image will be empty.\nYou can register your own stock icon names, see\ngtk_icon_factory_add_default() and gtk_icon_factory_add()."
             }, 
             {
                 "returns": {

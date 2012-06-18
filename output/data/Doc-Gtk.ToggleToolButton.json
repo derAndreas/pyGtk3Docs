@@ -37,29 +37,31 @@
         ], 
         "methods": [
             {
+                "name": "Gtk.ToggleToolButton()", 
+                "parameters": null, 
                 "isConstructor": true, 
                 "returns": {
                     "doc": "a newly created #GtkToggleToolButton", 
                     "name": "ref:Gtk.ToolItem"
                 }, 
                 "version": "2.4", 
-                "name": "Gtk.ToggleToolButton()", 
-                "parameters": null
+                "description": "Returns a new #GtkToggleToolButton"
             }, 
             {
-                "isConstructor": true, 
-                "returns": {
-                    "doc": "A new #GtkToggleToolButton", 
-                    "name": "ref:Gtk.ToolItem"
-                }, 
-                "version": "2.4", 
                 "name": "Gtk.ToggleToolButton(String stock_id)", 
                 "parameters": [
                     {
                         "type": "String", 
                         "name": "stock_id"
                     }
-                ]
+                ], 
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "A new #GtkToggleToolButton", 
+                    "name": "ref:Gtk.ToolItem"
+                }, 
+                "version": "2.4", 
+                "description": "Creates a new #GtkToggleToolButton containing the image and text from a\nstock item. Some stock ids have preprocessor macros like #GTK_STOCK_OK\nand #GTK_STOCK_APPLY.\n\nIt is an error if @stock_id is not a name of a stock item."
             }, 
             {
                 "returns": {

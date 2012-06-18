@@ -26,16 +26,17 @@
         "signals": [], 
         "methods": [
             {
+                "name": "Gtk.HButtonBox()", 
+                "parameters": null, 
+                "isConstructor": true, 
                 "returns": {
                     "doc": "a new button box #GtkWidget.", 
                     "name": "ref:Gtk.Widget"
                 }, 
                 "version": null, 
-                "name": "Gtk.HButtonBox()", 
-                "parameters": null, 
                 "deprecated": "Use gtk_button_box_new() with %GTK_ORIENTATION_HORIZONTAL instead", 
                 "deprecated_version": "3.2", 
-                "isConstructor": true
+                "description": "Creates a new horizontal button box."
             }
         ], 
         "properties": []

@@ -24,12 +24,6 @@
         ], 
         "methods": [
             {
-                "isConstructor": true, 
-                "returns": {
-                    "doc": "a new #GtkToggleAction", 
-                    "name": "ref:Gtk.ToggleAction"
-                }, 
-                "version": "2.4", 
                 "name": "Gtk.ToggleAction(String name, String label, String tooltip, String stock_id)", 
                 "parameters": [
                     {
@@ -48,7 +42,14 @@
                         "type": "String", 
                         "name": "stock_id"
                     }
-                ]
+                ], 
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a new #GtkToggleAction", 
+                    "name": "ref:Gtk.ToggleAction"
+                }, 
+                "version": "2.4", 
+                "description": "Creates a new #GtkToggleAction object. To add the action to\na #GtkActionGroup and set the accelerator for the action,\ncall gtk_action_group_add_action_with_accel()."
             }, 
             {
                 "returns": {

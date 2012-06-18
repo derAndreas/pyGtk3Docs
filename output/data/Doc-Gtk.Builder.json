@@ -12,14 +12,15 @@
         "signals": [], 
         "methods": [
             {
+                "name": "Gtk.Builder()", 
+                "parameters": null, 
                 "isConstructor": true, 
                 "returns": {
                     "doc": "a new #GtkBuilder object", 
                     "name": "ref:Gtk.Builder"
                 }, 
                 "version": "2.12", 
-                "name": "Gtk.Builder()", 
-                "parameters": null
+                "description": "Creates a new builder object."
             }, 
             {
                 "returns": {

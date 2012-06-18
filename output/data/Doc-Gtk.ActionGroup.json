@@ -41,19 +41,20 @@
         ], 
         "methods": [
             {
-                "isConstructor": true, 
-                "returns": {
-                    "doc": "the new #GtkActionGroup", 
-                    "name": "ref:Gtk.ActionGroup"
-                }, 
-                "version": "2.4", 
                 "name": "Gtk.ActionGroup(String name)", 
                 "parameters": [
                     {
                         "type": "String", 
                         "name": "name"
                     }
-                ]
+                ], 
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "the new #GtkActionGroup", 
+                    "name": "ref:Gtk.ActionGroup"
+                }, 
+                "version": "2.4", 
+                "description": "Creates a new #GtkActionGroup object. The name of the action group\nis used when associating <link linkend=\"Action-Accel\">keybindings</link> \nwith the actions."
             }, 
             {
                 "returns": {

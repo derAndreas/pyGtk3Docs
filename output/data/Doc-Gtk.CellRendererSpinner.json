@@ -13,14 +13,15 @@
         "signals": [], 
         "methods": [
             {
+                "name": "Gtk.CellRendererSpinner()", 
+                "parameters": null, 
                 "isConstructor": true, 
                 "returns": {
                     "doc": "a new #GtkCellRenderer", 
                     "name": "ref:Gtk.CellRenderer"
                 }, 
                 "version": "2.20", 
-                "name": "Gtk.CellRendererSpinner()", 
-                "parameters": null
+                "description": "Returns a new cell renderer which will show a spinner to indicate\nactivity."
             }
         ], 
         "properties": [

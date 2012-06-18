@@ -35,14 +35,15 @@
         ], 
         "methods": [
             {
+                "name": "Gtk.TextTagTable()", 
+                "parameters": null, 
                 "isConstructor": true, 
                 "returns": {
                     "doc": "a new #GtkTextTagTable", 
                     "name": "ref:Gtk.TextTagTable"
                 }, 
                 "version": null, 
-                "name": "Gtk.TextTagTable()", 
-                "parameters": null
+                "description": "Creates a new #GtkTextTagTable. The table contains no tags by\ndefault."
             }, 
             {
                 "returns": {

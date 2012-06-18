@@ -29,19 +29,20 @@
         "signals": [], 
         "methods": [
             {
-                "isConstructor": true, 
-                "returns": {
-                    "doc": "a new #GtkLockButton", 
-                    "name": "ref:Gtk.Widget"
-                }, 
-                "version": "3.2", 
                 "name": "Gtk.LockButton(Gio.Permission permission)", 
                 "parameters": [
                     {
                         "type": "Gio.Permission", 
                         "name": "permission"
                     }
-                ]
+                ], 
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a new #GtkLockButton", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": "3.2", 
+                "description": "Creates a new lock button which reflects the @permission."
             }, 
             {
                 "returns": {

@@ -39,21 +39,17 @@
         ], 
         "methods": [
             {
+                "name": "Gtk.ColorButton()", 
+                "parameters": null, 
                 "isConstructor": true, 
                 "returns": {
                     "doc": "a new color button", 
                     "name": "ref:Gtk.Widget"
                 }, 
                 "version": "2.4", 
-                "name": "Gtk.ColorButton()", 
-                "parameters": null
+                "description": "Creates a new color button.\n\nThis returns a widget in the form of a small button containing\na swatch representing the current selected color. When the button\nis clicked, a color-selection dialog will open, allowing the user\nto select a color. The swatch will be updated to reflect the new\ncolor when the user finishes."
             }, 
             {
-                "returns": {
-                    "doc": "a new color button", 
-                    "name": "ref:Gtk.Widget"
-                }, 
-                "version": "2.4", 
                 "name": "Gtk.ColorButton(Gdk.Color color)", 
                 "parameters": [
                     {
@@ -61,24 +57,31 @@
                         "name": "color"
                     }
                 ], 
-                "deprecated": "Use gtk_color_button_new_with_rgba() instead.", 
-                "deprecated_version": "3.4", 
-                "isConstructor": true
-            }, 
-            {
                 "isConstructor": true, 
                 "returns": {
                     "doc": "a new color button", 
                     "name": "ref:Gtk.Widget"
                 }, 
-                "version": "3.0", 
+                "version": "2.4", 
+                "deprecated": "Use gtk_color_button_new_with_rgba() instead.", 
+                "deprecated_version": "3.4", 
+                "description": "Creates a new color button."
+            }, 
+            {
                 "name": "Gtk.ColorButton(Gdk.RGBA rgba)", 
                 "parameters": [
                     {
                         "type": "Gdk.RGBA", 
                         "name": "rgba"
                     }
-                ]
+                ], 
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a new color button", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": "3.0", 
+                "description": "Creates a new color button."
             }, 
             {
                 "returns": {

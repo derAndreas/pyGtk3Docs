@@ -25,12 +25,6 @@
         "signals": [], 
         "methods": [
             {
-                "isConstructor": true, 
-                "returns": {
-                    "doc": "a new #GtkViewport", 
-                    "name": "ref:Gtk.Widget"
-                }, 
-                "version": null, 
                 "name": "Gtk.Viewport(Gtk.Adjustment hadjustment, Gtk.Adjustment vadjustment)", 
                 "parameters": [
                     {
@@ -41,7 +35,14 @@
                         "type": "ref:Gtk.Adjustment", 
                         "name": "vadjustment"
                     }
-                ]
+                ], 
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a new #GtkViewport", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": null, 
+                "description": "Creates a new #GtkViewport with the given adjustments."
             }, 
             {
                 "returns": {

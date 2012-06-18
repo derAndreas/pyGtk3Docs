@@ -35,16 +35,17 @@
         ], 
         "methods": [
             {
+                "name": "Gtk.HandleBox()", 
+                "parameters": null, 
+                "isConstructor": true, 
                 "returns": {
                     "doc": "a new #GtkHandleBox.", 
                     "name": "ref:Gtk.Widget"
                 }, 
                 "version": null, 
-                "name": "Gtk.HandleBox()", 
-                "parameters": null, 
                 "deprecated": "#GtkHandleBox has been deprecated.", 
                 "deprecated_version": "3.4", 
-                "isConstructor": true
+                "description": "Create a new handle box."
             }, 
             {
                 "returns": {

@@ -23,14 +23,15 @@
         "signals": [], 
         "methods": [
             {
+                "name": "Gtk.CellAreaBox()", 
+                "parameters": null, 
                 "isConstructor": true, 
                 "returns": {
                     "doc": "a newly created #GtkCellAreaBox", 
                     "name": "ref:Gtk.CellArea"
                 }, 
                 "version": "3.0", 
-                "name": "Gtk.CellAreaBox()", 
-                "parameters": null
+                "description": "Creates a new #GtkCellAreaBox."
             }, 
             {
                 "returns": {

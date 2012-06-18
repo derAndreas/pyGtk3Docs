@@ -22,14 +22,15 @@
         "signals": [], 
         "methods": [
             {
+                "name": "Gtk.EventBox()", 
+                "parameters": null, 
                 "isConstructor": true, 
                 "returns": {
                     "doc": "a new #GtkEventBox", 
                     "name": "ref:Gtk.Widget"
                 }, 
                 "version": null, 
-                "name": "Gtk.EventBox()", 
-                "parameters": null
+                "description": "Creates a new #GtkEventBox."
             }, 
             {
                 "returns": {

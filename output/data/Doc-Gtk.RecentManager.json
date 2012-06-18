@@ -19,14 +19,15 @@
         ], 
         "methods": [
             {
+                "name": "Gtk.RecentManager()", 
+                "parameters": null, 
                 "isConstructor": true, 
                 "returns": {
                     "doc": "A newly created #GtkRecentManager object.", 
                     "name": "ref:Gtk.RecentManager"
                 }, 
                 "version": "2.10", 
-                "name": "Gtk.RecentManager()", 
-                "parameters": null
+                "description": "Creates a new recent manager object.  Recent manager objects are used to\nhandle the list of recently used resources.  A #GtkRecentManager object\nmonitors the recently used resources list, and emits the \"changed\" signal\neach time something inside the list changes.\n\n#GtkRecentManager objects are expensive: be sure to create them only when\nneeded. You should use gtk_recent_manager_get_default() instead."
             }, 
             {
                 "returns": {

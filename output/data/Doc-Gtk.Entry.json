@@ -105,29 +105,31 @@
         ], 
         "methods": [
             {
+                "name": "Gtk.Entry()", 
+                "parameters": null, 
                 "isConstructor": true, 
                 "returns": {
                     "doc": "a new #GtkEntry.", 
                     "name": "ref:Gtk.Widget"
                 }, 
                 "version": null, 
-                "name": "Gtk.Entry()", 
-                "parameters": null
+                "description": "Creates a new entry."
             }, 
             {
-                "isConstructor": true, 
-                "returns": {
-                    "doc": "a new #GtkEntry", 
-                    "name": "ref:Gtk.Widget"
-                }, 
-                "version": "2.18", 
                 "name": "Gtk.Entry(Gtk.EntryBuffer buffer)", 
                 "parameters": [
                     {
                         "type": "ref:Gtk.EntryBuffer", 
                         "name": "buffer"
                     }
-                ]
+                ], 
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a new #GtkEntry", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": "2.18", 
+                "description": "Creates a new entry with the specified text buffer."
             }, 
             {
                 "returns": {

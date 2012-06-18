@@ -434,12 +434,6 @@
         ], 
         "methods": [
             {
-                "isConstructor": true, 
-                "returns": {
-                    "doc": "a new #GtkWidget of type @widget_type", 
-                    "name": "ref:Gtk.Widget"
-                }, 
-                "version": null, 
                 "name": "Gtk.Widget(Integer type, String first_property_name, VarArg None)", 
                 "parameters": [
                     {
@@ -454,7 +448,14 @@
                         "type": "ref:VarArg", 
                         "name": null
                     }
-                ]
+                ], 
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a new #GtkWidget of type @widget_type", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": null, 
+                "description": "This is a convenience function for creating a widget and setting\nits properties in one go. For example you might write:\n<literal>gtk_widget_new (GTK_TYPE_LABEL, \"label\", \"Hello World\", \"xalign\",\n0.0, NULL)</literal> to create a left-aligned label. Equivalent to\ng_object_new(), but returns a widget so you don't have to\ncast the object yourself."
             }, 
             {
                 "returns": {

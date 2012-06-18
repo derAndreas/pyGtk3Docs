@@ -28,29 +28,31 @@
         "signals": [], 
         "methods": [
             {
+                "name": "Gtk.RecentChooserWidget()", 
+                "parameters": null, 
                 "isConstructor": true, 
                 "returns": {
                     "doc": "a new #GtkRecentChooserWidget", 
                     "name": "ref:Gtk.Widget"
                 }, 
                 "version": "2.10", 
-                "name": "Gtk.RecentChooserWidget()", 
-                "parameters": null
+                "description": "Creates a new #GtkRecentChooserWidget object.  This is an embeddable widget\nused to access the recently used resources list."
             }, 
             {
-                "isConstructor": true, 
-                "returns": {
-                    "doc": "a new #GtkRecentChooserWidget", 
-                    "name": "ref:Gtk.Widget"
-                }, 
-                "version": "2.10", 
                 "name": "Gtk.RecentChooserWidget(Gtk.RecentManager manager)", 
                 "parameters": [
                     {
                         "type": "ref:Gtk.RecentManager", 
                         "name": "manager"
                     }
-                ]
+                ], 
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a new #GtkRecentChooserWidget", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": "2.10", 
+                "description": "Creates a new #GtkRecentChooserWidget with a specified recent manager.\n\nThis is useful if you have implemented your own recent manager, or if you\nhave a customized instance of a #GtkRecentManager object."
             }
         ], 
         "properties": []

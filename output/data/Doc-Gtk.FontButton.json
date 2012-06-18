@@ -39,29 +39,31 @@
         ], 
         "methods": [
             {
+                "name": "Gtk.FontButton()", 
+                "parameters": null, 
                 "isConstructor": true, 
                 "returns": {
                     "doc": "a new font picker widget.", 
                     "name": "ref:Gtk.Widget"
                 }, 
                 "version": "2.4", 
-                "name": "Gtk.FontButton()", 
-                "parameters": null
+                "description": "Creates a new font picker widget."
             }, 
             {
-                "isConstructor": true, 
-                "returns": {
-                    "doc": "a new font picker widget.", 
-                    "name": "ref:Gtk.Widget"
-                }, 
-                "version": "2.4", 
                 "name": "Gtk.FontButton(String fontname)", 
                 "parameters": [
                     {
                         "type": "String", 
                         "name": "fontname"
                     }
-                ]
+                ], 
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a new font picker widget.", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": "2.4", 
+                "description": "Creates a new font picker widget."
             }, 
             {
                 "returns": {

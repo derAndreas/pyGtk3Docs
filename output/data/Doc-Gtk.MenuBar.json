@@ -22,29 +22,31 @@
         "signals": [], 
         "methods": [
             {
+                "name": "Gtk.MenuBar()", 
+                "parameters": null, 
                 "isConstructor": true, 
                 "returns": {
                     "doc": "the new menu bar, as a #GtkWidget", 
                     "name": "ref:Gtk.Widget"
                 }, 
                 "version": null, 
-                "name": "Gtk.MenuBar()", 
-                "parameters": null
+                "description": "Creates a new #GtkMenuBar"
             }, 
             {
-                "isConstructor": true, 
-                "returns": {
-                    "doc": "a new #GtkMenuBar", 
-                    "name": "ref:Gtk.Widget"
-                }, 
-                "version": "3.4", 
                 "name": "Gtk.MenuBar(Gio.MenuModel model)", 
                 "parameters": [
                     {
                         "type": "Gio.MenuModel", 
                         "name": "model"
                     }
-                ]
+                ], 
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a new #GtkMenuBar", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": "3.4", 
+                "description": "Creates a new #GtkMenuBar and populates it with menu items\nand submenus according to @model.\n\nThe created menu items are connected to actions found in the\n#GtkApplicationWindow to which the menu bar belongs - typically\nby means of being contained within the #GtkApplicationWindows\nwidget hierarchy."
             }, 
             {
                 "returns": {

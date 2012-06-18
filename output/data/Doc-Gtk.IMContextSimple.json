@@ -13,14 +13,15 @@
         "signals": [], 
         "methods": [
             {
+                "name": "Gtk.IMContextSimple()", 
+                "parameters": null, 
                 "isConstructor": true, 
                 "returns": {
                     "doc": "a new #GtkIMContextSimple.", 
                     "name": "ref:Gtk.IMContext"
                 }, 
                 "version": null, 
-                "name": "Gtk.IMContextSimple()", 
-                "parameters": null
+                "description": "Creates a new #GtkIMContextSimple."
             }, 
             {
                 "returns": {

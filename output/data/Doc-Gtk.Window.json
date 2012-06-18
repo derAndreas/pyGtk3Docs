@@ -47,19 +47,20 @@
         ], 
         "methods": [
             {
-                "isConstructor": true, 
-                "returns": {
-                    "doc": "a new #GtkWindow.", 
-                    "name": "ref:Gtk.Widget"
-                }, 
-                "version": null, 
                 "name": "Gtk.Window(Gtk.WindowType type)", 
                 "parameters": [
                     {
                         "type": "ref:Gtk.WindowType", 
                         "name": "type"
                     }
-                ]
+                ], 
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a new #GtkWindow.", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": null, 
+                "description": "Creates a new #GtkWindow, which is a toplevel window that can\ncontain other widgets. Nearly always, the type of the window should\nbe #GTK_WINDOW_TOPLEVEL. If you're implementing something like a\npopup menu from scratch (which is a bad idea, just use #GtkMenu),\nyou might use #GTK_WINDOW_POPUP. #GTK_WINDOW_POPUP is not for\ndialogs, though in some other toolkits dialogs are called \"popups\".\nIn GTK+, #GTK_WINDOW_POPUP means a pop-up menu or pop-up tooltip.\nOn X11, popup windows are not controlled by the <link\nlinkend=\"gtk-X11-arch\">window manager</link>.\n\nIf you simply want an undecorated window (no window borders), use\ngtk_window_set_decorated(), don't use #GTK_WINDOW_POPUP."
             }, 
             {
                 "returns": {

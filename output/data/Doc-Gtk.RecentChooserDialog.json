@@ -27,12 +27,6 @@
         "signals": [], 
         "methods": [
             {
-                "isConstructor": true, 
-                "returns": {
-                    "doc": "a new #GtkRecentChooserDialog", 
-                    "name": "ref:Gtk.Widget"
-                }, 
-                "version": "2.10", 
                 "name": "Gtk.RecentChooserDialog(String title, Gtk.Window parent, String first_button_text, VarArg None)", 
                 "parameters": [
                     {
@@ -51,15 +45,16 @@
                         "type": "ref:VarArg", 
                         "name": null
                     }
-                ]
-            }, 
-            {
+                ], 
                 "isConstructor": true, 
                 "returns": {
                     "doc": "a new #GtkRecentChooserDialog", 
                     "name": "ref:Gtk.Widget"
                 }, 
                 "version": "2.10", 
+                "description": "Creates a new #GtkRecentChooserDialog.  This function is analogous to\ngtk_dialog_new_with_buttons()."
+            }, 
+            {
                 "name": "Gtk.RecentChooserDialog(String title, Gtk.Window parent, Gtk.RecentManager manager, String first_button_text, VarArg None)", 
                 "parameters": [
                     {
@@ -82,7 +77,14 @@
                         "type": "ref:VarArg", 
                         "name": null
                     }
-                ]
+                ], 
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a new #GtkRecentChooserDialog", 
+                    "name": "ref:Gtk.Widget"
+                }, 
+                "version": "2.10", 
+                "description": "Creates a new #GtkRecentChooserDialog with a specified recent manager.\n\nThis is useful if you have implemented your own recent manager, or if you\nhave a customized instance of a #GtkRecentManager object."
             }
         ], 
         "properties": []

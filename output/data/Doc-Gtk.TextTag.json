@@ -19,19 +19,20 @@
         ], 
         "methods": [
             {
-                "isConstructor": true, 
-                "returns": {
-                    "doc": "a new #GtkTextTag", 
-                    "name": "ref:Gtk.TextTag"
-                }, 
-                "version": null, 
                 "name": "Gtk.TextTag(String name)", 
                 "parameters": [
                     {
                         "type": "String", 
                         "name": "name"
                     }
-                ]
+                ], 
+                "isConstructor": true, 
+                "returns": {
+                    "doc": "a new #GtkTextTag", 
+                    "name": "ref:Gtk.TextTag"
+                }, 
+                "version": null, 
+                "description": "Creates a #GtkTextTag. Configure the tag using object arguments,\ni.e. using g_object_set()."
             }, 
             {
                 "returns": {
